@@ -23,8 +23,6 @@ script:
   
   - mvn clean install sonar:sonar
 
-after_script:
-  - ./sonar-runner-2.4/bin/sonar-runner
   
 notifications:
   - slack: dras:ROSUqZH9Sz4dNJSZMoQzP9Sh
