@@ -4,6 +4,15 @@ java:
 jdk:
   - oraclejdk8
 
+before_install:
+  - wget http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.4/sonar-runner-dist-2.4.zip
+  - unzip sonar-runner-dist-2.4.zip
+
+branches: 
+  only: 
+    - master
+    - desenvolvimento
+
 addons:
   sonarqube: true
 
@@ -13,3 +22,9 @@ before_script:
 script:
   - cd Dra.S/
   - mvn clean install sonar:sonar
+
+after_script:
+  - ./sonar-runner-2.4/bin/sonar-runner
+  
+notifications:
+  - slack: dras:ROSUqZH9Sz4dNJSZMoQzP9Sh
