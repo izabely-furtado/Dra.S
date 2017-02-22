@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<title>#{text['aplicacao.defaultpage.titulo']}</title>
+<link href="#{request.contextPath}/css/simple.css" rel="stylesheet"
+type="text/css"/>
+</h:head>
+<h:body>
+<h:form>
+<div id="container">
+<div id="header">
+<h1>#{text['aplicacao.defaultpage.header.content']}</h1>
+ </div>
+ <div id="content">
+#{text['aplicacao.welcome']}, #{usuarioBean.nome}! <br/>
+<h:link value="#{text['aplicacao.welcomepage.return']}"
+outcome="index1"></h:link> <br/><br/>
+</div>
+<div id="footer">
+#{text['aplicacao.defaultpage.footer.content']}
+ </div>
+</div>
+</h:form>
+</h:body>
+</html>

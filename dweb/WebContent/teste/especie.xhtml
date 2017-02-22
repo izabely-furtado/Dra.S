@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>#{text['aplicacao.defaultpage.titulo']}</title>
+	<link href="#{request.contextPath}/css/simple.css" rel="stylesheet"
+		type="text/css" />
+</h:head>
+<h:body>
+	<h:form>
+		<div id="container">
+			<div id="header">
+				<h1>#{text['aplicacao.defaultpage.header.content2']}</h1>
+			</div>
+			<h:messages />
+			<div id="content">
+				<h:panelGrid columns="3">
+
+					<h:outputText value="#{text['especie.descricao']}"></h:outputText>
+					<h:inputText id="nome" value="#{especieBean.especie.descricao}" required="true"
+						requiredMessage="#{text['especie.nome.validacao']}"></h:inputText>
+					<h:message for="nome" styleClass="errorMessage" />
+
+					
+				</h:panelGrid>
+				<h:commandButton action="#{especieBean.inserir}"
+					value="#{text['aplicacao.login']}">
+				</h:commandButton>
+				<h:commandButton action="#{especieBean.listar}"
+					value="#{text['aplicacao.listar']}">
+				</h:commandButton>
+				<br />
+				<br />
+			</div>
+			<div id="footer">
+				#{text['aplicacao.defaultpage.footer.content']}</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

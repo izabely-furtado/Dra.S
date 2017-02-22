@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>#{text['aplicacao.defaultpage.titulo']}</title>
+	<link href="#{request.contextPath}/css/simple.css" rel="stylesheet"
+		type="text/css" />
+</h:head>
+<h:body>
+	<h:form>
+		<div id="container">
+			<div id="header">
+				<h1>#{text['aplicacao.defaultpage.header.content']}</h1>
+			</div>
+			<h:messages />
+			<div id="content">
+				<h:panelGrid columns="3">
+
+					<h:outputText value="#{text['cliente.nome']}"></h:outputText>
+					<h:inputText id="nome" value="#{clienteBean.cliente.nome}" required="true"
+						requiredMessage="#{text['cliente.nome.validacao']}"></h:inputText>
+					<h:message for="nome" styleClass="errorMessage" />
+
+					<h:outputText value="#{text['cliente.endereco']}"></h:outputText>
+					<h:inputText id="endereco" value="#{clienteBean.cliente.endereco}" required="true"
+						requiredMessage="#{text['cliente.endereco.validacao']}"></h:inputText>
+					<h:message for="endereco" styleClass="errorMessage" />
+					
+					<h:outputText value="#{text['cliente.bairro']}"></h:outputText>
+					<h:inputText id="bairro" value="#{clienteBean.cliente.bairro}" required="true"
+						requiredMessage="#{text['cliente.bairro.validacao']}"></h:inputText>
+					<h:message for="bairro" styleClass="errorMessage" />
+					
+					<h:outputText value="#{text['cliente.estado']}"></h:outputText>
+					<h:inputText id="estado" value="#{clienteBean.cliente.estado}" required="true"
+						requiredMessage="#{text['cliente.estado.validacao']}"></h:inputText>
+					<h:message for="estado" styleClass="errorMessage" />
+					
+					<h:outputText value="#{text['cliente.cep']}"></h:outputText>
+					<h:inputText id="cep" value="#{clienteBean.cliente.cep}" required="true"
+						requiredMessage="#{text['cliente.cep.validacao']}"></h:inputText>
+					<h:message for="cep" styleClass="errorMessage" />
+					
+					<h:outputText value="#{text['cliente.cidade']}"></h:outputText>
+					<h:inputText id="cidade" value="#{clienteBean.cliente.cidade}" required="true"
+						requiredMessage="#{text['cliente.cidade.validacao']}"></h:inputText>
+					<h:message for="cidade" styleClass="errorMessage" />
+					
+					<h:outputText value="#{text['cliente.telefone']}"></h:outputText>
+					<h:inputText id="telefone" value="#{clienteBean.cliente.telefone}" required="true"
+						requiredMessage="#{text['cliente.telefone.validacao']}"></h:inputText>
+					<h:message for="telefone" styleClass="errorMessage" />
+					
+				</h:panelGrid>
+				<h:commandButton action="#{clienteBean.inserir}"
+					value="#{text['aplicacao.login']}">
+				</h:commandButton>
+				<h:commandButton action="#{clienteBean.listar}"
+					value="#{text['aplicacao.listar']}">
+				</h:commandButton>
+				<br />
+				<br />
+			</div>
+			<div id="footer">
+				#{text['aplicacao.defaultpage.footer.content']}</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

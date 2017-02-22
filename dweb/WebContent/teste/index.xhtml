@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>Usuario cadastrado</title>
+</head>
+<h:body>
+	<h:form>
+		<h:dataTable value="#{usuarioBean.lista}" var="usuario" rules="rows" cellpadding="5">
+		<f:facet name="header">Listagem de Usuários</f:facet>
+		<f:facet name="footer">Final de listagem</f:facet>
+		
+		<h:column>
+			<f:facet name="header">Código</f:facet>
+			#{usuario.codigo}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			#{usuario.nome}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">e-Mail</f:facet>
+			<a href="mailto:#{usuario.email}">#{usuario.email}</a>
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Excluir</f:facet>
+			<h:commandLink value="Excluir" action="#{usuarioBean.excluirRegistro(usuario)}"></h:commandLink>
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Atualizar</f:facet>
+			<h:commandLink value="Atualizar" action="#{usuarioBean.alterarRegistro(usuario)}" rendered="#{not usuario.edita}"></h:commandLink>
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Salvar</f:facet>
+			<h:commandLink value="Salvar" action="#{usuarioBean.salvarRegistro}"></h:commandLink>
+		</h:column>
+		
+		
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>
