@@ -1,9 +1,8 @@
-package backingbean;
+package teste;
 
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import crudjdbc.*;
 import teste.Especie;
 import teste.EspecieCrudJDBC;
 

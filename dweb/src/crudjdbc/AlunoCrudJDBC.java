@@ -114,7 +114,7 @@ public class AlunoCrudJDBC {
 						AlunoInstituicao aluno = new AlunoInstituicao();
 						aluno.setDataNasc(resultado.getDate("dataNasc"));
 						aluno.setDescConvenio(resultado.getString("descConvenio"));
-						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco"));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco")));
 						aluno.setNome(resultado.getString("nome"));
 						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
 						aluno.setTelefone(resultado.getInt("telefone"));
@@ -134,7 +134,7 @@ public class AlunoCrudJDBC {
 						AlunoPago aluno = new AlunoPago();
 						aluno.setDataNasc(resultado.getDate("dataNasc"));
 						aluno.setDescConvenio(resultado.getString("descConvenio"));
-						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco"));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco")));
 						aluno.setNome(resultado.getString("nome"));
 						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
 						aluno.setTelefone(resultado.getInt("telefone"));
@@ -164,15 +164,16 @@ public class AlunoCrudJDBC {
 			// retorna lista de alunos
 			return alunos;
 		}
-
+		
+		
 		/*
-		 * Objetivo: Método que lista todos os alunos do banco de dados
+		 * Objetivo: Método que lista todos os alunos que pagam do banco de dados
 		 */
-		public List<Aluno> listar(Tipo tipoAluno) {
+		public List<AlunoPago> listarPago() {
 			// abre conexao com o banco de dados
 			Connection conexao = ConectaPostgreSQL.geraConexao();
 			// variavel lista de alunos
-			List<Aluno> alunos = new ArrayList<Aluno>();
+			List<AlunoPago> alunos = new ArrayList<AlunoPago>();
 			// executa o SQL no banco de dados
 			Statement consulta = null;
 			// contém os dados consultado da tabela
@@ -189,11 +190,70 @@ public class AlunoCrudJDBC {
 				resultado = consulta.executeQuery(sql);
 				// Lê cada aluno
 				while (resultado.next()) {
-					if (resultado.getInt("tipoAluno")==Integer.parseInt(tipoAluno+"")){
+					if (resultado.getInt("tipoAluno")==Integer.parseInt(Tipo.AlunoPago + "")){
+						AlunoPago aluno = new AlunoPago();
+						aluno.setDataNasc(resultado.getDate("dataNasc"));
+						aluno.setDescConvenio(resultado.getString("descConvenio"));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco")));
+						aluno.setNome(resultado.getString("nome"));
+						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
+						aluno.setTelefone(resultado.getInt("telefone"));
+						aluno.setTipoSangue(resultado.getString("tipoSangue"));
+						aluno.setNivelAluno(resultado.getInt("nivelAluno"));
+						aluno.setObs(resultado.getString("obs"));
+						Integer.parseInt(Tipo.AlunoInstitucional + "");
+						aluno.setDiaDePagamento(resultado.getInt("diaDePagamento"));
+						aluno.setPacote(resultado.getInt("tipoPacote"));
+						// insere o aluno na lista
+						alunos.add(aluno);
+						
+					}
+					
+				}
+			} catch (SQLException e) {
+				throw new RuntimeException("Erro ao buscar um aluno: " + e);
+			} finally {
+				try {
+					consulta.close();
+					resultado.close();
+					conexao.close();
+				} catch (Throwable e) {
+					throw new RuntimeException("Erro ao fechar a conexao " + e);
+				}
+			}
+			// retorna lista de alunos
+			return alunos;
+		}
+
+		/*
+		 * Objetivo: Método que lista todos os alunos institucionais do banco de dados
+		 */
+		public List<AlunoInstituicao> listarInstituicao() {
+			// abre conexao com o banco de dados
+			Connection conexao = ConectaPostgreSQL.geraConexao();
+			// variavel lista de alunos
+			List<AlunoInstituicao> alunos = new ArrayList<AlunoInstituicao>();
+			// executa o SQL no banco de dados
+			Statement consulta = null;
+			// contém os dados consultado da tabela
+			ResultSet resultado = null;
+			// objeto aluno
+			//Aluno aluno = null;
+			// consulta SQL
+			String sql = "select distinct * from aluno";
+			try {
+				// consulta => objeto que executa o SQL no banco de dados
+				consulta = conexao.createStatement();
+				// resultado => objeto que contém os dados consultado da tabela
+				// Aluno
+				resultado = consulta.executeQuery(sql);
+				// Lê cada aluno
+				while (resultado.next()) {
+					if (resultado.getInt("tipoAluno")==Integer.parseInt(Tipo.AlunoInstitucional+"")){
 						AlunoInstituicao aluno = new AlunoInstituicao();
 						aluno.setDataNasc(resultado.getDate("dataNasc"));
 						aluno.setDescConvenio(resultado.getString("descConvenio"));
-						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco"));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco")));
 						aluno.setNome(resultado.getString("nome"));
 						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
 						aluno.setTelefone(resultado.getInt("telefone"));
@@ -236,9 +296,9 @@ public class AlunoCrudJDBC {
 			PreparedStatement excluiPSt = null;
 			PreparedStatement excluiSt = null;
 			// SQL de exclusão do aluno
-			String sql = "delete from aluno where idAluno=?";
+			String sql = "delete from aluno where id=?";
 			// SQL de exclusão do aluno
-			String presql = "delete from endereco where idEndereco=?";
+			String presql = "delete from endereco where id=?";
 			try {
 				// recebe o SQL delete para endereço
 				excluiPSt = conexao.prepareStatement(presql);

@@ -1,28 +1,28 @@
 package classesAnemicas;
 
-import java.util.Date;
+import java.sql.Time;
 import java.util.List;
 
-public class Professor {
+public class Professor extends Pessoa{
 	private List<Turma> turmas;
-	private Date hrDisponivelInicio;
-	private Date hrDisponivelFim;
+	private Time hrDisponivelInicio;
+	private Time hrDisponivelFim;
 	public List<Turma> getTurmas() {
 		return turmas;
 	}
 	public void setTurmas(List<Turma> turmas) {
 		this.turmas = turmas;
 	}
-	public Date getHrDisponivelInicio() {
+	public Time getHrDisponivelInicio() {
 		return hrDisponivelInicio;
 	}
-	public void setHrDisponivelInicio(Date hrDisponivelInicio) {
+	public void setHrDisponivelInicio(Time hrDisponivelInicio) {
 		this.hrDisponivelInicio = hrDisponivelInicio;
 	}
-	public Date getHrDisponivelFim() {
+	public Time getHrDisponivelFim() {
 		return hrDisponivelFim;
 	}
-	public void setHrDisponivelFim(Date hrDisponivelFim) {
+	public void setHrDisponivelFim(Time hrDisponivelFim) {
 		this.hrDisponivelFim = hrDisponivelFim;
 	}
 	

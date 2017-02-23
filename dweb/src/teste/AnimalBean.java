@@ -1,15 +1,14 @@
-package backingbean;
+package teste;
 
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import crudjdbc.*;
 import teste.Animal;
 import teste.AnimalCrudJDBC;
 
 @ManagedBean(name = "animalBean")
 @SessionScoped
-public class ProdutoBean {
+public class AnimalBean {
 	
 	private List<Animal> lista;
 	private Animal animal = new Animal();
