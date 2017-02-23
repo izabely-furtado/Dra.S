@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class Endereco {
+	private int id;
 	private String rua;
 	private int numero;
 	private String bairro;
@@ -43,5 +44,11 @@ public class Endereco {
 	}
 	public void setEstado(String estado) {
 		Estado = estado;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

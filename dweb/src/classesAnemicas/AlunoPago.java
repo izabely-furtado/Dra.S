@@ -1,6 +1,6 @@
 package classesAnemicas;
 
-public class AlunoPago {
+public class AlunoPago extends Aluno {
 	private int pacote;
 	private int diaDePagamento;
 	public int getPacote() {
