@@ -6,7 +6,7 @@ public class Turma {
 	private List<Aluno> alunos;
 	private List<Professor> professores;
 	private int nível;
-	private List<Presença> presentes;
+	private List<Aula> aulas;
 	
 	public List<Aluno> getAlunos() {
 		return alunos;
@@ -26,11 +26,11 @@ public class Turma {
 	public void setNível(int nível) {
 		this.nível = nível;
 	}
-	public List<Presença> getPresentes() {
-		return presentes;
+	public List<Aula> getPresentes() {
+		return aulas;
 	}
-	public void setPresentes(List<Presença> presentes) {
-		this.presentes = presentes;
+	public void setPresentes(List<Aula> aulas) {
+		this.aulas = aulas;
 	}
 	
 }
