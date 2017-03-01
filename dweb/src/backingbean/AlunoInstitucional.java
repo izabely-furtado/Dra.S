@@ -44,6 +44,7 @@ public class AlunoInstitucional {
 		aluno.setTipoSangue(null);
 		aluno.setMatriculaEscola(null);
 		aluno.setNivelAluno(0);
+		aluno.setNomeEscola(null);
 		aluno.setNivelEscolaridade(0);
 		aluno.setNomeResponsavel(null);
 		aluno.setTelefoneEscola(null);

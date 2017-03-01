@@ -1,11 +1,18 @@
 package classesAnemicas;
 
 public class AlunoInstituicao extends Aluno{
+	private String nomeEscola;
+	
 	private String nomeResponsavel;
 	private int nivelEscolaridade;
 	private String matriculaEscola;
 	private String telefoneEscola;
-	
+	public String getNomeEscola() {
+		return nomeEscola;
+	}
+	public void setNomeEscola(String nomeEscola) {
+		this.nomeEscola = nomeEscola;
+	}
 	public String getTelefoneEscola() {
 		return telefoneEscola;
 	}

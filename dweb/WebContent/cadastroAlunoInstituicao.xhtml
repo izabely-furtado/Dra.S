@@ -54,77 +54,329 @@
 	<div class="container-fluid">
 		<div class="container content">
 			<div class="row">
+				<div class="col-md-3">
+					<div class="sidebar">
+						<div class="menu-sidebar-group">
+							<button type="button"
+								class="btn btn-link btn-sidebar-menu btn-block">
+								<i class="material-icons md-28">menu</i>
+							</button>
+							<ul class="list-group menu-sidebar">
+								<li class="list-group-item active" onchange="getCadastros()"><a href="#" onchange='getCadastros()'>Cadastros</a>
+									<!-- label id="cadastros"></label>
+									<ul class="list-group menu-sidebar" id="cadastros">
+										<li class="list-group-item"><a href="#">Aluno Pago</a></li>
+										<li class="list-group-item"><a href="#">Aluno Institucional</a></li>
+										<li class="list-group-item"><a href="#">Professor</a></li>
+										<li class="list-group-item"><a href="#">Turma</a></li>
+										<li class="list-group-item"><a href="#">Pacote</a></li>
+									</ul-->
+								</li>
+								<li class="list-group-item" onchange="getInfos()"><a>Informações</a>
+									<!-- label id="infos"></label>
+									<ul class="list-group menu-sidebar">
+										<li class="list-group-item"><a href="#">Aluno Pago</a></li>
+										<li class="list-group-item"><a href="#">Aluno Institucional</a></li>
+										<li class="list-group-item"><a href="#">Turma</a></li>
+										<li class="list-group-item"><a href="#">Pacote</a></li>
+										<li class="list-group-item"><a href="#">Balanço</a></li>
+									</ul-->
+								</li>
+								<li class="list-group-item"><a href="#">Alterar Dados de Acesso</a></li>
+								<li class="list-group-item"><a href="#">Alterar Senha</a></li>
+								<li class="list-group-item"><a href="#">Sair</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 				<!-- Conteúdo -->
-				<div class="col-md-12">
+				<div class="col-md-9">
 
 					<div class="content-page">
 						<!-- Conteúdo de Páginas -->
 						<h2>
-							Formulários <small>Diagramação de formulários</small>
+							Cadastrar Aluno <small>Institucional</small>
 						</h2>
+
+						<div class="alert alert-success">
+							<strong>Successo!</strong> This alert box could indicate a
+							successful or positive action.
+						</div>
+						<div class="alert alert-info">
+							<strong>Informação!</strong> This alert box could indicate a
+							neutral informative change or action.
+						</div>
+						<div class="alert alert-warning">
+							<strong>Atenção!</strong>
+							<h:message for="nome" styleClass="errorMessage" />
+						</div>
+						<div class="alert alert-danger">
+							<strong>Erro!</strong> This alert box could indicate a dangerous
+							or potentially negative action.
+						</div>
+
 						<div class="row">
 							<div class="col-md-12">
 								<form id="content">
-
+									<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 									<div class="row">
-										<div class="col-md-6">
+										<hr />
+										<h4>Dados Básicos</h4>
+										<div class="col-md-8">
 											<div class="form-group">
-												<label>#{text['animal.nome']} </label>
-												<h:inputText id="nome" value="#{animalBean.animal.nome}"
+												<label>Nome:</label>
+												<h:inputText id="nome" value="#{alunoIBean.aluno.nome}"
 													required="true" class="form-control"
-													a:placeholder="Nome do Animal"
-													requiredMessage="#{text['animal.nome.validacao']}"></h:inputText>
+													a:placeholder="Nome do Aluno"
+													requiredMessage="#{text['aluno.nome.validacao']}"></h:inputText>
 												<h:message for="nome" styleClass="errorMessage" />
 											</div>
 										</div>
+										
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Data de Nascimento:</label>
+												<h:inputText id="dataNasc"
+													value="#{alunoIBean.aluno.dataNasc}" required="true"
+													class="form-control" a:placeholder="_ _/_ _/_ _ _ _"
+													requiredMessage="#{text['aluno.dataNasc.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+										
+										<div class="col-md-8">
+											<div class="form-group">
+												<label>Nome do Responsável:</label>
+												<h:inputText id="nome" value="#{alunoIBean.aluno.nomeResponsavel}"
+													required="true" class="form-control"
+													a:placeholder="Nome do Responsável"
+													requiredMessage="#{text['aluno.nome.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+										
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Telefone Responsavel:</label>
+												<h:inputText id="telefone"
+													value="#{alunoIBean.aluno.telefone}" required="true"
+													class="form-control" a:placeholder="(99) 99999-9999"
+													requiredMessage="#{text['aluno.telefone.validacao']}"></h:inputText>
+												<h:message for="telefone" styleClass="errorMessage" />
+											</div>
+										</div>
+										
+										
+										<div class="col-md-8">
+											<div class="form-group">
+												<label>Nome da Escola:</label>
+												<h:inputText id="nomeEscola" value="#{alunoIBean.aluno.nomeEscola}"
+													required="true" class="form-control"
+													a:placeholder="Nome da Escola"
+													requiredMessage="#{text['aluno.nome.validacao']}"></h:inputText>
+												<h:message for="nomeEscola" styleClass="errorMessage" />
+											</div>
+										</div>
+										
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Telefone Escola:</label>
+												<h:inputText id="telefone"
+													value="#{alunoIBean.aluno.telefoneEscola}" required="true"
+													class="form-control" a:placeholder="(99) 99999-9999"
+													requiredMessage="#{text['aluno.telefone.validacao']}"></h:inputText>
+												<h:message for="telefoneEscola" styleClass="errorMessage" />
+											</div>
+										</div>
+										
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Matricula da Escola:</label>
+												<h:inputText id="matriculaEscola"
+													value="#{alunoIBean.aluno.matriculaEscola}" required="true"
+													class="form-control" a:placeholder="Digite a Matricula"
+													requiredMessage="#{text['aluno.validacao']}"></h:inputText>
+												<h:message for="matriculaEscola" styleClass="errorMessage" />
+											</div>
+										</div>
+										
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Nível de Escolaridade:</label>
+												<h:selectOneMenu class="form-control" id="nivelEscolaridade"
+													value="#{alunoIBean.aluno.nivelEscolaridade}">
+													<f:selectItem itemLabel="Selecione o Nível de Escolaridade" />
+													<f:selectItem itemLabel="Pré-Escola" itemValue="Pré-Escola" />
+													<f:selectItem itemLabel="Fundamental" itemValue="Fundamental" />
+													<f:selectItem itemLabel="Médio" itemValue="Médio" />
+													<f:selectItem itemLabel="Superior" itemValue="Superior" />
+												</h:selectOneMenu>
+												<h:message for="nivelEscolaridade" styleClass="errorMessage" />
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<div class="form-group">
+												<Label>Tipo Sanguíneo:</Label>
+												<h:selectOneMenu class="form-control" id="tipoSangue"
+													value="#{alunoIBean.aluno.tipoSangue}">
+													<f:selectItem itemLabel="Selecione o Tipo Sanguíneo" />
+													<f:selectItem itemLabel="A-" itemValue="A-" />
+													<f:selectItem itemLabel="A+" itemValue="A+" />
+													<f:selectItem itemLabel="B-" itemValue="B-" />
+													<f:selectItem itemLabel="B+" itemValue="B+" />
+													<f:selectItem itemLabel="O-" itemValue="O-" />
+													<f:selectItem itemLabel="O+" itemValue="O+" />
+													<f:selectItem itemLabel="AB-" itemValue="AB-" />
+													<f:selectItem itemLabel="AB+" itemValue="AB+" />
+												</h:selectOneMenu>
+											</div>
+										</div>
 
 										<div class="col-md-6">
 											<div class="form-group">
-												<label> #{text['animal.idade']}</label>
-												<h:inputText id="idade" value="#{animalBean.animal.idade}"
-													required="true" class="form-control"
-													requiredMessage="#{text['animal.idade.validacao']}"></h:inputText>
-												<h:message for="idade" styleClass="errorMessage" />
+												<label>Convênio Médico:</label>
+												<h:inputText id="descConvenio"
+													value="#{alunoIBean.aluno.descConvenio}" required="true"
+													class="form-control" a:placeholder="Descrição do Convenio"
+													requiredMessage="#{text['aluno.validacao']}"></h:inputText>
+												<h:message for="descConvenio" styleClass="errorMessage" />
 											</div>
 										</div>
+
+										<div class="col-md-4">
+											<div class="form-group checkbox-group">
+												<div class="checkbox">
+													<label>Possui Convênio Médico</label>
+													<h:selectBooleanCheckbox
+														value="#{alunoIBean.aluno.possuiConvenio}"
+														id="possuiConvenio" />
+												</div>
+											</div>
+										</div>
+
+
 									</div>
 									<div class="row">
+										<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
+										<hr />
+										<h4>Endereço</h4>
+
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>#{text['animal.cliente']}</label>
-												<h:selectOneMenu value="#{clienteBean.lista}"
-													class="form-control">
-													<f:selectItems value="#{clienteBean.lista}" var="c"
-														itemLabel="#{c.nome}" itemValue="#{c.nome}" />
-												</h:selectOneMenu>
-												<h:message for="cliente" styleClass="errorMessage" />
+												<label>Rua/Avenida:</label>
+												<h:inputText id="rua"
+													value="#{alunoIBean.aluno.endereco.rua}" required="true"
+													class="form-control"
+													a:placeholder="Digite o nome da rua ou avenida"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
+												<h:message for="rua" styleClass="errorMessage" />
 											</div>
 										</div>
 
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>#{text['animal.especie']}</label>
-												<h:selectOneMenu value="#{especieBean.lista}"
-													class="form-control">
-													<f:selectItems value="#{especieBean.lista}" var="c"
-														itemLabel="#{c.descricao}" itemValue="#{c.descricao}" />
-												</h:selectOneMenu>
-												<h:message for="especie" styleClass="errorMessage" />
+												<label>Número:</label>
+												<h:inputText id="numero"
+													value="#{alunoIBean.aluno.endereco.numero}" required="true"
+													class="form-control"
+													a:placeholder="Digite o número da casa"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
+												<h:message for="numero" styleClass="errorMessage" />
 											</div>
 										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Bairro:</label>
+												<h:inputText id="bairro"
+													value="#{alunoIBean.aluno.endereco.bairro}" required="true"
+													class="form-control"
+													a:placeholder="Digite o nome do bairro"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
+												<h:message for="bairro" styleClass="errorMessage" />
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>CEP:</label>
+												<h:inputText id="cep"
+													value="#{alunoIBean.aluno.endereco.cep}" required="true"
+													class="form-control" a:placeholder="99.999-999"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
+												<h:message for="cep" styleClass="errorMessage" />
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Cidade:</label>
+												<h:inputText id="cidade"
+													value="#{alunoIBean.aluno.endereco.cidade}" required="true"
+													class="form-control"
+													a:placeholder="Digite o nome da sua Cidade"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
+												<h:message for="cidade" styleClass="errorMessage" />
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Estado:</label>
+												<h:selectOneMenu class="form-control" id="estadoo">
+													<f:selectItem itemLabel="Selecione o Estado" />
+													<f:selectItem itemValue="AC" itemLabel="Acre" />
+													<f:selectItem itemValue="AL" itemLabel="Alagoas" />
+													<f:selectItem itemValue="AP" itemLabel="Amapá" />
+													<f:selectItem itemValue="AM" itemLabel="Amazonas" />
+													<f:selectItem itemValue="BA" itemLabel="Bahia" />
+													<f:selectItem itemValue="CE" itemLabel="Ceará" />
+													<f:selectItem itemValue="DF" itemLabel="Distrito Federal" />
+													<f:selectItem itemValue="ES" itemLabel="Espírito Santo" />
+													<f:selectItem itemValue="GO" itemLabel="Goiás" />
+													<f:selectItem itemValue="MA" itemLabel="Maranhão" />
+													<f:selectItem itemValue="MT" itemLabel="Mato Grosso" />
+													<f:selectItem itemValue="MS" itemLabel="Mato Grosso do Sul" />
+													<f:selectItem itemValue="MG" itemLabel="Minas Gerais" />
+													<f:selectItem itemValue="PA" itemLabel="Pará" />
+													<f:selectItem itemValue="PB" itemLabel="Paraíba" />
+													<f:selectItem itemValue="PR" itemLabel="Paraná" />
+													<f:selectItem itemValue="PE" itemLabel="Pernambuco" />
+													<f:selectItem itemValue="PI" itemLabel="Piauí" />
+													<f:selectItem itemValue="RJ" itemLabel="Rio de Janeiro" />
+													<f:selectItem itemValue="RN"
+														itemLabel="Rio Grande do Norte" />
+													<f:selectItem itemValue="RS" itemLabel="Rio Grande do Sul" />
+													<f:selectItem itemValue="RO" itemLabel="Rondônia" />
+													<f:selectItem itemValue="RR" itemLabel="Roraima" />
+													<f:selectItem itemValue="SC" itemLabel="Santa Catarina" />
+													<f:selectItem itemValue="SP" itemLabel="São Paulo" />
+													<f:selectItem itemValue="SE" itemLabel="Sergipe" />
+													<f:selectItem itemValue="TO" itemLabel="Tocantins" />
+												</h:selectOneMenu>
+												<h:message for="estado" styleClass="errorMessage" />
+											</div>
+										</div>
+
+
+
+
+
 									</div>
 
-									<br /> <br />
-									<br />
+									<br /> <br /> <br />
 
-									<h:commandButton class="btn btn-default btn-theme-orange" action="#{animalBean.inserir}"
-										value="#{text['aplicacao.login']}">
+									<h:commandButton class="btn btn-default btn-theme-orange"
+										action="#{alunoIBean.inserir}" value="Cadastrar">
 									</h:commandButton>
+									<!-- 
 									<hr />
-									<h:commandButton class="btn btn-default btn-theme-orange" action="#{animalBean.listar}"
+									<h:commandButton class="btn btn-default btn-theme-orange"
+										action="#{animalBean.listar}"
 										value="#{text['aplicacao.listar']}">
 									</h:commandButton>
-									
+									-->
 
 								</form>
 							</div>

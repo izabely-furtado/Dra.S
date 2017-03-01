@@ -108,6 +108,7 @@ public class AlunoPagoBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 		AlunoCrudJDBC objUsuarioCrudJDBC = new AlunoCrudJDBC();
+		this.aluno.setTipoAluno(Tipo.AlunoPago);
 		objUsuarioCrudJDBC.salvar(this.aluno);
 		// salva o usuário
 		return "sucesso";
