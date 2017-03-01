@@ -112,6 +112,40 @@
 												<h:message for="especie" styleClass="errorMessage" />
 											</div>
 										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+												<label style="align: left">Data de Nascimento:</label>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>Dia:</label>
+													<h:selectOneMenu class="form-control">
+														<f:selectItems value="#{alunoPBean.dias}" var="d"
+															itemLabel="#{d}" itemValue="#{d}" />
+													</h:selectOneMenu>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>Mês:</label>
+													<h:selectOneMenu class="form-control">
+														<f:selectItems value="#{alunoPBean.meses}" var="m"
+															itemLabel="#{m}" itemValue="#{m}" />
+													</h:selectOneMenu>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label>Ano:</label>
+													<h:selectOneMenu class="form-control">
+														<f:selectItems value="#{alunoPBean.anos}" var="a"
+															itemLabel="#{a}" itemValue="#{a}" />
+													</h:selectOneMenu>
+													<h:message for="nome" styleClass="errorMessage" />
+												</div>
+											</div>
+										</div>
+										
 									</div>
 
 									<br /> <br />

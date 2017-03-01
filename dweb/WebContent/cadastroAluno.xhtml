@@ -62,69 +62,206 @@
 						<h2>
 							Aluno <small>Pago</small>
 						</h2>
+						
 						<div class="row">
 							<div class="col-md-12">
 								<form id="content">
-
+									<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 									<div class="row">
+									<hr />
+									<h4>Dados Básicos</h4>
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>Nome:</label>
+												<h:inputText id="nome" value="#{alunoPBean.aluno.nome}"
+													required="true" class="form-control"
+													a:placeholder="Nome do Aluno"
+													requiredMessage="#{text['aluno.nome.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-group">
+												<label>Data de Nascimento:</label>
+												<h:inputText id="dataNasc"
+													value="#{alunoPBean.aluno.dataNasc}" required="true"
+													class="form-control" a:placeholder="_ _/_ _/_ _ _ _"
+													requiredMessage="#{text['aluno.dataNasc.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-group">
+												<label>Telefone:</label>
+												<h:inputText id="telefone"
+													value="#{alunoPBean.aluno.telefone}" required="true"
+													class="form-control" a:placeholder="(99) 99999-9999"
+													requiredMessage="#{text['aluno.telefone.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<Label>Tipo Sanguíneo:</Label>
+												<h:selectOneMenu class="form-control" id="tipoSangue">
+													<f:selectItem itemLabel="Selecione o Tipo Sanguíneo" />
+													<f:selectItem itemLabel="A-" itemValue="A-" />
+													<f:selectItem itemLabel="A+" itemValue="A+" />
+													<f:selectItem itemLabel="B-" itemValue="B-" />
+													<f:selectItem itemLabel="B+" itemValue="B+" />
+													<f:selectItem itemLabel="O-" itemValue="O-" />
+													<f:selectItem itemLabel="O+" itemValue="O+" />
+													<f:selectItem itemLabel="AB-" itemValue="AB-" />
+													<f:selectItem itemLabel="AB+" itemValue="AB+" />
+													<!-- f:selectItems value="#{controleEvento.selecionaGenero}" /-->
+												</h:selectOneMenu>
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<Label>Pacote de Aula:</Label>
+												<h:selectOneMenu value="#{clienteBean.lista}"
+													class="form-control">
+													<f:selectItems value="#{alunoPBean.lista}" var="c"
+														itemLabel="#{c}" itemValue="#{c}" />
+												</h:selectOneMenu>
+												<h:message for="cliente" styleClass="errorMessage" />
+
+											</div>
+										</div>
+
+										<div class="col-md-7">
+											<div class="form-group">
+												<label>Convênio Médico:</label>
+												<h:inputText id="convenio"
+													value="#{alunoPBean.aluno.descConvenio}" required="true"
+													class="form-control" a:placeholder="Nome do Animal"
+													requiredMessage="#{text['aluno..validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group checkbox-group">
+												<div class="checkbox">
+													<label>Possui Convênio Médico</label>
+													<h:selectBooleanCheckbox
+														value="#{alunoPBean.aluno.possuiConvenio}"
+														id="possuiConvenio" />
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-2">
+											<div class="form-group">
+												<label>Dia do Pagamento:</label>
+												<h:selectOneMenu class="form-control">
+													<f:selectItems value="#{alunoPBean.dias}" var="c"
+														itemLabel="#{c}" itemValue="#{c}" />
+												</h:selectOneMenu>
+												<h:message for="pagamento" styleClass="errorMessage" />
+											</div>
+										</div>
+									</div>
+									<div class="row">
+									<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
+										<hr />
+										<h4>Endereço</h4>
+										
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>Nome</label>
-												<h:inputText id="nome" value="#{animalBean.animal.nome}"
+												<label>Rua/Avenida:</label>
+												<h:inputText id="rua" value="#{alunoPBean.aluno.endereco.rua}"
 													required="true" class="form-control"
-													a:placeholder="Nome do Animal"
-													requiredMessage="#{text['animal.nome.validacao']}"></h:inputText>
+													a:placeholder="Digite o nome da rua ou avenida"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Número:</label>
+												<h:inputText id="numero" value="#{alunoPBean.aluno.endereco.numero}"
+													required="true" class="form-control"
+													a:placeholder="Digite o número da casa"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Bairro:</label>
+												<h:inputText id="bairro" value="#{alunoPBean.aluno.endereco.bairro}"
+													required="true" class="form-control"
+													a:placeholder="Digite o nome do bairro"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
 												<h:message for="nome" styleClass="errorMessage" />
 											</div>
 										</div>
 
 										<div class="col-md-6">
 											<div class="form-group">
-												<label> #{text['animal.idade']}</label>
-												<h:inputText id="idade" value="#{animalBean.animal.idade}"
+												<label>CEP:</label>
+												<h:inputText id="cep" value="#{alunoPBean.aluno.endereco.cep}"
 													required="true" class="form-control"
-													requiredMessage="#{text['animal.idade.validacao']}"></h:inputText>
-												<h:message for="idade" styleClass="errorMessage" />
+													a:placeholder="99.999-999"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
 											</div>
 										</div>
-									</div>
-									<div class="row">
+										
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>#{text['animal.cliente']}</label>
-												<h:selectOneMenu value="#{clienteBean.lista}"
-													class="form-control">
-													<f:selectItems value="#{clienteBean.lista}" var="c"
-														itemLabel="#{c.nome}" itemValue="#{c.nome}" />
-												</h:selectOneMenu>
-												<h:message for="cliente" styleClass="errorMessage" />
+												<label>Cidade:</label>
+												<h:inputText id="cidade" value="#{alunoPBean.aluno.endereco.cidade}"
+													required="true" class="form-control"
+													a:placeholder="Digite o nome da rua ou avenida"
+													requiredMessage="#{text['aluno.endereco.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
 											</div>
 										</div>
-
+										
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>#{text['animal.especie']}</label>
-												<h:selectOneMenu value="#{especieBean.lista}"
-													class="form-control">
-													<f:selectItems value="#{especieBean.lista}" var="c"
-														itemLabel="#{c.descricao}" itemValue="#{c.descricao}" />
+												<label>Estado:</label>
+												<h:selectOneMenu class="form-control" id="estadoo">
+													<f:selectItem itemLabel="Selecione o Estado" />
+													<f:selectItem itemLabel="AC" itemValue="AC" />
+													<f:selectItem itemLabel="AM" itemValue="AM" />
+													<f:selectItem itemLabel="AP" itemValue="AP" />
+													<f:selectItem itemLabel="PA" itemValue="PA" />
+													<f:selectItem itemLabel="RO" itemValue="RO" />
+													<f:selectItem itemLabel="RR" itemValue="RR" />
+													<f:selectItem itemLabel="TO" itemValue="TO" />
+													<f:selectItem itemLabel="AL" itemValue="AL" />
+													<!-- f:selectItems value="#{controleEvento.selecionaGenero}" /-->
 												</h:selectOneMenu>
-												<h:message for="especie" styleClass="errorMessage" />
+												<h:message for="nome" styleClass="errorMessage" />
 											</div>
 										</div>
+
+										
+
+
+										
 									</div>
 
-									<br /> <br />
-									<br />
+									<br /> <br /> <br />
 
-									<h:commandButton class="btn btn-default btn-theme-orange" action="#{animalBean.inserir}"
+									<h:commandButton class="btn btn-default btn-theme-orange"
+										action="#{animalBean.inserir}"
 										value="#{text['aplicacao.login']}">
 									</h:commandButton>
 									<hr />
-									<h:commandButton class="btn btn-default btn-theme-orange" action="#{animalBean.listar}"
+									<h:commandButton class="btn btn-default btn-theme-orange"
+										action="#{animalBean.listar}"
 										value="#{text['aplicacao.listar']}">
 									</h:commandButton>
-									
+
 
 								</form>
 							</div>

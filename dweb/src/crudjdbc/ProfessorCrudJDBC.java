@@ -23,7 +23,7 @@ public class ProfessorCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "insert into professor(dataNasc, descConvenio, codEndereco, nome, possuiConvenio, "
+		String sql = "insert into professor(dataNasc, descConvenio, idEndereco, nome, possuiConvenio, "
 				+ "							telefone, tipoSangue, hrDisponivelFim, hrDisponivelInicio) "
 				+ "				    values (?,?,?,?,?,?,?,?,?)";
 		try {
@@ -82,7 +82,7 @@ public class ProfessorCrudJDBC {
 				professor = new Professor();
 				professor.setDataNasc(resultado.getDate("dataNasc"));
 				professor.setDescConvenio(resultado.getString("descConvenio"));
-				professor.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco")));
+				professor.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
 				professor.setNome(resultado.getString("nome"));
 				professor.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
 				professor.setTelefone(resultado.getInt("telefone"));
@@ -157,7 +157,7 @@ public class ProfessorCrudJDBC {
 		// Objeto para executar o SQL update
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "update professor set dataNasc=?, descConvenio=?, codEndereco=?, nome=?, possuiConvenio=?, "
+		String sql = "update professor set dataNasc=?, descConvenio=?, idEndereco=?, nome=?, possuiConvenio=?, "
 				+ "					   telefone=?, tipoSangue=?, HrDisponivelFim=?, getHrDisponivelInicio=?";
 		try {
 			// recebe o SQL update

@@ -21,7 +21,7 @@ public class AlunoCrudJDBC {
 			// Objeto para executar o SQL insert
 			PreparedStatement insereSt = null;
 			// SQL de inserção
-			String sql = "insert into aluno(dataNasc, descConvenio, codEndereco, nome, "
+			String sql = "insert into aluno(dataNasc, descConvenio, idEndereco, nome, "
 					+ "						possuiConvenio, telefone, tipoSangue, nivelAluno, "
 					+ "						obs, tipoAluno, matriculaEscola, nivelEscolaridade, "
 					+ "						nomeResponsavel, telefoneEscola, diaDePagamento, tipoPacote) "
@@ -114,7 +114,7 @@ public class AlunoCrudJDBC {
 						AlunoInstituicao aluno = new AlunoInstituicao();
 						aluno.setDataNasc(resultado.getDate("dataNasc"));
 						aluno.setDescConvenio(resultado.getString("descConvenio"));
-						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco")));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
 						aluno.setNome(resultado.getString("nome"));
 						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
 						aluno.setTelefone(resultado.getInt("telefone"));
@@ -134,7 +134,7 @@ public class AlunoCrudJDBC {
 						AlunoPago aluno = new AlunoPago();
 						aluno.setDataNasc(resultado.getDate("dataNasc"));
 						aluno.setDescConvenio(resultado.getString("descConvenio"));
-						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco")));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
 						aluno.setNome(resultado.getString("nome"));
 						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
 						aluno.setTelefone(resultado.getInt("telefone"));
@@ -194,7 +194,7 @@ public class AlunoCrudJDBC {
 						AlunoPago aluno = new AlunoPago();
 						aluno.setDataNasc(resultado.getDate("dataNasc"));
 						aluno.setDescConvenio(resultado.getString("descConvenio"));
-						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco")));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
 						aluno.setNome(resultado.getString("nome"));
 						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
 						aluno.setTelefone(resultado.getInt("telefone"));
@@ -253,7 +253,7 @@ public class AlunoCrudJDBC {
 						AlunoInstituicao aluno = new AlunoInstituicao();
 						aluno.setDataNasc(resultado.getDate("dataNasc"));
 						aluno.setDescConvenio(resultado.getString("descConvenio"));
-						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("codEndereco")));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
 						aluno.setNome(resultado.getString("nome"));
 						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
 						aluno.setTelefone(resultado.getInt("telefone"));
@@ -333,7 +333,7 @@ public class AlunoCrudJDBC {
 			// Objeto para executar o SQL update
 			PreparedStatement insereSt = null;
 			// SQL de inserção
-			String sql = "update aluno set dataNasc=?, descConvenio=?, codEndereco=?, nome=?, "
+			String sql = "update aluno set dataNasc=?, descConvenio=?, idEndereco=?, nome=?, "
 					+ "					   possuiConvenio=?, telefone=?, tipoSangue=?, nivelAluno=?, "
 					+ "					   obs=?, tipoAluno=?, matriculaEscola=?, nivelEscolaridade=?, "
 					+ "					   nomeResponsavel=?, telefoneEscola=?, diaDePagamento=?, tipoPacote=?";
