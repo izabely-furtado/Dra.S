@@ -130,13 +130,13 @@ public class EnderecoCrudJDBC {
 				// recebe o SQL update
 				insereSt = conexao.prepareStatement(sql);
 				// recebe o parâmtros do SQL update
-				insereSt.setString(2, endereco.getBairro());
-				insereSt.setString(3, endereco.getCep());
-				insereSt.setString(4, endereco.getCidade());
-				insereSt.setString(5, endereco.getEstado());
-				insereSt.setString(6, endereco.getRua());
-				insereSt.setInt(7, endereco.getNumero());
-				insereSt.setInt(8, endereco.getId());
+				insereSt.setString(1, endereco.getBairro());
+				insereSt.setString(2, endereco.getCep());
+				insereSt.setString(3, endereco.getCidade());
+				insereSt.setString(4, endereco.getEstado());
+				insereSt.setString(5, endereco.getRua());
+				insereSt.setInt(6, endereco.getNumero());
+				insereSt.setInt(7, endereco.getId());
 				// executa SQL update
 				insereSt.executeUpdate();
 			} catch (SQLException e) {

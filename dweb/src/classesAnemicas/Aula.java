@@ -5,11 +5,25 @@ import java.util.Date;
 import java.util.List;
 
 public class Aula {
+	private int id;
 	private Date dataAula;
 	private Time horaAula;
 	private List<Aluno> presentes;
 	private String ensinado;
+	private boolean edita;
 	
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getEnsinado() {
 		return ensinado;
 	}

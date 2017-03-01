@@ -3,11 +3,31 @@ package classesAnemicas;
 import java.util.List;
 
 public class Turma {
+	private int id;
 	private List<Aluno> alunos;
 	private List<Professor> professores;
 	private int nível;
 	private List<Aula> aulas;
+	private boolean edita;
 	
+	public List<Aula> getAulas() {
+		return aulas;
+	}
+	public void setAulas(List<Aula> aulas) {
+		this.aulas = aulas;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public List<Aluno> getAlunos() {
 		return alunos;
 	}
@@ -25,12 +45,6 @@ public class Turma {
 	}
 	public void setNível(int nível) {
 		this.nível = nível;
-	}
-	public List<Aula> getPresentes() {
-		return aulas;
-	}
-	public void setPresentes(List<Aula> aulas) {
-		this.aulas = aulas;
 	}
 	
 }

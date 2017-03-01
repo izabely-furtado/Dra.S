@@ -7,21 +7,21 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import crudjdbc.*;
-import classesAnemicas.Turma;;
+import classesAnemicas.Aula;;
 
-@ManagedBean(name = "turmaBean")
+@ManagedBean(name = "aulaBean")
 @SessionScoped
-public class TurmaBean {
-	private List<Turma> lista;
-	private Turma turma = new Turma();
-	TurmaCrudJDBC objTurmaCrudJDBC = new TurmaCrudJDBC();
+public class AulaBean {
+	private List<Aula> lista;
+	private Aula aula = new Aula();
+	AulaCrudJDBC objAulaCrudJDBC = new AulaCrudJDBC();
 
-	public List<Turma> getLista() {
+	public List<Aula> getLista() {
 		return lista;
 	}
 
-	public Turma getTurma() {
-		return turma;
+	public Aula getAula() {
+		return aula;
 	}
 
 	public List<Integer> getDias() {
@@ -49,64 +49,64 @@ public class TurmaBean {
 		return lstAno;
 	}
 
-	public void setTurma(Turma turma) {
-		this.turma = turma;
+	public void setAula(Aula aula) {
+		this.aula = aula;
 	}
 
-	public void setLista(List<Turma> lista) {
+	public void setLista(List<Aula> lista) {
 		this.lista = lista;
 	}
 
 	public String novo() {
-		turma.setId(-1);
-		turma.setAlunos(null);
-		turma.setProfessores(null);
-		turma.setAulas(null);
-		turma.setNível(0);
-		turma.setEdita(false);
-		return "turma";
+		aula.setId(-1);
+		aula.setDataAula(null);
+		aula.setEnsinado(null);
+		aula.setHoraAula(null);
+		aula.setPresentes(null);
+		aula.setEdita(false);
+		return "aula";
 	}
 
-	public String excluirRegistro(Turma u) {
-		TurmaCrudJDBC objUsuarioCrudJDBC = new TurmaCrudJDBC();
+	public String excluirRegistro(Aula u) {
+		AulaCrudJDBC objUsuarioCrudJDBC = new AulaCrudJDBC();
 		objUsuarioCrudJDBC.excluir(u);
 		// salva o usuário
-		return u.getNível()+"";
+		return u.getDataAula() + "";
 	}
 
-	public String alterarRegistro(Turma u) {
+	public String alterarRegistro(Aula u) {
 		u.setEdita(true);
 		return null;
 	}
 
 	public String salvarRegistro() {
-		for (Turma usu : lista) {
+		for (Aula usu : lista) {
 			if (usu.isEdita()) {
-				TurmaCrudJDBC objTurmaCrudJDBC = new TurmaCrudJDBC();
-				objTurmaCrudJDBC.alterar(usu);
+				AulaCrudJDBC objAulaCrudJDBC = new AulaCrudJDBC();
+				objAulaCrudJDBC.alterar(usu);
 			}
 			usu.setEdita(false);
 		}
-		lista = objTurmaCrudJDBC.listar();
+		lista = objAulaCrudJDBC.listar();
 		return null;
 	}
 
 	public String inserir() {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if
-		 * (!this.turma.getSenha().equalsIgnoreCase(this.turma.
+		 * (!this.aula.getSenha().equalsIgnoreCase(this.aula.
 		 * getConfirmaSenha())) { context.addMessage(null, new
 		 * FacesMessage(FacesMessage.SEVERITY_ERROR,
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
-		TurmaCrudJDBC objUsuarioCrudJDBC = new TurmaCrudJDBC();
-		objUsuarioCrudJDBC.salvar(this.turma);
+		AulaCrudJDBC objUsuarioCrudJDBC = new AulaCrudJDBC();
+		objUsuarioCrudJDBC.salvar(this.aula);
 		// salva o usuário
 		return "sucesso";
 	}
 
 	public String verLista() {
-		TurmaCrudJDBC objUsuarioCrudJDBC = new TurmaCrudJDBC();
+		AulaCrudJDBC objUsuarioCrudJDBC = new AulaCrudJDBC();
 		lista = objUsuarioCrudJDBC.listar();
 		return "listagem";
 	}
