@@ -15,35 +15,35 @@ import conexao.ConectaPostgreSQL;
 public class TurmaCrudJDBC {
 
 	/*
-	 * Objetivo: Método que salva um professor no banco de dados
+	 * Objetivo: Método que salva um turma no banco de dados
 	 */
-	public void salvar(Professor professor) {
+	public void salvar(Turma turma) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "insert into professor(dataNasc, descConvenio, idEndereco, nome, possuiConvenio, "
+		String sql = "insert into turma(dataNasc, descConvenio, idEndereco, nome, possuiConvenio, "
 				+ "							telefone, tipoSangue, hrDisponivelFim, hrDisponivelInicio) "
 				+ "				    values (?,?,?,?,?,?,?,?,?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
-			insereSt.setDate(1, (Date) professor.getDataNasc());
-			insereSt.setString(2, professor.getDescConvenio());
-			insereSt.setInt(3, professor.getEndereco().getId());
-			insereSt.setString(4, professor.getNome());
-			insereSt.setBoolean(5, professor.isPossuiConvenio());
-			insereSt.setInt(6, professor.getTelefone());
-			insereSt.setString(7, professor.getTipoSangue());
-			insereSt.setTime(8, professor.getHrDisponivelFim());
-			insereSt.setTime(9, professor.getHrDisponivelInicio());
+			insereSt.setDate(1, (Date) turma.getDataNasc());
+			insereSt.setString(2, turma.getDescConvenio());
+			insereSt.setInt(3, turma.getEndereco().getId());
+			insereSt.setString(4, turma.getNome());
+			insereSt.setBoolean(5, turma.isPossuiConvenio());
+			insereSt.setInt(6, turma.getTelefone());
+			insereSt.setString(7, turma.getTipoSangue());
+			insereSt.setTime(8, turma.getHrDisponivelFim());
+			insereSt.setTime(9, turma.getHrDisponivelInicio());
 
 			// executa SQL insert
 			insereSt.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao incluir professor. mensagem:" + e);
+			throw new RuntimeException("Erro ao incluir turma. mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco
@@ -56,46 +56,46 @@ public class TurmaCrudJDBC {
 	}
 
 	/*
-	 * Objetivo: Método que lista todos os professors do banco de dados
+	 * Objetivo: Método que lista todos os turmas do banco de dados
 	 */
-	public List<Professor> listar() {
+	public List<Turma> listar() {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
-		// variavel lista de professors
-		List<Professor> professors = new ArrayList<Professor>();
+		// variavel lista de turmas
+		List<Turma> turmas = new ArrayList<Turma>();
 		// executa o SQL no banco de dados
 		Statement consulta = null;
 		// contém os dados consultado da tabela
 		ResultSet resultado = null;
-		// objeto professor
-		Professor professor = null;
+		// objeto turma
+		Turma turma = null;
 		// consulta SQL
-		String sql = "select distinct * from professor";
+		String sql = "select distinct * from turma";
 		try {
 			// consulta => objeto que executa o SQL no banco de dados
 			consulta = conexao.createStatement();
 			// resultado => objeto que contém os dados consultado da tabela
-			// Professor
+			// Turma
 			resultado = consulta.executeQuery(sql);
-			// Lê cada professor
+			// Lê cada turma
 			while (resultado.next()) {
-				professor = new Professor();
-				professor.setDataNasc(resultado.getDate("dataNasc"));
-				professor.setDescConvenio(resultado.getString("descConvenio"));
-				professor.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
-				professor.setNome(resultado.getString("nome"));
-				professor.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
-				professor.setTelefone(resultado.getInt("telefone"));
-				professor.setTipoSangue(resultado.getString("tipoSangue"));
-				professor.setHrDisponivelFim(resultado.getTime("hrDisponivelFim"));
-				professor.setHrDisponivelInicio(resultado.getTime("hrDisponivelInicio"));
+				turma = new Turma();
+				turma.setDataNasc(resultado.getDate("dataNasc"));
+				turma.setDescConvenio(resultado.getString("descConvenio"));
+				turma.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
+				turma.setNome(resultado.getString("nome"));
+				turma.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
+				turma.setTelefone(resultado.getInt("telefone"));
+				turma.setTipoSangue(resultado.getString("tipoSangue"));
+				turma.setHrDisponivelFim(resultado.getTime("hrDisponivelFim"));
+				turma.setHrDisponivelInicio(resultado.getTime("hrDisponivelInicio"));
 
-				// insere o professor na lista
-				professors.add(professor);
+				// insere o turma na lista
+				turmas.add(turma);
 
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao buscar um professor: " + e);
+			throw new RuntimeException("Erro ao buscar um turma: " + e);
 		} finally {
 			try {
 				consulta.close();
@@ -105,39 +105,39 @@ public class TurmaCrudJDBC {
 				throw new RuntimeException("Erro ao fechar a conexao " + e);
 			}
 		}
-		// retorna lista de professors
-		return professors;
+		// retorna lista de turmas
+		return turmas;
 	}
 
 	/*
-	 * Objetivo: Método que salva um professor no banco de dados
+	 * Objetivo: Método que salva um turma no banco de dados
 	 */
-	public void excluir(Professor professor) {
+	public void excluir(Turma turma) {
 		// abre a conexao com o banco de dados PostGresql
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL delete
 		PreparedStatement excluiPSt = null;
 		PreparedStatement excluiSt = null;
-		// SQL de exclusão do professor
-		String sql = "delete from professor where id=?";
-		// SQL de exclusão do professor
+		// SQL de exclusão do turma
+		String sql = "delete from turma where id=?";
+		// SQL de exclusão do turma
 		String presql = "delete from endereco where id=?";
 		try {
 			// recebe o SQL delete para endereço
 			excluiPSt = conexao.prepareStatement(presql);
 			// recebe o parâmtros do SQL insert
-			excluiPSt.setInt(1, professor.getEndereco().getId());
+			excluiPSt.setInt(1, turma.getEndereco().getId());
 			// executa SQL delete
 			excluiPSt.executeUpdate();
 
-			// recebe o SQL delete para professor
+			// recebe o SQL delete para turma
 			excluiSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
-			excluiSt.setInt(1, professor.getId());
+			excluiSt.setInt(1, turma.getId());
 			// executa SQL delete
 			excluiSt.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao excluir professor.mensagem:" + e);
+			throw new RuntimeException("Erro ao excluir turma.mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco
@@ -150,32 +150,32 @@ public class TurmaCrudJDBC {
 		}
 	}
 
-	public void alterar(Professor professor) {
+	public void alterar(Turma turma) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL update
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "update professor set dataNasc=?, descConvenio=?, idEndereco=?, nome=?, possuiConvenio=?, "
+		String sql = "update turma set dataNasc=?, descConvenio=?, idEndereco=?, nome=?, possuiConvenio=?, "
 				+ "					   telefone=?, tipoSangue=?, HrDisponivelFim=?, getHrDisponivelInicio=?";
 		try {
 			// recebe o SQL update
 			insereSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL update
-			insereSt.setDate(1, (Date) professor.getDataNasc());
-			insereSt.setString(2, professor.getDescConvenio());
-			insereSt.setInt(3, professor.getEndereco().getId());
-			insereSt.setString(4, professor.getNome());
-			insereSt.setBoolean(5, professor.isPossuiConvenio());
-			insereSt.setInt(6, professor.getTelefone());
-			insereSt.setString(7, professor.getTipoSangue());
-			insereSt.setTime(8, professor.getHrDisponivelFim());
-			insereSt.setTime(9, professor.getHrDisponivelInicio());
+			insereSt.setDate(1, (Date) turma.getDataNasc());
+			insereSt.setString(2, turma.getDescConvenio());
+			insereSt.setInt(3, turma.getEndereco().getId());
+			insereSt.setString(4, turma.getNome());
+			insereSt.setBoolean(5, turma.isPossuiConvenio());
+			insereSt.setInt(6, turma.getTelefone());
+			insereSt.setString(7, turma.getTipoSangue());
+			insereSt.setTime(8, turma.getHrDisponivelFim());
+			insereSt.setTime(9, turma.getHrDisponivelInicio());
 
 			// executa SQL update
 			insereSt.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao alterar professor.mensagem:" + e);
+			throw new RuntimeException("Erro ao alterar turma.mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco

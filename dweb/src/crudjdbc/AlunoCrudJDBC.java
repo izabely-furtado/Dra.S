@@ -85,6 +85,82 @@ public class AlunoCrudJDBC {
 			}
 		}
 
+		/*
+		 * Objetivo: Método que lista todos os alunos do banco de dados
+		 */
+		public Aluno getAluno(int idAluno) {
+			// abre conexao com o banco de dados
+			Connection conexao = ConectaPostgreSQL.geraConexao();
+			// executa o SQL no banco de dados
+			Statement consulta = null;
+			// contém os dados consultado da tabela
+			ResultSet resultado = null;
+			// objeto aluno
+			Aluno alunoo = null;
+			// consulta SQL
+			String sql = "select distinct * from aluno where id=" + idAluno;
+			try {
+				// consulta => objeto que executa o SQL no banco de dados
+				consulta = conexao.createStatement();
+				// resultado => objeto que contém os dados consultado da tabela
+				// Aluno
+				resultado = consulta.executeQuery(sql);
+				// Lê cada aluno
+				while (resultado.next()) {
+					if (resultado.getInt("tipoAluno")==Integer.parseInt(Tipo.AlunoInstitucional + "")){
+						AlunoInstituicao aluno = new AlunoInstituicao();
+						aluno.setDataNasc(resultado.getDate("dataNasc"));
+						aluno.setDescConvenio(resultado.getString("descConvenio"));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
+						aluno.setNome(resultado.getString("nome"));
+						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
+						aluno.setTelefone(resultado.getInt("telefone"));
+						aluno.setTipoSangue(resultado.getString("tipoSangue"));
+						aluno.setNivelAluno(resultado.getInt("nivelAluno"));
+						aluno.setObs(resultado.getString("obs"));
+						Integer.parseInt(Tipo.AlunoInstitucional + "");
+						aluno.setMatriculaEscola(resultado.getString("matriculaEscola"));
+						aluno.setNivelEscolaridade(resultado.getInt("nivelEscolaridade"));
+						aluno.setNomeResponsavel(resultado.getString("nomeResponsavel"));
+						aluno.setTelefoneEscola(resultado.getString("telefoneEscola"));
+						// insere o aluno na lista
+						return aluno;
+						
+					}
+					else if (resultado.getInt("tipoAluno")==Integer.parseInt(Tipo.AlunoPago + "")){
+						AlunoPago aluno = new AlunoPago();
+						aluno.setDataNasc(resultado.getDate("dataNasc"));
+						aluno.setDescConvenio(resultado.getString("descConvenio"));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
+						aluno.setNome(resultado.getString("nome"));
+						aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
+						aluno.setTelefone(resultado.getInt("telefone"));
+						aluno.setTipoSangue(resultado.getString("tipoSangue"));
+						aluno.setNivelAluno(resultado.getInt("nivelAluno"));
+						aluno.setObs(resultado.getString("obs"));
+						Integer.parseInt(Tipo.AlunoInstitucional + "");
+						aluno.setDiaDePagamento(resultado.getInt("diaDePagamento"));
+						aluno.setPacote(resultado.getInt("tipoPacote"));
+						// insere o aluno na lista
+						return aluno;
+						
+					}
+
+				}
+			} catch (SQLException e) {
+				throw new RuntimeException("Erro ao buscar um aluno: " + e);
+			} finally {
+				try {
+					consulta.close();
+					resultado.close();
+					conexao.close();
+				} catch (Throwable e) {
+					throw new RuntimeException("Erro ao fechar a conexao " + e);
+				}
+			}
+			// retorna lista de alunos
+			return alunoo;
+		}
 
 		/*
 		 * Objetivo: Método que lista todos os alunos do banco de dados

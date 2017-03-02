@@ -32,6 +32,7 @@ public class AulaCrudJDBC {
 			insereSt.setTime(3, aula.getHoraAula());
 			// executa SQL insert
 			insereSt.executeUpdate();
+			
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao incluir usuario. mensagem:" + e);
 		} finally {
@@ -44,6 +45,8 @@ public class AulaCrudJDBC {
 			}
 		}
 	}
+	
+	
 
 	public static Aula getAula(Integer id) {
 		Aula aula = new Aula();

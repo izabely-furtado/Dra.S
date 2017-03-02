@@ -41,7 +41,6 @@ public class ProfessorBean {
 		professor.setTipoSangue(null);
 		professor.setHrDisponivelFim(null);
 		professor.setHrDisponivelInicio(null);
-		professor.setTurmas(null);
 		professor.setEdita(false);
 		return "professor";
 	}
