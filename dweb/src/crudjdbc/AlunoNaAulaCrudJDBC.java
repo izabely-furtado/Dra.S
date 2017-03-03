@@ -22,7 +22,7 @@ public class AlunoNaAulaCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "insert into alunoNaAula(idAula, idAluno) " + "				    values (?,?)";
+		String sql = "insert into alunoNaAula(idAula, idAluno) " + "values (?,?)";
 		try {
 			for (Aluno a : alunoNaAula.getAlunos()) {
 				// recebe o SQL insert
@@ -146,6 +146,7 @@ public class AlunoNaAulaCrudJDBC {
 		// variavel lista de alunos
 		List<AlunoNaAula> alunosNaAula = new ArrayList<AlunoNaAula>();
 		AlunoNaAula alunoNaAula = new AlunoNaAula();
+		List<Aluno> alunos = new ArrayList<Aluno>();
 		// executa o SQL no banco de dados
 		Statement consulta = null;
 		// contém os dados consultado da tabela
@@ -164,26 +165,11 @@ public class AlunoNaAulaCrudJDBC {
 			alunoNaAula.setAula(aula);
 			while (resultado.next()) {
 				AlunoCrudJDBC alunoCrud = new AlunoCrudJDBC();
-				alunoCrud.getAluno(resultado.getInt("idAluno"));
-				alunoNaAula.setAlunos(alunos);
-				
-				alunoNaAula.setDescConvenio(resultado.getString("descConvenio"));
-				alunosNasAulas.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
-				aluno.setNome(resultado.getString("nome"));
-				aluno.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
-				aluno.setTelefone(resultado.getInt("telefone"));
-				aluno.setTipoSangue(resultado.getString("tipoSangue"));
-				aluno.setNivelAluno(resultado.getInt("nivelAluno"));
-				aluno.setObs(resultado.getString("obs"));
-				Integer.parseInt(Tipo.AlunoInstitucional + "");
-				aluno.setMatriculaEscola(resultado.getString("matriculaEscola"));
-				aluno.setNivelEscolaridade(resultado.getInt("nivelEscolaridade"));
-				aluno.setNomeResponsavel(resultado.getString("nomeResponsavel"));
-				aluno.setTelefoneEscola(resultado.getString("telefoneEscola"));
-				// insere o aluno na lista
+				Aluno aluno = alunoCrud.getAluno(resultado.getInt("idAluno"));
 				alunos.add(aluno);
-
+				
 			}
+			alunoNaAula.setAlunos(alunos);
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao buscar um aluno: " + e);
 		} finally {

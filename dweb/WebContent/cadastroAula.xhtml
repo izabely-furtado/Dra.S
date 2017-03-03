@@ -126,9 +126,8 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<label>Hora da Aula:</label>
-												<h:inputText id="nome"
-													value="#{aulaBean.aula.horaAula}" required="true"
-													class="form-control" a:placeholder="99:99"
+												<h:inputText id="nome" value="#{aulaBean.aula.horaAula}"
+													required="true" class="form-control" a:placeholder="99:99"
 													requiredMessage="#{text['aula.validacao']}"></h:inputText>
 												<h:message for="nome" styleClass="errorMessage" />
 											</div>
@@ -137,31 +136,49 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Data da Aula:</label>
-												<h:inputText id="dataNasc"
-													value="#{aulaBean.aula.dataAula}" required="true"
-													class="form-control" a:placeholder="_ _/_ _/_ _ _ _"
+												<h:inputText id="dataNasc" value="#{aulaBean.aula.dataAula}"
+													required="true" class="form-control"
+													a:placeholder="_ _/_ _/_ _ _ _"
 													requiredMessage="#{text['aula.validacao']}"></h:inputText>
 												<h:message for="nome" styleClass="errorMessage" />
 											</div>
 										</div>
 
-										
-											<div class="col-md-12">
-												<div class="form-group">
-													<label>O que foi Ensinado</label>
-													<h:inputTextarea id="ensinado" class="form-control" rows="3" value="#{aulaBean.aula.ensinado}"
-														a:placeholder="Digite o que foi ensinado nesta aula"></h:inputTextarea>
-												</div>
+
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>O que foi Ensinado</label>
+												<h:inputTextarea id="ensinado" class="form-control" rows="3"
+													value="#{aulaBean.aula.ensinado}"
+													a:placeholder="Digite o que foi ensinado nesta aula"></h:inputTextarea>
 											</div>
-										
-										<div class="col-md-6">
+										</div>
+
+										<div class="col-md-12">
 											<div class="form-group">
 												<label>Alunos Presentes</label>
-												<h:selectOneMenu value="#{alunoIBean.lista}"
-													class="form-control">
-													<f:selectItems value="#{alunoIBean.lista}" var="c"
-														itemLabel="#{c.nome}" itemValue="#{c.nome}" />
-												</h:selectOneMenu>
+												<div class="table table-responsive">
+													<h:dataTable class="table table-striped"
+														value="#{turmaBean.lista()}" var="aluno" rules="rows"
+														cellpadding="5">
+
+														<h:column>
+															<f:facet name="header">Código</f:facet>#{alunoBean.aluno.id}
+														</h:column>
+														<h:column>
+															<f:facet name="header">Nome</f:facet>
+															<h:inputText value="#{alunoBean.aluno.nome}" size="20"
+																rendered="#{aluno.edita}" />
+															<h:outputText value="#{aluno.nome}"
+																rendered="#{not aluno.edita}" />
+														</h:column>
+														<h:column>
+															<f:facet name="header">Presente</f:facet>
+															<input id="presente" type="checkbox" value="" />
+														</h:column>
+														
+													</h:dataTable>
+												</div>
 												<h:message for="alunos" styleClass="errorMessage" />
 											</div>
 										</div>
@@ -172,9 +189,9 @@
 									<br /> <br /> <br />
 
 									<h:commandButton class="btn btn-default btn-theme-orange"
-										action="#{aulaBean.inserir}" value="Cadastrar">
+										action="#{alunoNaAulaBean.inserir}" value="Cadastrar">
 									</h:commandButton>
-									
+
 
 								</form>
 							</div>

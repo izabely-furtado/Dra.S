@@ -66,7 +66,6 @@ public class AlunoNaAulaBean {
 			}
 			usu.setEdita(false);
 		}
-		lista = objAlunoNaAulaCrudJDBC.listar();
 		return null;
 	}
 
@@ -84,9 +83,9 @@ public class AlunoNaAulaBean {
 		return "sucesso";
 	}
 
-	public String verLista() {
+	public String verLista(Aula aula) {
 		AlunoNaAulaCrudJDBC objUsuarioCrudJDBC = new AlunoNaAulaCrudJDBC();
-		lista = objUsuarioCrudJDBC.listar();
+		lista = objUsuarioCrudJDBC.listar(aula);
 		return "listagem";
 	}
 }
