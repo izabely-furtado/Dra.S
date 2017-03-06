@@ -20,7 +20,7 @@ before_script:
  - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 script:
-  - cd dweb/
+  - cd DRAS/
   - mvn clean install sonar:sonar
 
   
