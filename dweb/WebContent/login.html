@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SISMoulin</title>
+<style type="text/css">
+body, html {
+	margin: 0;
+	height: 100%;
+	font-size: 14px;
+	font-family: sans-serif;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 20px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.row {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.form-group {
+	margin-bottom: 8px;
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3,
+	.col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
+	.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3,
+	.col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9,
+	.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3,
+	.col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+	.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3,
+	.col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	position: relative;
+	min-height: 0px;
+	padding-right: 45px;
+	padding-left: 15px;
+}
+
+.bg {
+	background-color: #f2f2f2;
+	width: 100%;
+	height: 100%;
+}
+
+.email {
+	max-width: 600px;
+	margin: 0 auto;
+	border-radius: 20px 0;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+	text-transform: uppercase;
+	background-color: #0da6b5;
+	color: #fff;
+	text-decoration: none !important;
+}
+.table{
+	cellpadding: 0;
+	cellspacing: 0;
+	width: 100%;
+}
+.bg .email .tabelacentro {
+	align: center;
+	cellpadding: 0;
+	cellspacing: 0;
+	width: 100%;
+	background-color: #FFFFFF;
+	align-items: center;
+	padding: 0% 5% 0% 5%;
+}
+
+h2 font {
+	face: arial;
+	size: +2;
+	color: #0da6b5;
+}
+
+.botao {
+	align-items: center;
+	text-align: center;
+	width: 200px;
+	height: 60px;
+	background-color: #0da6b5
+}
+
+table tr td a font {
+	face: arial;
+	size: 2;
+	color: #ffffff;
+}
+</style>
+</head>
+<body>
+	<div class="bg">
+		<br /> <br />
+		<div class="email">
+			<!-- Header -->
+			<table cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td width="45" height="171" bgcolor="#000"></td>
+					<td height="171" bgcolor="0000"><a
+						href="http://www.bandes.com.br" target="_blank"><img
+							src="./assets/img/download2.png" border="0"
+							style="display: block;" /></a></td>
+					<td width="37" height="171" bgcolor="#0000"></td>
+				</tr>
+			</table>
+			<table class="tabelacentro">
+				<tr>
+					<td>
+						<!-- Conteúdo --> <br />
+						<h2>
+							<font> Faça seu login no sistema </font>
+						</h2>
+						<form id="formAluno" method="post">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Nome:</label> <input type="text" id="nome"
+											required="required" class="form-control"
+											placeholder="Digite o Aluno" />
+
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Senha:</label> <input type="password" id="senha"
+											required="required" placeholder="Digite a Senha"
+											class="form-control" />
+									</div>
+								</div>
+							</div>
+						</form> <br />
+						<table width="150">
+							<tr>
+								<td class="botao"><a href="#" class="link"><font>
+											<b>Entrar</b>
+									</font></a></td>
+							</tr>
+						</table>
+				<br />
+				<br />
+
+				</td>
+				</tr>
+			</table>
+
+
+
+			<!-- Footer -->
+			<table cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td width="44" height="95" bgcolor="#000"></td>
+					<td colspan="2" height="95" bgcolor="#0000"><font face="arial"
+						size="2" color="#ffffff"> Av. Nossa Sra. dos Navegantes,
+							2001 - Das Laranjeiras, Serra - ES <br /> Telefone: (27)
+							3052-3076
+					</font></td>
+				</tr>
+			</table>
+
+			</td>
+			</tr>
+			</table>
+
+		</div>
+
+	</div>
+</body>
+</html>
