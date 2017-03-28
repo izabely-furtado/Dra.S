@@ -151,46 +151,47 @@
 								<h4>Condições de Moradia</h4>
 								<div class="col-md-12">
 									<div class="form-group">
-										<Label>Condições:</Label> <select class="form-control"
-											id="tipo">
+										<Label>Condições:</Label> 
+										<select class="form-control"
+											id="condicao">
 											<option label="Selecione a Condição de Moradia" />
-											<option value="1" label="Própria" />
-											<option value="2" label="Alugada" />
-											<option value="3" label="Cedida" />
-											<option value="4" label="Outros" />
+											<option value="propria" label="Própria" />
+											<option value="alugada" label="Alugada" />
+											<option value="cedida" label="Cedida" />
+											<option value="outros" label="Outros" />
 										</select>
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 								<Label>Infraestrutura:</Label><br />
-								<input type="checkbox" name="vehicle" value="Bike">Possui Água<br>
-								<input type="checkbox" name="vehicle" value="Car" >Possui Rede de Esgoto<br>
-								<input type="checkbox" name="vehicle" value="Bike">Possui Energia Elétrica<br>
-								<input type="checkbox" name="vehicle" value="Bike">Possui Coleta de Lixo<br>
+								<input type="checkbox" name="infra" value="pagua">Possui Água<br>
+								<input type="checkbox" name="infra" value="pesgoto" >Possui Rede de Esgoto<br>
+								<input type="checkbox" name="infra" value="penergia">Possui Energia Elétrica<br>
+								<input type="checkbox" name="infra" value="plixo">Possui Coleta de Lixo<br>
 								</div>
 								</div>
 								<div class="col-md-5">
 									<div class="form-group radio-group">
 										<label>Risco Habitacional:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="sexo" value="F" /> <label
+											Não </label> <input type="radio" name="risco" value="N" /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
-											name="sexo" value="M" />
+											name="risco" value="S" />
 
 									</div>
 								</div>
 
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Qual?:</label> <input type="text" id="escola"
-											class="form-control" placeholder="Nome da escola" />
+										<label>Qual?:</label> <input type="text" id="qrisco"
+											class="form-control" placeholder="Qual o Risco Habitacional" />
 									</div>
 								</div>
 
 							</form>
 						</div>
 						<button class="btn btn-default btn-theme-orange"
-							action="#{alunoPBean.inserir}">Cadastrar</button>
+							action="#{alunoPBean.inserir}">Próximo</button>
 
 					</div>
 				</div>

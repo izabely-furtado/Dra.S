@@ -65,6 +65,9 @@
 				+ "<li class='list-group-item'><a href='#'>Balanço</a></li>"
 				+ "</ul>";
 	}
+	$(document).ready(function() {
+		$('#telefone').mask('(00) 0000-0000');
+	});
 </SCRIPT>
 <body>
 	<!-- 
@@ -123,8 +126,8 @@
 					<div class="content-page">
 						<!-- Conteúdo de Páginas -->
 						<h2>
-							Formulário de Acompanhamento Psicosocial<br />
-							<small>Parte 1 de 6</small>
+							Formulário de Acompanhamento Psicosocial<br /> <small>Parte
+								1 de 6</small>
 						</h2>
 						<!-- 
 						<div class="alert alert-success">
@@ -163,7 +166,8 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Ano de Inserção:</label> <input type="number" id="ano"
-											required="required" class="form-control" placeholder="Ano" />
+											min="2000" required="required" class="form-control"
+											placeholder="Ano" />
 									</div>
 								</div>
 								<div class="col-md-12">
@@ -171,10 +175,10 @@
 										<Label>Forma de Acesso:</Label> <select class="form-control"
 											id="forma">
 											<option label="Selecione o Forma de Acesso" />
-											<option value="1" label="Encaminhamento pela Rede CRAS" />
-											<option value="2" label="Encaminhamento pela Rede CREAS" />
-											<option value="3" label="Demanda Espontânea" />
-											<option value="4" label="Outra Forma" />
+											<option value="cras" label="Encaminhamento pela Rede CRAS" />
+											<option value="creas" label="Encaminhamento pela Rede CREAS" />
+											<option value="de" label="Demanda Espontânea" />
+											<option value="outra" label="Outra Forma" />
 										</select>
 									</div>
 								</div>
@@ -205,14 +209,14 @@
 								</div>
 								<div class="col-md-12">
 									<div class="form-group">
-										<label>Responsável:</label> <input type="text" id="nome"
-											required="required" class="form-control"
+										<label>Responsável:</label> <input type="text"
+											id="responsavel" required="required" class="form-control"
 											placeholder="Responsável pelo Aluno" />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label>Parentesco:</label> <input type="text" id="nome"
+										<label>Parentesco:</label> <input type="text" id="parentesco"
 											required="required" class="form-control"
 											placeholder="Parentesco com o Aluno" />
 									</div>
@@ -220,24 +224,19 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Contato:</label> <input type="text" id="telefone"
-											required class="form-control" placeholder="(99) 99999-9999"
-											pattern="(\d{2}) \d{5}-?\d{4}" />
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>NIS da criança/adolescente:</label> <input type="text"
-											id="nome" required="required" class="form-control"
-											placeholder="Parentesco com o Aluno" />
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>CEP da criança/adolescente:</label> <input type="text"
-											id="telefone" required class="form-control"
+											name="telefone" data-mask="(00) 0000-0000"
+											data-mask-selectonfocus="true" required class="form-control"
 											placeholder="(99) 99999-9999" pattern="(\d{2}) \d{5}-?\d{4}" />
 									</div>
 								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>NIS da criança/adolescente:</label> <input type="text"
+											id="nis" required="required" class="form-control"
+											placeholder="Parentesco com o Aluno" />
+									</div>
+								</div>
+
 								<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
 								<h4>Endereço</h4>
@@ -250,14 +249,21 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-2">
 									<div class="form-group">
 										<label>Número:</label> <input type="number" name="quantity"
 											min="1" id="numero" required="required" class="form-control"
 											placeholder="Digite o número da casa" />
 									</div>
 								</div>
-
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>CEP da criança/adolescente:</label> <input type="text"
+											id="cep" required class="form-control"
+											placeholder="999.999.999-99"
+											pattern="\d{3}.\d{3}.\d{3}-?\d{2}" />
+									</div>
+								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Bairro:</label> <input type="text" id="bairro"
@@ -313,7 +319,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Ponto de Referência:</label> <input type="text"
-											id="cep" class="form-control"
+											id="referencia" class="form-control"
 											placeholder="Ponto de referência" />
 									</div>
 								</div>
@@ -326,8 +332,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label>Anos:</Label>
-										<select class="form-control" id="tipo">
+										<Label>Anos:</Label> <select class="form-control" id="ano1">
 											<option label="Ano 1" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -338,7 +343,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="ano2">
 											<option label="Ano 2" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -349,7 +354,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="ano3">
 											<option label="Ano 3" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -360,7 +365,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="ano4">
 											<option label="Ano 4" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -371,7 +376,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="ano5">
 											<option label="Ano 5" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -382,7 +387,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="ano6">
 											<option label="Ano 6" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -394,7 +399,7 @@
 								<div class="col-md-2">
 									<div class="form-group">
 										<Label>Série nos Anos:</Label> <select class="form-control"
-											id="tipo">
+											id="serie1">
 											<option label="Série 1" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -405,7 +410,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="serie2">
 											<option label="Série 2" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -416,7 +421,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="serie3">
 											<option label="Série 3" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -427,7 +432,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="serie4">
 											<option label="Série 4" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -438,7 +443,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="serie5">
 											<option label="Série 5" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -449,7 +454,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="tipo">
+										<Label><br /></Label> <select class="form-control" id="serie6">
 											<option label="Série 6" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -464,17 +469,17 @@
 								<div class="col-md-6">
 									<div class="form-group radio-group">
 										<label>Uso de medicação:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="sexo" value="F" /> <label
+											Não </label> <input type="radio" name="medicacao" value="N" /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
-											name="sexo" value="M" />
+											name="medicacao" value="S" />
 
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="form-group">
-										<label>Qual?:</label> <input type="text" id="escola"
-											class="form-control" placeholder="Nome da escola" />
+										<label>Qual?:</label> <input type="text" id="qmedicacao"
+											class="form-control" placeholder="Nome da Medicação Usada" />
 									</div>
 								</div>
 								<div class="col-md-12">
@@ -496,51 +501,51 @@
 								<div class="col-md-6">
 									<div class="form-group radio-group">
 										<label>Alergia:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="sexo" value="F" /> <label
+											Não </label> <input type="radio" name="alergia" value="N" /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
-											name="sexo" value="M" />
+											name="alergia" value="S" />
 
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="form-group">
-										<label>Qual?:</label> <input type="text" id="escola"
-											class="form-control" placeholder="Nome da escola" />
+										<label>Qual?:</label> <input type="text" id="qalergia"
+											class="form-control" placeholder="Nome da alergia apresentada" />
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="form-group">
 										<label>Contato de Emergência:</label> <input type="text"
-											id="cep" class="form-control"
-											placeholder="Ponto de referência" />
+											id="contatoSOS" class="form-control"
+											placeholder="(99) 99999-9999" />
 									</div>
 								</div>
 								<div class="col-md-12">
-								<h4>Informações Médicas/Emergência</h4>
+									<h4>Informações de Transporte</h4>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group radio-group">
-										<label>Utiliza transporte:</label> <label class="radio-inline"> Não </label> <input
-											type="radio" name="sexo" value="F" /> <label
+										<label>Utiliza transporte:</label> <label class="radio-inline">
+											Não </label> <input type="radio" name="transporte" value="N" /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
-											name="sexo" value="M" />
+											name="transporte" value="S" />
 
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="form-group">
-										<label>Número do Cartão:</label> <input type="text"
-											id="escola" class="form-control" placeholder="Nome da escola" />
+										<label>Número do Cartão:</label> <input type="number"
+											id="cartao" class="form-control" placeholder="Número do cartão" />
 									</div>
 								</div>
-								
+
 							</form>
-							</div>
+						</div>
 						<button class="btn btn-default btn-theme-orange"
-							action="#{alunoPBean.inserir}">Cadastrar</button>
-						
+							action="#{alunoPBean.inserir}">Próximo</button>
+
 					</div>
 				</div>
 
