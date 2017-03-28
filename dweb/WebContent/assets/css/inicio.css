@@ -1,0 +1,10 @@
+@CHARSET "ISO-8859-1";
+
+.header {
+	background-color: gold !important;
+	padding: 0px !important;
+}
+
+.center {
+	text-align:center !important;
+}

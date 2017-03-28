@@ -42,33 +42,53 @@
 <link href="assets/css/sweetalert2.css" rel="stylesheet" />
 
 <link href="assets/css/main.css" rel="stylesheet" />
+
+<link href="assets/css/inicio.css" rel="stylesheet" />
+<SCRIPT type="text/javascript">
+    function form1() {
+        //dados básicos
+		var tipo = document.getElementById("tipo").value;
+		var ano = document.getElementById("ano").value;
+		var forma = document.getElementById("forma").value;
+        //dados pessoais
+		var nomeChibi = document.getElementById("nomeCrianca").value;
+		var dataNasc = document.getElementById("dataNasc").value;
+		var sexo;
+		if (document.getElementById("sexoF").checked) {
+            sexo = "F"
+		}
+		if (document.getElementById("sexoM").ckecked) {
+            sexo = "M"
+		}
+		var responsavel = document.getElementById("responsavel").value;
+		var parentesco = document.getElementById("parentesco").value;
+		var telefone = document.getElementById("telefone").value;
+		var nis = document.getElementById("nis").value;
+        //endereço
+		var rua = document.getElementById("rua").value;
+		var numero = document.getElementById("numero").value;
+		var cep = document.getElementById("cep").value;
+		var bairro = document.getElementById("bairro").value;
+		var cidade = document.getElementById("cidade").value;
+		var estado = document.getElementById("estado").value;
+		var referencia = document.getElementById("referencia").value;
+/*
+		if (nome == "admin") {
+			if (senha == "admin") {
+				window.location.href = "./cadastroAluno.html"
+			} else {
+				alert("Senha incorreta para este usuário!");
+			}
+		} else {
+			alert("Senha e usuários incorretos!");
+		}
+		alert("testando");*/
+	}
+	
+</SCRIPT>
 <head>
 
-<SCRIPT type="text/javascript">
-	function getCadastros() {
-		document.getElementById("cadastros").innerHTML = "<ul class='list-group menu-sidebar'>"
-				+ "<li class='list-group-item'><a href='#'>Aluno Pago</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Aluno Institucional</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Professor</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Turma</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Pacote</a></li>"
-				+ "</ul>";
-	}
 
-	function getInfos() {
-		document.getElementById("infos").innerHTML = "<ul class='list-group menu-sidebar'>"
-				+ "<li class='list-group-item'><a href='#'>Aluno Pago</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Aluno Institucional</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Professor</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Turma</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Pacote</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Balanço</a></li>"
-				+ "</ul>";
-	}
-	$(document).ready(function() {
-		$('#telefone').mask('(00) 0000-0000');
-	});
-</SCRIPT>
 <body>
 	<!-- 
 	<header>
@@ -89,28 +109,14 @@
 								</button>
 
 								<ul class="list-group menu-sidebar">
-									<li class="list-group-item active" onchange="getCadastros()"><a
-										style="background-color: gold; padding: 0px;" href="#"
+									<li class="list-group-item active " onchange="getCadastros()"><a
+										href="#" class="header"
 										onchange='getCadastros()'><IMG alt="logo-amas"
 											src="./assets/img/logo-amas2.png" /></a>
 									<li class="list-group-item active" onchange="getCadastros()"><a
-										href="#" onchange='getCadastros()'>Cadastros</a> <!-- label id="cadastros"></label>
-									<ul class="list-group menu-sidebar" id="cadastros">
-										<li class="list-group-item"><a href="#">Aluno Pago</a></li>
-										<li class="list-group-item"><a href="#">Aluno Institucional</a></li>
-										<li class="list-group-item"><a href="#">Professor</a></li>
-										<li class="list-group-item"><a href="#">Turma</a></li>
-										<li class="list-group-item"><a href="#">Pacote</a></li>
-									</ul--></li>
+										href="#" onchange='getCadastros()'>Cadastros</a> </li>
 									<li class="list-group-item" onchange="getInfos()"><a>Informações</a>
-										<!-- label id="infos"></label>
-									<ul class="list-group menu-sidebar">
-										<li class="list-group-item"><a href="#">Aluno Pago</a></li>
-										<li class="list-group-item"><a href="#">Aluno Institucional</a></li>
-										<li class="list-group-item"><a href="#">Turma</a></li>
-										<li class="list-group-item"><a href="#">Pacote</a></li>
-										<li class="list-group-item"><a href="#">Balanço</a></li>
-									</ul--></li>
+										</li>
 									<li class="list-group-item"><a href="#">Alterar Dados
 											de Acesso</a></li>
 									<li class="list-group-item"><a href="#">Alterar Senha</a></li>
@@ -201,9 +207,9 @@
 								<div class="col-md-6">
 									<div class="form-group radio-group">
 										<label>Sexo:</label> <label class="radio-inline">
-											Feminino </label> <input type="radio" name="sexo" value="F" /> <label
+											Feminino </label> <input type="radio" name="sexo" value="F" id="sexoF" checked/> <label
 											class="radio-inline"> Masculino </label> <input type="radio"
-											name="sexo" value="M" />
+											name="sexo" value="M" id="sexoM" />
 
 									</div>
 								</div>
@@ -283,7 +289,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Estado:</label> <select class="form-control"
-											id="estadoo">
+											id="estado">
 											<option label="Selecione o Estado" />
 											<option value="AC" label="Acre" />
 											<option value="AL" label="Alagoas" />
@@ -544,7 +550,7 @@
 							</form>
 						</div>
 						<button class="btn btn-default btn-theme-orange"
-							action="#{alunoPBean.inserir}">Próximo</button>
+							onclick="form1()">Próximo</button>
 
 					</div>
 				</div>
@@ -557,8 +563,6 @@
 		</div>
 		<div class="col-md-1"></div>
 
-	</div>
-	</div>
 	</div>
 </body>
 </html>

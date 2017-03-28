@@ -110,7 +110,8 @@ h2 font {
 	text-align: center;
 	width: 120px;
 	height: 60px;
-	background-color: gold
+	background-color: gold;
+	cursor: pointer; 
 }
 
 .entrar {
