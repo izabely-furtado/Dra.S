@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+	<title>#{text['aplicacao.defaultpage.titulo']}</title>
+	<link href="./css/simple.css" rel="stylesheet"
+		type="text/css" />
+		-->
+<title>Cadastrar Novo Aluno</title>
+
+<meta charset="utf-8">
+	<!-- Styles -->
+<link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="./assets/css/owl.carousel.css" rel="stylesheet" />
+<link href="./assets/css/owl.theme.css" rel="stylesheet" />
+<link href="./assets/css/owl.transitions.css" rel="stylesheet" />
+<link href="./assets/css/header.css" rel="stylesheet" />
+
+<!-- Fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"
+	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400"
+	rel="stylesheet" />
+<!-- link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet" /-->
+<link rel="stylesheet" type="text/css"
+	href="assets/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/flaticon.css" />
+
+<!-- Light Gallery -->
+<link href="assets/lightgallery/css/lightgallery.min.css"
+	rel="stylesheet" />
+<link href="assets/lightgallery/css/lg-transitions.min.css"
+	rel="stylesheet" />
+
+<!-- Alertas e Modais -->
+<link href="assets/css/sweetalert2.css" rel="stylesheet" />
+
+<link href="assets/css/main.css" rel="stylesheet" />
+<head>
+
+<SCRIPT type="text/javascript">
+	function getCadastros() {
+		document.getElementById("cadastros").innerHTML = "<ul class='list-group menu-sidebar'>"
+				+ "<li class='list-group-item'><a href='#'>Aluno Pago</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Aluno Institucional</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Professor</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Turma</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Pacote</a></li>"
+				+ "</ul>";
+	}
+
+	function getInfos() {
+		document.getElementById("infos").innerHTML = "<ul class='list-group menu-sidebar'>"
+				+ "<li class='list-group-item'><a href='#'>Aluno Pago</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Aluno Institucional</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Professor</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Turma</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Pacote</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Balanço</a></li>"
+				+ "</ul>";
+	}
+</SCRIPT>
+<body>
+	<!-- 
+	<header>
+		<IMG alt="logo-amas" src="./assets/img/logo-amas2.png" />
+	</header>
+	 -->
+	<div class="container-fluid">
+		<div class="container content">
+
+			<div class="row">
+				<nav>
+					<div class="col-md-3">
+						<div class="sidebar">
+							<div class="menu-sidebar-group">
+								<button type="button"
+									class="btn btn-link btn-sidebar-menu btn-block">
+									<i class="material-icons md-28">menu</i>
+								</button>
+
+								<ul class="list-group menu-sidebar">
+									<li class="list-group-item active" onchange="getCadastros()"><a
+										style="background-color: gold; padding: 0px;" href="#"
+										onchange='getCadastros()'><IMG alt="logo-amas"
+											src="./assets/img/logo-amas2.png" /></a>
+									<li class="list-group-item active" onchange="getCadastros()"><a
+										href="#" onchange='getCadastros()'>Cadastros</a> <!-- label id="cadastros"></label>
+									<ul class="list-group menu-sidebar" id="cadastros">
+										<li class="list-group-item"><a href="#">Aluno Pago</a></li>
+										<li class="list-group-item"><a href="#">Aluno Institucional</a></li>
+										<li class="list-group-item"><a href="#">Professor</a></li>
+										<li class="list-group-item"><a href="#">Turma</a></li>
+										<li class="list-group-item"><a href="#">Pacote</a></li>
+									</ul--></li>
+									<li class="list-group-item" onchange="getInfos()"><a>Informações</a>
+										<!-- label id="infos"></label>
+									<ul class="list-group menu-sidebar">
+										<li class="list-group-item"><a href="#">Aluno Pago</a></li>
+										<li class="list-group-item"><a href="#">Aluno Institucional</a></li>
+										<li class="list-group-item"><a href="#">Turma</a></li>
+										<li class="list-group-item"><a href="#">Pacote</a></li>
+										<li class="list-group-item"><a href="#">Balanço</a></li>
+									</ul--></li>
+									<li class="list-group-item"><a href="#">Alterar Dados
+											de Acesso</a></li>
+									<li class="list-group-item"><a href="#">Alterar Senha</a></li>
+									<li class="list-group-item"><a href="#">Sair</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</nav>
+				<!-- Conteúdo -->
+				<div class="col-md-9">
+
+					<div class="content-page">
+						<!-- Conteúdo de Páginas -->
+						<h2>
+							Formulário de Acompanhamento Psicosocial<br />
+							<!-- small>Dados Pessoais</small-->
+						</h2>
+						<!-- 
+						<div class="alert alert-success">
+							<strong>Successo!</strong> This alert box could indicate a
+							successful or positive action.
+						</div>
+						<div class="alert alert-info">
+							<strong>Informação!</strong> This alert box could indicate a
+							neutral informative change or action.
+						</div>
+						<div class="alert alert-warning">
+							<strong>Atenção!</strong> This alert box could indicate a
+							dangerous or potentially negative action.
+						</div>
+						<div class="alert alert-danger">
+							<strong>Erro!</strong> This alert box could indicate a dangerous
+							or potentially negative action.
+						</div>
+ -->
+						<div class="row">
+							<form id="formAluno" method="post">
+								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
+								<hr />
+								<h4>Composição Familiar</h4>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Nome:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Parentesco:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Idade:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>D/N:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Situação Ocupacional:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Escolaridade:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Renda:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>SCFV:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<h4>Despesas</h4>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Aluguel:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Água:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Luz:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Telefone:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Gás:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Alimentação:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Medicamentos:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Outros:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Total de Despesas:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Renda Familiar Total:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Renda Per Capta:</label> <input type="text" id="nome"
+											required="required" class="form-control" placeholder="Ano" />
+									</div>
+								</div>
+								<h4>Condições de Moradia</h4>
+								<div class="col-md-6">
+									<div class="form-group">
+										<Label>Condições:</Label> <select
+											class="form-control" id="tipo">
+											<option label="Selecione a Condição de Moradia" />
+											<option value="1" label="Própria" />
+											<option value="2" label="Alugada" />
+											<option value="3" label="Cedida" />
+											<option value="4" label="Outros" />
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<Label>Infraestrutura:</Label> <select
+											class="form-control" id="tipo">
+											<option label="Selecione a Condição de Moradia" />
+											<option value="1" label="Água" />
+											<option value="2" label="Rede de Esgoto" />
+											<option value="3" label="Energia Elétrica" />
+											<option value="4" label="Coleta de Lixo" />
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group radio-group">
+										<label>Risco Habitacional:</label> <label class="radio-inline">
+											Não </label> <input type="radio" name="sexo" value="F" /> <label
+											class="radio-inline"> Sim </label> <input type="radio"
+											name="sexo" value="M" />
+
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Qual?:</label> <input type="text" id="escola"
+											class="form-control" placeholder="Nome da escola" />
+									</div>
+								</div>
+								<div class="col-md-12">
+								<h4>Acesso a Serviços - Se possui acesso ao serviço - Informe qual</h4>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Centro de Referencia a Assistência Social - CRAS:</label> <input type="text" id="escola"
+											class="form-control" placeholder="Nome da escola" />
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Centro de Referencia Especializado da Assistência Social - CREAS:</label> <input type="text" id="escola"
+											class="form-control" placeholder="Nome da escola" />
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Unidade Básica de Sáude:</label> <input type="text" id="escola"
+											class="form-control" placeholder="Nome da escola" />
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Estratégia de Saúde da Família - ESF:</label> <input type="text" id="escola"
+											class="form-control" placeholder="Nome da escola" />
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Centro de Educação Infantil:</label> <input type="text" id="escola"
+											class="form-control" placeholder="Nome da escola" />
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Escola:</label> <input type="text" id="escola"
+											class="form-control" placeholder="Nome da escola" />
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Serviço de Acolhimento Institucional:</label> <input type="text" id="escola"
+											class="form-control" placeholder="Nome da escola" />
+									</div>
+								</div>
+								
+							</form>
+							</div>
+						<button class="btn btn-default btn-theme-orange"
+							action="#{alunoPBean.inserir}">Cadastrar</button>
+						
+					</div>
+				</div>
+
+				<br /> <br />
+
+
+			</div>
+
+		</div>
+		<div class="col-md-1"></div>
+
+	</div>
+	</div>
+	</div>
+</body>
+</html>
