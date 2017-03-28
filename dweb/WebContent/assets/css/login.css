@@ -77,7 +77,7 @@ img {
 
 .link {
 	text-transform: uppercase;
-	background-color: #0da6b5;
+	background-color: #083063;
 	color: #fff;
 	text-decoration: none !important;
 }
@@ -96,10 +96,13 @@ img {
 	padding: 0% 5% 0% 5%;
 }
 
+h2, label {
+	color:#083063;
+}
 h2 font {
 	face: arial;
 	size: +2;
-	color: #0da6b5;
+	color: #083063;
 }
 
 .botao {
@@ -107,9 +110,12 @@ h2 font {
 	text-align: center;
 	width: 120px;
 	height: 60px;
-	background-color: #0da6b5
+	background-color: gold
 }
 
+.entrar {
+	color: #083063;
+}
 table tr td a div {
 	face: arial;
 	size: 2;
@@ -118,7 +124,7 @@ table tr td a div {
 
 .td	{
 	height:95px;
-	background-color:#000;
+	background-color:#083063;
 	padding-left:7%;
 }
 .font {
@@ -129,9 +135,9 @@ table tr td a div {
 .td1 {
 	width:45px;
 	height:171px;
-	background-color:#000;
+	background-color:gold;
 }
 .td2 {
 	height:171px;
-	background-color:#000;
+	background-color:gold;
 }

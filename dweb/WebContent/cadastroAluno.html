@@ -10,15 +10,13 @@
 <title>Cadastrar Novo Aluno</title>
 
 <meta charset="utf-8">
-<!-- Styles -->
-<link href="./assets/css/bootstrap.min.css"
-	rel="stylesheet" />
-<link href="./assets/css/owl.carousel.css"
-	rel="stylesheet" />
-<link href="./assets/css/owl.theme.css"
-	rel="stylesheet" />
-<link href="./assets/css/owl.transitions.css"
-	rel="stylesheet" />
+	<!-- Styles -->
+<link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="./assets/css/owl.carousel.css" rel="stylesheet" />
+<link href="./assets/css/owl.theme.css" rel="stylesheet" />
+<link href="./assets/css/owl.transitions.css" rel="stylesheet" />
+<link href="./assets/css/header.css" rel="stylesheet" />
+
 <!-- Fonts -->
 <link
 	href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"
@@ -69,8 +67,14 @@
 	}
 </SCRIPT>
 <body>
-	<div class="container-fluid">
+<!-- 
+	<header>
+		<IMG alt="logo-amas" src="./assets/img/logo-amas2.png" />
+	</header>
+	 -->
+	 <div class="container-fluid">
 		<div class="container content">
+
 			<div class="row">
 				<nav>
 					<div class="col-md-3">
@@ -82,6 +86,8 @@
 								</button>
 
 								<ul class="list-group menu-sidebar">
+									<li class="list-group-item active" onchange="getCadastros()"><a style="background-color:gold; padding:0px;"
+										href="#" onchange='getCadastros()'><IMG alt="logo-amas" src="./assets/img/logo-amas2.png" /></a>
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										href="#" onchange='getCadastros()'>Cadastros</a> <!-- label id="cadastros"></label>
 									<ul class="list-group menu-sidebar" id="cadastros">
@@ -117,7 +123,7 @@
 						<h2>
 							Cadastrar Aluno <small>Pago</small>
 						</h2>
-
+						<!-- 
 						<div class="alert alert-success">
 							<strong>Successo!</strong> This alert box could indicate a
 							successful or positive action.
@@ -134,212 +140,222 @@
 							<strong>Erro!</strong> This alert box could indicate a dangerous
 							or potentially negative action.
 						</div>
-
+ -->
 						<div class="row">
-							<div class="col-md-12">
-								<form id="formAluno" method="post">
-									<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
-									<div class="row">
-										<hr />
-										<h4>Dados Básicos</h4>
-										<div class="col-md-12">
-											<div class="form-group">
-												<label>Nome:</label> <input type="text" id="nome"
-													required="required"
-													class="form-control" placeholder="Nome do Aluno" />
-
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Data de Nascimento:</label> <input type="date"
-													id="dataNasc" min="02-01-1910"
-													required="required"
-													class="form-control" />
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Telefone:</label> <input type="text" id="telefone"
-													required
-													class="form-control" placeholder="(99) 99999-9999"
-													pattern="(\d{2}) \d{5}-?\d{4}" />
-											</div>
-										</div>
-
-										<div class="col-md-4">
-											<div class="form-group">
-												<Label>Tipo Sanguíneo:</Label> <select class="form-control"
-													id="tipoSangue">
-													<option label="Selecione o Tipo Sanguíneo" />
-													<option label="A-" value="A-" />
-													<option label="A+" value="A+" />
-													<option label="B-" value="B-" />
-													<option label="B+" value="B+" />
-													<option label="O-" value="O-" />
-													<option label="O+" value="O+" />
-													<option label="AB-" value="AB-" />
-													<option label="AB+" value="AB+" />
-												</select>
-											</div>
-										</div>
-
-										<div class="col-md-4">
-											<div class="form-group">
-												<Label>Pacote de Aula:</Label> <select class="form-control"
-													id="PacoteAula">
-													<option label="Selecione o Pacote de Aula" />
-													<option label="Básico" value="1" />
-													<option label="Médio" value="2" />
-													<option label="Avançado" value="2" />
-												</select>
-
-											</div>
-										</div>
-
-										<div class="col-md-4">
-											<div class="form-group">
-												<label>Dia do Pagamento:</label> <input type="number"
-													name="quantity" min="1" max="31" class="form-control"
-													id="diaDePagamento" placeholder="Escolha o dia do mês para Pagar"/>
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Convênio Médico:</label> <input type="text"
-													id="descConvenio" 
-													required class="form-control"
-													placeholder="Descrição do Convenio" />
-											</div>
-										</div>
-
-										<div class="col-md-4">
-											<div class="form-group checkbox-group">
-												<div class="checkbox">
-													<label>Possui Convênio Médico</label> <input
-														type="checkbox" "
-														id="possuiConvenio" />
-												</div>
-											</div>
-										</div>
-
+							<form id="formAluno" method="post">
+								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
+								<hr />
+								<h4>Dados Básicos</h4>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Nome:</label> <input type="text" id="nome"
+											required="required" class="form-control"
+											placeholder="Nome do Aluno" />
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Data de Nascimento:</label> <input type="date"
+											id="dataNasc" min="02-01-1910" required="required"
+											class="form-control" />
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Telefone:</label> <input type="text" id="telefone"
+											required class="form-control" placeholder="(99) 99999-9999"
+											pattern="(\d{2}) \d{5}-?\d{4}" />
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group radio-group">
+										<label>Sexo:</label> <label class="radio-inline">
+											Feminino </label> <input type="radio" name="sexo" value="F" /> <label
+											class="radio-inline"> Masculino </label> <input type="radio"
+											name="sexo" value="M" />
 
 									</div>
-									<div class="row">
-										<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
-										<hr />
-										<h4>Endereço</h4>
+								</div>
 
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Rua/Avenida:</label> <input type="text" id="rua"
-													required="required" class="form-control"
-													placeholder="Digite o nome da rua ou avenida" />
-											</div>
-										</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<Label>Tipo Sanguíneo:</Label> <select class="form-control"
+											id="tipoSangue">
+											<option label="Selecione o Tipo Sanguíneo" />
+											<option label="A-" value="A-" />
+											<option label="A+" value="A+" />
+											<option label="B-" value="B-" />
+											<option label="B+" value="B+" />
+											<option label="O-" value="O-" />
+											<option label="O+" value="O+" />
+											<option label="AB-" value="AB-" />
+											<option label="AB+" value="AB+" />
+										</select>
+									</div>
+								</div>
 
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Número:</label> <input type="number" name="quantity"
-													min="1" id="numero"
-													required="required" class="form-control"
-													placeholder="Digite o número da casa" />
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Bairro:</label> <input type="text" id="bairro"
-													required="required" class="form-control"
-													placeholder="Digite o nome do bairro" />
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>CEP:</label> <input type="text" id="cep"
-													class="form-control" placeholder="99.999-999" />
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Cidade:</label> <input type="text" id="cidade"
-													class="form-control"
-													placeholder="Digite o nome da sua Cidade" />
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Estado:</label>
-												<select class="form-control" id="estadoo">
-													<option label="Selecione o Estado" />
-													<option value="AC" label="Acre" />
-													<option value="AL" label="Alagoas" />
-													<option value="AP" label="Amapá" />
-													<option value="AM" label="Amazonas" />
-													<option value="BA" label="Bahia" />
-													<option value="CE" label="Ceará" />
-													<option value="DF" label="Distrito Federal" />
-													<option value="ES" label="Espírito Santo" />
-													<option value="GO" label="Goiás" />
-													<option value="MA" label="Maranhão" />
-													<option value="MT" label="Mato Grosso" />
-													<option value="MS" label="Mato Grosso do Sul" />
-													<option value="MG" label="Minas Gerais" />
-													<option value="PA" label="Pará" />
-													<option value="PB" label="Paraíba" />
-													<option value="PR" label="Paraná" />
-													<option value="PE" label="Pernambuco" />
-													<option value="PI" label="Piauí" />
-													<option value="RJ" label="Rio de Janeiro" />
-													<option value="RN" label="Rio Grande do Norte" />
-													<option value="RS" label="Rio Grande do Sul" />
-													<option value="RO" label="Rondônia" />
-													<option value="RR" label="Roraima" />
-													<option value="SC" label="Santa Catarina" />
-													<option value="SP" label="São Paulo" />
-													<option value="SE" label="Sergipe" />
-													<option value="TO" label="Tocantins" />
-												</select>
-											</div>
-										</div>
-
-
-
-
+								<div class="col-md-4">
+									<div class="form-group">
+										<Label>Pacote de Aula:</Label> <select class="form-control"
+											id="PacoteAula">
+											<option label="Selecione o Pacote de Aula" />
+											<option label="Básico" value="1" />
+											<option label="Médio" value="2" />
+											<option label="Avançado" value="2" />
+										</select>
 
 									</div>
+								</div>
 
-									<br /> <br /> <br />
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Dia do Pagamento:</label> <input type="number"
+											name="quantity" min="1" max="31" class="form-control"
+											id="diaDePagamento"
+											placeholder="Escolha o dia do mês para Pagar" />
+									</div>
+								</div>
 
-									<button class="btn btn-default btn-theme-orange"
-										action="#{alunoPBean.inserir}">Cadastrar
-									</button>
-									<!-- 
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Convênio Médico:</label> <input type="text"
+											id="descConvenio" required class="form-control"
+											placeholder="Descrição do Convenio" />
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group checkbox-group">
+										<div class="checkbox">
+											<label>Possui Convênio Médico</label> <input type="checkbox"
+												id="possuiConvenio" />
+										</div>
+									</div>
+								</div>
+
+								<!-- DADOS DE REDES SOCIAIS DO ALUNO QUE EXECUTA PAGAMENTO -->
+								<hr />
+								<h4>Redes Sociais</h4>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>E-mail:</label> <input type="text" id="email"
+											required="required" class="form-control"
+											placeholder="E-mail do Aluno" />
+
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Facebook:</label> <input type="text" id="facebook"
+											class="form-control" placeholder="Facebook do Aluno" />
+
+									</div>
+								</div>
+								<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
+								<hr />
+								<h4>Endereço</h4>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Rua/Avenida:</label> <input type="text" id="rua"
+											required="required" class="form-control"
+											placeholder="Digite o nome da rua ou avenida" />
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Número:</label> <input type="number" name="quantity"
+											min="1" id="numero" required="required" class="form-control"
+											placeholder="Digite o número da casa" />
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Bairro:</label> <input type="text" id="bairro"
+											required="required" class="form-control"
+											placeholder="Digite o nome do bairro" />
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>CEP:</label> <input type="text" id="cep"
+											class="form-control" placeholder="99.999-999" />
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Cidade:</label> <input type="text" id="cidade"
+											class="form-control"
+											placeholder="Digite o nome da sua Cidade" />
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Estado:</label> <select class="form-control"
+											id="estadoo">
+											<option label="Selecione o Estado" />
+											<option value="AC" label="Acre" />
+											<option value="AL" label="Alagoas" />
+											<option value="AP" label="Amapá" />
+											<option value="AM" label="Amazonas" />
+											<option value="BA" label="Bahia" />
+											<option value="CE" label="Ceará" />
+											<option value="DF" label="Distrito Federal" />
+											<option value="ES" label="Espírito Santo" />
+											<option value="GO" label="Goiás" />
+											<option value="MA" label="Maranhão" />
+											<option value="MT" label="Mato Grosso" />
+											<option value="MS" label="Mato Grosso do Sul" />
+											<option value="MG" label="Minas Gerais" />
+											<option value="PA" label="Pará" />
+											<option value="PB" label="Paraíba" />
+											<option value="PR" label="Paraná" />
+											<option value="PE" label="Pernambuco" />
+											<option value="PI" label="Piauí" />
+											<option value="RJ" label="Rio de Janeiro" />
+											<option value="RN" label="Rio Grande do Norte" />
+											<option value="RS" label="Rio Grande do Sul" />
+											<option value="RO" label="Rondônia" />
+											<option value="RR" label="Roraima" />
+											<option value="SC" label="Santa Catarina" />
+											<option value="SP" label="São Paulo" />
+											<option value="SE" label="Sergipe" />
+											<option value="TO" label="Tocantins" />
+										</select>
+									</div>
+								</div>
+						</div>
+
+						<br /> <br /> <br />
+
+						<button class="btn btn-default btn-theme-orange"
+							action="#{alunoPBean.inserir}">Cadastrar</button>
+						<!-- 
 									<hr />
 									<h:commandButton class="btn btn-default btn-theme-orange"
 										action="#{animalBean.listar}"
 										value="#{text['aplicacao.listar']}">
 									</h:commandButton>
 									-->
-
-								</form>
-							</div>
-						</div>
-
-						<br /> <br />
-
-
+						</form>
 					</div>
-
 				</div>
-				<div class="col-md-1"></div>
+
+				<br /> <br />
+
 
 			</div>
+
 		</div>
+		<div class="col-md-1"></div>
+
 	</div>
-	</body>
+	</div>
+	</div>
+</body>
 </html>
