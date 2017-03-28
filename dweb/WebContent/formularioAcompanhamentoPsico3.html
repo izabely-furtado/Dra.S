@@ -124,7 +124,7 @@
 						<!-- Conteúdo de Páginas -->
 						<h2>
 							Formulário de Acompanhamento Psicosocial<br />
-							<small>Parte 2 de 6</small>
+							<small>Parte 3 de 6</small>
 						</h2>
 						<!-- 
 						<div class="alert alert-success">
@@ -148,124 +148,46 @@
 							<form id="formAluno" method="post">
 								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
-								<h4>Composição Familiar</h4>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Nome:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Parentesco:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Idade:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>D/N:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Situação Ocupacional:</label> <input type="text"
-											id="nome" required="required" class="form-control"
-											placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Escolaridade:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Renda:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>SCFV:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<h4>Despesas</h4>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Aluguel:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Água:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Luz:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Telefone:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Gás:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Alimentação:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Medicamentos:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Outros:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
-									</div>
-								</div>
+								<h4>Condições de Moradia</h4>
 								<div class="col-md-12">
 									<div class="form-group">
-										<label>Total de Despesas:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
+										<Label>Condições:</Label> <select class="form-control"
+											id="tipo">
+											<option label="Selecione a Condição de Moradia" />
+											<option value="1" label="Própria" />
+											<option value="2" label="Alugada" />
+											<option value="3" label="Cedida" />
+											<option value="4" label="Outros" />
+										</select>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-3">
 									<div class="form-group">
-										<label>Renda Familiar Total:</label> <input type="text"
-											id="nome" required="required" class="form-control"
-											placeholder="Ano" />
+								<Label>Infraestrutura:</Label><br />
+								<input type="checkbox" name="vehicle" value="Bike">Possui Água<br>
+								<input type="checkbox" name="vehicle" value="Car" >Possui Rede de Esgoto<br>
+								<input type="checkbox" name="vehicle" value="Bike">Possui Energia Elétrica<br>
+								<input type="checkbox" name="vehicle" value="Bike">Possui Coleta de Lixo<br>
+								</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group radio-group">
+										<label>Risco Habitacional:</label> <label class="radio-inline">
+											Não </label> <input type="radio" name="sexo" value="F" /> <label
+											class="radio-inline"> Sim </label> <input type="radio"
+											name="sexo" value="M" />
+
 									</div>
 								</div>
-								<div class="col-md-6">
+
+								<div class="col-md-4">
 									<div class="form-group">
-										<label>Renda Per Capta:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Ano" />
+										<label>Qual?:</label> <input type="text" id="escola"
+											class="form-control" placeholder="Nome da escola" />
 									</div>
-								</div>							</form>
+								</div>
+
+							</form>
 						</div>
 						<button class="btn btn-default btn-theme-orange"
 							action="#{alunoPBean.inserir}">Cadastrar</button>
