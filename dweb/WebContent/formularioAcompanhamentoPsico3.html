@@ -40,7 +40,7 @@
 
 <!-- Alertas e Modais -->
 <link href="assets/css/sweetalert2.css" rel="stylesheet" />
-
+<script type='text/javascript' src='./assets/js/formAP.js'></script>
 <link href="assets/css/main.css" rel="stylesheet" />
 <head>
 
@@ -174,9 +174,9 @@
 								<div class="col-md-5">
 									<div class="form-group radio-group">
 										<label>Risco Habitacional:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="risco" value="N" /> <label
+											Não </label> <input type="radio" name="risco" value="riscoN" /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
-											name="risco" value="S" />
+											name="risco" value="riscoS" />
 
 									</div>
 								</div>
@@ -191,7 +191,7 @@
 							</form>
 						</div>
 						<button class="btn btn-default btn-theme-orange"
-							action="#{alunoPBean.inserir}">Próximo</button>
+							action="form3()" onclique="form3()" onchange="form3()" >Próximo</button>
 
 					</div>
 				</div>

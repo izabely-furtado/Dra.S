@@ -44,49 +44,8 @@
 <link href="assets/css/main.css" rel="stylesheet" />
 
 <link href="assets/css/inicio.css" rel="stylesheet" />
-<SCRIPT type="text/javascript">
-    function form1() {
-        //dados básicos
-		var tipo = document.getElementById("tipo").value;
-		var ano = document.getElementById("ano").value;
-		var forma = document.getElementById("forma").value;
-        //dados pessoais
-		var nomeChibi = document.getElementById("nomeCrianca").value;
-		var dataNasc = document.getElementById("dataNasc").value;
-		var sexo;
-		if (document.getElementById("sexoF").checked) {
-            sexo = "F"
-		}
-		if (document.getElementById("sexoM").ckecked) {
-            sexo = "M"
-		}
-		var responsavel = document.getElementById("responsavel").value;
-		var parentesco = document.getElementById("parentesco").value;
-		var telefone = document.getElementById("telefone").value;
-		var nis = document.getElementById("nis").value;
-        //endereço
-		var rua = document.getElementById("rua").value;
-		var numero = document.getElementById("numero").value;
-		var cep = document.getElementById("cep").value;
-		var bairro = document.getElementById("bairro").value;
-		var cidade = document.getElementById("cidade").value;
-		var estado = document.getElementById("estado").value;
-		var referencia = document.getElementById("referencia").value;
-/*
-		if (nome == "admin") {
-			if (senha == "admin") {
-				window.location.href = "./cadastroAluno.html"
-			} else {
-				alert("Senha incorreta para este usuário!");
-			}
-		} else {
-			alert("Senha e usuários incorretos!");
-		}
-		alert("testando");*/
-	}
-	
-</SCRIPT>
-<head>
+<script type='text/javascript' src='./assets/js/formAP.js'></script>
+</head>
 
 
 <body>
@@ -475,9 +434,9 @@
 								<div class="col-md-6">
 									<div class="form-group radio-group">
 										<label>Uso de medicação:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="medicacao" value="N" /> <label
+											Não </label> <input type="radio" name="medicacao" id="medicacaoN" value="medicacaoN" checked/> <label
 											class="radio-inline"> Sim </label> <input type="radio"
-											name="medicacao" value="S" />
+											name="medicacao" value="medicacaoS" id="medicacaoS" />
 
 									</div>
 								</div>
@@ -507,9 +466,9 @@
 								<div class="col-md-6">
 									<div class="form-group radio-group">
 										<label>Alergia:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="alergia" value="N" /> <label
+											Não </label> <input type="radio" name="alergia" value="alergiaN" id="alergiaN" checked /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
-											name="alergia" value="S" />
+											name="alergia" value="alergiaS" id="alergiaS" />
 
 									</div>
 								</div>
@@ -533,9 +492,9 @@
 								<div class="col-md-6">
 									<div class="form-group radio-group">
 										<label>Utiliza transporte:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="transporte" value="N" /> <label
+											Não </label> <input type="radio" name="transporte" value="transporteN" id="transporteN" checked /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
-											name="transporte" value="S" />
+											name="transporte" value="transporteS" id="transporteS" />
 
 									</div>
 								</div>
@@ -550,7 +509,7 @@
 							</form>
 						</div>
 						<button class="btn btn-default btn-theme-orange"
-							onclick="form1()">Próximo</button>
+							onclick="form1()" >Próximo</button>
 
 					</div>
 				</div>
