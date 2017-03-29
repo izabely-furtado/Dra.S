@@ -1,6 +1,6 @@
 
 function form1() {
-    //dados bï¿½sicos
+    //dados básicos
     var tipo = document.getElementById("tipo").value;
     var ano = document.getElementById("ano").value;
     var forma = document.getElementById("forma").value;
@@ -17,7 +17,7 @@ function form1() {
     var telefone = document.getElementById("telefone").value;
     var nis = document.getElementById("nis").value;
 
-    //endereï¿½o
+    //endereço
     var rua = document.getElementById("rua").value;
     var numero = document.getElementById("numero").value;
     var cep = document.getElementById("cep").value;
@@ -28,27 +28,27 @@ function form1() {
 
     //acompanhamento escolar
     var escola = document.getElementById("escola").value;
-    //sï¿½o no mï¿½ximo seis anos participando do projeto
-    //sï¿½rie no 1ï¿½ ano no projeto
+    //são no máximo seis anos participando do projeto
+    //série no 1º ano no projeto
     var ano1 = document.getElementById("ano1").value;
     var serie1 = document.getElementById("serie1").value;
-    //sï¿½rie no 2ï¿½ ano no projeto
+    //série no 2º ano no projeto
     var ano2 = document.getElementById("ano2").value;
     var serie2 = document.getElementById("serie2").value;
-    //sï¿½rie no 3ï¿½ ano no projeto
+    //série no 3º ano no projeto
     var ano3 = document.getElementById("ano3").value;
     var serie3 = document.getElementById("serie3").value;
-    //sï¿½rie no 4ï¿½ ano no projeto
+    //série no 4º ano no projeto
     var ano4 = document.getElementById("ano4").value;
     var serie4 = document.getElementById("serie4").value;
-    //sï¿½rie no 5ï¿½ ano no projeto
+    //série no 5º ano no projeto
     var ano5 = document.getElementById("ano5").value;
     var serie5 = document.getElementById("serie5").value;
-    //sï¿½rie no 6ï¿½ ano no projeto
+    //série no 6º ano no projeto
     var ano6 = document.getElementById("ano6").value;
     var serie6 = document.getElementById("serie6").value;
 
-    //informaï¿½ï¿½es mï¿½dicas - emergenciais
+    //informações médicas - emergenciais
     var medicacao = "N";
     var qmedicacao = "";
     if (document.getElementById("medicacaoS").checked) {
@@ -64,7 +64,7 @@ function form1() {
     }
     var contatoSOS = document.getElementById("contatoSOS").value;
 
-    //informaï¿½ï¿½es de transporte
+    //informações de transporte
     var transporte = "N";
     if (document.getElementById("transporteS").checked) {
         sexo = "S";
@@ -75,7 +75,7 @@ function form1() {
 }
 
 function form2() {
-    //composiï¿½ï¿½o familiar
+    //composição familiar
     var nome = document.getElementById("nome").value;
     var parentesco = document.getElementById("parentesco").value;
     var idade = document.getElementById("idade").value;
@@ -105,7 +105,7 @@ function form2() {
 }
 
 function addParente() {
-    //composiï¿½ï¿½o familiar
+    //composição familiar
     var nome = document.getElementById("nome").value;
     var parentesco = document.getElementById("parentesco").value;
     var idade = document.getElementById("idade").value;
@@ -141,7 +141,7 @@ function calcDespesas() {
 
 function form3() {
 
-    //condiï¿½ï¿½o
+    //condição
     var condicao = document.getElementById("condicao").value;
     var infra = document.getElementById("infra").value;
     var risco = "N";
@@ -154,7 +154,7 @@ function form3() {
 }
 
 function form4() {
-    //acesso a serviï¿½os
+    //acesso a serviços
     var scras = document.getElementById("scras").value;
     var screas = document.getElementById("screas").value;
     var sus = document.getElementById("sus").value;
@@ -164,6 +164,7 @@ function form4() {
 
     //acolhimento
     var anome = document.getElementById("anome").value;
+    var ainstituicao = document.getElementById("ainstituicao").value;
     var aresponsavel = document.getElementById("aresponsavel").value;
     var acontato = document.getElementById("acontato").value;
     var amotivo = document.getElementById("amotivo").value;
@@ -198,28 +199,29 @@ function form5() {
     window.location.href = "./formularioAcompanhamentoPsico6.html"
 }
 
-    //sï¿½o no mï¿½ximo seis anos participando do projeto
-    //sï¿½rie no 1ï¿½ ano no projeto
+function form6() { 
+    //são no máximo seis anos participando do projeto
+    //série no 1º ano no projeto
     var ano1 = document.getElementById("ano1").value;
     var ass1 = document.getElementById("ass1").value;
     var data1 = document.getElementById("data1").value;
-    //sï¿½rie no 2ï¿½ ano no projeto
+    //série no 2º ano no projeto
     var ano2 = document.getElementById("ano2").value;
     var ass2 = document.getElementById("ass2").value;
     var data2 = document.getElementById("data2").value;
-    //sï¿½rie no 3ï¿½ ano no projeto
+    //série no 3º ano no projeto
     var ano3 = document.getElementById("ano3").value;
     var ass3 = document.getElementById("ass3").value;
     var data3 = document.getElementById("data3").value;
-    //sï¿½rie no 4ï¿½ ano no projeto
+    //série no 4º ano no projeto
     var ano4 = document.getElementById("ano4").value;
     var ass4 = document.getElementById("ass4").value;
     var data4 = document.getElementById("data4").value;
-    //sï¿½rie no 5ï¿½ ano no projeto
+    //série no 5º ano no projeto
     var ano5 = document.getElementById("ano5").value;
     var ass5 = document.getElementById("ass5").value;
     var data5 = document.getElementById("data5").value;
-    //sï¿½rie no 6ï¿½ ano no projeto
+    //série no 6º ano no projeto
     var ano6 = document.getElementById("ano6").value;
     var ass6 = document.getElementById("ass6").value;
     var data6 = document.getElementById("data6").value;
