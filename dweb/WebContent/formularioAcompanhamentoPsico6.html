@@ -17,6 +17,8 @@
 <link href="./assets/css/owl.transitions.css" rel="stylesheet" />
 <link href="./assets/css/header.css" rel="stylesheet" />
 <script type='text/javascript' src='./assets/js/formAP.js'></script>
+<link href="./assets/css/colunas.css" rel="stylesheet" />
+<link href="./assets/css/formulario.css" rel="stylesheet" />
 <!-- Fonts -->
 <link
 	href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"
@@ -69,15 +71,15 @@
 <body>
 	<!-- 
 	<header>
-		<IMG alt="logo-amas" src="./assets/img/logo-amas2.png" />
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
 	<div class="container-fluid">
 		<div class="container content">
 
-			<div class="row">
+			<div class="linha">
 				<nav>
-					<div class="col-md-3">
+					<div class="coluna-3">
 						<div class="sidebar">
 							<div class="menu-sidebar-group">
 								<button type="button"
@@ -88,8 +90,8 @@
 								<ul class="list-group menu-sidebar">
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										style="background-color: gold; padding: 0px;" href="#"
-										onchange='getCadastros()'><IMG alt="logo-amas"
-											src="./assets/img/logo-amas2.png" /></a>
+										onchange='getCadastros()'><IMG alt="logo-onda"
+											src="./assets/img/logo-onda2.png" /></a>
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										href="#" onchange='getCadastros()'>Cadastros</a> <!-- label id="cadastros"></label>
 									<ul class="list-group menu-sidebar" id="cadastros">
@@ -118,7 +120,7 @@
 					</div>
 				</nav>
 				<!-- Conteúdo -->
-				<div class="col-md-9">
+				<div class="coluna-9">
 
 					<div class="content-page">
 						<!-- Conteúdo de Páginas -->
@@ -144,153 +146,153 @@
 							or potentially negative action.
 						</div>
  -->
-						<div class="row">
+						<div class="linha">
 							<form id="formAluno" method="post">
 								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
 								<h4>Rematrícula</h4>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Ano</label> <input type="number" min=2000 id="ano1"
-											class="form-control" placeholder="Ano 1 da Rematrícula" />
+											class="formulario" placeholder="Ano 1 da Rematrícula" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass1"
-											class="form-control" placeholder="Assinatura do Responsável" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Data:</label> <input type="date" id="data1"
-											min="01-01-2000" required="required" class="form-control" />
+											min="01-01-2000" required="required" class="formulario" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano2"
-											class="form-control" placeholder="Ano 2 da Rematrícula" />
+											class="formulario" placeholder="Ano 2 da Rematrícula" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass2"
-											class="form-control" placeholder="Assinatura do Responsável" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Data:</label> <input type="date" id="data2"
-											min="01-01-2000" required="required" class="form-control" />
+											min="01-01-2000" required="required" class="formulario" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano3"
-											class="form-control" placeholder="Ano 3 da Rematrícula" />
+											class="formulario" placeholder="Ano 3 da Rematrícula" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass3"
-											class="form-control" placeholder="Assinatura do Responsável" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Data:</label> <input type="date"
 											id="data3" min="01-01-2000" required="required"
-											class="form-control" /> 
+											class="formulario" /> 
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano4"
-											class="form-control" placeholder="Ano 4 da Rematrícula" />
+											class="formulario" placeholder="Ano 4 da Rematrícula" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass4"
-											class="form-control" placeholder="Assinatura do Responsável" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Data:</label> <input type="date"
 											id="data4" min="01-01-2000" required="required"
-											class="form-control" /> 
+											class="formulario" /> 
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano5"
-											class="form-control" placeholder="Ano 5 da Rematrícula" />
+											class="formulario" placeholder="Ano 5 da Rematrícula" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass5"
-											class="form-control" placeholder="Assinatura do Responsável" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Data:</label> <input type="date"
 											id="data5" min="01-01-2000" required="required"
-											class="form-control" /> 
+											class="formulario" /> 
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano6"
-											class="form-control" placeholder="Ano 6 da Rematrícula" />
+											class="formulario" placeholder="Ano 6 da Rematrícula" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="assi6"
-											class="form-control" placeholder="Assinatura do Responsável" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Data:</label> <input type="date"
 											id="data6" min="01-01-2000" required="required"
-											class="form-control" /> 
+											class="formulario" /> 
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano7"
-											class="form-control" placeholder="Ano 7 da Rematrícula" />
+											class="formulario" placeholder="Ano 7 da Rematrícula" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="assi7"
-											class="form-control" placeholder="Assinatura do Responsável" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Data:</label> <input type="date"
 											id="data7" min="01-01-2000" required="required"
-											class="form-control" /> 
+											class="formulario" /> 
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Assinatura do Técnico Responsável:</label> <input
-											type="text" id="asstecresp" class="form-control"
+											type="text" id="asstecresp" class="formulario"
 											placeholder="Assinatura do Técnico Responsável" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Assinatura do Responsável Familiar:</label> <input
-											type="text" id="assrespfam" class="form-control"
+											type="text" id="assrespfam" class="formulario"
 											placeholder="Assinatura do Responsável Familiar" />
 									</div>
 								</div>
@@ -310,7 +312,7 @@
 			</div>
 
 		</div>
-		<div class="col-md-1"></div>
+		<div class="coluna-1"></div>
 
 	</div>
 </body>

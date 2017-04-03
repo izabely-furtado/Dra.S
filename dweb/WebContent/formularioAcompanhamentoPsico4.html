@@ -17,6 +17,8 @@
 <link href="./assets/css/owl.transitions.css" rel="stylesheet" />
 <link href="./assets/css/header.css" rel="stylesheet" />
 <script type='text/javascript' src='./assets/js/formAP.js'></script>
+<link href="./assets/css/colunas.css" rel="stylesheet" />
+<link href="./assets/css/formulario.css" rel="stylesheet" />
 <!-- Fonts -->
 <link
 	href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"
@@ -69,15 +71,15 @@
 <body>
 	<!-- 
 	<header>
-		<IMG alt="logo-amas" src="./assets/img/logo-amas2.png" />
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
 	<div class="container-fluid">
 		<div class="container content">
 
-			<div class="row">
+			<div class="linha">
 				<nav>
-					<div class="col-md-3">
+					<div class="coluna-3">
 						<div class="sidebar">
 							<div class="menu-sidebar-group">
 								<button type="button"
@@ -88,8 +90,8 @@
 								<ul class="list-group menu-sidebar">
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										style="background-color: gold; padding: 0px;" href="#"
-										onchange='getCadastros()'><IMG alt="logo-amas"
-											src="./assets/img/logo-amas2.png" /></a>
+										onchange='getCadastros()'><IMG alt="logo-onda"
+											src="./assets/img/logo-onda2.png" /></a>
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										href="#" onchange='getCadastros()'>Cadastros</a> <!-- label id="cadastros"></label>
 									<ul class="list-group menu-sidebar" id="cadastros">
@@ -118,7 +120,7 @@
 					</div>
 				</nav>
 				<!-- Conteúdo -->
-				<div class="col-md-9">
+				<div class="coluna-9">
 
 					<div class="content-page">
 						<!-- Conteúdo de Páginas -->
@@ -144,96 +146,96 @@
 							or potentially negative action.
 						</div>
  -->
-						<div class="row">
+						<div class="linha">
 							<form id="formAluno" method="post">
 								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
 								<h4>Acesso a Serviços</h4>
 								<H5>Se possui acesso ao serviço - Informe qual</h5>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Centro de Referencia a Assistência Social -
-											CRAS:</label> <input type="text" id="scras" class="form-control"
+											CRAS:</label> <input type="text" id="scras" class="formulario"
 											placeholder="Informe qual CRAS, se possuir acesso" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Centro de Referencia Especializado da
 											Assistência Social - CREAS:</label> <input type="text" id="screas"
-											class="form-control" placeholder="Informe qual CREAS, se possuir acesso" />
+											class="formulario" placeholder="Informe qual CREAS, se possuir acesso" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Unidade Básica de Sáude:</label> <input type="text"
-											id="sus" class="form-control" placeholder="Informe qual Unidade, se possuir acesso" />
+											id="sus" class="formulario" placeholder="Informe qual Unidade, se possuir acesso" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Estratégia de Saúde da Família - ESF:</label> <input
-											type="text" id="sesf" class="form-control"
+											type="text" id="sesf" class="formulario"
 											placeholder="Informe qual ESF, se possuir acesso" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Centro de Educação Infantil:</label> <input type="text"
-											id="scei" class="form-control" placeholder="Informe qual Centro, se possuir acesso" />
+											id="scei" class="formulario" placeholder="Informe qual Centro, se possuir acesso" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Escola:</label> <input type="text" id="escola"
-											class="form-control" placeholder="Informe qual Escola, se possuir acesso" />
+											class="formulario" placeholder="Informe qual Escola, se possuir acesso" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Serviço de Acolhimento Institucional:</label> <input
-											type="text" id="sei" class="form-control"
+											type="text" id="sei" class="formulario"
 											placeholder="Informe qual Serviço de Acolhimento, se possuir acesso" />
 									</div>
 								</div>
 								<H5>Se assinalado acolhimento institucional, informar:</h5>
 								
 								<label>Municipe em Situação de acolhimento institucional</label>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Nome:</label> <input type="text"
-											id="anome" class="form-control" placeholder="Nome do Acolhido" />
+											id="anome" class="formulario" placeholder="Nome do Acolhido" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Instituição:</label> <input type="text" id="ainstituicao"
-											class="form-control" placeholder="Nome da Instituição" />
+											class="formulario" placeholder="Nome da Instituição" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Responsável:</label> <input
-											type="text" id="aresponsavel" class="form-control"
+											type="text" id="aresponsavel" class="formulario"
 											placeholder="Nome do Responsável pela Instituição" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Contato:</label> <input type="text" id="acontato"
-											class="form-control" placeholder="Telefone/E-mail para Contato com a Instituição " />
+											class="formulario" placeholder="Telefone/E-mail para Contato com a Instituição " />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Motivo:</label> <input
-											type="text" id="amotivo" class="form-control"
+											type="text" id="amotivo" class="formulario"
 											placeholder="Motivo para ser Beneficiado pela Instituição" />
 									</div>
 								</div><br />
 								<h4>Programas/Benefícios:</h4>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 								<input type="checkbox" name="programa" value="pbf">Programa Bolsa Família - PBF<br>
 								<input type="checkbox" name="programa" value="pi" >Programa Incluir/Bolsa Capixaba<br>
 								<input type="checkbox" name="programa" value="pbc">Programa Brasil Carinhoso<br>
@@ -242,17 +244,17 @@
 								<input type="checkbox" name="programa" value="ar">Auxílio Reclusão<br>
 								</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Programa/Benefício Habitacional:</label> <input
-											type="text" id="beneficio" class="form-control"
+											type="text" id="beneficio" class="formulario"
 											placeholder="Nome do Programa/Benefício Habitacional" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Outro:</label> <input
-											type="text" id="outrobeneficio" class="form-control"
+											type="text" id="outrobeneficio" class="formulario"
 											placeholder="Nome de Outro Programa/Benefício Habitacional" />
 									</div>
 								</div>
@@ -272,7 +274,7 @@
 			</div>
 
 		</div>
-		<div class="col-md-1"></div>
+		<div class="coluna-1"></div>
 
 	</div>
 	</div>

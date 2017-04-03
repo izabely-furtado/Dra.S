@@ -16,6 +16,9 @@
 <link href="./assets/css/owl.theme.css" rel="stylesheet" />
 <link href="./assets/css/owl.transitions.css" rel="stylesheet" />
 <link href="./assets/css/header.css" rel="stylesheet" />
+<link href="./assets/css/colunas.css" rel="stylesheet" />
+<link href="./assets/css/formulario.css" rel="stylesheet" />
+<link href="./assets/css/principal.css" rel="stylesheet" />
 
 <!-- Fonts -->
 <link
@@ -51,15 +54,16 @@
 <body>
 	<!-- 
 	<header>
-		<IMG alt="logo-amas" src="./assets/img/logo-amas2.png" />
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
 	<div class="container-fluid">
 		<div class="container content">
 
-			<div class="row">
-				<nav>
-					<div class="col-md-3">
+			<div class="linha">
+				
+					<div class="coluna-3">
+                    <nav>
 						<div class="sidebar">
 							<div class="menu-sidebar-group">
 								<button type="button"
@@ -70,8 +74,8 @@
 								<ul class="list-group menu-sidebar">
 									<li class="list-group-item active " onchange="getCadastros()"><a
 										href="#" class="header"
-										onchange='getCadastros()'><IMG alt="logo-amas"
-											src="./assets/img/logo-amas2.png" /></a>
+										onchange='getCadastros()'><IMG alt="logo-onda"
+											src="./assets/img/lodo-onda2.png" /></a>
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										href="#" onchange='getCadastros()'>Cadastros</a> </li>
 									<li class="list-group-item" onchange="getInfos()"><a>Informações</a>
@@ -83,12 +87,12 @@
 								</ul>
 							</div>
 						</div>
+                        </nav>
 					</div>
-				</nav>
+				
 				<!-- Conteúdo -->
-				<div class="col-md-9">
-
-					<div class="content-page">
+				<div class="coluna-9">
+                <main>
 						<!-- Conteúdo de Páginas -->
 						<h2>
 							Formulário de Acompanhamento Psicosocial<br /> <small>Parte
@@ -112,15 +116,15 @@
 							or potentially negative action.
 						</div>
  -->
-						<div class="row">
+						<div class="linha">
 							<form id="formAluno" method="post">
 								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
 								<h4>Dados Básicos do Fomulário</h4>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<Label>Tipo de Formulário:</Label> <select
-											class="form-control" id="tipo">
+											class="formulario" id="tipo">
 											<option label="Selecione o Tipo de Formulário" />
 											<option value="incricao" label="Inscrição" />
 											<option value="matricula" label="Matrícula" />
@@ -128,16 +132,16 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Ano de Inserção:</label> <input type="number" id="ano"
-											min="2000" required="required" class="form-control"
+											min="2000" required="required" class="formulario"
 											placeholder="Ano" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<Label>Forma de Acesso:</Label> <select class="form-control"
+								<div class="coluna-12">
+									<div class="grupinho">
+										<Label>Forma de Acesso:</Label> <select class="formulario"
 											id="forma">
 											<option label="Selecione o Forma de Acesso" />
 											<option value="cras" label="Encaminhamento pela Rede CRAS" />
@@ -149,22 +153,22 @@
 								</div>
 
 								<h4>Dados Pessoais</h4>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Nome da criança/adolescente:</label> <input type="text"
-											id="nomeCrianca" required="required" class="form-control"
+											id="nomeCrianca" required="required" class="formulario"
 											placeholder="Nome do Aluno" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Data de Nascimento:</label> <input type="date"
 											id="dataNasc" min="02-01-1910" required="required"
-											class="form-control" />
+											class="formulario" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group radio-group">
+								<div class="coluna-6">
+									<div class="grupinho radio-group">
 										<label>Sexo:</label> <label class="radio-inline">
 											Feminino </label> <input type="radio" name="sexo" value="F" id="sexoF" checked/> <label
 											class="radio-inline"> Masculino </label> <input type="radio"
@@ -172,82 +176,83 @@
 
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Responsável:</label> <input type="text"
-											id="responsavel" required="required" class="form-control"
+											id="responsavel" required="required" class="formulario"
 											placeholder="Responsável pelo Aluno" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Parentesco:</label> <input type="text" id="parentesco"
-											required="required" class="form-control"
+											required="required" class="formulario"
 											placeholder="Parentesco com o Aluno" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Contato:</label> <input type="text" id="telefone"
 											name="telefone" data-mask="(00) 0000-0000"
-											data-mask-selectonfocus="true" required class="form-control"
+											data-mask-selectonfocus="true" required class="formulario"
 											placeholder="(99) 99999-9999" pattern="(\d{2}) \d{5}-?\d{4}" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>NIS da criança/adolescente:</label> <input type="text"
-											id="nis" required="required" class="form-control"
+											id="nis" required="required" class="formulario"
 											placeholder="Parentesco com o Aluno" />
 									</div>
 								</div>
 
 								<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
+                                <address>
 								<h4>Endereço</h4>
 
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Rua/Avenida:</label> <input type="text" id="rua"
-											required="required" class="form-control"
+											required="required" class="formulario"
 											placeholder="Digite o nome da rua ou avenida" />
 									</div>
 								</div>
 
-								<div class="col-md-2">
-									<div class="form-group">
+								<div class="coluna-2">
+									<div class="grupinho">
 										<label>Número:</label> <input type="number" name="quantity"
-											min="1" id="numero" required="required" class="form-control"
+											min="1" id="numero" required="required" class="formulario"
 											placeholder="Digite o número da casa" />
 									</div>
 								</div>
-								<div class="col-md-4">
-									<div class="form-group">
+								<div class="coluna-4">
+									<div class="grupinho">
 										<label>CEP da criança/adolescente:</label> <input type="text"
-											id="cep" required class="form-control"
+											id="cep" required class="formulario"
 											placeholder="999.999.999-99"
 											pattern="\d{3}.\d{3}.\d{3}-?\d{2}" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Bairro:</label> <input type="text" id="bairro"
-											required="required" class="form-control"
+											required="required" class="formulario"
 											placeholder="Digite o nome do bairro" />
 									</div>
 								</div>
 
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Cidade:</label> <input type="text" id="cidade"
-											class="form-control"
+											class="formulario"
 											placeholder="Digite o nome da sua Cidade" />
 									</div>
 								</div>
 
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Estado:</label> <select class="form-control"
+								<div class="coluna-6">
+									<div class="grupinho">
+										<label>Estado:</label> <select class="formulario"
 											id="estado">
 											<option label="Selecione o Estado" />
 											<option value="AC" label="Acre" />
@@ -281,23 +286,26 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Ponto de Referência:</label> <input type="text"
-											id="referencia" class="form-control"
+											id="referencia" class="formulario"
 											placeholder="Ponto de referência" />
 									</div>
 								</div>
-								<h4>Acompanhamento Escolar</h4>
-								<div class="col-md-12">
-									<div class="form-group">
+								
+                                </address>
+
+                                <h4>Acompanhamento Escolar</h4>
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Escola:</label> <input type="text" id="escola"
-											class="form-control" placeholder="Nome da escola" />
+											class="formulario" placeholder="Nome da escola" />
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label>Anos:</Label> <select class="form-control" id="ano1">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label>Anos:</Label> <select class="formulario" id="ano1">
 											<option label="Ano 1" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -306,9 +314,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="ano2">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="ano2">
 											<option label="Ano 2" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -317,9 +325,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="ano3">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="ano3">
 											<option label="Ano 3" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -328,9 +336,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="ano4">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="ano4">
 											<option label="Ano 4" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -339,9 +347,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="ano5">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="ano5">
 											<option label="Ano 5" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -350,9 +358,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="ano6">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="ano6">
 											<option label="Ano 6" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -361,9 +369,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label>Série nos Anos:</Label> <select class="form-control"
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label>Série nos Anos:</Label> <select class="formulario"
 											id="serie1">
 											<option label="Série 1" />
 											<option value="1" label="2001" />
@@ -373,9 +381,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="serie2">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="serie2">
 											<option label="Série 2" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -384,9 +392,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="serie3">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="serie3">
 											<option label="Série 3" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -395,9 +403,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="serie4">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="serie4">
 											<option label="Série 4" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -406,9 +414,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="serie5">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="serie5">
 											<option label="Série 5" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -417,9 +425,9 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<Label><br /></Label> <select class="form-control" id="serie6">
+								<div class="coluna-2">
+									<div class="grupinho">
+										<Label><br /></Label> <select class="formulario" id="serie6">
 											<option label="Série 6" />
 											<option value="1" label="2001" />
 											<option value="2" label="2002" />
@@ -431,8 +439,8 @@
 
 								<h4>Informações Médicas/Emergência</h4>
 
-								<div class="col-md-6">
-									<div class="form-group radio-group">
+								<div class="coluna-6">
+									<div class="grupinho radio-group">
 										<label>Uso de medicação:</label> <label class="radio-inline">
 											Não </label> <input type="radio" name="medicacao" id="medicacaoN" value="medicacaoN" checked/> <label
 											class="radio-inline"> Sim </label> <input type="radio"
@@ -441,15 +449,15 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Qual?:</label> <input type="text" id="qmedicacao"
-											class="form-control" placeholder="Nome da Medicação Usada" />
+											class="formulario" placeholder="Nome da Medicação Usada" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<Label>Tipo Sanguíneo:</Label> <select class="form-control"
+								<div class="coluna-12">
+									<div class="grupinho">
+										<Label>Tipo Sanguíneo:</Label> <select class="formulario"
 											id="tipoSangue">
 											<option label="Selecione o Tipo Sanguíneo" />
 											<option label="A-" value="A-" />
@@ -463,8 +471,8 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group radio-group">
+								<div class="coluna-6">
+									<div class="grupinho radio-group">
 										<label>Alergia:</label> <label class="radio-inline">
 											Não </label> <input type="radio" name="alergia" value="alergiaN" id="alergiaN" checked /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
@@ -473,24 +481,24 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Qual?:</label> <input type="text" id="qalergia"
-											class="form-control" placeholder="Nome da alergia apresentada" />
+											class="formulario" placeholder="Nome da alergia apresentada" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Contato de Emergência:</label> <input type="text"
-											id="contatoSOS" class="form-control"
+											id="contatoSOS" class="formulario"
 											placeholder="(99) 99999-9999" />
 									</div>
 								</div>
-								<div class="col-md-12">
+								<div class="coluna-12">
 									<h4>Informações de Transporte</h4>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group radio-group">
+								<div class="coluna-6">
+									<div class="grupinho radio-group">
 										<label>Utiliza transporte:</label> <label class="radio-inline">
 											Não </label> <input type="radio" name="transporte" value="transporteN" id="transporteN" checked /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
@@ -499,10 +507,10 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Número do Cartão:</label> <input type="number"
-											id="cartao" class="form-control" placeholder="Número do cartão" />
+											id="cartao" class="formulario" placeholder="Número do cartão" />
 									</div>
 								</div>
 
@@ -511,8 +519,10 @@
 						<button class="btn btn-default btn-theme-orange"
 							onclick="form1()" >Próximo</button>
 
-					</div>
-				</div>
+					
+				
+                </main>
+                </div>
 
 				<br /> <br />
 
@@ -520,7 +530,7 @@
 			</div>
 
 		</div>
-		<div class="col-md-1"></div>
+		<div class="coluna-1"></div>
 
 	</div>
 </body>

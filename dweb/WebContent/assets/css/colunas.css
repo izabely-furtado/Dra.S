@@ -1,0 +1,69 @@
+﻿/*difinindo linhas de raciocício*/
+.linha {
+	margin-right: -15px;
+	margin-left: -15px
+}
+
+.linha:after, .linha:before 
+{
+    display: table;
+	content: " ";
+	clear: both
+}
+
+/*dividindo em 12 partes a tela*/
+.coluna-1, .coluna-2, .coluna-3, .coluna-4, 
+.coluna-5, .coluna-6, .coluna-7, .coluna-8, 
+.coluna-9, .coluna-10, .coluna-11, .coluna-12 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px
+}
+
+/*retirante essa divisão e deixando responsivo*/
+@media ( min-width :992px) {
+	.coluna-1, .coluna-2, .coluna-3, .coluna-4, 
+	.coluna-5, .coluna-6, .coluna-7, .coluna-8, 
+	.coluna-9, .coluna-10, .coluna-11, .coluna-12 {
+		float: left
+	}
+	.coluna-12 {
+		width: 100%
+	}
+	.coluna-11 {
+		width: 91.66666667%
+	}
+	.coluna-10 {
+		width: 83.33333333%
+	}
+	.coluna-9 {
+		width: 75%
+	}
+	.coluna-8 {
+		width: 66.66666667%
+	}
+	.coluna-7 {
+		width: 58.33333333%
+	}
+	.coluna-6 {
+		width: 50%
+	}
+	.coluna-5 {
+		width: 41.66666667%
+	}
+	.coluna-4 {
+		width: 33.33333333%
+	}
+	.coluna-3 {
+		width: 25%
+	}
+	.coluna-2 {
+		width: 16.66666667%
+	}
+	.coluna-1 {
+		width: 8.33333333%
+	}
+	
+}
+

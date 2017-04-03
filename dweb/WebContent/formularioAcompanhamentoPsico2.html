@@ -17,6 +17,8 @@
 <link href="./assets/css/owl.transitions.css" rel="stylesheet" />
 <link href="./assets/css/header.css" rel="stylesheet" />
 <script type='text/javascript' src='./assets/js/formAP.js'></script>
+<link href="./assets/css/colunas.css" rel="stylesheet" />
+<link href="./assets/css/formulario.css" rel="stylesheet" />
 <!-- Fonts -->
 <link
 	href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"
@@ -69,15 +71,15 @@
 <body>
 	<!-- 
 	<header>
-		<IMG alt="logo-amas" src="./assets/img/logo-amas2.png" />
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
 	<div class="container-fluid">
 		<div class="container content">
 
-			<div class="row">
+			<div class="linha">
 				<nav>
-					<div class="col-md-3">
+					<div class="coluna-3">
 						<div class="sidebar">
 							<div class="menu-sidebar-group">
 								<button type="button"
@@ -88,8 +90,8 @@
 								<ul class="list-group menu-sidebar">
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										style="background-color: gold; padding: 0px;" href="#"
-										onchange='getCadastros()'><IMG alt="logo-amas"
-											src="./assets/img/logo-amas2.png" /></a>
+										onchange='getCadastros()'><IMG alt="logo-onda"
+											src="./assets/img/logo-onda2.png" /></a>
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										href="#" onchange='getCadastros()'>Cadastros</a> <!-- label id="cadastros"></label>
 									<ul class="list-group menu-sidebar" id="cadastros">
@@ -118,7 +120,7 @@
 					</div>
 				</nav>
 				<!-- Conteúdo -->
-				<div class="col-md-9">
+				<div class="coluna-9">
 
 					<div class="content-page">
 						<!-- Conteúdo de Páginas -->
@@ -144,138 +146,138 @@
 							or potentially negative action.
 						</div>
  -->
-						<div class="row">
+						<div class="linha">
 							<form id="formAluno" method="post">
 								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
 								<h4>Composição Familiar</h4>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Nome:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Nome do Familiar" />
+											required="required" class="formulario" placeholder="Nome do Familiar" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Parentesco:</label> <input type="text" id="nome"
-											required="required" class="form-control" placeholder="Parentesco do Familiar" />
+											required="required" class="formulario" placeholder="Parentesco do Familiar" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Idade:</label> <input type="number" id="idade"
-											required="required" class="form-control" placeholder="Idade do Familiar" />
+											required="required" class="formulario" placeholder="Idade do Familiar" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Data de Nascimento:</label> <input type="date" min="02-01-1910" id="dn"
-											required="required" class="form-control" placeholder="Data de Nascimento do Familiar" />
+											required="required" class="formulario" placeholder="Data de Nascimento do Familiar" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Situação Ocupacional:</label> <input type="text"
-											id="situacao" required="required" class="form-control"
+											id="situacao" required="required" class="formulario"
 											placeholder="Situação Ocupacional do Familiar" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Escolaridade:</label> <input type="text"
-											id="escolaridade" required="required" class="form-control"
+											id="escolaridade" required="required" class="formulario"
 											placeholder="Escolaridade do Familiar" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Renda:</label> <input type="text" id="renda"
-											required="required" class="form-control"
+											required="required" class="formulario"
 											placeholder="Renda do Familiar" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>SCFV:</label> <input type="number" id="scfv"
-											required="required" class="form-control"
+											required="required" class="formulario"
 											placeholder="Serviço de Convivência e Fortalecimento de Vínculos" />
 									</div>
 								</div>
 								<h4>Despesas</h4>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Aluguel:</label> <input type="number" id="aluguel"
-											required="required" class="form-control"
+											required="required" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Água:</label> <input type="number" id="agua"
-											required="required" class="form-control"
+											required="required" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Luz:</label> <input type="number" id="luz" step="0.01"
-											required="required" class="form-control"
+											required="required" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Telefone:</label> <input type="number" id="tel"
-											step="0.01" required="required" class="form-control"
+											step="0.01" required="required" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Gás:</label> <input type="number" id="gas" step="0.01"
-											required="required" class="form-control"
+											required="required" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Alimentação:</label> <input type="number" id="alimenta"
-											step="0.01" required="required" class="form-control"
+											step="0.01" required="required" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Medicamentos:</label> <input type="number" id="medica"
-											step="0.01" required="required" class="form-control"
+											step="0.01" required="required" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 										<label>Outros:</label> <input type="number" id="outros"
-											step="0.01" required="required" class="form-control"
+											step="0.01" required="required" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<label>Total de Despesas:</label> <input type="number"
 											id="tudo" step="0.01" required="required"
-											class="form-control" placeholder="999.999,99" />
+											class="formulario" placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Renda Familiar Total:</label> <input type="number"
 											id="rendafamiliar" step="0.01" required="required"
-											class="form-control" placeholder="999.999,99" />
+											class="formulario" placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="coluna-6">
+									<div class="grupinho">
 										<label>Renda Per Capta:</label> <input type="number" id="rendapercapta" step="0.01" 
-											required="required" class="form-control" placeholder="999.999,99" />
+											required="required" class="formulario" placeholder="999.999,99" />
 									</div>
 								</div>
 							</form>
@@ -292,7 +294,7 @@
 			</div>
 
 		</div>
-		<div class="col-md-1"></div>
+		<div class="coluna-1"></div>
 
 	</div>
 	</div>

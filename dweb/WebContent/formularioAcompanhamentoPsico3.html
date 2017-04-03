@@ -16,6 +16,8 @@
 <link href="./assets/css/owl.theme.css" rel="stylesheet" />
 <link href="./assets/css/owl.transitions.css" rel="stylesheet" />
 <link href="./assets/css/header.css" rel="stylesheet" />
+<link href="./assets/css/colunas.css" rel="stylesheet" />
+<link href="./assets/css/formulario.css" rel="stylesheet" />
 
 <!-- Fonts -->
 <link
@@ -69,15 +71,15 @@
 <body>
 	<!-- 
 	<header>
-		<IMG alt="logo-amas" src="./assets/img/logo-amas2.png" />
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
 	<div class="container-fluid">
 		<div class="container content">
 
-			<div class="row">
+			<div class="linha">
 				<nav>
-					<div class="col-md-3">
+					<div class="coluna-3">
 						<div class="sidebar">
 							<div class="menu-sidebar-group">
 								<button type="button"
@@ -88,8 +90,8 @@
 								<ul class="list-group menu-sidebar">
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										style="background-color: gold; padding: 0px;" href="#"
-										onchange='getCadastros()'><IMG alt="logo-amas"
-											src="./assets/img/logo-amas2.png" /></a>
+										onchange='getCadastros()'><IMG alt="logo-onda"
+											src="./assets/img/logo-onda2.png" /></a>
 									<li class="list-group-item active" onchange="getCadastros()"><a
 										href="#" onchange='getCadastros()'>Cadastros</a> <!-- label id="cadastros"></label>
 									<ul class="list-group menu-sidebar" id="cadastros">
@@ -118,7 +120,7 @@
 					</div>
 				</nav>
 				<!-- Conteúdo -->
-				<div class="col-md-9">
+				<div class="coluna-9">
 
 					<div class="content-page">
 						<!-- Conteúdo de Páginas -->
@@ -144,15 +146,15 @@
 							or potentially negative action.
 						</div>
  -->
-						<div class="row">
+						<div class="linha">
 							<form id="formAluno" method="post">
 								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
 								<h4>Condições de Moradia</h4>
-								<div class="col-md-12">
-									<div class="form-group">
+								<div class="coluna-12">
+									<div class="grupinho">
 										<Label>Condições:</Label> 
-										<select class="form-control"
+										<select class="formulario"
 											id="condicao">
 											<option label="Selecione a Condição de Moradia" />
 											<option value="propria" label="Própria" />
@@ -162,8 +164,8 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="coluna-3">
+									<div class="grupinho">
 								<Label>Infraestrutura:</Label><br />
 								<input type="checkbox" name="infra" value="pagua">Possui Água<br>
 								<input type="checkbox" name="infra" value="pesgoto" >Possui Rede de Esgoto<br>
@@ -171,8 +173,8 @@
 								<input type="checkbox" name="infra" value="plixo">Possui Coleta de Lixo<br>
 								</div>
 								</div>
-								<div class="col-md-5">
-									<div class="form-group radio-group">
+								<div class="coluna-5">
+									<div class="grupinho radio-group">
 										<label>Risco Habitacional:</label> <label class="radio-inline">
 											Não </label> <input type="radio" name="risco" value="riscoN" /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
@@ -181,10 +183,10 @@
 									</div>
 								</div>
 
-								<div class="col-md-4">
-									<div class="form-group">
+								<div class="coluna-4">
+									<div class="grupinho">
 										<label>Qual?:</label> <input type="text" id="qrisco"
-											class="form-control" placeholder="Qual o Risco Habitacional" />
+											class="formulario" placeholder="Qual o Risco Habitacional" />
 									</div>
 								</div>
 
@@ -202,7 +204,7 @@
 			</div>
 
 		</div>
-		<div class="col-md-1"></div>
+		<div class="coluna-1"></div>
 
 	</div>
 	</div>
