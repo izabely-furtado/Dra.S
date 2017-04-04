@@ -1,4 +1,4 @@
-package ifes.dras;
+package main.java.ifes.dras;
 
 /**
  * Hello world!

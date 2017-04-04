@@ -17,6 +17,7 @@ public class TurmaCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um turma no banco de dados
 	 */
+	/*
 	public void salvar(Turma turma) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -58,6 +59,7 @@ public class TurmaCrudJDBC {
 	/*
 	 * Objetivo: Método que lista todos os turmas do banco de dados
 	 */
+	/*
 	public List<Turma> listar() {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -112,6 +114,7 @@ public class TurmaCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um turma no banco de dados
 	 */
+	/*
 	public void excluir(Turma turma) {
 		// abre a conexao com o banco de dados PostGresql
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -186,5 +189,5 @@ public class TurmaCrudJDBC {
 			}
 		}
 	}
-
+*/
 }

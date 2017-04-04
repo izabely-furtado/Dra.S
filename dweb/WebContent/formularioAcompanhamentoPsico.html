@@ -11,6 +11,7 @@
 
 <meta charset="utf-8">
 	<!-- Styles -->
+<link href="assets/css/main.css" rel="stylesheet" />
 <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
 <link href="./assets/css/owl.carousel.css" rel="stylesheet" />
 <link href="./assets/css/owl.theme.css" rel="stylesheet" />
@@ -45,7 +46,6 @@
 <!-- Alertas e Modais -->
 <link href="assets/css/sweetalert2.css" rel="stylesheet" />
 
-<link href="assets/css/main.css" rel="stylesheet" />
 
 <link href="assets/css/inicio.css" rel="stylesheet" />
 <script type='text/javascript' src='./assets/js/formAP.js'></script>
@@ -58,43 +58,38 @@
 		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
-	<div class="container content">
+	<div class="corpo">
 
-			<div class="linha">
-				
-					<div class="coluna-3">
-						<nav>
+		<div class="linha">
+
+			<div class="coluna-3">
+				<nav>
+					<!-- 
 						        <button type="button"
 									class="btn btn-link btn-sidebar-menu btn-block">
 									<i>menu</i>
 								</button>
+ 					-->
+					<ul class="menu-sidebar">
+						<li class="active"><a href="#" class="header"><img
+								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
+						<li class="active"><a href="#">Cadastros</a></li>
+						<li><a href="#">Informações</a></li>
+						<li><a href="#">Alterar Dados de Acesso</a></li>
+						<li><a href="#">Alterar Senha</a></li>
+						<li><a href="#">Sair</a></li>
+					</ul>
+				</nav>
+			</div>
 
-								<ul class="list-group menu-sidebar">
-									<li class="item-menu active " onchange="getCadastros()"><a
-										href="#" class="header"
-										onchange='getCadastros()'><img alt="logo-onda"
-											src="./assets/img/lodo-onda2.png" /></a>
-									<li class="item-menu active" onchange="getCadastros()"><a
-										href="#" onchange='getCadastros()'>Cadastros</a> </li>
-									<li class="item-menu" onchange="getInfos()"><a>Informações</a>
-										</li>
-									<li class="item-menu"><a href="#">Alterar Dados
-											de Acesso</a></li>
-									<li class="item-menu"><a href="#">Alterar Senha</a></li>
-									<li class="item-menu"><a href="#">Sair</a></li>
-								</ul>
-						</nav>
-					</div>
-				
-				<!-- Conteúdo -->
-				<div class="coluna-9">
-				<main>
-						<!-- Conteúdo de Páginas -->
-						<h2>
-							Formulário de Acompanhamento Psicosocial<br /> <small>Parte
-								1 de 6</small>
-						</h2>
-						<!-- 
+			<!-- Conteúdo -->
+			<div class="coluna-9">
+				<main> <!-- Conteúdo de Páginas -->
+				<h2>
+					Formulário de Acompanhamento Psicosocial<br /> <small>Parte
+						1 de 6</small>
+				</h2>
+				<!-- 
 						<div class="alert alert-success">
 							<strong>Successo!</strong> This alert box could indicate a
 							successful or positive action.
@@ -112,422 +107,423 @@
 							or potentially negative action.
 						</div>
  -->
-						<div class="linha">
-							<form id="formAluno" method="post">
-								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
-								<hr />
-								<h4>Dados Básicos do Fomulário</h4>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<Label>Tipo de Formulário:</Label> <select
-											class="formulario" id="tipo">
-											<option label="Selecione o Tipo de Formulário" />
-											<option value="incricao" label="Inscrição" />
-											<option value="matricula" label="Matrícula" />
-											<option value="rematricula" label="Rematrícula" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Ano de Inserção:</label> <input type="number" id="ano"
-											min="2000" required="required" class="formulario"
-											placeholder="Ano" />
-									</div>
-								</div>
-								<div class="coluna-12">
-									<div class="grupinho">
-										<Label>Forma de Acesso:</Label> <select class="formulario"
-											id="forma">
-											<option label="Selecione o Forma de Acesso" />
-											<option value="cras" label="Encaminhamento pela Rede CRAS" />
-											<option value="creas" label="Encaminhamento pela Rede CREAS" />
-											<option value="de" label="Demanda Espontânea" />
-											<option value="outra" label="Outra Forma" />
-										</select>
-									</div>
-								</div>
-
-								<h4>Dados Pessoais</h4>
-								<div class="coluna-12">
-									<div class="grupinho">
-										<label>Nome da criança/adolescente:</label> <input type="text"
-											id="nomeCrianca" required="required" class="formulario"
-											placeholder="Nome do Aluno" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Data de Nascimento:</label> <input type="date"
-											id="dataNasc" min="02-01-1910" required="required"
-											class="formulario" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho radio-group">
-										<label>Sexo:</label> <label class="radio-inline">
-											Feminino </label> <input type="radio" name="sexo" value="F" id="sexoF" checked/> <label
-											class="radio-inline"> Masculino </label> <input type="radio"
-											name="sexo" value="M" id="sexoM" />
-
-									</div>
-								</div>
-								<div class="coluna-12">
-									<div class="grupinho">
-										<label>Responsável:</label> <input type="text"
-											id="responsavel" required="required" class="formulario"
-											placeholder="Responsável pelo Aluno" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Parentesco:</label> <input type="text" id="parentesco"
-											required="required" class="formulario"
-											placeholder="Parentesco com o Aluno" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Contato:</label> <input type="text" id="telefone"
-											name="telefone" data-mask="(00) 0000-0000"
-											data-mask-selectonfocus="true" required class="formulario"
-											placeholder="(99) 99999-9999" pattern="(\d{2}) \d{5}-?\d{4}" />
-									</div>
-								</div>
-								<div class="coluna-12">
-									<div class="grupinho">
-										<label>NIS da criança/adolescente:</label> <input type="text"
-											id="nis" required="required" class="formulario"
-											placeholder="Parentesco com o Aluno" />
-									</div>
-								</div>
-
-								<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
-								<hr />
-								<address>
-								<h4>Endereço</h4>
-
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Rua/Avenida:</label> <input type="text" id="rua"
-											required="required" class="formulario"
-											placeholder="Digite o nome da rua ou avenida" />
-									</div>
-								</div>
-
-								<div class="coluna-2">
-									<div class="grupinho">
-										<label>Número:</label> <input type="number" name="quantity"
-											min="1" id="numero" required="required" class="formulario"
-											placeholder="Digite o número da casa" />
-									</div>
-								</div>
-								<div class="coluna-4">
-									<div class="grupinho">
-										<label>CEP da criança/adolescente:</label> <input type="text"
-											id="cep" required class="formulario"
-											placeholder="999.999.999-99"
-											pattern="\d{3}.\d{3}.\d{3}-?\d{2}" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Bairro:</label> <input type="text" id="bairro"
-											required="required" class="formulario"
-											placeholder="Digite o nome do bairro" />
-									</div>
-								</div>
-
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Cidade:</label> <input type="text" id="cidade"
-											class="formulario"
-											placeholder="Digite o nome da sua Cidade" />
-									</div>
-								</div>
-
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Estado:</label> <select class="formulario"
-											id="estado">
-											<option label="Selecione o Estado" />
-											<option value="AC" label="Acre" />
-											<option value="AL" label="Alagoas" />
-											<option value="AP" label="Amapá" />
-											<option value="AM" label="Amazonas" />
-											<option value="BA" label="Bahia" />
-											<option value="CE" label="Ceará" />
-											<option value="DF" label="Distrito Federal" />
-											<option value="ES" label="Espírito Santo" />
-											<option value="GO" label="Goiás" />
-											<option value="MA" label="Maranhão" />
-											<option value="MT" label="Mato Grosso" />
-											<option value="MS" label="Mato Grosso do Sul" />
-											<option value="MG" label="Minas Gerais" />
-											<option value="PA" label="Pará" />
-											<option value="PB" label="Paraíba" />
-											<option value="PR" label="Paraná" />
-											<option value="PE" label="Pernambuco" />
-											<option value="PI" label="Piauí" />
-											<option value="RJ" label="Rio de Janeiro" />
-											<option value="RN" label="Rio Grande do Norte" />
-											<option value="RS" label="Rio Grande do Sul" />
-											<option value="RO" label="Rondônia" />
-											<option value="RR" label="Roraima" />
-											<option value="SC" label="Santa Catarina" />
-											<option value="SP" label="São Paulo" />
-											<option value="SE" label="Sergipe" />
-											<option value="TO" label="Tocantins" />
-										</select>
-									</div>
-								</div>
-
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Ponto de Referência:</label> <input type="text"
-											id="referencia" class="formulario"
-											placeholder="Ponto de referência" />
-									</div>
-								</div>
-								
-								</address>
-
-								<h4>Acompanhamento Escolar</h4>
-								<div class="coluna-12">
-									<div class="grupinho">
-										<label>Escola:</label> <input type="text" id="escola"
-											class="formulario" placeholder="Nome da escola" />
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label>Anos:</Label> <select class="formulario" id="ano1">
-											<option label="Ano 1" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="ano2">
-											<option label="Ano 2" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="ano3">
-											<option label="Ano 3" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="ano4">
-											<option label="Ano 4" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="ano5">
-											<option label="Ano 5" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="ano6">
-											<option label="Ano 6" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label>Série nos Anos:</Label> <select class="formulario"
-											id="serie1">
-											<option label="Série 1" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="serie2">
-											<option label="Série 2" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="serie3">
-											<option label="Série 3" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="serie4">
-											<option label="Série 4" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="serie5">
-											<option label="Série 5" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-2">
-									<div class="grupinho">
-										<Label><br /></Label> <select class="formulario" id="serie6">
-											<option label="Série 6" />
-											<option value="1" label="2001" />
-											<option value="2" label="2002" />
-											<option value="3" label="2003" />
-											<option value="4" label="2004" />
-										</select>
-									</div>
-								</div>
-
-								<h4>Informações Médicas/Emergência</h4>
-
-								<div class="coluna-6">
-									<div class="grupinho radio-group">
-										<label>Uso de medicação:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="medicacao" id="medicacaoN" value="medicacaoN" checked/> <label
-											class="radio-inline"> Sim </label> <input type="radio"
-											name="medicacao" value="medicacaoS" id="medicacaoS" />
-
-									</div>
-								</div>
-
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Qual?:</label> <input type="text" id="qmedicacao"
-											class="formulario" placeholder="Nome da Medicação Usada" />
-									</div>
-								</div>
-								<div class="coluna-12">
-									<div class="grupinho">
-										<Label>Tipo Sanguíneo:</Label> <select class="formulario"
-											id="tipoSangue">
-											<option label="Selecione o Tipo Sanguíneo" />
-											<option label="A-" value="A-" />
-											<option label="A+" value="A+" />
-											<option label="B-" value="B-" />
-											<option label="B+" value="B+" />
-											<option label="O-" value="O-" />
-											<option label="O+" value="O+" />
-											<option label="AB-" value="AB-" />
-											<option label="AB+" value="AB+" />
-										</select>
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho radio-group">
-										<label>Alergia:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="alergia" value="alergiaN" id="alergiaN" checked /> <label
-											class="radio-inline"> Sim </label> <input type="radio"
-											name="alergia" value="alergiaS" id="alergiaS" />
-
-									</div>
-								</div>
-
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Qual?:</label> <input type="text" id="qalergia"
-											class="formulario" placeholder="Nome da alergia apresentada" />
-									</div>
-								</div>
-								<div class="coluna-12">
-									<div class="grupinho">
-										<label>Contato de Emergência:</label> <input type="text"
-											id="contatoSOS" class="formulario"
-											placeholder="(99) 99999-9999" />
-									</div>
-								</div>
-								<div class="coluna-12">
-									<h4>Informações de Transporte</h4>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho radio-group">
-										<label>Utiliza transporte:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="transporte" value="transporteN" id="transporteN" checked /> <label
-											class="radio-inline"> Sim </label> <input type="radio"
-											name="transporte" value="transporteS" id="transporteS" />
-
-									</div>
-								</div>
-
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Número do Cartão:</label> <input type="number"
-											id="cartao" class="formulario" placeholder="Número do cartão" />
-									</div>
-								</div>
-
-							</form>
+				<div class="linha">
+					<form id="formAluno" method="post">
+						<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
+						<hr />
+						<h4>Dados Básicos do Fomulário</h4>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<Label>Tipo de Formulário:</Label> <select class="formulario"
+									id="tipo">
+									<option label="Selecione o Tipo de Formulário" />
+									<option value="incricao" label="Inscrição" />
+									<option value="matricula" label="Matrícula" />
+									<option value="rematricula" label="Rematrícula" />
+								</select>
+							</div>
 						</div>
-						<button class="btn btn-default btn-theme-orange"
-							onclick="form1()" >Próximo</button>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Ano de Inserção:</label> <input type="number" id="ano"
+									min="2000" required="required" class="formulario"
+									placeholder="Ano" />
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<Label>Forma de Acesso:</Label> <select class="formulario"
+									id="forma">
+									<option label="Selecione o Forma de Acesso" />
+									<option value="cras" label="Encaminhamento pela Rede CRAS" />
+									<option value="creas" label="Encaminhamento pela Rede CREAS" />
+									<option value="de" label="Demanda Espontânea" />
+									<option value="outra" label="Outra Forma" />
+								</select>
+							</div>
+						</div>
 
-					
-				
-				</main>
+						<h4>Dados Pessoais</h4>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Nome da criança/adolescente:</label> <input type="text"
+									id="nomeCrianca" required="required" class="formulario"
+									placeholder="Nome do Aluno" />
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Data de Nascimento:</label> <input type="date"
+									id="dataNasc" min="02-01-1910" required="required"
+									class="formulario" />
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho radio-group">
+								<label>Sexo:</label> <label class="radio-inline">
+									Feminino </label> <input type="radio" name="sexo" value="F" id="sexoF"
+									checked /> <label class="radio-inline"> Masculino </label> <input
+									type="radio" name="sexo" value="M" id="sexoM" />
+
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Responsável:</label> <input type="text" id="responsavel"
+									required="required" class="formulario"
+									placeholder="Responsável pelo Aluno" />
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Parentesco:</label> <input type="text" id="parentesco"
+									required="required" class="formulario"
+									placeholder="Parentesco com o Aluno" />
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Contato:</label> <input type="text" id="telefone"
+									name="telefone" data-mask="(00) 0000-0000"
+									data-mask-selectonfocus="true" required class="formulario"
+									placeholder="(99) 99999-9999" pattern="(\d{2}) \d{5}-?\d{4}" />
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>NIS da criança/adolescente:</label> <input type="text"
+									id="nis" required="required" class="formulario"
+									placeholder="Parentesco com o Aluno" />
+							</div>
+						</div>
+
+						<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
+						<hr />
+						<address>
+							<h4>Endereço</h4>
+
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Rua/Avenida:</label> <input type="text" id="rua"
+										required="required" class="formulario"
+										placeholder="Digite o nome da rua ou avenida" />
+								</div>
+							</div>
+
+							<div class="coluna-2">
+								<div class="grupinho">
+									<label>Número:</label> <input type="number" name="quantity"
+										min="1" id="numero" required="required" class="formulario"
+										placeholder="Digite o número da casa" />
+								</div>
+							</div>
+							<div class="coluna-4">
+								<div class="grupinho">
+									<label>CEP da criança/adolescente:</label> <input type="text"
+										id="cep" required class="formulario"
+										placeholder="999.999.999-99"
+										pattern="\d{3}.\d{3}.\d{3}-?\d{2}" />
+								</div>
+							</div>
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Bairro:</label> <input type="text" id="bairro"
+										required="required" class="formulario"
+										placeholder="Digite o nome do bairro" />
+								</div>
+							</div>
+
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Cidade:</label> <input type="text" id="cidade"
+										class="formulario" placeholder="Digite o nome da sua Cidade" />
+								</div>
+							</div>
+
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Estado:</label> <select class="formulario" id="estado">
+										<option label="Selecione o Estado" />
+										<option value="AC" label="Acre" />
+										<option value="AL" label="Alagoas" />
+										<option value="AP" label="Amapá" />
+										<option value="AM" label="Amazonas" />
+										<option value="BA" label="Bahia" />
+										<option value="CE" label="Ceará" />
+										<option value="DF" label="Distrito Federal" />
+										<option value="ES" label="Espírito Santo" />
+										<option value="GO" label="Goiás" />
+										<option value="MA" label="Maranhão" />
+										<option value="MT" label="Mato Grosso" />
+										<option value="MS" label="Mato Grosso do Sul" />
+										<option value="MG" label="Minas Gerais" />
+										<option value="PA" label="Pará" />
+										<option value="PB" label="Paraíba" />
+										<option value="PR" label="Paraná" />
+										<option value="PE" label="Pernambuco" />
+										<option value="PI" label="Piauí" />
+										<option value="RJ" label="Rio de Janeiro" />
+										<option value="RN" label="Rio Grande do Norte" />
+										<option value="RS" label="Rio Grande do Sul" />
+										<option value="RO" label="Rondônia" />
+										<option value="RR" label="Roraima" />
+										<option value="SC" label="Santa Catarina" />
+										<option value="SP" label="São Paulo" />
+										<option value="SE" label="Sergipe" />
+										<option value="TO" label="Tocantins" />
+									</select>
+								</div>
+							</div>
+
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Ponto de Referência:</label> <input type="text"
+										id="referencia" class="formulario"
+										placeholder="Ponto de referência" />
+								</div>
+							</div>
+
+						</address>
+
+						<h4>Acompanhamento Escolar</h4>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Escola:</label> <input type="text" id="escola"
+									class="formulario" placeholder="Nome da escola" />
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label>Anos:</Label> <select class="formulario" id="ano1">
+									<option label="Ano 1" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="ano2">
+									<option label="Ano 2" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="ano3">
+									<option label="Ano 3" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="ano4">
+									<option label="Ano 4" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="ano5">
+									<option label="Ano 5" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="ano6">
+									<option label="Ano 6" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label>Série nos Anos:</Label> <select class="formulario"
+									id="serie1">
+									<option label="Série 1" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="serie2">
+									<option label="Série 2" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="serie3">
+									<option label="Série 3" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="serie4">
+									<option label="Série 4" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="serie5">
+									<option label="Série 5" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<Label><br /></Label> <select class="formulario" id="serie6">
+									<option label="Série 6" />
+									<option value="1" label="2001" />
+									<option value="2" label="2002" />
+									<option value="3" label="2003" />
+									<option value="4" label="2004" />
+								</select>
+							</div>
+						</div>
+
+						<h4>Informações Médicas/Emergência</h4>
+
+						<div class="coluna-6">
+							<div class="grupinho radio-group">
+								<label>Uso de medicação:</label> <label class="radio-inline">
+									Não </label> <input type="radio" name="medicacao" id="medicacaoN"
+									value="medicacaoN" checked /> <label class="radio-inline">
+									Sim </label> <input type="radio" name="medicacao" value="medicacaoS"
+									id="medicacaoS" />
+
+							</div>
+						</div>
+
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Qual?:</label> <input type="text" id="qmedicacao"
+									class="formulario" placeholder="Nome da Medicação Usada" />
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<Label>Tipo Sanguíneo:</Label> <select class="formulario"
+									id="tipoSangue">
+									<option label="Selecione o Tipo Sanguíneo" />
+									<option label="A-" value="A-" />
+									<option label="A+" value="A+" />
+									<option label="B-" value="B-" />
+									<option label="B+" value="B+" />
+									<option label="O-" value="O-" />
+									<option label="O+" value="O+" />
+									<option label="AB-" value="AB-" />
+									<option label="AB+" value="AB+" />
+								</select>
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho radio-group">
+								<label>Alergia:</label> <label class="radio-inline"> Não
+								</label> <input type="radio" name="alergia" value="alergiaN"
+									id="alergiaN" checked /> <label class="radio-inline">
+									Sim </label> <input type="radio" name="alergia" value="alergiaS"
+									id="alergiaS" />
+
+							</div>
+						</div>
+
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Qual?:</label> <input type="text" id="qalergia"
+									class="formulario" placeholder="Nome da alergia apresentada" />
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Contato de Emergência:</label> <input type="text"
+									id="contatoSOS" class="formulario"
+									placeholder="(99) 99999-9999" />
+							</div>
+						</div>
+						<div class="coluna-12">
+							<h4>Informações de Transporte</h4>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho radio-group">
+								<label>Utiliza transporte:</label> <label class="radio-inline">
+									Não </label> <input type="radio" name="transporte" value="transporteN"
+									id="transporteN" checked /> <label class="radio-inline">
+									Sim </label> <input type="radio" name="transporte" value="transporteS"
+									id="transporteS" />
+
+							</div>
+						</div>
+
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Número do Cartão:</label> <input type="number"
+									id="cartao" class="formulario" placeholder="Número do cartão" />
+							</div>
+						</div>
+
+					</form>
 				</div>
+				<button class="btn btn-default btn-theme-orange" onclick="form1()">Próximo</button>
 
-				<br /> <br />
 
 
+				</main>
 			</div>
 
-		</div>
-		<div class="coluna-1"></div>
+			<br /> <br />
 
-	
+
+
+		</div>
+
+	</div>
+	<div class="coluna-1"></div>
+
+
 </body>
 </html>

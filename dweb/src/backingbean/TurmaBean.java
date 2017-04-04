@@ -11,7 +11,7 @@ import classesAnemicas.Turma;;
 
 @ManagedBean(name = "turmaBean")
 @SessionScoped
-public class TurmaBean {
+public class TurmaBean {/*
 	private List<Turma> lista;
 	private Turma turma = new Turma();
 	TurmaCrudJDBC objTurmaCrudJDBC = new TurmaCrudJDBC();
@@ -99,6 +99,7 @@ public class TurmaBean {
 		 * FacesMessage(FacesMessage.SEVERITY_ERROR,
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
+	/*
 		TurmaCrudJDBC objUsuarioCrudJDBC = new TurmaCrudJDBC();
 		objUsuarioCrudJDBC.salvar(this.turma);
 		// salva o usuário
@@ -110,5 +111,5 @@ public class TurmaBean {
 		lista = objUsuarioCrudJDBC.listar();
 		return "listagem";
 	}
-
+*/
 }

@@ -1,4 +1,32 @@
-﻿main .news-widget .news-item
+.corpo {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 5%;
+}
+
+@media ( min-width :768px) {
+	.corpo {
+		width: 750px
+	}
+}
+
+@media ( min-width :992px) {
+	.corpo {
+		width: 970px
+	}
+}
+
+@media ( min-width :1200px) {
+	.corpo {
+		width: 1170px
+	}
+}
+
+
+
+main .news-widget .news-item
 {
     padding: 30px 5px;
 }
