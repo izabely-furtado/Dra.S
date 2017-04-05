@@ -1,55 +1,74 @@
-/* coisas na nav espacial aqui */
+﻿/* coisas na nav espacial aqui */
 
-nav li {
-	position: relative;
-	display: block;
-	padding: 10px 15px;
-	margin-bottom: -1px;
-	background-color: #fff;
-	border: 1px solid #ddd
-}
 
-nav ul {
+nav > ul {
 	padding: 0px;
 	margin-bottom: 30px;
 	margin-top: 0;
-	
 }
-
-nav ul > li:first-child {
-	border-top-left-radius: 0;
-    padding: 0px;
-    border-top-right-radius: 10px;
-}
-
+/* tirando as bolinhas laterais de lista */
 nav ul > li{
 	position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-nav ul > li > a, nav ul > li > a {
 	display: block;
-    padding: 20px;
-    text-decoration: none !important;
-    color: #2495c9;
-    background-color: #fff;
+	padding: 0px;
+	margin: -1px;
+	border: 1px solid #ddd;
+}
+/*bordas arredandadas*/
+nav ul > li:first-child, nav ul > li:first-child a, nav ul > li:first-child a:focus {
+	border-top-right-radius: 10px;
 }
 
-nav ul > li > a, nav ul > li.active > a {
+nav > li:last-child, nav > li:last-child a, nav > li:last-child a:focus {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 10px;
+}
+
+
+nav ul > li > a, nav ul > li > a {
 	display: block;
+	padding: 20px;
+	text-decoration: none !important;
+	color: #2495c9;
+	background-color: #fff;
+}
+
+li > a:hover {
+	background-color: #2495c9 !important;
+    color: White !important;
+}
+
+.ativo 
+{
+    background-color: #2495c9;
+    color: White;
+}
+/*
+nav > li.active > a,
+nav > li > a:hover,
+nav > li.open > a {
+	color: #fff;
+	background-color: #2495c9;
+
+}
+
+nav > li.active,
+nav > li.active:hover {
+	border-color: #ddd;
+	background-color: transparent;
+}
+
+nav > li a, nav ul > li a:focus {
+    display: block;
     padding: 20px;
     text-decoration: none !important;
     color: #2495c9;
     background-color: #fff;
-    
 }
 
 nav ul > li.active, ul > li.active:hover {
-    border-color: #ddd;
-    box-shadow: none;
-    background-color: transparent;
+	border-color: #ddd;
+	background-color: transparent;
 }
 
+*/

@@ -2,89 +2,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- 
+    <!-- 
 	<title>#{text['aplicacao.defaultpage.titulo']}</title>
 	<link href="./css/simple.css" rel="stylesheet"
 		type="text/css" />
 		-->
-<title>Cadastrar Novo Aluno</title>
-
-<meta charset="utf-8">
-	<!-- Styles -->
-<link href="assets/css/main.css" rel="stylesheet" />
-<link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-<link href="./assets/css/owl.carousel.css" rel="stylesheet" />
-<link href="./assets/css/owl.theme.css" rel="stylesheet" />
-<link href="./assets/css/owl.transitions.css" rel="stylesheet" />
-<link href="./assets/css/header.css" rel="stylesheet" />
-<link href="./assets/css/colunas.css" rel="stylesheet" />
-<link href="./assets/css/formulario.css" rel="stylesheet" />
-<link href="./assets/css/principal.css" rel="stylesheet" />
-<link href="./assets/css/menu.css" rel="stylesheet" />
-
-<!-- Fonts -->
-<link
-	href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"
-	rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700"
-	rel="stylesheet" />
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400"
-	rel="stylesheet" />
-<!-- link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    <title>Cadastrar Novo Aluno</title>
+    <meta charset="utf-8">
+    <!-- Styles -->
+    <link href="./assets/css/owl.carousel.css" rel="stylesheet" />
+    <link href="./assets/css/owl.theme.css" rel="stylesheet" />
+    <link href="./assets/css/owl.transitions.css" rel="stylesheet" />
+    <link href="./assets/css/header.css" rel="stylesheet" />
+    <link href="./assets/css/colunas.css" rel="stylesheet" />
+    <link href="./assets/css/formulario.css" rel="stylesheet" />
+    <link href="./assets/css/principal.css" rel="stylesheet" />
+    <link href="./assets/css/menu.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet" />
+    <!-- link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 		rel="stylesheet" /-->
-<link rel="stylesheet" type="text/css"
-	href="assets/css/font-awesome.min.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/flaticon.css" />
-
-<!-- Light Gallery -->
-<link href="assets/lightgallery/css/lightgallery.min.css"
-	rel="stylesheet" />
-<link href="assets/lightgallery/css/lg-transitions.min.css"
-	rel="stylesheet" />
-
-<!-- Alertas e Modais -->
-<link href="assets/css/sweetalert2.css" rel="stylesheet" />
-
-
-<link href="assets/css/inicio.css" rel="stylesheet" />
-<script type='text/javascript' src='./assets/js/formAP.js'></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flaticon.css" />
+    <!-- Light Gallery -->
+    <link href="assets/lightgallery/css/lightgallery.min.css" rel="stylesheet" />
+    <link href="assets/lightgallery/css/lg-transitions.min.css" rel="stylesheet" />
+    <!-- Alertas e Modais -->
+    <link href="assets/css/sweetalert2.css" rel="stylesheet" />
+    <link href="assets/css/inicio.css" rel="stylesheet" />
+    <script type='text/javascript' src='./assets/js/formAP.js'></script>
 </head>
-
-
 <body>
-	<!-- 
+    <!-- 
 	<header>
 		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
-	<div class="corpo">
-
-		<div class="linha">
-
-			<div class="coluna-3">
-				<nav>
+    <div class="corpo">
+        <div class="linha">
+            <div class="coluna-3">
+                <nav>
 					<!-- 
 						        <button type="button"
 									class="btn btn-link btn-sidebar-menu btn-block">
 									<i>menu</i>
 								</button>
  					-->
-					<ul class="menu-sidebar">
-						<li class="active"><a href="#" class="header"><img
+					<ul>
+						<li><a href="#" class="header"><img
 								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
-						<li class="active"><a href="#">Cadastros</a></li>
+						<li class="ativo"><a class="ativo" href="#">Cadastros</a></li>
 						<li><a href="#">Informações</a></li>
 						<li><a href="#">Alterar Dados de Acesso</a></li>
 						<li><a href="#">Alterar Senha</a></li>
 						<li><a href="#">Sair</a></li>
 					</ul>
 				</nav>
-			</div>
-
-			<!-- Conteúdo -->
-			<div class="coluna-9">
-				<main> <!-- Conteúdo de Páginas -->
+            </div>
+            <!-- Conteúdo -->
+            <div class="coluna-9">
+                <main> <!-- Conteúdo de Páginas -->
 				<h2>
 					Formulário de Acompanhamento Psicosocial<br /> <small>Parte
 						1 de 6</small>
@@ -107,11 +87,12 @@
 							or potentially negative action.
 						</div>
  -->
-				<div class="linha">
+				
 					<form id="formAluno" method="post">
 						<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 						<hr />
 						<h4>Dados Básicos do Fomulário</h4>
+                        <div class="linha">
 						<div class="coluna-6">
 							<div class="grupinho">
 								<Label>Tipo de Formulário:</Label> <select class="formulario"
@@ -142,8 +123,10 @@
 								</select>
 							</div>
 						</div>
-
+                        </div>
+                        <hr />
 						<h4>Dados Pessoais</h4>
+                        <div class="linha">
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Nome da criança/adolescente:</label> <input type="text"
@@ -196,12 +179,13 @@
 									placeholder="Parentesco com o Aluno" />
 							</div>
 						</div>
-
+                        </div>
 						<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
 						<hr />
 						<address>
+                        
 							<h4>Endereço</h4>
-
+                            <div class="linha">
 							<div class="coluna-6">
 								<div class="grupinho">
 									<label>Rua/Avenida:</label> <input type="text" id="rua"
@@ -282,10 +266,12 @@
 										placeholder="Ponto de referência" />
 								</div>
 							</div>
-
+</div>
 						</address>
-
+                        <hr />
+                        
 						<h4>Acompanhamento Escolar</h4>
+                        <div class="linha">
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Escola:</label> <input type="text" id="escola"
@@ -425,9 +411,10 @@
 								</select>
 							</div>
 						</div>
-
+                        </div>
+                        <hr />
 						<h4>Informações Médicas/Emergência</h4>
-
+                        <div class="linha">
 						<div class="coluna-6">
 							<div class="grupinho radio-group">
 								<label>Uso de medicação:</label> <label class="radio-inline">
@@ -481,13 +468,14 @@
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Contato de Emergência:</label> <input type="text"
-									id="contatoSOS" class="formulario"
+									id="contatoSOS" class="formulario "
 									placeholder="(99) 99999-9999" />
 							</div>
 						</div>
-						<div class="coluna-12">
-							<h4>Informações de Transporte</h4>
-						</div>
+                        </div>
+                        <hr />
+						<h4>Informações de Transporte</h4>
+						<div class="linha">
 						<div class="coluna-6">
 							<div class="grupinho radio-group">
 								<label>Utiliza transporte:</label> <label class="radio-inline">
@@ -505,25 +493,20 @@
 									id="cartao" class="formulario" placeholder="Número do cartão" />
 							</div>
 						</div>
-
+                        </div>
 					</form>
-				</div>
-				<button class="btn btn-default btn-theme-orange" onclick="form1()">Próximo</button>
+				
+				<button onclick="form1()">Próximo</button>
 
 
 
 				</main>
-			</div>
-
-			<br /> <br />
-
-
-
-		</div>
-
-	</div>
-	<div class="coluna-1"></div>
-
-
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+    <div class="coluna-1">
+    </div>
 </body>
 </html>
