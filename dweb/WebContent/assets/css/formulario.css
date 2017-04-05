@@ -19,6 +19,7 @@
 	margin-bottom: 15px
 }
 
+/*elementos do formulário - porre pra fazer*/
 textarea.formulario
 {
     height: auto;
@@ -29,10 +30,6 @@ input[type=search]
     -webkit-appearance: none;
 }
 
-.form-group
-{
-    margin-bottom: 15px;
-}
 
 .checkbox, .radio
 {
@@ -81,67 +78,9 @@ input[type=search]
 }
 
 
-.formulario-static
-{
-    min-height: 34px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    margin-bottom: 0;
-}
-
-.formulario-static.input-lg, .formulario-static.input-sm
-{
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.input-sm
-{
-    height: 30px;
-    padding: 5px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-}
-
-select.input-sm
-{
-    height: 30px;
-    line-height: 30px;
-}
-
 select[multiple].input-sm, textarea.input-sm
 {
     height: auto;
-}
-
-.form-group-sm .formulario
-{
-    height: 30px;
-    padding: 5px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-}
-
-.form-group-sm select.formulario
-{
-    height: 30px;
-    line-height: 30px;
-}
-
-.form-group-sm select[multiple].formulario, .form-group-sm textarea.formulario
-{
-    height: auto;
-}
-
-.form-group-sm .formulario-static
-{
-    height: 30px;
-    min-height: 32px;
-    padding: 6px 10px;
-    font-size: 12px;
-    line-height: 1.5;
 }
 
 .input-lg
@@ -162,76 +101,6 @@ select.input-lg
 select[multiple].input-lg, textarea.input-lg
 {
     height: auto;
-}
-
-@media ( min-width :768px)
-{
-    .navbar-form .form-group
-    {
-        display: inline-block;
-        margin-bottom: 0;
-        vertical-align: middle;
-    }
-    .navbar-form .formulario
-    {
-        display: inline-block;
-        width: auto;
-        vertical-align: middle;
-    }
-    .navbar-form .formulario-static
-    {
-        display: inline-block;
-    }
-    .navbar-form .input-group
-    {
-        display: inline-table;
-        vertical-align: middle;
-    }
-    .navbar-form .input-group .formulario, .navbar-form .input-group .input-group-addon, .navbar-form .input-group .input-group-btn
-    {
-        width: auto;
-    }
-    .navbar-form .input-group > .formulario
-    {
-        width: 100%;
-    }
-    .navbar-form .control-label
-    {
-        margin-bottom: 0;
-        vertical-align: middle;
-    }
-    .navbar-form .checkbox, .navbar-form .radio
-    {
-        display: inline-block;
-        margin-top: 0;
-        margin-bottom: 0;
-        vertical-align: middle;
-    }
-    .navbar-form .checkbox label, .navbar-form .radio label
-    {
-        padding-left: 0;
-    }
-    .navbar-form .checkbox input[type=checkbox], .navbar-form .radio input[type=radio]
-    {
-        position: relative;
-        margin-left: 0;
-    }
-    .navbar-form .has-feedback .formulario-feedback
-    {
-        top: 0;
-    }
-}
-
-@media ( max-width :767px)
-{
-    .navbar-form .form-group
-    {
-        margin-bottom: 5px;
-    }
-    .navbar-form .form-group:last-child
-    {
-        margin-bottom: 0;
-    }
 }
 
 label {
@@ -300,6 +169,7 @@ input[type=file] {
 	margin-left: 10px
 }
 
+/*botão e tal... tu clica... fica feliz e pá*/
 button {
 	display: inline-block;
 	padding: 6px 12px;
@@ -327,8 +197,8 @@ button,
 button:focus {
 	font-weight: 400;
 	color: white;
-	background-color: gold;
-	border-color: gold;
+	background-color: #f6bc31;
+	border-color: #f6bc31;
 	border-radius: 0 10px 0 10px;
 	padding: 15px 40px;
 	text-transform: uppercase;

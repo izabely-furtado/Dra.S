@@ -20,7 +20,6 @@ nav ul > li:first-child, nav ul > li:first-child a, nav ul > li:first-child a:fo
 }
 
 nav > li:last-child, nav > li:last-child a, nav > li:last-child a:focus {
-	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 10px;
 }
 
@@ -43,32 +42,3 @@ li > a:hover {
     background-color: #2495c9;
     color: White;
 }
-/*
-nav > li.active > a,
-nav > li > a:hover,
-nav > li.open > a {
-	color: #fff;
-	background-color: #2495c9;
-
-}
-
-nav > li.active,
-nav > li.active:hover {
-	border-color: #ddd;
-	background-color: transparent;
-}
-
-nav > li a, nav ul > li a:focus {
-    display: block;
-    padding: 20px;
-    text-decoration: none !important;
-    color: #2495c9;
-    background-color: #fff;
-}
-
-nav ul > li.active, ul > li.active:hover {
-	border-color: #ddd;
-	background-color: transparent;
-}
-
-*/
