@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cadastrar Novo Aluno</title>
+    <title>Cadastrar Novo Aluno</title>
     <!-- Styles -->
     <link href="./assets/css/colunas.css" rel="stylesheet" />
     <link href="./assets/css/formulario.css" rel="stylesheet" />
@@ -13,17 +13,15 @@
     <link href="assets/css/inicio.css" rel="stylesheet" />
     <script type='text/javascript' src='./assets/js/formAP2.js'></script>
 </head>
-
-
 <body>
-	<!-- 
+    <!-- 
 	<header>
 		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
-	<div class="corpo">
-			<div class="linha">
-				<!-- MENU -->
+    <div class="corpo">
+        <div class="linha">
+            <!-- MENU -->
             <div class="coluna-3">
                 <nav>
 					<ul>
@@ -44,10 +42,9 @@
 					</ul>
 				</nav>
             </div>
-				<!-- Conte�do -->
-				<div class="coluna-9">
-
-					<main><!-- Conte�do de P�ginas -->
+            <!-- Conte�do -->
+            <div class="coluna-9">
+                <main><!-- Conte�do de P�ginas -->
 						<h2>
 							Formulário de Acompanhamento Psicosocial<br /> <small>Parte
 								2 de 6</small>
@@ -127,8 +124,51 @@
 											placeholder="Serviço de Convivência e Fortalecimento de Vínculos" />
 									</div>
 								</div>
-								<h4>Despesas</h4>
-								<div class="coluna-3">
+                                <div class="coluna-12">
+                                <button
+							onclick="addParente()">Adiciona Parente</button>
+                            </div>
+
+                                <div class="coluna-12">
+				                <table>
+				                   <thead>
+					                 <tr>
+					                  <th>Nome</th>
+					                  <th>Parentesco</th>
+					                  <th>Idade</th>
+					                  <th>Nascimento</th>
+					                  <th>Situação</th>
+					                  <th>Escolaridade</th>
+					                  <th>Renda</th>
+					                  <th>SCFV</th>
+					                </tr> 
+					                </thead>
+					                <tbody>
+
+					                  <tr>
+						                <td>Mark</td>
+						                <td>Otto</td>
+						                <td>@mdo</td>
+						                <td>1</td>
+						                <td>Mark</td>
+						                <td>Otto</td>
+						                <td>@mdo</td>
+					                  </tr>
+					                  <div id="parent"></div>
+					  
+					                </tbody>
+				                  </table>
+				</div>
+				                <br /><br /><br />
+				
+
+
+
+								
+								<div class="coluna-12">
+                                <h4>Despesas</h4>
+                                </div>
+                                <div class="coluna-3">
 									<div class="grupinho">
 										<label>Aluguel:</label> <input type="number" id="aluguel"
 											required class="formulario"
@@ -210,14 +250,10 @@
 							onclick="form2()">Próximo</button>
 
 					</main>
-				</div>
-
-				<br /> <br />
-
-
-			</div>
-
-		</div>
-		
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
 </body>
 </html>

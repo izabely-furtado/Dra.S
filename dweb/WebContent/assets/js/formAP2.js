@@ -3,8 +3,8 @@
 var testeform2 = null;
 ///var conteudoform2 = new Object();
 function conteudoform2(familia, despesas, tudo, rendafamiliar, rendapercapta) {
-    this.familia = familia;
-    this.despesas = despesas;
+    this.familia = new conteudofamilia();
+    this.despesas = new conteudodespesas();
     this.tudo = tudo;
     this.rendafamiliar = rendafamiliar;
     this.rendapercapta = rendapercapta;
@@ -81,8 +81,9 @@ function addParente() {
     var situacao = document.getElementById("situacao").value;
     var escolaridade = document.getElementById("escolaridade").value;
     var renda = document.getElementById("renda").value;
-    var sefc = document.getElementById("sefc").value;
-
+    var scfv = document.getElementById("scfv").value;
+    var add = "<tr><td>" + nome + "</td><td>" + parentesco + "</td><td>" + idade + "</td><td>" + dn + "</td><td>" + situacao + "</td><td>" + escolaridade + "</td><td>" + renda + "</td><td>" + scfv + "</td></tr>";
+    document.getElementById("parente").innerHTML += add;
     //tentar gerar numa tabela
 }
 
@@ -106,3 +107,5 @@ function calcDespesas() {
 
     return aluguel + agua + luz + tel + gas + alimenta + medica + outros;
 }
+
+

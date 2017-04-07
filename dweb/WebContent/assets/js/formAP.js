@@ -69,7 +69,7 @@ function conteudoPessoal() {
         erro += "Informe o parentesco \n";
         document.getElementById("parentesco").style.border = "1px solid red";
     }
-    if (this.telefone == "" || validaTelefone(telefone)) {
+    if (this.telefone == "") {
         erro += "Informe um telefone válido \n";
         document.getElementById("telefone").style.border = "1px solid red";
     }
@@ -172,6 +172,8 @@ function form1() {
     testform1 = new conteudoform1();
     if (erro != "") {
         alert(erro);
+        erro = "";
+        window.location.href = "#";
     }
     else {
         window.location.href = "./formularioAcompanhamentoPsico2.html";

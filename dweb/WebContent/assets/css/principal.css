@@ -11,6 +11,11 @@
 	padding-top: 2%;
 }
 
+table 
+{
+    padding-bottom: 45px;
+}
+
 address 
 {
     font-style: normal;
