@@ -1,33 +1,34 @@
-<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Cadastrar Novo Aluno</title>
-    <!-- Styles -->
-    <link href="./assets/css/colunas.css" rel="stylesheet" />
-    <link href="./assets/css/formulario.css" rel="stylesheet" />
-    <link href="./assets/css/principal.css" rel="stylesheet" />
-    <link href="./assets/css/menu.css" rel="stylesheet" />
-    <link href="assets/css/inicio.css" rel="stylesheet" />
-    <script type='text/javascript' src='./assets/js/formAP.js'></script>
+	<!-- Styles -->
+	<link href="./assets/css/colunas.css" rel="stylesheet" />
+	<link href="./assets/css/formulario.css" rel="stylesheet" />
+	<link href="./assets/css/principal.css" rel="stylesheet" />
+	<link href="./assets/css/menu.css" rel="stylesheet" />
+	<link href="assets/css/inicio.css" rel="stylesheet" />
+	<script type='text/javascript' src='./assets/js/formAP.js'></script>
 </head>
 <body>
-    <!-- 
+	<!-- 
 	<header>
 		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
-    <div class="corpo">
-        <div class="linha">
-            <!-- MENU -->
-            <div class="coluna-3">
-                <nav>
+	<div class="corpo">
+		<div class="linha">
+			<!-- MENU -->
+			<div class="coluna-3">
+				<nav>
 					<ul>
 						<li><a href="./inicio.html" class="header"><img
 								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
 						<li><a class="ativo" href="#">Alunos</a></li>
-						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.html">FormulÃ¡rio de Acompanhamento PsicolÃ³gico</a></li>
 						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
 						<li><a href="./pesquisarAlunos.html">Pesquisar Alunos</a></li>
 						<li><a class="ativo" href="#">Turmas</a></li>
@@ -40,12 +41,12 @@
 						<li><a href="./login.html">Sair</a></li>
 					</ul>
 				</nav>
-            </div>
-            <!-- Conteúdo -->
-            <div class="coluna-9">
-                <main> <!-- Conteúdo de Páginas -->
+			</div>
+			<!-- Conteï¿½do -->
+			<div class="coluna-9">
+				<main> <!-- Conteï¿½do de Pï¿½ginas -->
 				<h2>
-					Formulário de Acompanhamento Psicosocial<br /> <small>Parte
+					FormulÃ¡rio de Acompanhamento Psicosocial<br /> <small>Parte
 						1 de 6</small>
 				</h2>
 				<!-- 
@@ -54,11 +55,11 @@
 							successful or positive action.
 						</div>
 						<div class="alert alert-info">
-							<strong>Informação!</strong> This alert box could indicate a
+							<strong>InformaÃ§Ã£o!</strong> This alert box could indicate a
 							neutral informative change or action.
 						</div>
 						<div class="alert alert-warning">
-							<strong>Atenção!</strong> This alert box could indicate a
+							<strong>AtenÃ§Ã£o!</strong> This alert box could indicate a
 							dangerous or potentially negative action.
 						</div>
 						<div class="alert alert-danger">
@@ -68,24 +69,24 @@
  -->
 				
 					<form id="formAluno" method="post">
-						<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
+						<!-- DADOS Bï¿½SICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 						<hr />
-						<h4>Dados Básicos do Fomulário</h4>
-                        <div class="linha">
+						<h4>Dados BÃ¡sicos do FomulÃ¡rio</h4>
+						<div class="linha">
 						<div class="coluna-6">
 							<div class="grupinho">
-								<Label>Tipo de Formulário:</Label> <select class="formulario"
+								<Label>Tipo de FormulÃ¡rio:</Label> <select class="formulario"
 									id="tipo">
-									<option label="Selecione o Tipo de Formulário" />
-									<option value="incricao" label="Inscrição" />
-									<option value="matricula" label="Matrícula" />
-									<option value="rematricula" label="Rematrícula" />
+									<option label="Selecione o Tipo de FormulÃ¡rio" />
+									<option value="incricao" label="InscriÃ§Ã£o" />
+									<option value="matricula" label="MatrÃ­cula" />
+									<option value="rematricula" label="RematrÃ­cula" />
 								</select>
 							</div>
 						</div>
 						<div class="coluna-6">
 							<div class="grupinho">
-								<label>Ano de Inserção:</label> <input type="number" id="ano"
+								<label>Ano de InserÃ§Ã£o:</label> <input type="number" id="ano"
 									min="2000" required="required" class="formulario"
 									placeholder="Ano" />
 							</div>
@@ -97,18 +98,18 @@
 									<option label="Selecione o Forma de Acesso" />
 									<option value="cras" label="Encaminhamento pela Rede CRAS" />
 									<option value="creas" label="Encaminhamento pela Rede CREAS" />
-									<option value="de" label="Demanda Espontânea" />
+									<option value="de" label="Demanda Espontï¿½nea" />
 									<option value="outra" label="Outra Forma" />
 								</select>
 							</div>
 						</div>
-                        </div>
-                        <hr />
+						</div>
+						<hr />
 						<h4>Dados Pessoais</h4>
-                        <div class="linha">
+						<div class="linha">
 						<div class="coluna-12">
 							<div class="grupinho">
-								<label>Nome da criança/adolescente:</label> <input type="text"
+								<label>Nome da crianÃ§a/adolescente:</label> <input type="text"
 									id="nomeCrianca" required="required" class="formulario"
 									placeholder="Nome do Aluno" />
 							</div>
@@ -131,9 +132,9 @@
 						</div>
 						<div class="coluna-12">
 							<div class="grupinho">
-								<label>Responsável:</label> <input type="text" id="responsavel"
+								<label>ResponsÃ¡vel:</label> <input type="text" id="responsavel"
 									required="required" class="formulario"
-									placeholder="Responsável pelo Aluno" />
+									placeholder="ResponsÃ¡vel pelo Aluno" />
 							</div>
 						</div>
 						<div class="coluna-6">
@@ -153,18 +154,18 @@
 						</div>
 						<div class="coluna-12">
 							<div class="grupinho">
-								<label>NIS da criança/adolescente:</label> <input type="text"
+								<label>NIS da crianÃ§a/adolescente:</label> <input type="text"
 									id="nis" required="required" class="formulario"
 									placeholder="Parentesco com o Aluno" />
 							</div>
 						</div>
-                        </div>
-						<!-- DADOS DE ENDEREÇO DO ALUNO QUE EXECUTA PAGAMENTO -->
+						</div>
+						<!-- DADOS DE ENDEREï¿½O DO ALUNO QUE EXECUTA PAGAMENTO -->
 						<hr />
 						<address>
-                        
-							<h4>Endereço</h4>
-                            <div class="linha">
+						
+							<h4>EndereÃ§o</h4>
+							<div class="linha">
 							<div class="coluna-6">
 								<div class="grupinho">
 									<label>Rua/Avenida:</label> <input type="text" id="rua"
@@ -175,14 +176,14 @@
 
 							<div class="coluna-2">
 								<div class="grupinho">
-									<label>Número:</label> <input type="number" name="quantity"
+									<label>NÃºmero:</label> <input type="number" name="quantity"
 										min="1" id="numero" required="required" class="formulario"
-										placeholder="Digite o número da casa" />
+										placeholder="Digite o nÃºmero da casa" />
 								</div>
 							</div>
 							<div class="coluna-4">
 								<div class="grupinho">
-									<label>CEP da criança/adolescente:</label> <input type="text"
+									<label>CEP da crianÃ§a/adolescente:</label> <input type="text"
 										id="cep" required class="formulario"
 										placeholder="999.999.999-99"
 										pattern="\d{3}.\d{3}.\d{3}-?\d{2}" />
@@ -209,29 +210,29 @@
 										<option label="Selecione o Estado" />
 										<option value="AC" label="Acre" />
 										<option value="AL" label="Alagoas" />
-										<option value="AP" label="Amapá" />
+										<option value="AP" label="AmapÃ¡" />
 										<option value="AM" label="Amazonas" />
 										<option value="BA" label="Bahia" />
-										<option value="CE" label="Ceará" />
+										<option value="CE" label="CearÃ¡" />
 										<option value="DF" label="Distrito Federal" />
-										<option value="ES" label="Espírito Santo" />
-										<option value="GO" label="Goiás" />
-										<option value="MA" label="Maranhão" />
+										<option value="ES" label="EspÃ­rito Santo" />
+										<option value="GO" label="GoiÃ¡s" />
+										<option value="MA" label="MaranhÃ£o" />
 										<option value="MT" label="Mato Grosso" />
 										<option value="MS" label="Mato Grosso do Sul" />
 										<option value="MG" label="Minas Gerais" />
-										<option value="PA" label="Pará" />
-										<option value="PB" label="Paraíba" />
-										<option value="PR" label="Paraná" />
+										<option value="PA" label="ParÃ¡" />
+										<option value="PB" label="Paraiba" />
+										<option value="PR" label="ParanÃ¡" />
 										<option value="PE" label="Pernambuco" />
-										<option value="PI" label="Piauí" />
+										<option value="PI" label="PiauÃ­" />
 										<option value="RJ" label="Rio de Janeiro" />
 										<option value="RN" label="Rio Grande do Norte" />
 										<option value="RS" label="Rio Grande do Sul" />
-										<option value="RO" label="Rondônia" />
+										<option value="RO" label="RondÃ´nia" />
 										<option value="RR" label="Roraima" />
 										<option value="SC" label="Santa Catarina" />
-										<option value="SP" label="São Paulo" />
+										<option value="SP" label="SÃ£o Paulo" />
 										<option value="SE" label="Sergipe" />
 										<option value="TO" label="Tocantins" />
 									</select>
@@ -240,17 +241,17 @@
 
 							<div class="coluna-6">
 								<div class="grupinho">
-									<label>Ponto de Referência:</label> <input type="text"
+									<label>Ponto de ReferÃªncia:</label> <input type="text"
 										id="referencia" class="formulario"
-										placeholder="Ponto de referência" />
+										placeholder="Ponto de referÃªncia" />
 								</div>
 							</div>
 </div>
 						</address>
-                        <hr />
-                        
+						<hr />
+						
 						<h4>Acompanhamento Escolar</h4>
-                        <div class="linha">
+						<div class="linha">
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Escola:</label> <input type="text" id="escola"
@@ -325,9 +326,9 @@
 						</div>
 						<div class="coluna-2">
 							<div class="grupinho">
-								<Label>Série nos Anos:</Label> <select class="formulario"
+								<Label>SÃ©rie nos Anos:</Label> <select class="formulario"
 									id="serie1">
-									<option label="Série 1" />
+									<option label="SÃ©rie 1" />
 									<option value="1" label="2001" />
 									<option value="2" label="2002" />
 									<option value="3" label="2003" />
@@ -338,7 +339,7 @@
 						<div class="coluna-2">
 							<div class="grupinho">
 								<Label><br /></Label> <select class="formulario" id="serie2">
-									<option label="Série 2" />
+									<option label="SÃ©rie 2" />
 									<option value="1" label="2001" />
 									<option value="2" label="2002" />
 									<option value="3" label="2003" />
@@ -349,7 +350,7 @@
 						<div class="coluna-2">
 							<div class="grupinho">
 								<Label><br /></Label> <select class="formulario" id="serie3">
-									<option label="Série 3" />
+									<option label="SÃ©rie 3" />
 									<option value="1" label="2001" />
 									<option value="2" label="2002" />
 									<option value="3" label="2003" />
@@ -360,7 +361,7 @@
 						<div class="coluna-2">
 							<div class="grupinho">
 								<Label><br /></Label> <select class="formulario" id="serie4">
-									<option label="Série 4" />
+									<option label="SÃ©rie 4" />
 									<option value="1" label="2001" />
 									<option value="2" label="2002" />
 									<option value="3" label="2003" />
@@ -371,7 +372,7 @@
 						<div class="coluna-2">
 							<div class="grupinho">
 								<Label><br /></Label> <select class="formulario" id="serie5">
-									<option label="Série 5" />
+									<option label="SÃ©rie 5" />
 									<option value="1" label="2001" />
 									<option value="2" label="2002" />
 									<option value="3" label="2003" />
@@ -382,7 +383,7 @@
 						<div class="coluna-2">
 							<div class="grupinho">
 								<Label><br /></Label> <select class="formulario" id="serie6">
-									<option label="Série 6" />
+									<option label="SÃ©rie 6" />
 									<option value="1" label="2001" />
 									<option value="2" label="2002" />
 									<option value="3" label="2003" />
@@ -390,14 +391,14 @@
 								</select>
 							</div>
 						</div>
-                        </div>
-                        <hr />
-						<h4>Informações Médicas/Emergência</h4>
-                        <div class="linha">
+						</div>
+						<hr />
+						<h4>InformaÃ§Ãµes MÃ©dicas/EmergÃªncia</h4>
+						<div class="linha">
 						<div class="coluna-6">
 							<div class="grupinho radio-group">
-								<label>Uso de medicação:</label> <label class="radio-inline">
-									Não </label> <input type="radio" name="medicacao" id="medicacaoN"
+								<label>Uso de medicaÃ§Ã£o:</label> <label class="radio-inline">
+									NÃ£o </label> <input type="radio" name="medicacao" id="medicacaoN"
 									value="medicacaoN" checked /> <label class="radio-inline">
 									Sim </label> <input type="radio" name="medicacao" value="medicacaoS"
 									id="medicacaoS" />
@@ -408,14 +409,14 @@
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Qual?:</label> <input type="text" id="qmedicacao"
-									class="formulario" placeholder="Nome da Medicação Usada" />
+									class="formulario" placeholder="Nome da MedicaÃ§Ã£o Usada" />
 							</div>
 						</div>
 						<div class="coluna-12">
 							<div class="grupinho">
-								<Label>Tipo Sanguíneo:</Label> <select class="formulario"
+								<Label>Tipo SanguÃ­neo:</Label> <select class="formulario"
 									id="tipoSangue">
-									<option label="Selecione o Tipo Sanguíneo" />
+									<option label="Selecione o Tipo Sanguï¿½neo" />
 									<option label="A-" value="A-" />
 									<option label="A+" value="A+" />
 									<option label="B-" value="B-" />
@@ -429,7 +430,7 @@
 						</div>
 						<div class="coluna-6">
 							<div class="grupinho radio-group">
-								<label>Alergia:</label> <label class="radio-inline"> Não
+								<label>Alergia:</label> <label class="radio-inline"> NÃ£o
 								</label> <input type="radio" name="alergia" value="alergiaN"
 									id="alergiaN" checked /> <label class="radio-inline">
 									Sim </label> <input type="radio" name="alergia" value="alergiaS"
@@ -446,19 +447,19 @@
 						</div>
 						<div class="coluna-12">
 							<div class="grupinho">
-								<label>Contato de Emergência:</label> <input type="text"
+								<label>Contato de EmergÃªncia:</label> <input type="text"
 									id="contatoSOS" class="formulario "
 									placeholder="(99) 99999-9999" />
 							</div>
 						</div>
-                        </div>
-                        <hr />
-						<h4>Informações de Transporte</h4>
+						</div>
+						<hr />
+						<h4>InformaÃ§Ãµes de Transporte</h4>
 						<div class="linha">
 						<div class="coluna-6">
 							<div class="grupinho radio-group">
 								<label>Utiliza transporte:</label> <label class="radio-inline">
-									Não </label> <input type="radio" name="transporte" value="transporteN"
+									NÃ£o </label> <input type="radio" name="transporte" value="transporteN"
 									id="transporteN" checked /> <label class="radio-inline">
 									Sim </label> <input type="radio" name="transporte" value="transporteS"
 									id="transporteS" />
@@ -468,23 +469,23 @@
 
 						<div class="coluna-6">
 							<div class="grupinho">
-								<label>Número do Cartão:</label> <input type="number"
-									id="cartao" class="formulario" placeholder="Número do cartão" />
+								<label>NÃºmero do CartÃ£o:</label> <input type="number"
+									id="cartao" class="formulario" placeholder="NÃºmero do cartÃ£o" />
 							</div>
 						</div>
-                        </div>
+						</div>
 					</form>
 				
-				<button onclick="form1()">Próximo</button>
+				<button onclick="form1()">PrÃ³ximo</button>
 
 
 
 				</main>
-            </div>
-            <br />
-            <br />
-        </div>
-    </div>
-    
+			</div>
+			<br />
+			<br />
+		</div>
+	</div>
+	
 </body>
 </html>
