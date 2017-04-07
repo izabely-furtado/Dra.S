@@ -1,238 +1,179 @@
 
-function form1() {
-    //dados básicos
-    var tipo = document.getElementById("tipo").value;
-    var ano = document.getElementById("ano").value;
-    var forma = document.getElementById("forma").value;
+var testform1 = null;
+var erro = "";
+function conteudoform1() {
+    this.basico = new conteudoBasico();
+    this.pessoal = new conteudoPessoal();
+    this.endereco = new conteudoEndereco();
+    this.escola = new conteudoEscola();
+    this.medico = new conteudoMedico();
+    this.transporte = new conteudoTransporte();
+}
 
-    //dados pessoais
-    var nomeChibi = document.getElementById("nomeCrianca").value;
-    var dataNasc = document.getElementById("dataNasc").value;
-    var sexo = "F";
+function conteudoBasico() {
+    this.tipo = document.getElementById("tipo").value;
+    this.ano = document.getElementById("ano").value;
+    this.forma = document.getElementById("forma").value;
+    if (this.tipo == "") {
+        erro += "Informe o tipo \n";
+        document.getElementById("tipo").style.border = "1px solid red";
+    }
+    if (this.ano == "") {
+        erro += "Informe o ano \n";
+        document.getElementById("ano").style.border = "1px solid red";
+    }
+    if (this.forma == "") {
+        erro += "Informe a forma \n";
+        document.getElementById("forma").style.border = "1px solid red";
+    }
+    if (this.ano < 1900) {
+        erro += "Informe um ano válido \n";
+        document.getElementById("ano").style.border = "1px solid red";
+    }
+}
+
+function validaTelefone(telefone) {
+    //se não desejar números é só remover da regex abaixo
+    var regex = '[^a-zA-Z]+';
+    var testandosamerda = telefone.match(regex);
+    if (telefone.match(regex)) {
+        //encontrou então não passa na validação
+        return false;
+    }
+    else {
+        //não encontrou caracteres especiais
+        return true;
+    }
+}
+
+function conteudoPessoal() {
+    this.nomeCrianca = document.getElementById("nomeCrianca").value; ;
+    this.dataNasc = document.getElementById("dataNasc").value; ;
+    this.sexo = "F";
     if (document.getElementById("sexoM").ckecked) {
         sexo = "M";
     }
-    var responsavel = document.getElementById("responsavel").value;
-    var parentesco = document.getElementById("parentesco").value;
-    var telefone = document.getElementById("telefone").value;
-    var nis = document.getElementById("nis").value;
+    this.responsavel = document.getElementById("responsavel").value;
+    this.parentesco = document.getElementById("parentesco").value;
+    this.telefone = document.getElementById("telefone").value;
+    this.nis = document.getElementById("nis").value;
+    if (this.nomeCrianca == "") {
+        erro += "Informe o nome da criança \n";
+        document.getElementById("nomeCrianca").style.border = "1px solid red";
+    }
+    if (this.responsavel == "") {
+        erro += "Informe o responsavel pela criança \n";
+        document.getElementById("responsavel").style.border = "1px solid red";
+    }
+    if (this.parentesco == "") {
+        erro += "Informe o parentesco \n";
+        document.getElementById("parentesco").style.border = "1px solid red";
+    }
+    if (this.telefone == "" || validaTelefone(telefone)) {
+        erro += "Informe um telefone válido \n";
+        document.getElementById("telefone").style.border = "1px solid red";
+    }
+}
 
-    //endereço
-    var rua = document.getElementById("rua").value;
-    var numero = document.getElementById("numero").value;
-    var cep = document.getElementById("cep").value;
-    var bairro = document.getElementById("bairro").value;
-    var cidade = document.getElementById("cidade").value;
-    var estado = document.getElementById("estado").value;
-    var referencia = document.getElementById("referencia").value;
+function conteudoEndereco() {
+    this.rua = document.getElementById("rua").value;
+    this.numero = document.getElementById("numero").value;
+    this.cep = document.getElementById("cep").value;
+    this.bairro = document.getElementById("bairro").value;
+    this.cidade = document.getElementById("cidade").value;
+    this.estado = document.getElementById("estado").value;
+    this.referencia = document.getElementById("referencia").value;
+    if (this.rua == "") {
+        erro += "Informe a rua \n";
+        document.getElementById("rua").style.border = "1px solid red";
+    }
+    if (this.numero == "") {
+        erro += "Informe o numero \n";
+        document.getElementById("numero").style.border = "1px solid red";
+    }
+    if (this.cep == "") {
+        erro += "Informe o cep \n";
+        document.getElementById("cep").style.border = "1px solid red";
+    }
+    if (this.bairro == "") {
+        erro += "Informe o bairro \n";
+        document.getElementById("bairro").style.border = "1px solid red";
+    }
+    if (this.cidade == "") {
+        erro += "Informe a cidade \n";
+        document.getElementById("cidade").style.border = "1px solid red";
+    }
+    if (this.estado == "") {
+        erro += "Informe o estado \n";
+        document.getElementById("estado").style.border = "1px solid red";
+    }
+    
+}
 
-    //acompanhamento escolar
-    var escola = document.getElementById("escola").value;
+function conteudoEscola() {
+    this.escola = document.getElementById("escola").value;
     //são no máximo seis anos participando do projeto
     //série no 1º ano no projeto
-    var ano1 = document.getElementById("ano1").value;
-    var serie1 = document.getElementById("serie1").value;
+    this.ano1 = document.getElementById("ano1").value;
+    this.serie1 = document.getElementById("serie1").value;
     //série no 2º ano no projeto
-    var ano2 = document.getElementById("ano2").value;
-    var serie2 = document.getElementById("serie2").value;
+    this.ano2 = document.getElementById("ano2").value;
+    this.serie2 = document.getElementById("serie2").value;
     //série no 3º ano no projeto
-    var ano3 = document.getElementById("ano3").value;
-    var serie3 = document.getElementById("serie3").value;
+    this.ano3 = document.getElementById("ano3").value;
+    this.serie3 = document.getElementById("serie3").value;
     //série no 4º ano no projeto
-    var ano4 = document.getElementById("ano4").value;
-    var serie4 = document.getElementById("serie4").value;
+    this.ano4 = document.getElementById("ano4").value;
+    this.serie4 = document.getElementById("serie4").value;
     //série no 5º ano no projeto
-    var ano5 = document.getElementById("ano5").value;
-    var serie5 = document.getElementById("serie5").value;
+    this.ano5 = document.getElementById("ano5").value;
+    this.serie5 = document.getElementById("serie5").value;
     //série no 6º ano no projeto
-    var ano6 = document.getElementById("ano6").value;
-    var serie6 = document.getElementById("serie6").value;
+    this.ano6 = document.getElementById("ano6").value;
+    this.serie6 = document.getElementById("serie6").value;
+    if (this.escola == "") {
+        erro += "Informe a escola \n";
+        document.getElementById("escola").style.border = "1px solid red";
+    }
+}
 
-    //informações médicas - emergenciais
-    var medicacao = "N";
-    var qmedicacao = "";
+function conteudoMedico() {
+    this.medicacao = "N";
+    this.qmedicacao = "";
     if (document.getElementById("medicacaoS").checked) {
         sexo = "S";
         qmedicacao = document.getElementById("qmedicacao").value;
     }
-    var tipoSangue = document.getElementById("tipoSangue").value;
-    var alergia = "N";
-    var qalergia = "";
+    this.tipoSangue = document.getElementById("tipoSangue").value;
+    this.alergia = "N";
+    this.qalergia = "";
     if (document.getElementById("alergiaS").checked) {
         sexo = "S";
         qalergia = document.getElementById("qalergia").value;
     }
-    var contatoSOS = document.getElementById("contatoSOS").value;
+    this.contatoSOS = document.getElementById("contatoSOS").value;
+    if (this.contatoSOS == "") {
+        erro += "Informe um contato de emergência \n";
+        document.getElementById("contatoSOS").style.border = "1px solid red";
+    }
+    
+}
 
-    //informações de transporte
-    var transporte = "N";
+function conteudoTransporte() {
+    this.transporte = "N";
     if (document.getElementById("transporteS").checked) {
         sexo = "S";
     }
-    var cartao = document.getElementById("cartao").value;
-
-    window.location.href = "./formularioAcompanhamentoPsico2.html"
-}
-
-function form2() {
-    //composição familiar
-    var nome = document.getElementById("nome").value;
-    var parentesco = document.getElementById("parentesco").value;
-    var idade = document.getElementById("idade").value;
-    var dn = document.getElementById("dn").value;
-    var situacao = document.getElementById("situacao").value;
-    var escolaridade = document.getElementById("escolaridade").value;
-    var renda = document.getElementById("renda").value;
-    var scfv = document.getElementById("scfv").value;
-
-    //despesas
-    var aluguel = document.getElementById("aluguel").value;
-    var agua = document.getElementById("agua").value;
-    var luz = document.getElementById("luz").value;
-    var tel = document.getElementById("tel").value;
-    var gas = document.getElementById("gas").value;
-    var alimenta = document.getElementById("alimenta").value;
-    var medica = document.getElementById("medica").value;
-    var outros = document.getElementById("outros").value;
-
-    //tentar gerar estes dados
-    var tudo = document.getElementById("tudo").value;
-    var rendafamiliar = document.getElementById("rendafamiliar").value;
-    var rendapercapta = document.getElementById("rendapercapta").value;
-
-    window.location.href = "./formularioAcompanhamentoPsico3.html"
+    this.cartao = document.getElementById("cartao").value;
 
 }
 
-function addParente() {
-    //composição familiar
-    var nome = document.getElementById("nome").value;
-    var parentesco = document.getElementById("parentesco").value;
-    var idade = document.getElementById("idade").value;
-    var dn = document.getElementById("dn").value;
-    var situacao = document.getElementById("situacao").value;
-    var escolaridade = document.getElementById("escolaridade").value;
-    var renda = document.getElementById("renda").value;
-    var sefc = document.getElementById("sefc").value;
-
-    //tentar gerar numa tabela
-}
-
-function calcRendaTotal() {
-    var renda = document.getElementById("renda").value;
-    var rendax = document.getElementById("rendaX").value;
-
-    return renda + rendax;
-}
-
-function calcDespesas() {
-    //despesas
-    var aluguel = document.getElementById("aluguel").value;
-    var agua = document.getElementById("agua").value;
-    var luz = document.getElementById("luz").value;
-    var tel = document.getElementById("tel").value;
-    var gas = document.getElementById("gas").value;
-    var alimenta = document.getElementById("alimenta").value;
-    var medica = document.getElementById("medica").value;
-    var outros = document.getElementById("outros").value;
-
-    return aluguel + agua + luz + tel + gas + alimenta + medica + outros;
-}
-
-function form3() {
-
-    //condição
-    var condicao = document.getElementById("condicao").value;
-    //var infra = document.getElementsByName("infra").value;
-    var pagua = document.getElementById("pagua").checked;
-    var pesgoto = document.getElementById("pesgoto").checked;
-    var penergia = document.getElementById("penergia").checked;
-    var plixo = document.getElementById("plixo").checked;
-
-    var risco = "N";
-    var qrisco = "";
-    if (document.getElementById("riscoS").checked) {
-        sexo = "S";
-        qalergia = document.getElementById("qrisco").value;
+function form1() {
+    testform1 = new conteudoform1();
+    if (erro != "") {
+        alert(erro);
     }
-    window.location.href = "./formularioAcompanhamentoPsico4.html"
-}
-
-function form4() {
-    //acesso a serviços
-    var scras = document.getElementById("scras").value;
-    var screas = document.getElementById("screas").value;
-    var sus = document.getElementById("sus").value;
-    var sesf = document.getElementById("sesf").value;
-    var scei = document.getElementById("scei").value;
-    var sai = document.getElementById("sai").value;
-
-    //acolhimento
-    var anome = document.getElementById("anome").value;
-    var ainstituicao = document.getElementById("ainstituicao").value;
-    var aresponsavel = document.getElementById("aresponsavel").value;
-    var acontato = document.getElementById("acontato").value;
-    var amotivo = document.getElementById("amotivo").value;
-
-    //programa/beneficios
-    var pbf = document.getElementById("pbf").checked;
-    var pi = document.getElementById("pi").checked;
-    var pbc = document.getElementById("pbc").checked;
-    var bpc = document.getElementById("bpc").checked;
-    var bp = document.getElementById("bp").checked;
-    var ar = document.getElementById("ar").checked;
-    var beneficio = document.getElementById("beneficio").value;
-    var outrobeneficio = document.getElementById("outrobeneficio").value;
-
-    window.location.href = "./formularioAcompanhamentoPsico5.html"
-}
-
-function form5() {
-    //publico
-    var isolamento = document.getElementById("isolamento").checked;
-    var trabinfantil = document.getElementById("trabinfantil").checked;
-    var violencia = document.getElementById("violencia").checked;
-    var foraescola = document.getElementById("foraescola").checked;
-    var acolhimento = document.getElementById("acolhimento").checked;
-    var mse = document.getElementById("mse").checked;
-    var egressos = document.getElementById("egressos").checked;
-    var abuso = document.getElementById("abuso").checked;
-    var eca = document.getElementById("eca").checked;
-    var rua = document.getElementById("rua").checked;
-    var vulnerabilidade = document.getElementById("vulnerabilidade").checked;
-
-    window.location.href = "./formularioAcompanhamentoPsico6.html"
-}
-
-function form6() { 
-    //são no máximo seis anos participando do projeto
-    //série no 1º ano no projeto
-    var ano1 = document.getElementById("ano1").value;
-    var ass1 = document.getElementById("ass1").value;
-    var data1 = document.getElementById("data1").value;
-    //série no 2º ano no projeto
-    var ano2 = document.getElementById("ano2").value;
-    var ass2 = document.getElementById("ass2").value;
-    var data2 = document.getElementById("data2").value;
-    //série no 3º ano no projeto
-    var ano3 = document.getElementById("ano3").value;
-    var ass3 = document.getElementById("ass3").value;
-    var data3 = document.getElementById("data3").value;
-    //série no 4º ano no projeto
-    var ano4 = document.getElementById("ano4").value;
-    var ass4 = document.getElementById("ass4").value;
-    var data4 = document.getElementById("data4").value;
-    //série no 5º ano no projeto
-    var ano5 = document.getElementById("ano5").value;
-    var ass5 = document.getElementById("ass5").value;
-    var data5 = document.getElementById("data5").value;
-    //série no 6º ano no projeto
-    var ano6 = document.getElementById("ano6").value;
-    var ass6 = document.getElementById("ass6").value;
-    var data6 = document.getElementById("data6").value;
-
-    var asstecresp = document.getElementById("asstecresp").value;
-    var assrespfam = document.getElementById("assrespfam").value;
-
-    window.location.href = "./mostraAluno.html"
+    else {
+        window.location.href = "./formularioAcompanhamentoPsico2.html";
+    }
 }

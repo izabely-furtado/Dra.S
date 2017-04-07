@@ -33,13 +33,13 @@
 
 					#{text['animal.cliente']}
 					<h:selectOneMenu value="#{clienteBean.lista}">
-						<f:selectItems value="#{clienteBean.lista}" var="c" itemLabel="#{c.nome}" itemValue="#{c.nome}" />
+						<f:selectItems value="#{clienteBean.lista}" var="c" itemlabel="#{c.nome}" itemValue="#{c.nome}" />
 					</h:selectOneMenu>
 					<h:message for="cliente" styleClass="errorMessage" />
 					
 					#{text['animal.especie']}
 					<h:selectOneMenu value="#{especieBean.lista}">
-						<f:selectItems value="#{especieBean.lista}" var="c" itemLabel="#{c.descricao}" itemValue="#{c.descricao}" />
+						<f:selectItems value="#{especieBean.lista}" var="c" itemlabel="#{c.descricao}" itemValue="#{c.descricao}" />
 					</h:selectOneMenu>
 					<h:message for="especie" styleClass="errorMessage" />
 
