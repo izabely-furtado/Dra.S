@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastrar Novo Aluno</title>
+    <meta charset="ISO-8859-1">
+	<title>Cadastrar Novo Aluno</title>
     <!-- Styles -->
     <link href="./assets/css/colunas.css" rel="stylesheet" />
     <link href="./assets/css/formulario.css" rel="stylesheet" />
@@ -22,7 +23,6 @@
 				+ "<li class='list-group-item'><a href='#'>Pacote</a></li>"
 				+ "</ul>";
 	}
-
 	function getInfos() {
 		document.getElementById("infos").innerHTML = "<ul class='list-group menu-sidebar'>"
 				+ "<li class='list-group-item'><a href='#'>Aluno Pago</a></li>"
@@ -30,7 +30,7 @@
 				+ "<li class='list-group-item'><a href='#'>Professor</a></li>"
 				+ "<li class='list-group-item'><a href='#'>Turma</a></li>"
 				+ "<li class='list-group-item'><a href='#'>Pacote</a></li>"
-				+ "<li class='list-group-item'><a href='#'>BalanÃ§o</a></li>"
+				+ "<li class='list-group-item'><a href='#'>Balanço</a></li>"
 				+ "</ul>";
 	}
 </SCRIPT>-->
@@ -45,29 +45,30 @@
 				<!-- MENU -->
             <div class="coluna-3">
                 <nav>
-					<!-- 
-						        <button type="button"
-									class="btn btn-link btn-sidebar-menu btn-block">
-									<i>menu</i>
-								</button>
- 					-->
 					<ul>
-						<li><a href="#" class="header"><img
+						<li><a href="./inicio.html" class="header"><img
 								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
-						<li><a class="ativo" href="#">Cadastros</a></li>
-						<li><a href="#">InformaÃ§Ãµes</a></li>
-						<li><a href="#">Dados de Acesso</a></li>
-						<li><a href="#">Alterar Senha</a></li>
-						<li><a href="#">Sair</a></li>
+						<li><a class="ativo" href="#">Alunos</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
+						<li><a href="./pesquisarAlunos.html">Pesquisar Alunos</a></li>
+						<li><a class="ativo" href="#">Turmas</a></li>
+						<li><a href="./cadastrarTurmas.html">Cadastrar Turmas</a></li>
+						<li><a href="./pesquisarTurmas.html">Pesquisar Turmas</a></li>
+						<li><a href="./cadastrarAulas.html">Cadastrar Aulas</a></li>
+						<li><a href="#" class="ativo">Sistema</a></li>
+						<li><a href="./dadosAcesso.html">Visualizar Dados de Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.html">Alterar Dados de Acesso</a></li>
+						<li><a href="./login.html">Sair</a></li>
 					</ul>
 				</nav>
             </div>
-				<!-- ConteÃºdo -->
+				<!-- Conteúdo -->
 				<div class="coluna-9">
 
-					<main><!-- ConteÃºdo de PÃ¡ginas -->
+					<main><!-- Conteúdo de Páginas -->
 						<h2>
-							FormulÃ¡rio de Acompanhamento Psicosocial<br /> <small>Parte
+							Formulário de Acompanhamento Psicosocial<br /> <small>Parte
 								6 de 6</small>
 						</h2>
 						<!-- 
@@ -76,11 +77,11 @@
 							successful or positive action.
 						</div>
 						<div class="alert alert-info">
-							<strong>InformaÃ§Ã£o!</strong> This alert box could indicate a
+							<strong>Informação!</strong> This alert box could indicate a
 							neutral informative change or action.
 						</div>
 						<div class="alert alert-warning">
-							<strong>AtenÃ§Ã£o!</strong> This alert box could indicate a
+							<strong>Atenção!</strong> This alert box could indicate a
 							dangerous or potentially negative action.
 						</div>
 						<div class="alert alert-danger">
@@ -90,19 +91,19 @@
  -->
 						<div class="linha">
 							<form id="formAluno" method="post">
-								<!-- DADOS BÃSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
+								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
-								<h4>RematrÃ­cula</h4>
+								<h4>Rematrícula</h4>
 								<div class="coluna-3">
 									<div class="grupinho">
 										<label>Ano</label> <input type="number" min=2000 id="ano1"
-											class="formulario" placeholder="Ano 1 da RematrÃ­cula" />
+											class="formulario" placeholder="Ano 1 da Rematrícula" />
 									</div>
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass1"
-											class="formulario" placeholder="Assinatura do ResponsÃ¡vel" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
 								<div class="coluna-3">
@@ -114,13 +115,13 @@
 								<div class="coluna-3">
 									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano2"
-											class="formulario" placeholder="Ano 2 da RematrÃ­cula" />
+											class="formulario" placeholder="Ano 2 da Rematrícula" />
 									</div>
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass2"
-											class="formulario" placeholder="Assinatura do ResponsÃ¡vel" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
 								<div class="coluna-3">
@@ -132,13 +133,13 @@
 								<div class="coluna-3">
 									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano3"
-											class="formulario" placeholder="Ano 3 da RematrÃ­cula" />
+											class="formulario" placeholder="Ano 3 da Rematrícula" />
 									</div>
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass3"
-											class="formulario" placeholder="Assinatura do ResponsÃ¡vel" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
 								<div class="coluna-3">
@@ -151,13 +152,13 @@
 								<div class="coluna-3">
 									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano4"
-											class="formulario" placeholder="Ano 4 da RematrÃ­cula" />
+											class="formulario" placeholder="Ano 4 da Rematrícula" />
 									</div>
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass4"
-											class="formulario" placeholder="Assinatura do ResponsÃ¡vel" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
 								<div class="coluna-3">
@@ -170,13 +171,13 @@
 								<div class="coluna-3">
 									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano5"
-											class="formulario" placeholder="Ano 5 da RematrÃ­cula" />
+											class="formulario" placeholder="Ano 5 da Rematrícula" />
 									</div>
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="ass5"
-											class="formulario" placeholder="Assinatura do ResponsÃ¡vel" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
 								<div class="coluna-3">
@@ -189,13 +190,13 @@
 								<div class="coluna-3">
 									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano6"
-											class="formulario" placeholder="Ano 6 da RematrÃ­cula" />
+											class="formulario" placeholder="Ano 6 da Rematrícula" />
 									</div>
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="assi6"
-											class="formulario" placeholder="Assinatura do ResponsÃ¡vel" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
 								<div class="coluna-3">
@@ -208,13 +209,13 @@
 								<div class="coluna-3">
 									<div class="grupinho">
 										<label>Ano</label> <input type="text" id="ano7"
-											class="formulario" placeholder="Ano 7 da RematrÃ­cula" />
+											class="formulario" placeholder="Ano 7 da Rematrícula" />
 									</div>
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
 										<label>Assinatura:</label> <input type="text" id="assi7"
-											class="formulario" placeholder="Assinatura do ResponsÃ¡vel" />
+											class="formulario" placeholder="Assinatura do Responsável" />
 									</div>
 								</div>
 								<div class="coluna-3">
@@ -226,16 +227,16 @@
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
-										<label>Assinatura do TÃ©cnico ResponsÃ¡vel:</label> <input
+										<label>Assinatura do Técnico Responsável:</label> <input
 											type="text" id="asstecresp" class="formulario"
-											placeholder="Assinatura do TÃ©cnico ResponsÃ¡vel" />
+											placeholder="Assinatura do Técnico Responsável" />
 									</div>
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
-										<label>Assinatura do ResponsÃ¡vel Familiar:</label> <input
+										<label>Assinatura do Responsável Familiar:</label> <input
 											type="text" id="assrespfam" class="formulario"
-											placeholder="Assinatura do ResponsÃ¡vel Familiar" />
+											placeholder="Assinatura do Responsável Familiar" />
 									</div>
 								</div>
 

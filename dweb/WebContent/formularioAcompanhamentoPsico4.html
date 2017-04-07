@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="ISO-8859-1">
 	<title>Cadastrar Novo Aluno</title>
 	<!-- Styles -->
 	<link href="./assets/css/colunas.css" rel="stylesheet" />
@@ -25,29 +26,30 @@
 				<!-- MENU -->
 			<div class="coluna-3">
 				<nav>
-					<!-- 
-								<button type="button"
-									class="btn btn-link btn-sidebar-menu btn-block">
-									<i>menu</i>
-								</button>
-					-->
 					<ul>
-						<li><a href="#" class="header"><img
+						<li><a href="./inicio.html" class="header"><img
 								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
-						<li><a class="ativo" href="#">Cadastros</a></li>
-						<li><a href="#">InformaÃ§Ãµes</a></li>
-						<li><a href="#">Dados de Acesso</a></li>
-						<li><a href="#">Alterar Senha</a></li>
-						<li><a href="#">Sair</a></li>
+						<li><a class="ativo" href="#">Alunos</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
+						<li><a href="./pesquisarAlunos.html">Pesquisar Alunos</a></li>
+						<li><a class="ativo" href="#">Turmas</a></li>
+						<li><a href="./cadastrarTurmas.html">Cadastrar Turmas</a></li>
+						<li><a href="./pesquisarTurmas.html">Pesquisar Turmas</a></li>
+						<li><a href="./cadastrarAulas.html">Cadastrar Aulas</a></li>
+						<li><a href="#" class="ativo">Sistema</a></li>
+						<li><a href="./dadosAcesso.html">Visualizar Dados de Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.html">Alterar Dados de Acesso</a></li>
+						<li><a href="./login.html">Sair</a></li>
 					</ul>
 				</nav>
 			</div>
-				<!-- ConteÃºdo -->
+				<!-- Conteúdo -->
 				<div class="coluna-9">
 
-					<main><!-- ConteÃºdo de PÃ¡ginas -->
+					<main><!-- Conteúdo de Páginas -->
 						<h2>
-							FormulÃ¡rio de Acompanhamento Psicosocial<br />
+							Formulário de Acompanhamento Psicosocial<br />
 							<small>Parte 4 de 6</small>
 						</h2>
 						<!-- 
@@ -56,11 +58,11 @@
 							successful or positive action.
 						</div>
 						<div class="alert alert-info">
-							<strong>InformaÃ§Ã£o!</strong> This alert box could indicate a
+							<strong>Informação!</strong> This alert box could indicate a
 							neutral informative change or action.
 						</div>
 						<div class="alert alert-warning">
-							<strong>AtenÃ§Ã£o!</strong> This alert box could indicate a
+							<strong>Atenção!</strong> This alert box could indicate a
 							dangerous or potentially negative action.
 						</div>
 						<div class="alert alert-danger">
@@ -70,13 +72,13 @@
  -->
 						<div class="linha">
 							<form id="formAluno" method="post">
-								<!-- DADOS BÃSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
+								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
-								<h4>Acesso a ServiÃ§os</h4>
-								<H5>Se possui acesso ao serviÃ§o - Informe qual</h5>
+								<h4>Acesso a Serviços</h4>
+								<H5>Se possui acesso ao serviço - Informe qual</h5>
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Centro de Referencia a AssistÃªncia Social -
+										<label>Centro de Referencia a Assistência Social -
 											CRAS:</label> <input type="text" id="scras" class="formulario"
 											placeholder="Informe qual CRAS, se possuir acesso" />
 									</div>
@@ -84,26 +86,26 @@
 								<div class="coluna-12">
 									<div class="grupinho">
 										<label>Centro de Referencia Especializado da
-											AssistÃªncia Social - CREAS:</label> <input type="text" id="screas"
+											Assistência Social - CREAS:</label> <input type="text" id="screas"
 											class="formulario" placeholder="Informe qual CREAS, se possuir acesso" />
 									</div>
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Unidade BÃ¡sica de SÃ¡ude:</label> <input type="text"
+										<label>Unidade Básica de Sáude:</label> <input type="text"
 											id="sus" class="formulario" placeholder="Informe qual Unidade, se possuir acesso" />
 									</div>
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>EstratÃ©gia de SaÃºde da FamÃ­lia - ESF:</label> <input
+										<label>Estratégia de Saúde da Família - ESF:</label> <input
 											type="text" id="sesf" class="formulario"
 											placeholder="Informe qual ESF, se possuir acesso" />
 									</div>
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Centro de EducaÃ§Ã£o Infantil:</label> <input type="text"
+										<label>Centro de Educação Infantil:</label> <input type="text"
 											id="scei" class="formulario" placeholder="Informe qual Centro, se possuir acesso" />
 									</div>
 								</div>
@@ -115,14 +117,14 @@
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>ServiÃ§o de Acolhimento Institucional:</label> <input
+										<label>Serviço de Acolhimento Institucional:</label> <input
 											type="text" id="sei" class="formulario"
-											placeholder="Informe qual ServiÃ§o de Acolhimento, se possuir acesso" />
+											placeholder="Informe qual Serviço de Acolhimento, se possuir acesso" />
 									</div>
 								</div>
 								<H5>Se assinalado acolhimento institucional, informar:</h5>
 								
-								<label>Municipe em SituaÃ§Ã£o de acolhimento institucional</label>
+								<label>Municipe em Situação de acolhimento institucional</label>
 								<div class="coluna-12">
 									<div class="grupinho">
 										<label>Nome:</label> <input type="text"
@@ -131,53 +133,53 @@
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>InstituiÃ§Ã£o:</label> <input type="text" id="ainstituicao"
-											class="formulario" placeholder="Nome da InstituiÃ§Ã£o" />
+										<label>Instituição:</label> <input type="text" id="ainstituicao"
+											class="formulario" placeholder="Nome da Instituição" />
 									</div>
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>ResponsÃ¡vel:</label> <input
+										<label>Responsável:</label> <input
 											type="text" id="aresponsavel" class="formulario"
-											placeholder="Nome do ResponsÃ¡vel pela InstituiÃ§Ã£o" />
+											placeholder="Nome do Responsável pela Instituição" />
 									</div>
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
 										<label>Contato:</label> <input type="text" id="acontato"
-											class="formulario" placeholder="Telefone/E-mail para Contato com a InstituiÃ§Ã£o " />
+											class="formulario" placeholder="Telefone/E-mail para Contato com a Instituição " />
 									</div>
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
 										<label>Motivo:</label> <input
 											type="text" id="amotivo" class="formulario"
-											placeholder="Motivo para ser Beneficiado pela InstituiÃ§Ã£o" />
+											placeholder="Motivo para ser Beneficiado pela Instituição" />
 									</div>
 								</div><br />
-								<h4>Programas/BenefÃ­cios:</h4>
+								<h4>Programas/Benefícios:</h4>
 								<div class="coluna-6">
 									<div class="grupinho">
-								<input type="checkbox" name="programa" value="pbf">Programa Bolsa FamÃ­lia - PBF<br>
+								<input type="checkbox" name="programa" value="pbf">Programa Bolsa Família - PBF<br>
 								<input type="checkbox" name="programa" value="pi" >Programa Incluir/Bolsa Capixaba<br>
 								<input type="checkbox" name="programa" value="pbc">Programa Brasil Carinhoso<br>
-								<input type="checkbox" name="programa" value="bpc">BenefÃ­cio de PrestaÃ§Ã£o Continuada - BPC<br>
-								<input type="checkbox" name="programa" value="bp" >BenefÃ­cios PrevidenciÃ¡rios<br>
-								<input type="checkbox" name="programa" value="ar">AuxÃ­lio ReclusÃ£o<br>
+								<input type="checkbox" name="programa" value="bpc">Benefício de Prestação Continuada - BPC<br>
+								<input type="checkbox" name="programa" value="bp" >Benefícios Previdenciários<br>
+								<input type="checkbox" name="programa" value="ar">Auxílio Reclusão<br>
 								</div>
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Programa/BenefÃ­cio Habitacional:</label> <input
+										<label>Programa/Benefício Habitacional:</label> <input
 											type="text" id="beneficio" class="formulario"
-											placeholder="Nome do Programa/BenefÃ­cio Habitacional" />
+											placeholder="Nome do Programa/Benefício Habitacional" />
 									</div>
 								</div>
 								<div class="coluna-12">
 									<div class="grupinho">
 										<label>Outro:</label> <input
 											type="text" id="outrobeneficio" class="formulario"
-											placeholder="Nome de Outro Programa/BenefÃ­cio Habitacional" />
+											placeholder="Nome de Outro Programa/Benefício Habitacional" />
 									</div>
 								</div>
 								
@@ -185,7 +187,7 @@
 							</form>
 						</div>
 						<button
-							onclick="form4()">PrÃ³ximo</button>
+							onclick="form4()">Próximo</button>
 
 					</main>
 				</div>

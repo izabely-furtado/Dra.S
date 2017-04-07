@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="ISO-8859-1">
 	<title>Cadastrar Novo Aluno</title>
 	<!-- Styles -->
 	<link href="./assets/css/colunas.css" rel="stylesheet" />
@@ -25,29 +26,30 @@
 				<!-- MENU -->
 			<div class="coluna-3">
 				<nav>
-					<!-- 
-								<button type="button"
-									class="btn btn-link btn-sidebar-menu btn-block">
-									<i>menu</i>
-								</button>
-					-->
 					<ul>
-						<li><a href="#" class="header"><img
+						<li><a href="./inicio.html" class="header"><img
 								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
-						<li><a class="ativo" href="#">Cadastros</a></li>
-						<li><a href="#">InformaÃ§Ãµes</a></li>
-						<li><a href="#">Dados de Acesso</a></li>
-						<li><a href="#">Alterar Senha</a></li>
-						<li><a href="#">Sair</a></li>
+						<li><a class="ativo" href="#">Alunos</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
+						<li><a href="./pesquisarAlunos.html">Pesquisar Alunos</a></li>
+						<li><a class="ativo" href="#">Turmas</a></li>
+						<li><a href="./cadastrarTurmas.html">Cadastrar Turmas</a></li>
+						<li><a href="./pesquisarTurmas.html">Pesquisar Turmas</a></li>
+						<li><a href="./cadastrarAulas.html">Cadastrar Aulas</a></li>
+						<li><a href="#" class="ativo">Sistema</a></li>
+						<li><a href="./dadosAcesso.html">Visualizar Dados de Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.html">Alterar Dados de Acesso</a></li>
+						<li><a href="./login.html">Sair</a></li>
 					</ul>
 				</nav>
 			</div>
-				<!-- ConteÃºdo -->
+				<!-- Conteúdo -->
 				<div class="coluna-9">
 
-					<main><!-- ConteÃºdo de PÃ¡ginas -->
+					<main><!-- Conteúdo de Páginas -->
 						<h2>
-							FormulÃ¡rio de Acompanhamento Psicosocial<br />
+							Formulário de Acompanhamento Psicosocial<br />
 							<small>Parte 3 de 6</small>
 						</h2>
 						<!-- 
@@ -56,11 +58,11 @@
 							successful or positive action.
 						</div>
 						<div class="alert alert-info">
-							<strong>InformaÃ§Ã£o!</strong> This alert box could indicate a
+							<strong>Informação!</strong> This alert box could indicate a
 							neutral informative change or action.
 						</div>
 						<div class="alert alert-warning">
-							<strong>AtenÃ§Ã£o!</strong> This alert box could indicate a
+							<strong>Atenção!</strong> This alert box could indicate a
 							dangerous or potentially negative action.
 						</div>
 						<div class="alert alert-danger">
@@ -70,16 +72,16 @@
  -->
 						<div class="linha">
 							<form id="formAluno" method="post">
-								<!-- DADOS BÃSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
+								<!-- DADOS BÁSICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
-								<h4>CondiÃ§Ãµes de Moradia</h4>
+								<h4>Condições de Moradia</h4>
 								<div class="coluna-12">
 									<div class="grupinho">
-										<Label>CondiÃ§Ãµes:</Label> 
+										<Label>Condições:</Label> 
 										<select class="formulario"
 											id="condicao">
-											<option label="Selecione a CondiÃ§Ã£o de Moradia" />
-											<option value="propria" label="PrÃ³pria" />
+											<option label="Selecione a Condição de Moradia" />
+											<option value="propria" label="Própria" />
 											<option value="alugada" label="Alugada" />
 											<option value="cedida" label="Cedida" />
 											<option value="outros" label="Outros" />
@@ -89,16 +91,16 @@
 								<div class="coluna-3">
 									<div class="grupinho">
 								<Label>Infraestrutura:</Label><br />
-								<input type="checkbox" name="infra" value="pagua">Possui Ãgua<br>
+								<input type="checkbox" name="infra" value="pagua">Possui Água<br>
 								<input type="checkbox" name="infra" value="pesgoto" >Possui Rede de Esgoto<br>
-								<input type="checkbox" name="infra" value="penergia">Possui Energia ElÃ©trica<br>
+								<input type="checkbox" name="infra" value="penergia">Possui Energia Elétrica<br>
 								<input type="checkbox" name="infra" value="plixo">Possui Coleta de Lixo<br>
 								</div>
 								</div>
 								<div class="coluna-5">
 									<div class="grupinho radio-group">
 										<label>Risco Habitacional:</label> <label class="radio-inline">
-											NÃ£o </label> <input type="radio" name="risco" value="riscoN" /> <label
+											Não </label> <input type="radio" name="risco" value="riscoN" /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
 											name="risco" value="riscoS" />
 
@@ -115,7 +117,7 @@
 							</form>
 						</div>
 						<button
-							action="form3()" onclique="form3()" onchange="form3()" >PrÃ³ximo</button>
+							action="form3()" onclique="form3()" onchange="form3()" >Próximo</button>
 
 					</main>
 				</div>
