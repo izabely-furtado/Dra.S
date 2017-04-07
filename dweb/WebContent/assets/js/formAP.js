@@ -83,7 +83,7 @@ function form2() {
     var situacao = document.getElementById("situacao").value;
     var escolaridade = document.getElementById("escolaridade").value;
     var renda = document.getElementById("renda").value;
-    var sefc = document.getElementById("sefc").value;
+    var scfv = document.getElementById("scfv").value;
 
     //despesas
     var aluguel = document.getElementById("aluguel").value;
@@ -143,7 +143,12 @@ function form3() {
 
     //condição
     var condicao = document.getElementById("condicao").value;
-    var infra = document.getElementById("infra").value;
+    //var infra = document.getElementsByName("infra").value;
+    var pagua = document.getElementById("pagua").checked;
+    var pesgoto = document.getElementById("pesgoto").checked;
+    var penergia = document.getElementById("penergia").checked;
+    var plixo = document.getElementById("plixo").checked;
+
     var risco = "N";
     var qrisco = "";
     if (document.getElementById("riscoS").checked) {
@@ -170,7 +175,7 @@ function form4() {
     var amotivo = document.getElementById("amotivo").value;
 
     //programa/beneficios
-    var pdf = document.getElementById("pdf").checked;
+    var pbf = document.getElementById("pbf").checked;
     var pi = document.getElementById("pi").checked;
     var pbc = document.getElementById("pbc").checked;
     var bpc = document.getElementById("bpc").checked;
@@ -229,5 +234,5 @@ function form6() {
     var asstecresp = document.getElementById("asstecresp").value;
     var assrespfam = document.getElementById("assrespfam").value;
 
-    window.location.href = "./fimForm.html"
+    window.location.href = "./mostraAluno.html"
 }

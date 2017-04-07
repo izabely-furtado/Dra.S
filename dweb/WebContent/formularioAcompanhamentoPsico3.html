@@ -82,7 +82,7 @@
 										<select class="formulario"
 											id="condicao">
 											<option label="Selecione a Condição de Moradia" />
-											<option value="propria" label="Pr�pria" />
+											<option value="propria" label="Própria" />
 											<option value="alugada" label="Alugada" />
 											<option value="cedida" label="Cedida" />
 											<option value="outros" label="Outros" />
@@ -92,18 +92,18 @@
 								<div class="coluna-3">
 									<div class="grupinho">
 								<Label>Infraestrutura:</Label><br />
-								<input type="checkbox" name="infra" value="pagua">Possui Água<br>
-								<input type="checkbox" name="infra" value="pesgoto" >Possui Rede de Esgoto<br>
-								<input type="checkbox" name="infra" value="penergia">Possui Energia Elétrica<br>
-								<input type="checkbox" name="infra" value="plixo">Possui Coleta de Lixo<br>
+								<input type="checkbox" name="infra" id="pagua">Possui Água<br>
+								<input type="checkbox" name="infra" id="pesgoto" >Possui Rede de Esgoto<br>
+								<input type="checkbox" name="infra" id="penergia">Possui Energia Elétrica<br>
+								<input type="checkbox" name="infra" id="plixo">Possui Coleta de Lixo<br>
 								</div>
 								</div>
 								<div class="coluna-5">
 									<div class="grupinho radio-group">
 										<label>Risco Habitacional:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="risco" value="riscoN" /> <label
+											Não </label> <input type="radio" name="risco" id="riscoN" /> <label
 											class="radio-inline"> Sim </label> <input type="radio"
-											name="risco" value="riscoS" />
+											name="risco" id="riscoS" />
 
 									</div>
 								</div>
@@ -118,7 +118,7 @@
 							</form>
 						</div>
 						<button
-							action="form3()" onclique="form3()" onchange="form3()" >Próximo</button>
+							onclick="form3()" >Próximo</button>
 
 					</main>
 				</div>
