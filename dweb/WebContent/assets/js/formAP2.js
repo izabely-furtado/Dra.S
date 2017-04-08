@@ -72,7 +72,9 @@ function form2() {
 
 }
 
-var quant = 0;
+function proximo2(){
+	window.location.href = "./formularioAcompanhamentoPsico3.html"
+}
 function addParente() {
     //composi��o familiar
 	var erro = "";
@@ -125,26 +127,13 @@ function addParente() {
         erro += "Informe o scfv \n";
         document.getElementById("scfv").style.border = "1px solid red";
     }
-    add = "<h5>" + nome + "</h5><div class='parent'>Parentesco: " + parentesco + " - Idade: " + idade + " - Data de Nascimento: " + dn + " - Situação: " + situacao + " - Escolaridade: " + escolaridade + " - Renda: " + renda + " - SCFV: " + scfv + "</div><br />";
-    
     if (erro != ""){
     	alert(erro);
-    	//add = "<div></div>";
-    	//erro = "";
+    //	add = "";
     }
     
-    if (erro == "") {
-    		
-    	quant += 1;
-	    document.getElementById("parente").innerHTML += add;
-    }
-	    /*
-    else {
-    	alert(erro);
-    	erro = "";
-    	addParente();
-    }*/
-    //tentar gerar numa tabela
+    document.getElementById("parente").innerHTML += "<tr><td>" + nome + "</td><td>" + parentesco + "</td><td>" + idade + "</td><td>" + dn + "</td><td>" + situacao + "</td><td>" + escolaridade + "</td><td>" + renda + "</td><td>" + scfv + "</td></tr>";
+    
 }
 
 function calcRendaTotal() {

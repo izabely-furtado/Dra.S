@@ -80,8 +80,24 @@
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
-										<label>Parentesco:</label> <input type="text" id="parentesco"
-											required class="formulario" placeholder="Parentesco do Familiar" />
+										<label>Parentesco:</label> 
+										<select class="formulario" id="parentesco">
+											<option value="Mãe" label="Mãe" />
+											<option value="Pai" label="Pai" />
+											<option value="Irmão" label="Irmão" />
+											<option value="Irmã" label="Irmã" />
+											<option value="Primo" label="Primo" />
+											<option value="Prima" label="Prima" />
+											<option value="Avô" label="Avô" />
+											<option value="Avó" label="Avó" />
+											<option value="Tio" label="Tio" />
+											<option value="Tia" label="Tia" />
+											<option value="Filho" label="Filho" />
+											<option value="Bisavó" label="Bisavó" />
+											<option value="Bisavô" label="Bisavô" />
+											<option value="Primo-Sobrinho" label="Primo-Sobrinho" />
+										</select>
+								
 									</div>
 								</div>
 								<div class="coluna-6">
@@ -112,26 +128,25 @@
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
-										<label>Renda:</label> <input type="text" id="renda"
+										<label>Renda:</label> <input type="number" step="0.01" id="renda"
 											required class="formulario"
 											placeholder="Renda do Familiar" />
 									</div>
 								</div>
 								<div class="coluna-6">
 									<div class="grupinho">
-										<label>SCFV:</label> <input type="number" id="scfv"
+										<label>SCFV:</label> <input type="text" id="scfv"
 											required class="formulario"
 											placeholder="Serviço de Convivência e Fortalecimento de Vínculos" />
 									</div>
 								</div>
                                 <div class="coluna-12">
                                 <button
-							onchange="addParente()" onclick="addParente()">Adiciona Parente</button>
+							onclick="addParente()" >Adiciona Parente</button>
                             </div>
 
                                 <div class="coluna-12">
-                                <div id="parente" class="parentes"></div>
-				                <table>
+                                <table>
 				                   <thead>
 					                 <tr>
 					                  <th>Nome</th>
@@ -144,18 +159,8 @@
 					                  <th>SCFV</th>
 					                </tr> 
 					                </thead>
-					                <tbody>
-
-					                  <tr>
-						                <td>Mark</td>
-						                <td>Otto</td>
-						                <td>@mdo</td>
-						                <td>1</td>
-						                <td>Mark</td>
-						                <td>Otto</td>
-						                <td>@mdo</td>
-					                  </tr>
-					                  
+					                <tbody id="parente" class="parentes">
+				                
 					  
 					                </tbody>
 				                  </table>
@@ -169,9 +174,7 @@
 								
 							</form>
 						</div>
-						<!-- 
-						<button onchange="form2()" onclick="form2()">Próximo</button>
- -->
+						<button onclick="proximo2()">Próximo</button>
 					</main>
             </div>
             <br />
