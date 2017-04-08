@@ -16,6 +16,13 @@ table
     padding-bottom: 45px;
 }
 
+.bold {
+	font-weight: bold;
+}
+
+.parent{
+	font-size: 12px;
+}
 address 
 {
     font-style: normal;
