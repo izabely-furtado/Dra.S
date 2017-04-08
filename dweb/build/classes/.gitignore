@@ -1,5 +1,6 @@
-/recursos/
 /backingbean/
+/classesAnemicas/
+/conexao/
 /crudjdbc/
 /main/
-/test/
+/teste/

@@ -11,30 +11,10 @@
     <link href="./assets/css/principal.css" rel="stylesheet" />
     <link href="./assets/css/menu.css" rel="stylesheet" />
     <link href="assets/css/inicio.css" rel="stylesheet" />
-    <script type='text/javascript' src='./assets/js/formAP6.js'></script>
+    <script type='text/javascript' src='./assets/js/formAP5.js'></script>
 </head>
-<!--
-<SCRIPT type="text/javascript">
-	function getCadastros() {
-		document.getElementById("cadastros").innerHTML = "<ul class='list-group menu-sidebar'>"
-				+ "<li class='list-group-item'><a href='#'>Aluno Pago</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Aluno Institucional</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Professor</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Turma</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Pacote</a></li>"
-				+ "</ul>";
-	}
-	function getInfos() {
-		document.getElementById("infos").innerHTML = "<ul class='list-group menu-sidebar'>"
-				+ "<li class='list-group-item'><a href='#'>Aluno Pago</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Aluno Institucional</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Professor</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Turma</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Pacote</a></li>"
-				+ "<li class='list-group-item'><a href='#'>Balanão</a></li>"
-				+ "</ul>";
-	}
-</SCRIPT>-->
+
+
 <body>
 	<!-- 
 	<header>
@@ -42,7 +22,7 @@
 	</header>
 	 -->
 	<div class="corpo">
-    <div class="linha">
+			<div class="linha">
 				<!-- MENU -->
             <div class="coluna-3">
                 <nav>
@@ -69,8 +49,8 @@
 
 					<main><!-- Conte�do de P�ginas -->
 						<h2>
-							Formulário de Acompanhamento Psicosocial<br /> <small>Parte
-								6 de 6</small>
+							Formulário de Acompanhamento Psicosocial<br />
+							<small>Parte 6 de 7</small>
 						</h2>
 						<!-- 
 						<div class="alert alert-success">
@@ -94,164 +74,34 @@
 							<form id="formAluno" method="post">
 								<!-- DADOS B�SICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
-								<h4>Rematrícula</h4>
-								<div class="coluna-3">
+								<h4>Público Prioritário do Serviço</h4>
+								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Ano</label> <input type="number" min=2000 id="ano1"
-											class="formulario" placeholder="Ano 1 da Rematrícula" />
-									</div>
+								<input type="checkbox" name="publico" id="isolamento">Em situação de isolamento<br><br>
+								<input type="checkbox" name="publico" id="trabinfantil" >Trabalho Infantil<br><br>
+								<input type="checkbox" name="publico" id="violencia">Vivência de Violência ou Negligência<br><br>
+								<input type="checkbox" name="publico" id="foraescola">Fora da escola ou com defasagem escolar superior a dois anos<br><br>
+								<input type="checkbox" name="publico" id="acolhimento" >Em situação de acolhimento<br><br>
+								<input type="checkbox" name="publico" id="mse">Em cumprimento da MSE em meio aberto<br><br>
+								<input type="checkbox" name="publico" id="egressos" >Egressos de Medida Socioeducativa<br><br>
+								<input type="checkbox" name="publico" id="abuso" >Situação de abuso e/ou exploração sexual<br><br>
+								<input type="checkbox" name="publico" id="eca" >Com medida de proteção do ECA<br><br>
+								<input type="checkbox" name="publico" id="rua" >Crianças e Adolescentes em situação de rua<br><br>
+								<input type="checkbox" name="publico" id="vulnerabilidade" >Vulnerabilidade que diz respeito a pessoas com deficiência<br><br>
 								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Assinatura:</label> <input type="text" id="ass1"
-											class="formulario" placeholder="Assinatura do Responsável" />
-									</div>
 								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Data:</label> <input type="date" id="data1"
-											min="01-01-2000" required class="formulario" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Ano</label> <input type="text" id="ano2"
-											class="formulario" placeholder="Ano 2 da Rematrícula" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Assinatura:</label> <input type="text" id="ass2"
-											class="formulario" placeholder="Assinatura do Responsável" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Data:</label> <input type="date" id="data2"
-											min="01-01-2000" required class="formulario" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Ano</label> <input type="text" id="ano3"
-											class="formulario" placeholder="Ano 3 da Rematrícula" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Assinatura:</label> <input type="text" id="ass3"
-											class="formulario" placeholder="Assinatura do Responsável" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Data:</label> <input type="date"
-											id="data3" min="01-01-2000" required
-											class="formulario" /> 
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Ano</label> <input type="text" id="ano4"
-											class="formulario" placeholder="Ano 4 da Rematrícula" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Assinatura:</label> <input type="text" id="ass4"
-											class="formulario" placeholder="Assinatura do Responsável" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Data:</label> <input type="date"
-											id="data4" min="01-01-2000" required
-											class="formulario" /> 
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Ano</label> <input type="text" id="ano5"
-											class="formulario" placeholder="Ano 5 da Rematrícula" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Assinatura:</label> <input type="text" id="ass5"
-											class="formulario" placeholder="Assinatura do Responsável" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Data:</label> <input type="date"
-											id="data5" min="01-01-2000" required
-											class="formulario" /> 
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Ano</label> <input type="text" id="ano6"
-											class="formulario" placeholder="Ano 6 da Rematrícula" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Assinatura:</label> <input type="text" id="ass6"
-											class="formulario" placeholder="Assinatura do Responsável" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Data:</label> <input type="date"
-											id="data6" min="01-01-2000" required
-											class="formulario" /> 
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Ano</label> <input type="text" id="ano7"
-											class="formulario" placeholder="Ano 7 da Rematrícula" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Assinatura:</label> <input type="text" id="assi7"
-											class="formulario" placeholder="Assinatura do Responsável" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Data:</label> <input type="date"
-											id="data7" min="01-01-2000" required
-											class="formulario" /> 
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Assinatura do Técnico Responsável:</label> <input
-											type="text" id="asstecresp" class="formulario"
-											placeholder="Assinatura do Técnico Responsável" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Assinatura do Responsável Familiar:</label> <input
-											type="text" id="assrespfam" class="formulario"
-											placeholder="Assinatura do Responsável Familiar" />
-									</div>
-								</div>
-
+																
 
 							</form>
 						</div>
-						<button 
-							onclick="form6()">Cadastrar</button>
+						<button
+							onclick="form5()">Próximo</button>
 
 					</main>
 				</div>
-
-				</div>
                 </div>
                 
+
+	</div>
 </body>
 </html>

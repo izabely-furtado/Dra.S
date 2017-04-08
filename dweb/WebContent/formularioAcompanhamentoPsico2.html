@@ -47,7 +47,7 @@
                 <main><!-- Conte�do de P�ginas -->
 						<h2>
 							Formulário de Acompanhamento Psicosocial<br /> <small>Parte
-								2 de 6</small>
+								2 de 7</small>
 						</h2>
 						<!-- 
 						<div class="alert alert-success">
@@ -126,7 +126,7 @@
 								</div>
                                 <div class="coluna-12">
                                 <button
-							onclick="addParente()">Adiciona Parente</button>
+							onchange="addParente()" onclick="addParente()">Adiciona Parente</button>
                             </div>
 
                                 <div class="coluna-12">
@@ -154,7 +154,7 @@
 						                <td>Otto</td>
 						                <td>@mdo</td>
 					                  </tr>
-					                  <div id="parent"></div>
+					                  <tr id="parent"></tr>
 					  
 					                </tbody>
 				                  </table>
@@ -165,90 +165,12 @@
 
 
 								
-								<div class="coluna-12">
-                                <h4>Despesas</h4>
-                                </div>
-                                <div class="coluna-3">
-									<div class="grupinho">
-										<label>Aluguel:</label> <input type="number" id="aluguel"
-											required class="formulario"
-											placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Água:</label> <input type="number" id="agua"
-											required class="formulario"
-											placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Luz:</label> <input type="number" id="luz" step="0.01"
-											required class="formulario"
-											placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Telefone:</label> <input type="number" id="tel"
-											step="0.01" required class="formulario"
-											placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Gás:</label> <input type="number" id="gas" step="0.01"
-											required class="formulario"
-											placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Alimentação:</label> <input type="number" id="alimenta"
-											step="0.01" required class="formulario"
-											placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Medicamentos:</label> <input type="number" id="medica"
-											step="0.01" required class="formulario"
-											placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Outros:</label> <input type="number" id="outros"
-											step="0.01" required class="formulario"
-											placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-12">
-									<div class="grupinho">
-										<label>Total de Despesas:</label> <input type="number"
-											id="tudo" step="0.01" required
-											class="formulario" placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Renda Familiar Total:</label> <input type="number"
-											id="rendafamiliar" step="0.01" required
-											class="formulario" placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Renda Per Capta:</label> <input type="number" id="rendapercapta" step="0.01" 
-											required class="formulario" placeholder="999.999,99" />
-									</div>
-								</div>
+								
 							</form>
 						</div>
-						<button
-							onclick="form2()">Próximo</button>
-
+						<!-- 
+						<button onchange="form2()" onclick="form2()">Próximo</button>
+ -->
 					</main>
             </div>
             <br />

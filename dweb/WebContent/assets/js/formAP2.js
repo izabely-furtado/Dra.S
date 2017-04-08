@@ -34,7 +34,7 @@ function conteudodespesas(aluguel, agua, luz, tel, gas, alimenta, medica, outros
     this.outros = outros;
 }
 function form2() {
-    //composição familiar
+    //composiï¿½ï¿½o familiar
     var nome = document.getElementById("nome").value;
     var parentesco = document.getElementById("parentesco").value;
     var idade = document.getElementById("idade").value;
@@ -66,14 +66,14 @@ function form2() {
     testeform2 = new conteudoform2(familia, despesas, tudo, rendafamiliar, rendapercapta);
     //var url = "./formularioAcompanhamentoPsico3.html";
     //var elementos = "nome=" + nome + ",parentesco=" + parentesco + ",idade=" + idade + ",dn=" + dn + ",situacao=" + situacao + ",escolaridade=" + escolaridade + ",renda=" + renda + ",scfv=" + scfv + ",aluguel=" + aluguel;
-    //passando elementos para póxima página
+    //passando elementos para pï¿½xima pï¿½gina
     //window.open(url, "teste", elementos);
     window.location.href = "./formularioAcompanhamentoPsico3.html"
 
 }
 
 function addParente() {
-    //composição familiar
+    //composiï¿½ï¿½o familiar
     var nome = document.getElementById("nome").value;
     var parentesco = document.getElementById("parentesco").value;
     var idade = document.getElementById("idade").value;
@@ -82,8 +82,9 @@ function addParente() {
     var escolaridade = document.getElementById("escolaridade").value;
     var renda = document.getElementById("renda").value;
     var scfv = document.getElementById("scfv").value;
-    var add = "<tr><td>" + nome + "</td><td>" + parentesco + "</td><td>" + idade + "</td><td>" + dn + "</td><td>" + situacao + "</td><td>" + escolaridade + "</td><td>" + renda + "</td><td>" + scfv + "</td></tr>";
-    document.getElementById("parente").innerHTML += add;
+    var add = "<td>" + nome + "</td><td>" + parentesco + "</td><td>" + idade + "</td><td>" + dn + "</td><td>" + situacao + "</td><td>" + escolaridade + "</td><td>" + renda + "</td><td>" + scfv + "</td>";
+    var testandoid = document.getElementById("parente");
+    testandoid.innerHTML += add;
     //tentar gerar numa tabela
 }
 

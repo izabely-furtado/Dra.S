@@ -27,21 +27,21 @@ function conteudoBasico() {
         document.getElementById("forma").style.border = "1px solid red";
     }
     if (this.ano < 1900) {
-        erro += "Informe um ano válido \n";
+        erro += "Informe um ano vÃ¡lido \n";
         document.getElementById("ano").style.border = "1px solid red";
     }
 }
 
 function validaTelefone(telefone) {
-    //se não desejar números é só remover da regex abaixo
+    //se nï¿½o desejar nï¿½meros ï¿½ sï¿½ remover da regex abaixo
     var regex = '[^a-zA-Z]+';
     var testandosamerda = telefone.match(regex);
     if (telefone.match(regex)) {
-        //encontrou então não passa na validação
+        //encontrou entï¿½o nï¿½o passa na validaï¿½ï¿½o
         return false;
     }
     else {
-        //não encontrou caracteres especiais
+        //nï¿½o encontrou caracteres especiais
         return true;
     }
 }
@@ -57,12 +57,18 @@ function conteudoPessoal() {
     this.parentesco = document.getElementById("parentesco").value;
     this.telefone = document.getElementById("telefone").value;
     this.nis = document.getElementById("nis").value;
+    document.getElementById("nomeCrianca").style.border = "1px solid #ccc";
+    document.getElementById("dataNasc").style.border = "1px solid #ccc";
+    document.getElementById("responsavel").style.border = "1px solid #ccc";
+    document.getElementById("telefone").style.border = "1px solid #ccc";
+    document.getElementById("nis").style.border = "1px solid #ccc";
+    
     if (this.nomeCrianca == "") {
-        erro += "Informe o nome da criança \n";
+        erro += "Informe o nome da crianÃ§a \n";
         document.getElementById("nomeCrianca").style.border = "1px solid red";
     }
     if (this.responsavel == "") {
-        erro += "Informe o responsavel pela criança \n";
+        erro += "Informe o responsavel pela crianÃ§a \n";
         document.getElementById("responsavel").style.border = "1px solid red";
     }
     if (this.parentesco == "") {
@@ -70,7 +76,7 @@ function conteudoPessoal() {
         document.getElementById("parentesco").style.border = "1px solid red";
     }
     if (this.telefone == "") {
-        erro += "Informe um telefone válido \n";
+        erro += "Informe um telefone vÃ¡lido \n";
         document.getElementById("telefone").style.border = "1px solid red";
     }
 }
@@ -83,6 +89,14 @@ function conteudoEndereco() {
     this.cidade = document.getElementById("cidade").value;
     this.estado = document.getElementById("estado").value;
     this.referencia = document.getElementById("referencia").value;
+    document.getElementById("rua").style.border = "1px solid #ccc";
+    document.getElementById("numero").style.border = "1px solid #ccc";
+    document.getElementById("cep").style.border = "1px solid #ccc";
+    document.getElementById("bairro").style.border = "1px solid #ccc";
+    document.getElementById("cidade").style.border = "1px solid #ccc";
+    document.getElementById("estado").style.border = "1px solid #ccc";
+    document.getElementById("referencia").style.border = "1px solid #ccc";
+    
     if (this.rua == "") {
         erro += "Informe a rua \n";
         document.getElementById("rua").style.border = "1px solid red";
@@ -112,25 +126,27 @@ function conteudoEndereco() {
 
 function conteudoEscola() {
     this.escola = document.getElementById("escola").value;
-    //são no máximo seis anos participando do projeto
-    //série no 1º ano no projeto
+    //sï¿½o no mï¿½ximo seis anos participando do projeto
+    //sï¿½rie no 1ï¿½ ano no projeto
     this.ano1 = document.getElementById("ano1").value;
     this.serie1 = document.getElementById("serie1").value;
-    //série no 2º ano no projeto
+    //sï¿½rie no 2ï¿½ ano no projeto
     this.ano2 = document.getElementById("ano2").value;
     this.serie2 = document.getElementById("serie2").value;
-    //série no 3º ano no projeto
+    //sï¿½rie no 3ï¿½ ano no projeto
     this.ano3 = document.getElementById("ano3").value;
     this.serie3 = document.getElementById("serie3").value;
-    //série no 4º ano no projeto
+    //sï¿½rie no 4ï¿½ ano no projeto
     this.ano4 = document.getElementById("ano4").value;
     this.serie4 = document.getElementById("serie4").value;
-    //série no 5º ano no projeto
+    //sï¿½rie no 5ï¿½ ano no projeto
     this.ano5 = document.getElementById("ano5").value;
     this.serie5 = document.getElementById("serie5").value;
-    //série no 6º ano no projeto
+    //sï¿½rie no 6ï¿½ ano no projeto
     this.ano6 = document.getElementById("ano6").value;
     this.serie6 = document.getElementById("serie6").value;
+    document.getElementById("escola").style.border = "1px solid #ccc";
+    
     if (this.escola == "") {
         erro += "Informe a escola \n";
         document.getElementById("escola").style.border = "1px solid red";
@@ -140,6 +156,10 @@ function conteudoEscola() {
 function conteudoMedico() {
     this.medicacao = "N";
     this.qmedicacao = "";
+    document.getElementById("qmedicacao").style.border = "1px solid red";
+    document.getElementById("qalergia").style.border = "1px solid red";
+    document.getElementById("contatoSOS").style.border = "1px solid red";
+    
     if (document.getElementById("medicacaoS").checked) {
         sexo = "S";
         qmedicacao = document.getElementById("qmedicacao").value;
@@ -153,7 +173,7 @@ function conteudoMedico() {
     }
     this.contatoSOS = document.getElementById("contatoSOS").value;
     if (this.contatoSOS == "") {
-        erro += "Informe um contato de emergência \n";
+        erro += "Informe um contato de emergÃªncia \n";
         document.getElementById("contatoSOS").style.border = "1px solid red";
     }
     

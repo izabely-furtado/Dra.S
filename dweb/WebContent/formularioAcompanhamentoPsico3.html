@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cadastrar Novo Aluno</title>
-	<!-- Styles -->
-	<link href="./assets/css/colunas.css" rel="stylesheet" />
-	<link href="./assets/css/formulario.css" rel="stylesheet" />
-	<link href="./assets/css/principal.css" rel="stylesheet" />
-	<link href="./assets/css/menu.css" rel="stylesheet" />
-	<link href="assets/css/inicio.css" rel="stylesheet" />
-	<script type='text/javascript' src='./assets/js/formAP3.js'></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastrar Novo Aluno</title>
+    <!-- Styles -->
+    <link href="./assets/css/colunas.css" rel="stylesheet" />
+    <link href="./assets/css/formulario.css" rel="stylesheet" />
+    <link href="./assets/css/principal.css" rel="stylesheet" />
+    <link href="./assets/css/menu.css" rel="stylesheet" />
+    <link href="assets/css/inicio.css" rel="stylesheet" />
+    <script type='text/javascript' src='./assets/js/formAP2.js'></script>
 </head>
-
-
 <body>
-	<!-- 
+    <!-- 
 	<header>
 		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
 	</header>
 	 -->
-	<div class="corpo">
-
-			<div class="linha">
-				<!-- MENU -->
-			<div class="coluna-3">
-				<nav>
+    <div class="corpo">
+        <div class="linha">
+            <!-- MENU -->
+            <div class="coluna-3">
+                <nav>
 					<ul>
 						<li><a href="./inicio.html" class="header"><img
 								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
@@ -44,14 +41,13 @@
 						<li><a href="./login.html">Sair</a></li>
 					</ul>
 				</nav>
-			</div>
-				<!-- Conte�do -->
-				<div class="coluna-9">
-
-					<main><!-- Conte�do de P�ginas -->
+            </div>
+            <!-- Conte�do -->
+            <div class="coluna-9">
+                <main><!-- Conte�do de P�ginas -->
 						<h2>
-							Formulário de Acompanhamento Psicosocial<br />
-							<small>Parte 3 de 6</small>
+							Formulário de Acompanhamento Psicosocial<br /> <small>Parte
+								3 de 7</small>
 						</h2>
 						<!-- 
 						<div class="alert alert-success">
@@ -75,57 +71,92 @@
 							<form id="formAluno" method="post">
 								<!-- DADOS B�SICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 								<hr />
-								<h4>Condições de Moradia</h4>
-								<div class="coluna-12">
+								<h4>Despesas</h4>
+                                <div class="coluna-3">
 									<div class="grupinho">
-										<label>Condições:</label> 
-										<select class="formulario"
-											id="condicao">
-											<option label="Selecione a Condição de Moradia" />
-											<option value="propria" label="Própria" />
-											<option value="alugada" label="Alugada" />
-											<option value="cedida" label="Cedida" />
-											<option value="outros" label="Outros" />
-										</select>
+										<label>Aluguel:</label> <input type="number" id="aluguel"
+											required class="formulario"
+											placeholder="999.999,99" />
 									</div>
 								</div>
 								<div class="coluna-3">
 									<div class="grupinho">
-								<label>Infraestrutura:</label><br />
-								<input type="checkbox" name="infra" id="pagua">Possui Água<br>
-								<input type="checkbox" name="infra" id="pesgoto" >Possui Rede de Esgoto<br>
-								<input type="checkbox" name="infra" id="penergia">Possui Energia Elétrica<br>
-								<input type="checkbox" name="infra" id="plixo">Possui Coleta de Lixo<br>
-								</div>
-								</div>
-								<div class="coluna-5">
-									<div class="grupinho radio-group">
-										<label>Risco Habitacional:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="risco" id="riscoN" /> <label
-											class="radio-inline"> Sim </label> <input type="radio"
-											name="risco" id="riscoS" />
-
+										<label>Água:</label> <input type="number" id="agua"
+											required class="formulario"
+											placeholder="999.999,99" />
 									</div>
 								</div>
-
-								<div class="coluna-4">
+								<div class="coluna-3">
 									<div class="grupinho">
-										<label>Qual?:</label> <input type="text" id="qrisco"
-											class="formulario" placeholder="Qual o Risco Habitacional" />
+										<label>Luz:</label> <input type="number" id="luz" step="0.01"
+											required class="formulario"
+											placeholder="999.999,99" />
 									</div>
 								</div>
-
+								<div class="coluna-3">
+									<div class="grupinho">
+										<label>Telefone:</label> <input type="number" id="tel"
+											step="0.01" required class="formulario"
+											placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-3">
+									<div class="grupinho">
+										<label>Gás:</label> <input type="number" id="gas" step="0.01"
+											required class="formulario"
+											placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-3">
+									<div class="grupinho">
+										<label>Alimentação:</label> <input type="number" id="alimenta"
+											step="0.01" required class="formulario"
+											placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-3">
+									<div class="grupinho">
+										<label>Medicamentos:</label> <input type="number" id="medica"
+											step="0.01" required class="formulario"
+											placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-3">
+									<div class="grupinho">
+										<label>Outros:</label> <input type="number" id="outros"
+											step="0.01" required class="formulario"
+											placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-12">
+									<div class="grupinho">
+										<label>Total de Despesas:</label> <input type="number"
+											id="tudo" step="0.01" required
+											class="formulario" placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-6">
+									<div class="grupinho">
+										<label>Renda Familiar Total:</label> <input type="number"
+											id="rendafamiliar" step="0.01" required
+											class="formulario" placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-6">
+									<div class="grupinho">
+										<label>Renda Per Capta:</label> <input type="number" id="rendapercapta" step="0.01" 
+											required class="formulario" placeholder="999.999,99" />
+									</div>
+								</div>
 							</form>
 						</div>
-						<button
-							onclick="form3()" >Próximo</button>
+						<button onchange="form2()" onclick="form2()">Próximo</button>
 
 					</main>
-				</div>
-
-
-			</div>
-
-		
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
 </body>
 </html>

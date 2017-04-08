@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Cadastrar Novo Aluno</title>
 	<!-- Styles -->
 	<link href="./assets/css/colunas.css" rel="stylesheet" />
@@ -47,7 +47,7 @@
 				<main> <!-- Conte�do de P�ginas -->
 				<h2>
 					Formulário de Acompanhamento Psicosocial<br /> <small>Parte
-						1 de 6</small>
+						1 de 7</small>
 				</h2>
 				<!-- 
 						<div class="alert alert-success">
@@ -77,7 +77,6 @@
 							<div class="grupinho">
 								<label>Tipo de Formulário:</label> <select class="formulario"
 									id="tipo">
-									<option label="Selecione o Tipo de Formulário" />
 									<option value="incricao" label="Inscrição" />
 									<option value="matricula" label="Matrícula" />
 									<option value="rematricula" label="Rematrícula" />
@@ -95,7 +94,6 @@
 							<div class="grupinho">
 								<label>Forma de Acesso:</label> <select class="formulario"
 									id="forma">
-									<option label="Selecione o Forma de Acesso" />
 									<option value="cras" label="Encaminhamento pela Rede CRAS" />
 									<option value="creas" label="Encaminhamento pela Rede CREAS" />
 									<option value="de" label="Demanda Espontânea" />
@@ -139,17 +137,28 @@
 						</div>
 						<div class="coluna-6">
 							<div class="grupinho">
-								<label>Parentesco:</label> <input type="text" id="parentesco"
-									required class="formulario"
-									placeholder="Parentesco com o Aluno" />
+								<label>Parentesco:</label> 
+								<label>Tipo de Formulário:</label> 
+								<select class="formulario" id="parentesco">
+									<option value="Mãe" label="Mãe" />
+									<option value="Pai" label="Pai" />
+									<option value="Irmão" label="Irmão" />
+									<option value="Irmã" label="Irmã" />
+									<option value="Primo" label="Primo" />
+									<option value="Prima" label="Prima" />
+									<option value="Avô" label="Avô" />
+									<option value="Avó" label="Avó" />
+									<option value="Tio" label="Tio" />
+									<option value="Tia" label="Tia" />
+								</select>
 							</div>
 						</div>
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Contato:</label> <input type="text" id="telefone"
-									name="telefone" data-mask="(00) 0000-0000"
-									data-mask-selectonfocus="true" required class="formulario"
-									placeholder="(99) 99999-9999" pattern="(\d{2}) \d{5}-?\d{4}" />
+									name="telefone" required class="formulario" 
+									data-mask="(00)00000-0000" data-mask-selectonfocus="true"
+									placeholder="(99)99999-9999" pattern="(?\d{2})?\d{5}-?\d{4}" />
 							</div>
 						</div>
 						<div class="coluna-12">
@@ -185,8 +194,8 @@
 								<div class="grupinho">
 									<label>CEP da criança/adolescente:</label> <input type="text"
 										id="cep" required class="formulario"
-										placeholder="999.999.999-99"
-										pattern="\d{3}.\d{3}.\d{3}-?\d{2}" />
+										data-mask="00.000-000" data-mask-selectonfocus="true"
+									    placeholder="99.999-999" pattern="\d{2}.?\d{3}-?\d{3}" />
 								</div>
 							</div>
 							<div class="coluna-6">
@@ -255,7 +264,7 @@
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Escola:</label> <input type="text" id="escola"
-									class="formulario" placeholder="Nome da escola" />
+									class="formulario" required placeholder="Nome da escola" />
 							</div>
 						</div>
 						<div class="coluna-2">
@@ -479,7 +488,9 @@
 							<div class="grupinho">
 								<label>Contato de Emergência:</label> <input type="text"
 									id="contatoSOS" class="formulario "
-									placeholder="(99) 99999-9999" />
+									data-mask="(00)00000-0000" data-mask-selectonfocus="true"
+									placeholder="(99)99999-9999" pattern="(?\d{2})?\d{5}-?\d{4}"
+									required />
 							</div>
 						</div>
 						</div>
@@ -504,9 +515,10 @@
 							</div>
 						</div>
 						</div>
+						<button onchange="form1()" onclick="form1()">Próximo</button>
 					</form>
 				
-				<button onclick="form1()">Próximo</button>
+				
 
 
 
