@@ -82,9 +82,9 @@ function addParente() {
     var escolaridade = document.getElementById("escolaridade").value;
     var renda = document.getElementById("renda").value;
     var scfv = document.getElementById("scfv").value;
-    var add = "<td>" + nome + "</td><td>" + parentesco + "</td><td>" + idade + "</td><td>" + dn + "</td><td>" + situacao + "</td><td>" + escolaridade + "</td><td>" + renda + "</td><td>" + scfv + "</td>";
-    var testandoid = document.getElementById("parente");
-    testandoid.innerHTML += add;
+    var add = "<tr><td>" + nome + "</td><td>" + parentesco + "</td><td>" + idade + "</td><td>" + dn + "</td><td>" + situacao + "</td><td>" + escolaridade + "</td><td>" + renda + "</td><td>" + scfv + "</td></tr>";
+    document.getElementById("parente").innerHTML = add;
+    //testandoid.innerHTML += add;
     //tentar gerar numa tabela
 }
 
