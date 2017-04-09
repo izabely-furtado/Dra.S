@@ -78,51 +78,139 @@
 								<h4>Acesso a Serviços</h4>
 								<H5>Se possui acesso ao serviço - Informe qual</h5>
 								<div class="coluna-12">
-									<div class="grupinho">
-										<label>Centro de Referencia a Assistência Social -
-											CRAS:</label> <input type="text" id="scras" class="formulario"
-											placeholder="Informe qual CRAS, se possuir acesso" />
+									<div class="grupinho radio-group">
+										<label>Possui acesso à Centro de Referencia a Assistência Social - CRAS?</label> 
+										
+										<label class="radio-inline"> Não </label> 
+										<input onclick="possuiCRAS()" checked type="radio" name="cras" id="crasN" /> 
+										<label class="radio-inline"> Sim </label> 
+										<input onchange="possuiCRAS()" type="radio" name="cras" id="crasS" />
+
 									</div>
 								</div>
+
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Centro de Referencia Especializado da
-											Assistência Social - CREAS:</label> <input type="text" id="screas"
-											class="formulario" placeholder="Informe qual CREAS, se possuir acesso" />
+										<label>Qual?:</label> <input  type="text" id="qcras" required
+											class="formulario" placeholder="Qual o CRAS?" disabled />
 									</div>
 								</div>
+								
+								<div class="coluna-12">
+									<div class="grupinho radio-group">
+										<label>Possui acesso ao Centro de Referencia Especializado da
+											Assistência Social - CREAS?</label> 
+										
+										<label class="radio-inline"> Não </label> 
+										<input onclick="possuiCREAS()" checked type="radio" name="creas" id="creasN" /> 
+										<label class="radio-inline"> Sim </label> 
+										<input onchange="possuiCREAS()" type="radio" name="creas" id="creasS" />
+
+									</div>
+								</div>
+
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Unidade Básica de Saúde:</label> <input type="text"
-											id="sus" class="formulario" placeholder="Informe qual Unidade, se possuir acesso" />
+										<label>Qual?:</label> <input  type="text" id="qcreas" required
+											class="formulario" placeholder="Qual o CREAS?" disabled />
 									</div>
 								</div>
+								
+								<div class="coluna-12">
+									<div class="grupinho radio-group">
+										<label>Possui acesso a Unidade Básica de Saúde?</label> 
+										
+										<label class="radio-inline"> Não </label> 
+										<input onclick="possuiSUS()" checked type="radio" name="sus" id="susN" /> 
+										<label class="radio-inline"> Sim </label> 
+										<input onchange="possuiSUS()" type="radio" name="sus" id="susS" />
+
+									</div>
+								</div>
+
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Estratégia de Saúde da Família - ESF:</label> <input
-											type="text" id="sesf" class="formulario"
-											placeholder="Informe qual ESF, se possuir acesso" />
+										<label>Qual?:</label> <input  type="text" id="qsus" required
+											class="formulario" placeholder="Qual o SUS?" disabled />
 									</div>
 								</div>
+								
+								<div class="coluna-12">
+									<div class="grupinho radio-group">
+										<label>Possui acesso a Estratégia de Saúde da Família - ESF?</label> 
+										
+										<label class="radio-inline"> Não </label> 
+										<input onclick="possuiESF()" checked type="radio" name="esf" id="esfN" /> 
+										<label class="radio-inline"> Sim </label> 
+										<input onchange="possuiESF()" type="radio" name="esf" id="esfS" />
+
+									</div>
+								</div>
+
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Centro de Educação Infantil:</label> <input type="text"
-											id="scei" class="formulario" placeholder="Informe qual Centro, se possuir acesso" />
+										<label>Qual?:</label> <input  type="text" id="qesf" required
+											class="formulario" placeholder="Qual o ESF?" disabled />
 									</div>
 								</div>
+								
+								<div class="coluna-12">
+									<div class="grupinho radio-group">
+										<label>Possui acesso ao Centro de Educação Infantil?</label> 
+										
+										<label class="radio-inline"> Não </label> 
+										<input onclick="possuiCEI()"  type="radio" name="cei" id="ceiN" /> 
+										<label class="radio-inline"> Sim </label> 
+										<input onchange="possuiCEI()" type="radio" name="sus" id="ceiS" />
+
+									</div>
+								</div>
+
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Escola:</label> <input type="text" id="escola"
-											class="formulario" placeholder="Informe qual Escola, se possuir acesso" />
+										<label>Qual?:</label> <input  type="text" id="qcei" required
+											class="formulario" placeholder="Qual o CEI?" disabled />
 									</div>
 								</div>
+								
+								<div class="coluna-12">
+									<div class="grupinho radio-group">
+										<label>Possui acesso a Escola?</label> 
+										
+										<label class="radio-inline"> Não </label> 
+										<input onclick="possuiescola()" checked type="radio" name="escola" id="escolaN" /> 
+										<label class="radio-inline"> Sim </label> 
+										<input onchange="possuiescola()" type="radio" name="escola" id="escolaS" />
+
+									</div>
+								</div>
+
 								<div class="coluna-12">
 									<div class="grupinho">
-										<label>Serviço de Acolhimento Institucional:</label> <input
-											type="text" id="sai" class="formulario"
-											placeholder="Informe qual Serviço de Acolhimento, se possuir acesso" />
+										<label>Qual?:</label> <input  type="text" id="qescola" required
+											class="formulario" placeholder="Qual a Escola?" disabled />
 									</div>
 								</div>
+								
+								<div class="coluna-12">
+									<div class="grupinho radio-group">
+										<label>Possui acesso ao Serviço de Acolhimento Institucional?</label> 
+										
+										<label class="radio-inline"> Não </label> 
+										<input onclick="possuiSAI()" checked type="radio" name="sai" id="saiN" /> 
+										<label class="radio-inline"> Sim </label> 
+										<input onchange="possuiSAI()" type="radio" name="sai" id="saiS" />
+
+									</div>
+								</div>
+
+								<div class="coluna-12">
+									<div class="grupinho">
+										<label>Qual?:</label> <input  type="text" id="qsai" required
+											class="formulario" placeholder="Qual o Acolhimento Institucional?" disabled />
+									</div>
+								</div>
+								
 								<H5>Se assinalado acolhimento institucional, informar:</h5>
 								
 								<label>Municipe em Situação de acolhimento institucional</label>
@@ -180,7 +268,7 @@
 									<div class="grupinho">
 										<label>Outro:</label> <input
 											type="text" id="outrobeneficio" class="formulario"
-											placeholder="Nome de Outro Programa/Benefício Habitacional" />
+											placeholder="Nome de Outro Programa/Benefício" />
 									</div>
 								</div>
 								
@@ -188,7 +276,7 @@
 							</form>
 						</div>
 						<button
-							onclick="form4()">Próximo</button>
+							onclick="form5()">Próximo</button>
 
 					</main>
 				</div>
