@@ -24,5 +24,5 @@ function encontraPorLetra() {
 }
 
 function encontra() {
-	alert("Nenhum Registro Ecnontrado")
+	alert("Nenhum Registro Encontrado")
 }
