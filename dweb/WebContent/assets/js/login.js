@@ -61,10 +61,7 @@ function alterar() {
         alert(erro);
     }
     else {
-        
-        //window.location.href = "./dadosAcesso.html";
-        //nome = nome + "";
-        document.getElementById("test").innerHTML = nome;
+        window.location.href = "./dadosAcesso.html";
     }
     
 

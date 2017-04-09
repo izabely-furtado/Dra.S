@@ -11,7 +11,7 @@
     <link href="./assets/css/principal.css" rel="stylesheet" />
     <link href="./assets/css/menu.css" rel="stylesheet" />
     <link href="assets/css/inicio.css" rel="stylesheet" />
-    <script type='text/javascript' src='./assets/js/login.js'></script>
+    <script type='text/javascript' src='./assets/js/termo.js'></script>
 </head>
 <body>
     <!-- 
@@ -46,56 +46,53 @@
             <div class="coluna-9">
                 <main> <!-- Conte�do de P�ginas -->
 				<h2>
-					Dados de Acesso<br /> <small>Ao Sistema</small>
+					Termo de Desligamentoo<br /> <small>Carregue os dados para gerar o termo</small>
 				</h2>
 				
 					<form id="formAluno" method="post">
 						<div class="linha">
-						<div class="coluna-12">
+						<div class="coluna-6">
 							<div class="grupinho">
-								<label>Login:</label> <input type="text" id="nome"
+								<label>Nome do Usuário:</label> <input type="text" id="nome"
 									required class="formulario"
-									placeholder="Insira seu nome ou login" />
+									placeholder="Insira seu nome do aluno" />
 							</div>
 						</div>
-						<div class="coluna-4">
+						<div class="coluna-6">
 							<div class="grupinho">
-								<label>Senha Antiga:</label> <input type="password" id="senhaP"
-									required class="formulario" minlength=5
-									placeholder="Confirme a senha anterior" />
-							</div>
-						</div>
-						<div class="coluna-4">
-							<div class="grupinho">
-								<label>Senha:</label> <input type="password" id="senha"
-									required class="formulario" minlength=5
-									placeholder="No mínimo 5 caracteres" />
-							</div>
-						</div>
-						<div class="coluna-4">
-							<div class="grupinho">
-								<label>Repita:</label> <input type="password" id="repita"
-									required class="formulario" minlength=5
-									placeholder="Repita a senha aqui" />
+								<label>CPF:</label> <input type="text" id="cpf"
+									required class="formulario" minlength=11 required
+									data-mask="000.000.000-00" data-mask-selectonfocus="true"
+									placeholder="999.999.999-99" pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
+									 />
 							</div>
 						</div>
 						<div class="coluna-12">
 							<div class="grupinho">
-								<label>E-mail:</label> 
-								<input type="email" id="email" class="formulario" placeholder="Insira seu e-mail" />
+								<label>Motivo:</label> <input type="text" id="motivo" required
+									required class="formulario"
+									placeholder="Descreva o motivo para o desligamento" />
 							</div>
 						</div>
-						<div class="coluna-12">
+						<div class="coluna-6">
 							<div class="grupinho">
-								<label>Lembrar Senha:</label> 
-								<input type="text" id="lembrar" class="formulario" placeholder="Memória de fuinha? Ajude a você mesmo, deixe aqui uma pista" />
+								<label>Responsável:</label> <input type="text" id="resp" required
+									required class="formulario"
+									placeholder="Responsável pelo aluno" />
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Técnico Responsável:</label> 
+								<input type="text" id="tecresp" class="formulario" required
+								placeholder="Informe o técnico responsável" />
 							</div>
 						</div>
 						
 						</div>
 					</form>
 				
-				<button onclick="alterar()">Alterar</button>
+				<button onclick="gerar()">Gerar Termo de Desligamento</button>
 
 
 
