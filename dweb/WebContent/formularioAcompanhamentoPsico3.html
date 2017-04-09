@@ -11,7 +11,7 @@
     <link href="./assets/css/principal.css" rel="stylesheet" />
     <link href="./assets/css/menu.css" rel="stylesheet" />
     <link href="assets/css/inicio.css" rel="stylesheet" />
-    <script type='text/javascript' src='./assets/js/formAP2.js'></script>
+    <script type='text/javascript' src='./assets/js/formAP3.js'></script>
 </head>
 <body>
     <!-- 
@@ -74,83 +74,81 @@
 								<h4>Despesas</h4>
                                 <div class="coluna-3">
 									<div class="grupinho">
-										<label>Aluguel:</label> <input type="number" id="aluguel"
+										<label>Aluguel:</label> <input onchange="geraTotal()" type="number" id="aluguel"
+											class="formulario" value ="0" step="0.01"
+											placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-3">
+									<div class="grupinho">
+										<label>Água:</label> <input value ="0" onchange="geraTotal()" type="number" id="agua"
+											required class="formulario" step="0.01"
+											placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-3">
+									<div class="grupinho">
+										<label>Luz:</label> <input value ="0" onchange="geraTotal()" type="number" id="luz" step="0.01"
 											required class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
 								<div class="coluna-3">
 									<div class="grupinho">
-										<label>Água:</label> <input type="number" id="agua"
+										<label>Telefone:</label> <input value ="0" onchange="geraTotal()" type="number" id="tel"
+											step="0.01" class="formulario"
+											placeholder="999.999,99" />
+									</div>
+								</div>
+								<div class="coluna-3">
+									<div class="grupinho">
+										<label>Gás:</label> <input value ="0" onchange="geraTotal()" type="number" id="gas" step="0.01"
 											required class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
 								<div class="coluna-3">
 									<div class="grupinho">
-										<label>Luz:</label> <input type="number" id="luz" step="0.01"
-											required class="formulario"
-											placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-3">
-									<div class="grupinho">
-										<label>Telefone:</label> <input type="number" id="tel"
+										<label>Alimentação:</label> <input value ="0" onchange="geraTotal()" type="number" id="alimenta"
 											step="0.01" required class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
 								<div class="coluna-3">
 									<div class="grupinho">
-										<label>Gás:</label> <input type="number" id="gas" step="0.01"
-											required class="formulario"
+										<label>Medicamentos:</label> <input value ="0" onchange="geraTotal()" type="number" id="medica"
+											step="0.01" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
 								<div class="coluna-3">
 									<div class="grupinho">
-										<label>Alimentação:</label> <input type="number" id="alimenta"
-											step="0.01" required class="formulario"
+										<label>Outros:</label> <input value ="0" onchange="geraTotal()" type="number" id="outros"
+											step="0.01" class="formulario"
 											placeholder="999.999,99" />
 									</div>
 								</div>
-								<div class="coluna-3">
+								<div class="coluna-4">
 									<div class="grupinho">
-										<label>Medicamentos:</label> <input type="number" id="medica"
-											step="0.01" required class="formulario"
-											placeholder="999.999,99" />
+										<label>Total de Despesas:</label> 
+										<p id="totalDESPESA">0,00</p>
+										
 									</div>
 								</div>
-								<div class="coluna-3">
+								<div class="coluna-4">
 									<div class="grupinho">
-										<label>Outros:</label> <input type="number" id="outros"
-											step="0.01" required class="formulario"
-											placeholder="999.999,99" />
+										<label>Renda Familiar Total:</label> <p>1000,00</p>
 									</div>
 								</div>
-								<div class="coluna-12">
+								<div class="coluna-4">
 									<div class="grupinho">
-										<label>Total de Despesas:</label> <input type="number"
-											id="tudo" step="0.01" required
-											class="formulario" placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Renda Familiar Total:</label> <input type="number"
-											id="rendafamiliar" step="0.01" required
-											class="formulario" placeholder="999.999,99" />
-									</div>
-								</div>
-								<div class="coluna-6">
-									<div class="grupinho">
-										<label>Renda Per Capta:</label> <input type="number" id="rendapercapta" step="0.01" 
-											required class="formulario" placeholder="999.999,99" />
+										<label>Renda Per Capta:</label> 
+										<p>250.00</p>
 									</div>
 								</div>
 							</form>
 						</div>
-						<button onchange="form2()" onclick="form2()">Próximo</button>
+						<button onchange="proximo3()" onclick="proximo3()">Próximo</button>
 
 					</main>
             </div>
