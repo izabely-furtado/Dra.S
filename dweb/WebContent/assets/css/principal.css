@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+menu {
+	padding:0px;
+}
+
 .corpo {
 	padding-right: 15px;
 	padding-left: 0px;
