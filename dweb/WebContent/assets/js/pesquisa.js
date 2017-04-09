@@ -12,6 +12,16 @@ function encontraPorLetraI() {
     document.getElementById("encontra").innerHTML += "<tr><td>" + nome + "</td><td>" + responsavel + "</td><td>" + contato + "</td><td>" + nasc + "</td><td>" + turma +"</td></tr>";   
 }
 
+function encontraPorLetraS() {
+	nome = "<a href='./visualizaAluno.html' >Suzana Priscila Soares Leala</a>";
+	responsavel = "Jurema Conceição da Costa";
+	contato = "(27) 99999-9999";
+	nasc = "11/11/1991";
+	turma = "Lufa Lufa"
+    document.getElementById("encontra").innerHTML = "<tr><td>" + nome + "</td><td>" + responsavel + "</td><td>" + contato + "</td><td>" + nasc + "</td><td>" + turma +"</td></tr>";   
+    document.getElementById("encontra").innerHTML += "<tr><td>" + nome + "</td><td>" + responsavel + "</td><td>" + contato + "</td><td>" + nasc + "</td><td>" + turma +"</td></tr>";   
+    document.getElementById("encontra").innerHTML += "<tr><td>" + nome + "</td><td>" + responsavel + "</td><td>" + contato + "</td><td>" + nasc + "</td><td>" + turma +"</td></tr>";   
+}
 function encontraPorLetra() {
 	nome = " - ";
 	responsavel = " - ";
