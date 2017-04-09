@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
 
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Visualizar Aluno</title>	
-	<!-- Alertas e Modais -->
-	<link href="assets/css/sweetalert2.css" rel="stylesheet" />
-
-	<link href="assets/css/main.css" rel="stylesheet" />
-	<link href="./assets/css/colunas.css" rel="stylesheet" />
+	<link href="assets/css/principal.css" rel="stylesheet" />
 	
 	<!-- Styles -->
 	<link href="./assets/css/colunas.css" rel="stylesheet" />
@@ -24,38 +20,50 @@
 	<link href="./assets/css/principal.css" rel="stylesheet" />
 	<link href="./assets/css/menu.css" rel="stylesheet" />
 	<link href="assets/css/inicio.css" rel="stylesheet" />
-	<script type='text/javascript' src='./assets/js/formAP.js'></script>
+	<script type='text/javascript' src='./assets/js/formAP7.js'></script>
 
 	
 	
 
 </head>
-
-
 <body>
-	
-		<div class="corpo">
-			<div class="linha">
-				<!-- Conte�do -->
-				<div class="coluna-12">
+	<!-- 
+	<header>
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
+	</header>
+	 -->
+	<div class="corpo">
+		<div class="linha">
+			<!-- MENU -->
+			<div class="coluna-3">
+				<nav>
+					<ul>
+						<li><a href="./inicio.html" class="header"><img
+								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
+						<li><a class="ativo" href="#">Alunos</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
+						<li><a href="./pesquisarAlunos.html">Pesquisar Alunos</a></li>
+						<li><a class="ativo" href="#">Turmas</a></li>
+						<li><a href="./cadastrarTurmas.html">Cadastrar Turmas</a></li>
+						<li><a href="./pesquisarTurmas.html">Pesquisar Turmas</a></li>
+						<li><a href="./cadastrarAulas.html">Cadastrar Aulas</a></li>
+						<li><a href="#" class="ativo">Sistema</a></li>
+						<li><a href="./dadosAcesso.html">Visualizar Dados de Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.html">Alterar Dados de Acesso</a></li>
+						<li><a href="./login.html">Sair</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- Conte�do -->
+			<div class="coluna-9">
+				<main> <!-- Conte�do de P�ginas -->
+				<h2>
+					Dados do Aluno<br /> <small>Suzana Priscila Soares Leala</small>
+				</h2>
 				
+					
 
-					<div class="content-page">
-						<h2>Aluno<small></small></h2>
-						<div class="panel panel-theme">
-							<div class="linha">
-								<div class="col-xs-1">
-									<i class="material-icons">person</i>
-								</div>
-								<div class="col-xs-11">
-									<h4 class="name-user">Suzana Priscila Soares Leal</h4>
-								</div>
-							</div>
-						</div>
-						<br />
-						<hr />
-						
-						<div class="especial">
 						<div class="coluna-12">
 							<h2><small>Dados Básicos</small></h2>
 							
@@ -241,40 +249,136 @@
 						
 							
 						</div>
-						
-						<!--Dia de Pagamento:31
-						<outputText value="#{alunoPBean.aluno.diaDePagamento}" /><br />
-						<br />
-						<h2><small>Endere�o</small></h2>
-						Rua: 
-						<outputText value="#{alunoPBean.aluno.endereco.rua}" /><br />
-						Número: 13
-						<outputText value="#{alunoPBean.aluno.endereco.numero}" /><br />
-						Bairro: Beco Diagonal
-						<outputText value="#{alunoPBean.aluno.endereco.bairro}" /><br />
-						CEP:
-						<outputText value="#{alunoPBean.aluno.endereco.cep}" /><br />
-						Cidade:
-						<outputText value="#{alunoPBean.aluno.endereco.cidade}" /><br />
-						Estado:
-						<outputText value="#{alunoPBean.aluno.endereco.estado}" /><br />
-						-->
-						<br />
+						<hr />
+						<div class="coluna-12">
+							<h2><small>Acesso a Serviços</small></h2>
+							<h2><small>Serviços</small></h2>
+							
+							<p>
+							<strong>Centro de Referencia a Assistência Social - CRAS:</strong> xxxxxxxxxxxxxxxx xxxxxxxxx<br/>
+							<strong>Centro de Referencia Especializado da Assistência Social - CREAS:</strong> xxxxxxxxxxxxxx xxxxxxxxxxxx<br/>
+							<strong>Unidade Básica de Saúde:</strong> xxxxxxxxx xxxxxxx<br/>
+							<strong>Estratégia de Saúde da Família - ESF:</strong> xxxxxxxxxxxxxx xxxxxxxxxx<br/>
+							<strong>Centro de Educação Infantil:</strong> xxxxxxxxxxxxxx xxxxxxxxxx<br/>
+							<strong>Escola:</strong> xxxxxxxx<br/>
+							<strong>Serviço de Acolhimento Institucional:</strong> xxxxxxxxxxxxxxxx xxxxxxxxxxxxx
+							</p>
+							
 						</div>
+						
+						
+						<div class="coluna-12">
+							
+							<h2><small>Serviço de acolhimento Institucional</small></h2>
+							<h3><small>Municipe em Situação de Acolhimento Institucional:</small></h3>
+							<p>
+							
+							<strong>Nome:</strong> xxxxxxxxx<br/>
+							<strong>Instituição:</strong> xxxxxxxxx<br/>
+							<strong>Responsável:</strong> xxxxxxxxx<br/>
+							<strong>Contato:</strong> xxxxxxxxx<br/>
+							<strong>Centro de Educação Infantil:</strong> xxxxxxxxx<br/>
+							<strong>Motivo:</strong> xxxxxxxxx<br/>
+							
+							
+							</p>
+						</div>
+						
+						
+						<div class="coluna-12">
+							<h2><small>Programas/Benefícios:</small></h2>
+							
+							<p>
+							
+							<strong>Programa Bolsa Família - PBF:</strong> Sim<br/>
+							<strong>Programa Incluir/Bolsa Capixaba:</strong> Não<br/>
+							<strong>Programa Brasil Carinhoso:</strong> Não<br/>
+							<strong>Benefício de Prestação Continuada - BPC:</strong> Sim<br/>
+							<strong>Benefícios Previdenciários:</strong> Sim<br/>
+							<strong>Auxílio Reclusão:</strong> Não<br/>
+							<strong>Programa/Benefício Habitacional:</strong> xxxxxxxxxxxx<br/>
+							<strong>Outro:</strong>
+							</p>
+						</div>
+						
+						<div class="coluna-12">
+							<h2><small>Público Prioritário do Serviço:</small></h2>
+							
+							<p>
+							
+							<strong>Em situação de isolamento:</strong> Sim<br/>
+							<strong>Trabalho Infantil:</strong> Não<br/>
+							<strong>Vivência de Violência ou Negligência:</strong> Não<br/>
+							<strong>Fora da escola ou com defasagem escolar superior a dois anos:</strong> Sim<br/>
+							<strong>Em situação de acolhimento:</strong> Sim<br/>
+							<strong>Em cumprimento da MSE em meio aberto:</strong> Não<br/>
+							<strong>Egressos de Medida Socioeducativa:</strong> Sim<br/>
+							<strong>Situação de abuso e/ou exploração sexual:</strong> Não<br/>
+							<strong>Com medida de proteção do ECA:</strong> Sim<br/>
+							<strong>Crianças e Adolescentes em situação de rua:</strong> Não<br/>
+							<strong>Vulnerabilidade que diz respeito a pessoas com deficiência: </strong> Não <br/>
+							</p>
+						</div>
+						
+						
+						<h2><small>Rematrícula</small></h2>
+							
+							<div style="overflow-x:auto;">
+							  <table class="tabela2">
+								<tr class="active">
+								  <th>Ano</th>
+								  <th>Assinatura</th>
+								  <th>Data</th>
+								  
+								</tr>
+								<tr>
+								  <td>2013</td>
+								  <td> Suzana Leal</td>
+								  <td>10/10/2013</td> 
+								</tr>
+
+								<tr>
+								 
+								 <td>2014</td>
+								  <td>Suzana lEAL</td>
+								  <td>10/10/2014</td>
+								 
+								</tr>
+								<tr>
+								  <td>2015</td>
+								  <td>Suzana Leal jdhbsf kafjhf</td>
+								  <td>10/10/2015</td>
+								</tr>
+							  </table>
+							
+							</div>
+						
+						<div class="coluna-6">
+							
+							<p class="ass">Assinatura do Técnico Responsável:<br />____________________________________________</p>
+								<div class="box">
+									
+								</div>
+						</div>
+						
+						<div class="coluna-6">
+							
+							<p class="ass">Assinatura do Responsável Familiar:<br />____________________________________________</p>
+								<div class="box">
+									
+								</div>
+						</div>
+						<div class="coluna-12"><br/><br/>
+						<button onclick="confirmar()">CONFIRMAR CADASTRO</button>
+						</div>
+						
+						</main>
+						
+						
 					</div><!--fim da div content page-->
 				</div>
-				
-				<div class="coluna-1"></div>
-				<div class="coluna-11">
-						<button onclick="form1()">Salvar</button>
-					</div>
-				
-				<br/>
-				
-				
-			</div><!--fim da div linha--> 
-
-		</div>
+								
+			</div>
 	
 </body>
 </html>

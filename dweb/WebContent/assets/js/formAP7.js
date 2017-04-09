@@ -29,5 +29,9 @@ function form7() {
     var asstecresp = document.getElementById("asstecresp").value;
     var assrespfam = document.getElementById("assrespfam").value;
 
-    window.location.href = "./mostraAluno.html"
+    window.location.href = "./visualizaAluno.html"
+}
+
+function confirmar(){
+	alert("Dados salvos com sucesso!");
 }
