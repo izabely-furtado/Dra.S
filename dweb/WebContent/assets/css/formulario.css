@@ -1,13 +1,12 @@
-Ôªø.formulario
+.formulario
 {
     display: block;
-    padding: 6px 12px; /*espa√ßo dentro do campo*/
+    padding: 6px 12px; /*espaÁo dentro do campo*/
     color: #555;
     border: 1px solid #ccc;
     border-radius: 0 10px; /*borda arredondada*/
     width: 100%;
     height: 54px;
-    background-color: transparent;
     margin: 15px 0;
     line-height: 58px;
     height: 58px;
@@ -19,7 +18,7 @@
 	margin-bottom: 15px
 }
 
-/*elementos do formul√°rio - porre pra fazer*/
+/*elementos do formul·rio - porre pra fazer*/
 textarea.formulario
 {
     height: auto;
@@ -169,7 +168,7 @@ input[type=file] {
 	margin-left: 10px
 }
 
-/*bot√£o e tal... tu clica... fica feliz e p√°*/
+/*bot„o e tal... tu clica... fica feliz e p·*/
 button {
 	display: inline-block;
 	padding: 6px 12px;

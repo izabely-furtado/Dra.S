@@ -100,32 +100,34 @@
 								</div>
 								<div class="coluna-5">
 									<div class="grupinho radio-group">
-										<label>Risco Habitacional:</label> <label class="radio-inline">
-											Não </label> <input type="radio" name="risco" id="riscoN" /> <label
-											class="radio-inline"> Sim </label> <input type="radio"
-											name="risco" id="riscoS" />
+										<label>Risco Habitacional:</label> 
+										
+										<label class="radio-inline"> Não </label> 
+										<input onclick="possuiRisco()" checked type="radio" name="risco" id="riscoN" /> 
+										<label class="radio-inline"> Sim </label> 
+										<input onchange="possuiRisco()" type="radio" name="risco" id="riscoS" />
 
 									</div>
 								</div>
 
 								<div class="coluna-4">
 									<div class="grupinho">
-										<label>Qual?:</label> <input type="text" id="qrisco"
-											class="formulario" placeholder="Qual o Risco Habitacional" />
+										<label>Qual?:</label> <input  type="text" id="qrisco" required
+											class="formulario" placeholder="Qual o Risco Habitacional" disabled />
 									</div>
 								</div>
 
 							</form>
 						</div>
 						<button
-							onclick="form3()" >Próximo</button>
+							onclick="form4()" >Próximo</button>
 
 					</main>
 				</div>
 
 
 			</div>
-
+</div>
 		
 </body>
 </html>
