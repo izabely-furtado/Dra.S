@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class AcessoServicos {
+	private int id;
 	private boolean possuicras;
 	private String qcras;
 	private boolean possuicreas;
@@ -16,13 +17,7 @@ public class AcessoServicos {
 	private boolean possuiacolhimento;
 	private String qacolhimento;
 	private SitucaoAcolhimento situacaoacolhimento;
-	private boolean possuipbf;
-	private boolean possuipibc;
-	private boolean possuipbc;
-	private boolean possuibp;
-	private boolean possuiar;
-	private String beneficioHabitacional;
-	private String outro;
+	
 	public boolean isPossuicras() {
 		return possuicras;
 	}
@@ -113,47 +108,11 @@ public class AcessoServicos {
 	public void setSituacaoacolhimento(SitucaoAcolhimento situacaoacolhimento) {
 		this.situacaoacolhimento = situacaoacolhimento;
 	}
-	public boolean isPossuipbf() {
-		return possuipbf;
+	public int getId() {
+		return id;
 	}
-	public void setPossuipbf(boolean possuipbf) {
-		this.possuipbf = possuipbf;
-	}
-	public boolean isPossuipibc() {
-		return possuipibc;
-	}
-	public void setPossuipibc(boolean possuipibc) {
-		this.possuipibc = possuipibc;
-	}
-	public boolean isPossuipbc() {
-		return possuipbc;
-	}
-	public void setPossuipbc(boolean possuipbc) {
-		this.possuipbc = possuipbc;
-	}
-	public boolean isPossuibp() {
-		return possuibp;
-	}
-	public void setPossuibp(boolean possuibp) {
-		this.possuibp = possuibp;
-	}
-	public boolean isPossuiar() {
-		return possuiar;
-	}
-	public void setPossuiar(boolean possuiar) {
-		this.possuiar = possuiar;
-	}
-	public String getBeneficioHabitacional() {
-		return beneficioHabitacional;
-	}
-	public void setBeneficioHabitacional(String beneficioHabitacional) {
-		this.beneficioHabitacional = beneficioHabitacional;
-	}
-	public String getOutro() {
-		return outro;
-	}
-	public void setOutro(String outro) {
-		this.outro = outro;
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

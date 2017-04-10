@@ -3,6 +3,7 @@ package classesAnemicas;
 import java.util.List;
 
 public class Turma {
+	private int id;
 	private String codigo;
 	private int maximo;
 	private String turno;
@@ -79,5 +80,11 @@ public class Turma {
 	}
 	public void setAulas(List<Aula> aulas) {
 		this.aulas = aulas;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

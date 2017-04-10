@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Rematricula {
+	private int id;
 	private List<Integer> anos;
 	private List<String> responsaveis;
 	private List<Date> datas;
@@ -38,5 +39,11 @@ public class Rematricula {
 	}
 	public void setFamiliarResponsavel(String familiarResponsavel) {
 		this.familiarResponsavel = familiarResponsavel;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

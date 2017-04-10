@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class DadosAcesso {
+	private int id;
 	private String login;
 	private String senha;
 	private String email;
@@ -28,5 +29,11 @@ public class DadosAcesso {
 	}
 	public void setLembrar(String lembrar) {
 		this.lembrar = lembrar;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

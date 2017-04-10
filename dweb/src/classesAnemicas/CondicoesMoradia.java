@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class CondicoesMoradia {
+	private int id;
 	private String condicao;
 	private boolean possuiagua;
 	private boolean possuiesgoto;
@@ -49,5 +50,11 @@ public class CondicoesMoradia {
 	}
 	public void setQrisco(boolean qrisco) {
 		this.qrisco = qrisco;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

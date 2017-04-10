@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class PublicoPrioritario {
+	private int id;
 	private boolean isolamento;
 	private boolean trabInfantil;
 	private boolean vivencia;
@@ -77,5 +78,11 @@ public class PublicoPrioritario {
 	}
 	public void setVulnerabilidade(boolean vulnerabilidade) {
 		this.vulnerabilidade = vulnerabilidade;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class SitucaoAcolhimento {
+	private int id;
 	private String nomeAcolhido;
 	private String nomeInstituicao;
 	private String responsavelInstituicao;
@@ -35,6 +36,12 @@ public class SitucaoAcolhimento {
 	}
 	public void setMotivo(String motivo) {
 		this.motivo = motivo;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 

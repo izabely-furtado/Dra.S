@@ -3,6 +3,7 @@ package classesAnemicas;
 import java.util.List;
 
 public class AcompanhamentoEscolar {
+	private int id;
 	private String escola;
 	private List<Integer> anos;
 	private List<Integer> series;
@@ -23,6 +24,12 @@ public class AcompanhamentoEscolar {
 	}
 	public void setSeries(List<Integer> series) {
 		this.series = series;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Aula {
+	private int id;
 	private String tipo;
 	private Time horario;
 	private Date data;
@@ -39,6 +40,12 @@ public class Aula {
 	}
 	public void setPresentes(List<Aluno> presentes) {
 		this.presentes = presentes;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

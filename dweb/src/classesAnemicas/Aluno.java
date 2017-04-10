@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class Aluno {
+	private int id;
 	private String foto;
 	private int nivel;
 	private FormularioAcompanhamentoPsicossocial form;
@@ -28,6 +29,12 @@ public class Aluno {
 	}
 	public void setTurma(Turma turma) {
 		this.turma = turma;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

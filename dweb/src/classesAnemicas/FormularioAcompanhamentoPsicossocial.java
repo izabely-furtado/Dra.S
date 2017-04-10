@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class FormularioAcompanhamentoPsicossocial {
+	private int id;
 	private int tipo;
 	private int ano;
 	private int formaAcesso;
@@ -106,6 +107,12 @@ public class FormularioAcompanhamentoPsicossocial {
 	}
 	public void setRematricula(Rematricula rematricula) {
 		this.rematricula = rematricula;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

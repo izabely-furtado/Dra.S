@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class InfoMedicas {
+	private int id;
 	private boolean medicacao;
 	private String qmedicacao;
 	private String tipoSangue;
@@ -42,6 +43,12 @@ public class InfoMedicas {
 	}
 	public void setContatoSOS(String contatoSOS) {
 		this.contatoSOS = contatoSOS;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

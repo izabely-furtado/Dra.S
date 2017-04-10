@@ -3,6 +3,7 @@ package classesAnemicas;
 import java.util.Date;
 
 public class Parente {
+	private int id;
 	private String nome;
 	private int parentesco;
 	private int idade;
@@ -58,5 +59,11 @@ public class Parente {
 	}
 	public void setScfv(String scfv) {
 		this.scfv = scfv;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

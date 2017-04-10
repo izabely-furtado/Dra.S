@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class InfoTransporte {
+	private int id;
 	private boolean transporte;
 	private boolean qtransporte;
 	public boolean isTransporte() {
@@ -20,6 +21,12 @@ public class InfoTransporte {
 	}
 	public void setCartão(String cartão) {
 		this.cartão = cartão;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	private String cartão;
 	

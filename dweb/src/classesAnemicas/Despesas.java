@@ -1,6 +1,7 @@
 package classesAnemicas;
 
 public class Despesas {
+	private int id;
 	private float aluguel;
 	private float agua;
 	private float luz;
@@ -78,5 +79,11 @@ public class Despesas {
 //	public void setDespesaTotal(float despesaTotal) {
 	//	this.despesaTotal = despesaTotal;
 	//}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 }
