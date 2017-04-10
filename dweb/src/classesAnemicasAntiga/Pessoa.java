@@ -1,6 +1,8 @@
-package classesAnemicas;
+package classesAnemicasAntiga;
 
 import java.util.Date;
+
+import classesAnemicas.Endereco;
 
 public abstract class Pessoa {
 	private int id;

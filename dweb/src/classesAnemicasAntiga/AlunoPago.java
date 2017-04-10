@@ -1,4 +1,4 @@
-package classesAnemicas;
+package classesAnemicasAntiga;
 
 public class AlunoPago extends Aluno {
 	private int pacote;

@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import classesAnemicas.*;
+import classesAnemicasAntiga.Aluno;
+import classesAnemicasAntiga.AlunoNaAula;
+import classesAnemicasAntiga.Aula;
 import conexao.ConectaPostgreSQL;
 
 public class AlunoNaAulaCrudJDBC {

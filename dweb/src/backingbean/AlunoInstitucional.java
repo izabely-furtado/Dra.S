@@ -4,8 +4,9 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import classesAnemicasAntiga.AlunoInstituicao;
 import crudjdbc.*;
-import classesAnemicas.AlunoInstituicao;
 
 @ManagedBean(name = "alunoIBean")
 @SessionScoped

@@ -1,5 +1,5 @@
 package classesAnemicas;
 
-public class Pacote {
+public class Despesas {
 
 }

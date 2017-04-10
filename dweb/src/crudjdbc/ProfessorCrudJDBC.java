@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import classesAnemicas.*;
+import classesAnemicasAntiga.Professor;
 import conexao.ConectaPostgreSQL;
 
 public class ProfessorCrudJDBC {

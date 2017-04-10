@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import classesAnemicas.Aula;
+import classesAnemicasAntiga.Aula;
 import conexao.ConectaPostgreSQL;
 
 public class AulaCrudJDBC {

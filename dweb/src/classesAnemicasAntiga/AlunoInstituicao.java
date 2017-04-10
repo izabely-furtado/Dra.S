@@ -1,4 +1,4 @@
-package classesAnemicas;
+package classesAnemicasAntiga;
 
 public class AlunoInstituicao extends Aluno{
 	private String nomeEscola;

@@ -4,10 +4,11 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import classesAnemicasAntiga.Aluno;
+import classesAnemicasAntiga.AlunoNaAula;
+import classesAnemicasAntiga.Aula;
 import crudjdbc.*;
-import classesAnemicas.Aluno;
-import classesAnemicas.AlunoNaAula;
-import classesAnemicas.Aula;
 
 @ManagedBean(name = "alunoNaAulaBean")
 @SessionScoped

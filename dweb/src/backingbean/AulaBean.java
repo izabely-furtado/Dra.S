@@ -6,8 +6,9 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import crudjdbc.*;
-import classesAnemicas.Aula;;
+
+import classesAnemicasAntiga.Aula;
+import crudjdbc.*;;
 
 @ManagedBean(name = "aulaBean")
 @SessionScoped
