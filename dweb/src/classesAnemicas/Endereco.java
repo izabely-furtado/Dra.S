@@ -8,6 +8,7 @@ public class Endereco {
 	private String cep;
 	private String cidade;
 	private String Estado;
+	private String referencia;
 	
 	public String getRua() {
 		return rua;
@@ -50,5 +51,11 @@ public class Endereco {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public String getReferencia() {
+		return referencia;
+	}
+	public void setReferencia(String referencia) {
+		this.referencia = referencia;
 	}
 }

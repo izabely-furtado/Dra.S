@@ -1,5 +1,28 @@
 package classesAnemicas;
 
-public class AcompanhamentoEscolar {
+import java.util.List;
 
+public class AcompanhamentoEscolar {
+	private String escola;
+	private List<Integer> anos;
+	private List<Integer> series;
+	public String getEscola() {
+		return escola;
+	}
+	public void setEscola(String escola) {
+		this.escola = escola;
+	}
+	public List<Integer> getAnos() {
+		return anos;
+	}
+	public void setAnos(List<Integer> anos) {
+		this.anos = anos;
+	}
+	public List<Integer> getSeries() {
+		return series;
+	}
+	public void setSeries(List<Integer> series) {
+		this.series = series;
+	}
+	
 }
