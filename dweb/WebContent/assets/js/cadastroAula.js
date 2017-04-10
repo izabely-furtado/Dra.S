@@ -39,7 +39,7 @@ function validaAula() {
 }
 
 
-function limpaTextArea{
+function limpaTextArea(){
 	document.getElementById('conteudoAula').value=''; // Limpa o campo
 
 }
