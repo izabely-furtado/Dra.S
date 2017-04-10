@@ -13,7 +13,7 @@ function encontraPorLetraI() {
 }
 
 function encontraPorLetraS() {
-	nome = "<a href='./visualizaAluno.html' >Suzana Priscila Soares Leala</a>";
+	nome = "<a href='./visualizaAluno.html' >Suzana Priscila Soares Leal</a>";
 	responsavel = "Jurema Conceição da Costa";
 	contato = "(27) 99999-9999";
 	nasc = "11/11/1991";
@@ -35,4 +35,10 @@ function encontraPorLetra() {
 
 function encontra() {
 	alert("Nenhum Registro Encontrado")
+}
+
+function pesquisaTurmas() {
+    
+    window.location.href = "./visualizaTurma.html";
+    
 }

@@ -17,11 +17,21 @@
 	
     <link href="./assets/css/paginacao.css" rel="stylesheet" />
 	
+	<!--Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
 	<!--JavaScript -->
 	<script type='text/javascript' src='./assets/js/formAP.js'></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.10.min.js"></script> 
+    
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 	
 	<script type='text/javascript' src='./assets/js/paginacao.js'></script>
+	
 	<script type='text/javascript' src='./assets/js/cadastroTurma.js'></script>
+	
+    <script type='text/javascript' src='./assets/js/pesquisa.js'></script>
+	
 	
 </head>
 <body>
@@ -36,10 +46,8 @@
             <div class="coluna-3">
                 <nav>
 					<ul>
-						<li class="list-group-item active"><header><a 
-										 href="#"> <IMG
-											alt="logo-onda" src="./assets/img/logo-onda2.png" />
-									</a></header></li>
+						<li><a href="./inicio.html" class="header"><img
+								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
 						<li><a class="ativo" href="#">Alunos</a></li>
 						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
 						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
@@ -58,7 +66,7 @@
             <div class="coluna-9">
                 <main> <!-- Conteúdo de Páginas -->
 				<h2>
-					Cadastro de Turma<br /> <small></small>
+					Turmas<br /> <small></small>
 				</h2>
 				<!-- 
 						<div class="alert alert-success">
@@ -79,88 +87,10 @@
 						</div>
  -->
 				
-					<form id="formAluno" method="post">
-						<!-- DADOS BÁSICOS DA TURMA  -->
-						
-						<h3>Dados Básicos da Turma</h3>
-                        <div class="linha">
-						<div class="coluna-4">
-							<div class="grupinho">
-								<label>Código:</label> <input type="text"
-									id="codigo" required="required" class="formulario"
-									placeholder="Nome do Aluno" />
-							</div>
-						</div>
-						
-						
-						
-						<!--
-						<div class="coluna-6">
-							<div class="grupinho">
-								<Label>Dia da Semana:</Label> <select class="formulario"
-									id="forma">
-									<option label="Selecione o dia da semana" />
-									<option value="cras" label="Segunda" />
-									<option value="creas" label="Terça" />
-									<option value="de" label="Quarta" />
-									<option value="outra" label="Quinta" />
-								</select>
-							</div>
-						</div>-->
-						
-						<div class="coluna-4">
-							<div class="grupinho">
-								<label>Número máximo de alunos:</label> <input type="number"
-									id="maxiAlunos" class="formulario" placeholder="Número máximo de alunos" />
-							</div>
-						</div>
-						
-						<div class="coluna-4">
-							<div class="grupinho">
-								<Label>Turno:</Label> <select class="formulario"
-									id="turno">
-									<option label="Turno da turma">
-									<option value="basico" label="Matutino">
-									<option value="matutuino" label="Vespertino">
-									<option value="vespertino" label="Noturno">
-									
-								</select>
-							</div>
-						</div>
-                        
-						<div class="coluna-4">
-							<div class="grupinho">
-								<Label>Nivel:</Label> <select class="formulario"
-									id="forma">
-									<option label="Nível da turma">
-									<option value="basico" label="basico">
-									<option value="intermediario" label="intermediario">
-									<option value="avancado" label="avancado">
-									
-								</select>
-							</div>
-						</div>
-						
-						<div id="diasemana" class="coluna-8">
-							<div class="grupinho">
-								<div id="checkbox">
-									 <label>Dia da Semana: </label><br/>
-									 <input type="checkbox" name="segunda" value="segunda-feira">Segunda-Feira<br>
-									 <input type="checkbox" name="segunda" value="segunda-feira">Terça-Feira<br>
-									 <input type="checkbox" name="segunda" value="segunda-feira">Quarta-Feira<br>
-									 <input type="checkbox" name="segunda" value="segunda-feira">Quinta-Feira<br>
-								</div>
-							</div>
-						</div>
-								
-						
-						</div>
-						
-						
-					</form><!--fim formulario-->
-					
+				
 					<hr />
-					<h3>Alunos da Turma</h3>
+					
+					<h3><small>Turmas Cadastradas</small></h3>
 					
 					<div class="linha"><!-- inicio div linha-->
 					<div class="coluna-12">
@@ -171,80 +101,124 @@
 							
 
 							<tr id="first">
-								<th><span><input type="text" placeholder="Nome do aluno" id="busca"/></span><button id="incluir">Incluir</button> </th>
+								<th><span><input type="text" placeholder="Informe o Código da Turma" id="busca"/></span> </th>
 									
 							</tr>
 							           
 						</thead>
 						<tbody>
+							
 							<tr class="linhaTabela">
+								<td>
+								<span class="linhazinha2">Turma 01</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
 								
-								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples">X</button></td>
-								
-							</tr>
-							<tr class="linhaTabela">
-								
-								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples">X</button></td>
-								
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 							</tr>            
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Briane Bianca</span><button class="botaoSimples">X</button></td>
+								
+								<td><span class="linhazinha2">Turma 02</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 								
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Victor Valfré</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha2">Turma 03</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 								
 							</tr>
 							
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha2">Turma 04</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 								
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha2">Turma 05</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 								
 							</tr>            
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Briane Bianca</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha2">Turma 06</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 								
 							</tr>
 							<tr class="linhaTabela">
-								
-								<td><span class="linhazinha">Victor Valfré</span><button class="botaoSimples">X</button></td>
-								
+		
+								<td><span class="linhazinha2">Turma 07</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 							</tr>
 							
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples">X</button></td>
 								
+								<td><span class="linhazinha2">Turma 08</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples">X</button></td>
 								
+								<td><span class="linhazinha2">Turma 09</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples">Visualizar</button>
+								</td>
 							</tr>
 
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Victor Valfré</span><button class="botaoSimples">X</button></td>
 								
+								<td><span class="linhazinha2">Turma 10</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 							</tr>
 							
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples">X</button></td>
 								
+								<td><span class="linhazinha2">Turma 11</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples">X</button></td>
 								
+								<td><span class="linhazinha2">Turma 12</span>
+								<span class="linhazinha2">Nível: Básico</span>
+								<span class="linhazinha2">Turno: Matutino</span>
+								<button class="botaoSimples" onclick="pesquisaTurmas()">Visualizar</button>
+								</td>
 							</tr>
 							
 							           
@@ -271,13 +245,13 @@
 					
 					<br/>
 					<br/>
-					<div class="coluna-12">
-						<button onclick="form1()">Salvar</button>
-					</div>
+				
 					
 					
 					</div><!-- fim div linha-->
 					<br/>
+					
+					
 					
 
 
