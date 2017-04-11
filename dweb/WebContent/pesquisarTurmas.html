@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cadastrar Nova Turma</title>
+	<title>Pesquisar Turma</title>
     <!-- Styles -->
     <link href="./assets/css/colunas.css" rel="stylesheet" />
     <link href="./assets/css/formulario.css" rel="stylesheet" />
@@ -46,10 +46,8 @@
             <div class="coluna-3">
                 <nav>
 					<ul>
-						<li class="list-group-item active"><header><a 
-										 href="#"> <IMG
-											alt="logo-onda" src="./assets/img/logo-onda2.png" />
-									</a></header></li>
+						<li><a href="./inicio.html" class="header"><img
+								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
 						<li><a class="ativo" href="#">Alunos</a></li>
 						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
 						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
@@ -230,15 +228,16 @@
 					<div id="pageNav"></div> <!--inicio da Div PageNav--> <!--é reponsável por receber os links da paginação geradas pelo Jscript na função Pager-->
 						
 						<script>
-							var pager = new Pager('tabela', 8); 
-							<!--o 1º parâmetro passado (tabela) é o ID da tabela HTML que queremos paginar e 
-							<!--o 2º parâmetro (5) é a quantidade de “linhas por página” que queremos exibir.--> 
-							pager.init(); 
-							pager.showPageNav('pager', 'pageNav'); 
-							<!--informa em que elemento serão gerados os links/páginas, neste caso o 2º parâmetro recebe o ID do elemento (div)-->
-							pager.showPage(1); 
-							<!--informamos no único parâmetro a página que será exibida ao carregar, neste exemplo é a 1º mesmo.-->
-						</script>		
+										var pagina = new Pagina('tabela', 10); 
+										<!--o 1º parâmetro passado (tabela) é o ID da tabela HTML que queremos paginar e 
+										<!--o 2º parâmetro (5) é a quantidade de “linhas por página” que queremos exibir.--> 
+										pagina.init(); 
+										pagina.mostrarPaginaNav('pagina', 'pageNav'); 
+										<!--informa em que elemento serão gerados os links/páginas, neste caso o 2º parâmetro recebe o ID do elemento (div)-->
+										pagina.mostrarPagina(1); 
+										<!--informamos no único parâmetro a página que será exibida ao carregar, neste exemplo é a 1º mesmo.-->
+								</script>
+								</script>
 					
 					 <!-- Fim da div pageNav-->
 

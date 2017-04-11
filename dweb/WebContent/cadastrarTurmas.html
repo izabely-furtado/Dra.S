@@ -17,11 +17,19 @@
 	
     <link href="./assets/css/paginacao.css" rel="stylesheet" />
 	
+	<!--Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
 	<!--JavaScript -->
 	<script type='text/javascript' src='./assets/js/formAP.js'></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.10.min.js"></script> 
+    
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 	
 	<script type='text/javascript' src='./assets/js/paginacao.js'></script>
+	
 	<script type='text/javascript' src='./assets/js/cadastroTurma.js'></script>
+	
 	
 </head>
 <body>
@@ -36,10 +44,8 @@
             <div class="coluna-3">
                 <nav>
 					<ul>
-						<li class="list-group-item active"><header><a 
-										 href="#"> <IMG
-											alt="logo-onda" src="./assets/img/logo-onda2.png" />
-									</a></header></li>
+						<li><a href="./inicio.html" class="header"><img
+								alt="logo-onda" src="./assets/img/lodo-onda2.png" /></a>
 						<li><a class="ativo" href="#">Alunos</a></li>
 						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
 						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
@@ -79,7 +85,7 @@
 						</div>
  -->
 				
-					<form id="formAluno" method="post">
+					<form name="dadosTurma" id="formAluno" method="post" >
 						<!-- DADOS BÁSICOS DA TURMA  -->
 						
 						<h3>Dados Básicos da Turma</h3>
@@ -88,7 +94,7 @@
 							<div class="grupinho">
 								<label>Código:</label> <input type="text"
 									id="codigo" required="required" class="formulario"
-									placeholder="Nome do Aluno" />
+									placeholder="Código da Turma" />
 							</div>
 						</div>
 						
@@ -131,7 +137,7 @@
 						<div class="coluna-4">
 							<div class="grupinho">
 								<Label>Nivel:</Label> <select class="formulario"
-									id="forma">
+									id="nivel">
 									<option label="Nível da turma">
 									<option value="basico" label="basico">
 									<option value="intermediario" label="intermediario">
@@ -146,9 +152,9 @@
 								<div id="checkbox">
 									 <label>Dia da Semana: </label><br/>
 									 <input type="checkbox" name="segunda" value="segunda-feira">Segunda-Feira<br>
-									 <input type="checkbox" name="segunda" value="segunda-feira">Terça-Feira<br>
-									 <input type="checkbox" name="segunda" value="segunda-feira">Quarta-Feira<br>
-									 <input type="checkbox" name="segunda" value="segunda-feira">Quinta-Feira<br>
+									 <input type="checkbox" name="terca" value="terca-feira">Terça-Feira<br>
+									 <input type="checkbox" name="quarta" value="quarta-feira">Quarta-Feira<br>
+									 <input type="checkbox" name="quinta" value="quinta-feira">Quinta-Feira<br>
 								</div>
 							</div>
 						</div>
@@ -171,7 +177,7 @@
 							
 
 							<tr id="first">
-								<th><span><input type="text" placeholder="Nome do aluno" id="busca"/></span><button id="incluir">Incluir</button> </th>
+								<th><span><input type="text" placeholder="Nome do aluno" id="busca"/></span><button id="incluir" onclick="inserirLinhaTabela">Incluir</button> </th>
 									
 							</tr>
 							           
@@ -179,71 +185,71 @@
 						<tbody>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples" value ="Delete" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>            
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Briane Bianca</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Briane Bianca</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Victor Valfré</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Victor Valfré</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>            
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Briane Bianca</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Briane Bianca</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Victor Valfré</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Victor Valfré</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Victor Valfré</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Victor Valfré</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Suzana Priscila Soares Leal</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							<tr class="linhaTabela">
 								
-								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples">X</button></td>
+								<td><span class="linhazinha">Izabely Furtado</span><button class="botaoSimples" onclick="apagaLinha(this.parentNode.parentNode.rowIndex)">X</button></td>
 								
 							</tr>
 							
@@ -254,16 +260,15 @@
 					<div id="pageNav"></div> <!--inicio da Div PageNav--> <!--é reponsável por receber os links da paginação geradas pelo Jscript na função Pager-->
 						
 						<script>
-							var pager = new Pager('tabela', 8); 
+							var pagina = new Pagina('tabela', 10); 
 							<!--o 1º parâmetro passado (tabela) é o ID da tabela HTML que queremos paginar e 
 							<!--o 2º parâmetro (5) é a quantidade de “linhas por página” que queremos exibir.--> 
-							pager.init(); 
-							pager.showPageNav('pager', 'pageNav'); 
+							pagina.init(); 
+							pagina.mostrarPaginaNav('pagina', 'pageNav'); 
 							<!--informa em que elemento serão gerados os links/páginas, neste caso o 2º parâmetro recebe o ID do elemento (div)-->
-							pager.showPage(1); 
+							pagina.mostrarPagina(1); 
 							<!--informamos no único parâmetro a página que será exibida ao carregar, neste exemplo é a 1º mesmo.-->
-						</script>		
-					
+						</script>
 					 <!-- Fim da div pageNav-->
 
 					
@@ -272,7 +277,7 @@
 					<br/>
 					<br/>
 					<div class="coluna-12">
-						<button onclick="form1()">Salvar</button>
+						<button onclick="validaDadosTurma()">Salvar</button>
 					</div>
 					
 					

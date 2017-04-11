@@ -16,75 +16,77 @@ $(function(){
     });
 });
 
-function Pager(tableName, itemsPerPage) {
-    this.tableName = tableName;
-    this.itemsPerPage = itemsPerPage;
-    this.currentPage = 1;
-    this.pages = 0;
-    this.inited = false;
+function Pagina(nomeTabela, itensPorPagina) {
+    this.nomeTabela = nomeTabela;
+    this.itensPorPagina = itensPorPagina;
+    this.paginaAtual = 1;
+    this.paginas = 0;
+    this.inicializado = false;
     
-    this.showRecords = function(from, to) {        
-        var rows = document.getElementById(tableName).rows;
+    this.mostrarRegistros = function(from, to) {        
+        var linhas = document.getElementById(nomeTabela).rows;
         // i starts from 1 to skip table header row
-        for (var i = 1; i < rows.length; i++) {
+        for (var i = 1; i < linhas.length; i++) {
             if (i < from || i > to)  
-                rows[i].style.display = 'none';
+                linhas[i].style.display = 'none';
             else
-                rows[i].style.display = '';
+                linhas[i].style.display = '';
         }
     }
     
-    this.showPage = function(pageNumber) {
-    	if (! this.inited) {
-    		alert("not inited");
+    this.mostrarPagina = function(numeroPagina) {
+    	if (! this.inicializado) {
+    		alert("não inicializado");
     		return;
     	}
 
-        var oldPageAnchor = document.getElementById('pg'+this.currentPage);
+        var oldPageAnchor = document.getElementById('pg'+this.paginaAtual);
         oldPageAnchor.className = 'pg-normal';
         
-        this.currentPage = pageNumber;
-        var newPageAnchor = document.getElementById('pg'+this.currentPage);
+        this.paginaAtual = numeroPagina;
+        var newPageAnchor = document.getElementById('pg'+this.paginaAtual);
         newPageAnchor.className = 'pg-selected';
         
-        var from = (pageNumber - 1) * itemsPerPage + 1;
-        var to = from + itemsPerPage - 1;
-        this.showRecords(from, to);
+        var from = (numeroPagina - 1) * itensPorPagina + 1;
+        var to = from + itensPorPagina - 1;
+        this.mostrarRegistros(from, to);
     }   
     
     this.prev = function() {
-        if (this.currentPage > 1)
-            this.showPage(this.currentPage - 1);
+        if (this.paginaAtual > 1)
+            this.mostrarPagina(this.paginaAtual - 1);
     }
     
     this.next = function() {
-        if (this.currentPage < this.pages) {
-            this.showPage(this.currentPage + 1);
+        if (this.paginaAtual < this.paginas) {
+            this.mostrarPagina(this.paginaAtual + 1);
         }
     }                        
     
     this.init = function() {
-        var rows = document.getElementById(tableName).rows;
-        var records = (rows.length - 1); 
-        this.pages = Math.ceil(records / itemsPerPage);
-        this.inited = true;
+        var linhas = document.getElementById(nomeTabela).rows;
+        var registros = (linhas.length - 1); 
+        this.paginas = Math.ceil(registros / itensPorPagina);
+        this.inicializado = true;
     }
 
-    this.showPageNav = function(pagerName, positionId) {
-    	if (! this.inited) {
-    		alert("not inited");
+    this.mostrarPaginaNav = function(nomePagina, positionId) {
+    	if (! this.inicializado) {
+    		alert("não inicializado");
     		return;
     	}
     	var element = document.getElementById(positionId);
     	
-    	var pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-ctrl"> &#171 </span>';
-        for (var page = 1; page <= this.pages; page++) 
-            pagerHtml += '<span id="pg' + page + '" class="pg-normal" onclick="' + pagerName + '.showPage(' + page + ');">' + page + '</span>';
-        pagerHtml += '<span onclick="'+pagerName+'.next();" class="pg-ctrl"> &#187;</span>';            
+    	var paginaHTML = '<span onclick="' + nomePagina + '.prev();" class="pg-ctrl"> &#171 </span>';
+        for (var pag = 1; pag <= this.paginas; pag++) 
+            paginaHTML += '<span id="pg' + pag + '" class="pg-normal" onclick="' + nomePagina + '.mostrarPagina(' + pag + ');">' + pag + '</span>';
+        paginaHTML += '<span onclick="'+nomePagina+'.next();" class="pg-ctrl"> &#187;</span>';            
         
-        element.innerHTML = pagerHtml;
+        element.innerHTML = paginaHTML;
     }
 }
+
+
 
 
 

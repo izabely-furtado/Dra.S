@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadastrar Nova Aula</title>
+	
+	<script type='text/javascript' src='./assets/js/cadastroAula.js'></script>
+	
+	
     <!-- Styles -->
     <link href="./assets/css/colunas.css" rel="stylesheet" />
     <link href="./assets/css/formulario.css" rel="stylesheet" />
@@ -18,10 +22,10 @@
     <link href="./assets/css/principal.css" rel="stylesheet" />
     <link href="./assets/css/menu.css" rel="stylesheet" />
     <link href="assets/css/inicio.css" rel="stylesheet" />
-    <script type='text/javascript' src='./assets/js/formAP2.js'></script>
-	<script type='text/javascript' src='./assets/js/paginacao.js'></script>
 	
-    <script type='text/javascript' src='./assets/js/cadastroAula.js'></script>
+    <script type='text/javascript' src='./assets/js/paginacao.js'></script>
+	
+	
 	
 </head>
 <body>
@@ -116,7 +120,7 @@
 									<div class="grupinho">
 										<div class="botoes">
 										<button class="botaoSimples">Limpar</button>
-										<button class="botaoSimples">Salvar</button>
+										
 										</div>
 									</div>
 								</div>
@@ -249,15 +253,15 @@
 								<div id="pageNav"></div> <!--inicio da Div PageNav--> <!--é reponsável por receber os links da paginação geradas pelo Jscript na função Pager-->
 						
 									<script>
-										var pager = new Pager('tabela', 8); 
+										var pagina = new Pagina('tabela', 10); 
 										<!--o 1º parâmetro passado (tabela) é o ID da tabela HTML que queremos paginar e 
 										<!--o 2º parâmetro (5) é a quantidade de “linhas por página” que queremos exibir.--> 
-										pager.init(); 
-										pager.showPageNav('pager', 'pageNav'); 
+										pagina.init(); 
+										pagina.mostrarPaginaNav('pagina', 'pageNav'); 
 										<!--informa em que elemento serão gerados os links/páginas, neste caso o 2º parâmetro recebe o ID do elemento (div)-->
-										pager.showPage(1); 
+										pagina.mostrarPagina(1); 
 										<!--informamos no único parâmetro a página que será exibida ao carregar, neste exemplo é a 1º mesmo.-->
-									</script>		
+								</script>
 								
 								 <!-- Fim da div pageNav-->
 
@@ -267,9 +271,13 @@
 							
 							
 												
-						<br/>
+							<br/>
 					
-						<button onclick="validaAula()">Salvar</button>
+					
+							<div class="coluna-12">
+								<button onclick="validaAula()">Salvar</button>
+							</div>
+					
 					
 
 							

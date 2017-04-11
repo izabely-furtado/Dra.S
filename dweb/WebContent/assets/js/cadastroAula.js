@@ -1,45 +1,41 @@
-function validaAula() {
-		var tipoAula = document.getElementById("tipoAula").value;
-		var horarios = document.getElementById("horarios").value;
-		var dataAula = document.getElementById("dataAula").value;
-		var nivel = document.getElementById("nivel").value;
-		var conteudoAula = document.getElementById("conteudoAula").value;
+function validaDadosAula() {
+		var tipoaula = document.getElementById("tipoAula").value;
+		var horario = document.getElementById("horarios").value;
+		var data= document.getElementById("dataAula").value;
+		var conteudo = document.getElementById("conteudoAula").value;
 
 		
-		if(horarios == "")
-		{
-			alert("Preencha o campo número horário");
-			document.getElementById("horarios").focus();
-			return false;
+		if (tipoaula == "") {
 			
+			alert("Preencha o campo tipo de aula!");
+			
+			document.getElementById("tipoAula").focus();
+			
+			return false;
 		}
 		
-		if(dataAula == "")
+		if(horario == "")
+		{
+			alert("Preencha o campo horario!");
+			document.getElementById("horarios").focus();
+			return false;
+		}
+		
+		if(data == "")
 		{
 			alert("Preencha o campo data!");
 			document.getElementById("dataAula").focus();
 			return false;
 		}
 		
-		if(conteudoAula == "")
+		if(conteudo == "")
 		{
-			alert("Preencha o conteúdo da aula!");
-			document.getElementById("horarios").focus();
-			return false;
-		}
-		
-		if(conteudoAula.checked)
-		{
+			alert("Informe o conteudo da aula");
 			document.getElementById("conteudoAula").focus();
-			
 			return false;
 		}
 		
-
+	
 }
 
 
-function limpaTextArea(){
-	document.getElementById('conteudoAula').value=''; // Limpa o campo
-
-}
