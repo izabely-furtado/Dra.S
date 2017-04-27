@@ -12,7 +12,7 @@ public class EnderecoCrudJDBC {
 		/*
 		 * Objetivo: Método que salva um usuario no banco de dados
 		 */
-		public void salvar(Endereco endereco) {
+		public static void salvar(Endereco endereco) {
 			// abre a conexao com o banco de dados MYSQL
 			Connection conexao = ConectaPostgreSQL.geraConexao();
 			// Objeto para executar o SQL insert

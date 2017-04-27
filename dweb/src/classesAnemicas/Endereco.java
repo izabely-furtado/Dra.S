@@ -7,7 +7,7 @@ public class Endereco {
 	private String bairro;
 	private String cep;
 	private String cidade;
-	private String Estado;
+	private String estado;
 	private String referencia;
 	
 	public String getRua() {
@@ -41,10 +41,10 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 	public String getEstado() {
-		return Estado;
+		return estado;
 	}
 	public void setEstado(String estado) {
-		Estado = estado;
+		this.estado = estado;
 	}
 	public int getId() {
 		return id;

@@ -17,7 +17,13 @@ public class FormularioAcompanhamentoPsicossocial {
 	private ProgramasBeneficios programasBeneficios;
 	private PublicoPrioritario publicoPrioritario;
 	private Rematricula rematricula;
-	
+	private boolean edita;
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
+	}
 	public int getTipo() {
 		return tipo;
 	}

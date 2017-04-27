@@ -3,17 +3,17 @@ package classesAnemicas;
 public class InfoTransporte {
 	private int id;
 	private boolean transporte;
-	private boolean qtransporte;
+	private String qtransporte;
 	public boolean isTransporte() {
 		return transporte;
 	}
 	public void setTransporte(boolean transporte) {
 		this.transporte = transporte;
 	}
-	public boolean isQtransporte() {
+	public String getQtransporte() {
 		return qtransporte;
 	}
-	public void setQtransporte(boolean qtransporte) {
+	public void setQtransporte(String qtransporte) {
 		this.qtransporte = qtransporte;
 	}
 	public String getCartão() {

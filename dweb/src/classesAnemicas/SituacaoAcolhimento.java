@@ -1,6 +1,6 @@
 package classesAnemicas;
 
-public class SitucaoAcolhimento {
+public class SituacaoAcolhimento {
 	private int id;
 	private String nomeAcolhido;
 	private String nomeInstituicao;

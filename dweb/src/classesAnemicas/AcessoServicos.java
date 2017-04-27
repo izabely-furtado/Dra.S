@@ -16,7 +16,7 @@ public class AcessoServicos {
 	private String qescola;
 	private boolean possuiacolhimento;
 	private String qacolhimento;
-	private SitucaoAcolhimento situacaoacolhimento;
+	private SituacaoAcolhimento situacaoacolhimento;
 	
 	public boolean isPossuicras() {
 		return possuicras;
@@ -102,10 +102,10 @@ public class AcessoServicos {
 	public void setQacolhimento(String qacolhimento) {
 		this.qacolhimento = qacolhimento;
 	}
-	public SitucaoAcolhimento getSituacaoacolhimento() {
+	public SituacaoAcolhimento getSituacaoacolhimento() {
 		return situacaoacolhimento;
 	}
-	public void setSituacaoacolhimento(SitucaoAcolhimento situacaoacolhimento) {
+	public void setSituacaoacolhimento(SituacaoAcolhimento situacaoacolhimento) {
 		this.situacaoacolhimento = situacaoacolhimento;
 	}
 	public int getId() {

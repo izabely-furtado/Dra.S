@@ -8,7 +8,7 @@ public class CondicoesMoradia {
 	private boolean possuienergia;
 	private boolean possuicoleta;
 	private boolean possuirisco;
-	private boolean qrisco;
+	private String qrisco;
 	public String getCondicao() {
 		return condicao;
 	}
@@ -45,10 +45,10 @@ public class CondicoesMoradia {
 	public void setPossuirisco(boolean possuirisco) {
 		this.possuirisco = possuirisco;
 	}
-	public boolean isQrisco() {
+	public String getQrisco() {
 		return qrisco;
 	}
-	public void setQrisco(boolean qrisco) {
+	public void setQrisco(String qrisco) {
 		this.qrisco = qrisco;
 	}
 	public int getId() {
