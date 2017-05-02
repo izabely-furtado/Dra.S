@@ -10,6 +10,7 @@ public class Despesas {
 	private float alimentacao;
 	private float medicamentos;
 	private float outros;
+	private boolean edita;
 	//private float despesaTotal;
 	private float rendaTotal;
 	private float rendaPerCapta;
@@ -84,6 +85,12 @@ public class Despesas {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 	
 }

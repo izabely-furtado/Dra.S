@@ -7,6 +7,7 @@ public class TermoDesligamento {
 	private String nomeTecResponsavel;
 	private String motivo;
 	private String cpf;
+	private boolean edita;
 	public int getId() {
 		return id;
 	}
@@ -42,6 +43,12 @@ public class TermoDesligamento {
 	}
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 	
 }

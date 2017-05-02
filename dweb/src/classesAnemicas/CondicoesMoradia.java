@@ -9,6 +9,7 @@ public class CondicoesMoradia {
 	private boolean possuicoleta;
 	private boolean possuirisco;
 	private String qrisco;
+	private boolean edita;
 	public String getCondicao() {
 		return condicao;
 	}
@@ -56,5 +57,11 @@ public class CondicoesMoradia {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 }

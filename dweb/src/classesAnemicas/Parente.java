@@ -12,6 +12,7 @@ public class Parente {
 	private String escolaridade;
 	private Float renda;
 	private String scfv;
+	private boolean edita;
 	public String getNome() {
 		return nome;
 	}
@@ -65,5 +66,11 @@ public class Parente {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 }

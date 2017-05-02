@@ -9,7 +9,7 @@ public class Endereco {
 	private String cidade;
 	private String estado;
 	private String referencia;
-	
+	private boolean edita;
 	public String getRua() {
 		return rua;
 	}
@@ -57,5 +57,11 @@ public class Endereco {
 	}
 	public void setReferencia(String referencia) {
 		this.referencia = referencia;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 }

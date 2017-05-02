@@ -1,4 +1,4 @@
-package backingbeanAntigo;
+package backingbean;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -7,22 +7,22 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import classesAnemicasAntiga.Aula;
+import classesAnemicas.InfoTransporte;
 import crudjdbc.*;;
 
-@ManagedBean(name = "aulaBean")
+@ManagedBean(name = "infoTransporteBean")
 @SessionScoped
-public class AulaBean {
-	private List<Aula> lista;
-	private Aula aula = new Aula();
-	AulaCrudJDBC objAulaCrudJDBC = new AulaCrudJDBC();
+public class InfoTransporteBean {
+	private List<InfoTransporte> lista;
+	private InfoTransporte infoTransporte = new InfoTransporte();
+	InfoTransporteCrudJDBC objInfoTransporteCrudJDBC = new InfoTransporteCrudJDBC();
 
-	public List<Aula> getLista() {
+	public List<InfoTransporte> getLista() {
 		return lista;
 	}
 
-	public Aula getAula() {
-		return aula;
+	public InfoTransporte getInfoTransporte() {
+		return infoTransporte;
 	}
 
 	public List<Integer> getDias() {
@@ -50,65 +50,61 @@ public class AulaBean {
 		return lstAno;
 	}
 
-	public void setAula(Aula aula) {
-		this.aula = aula;
+	public void setInfoTransporte(InfoTransporte infoTransporte) {
+		this.infoTransporte = infoTransporte;
 	}
 
-	public void setLista(List<Aula> lista) {
+	public void setLista(List<InfoTransporte> lista) {
 		this.lista = lista;
 	}
 
 	public String novo() {
-		aula.setId(-1);
-		aula.setDataAula(null);
-		aula.setEnsinado(null);
-		aula.setHoraAula(null);
-		aula.setPresentes(null);
-		aula.setEdita(false);
-		return "aula";
+		this.infoTransporte.setId(-1);
+		this.infoTransporte.setCartão(null);
+		this.infoTransporte.setQtransporte(null);
+		this.infoTransporte.setTransporte(false);
+		this.infoTransporte.setEdita(false);
+		return "infoTransporte";
 	}
 
-	public String excluirRegistro(Aula u) {
-		AulaCrudJDBC objUsuarioCrudJDBC = new AulaCrudJDBC();
-		objUsuarioCrudJDBC.excluir(u);
+	public String excluirRegistro(InfoTransporte u) {
+		InfoTransporteCrudJDBC.excluir(u);
 		// salva o usuário
-		return u.getDataAula() + "";
+		return u.getId()+"";
 	}
 
-	public String alterarRegistro(Aula u) {
+	public String alterarRegistro(InfoTransporte u) {
 		u.setEdita(true);
 		return null;
 	}
 
 	public String salvarRegistro() {
-		for (Aula usu : lista) {
+		for (InfoTransporte usu : lista) {
 			if (usu.isEdita()) {
-				AulaCrudJDBC objAulaCrudJDBC = new AulaCrudJDBC();
-				objAulaCrudJDBC.alterar(usu);
+				InfoTransporteCrudJDBC.alterar(usu);
 			}
 			usu.setEdita(false);
 		}
-		lista = objAulaCrudJDBC.listar();
+		InfoTransporteCrudJDBC.listar();
 		return null;
 	}
 
 	public String inserir() {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if
-		 * (!this.aula.getSenha().equalsIgnoreCase(this.aula.
+		 * (!this.infoTransporte.getSenha().equalsIgnoreCase(this.infoTransporte.
 		 * getConfirmaSenha())) { context.addMessage(null, new
 		 * FacesMessage(FacesMessage.SEVERITY_ERROR,
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
-		AulaCrudJDBC objUsuarioCrudJDBC = new AulaCrudJDBC();
-		objUsuarioCrudJDBC.salvar(this.aula);
+	
+		InfoTransporteCrudJDBC.salvar(this.infoTransporte);
 		// salva o usuário
 		return "sucesso";
 	}
 
 	public String verLista() {
-		AulaCrudJDBC objUsuarioCrudJDBC = new AulaCrudJDBC();
-		lista = objUsuarioCrudJDBC.listar();
+		InfoTransporteCrudJDBC.listar();
 		return "listagem";
 	}
 

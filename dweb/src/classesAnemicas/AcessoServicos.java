@@ -17,6 +17,7 @@ public class AcessoServicos {
 	private boolean possuiacolhimento;
 	private String qacolhimento;
 	private SituacaoAcolhimento situacaoacolhimento;
+	private boolean edita;
 	
 	public boolean isPossuicras() {
 		return possuicras;
@@ -113,6 +114,12 @@ public class AcessoServicos {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 	
 }

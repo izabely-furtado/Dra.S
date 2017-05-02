@@ -6,6 +6,7 @@ public class DadosAcesso {
 	private String senha;
 	private String email;
 	private String lembrar;
+	private boolean edita;
 	public String getLogin() {
 		return login;
 	}
@@ -35,5 +36,11 @@ public class DadosAcesso {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 }

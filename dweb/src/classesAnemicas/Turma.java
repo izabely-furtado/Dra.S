@@ -15,6 +15,7 @@ public class Turma {
 	private boolean sexta;
 	private List<Aluno> alunos;
 	private List<Aula> aulas;
+	private boolean edita;
 	public String getCodigo() {
 		return codigo;
 	}
@@ -86,5 +87,11 @@ public class Turma {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 }

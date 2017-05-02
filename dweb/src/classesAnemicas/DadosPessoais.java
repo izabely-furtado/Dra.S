@@ -11,6 +11,7 @@ public class DadosPessoais {
 	private String parentesco;
 	private String contato;
 	private String nis;
+	private boolean edita;
 	public String getNome() {
 		return nome;
 	}
@@ -58,6 +59,12 @@ public class DadosPessoais {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 	
 

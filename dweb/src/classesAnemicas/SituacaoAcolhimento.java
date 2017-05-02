@@ -7,6 +7,7 @@ public class SituacaoAcolhimento {
 	private String responsavelInstituicao;
 	private String contato;
 	private String motivo;
+	private boolean edita;
 	public String getNomeAcolhido() {
 		return nomeAcolhido;
 	}
@@ -42,6 +43,12 @@ public class SituacaoAcolhimento {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 	
 

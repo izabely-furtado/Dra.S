@@ -8,6 +8,7 @@ public class InfoMedicas {
 	private boolean alergia;
 	private String qalergia;
 	private String contatoSOS;
+	private boolean edita;
 	public boolean isMedicacao() {
 		return medicacao;
 	}
@@ -49,6 +50,12 @@ public class InfoMedicas {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 	
 }

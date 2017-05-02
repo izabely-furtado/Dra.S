@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import classesAnemicas.Endereco;
 import conexao.ConectaPostgreSQL;
@@ -88,7 +90,55 @@ public class EnderecoCrudJDBC {
 		}
 		
 
-		
+		public static List<Endereco> listar() {
+			// abre conexao com o banco de endereco
+			Connection conexao = ConectaPostgreSQL.geraConexao();
+			// variavel lista de ass
+			List<Endereco> acessos = new ArrayList<Endereco>();
+			// executa o SQL no banco de endereco
+			Statement consulta = null;
+			// contém os endereco consultado da tabela
+			ResultSet resultado = null;
+			// objeto as
+			// Endereco as = null;
+			// consulta SQL
+			String sql = "select distinct * from Endereco";
+			try {
+				// consulta => objeto que executa o SQL no banco de endereco
+				consulta = conexao.createStatement();
+				// resultado => objeto que contém os endereco consultado da tabela
+				// Endereco
+				resultado = consulta.executeQuery(sql);
+				// Lê cada as
+
+				while (resultado.next()) {
+					Endereco endereco = new Endereco();
+					endereco.setBairro(resultado.getString("bairro"));
+					endereco.setCep(resultado.getString("cep"));
+					endereco.setCidade(resultado.getString("cidade"));
+					endereco.setEstado(resultado.getString("estado"));
+					endereco.setNumero(resultado.getInt("numero"));
+					endereco.setRua(resultado.getString("rua"));
+					// insere o as na lista
+					acessos.add(endereco);
+
+				}
+
+			} catch (SQLException e) {
+				throw new RuntimeException("Erro ao buscar um acesso a serviços: " + e);
+			} finally {
+				try {
+					consulta.close();
+					resultado.close();
+					conexao.close();
+				} catch (Throwable e) {
+					throw new RuntimeException("Erro ao fechar a conexao " + e);
+				}
+			}
+			// retorna lista de ass
+			return acessos;
+		}
+
 		/*
 		 * Objetivo: Método que salva um usuario no banco de dados
 		 */

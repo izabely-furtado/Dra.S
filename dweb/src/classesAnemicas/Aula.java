@@ -11,6 +11,7 @@ public class Aula {
 	private Date data;
 	private String conteudo;
 	private List<Aluno> presentes;
+	private boolean edita;
 	public String getTipo() {
 		return tipo;
 	}
@@ -46,6 +47,12 @@ public class Aula {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 
 }

@@ -13,6 +13,7 @@ public class PublicoPrioritario {
 	private boolean eca;
 	private boolean rua;
 	private boolean vulnerabilidade;
+	private boolean edita;
 	public boolean isIsolamento() {
 		return isolamento;
 	}
@@ -84,5 +85,11 @@ public class PublicoPrioritario {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 }

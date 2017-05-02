@@ -187,7 +187,7 @@ public class AcessoServicosCrudJDBC {
 		/*
 		 * Objetivo: Método que salva um acesso a serviços no banco de dados
 		 */
-		public void excluir(AcessoServicos as) {
+		public static void excluir(AcessoServicos as) {
 			// abre a conexao com o banco de dados PostGresql
 			Connection conexao = ConectaPostgreSQL.geraConexao();
 			// Objeto para executar o SQL delete
@@ -225,7 +225,7 @@ public class AcessoServicosCrudJDBC {
 			}
 		}
 
-		public void alterar(AcessoServicos as) {
+		public static void alterar(AcessoServicos as) {
 			// abre a conexao com o banco de dados MYSQL
 			Connection conexao = ConectaPostgreSQL.geraConexao();
 			// Objeto para executar o SQL update

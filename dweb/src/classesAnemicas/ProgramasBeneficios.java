@@ -9,6 +9,7 @@ public class ProgramasBeneficios {
 	private boolean possuiar;
 	private String beneficioHabitacional;
 	private String outro;
+	private boolean edita;
 	public boolean isPossuipbf() {
 		return possuipbf;
 	}
@@ -56,5 +57,11 @@ public class ProgramasBeneficios {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 }

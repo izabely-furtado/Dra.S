@@ -4,6 +4,7 @@ public class InfoTransporte {
 	private int id;
 	private boolean transporte;
 	private String qtransporte;
+	private boolean edita;
 	public boolean isTransporte() {
 		return transporte;
 	}
@@ -27,6 +28,12 @@ public class InfoTransporte {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 	private String cartão;
 	

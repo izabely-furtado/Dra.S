@@ -6,6 +6,7 @@ public class Aluno {
 	private int nivel;
 	private FormularioAcompanhamentoPsicossocial form;
 	private Turma turma;
+	private boolean edita;
 	public String getFoto() {
 		return foto;
 	}
@@ -35,6 +36,12 @@ public class Aluno {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 	
 }

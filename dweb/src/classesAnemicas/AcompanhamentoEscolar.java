@@ -7,6 +7,7 @@ public class AcompanhamentoEscolar {
 	private String escola;
 	private List<Integer> anos;
 	private List<Integer> series;
+	private boolean edita;
 	public String getEscola() {
 		return escola;
 	}
@@ -30,6 +31,12 @@ public class AcompanhamentoEscolar {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
 	}
 	
 }

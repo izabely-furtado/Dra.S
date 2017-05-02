@@ -1,4 +1,4 @@
-package backingbeanAntigo;
+package backingbean;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -7,22 +7,22 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import classesAnemicasAntiga.Turma;
+import classesAnemicas.ComposicaoFamiliar;
 import crudjdbc.*;;
 
-@ManagedBean(name = "turmaBean")
+@ManagedBean(name = "composicaoFamiliarBean")
 @SessionScoped
-public class TurmaBean {/*
-	private List<Turma> lista;
-	private Turma turma = new Turma();
-	TurmaCrudJDBC objTurmaCrudJDBC = new TurmaCrudJDBC();
+public class ComposicaoFamiliarBean {
+	private List<ComposicaoFamiliar> lista;
+	private ComposicaoFamiliar composicaoFamiliar = new ComposicaoFamiliar();
+	ComposicaoFamiliarCrudJDBC objComposicaoFamiliarCrudJDBC = new ComposicaoFamiliarCrudJDBC();
 
-	public List<Turma> getLista() {
+	public List<ComposicaoFamiliar> getLista() {
 		return lista;
 	}
 
-	public Turma getTurma() {
-		return turma;
+	public ComposicaoFamiliar getComposicaoFamiliar() {
+		return composicaoFamiliar;
 	}
 
 	public List<Integer> getDias() {
@@ -50,67 +50,60 @@ public class TurmaBean {/*
 		return lstAno;
 	}
 
-	public void setTurma(Turma turma) {
-		this.turma = turma;
+	public void setComposicaoFamiliar(ComposicaoFamiliar composicaoFamiliar) {
+		this.composicaoFamiliar = composicaoFamiliar;
 	}
 
-	public void setLista(List<Turma> lista) {
+	public void setLista(List<ComposicaoFamiliar> lista) {
 		this.lista = lista;
 	}
 
 	public String novo() {
-		turma.setId(-1);
-		turma.setAlunos(null);
-		turma.setProfessores(null);
-		turma.setAulas(null);
-		turma.setNível(0);
-		turma.setEdita(false);
-		return "turma";
+		this.composicaoFamiliar.setId(-1);
+		this.composicaoFamiliar.setParentes(null);
+		this.composicaoFamiliar.setEdita(false);
+		return "composicaoFamiliar";
 	}
 
-	public String excluirRegistro(Turma u) {
-		TurmaCrudJDBC objUsuarioCrudJDBC = new TurmaCrudJDBC();
-		objUsuarioCrudJDBC.excluir(u);
+	public String excluirRegistro(ComposicaoFamiliar u) {
+		ComposicaoFamiliarCrudJDBC.excluir(u);
 		// salva o usuário
-		return u.getNível()+"";
+		return u.getId()+"";
 	}
 
-	public String alterarRegistro(Turma u) {
+	public String alterarRegistro(ComposicaoFamiliar u) {
 		u.setEdita(true);
 		return null;
 	}
 
 	public String salvarRegistro() {
-		for (Turma usu : lista) {
+		for (ComposicaoFamiliar usu : lista) {
 			if (usu.isEdita()) {
-				TurmaCrudJDBC objTurmaCrudJDBC = new TurmaCrudJDBC();
-				objTurmaCrudJDBC.alterar(usu);
+				ComposicaoFamiliarCrudJDBC.alterar(usu);
 			}
 			usu.setEdita(false);
 		}
-		lista = objTurmaCrudJDBC.listar();
+		ComposicaoFamiliarCrudJDBC.listar();
 		return null;
 	}
 
 	public String inserir() {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if
-		 * (!this.turma.getSenha().equalsIgnoreCase(this.turma.
+		 * (!this.composicaoFamiliar.getSenha().equalsIgnoreCase(this.composicaoFamiliar.
 		 * getConfirmaSenha())) { context.addMessage(null, new
 		 * FacesMessage(FacesMessage.SEVERITY_ERROR,
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
-	/*
-		TurmaCrudJDBC objUsuarioCrudJDBC = new TurmaCrudJDBC();
-		objUsuarioCrudJDBC.salvar(this.turma);
+	
+		ComposicaoFamiliarCrudJDBC.salvar(this.composicaoFamiliar);
 		// salva o usuário
 		return "sucesso";
 	}
 
 	public String verLista() {
-		TurmaCrudJDBC objUsuarioCrudJDBC = new TurmaCrudJDBC();
-		lista = objUsuarioCrudJDBC.listar();
+		ComposicaoFamiliarCrudJDBC.listar();
 		return "listagem";
 	}
-*/
+
 }

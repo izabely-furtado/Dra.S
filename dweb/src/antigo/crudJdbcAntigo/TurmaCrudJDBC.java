@@ -1,6 +1,7 @@
 package crudjdbc;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,30 +17,29 @@ public class TurmaCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um turma no banco de dados
 	 */
-
+	/*
 	public void salvar(Turma turma) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
-
 		// SQL de inserção
-		String sql = "insert into turma(codigo, maximo, turno, nivel, "
-				+ "segunda, terca, quarta, quinta, sexta) "
+		String sql = "insert into turma(dataNasc, descConvenio, idEndereco, nome, possuiConvenio, "
+				+ "							telefone, tipoSangue, hrDisponivelFim, hrDisponivelInicio) "
 				+ "				    values (?,?,?,?,?,?,?,?,?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
-			insereSt.setString(1, turma.getCodigo());
-			insereSt.setInt(2, turma.getMaximo());
-			insereSt.setString(3, turma.getTurno());
-			insereSt.setInt(4, turma.getNivel());
-			insereSt.setBoolean(5, turma.isSegunda());
-			insereSt.setBoolean(6, turma.isTerca());
-			insereSt.setBoolean(7, turma.isQuarta());
-			insereSt.setBoolean(8, turma.isQuinta());
-			insereSt.setBoolean(9, turma.isSexta());
+			insereSt.setDate(1, (Date) turma.getDataNasc());
+			insereSt.setString(2, turma.getDescConvenio());
+			insereSt.setInt(3, turma.getEndereco().getId());
+			insereSt.setString(4, turma.getNome());
+			insereSt.setBoolean(5, turma.isPossuiConvenio());
+			insereSt.setInt(6, turma.getTelefone());
+			insereSt.setString(7, turma.getTipoSangue());
+			insereSt.setTime(8, turma.getHrDisponivelFim());
+			insereSt.setTime(9, turma.getHrDisponivelInicio());
 
 			// executa SQL insert
 			insereSt.executeUpdate();
@@ -59,7 +59,7 @@ public class TurmaCrudJDBC {
 	/*
 	 * Objetivo: Método que lista todos os turmas do banco de dados
 	 */
-
+	/*
 	public List<Turma> listar() {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -82,16 +82,15 @@ public class TurmaCrudJDBC {
 			// Lê cada turma
 			while (resultado.next()) {
 				turma = new Turma();
-				turma.setId(resultado.getInt("id_turma"));
-				turma.setCodigo(resultado.getString("codigo"));
-				turma.setMaximo(resultado.getInt("maximo"));
-				turma.setTurno(resultado.getString("turno"));
-				turma.setNivel(resultado.getInt("nivel"));
-				turma.setSegunda(resultado.getBoolean("segunda"));
-				turma.setTerca(resultado.getBoolean("terca"));
-				turma.setQuarta(resultado.getBoolean("quarta"));
-				turma.setQuinta(resultado.getBoolean("quinta"));
-				turma.setSexta(resultado.getBoolean("sexta"));
+				turma.setDataNasc(resultado.getDate("dataNasc"));
+				turma.setDescConvenio(resultado.getString("descConvenio"));
+				turma.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("idEndereco")));
+				turma.setNome(resultado.getString("nome"));
+				turma.setPossuiConvenio(resultado.getBoolean("possuiConvenio"));
+				turma.setTelefone(resultado.getInt("telefone"));
+				turma.setTipoSangue(resultado.getString("tipoSangue"));
+				turma.setHrDisponivelFim(resultado.getTime("hrDisponivelFim"));
+				turma.setHrDisponivelInicio(resultado.getTime("hrDisponivelInicio"));
 
 				// insere o turma na lista
 				turmas.add(turma);
@@ -115,53 +114,38 @@ public class TurmaCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um turma no banco de dados
 	 */
-
+	/*
 	public void excluir(Turma turma) {
 		// abre a conexao com o banco de dados PostGresql
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL delete
-		PreparedStatement excluiSt1 = null;
-		PreparedStatement excluiSt2 = null;
-		PreparedStatement excluiSt3 = null;
+		PreparedStatement excluiPSt = null;
+		PreparedStatement excluiSt = null;
 		// SQL de exclusão do turma
 		String sql = "delete from turma where id=?";
-		// SQL de exclusão dos alunos da turma
-		String sql2 = "delete from alunosTurma where id=?";
-
-		// SQL de exclusão das aulas da turma
-		String sql3 = "delete from aulasTurma where id=?";
-
+		// SQL de exclusão do turma
+		String presql = "delete from endereco where id=?";
 		try {
-			// recebe o SQL delete para alunos da turma
-			excluiSt1 = conexao.prepareStatement(sql2);
+			// recebe o SQL delete para endereço
+			excluiPSt = conexao.prepareStatement(presql);
 			// recebe o parâmtros do SQL insert
-			excluiSt1.setInt(1, turma.getId());
+			excluiPSt.setInt(1, turma.getEndereco().getId());
 			// executa SQL delete
-			excluiSt1.executeUpdate();
-
-			// recebe o SQL delete para alunos da turma
-			excluiSt2 = conexao.prepareStatement(sql2);
-			// recebe o parâmtros do SQL insert
-			excluiSt2.setInt(1, turma.getId());
-			// executa SQL delete
-			excluiSt2.executeUpdate();
-
+			excluiPSt.executeUpdate();
 
 			// recebe o SQL delete para turma
-			excluiSt3 = conexao.prepareStatement(sql);
+			excluiSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
-			excluiSt3.setInt(1, turma.getId());
+			excluiSt.setInt(1, turma.getId());
 			// executa SQL delete
-			excluiSt3.executeUpdate();
-			
+			excluiSt.executeUpdate();
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao excluir turma.mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco
-				excluiSt1.close();
-				excluiSt2.close();
-				excluiSt3.close();
+				excluiPSt.close();
+				excluiSt.close();
 				conexao.close();
 			} catch (Throwable e) {
 				throw new RuntimeException("Erro ao fechar a operação de exclusao" + e);
@@ -175,21 +159,21 @@ public class TurmaCrudJDBC {
 		// Objeto para executar o SQL update
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "update turma set codigo=?, maximo=?, turno=?, nivel=?, nivel=?, "
-				+ "					   segunda=?, terca=?, quarta=?, quinta=?, sexta=?";
+		String sql = "update turma set dataNasc=?, descConvenio=?, idEndereco=?, nome=?, possuiConvenio=?, "
+				+ "					   telefone=?, tipoSangue=?, HrDisponivelFim=?, getHrDisponivelInicio=?";
 		try {
 			// recebe o SQL update
-
-			insereSt.setString(1, turma.getCodigo());
-			insereSt.setInt(2, turma.getMaximo());
-			insereSt.setString(3, turma.getTurno());
-			insereSt.setInt(4, turma.getNivel());
-			insereSt.setBoolean(5, turma.isSegunda());
-			insereSt.setBoolean(6, turma.isTerca());
-			insereSt.setBoolean(7, turma.isQuarta());
-			insereSt.setBoolean(8, turma.isQuinta());
-			insereSt.setBoolean(9, turma.isSexta());
-
+			insereSt = conexao.prepareStatement(sql);
+			// recebe o parâmtros do SQL update
+			insereSt.setDate(1, (Date) turma.getDataNasc());
+			insereSt.setString(2, turma.getDescConvenio());
+			insereSt.setInt(3, turma.getEndereco().getId());
+			insereSt.setString(4, turma.getNome());
+			insereSt.setBoolean(5, turma.isPossuiConvenio());
+			insereSt.setInt(6, turma.getTelefone());
+			insereSt.setString(7, turma.getTipoSangue());
+			insereSt.setTime(8, turma.getHrDisponivelFim());
+			insereSt.setTime(9, turma.getHrDisponivelInicio());
 
 			// executa SQL update
 			insereSt.executeUpdate();
@@ -205,5 +189,5 @@ public class TurmaCrudJDBC {
 			}
 		}
 	}
-
+*/
 }
