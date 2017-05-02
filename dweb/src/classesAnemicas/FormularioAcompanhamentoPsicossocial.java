@@ -16,7 +16,7 @@ public class FormularioAcompanhamentoPsicossocial {
 	private AcessoServicos acessoServicos;
 	private ProgramasBeneficios programasBeneficios;
 	private PublicoPrioritario publicoPrioritario;
-	private Rematricula rematricula;
+	private String rematricula;
 	private boolean edita;
 	public boolean isEdita() {
 		return edita;
@@ -108,10 +108,10 @@ public class FormularioAcompanhamentoPsicossocial {
 	public void setPublicoPrioritario(PublicoPrioritario publicoPrioritario) {
 		this.publicoPrioritario = publicoPrioritario;
 	}
-	public Rematricula getRematricula() {
+	public String getRematricula() {
 		return rematricula;
 	}
-	public void setRematricula(Rematricula rematricula) {
+	public void setRematricula(String rematricula) {
 		this.rematricula = rematricula;
 	}
 	public int getId() {

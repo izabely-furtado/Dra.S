@@ -44,7 +44,7 @@ public class EnderecoCrudJDBC {
 			}
 		}
 
-		public static Endereco getEndereco(Integer id) {
+		public static Endereco getEndereco(Integer idEndereco) {
 			Endereco endereco = new Endereco();
 			// abre conexao com o banco de dados
 			Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -53,7 +53,7 @@ public class EnderecoCrudJDBC {
 			// contém os dados consultado da tabela
 			ResultSet resultado = null;
 			// consultas SQL
-			String sqlEndereco = "select distinct * from endereco where id = '" + id + "'";
+			String sqlEndereco = "select distinct * from endereco where id = '" + idEndereco + "'";
 
 			try {
 				// consulta => objeto que executa o SQL no banco de dados
