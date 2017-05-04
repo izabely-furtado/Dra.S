@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <title>Dados de Acesso</title>
+    <!-- Styles -->
+    <link href="./assets/css/colunas.css" rel="stylesheet" />
+    <link href="./assets/css/formulario.css" rel="stylesheet" />
+    <link href="./assets/css/principal.css" rel="stylesheet" />
+    <link href="./assets/css/menu.css" rel="stylesheet" />
+    <link href="assets/css/inicio.css" rel="stylesheet" />
+    <script type='text/javascript' src='./assets/js/termo.js'></script>
+</h:head>
+<h:body>
+    <!-- 
+	<header>
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
+	</header>
+	 -->
+    <div class="corpo">
+        <div class="linha">
+            <!-- MENU -->
+            <div class="coluna-3">
+                <nav>
+					<ul>
+						<li class="list-group-item active"><header><a 
+										 href="#"> <IMG
+											alt="logo-onda" src="./assets/img/logo-onda2.png" />
+									</a></header></li>
+						<li><a class="ativo" href="#">Alunos</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
+						<li><a href="./pesquisarAlunos.html">Pesquisar Alunos</a></li>
+						<li><a class="ativo" href="#">Turmas</a></li>
+						<li><a href="./cadastrarTurmas.html">Cadastrar Turmas</a></li>
+						<li><a href="./pesquisarTurmas.html">Pesquisar Turmas</a></li>
+						<li><a href="./cadastrarAulas.html">Cadastrar Aulas</a></li>
+						<li><a href="#" class="ativo">Sistema</a></li>
+						<li><a href="./dadosAcesso.html">Visualizar Dados de Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.html">Alterar Dados de Acesso</a></li>
+						<li><a href="./login.html">Sair</a></li>
+					</ul>
+				</nav>
+            </div>
+            <!-- Conte�do -->
+            <div class="coluna-9">
+                <main> <!-- Conte�do de P�ginas -->
+				<h2>
+					Termo de Desligamentoo<br /> <small>Carregue os dados para gerar o termo</small>
+				</h2>
+				
+					<h:form id="formAluno" method="post">
+						<div class="linha">
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Nome do Usuário:</label> 
+								<h:inputText id="nome" 
+									value="#{termoDesligamentoBean.termoDesligamento.nomeUsuario}"
+									required="true" class="formulario"
+									a:placeholder="Insira seu nome do aluno" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								<!--<h:message for="nome" styleClass="errorMessage" />-->
+								<!-- JEITO ANTIGO
+								
+								<input type="text" id="nome"
+									required class="formulario"
+									placeholder="Insira seu nome do aluno" /> 
+								
+								-->
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>CPF:</label> 
+								<h:inputText id="cpf" 
+									value="#{termoDesligamentoBean.termoDesligamento.cpf}"
+									required="true" class="formulario"
+									a:placeholder="Digite somente números"
+									pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
+									data-mask="000.000.000-00" data-mask-selectonfocus="true" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								<!--<h:message for="nome" styleClass="errorMessage" />-->
+								<!-- JEITO ANTIGO
+								<input type="text" id="cpf"
+									required class="formulario" minlength=11
+									data-mask="000.000.000-00" data-mask-selectonfocus="true"
+									placeholder="999.999.999-99" pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
+									 />
+								-->
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Motivo:</label> 
+								<h:inputText id="motivo" 
+									value="#{termoDesligamentoBean.termoDesligamento.motivo}"
+									required="true" class="formulario"
+									a:placeholder="Descreva o motivo para o desligamento" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								<!--<h:message for="nome" styleClass="errorMessage" />-->
+								<!-- JEITO ANTIGO
+								<input type="text" id="motivo"
+									required class="formulario"
+									placeholder="Descreva o motivo para o desligamento" />
+									-->
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Responsável:</label> 
+								<h:inputText id="resp" 
+									value="#{termoDesligamentoBean.termoDesligamento.nomeResponsavel}"
+									required="true" class="formulario"
+									a:placeholder="Responsável pelo aluno" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								<!--<h:message for="nome" styleClass="errorMessage" />-->
+								<!-- JEITO ANTIGO
+								<input type="text" id="resp"
+									required class="formulario"
+									placeholder="Responsável pelo aluno" />
+									-->
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Técnico Responsável:</label> 
+								<h:inputText id="tecresp" 
+									value="#{termoDesligamentoBean.termoDesligamento.nomeTecResponsavel}"
+									required="true" class="formulario"
+									a:placeholder="Informe o técnico responsável" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								<!--<h:message for="nome" styleClass="errorMessage" />-->
+								<!-- JEITO ANTIGO
+								<input type="text" id="tecresp" class="formulario" required
+								placeholder="Informe o técnico responsável" />
+								-->
+							</div>
+						</div>
+						
+						</div>
+						<h:commandButton 
+								 styleClass="botao"
+								 onclick="gerar()"
+								 action="#{termoDesligamentoBean.inserir}" 
+								 value="Gerar Termo de Desligamento">
+				</h:commandButton>
+					</h:form>
+				
+				<!-- JEITO ANTIGO
+				<button onclick="gerar()">Gerar Termo de Desligamento</button>
+				-->
+
+
+				</main>
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+</h:body>
+</html>

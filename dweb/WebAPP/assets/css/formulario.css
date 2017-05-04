@@ -209,3 +209,50 @@ button:active {
 	background-color:  #2495c9  !important;
 	border-color:  #2495c9   !important;
 }
+
+.botao {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: white;
+	background-color: #2495c9;
+	border-color: #2495c9;
+	border-radius: 0 10px 0 10px;
+	padding: 15px 40px;
+	text-transform: uppercase;
+}
+
+
+.botao,
+.botao:focus {
+	font-weight: 400;
+	color: white;
+	background-color: #2495c9;
+	border-color: #2495c9;
+	border-radius: 0 10px 0 10px;
+	padding: 15px 40px;
+	text-transform: uppercase;
+}
+
+.botao:hover,
+.botao:active {
+	color: white !important;
+	background-color:  #f6bc31  !important;
+	border-color:  #f6bc31  !important;
+}
