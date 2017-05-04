@@ -1,4 +1,4 @@
-package crudjdbc;
+package cgd.crudjdbc;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -9,14 +9,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import classesAnemicas.Aula;
-import conexao.ConectaPostgreSQL;
+import cdp.classesAnemicas.Aula;
+import cgd.conexao.ConectaPostgreSQL;
 
 public class AulaCrudJDBC {
 	/*
 	 * Objetivo: Método que salva uma aula no banco de dados
 	 */
-	public void salvar(Aula aula) {
+	public static void salvar(Aula aula) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
@@ -96,7 +96,7 @@ public class AulaCrudJDBC {
 	/*
 	 * Objetivo: Método que salva uma aula no banco de dados
 	 */
-	public void excluir(Aula aula) {
+	public static void excluir(Aula aula) {
 		// abre a conexao com o banco de dados PostGresql
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL delete
@@ -123,7 +123,7 @@ public class AulaCrudJDBC {
 		}
 	}
 
-	public void alterar(Aula aula) {
+	public static void alterar(Aula aula) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL update
@@ -156,7 +156,7 @@ public class AulaCrudJDBC {
 		}
 	}
 
-	public List<Aula> listar() {
+	public static List<Aula> listar() {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// variavel lista de aulas

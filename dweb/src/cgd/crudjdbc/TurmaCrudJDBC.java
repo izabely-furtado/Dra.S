@@ -1,4 +1,4 @@
-package crudjdbc;
+package cgd.crudjdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import classesAnemicas.*;
-import conexao.ConectaPostgreSQL;
+import cdp.classesAnemicas.*;
+import cgd.conexao.ConectaPostgreSQL;
 
 public class TurmaCrudJDBC {
 
@@ -17,7 +17,7 @@ public class TurmaCrudJDBC {
 	 * Objetivo: Método que salva um turma no banco de dados
 	 */
 
-	public void salvar(Turma turma) {
+	public static void salvar(Turma turma) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
@@ -60,7 +60,7 @@ public class TurmaCrudJDBC {
 	 * Objetivo: Método que lista todos os turmas do banco de dados
 	 */
 
-	public List<Turma> listar() {
+	public static List<Turma> listar() {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// variavel lista de turmas
@@ -116,7 +116,7 @@ public class TurmaCrudJDBC {
 	 * Objetivo: Método que salva um turma no banco de dados
 	 */
 
-	public void excluir(Turma turma) {
+	public static void excluir(Turma turma) {
 		// abre a conexao com o banco de dados PostGresql
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL delete
@@ -125,34 +125,46 @@ public class TurmaCrudJDBC {
 		PreparedStatement excluiSt3 = null;
 		// SQL de exclusão do turma
 		String sql = "delete from turma where id=?";
-		// SQL de exclusão dos alunos da turma
-		String sql2 = "delete from alunosTurma where id=?";
-
 		// SQL de exclusão das aulas da turma
-		String sql3 = "delete from aulasTurma where id=?";
+		String sql2 = "delete from aulsdTurma where id=?";
+
+		// SQL de exclusão dos alunos da turma
+		String sql3 = "delete from alunosTurma where id=?";
 
 		try {
+			//Queria deletar em cascata mas esqueci como faz
+			
 			// recebe o SQL delete para alunos da turma
-			excluiSt1 = conexao.prepareStatement(sql2);
+			excluiSt3 = conexao.prepareStatement(sql3);
+			// recebe o parâmtros do SQL insert
+			
+			for(int i=0; i<turma.getAlunos().size(); i++)
+			{
+				excluiSt3.setInt(1, turma.getAlunos().get(i).getId());
+				// executa SQL delete
+				excluiSt3.executeUpdate();
+
+			}
+			
+			// recebe o SQL delete para aulas da turma
+			excluiSt2 = conexao.prepareStatement(sql2);
+			
+			for(int j=0; j<turma.getAulas().size(); j++)
+			{
+				// recebe o parâmtros do SQL insert
+				excluiSt2.setInt(1, turma.getAulas().get(j).getId());
+				// executa SQL delete
+				excluiSt2.executeUpdate();
+			}
+			
+			
+
+			// recebe o SQL delete para turma
+			excluiSt1 = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
 			excluiSt1.setInt(1, turma.getId());
 			// executa SQL delete
 			excluiSt1.executeUpdate();
-
-			// recebe o SQL delete para alunos da turma
-			excluiSt2 = conexao.prepareStatement(sql2);
-			// recebe o parâmtros do SQL insert
-			excluiSt2.setInt(1, turma.getId());
-			// executa SQL delete
-			excluiSt2.executeUpdate();
-
-
-			// recebe o SQL delete para turma
-			excluiSt3 = conexao.prepareStatement(sql);
-			// recebe o parâmtros do SQL insert
-			excluiSt3.setInt(1, turma.getId());
-			// executa SQL delete
-			excluiSt3.executeUpdate();
 			
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao excluir turma.mensagem:" + e);
@@ -169,7 +181,7 @@ public class TurmaCrudJDBC {
 		}
 	}
 
-	public void alterar(Turma turma) {
+	public static void alterar(Turma turma) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL update
@@ -178,6 +190,8 @@ public class TurmaCrudJDBC {
 		String sql = "update turma set codigo=?, maximo=?, turno=?, nivel=?, nivel=?, "
 				+ "					   segunda=?, terca=?, quarta=?, quinta=?, sexta=?";
 		try {
+			// recebe o SQL update
+			insereSt = conexao.prepareStatement(sql);
 			// recebe o SQL update
 
 			insereSt.setString(1, turma.getCodigo());

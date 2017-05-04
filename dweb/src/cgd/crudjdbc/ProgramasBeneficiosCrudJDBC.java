@@ -1,4 +1,4 @@
-package crudjdbc;
+package cgd.crudjdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import classesAnemicas.ProgramasBeneficios;
-import conexao.ConectaPostgreSQL;
+import cdp.classesAnemicas.ProgramasBeneficios;
+import cgd.conexao.ConectaPostgreSQL;
 
 public class ProgramasBeneficiosCrudJDBC {
 	/*

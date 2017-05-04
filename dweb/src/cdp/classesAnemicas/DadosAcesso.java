@@ -1,4 +1,4 @@
-package classesAnemicas;
+package cdp.classesAnemicas;
 
 public class DadosAcesso {
 	private int id;

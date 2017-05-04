@@ -1,12 +1,12 @@
-package backingbean;
+package cgt.backingbean;
 
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import classesAnemicas.FormularioAcompanhamentoPsicossocial;
-import crudjdbc.*;
+import cdp.classesAnemicas.FormularioAcompanhamentoPsicossocial;
+import cgd.crudjdbc.*;
 
 @ManagedBean(name = "fapIBean")
 @SessionScoped

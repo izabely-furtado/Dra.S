@@ -1,4 +1,4 @@
-package crudjdbc;
+package cgd.crudjdbc;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -9,9 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import classesAnemicas.ComposicaoFamiliar;
-import classesAnemicas.Parente;
-import conexao.ConectaPostgreSQL;
+import cdp.classesAnemicas.ComposicaoFamiliar;
+import cdp.classesAnemicas.Parente;
+import cgd.conexao.ConectaPostgreSQL;
 
 public class ComposicaoFamiliarCrudJDBC {
 	/*

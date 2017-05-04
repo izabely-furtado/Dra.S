@@ -1,4 +1,4 @@
-package crudjdbc;
+package cgd.crudjdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import classesAnemicas.*;
-import conexao.ConectaPostgreSQL;
+import cdp.classesAnemicas.*;
+import cgd.conexao.ConectaPostgreSQL;
 
 public class TermoDesligamentoCrudJDBC {
 	
@@ -17,7 +17,7 @@ public class TermoDesligamentoCrudJDBC {
 	 * Objetivo: Método que salva um termo de desligamento no banco de dados
 	 */
 	
-	public void salvar(TermoDesligamento termoDesligamento) {
+	public static void salvar(TermoDesligamento termoDesligamento) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
@@ -55,7 +55,7 @@ public class TermoDesligamentoCrudJDBC {
 	 * Objetivo: Método que lista todos os termos de desligamento do banco de dados
 	 */
 	
-	public List<TermoDesligamento> listar() {
+	public static List<TermoDesligamento> listar() {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// variavel lista de termos
@@ -106,7 +106,7 @@ public class TermoDesligamentoCrudJDBC {
 	 * Objetivo: Método que exclui um termo de desligamento do banco de dados
 	 */
 	
-	public void excluir(TermoDesligamento termoDesligamento) {
+	public static void excluir(TermoDesligamento termoDesligamento) {
 		// abre a conexao com o banco de dados PostGresql
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL delete
@@ -135,7 +135,7 @@ public class TermoDesligamentoCrudJDBC {
 		}
 	}
 
-	public void alterar(TermoDesligamento termoDesligamento) {
+	public static void alterar(TermoDesligamento termoDesligamento) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL update

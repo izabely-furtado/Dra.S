@@ -1,4 +1,4 @@
-package backingbean;
+package cgt.backingbean;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -7,8 +7,8 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import classesAnemicas.PublicoPrioritario;
-import crudjdbc.*;
+import cdp.classesAnemicas.PublicoPrioritario;
+import cgd.crudjdbc.*;
 
 @ManagedBean(name = "publicoPrioritarioBean")
 @SessionScoped

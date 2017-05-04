@@ -1,4 +1,4 @@
-package classesAnemicas;
+package cdp.classesAnemicas;
 
 public class FormularioAcompanhamentoPsicossocial {
 	private int id;

@@ -1,4 +1,4 @@
-package crudjdbc;
+package cgd.crudjdbc;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -9,8 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import classesAnemicas.DadosPessoais;
-import conexao.ConectaPostgreSQL;
+import cdp.classesAnemicas.DadosPessoais;
+import cgd.conexao.ConectaPostgreSQL;
 
 public class DadosPessoaisCrudJDBC {
 	/*
