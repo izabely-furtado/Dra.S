@@ -1,6 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html>
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +17,8 @@
     <link href="./assets/css/menu.css" rel="stylesheet" />
     <link href="assets/css/inicio.css" rel="stylesheet" />
     <script type='text/javascript' src='./assets/js/login.js'></script>
-</head>
-<body>
+</h:head>
+<h:body>
     <!-- 
 	<header>
 		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
@@ -55,28 +60,71 @@
 						<div class="linha">
 						<div class="coluna-12">
 							<div class="grupinho">
-								<label>Login:</label> <input type="text" id="nome"
+								<label>Login:</label> 
+								<h:inputText id="cpf" 
+									value="#{termoDesligamentoBean.termoDesligamento.cpf}"
+									required="true" class="formulario"
+									a:placeholder="Digite somente números"
+									pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
+									data-mask="000.000.000-00" data-mask-selectonfocus="true" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								
+								<input type="text" id="nome"
 									required class="formulario"
 									placeholder="Insira seu nome ou login" />
 							</div>
 						</div>
 						<div class="coluna-4">
 							<div class="grupinho">
-								<label>Senha Antiga:</label> <input type="password" id="senhaP"
+								<label>Senha Antiga:</label> 
+								
+								<h:inputText id="cpf" 
+									value="#{termoDesligamentoBean.termoDesligamento.cpf}"
+									required="true" class="formulario"
+									a:placeholder="Digite somente números"
+									pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
+									data-mask="000.000.000-00" data-mask-selectonfocus="true" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								
+								<input type="password" id="senhaP"
 									required class="formulario" minlength=5
 									placeholder="Confirme a senha anterior" />
 							</div>
 						</div>
 						<div class="coluna-4">
 							<div class="grupinho">
-								<label>Senha:</label> <input type="password" id="senha"
+								<label>Senha:</label> 
+								
+								<h:inputText id="cpf" 
+									value="#{termoDesligamentoBean.termoDesligamento.cpf}"
+									required="true" class="formulario"
+									a:placeholder="Digite somente números"
+									pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
+									data-mask="000.000.000-00" data-mask-selectonfocus="true" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								
+								<input type="password" id="senha"
 									required class="formulario" minlength=5
 									placeholder="No mínimo 5 caracteres" />
 							</div>
 						</div>
 						<div class="coluna-4">
 							<div class="grupinho">
-								<label>Repita:</label> <input type="password" id="repita"
+								<label>Repita:</label> 
+								
+								<h:inputText id="cpf" 
+									value="#{termoDesligamentoBean.termoDesligamento.cpf}"
+									required="true" class="formulario"
+									a:placeholder="Digite somente números"
+									pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
+									data-mask="000.000.000-00" data-mask-selectonfocus="true" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								
+								<input type="password" id="repita"
 									required class="formulario" minlength=5
 									placeholder="Repita a senha aqui" />
 							</div>
@@ -84,21 +132,48 @@
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>E-mail:</label> 
+								
+								<h:inputText id="cpf" 
+									value="#{termoDesligamentoBean.termoDesligamento.cpf}"
+									required="true" class="formulario"
+									a:placeholder="Digite somente números"
+									pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
+									data-mask="000.000.000-00" data-mask-selectonfocus="true" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								
 								<input type="email" id="email" class="formulario" placeholder="Insira seu e-mail" />
 							</div>
 						</div>
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Lembrar Senha:</label> 
+								
+								<h:inputText id="cpf" 
+									value="#{termoDesligamentoBean.termoDesligamento.cpf}"
+									required="true" class="formulario"
+									a:placeholder="Digite somente números"
+									pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
+									data-mask="000.000.000-00" data-mask-selectonfocus="true" >
+								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
+								</h:inputText>
+								
+								
 								<input type="text" id="lembrar" class="formulario" placeholder="Memória de fuinha? Ajude a você mesmo, deixe aqui uma pista" />
 							</div>
 						</div>
 						
 						</div>
+						<h:commandButton 
+								 styleClass="botao"
+								 onclick="alterar()"
+								 action="#{termoDesligamentoBean.inserir}" 
+								 value="Alterar">
+						</h:commandButton>
 					</form>
-				
+				<!-- 
 				<button onclick="alterar()">Alterar</button>
-
+-->
 
 
 				</main>
@@ -107,5 +182,5 @@
             <br />
         </div>
     </div>
-</body>
+</h:body>
 </html>

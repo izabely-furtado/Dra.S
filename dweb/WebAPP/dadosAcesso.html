@@ -1,9 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 	<title>Dados de Acesso</title>
 	<!-- Styles -->
 	<link href="./assets/css/colunas.css" rel="stylesheet" />
@@ -12,8 +17,8 @@
 	<link href="./assets/css/menu.css" rel="stylesheet" />
 	<link href="assets/css/inicio.css" rel="stylesheet" />
 	<script type='text/javascript' src='./assets/js/login.js'></script>
-</head>
-<body>
+</h:head>
+<h:body>
 	<!-- 
 	<header>
 		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
@@ -51,37 +56,37 @@
 					Dados de Acesso<br /> <small>Ao Sistema</small>
 				</h2>
 				
-					<form id="formAluno" method="post">
+					<h:form id="formAluno" method="post">
 						<div class="linha">
 						<div class="coluna-4">
 							<div class="grupinho">
 								<label>Login:</label> 
-                                <p id="test">admin</p>
+                                <h:outputText value="#{dadosAcessoBean.dadosAcesso.login}" />
                                 
 							</div>
 						</div>
 						<div class="coluna-4">
 							<div class="grupinho">
 								<label>Senha:</label> 
-                                <p id="senha">*d*i*</p>
+                                <h:outputText value="#{dadosAcessoBean.dadosAcesso.senha}" />
 							</div>
 						</div>
 						<div class="coluna-4">
 							<div class="grupinho">
 								<label>E-mail:</label> 
-                                <p id="email">admin@exemplo.com.br</p>
+                                <h:outputText value="#{dadosAcessoBean.dadosAcesso.email}" />
 							</div>
 						</div>
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Lembrar senha:</label> 
-                                <p id="lembrar">Era como se em minha mente revoasse um ritmo elusivo, um fragmento de palavras perdidas, algo que havia escutado em algum lugar muito tempo antes. Por um momento, tentei formar uma frase, mas meus lábios se abriram hesitantes, como se esforçam os lábios de um mudo, como se houvesse algo mais lutando para sair do que apenas um sopro de se. Mas não foi produzido nenhum som. E aquilo que eu quase lembrara, permaneceu incomunicável para sempre. - F. Scott Fitzgerald</p>
+                                <h:outputText value="#{dadosAcessoBean.dadosAcesso.lembrar}" />
 							</div>
 						</div>
 						
 						
 						</div>
-					</form>
+					</h:form>
 				
 				<button onclick="editar()">Editar</button>
 
@@ -94,5 +99,5 @@
 		</div>
 	</div>
 	
-</body>
+</h:body>
 </html>
