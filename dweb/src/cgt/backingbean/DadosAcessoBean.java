@@ -7,23 +7,23 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import cdp.classesAnemicas.AcessoServicos;
+import cdp.classesAnemicas.DadosAcesso;
 import cgd.crudjdbc.*;
 
-@ManagedBean(name = "acessoServicosBean")
+@ManagedBean(name = "dadosAcessoBean")
 @SessionScoped
-public class AcessoServicosBean {
+public class DadosAcessoBean {
 
-	private List<AcessoServicos> lista;
-	private AcessoServicos acessoServicos = new AcessoServicos();
-	AcessoServicosCrudJDBC objAcessoServicosCrudJDBC = new AcessoServicosCrudJDBC();
+	private List<DadosAcesso> lista;
+	private DadosAcesso dadosAcesso = new DadosAcesso();
+	DadosAcessoCrudJDBC objDadosAcessoCrudJDBC = new DadosAcessoCrudJDBC();
 
-	public List<AcessoServicos> getLista() {
+	public List<DadosAcesso> getLista() {
 		return lista;
 	}
 
-	public AcessoServicos getAcessoServicos() {
-		return acessoServicos;
+	public DadosAcesso getDadosAcesso() {
+		return dadosAcesso;
 	}
 
 	public List<Integer> getDias() {
@@ -51,65 +51,62 @@ public class AcessoServicosBean {
 		return lstAno;
 	}
 
-	public void setAcessoServicos(AcessoServicos acessoServicos) {
-		this.acessoServicos = acessoServicos;
+	public void setDadosAcesso(DadosAcesso dadosAcesso) {
+		this.dadosAcesso = dadosAcesso;
 	}
 
-	public void setLista(List<AcessoServicos> lista) {
+	public void setLista(List<DadosAcesso> lista) {
 		this.lista = lista;
 	}
 
 	public String novo() {
-		this.acessoServicos.setId(-1);
-		this.acessoServicos.setPossuiacolhimento(false);
-		this.acessoServicos.setPossuicei(false);
-		this.acessoServicos.setPossuicras(false);
-		this.acessoServicos.setPossuicreas(false);
-		this.acessoServicos.setPossuiescola(false);
-		this.acessoServicos.setPossuiesf(false);
-		this.acessoServicos.setPossuisus(false);
-		this.acessoServicos.setEdita(false);
-		return "acessoServicos";
+		this.dadosAcesso.setId(-1);
+		this.dadosAcesso.setEmail(null);
+		this.dadosAcesso.setLembrar(null);
+		this.dadosAcesso.setLogin(null);
+		this.dadosAcesso.setSenha(null);
+		this.dadosAcesso.setEdita(false);
+		return "dadosAcesso";
 	}
 
-	public String excluirRegistro(AcessoServicos u) {
-		AcessoServicosCrudJDBC.excluir(u);
+	public String excluirRegistro(DadosAcesso u) {
+		DadosAcessoCrudJDBC.excluir(u);
 		// salva o usuário
 		return u.getId()+"";
 	}
 
-	public String alterarRegistro(AcessoServicos u) {
+	public String alterarRegistro(DadosAcesso u) {
 		u.setEdita(true);
 		return null;
 	}
 
 	public String salvarRegistro() {
-		for (AcessoServicos usu : lista) {
+		for (DadosAcesso usu : lista) {
 			if (usu.isEdita()) {
-				AcessoServicosCrudJDBC.alterar(usu);
+				DadosAcessoCrudJDBC.alterar(usu);
 			}
 			usu.setEdita(false);
 		}
-		AcessoServicosCrudJDBC.listar();
+		DadosAcessoCrudJDBC.listar();
 		return null;
 	}
 
 	public String inserir() {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if
-		 * (!this.acessoServicos.getSenha().equalsIgnoreCase(this.acessoServicos.
+		 * (!this.dadosAcesso.getSenha().equalsIgnoreCase(this.dadosAcesso.
 		 * getConfirmaSenha())) { context.addMessage(null, new
 		 * FacesMessage(FacesMessage.SEVERITY_ERROR,
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		AcessoServicosCrudJDBC.salvar(this.acessoServicos);
+		DadosAcessoCrudJDBC.salvar(this.dadosAcesso);
 		// salva o usuário
 		return "sucesso";
 	}
 
 	public String verLista() {
-		AcessoServicosCrudJDBC.listar();
+		DadosAcessoCrudJDBC.listar();
 		return "listagem";
 	}
 
