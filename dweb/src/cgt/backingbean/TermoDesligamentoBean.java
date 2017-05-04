@@ -1,6 +1,10 @@
 package cgt.backingbean;
 
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -55,7 +59,7 @@ public class TermoDesligamentoBean {
 		td.setEdita(true);
 		return null;
 	}
-
+	
 	public String salvarRegistro() {
 		for (TermoDesligamento termoDesligamento : lista) {
 			if (termoDesligamento.isEdita()) {
@@ -77,6 +81,12 @@ public class TermoDesligamentoBean {
 	public String verLista() {
 		TermoDesligamentoCrudJDBC.listar();
 		return "listagem";
+	}
+	
+	public String getDataAtual(){
+		Date d = new Date();
+		String dStr = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(d);
+		return dStr;
 	}
 
 }
