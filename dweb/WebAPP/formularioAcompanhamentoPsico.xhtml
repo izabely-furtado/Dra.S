@@ -1,0 +1,783 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<title>Cadastrar Novo Aluno</title>
+	<!-- Styles -->
+	<link href="./assets/css/colunas.css" rel="stylesheet" />
+	<link href="./assets/css/formulario.css" rel="stylesheet" />
+	<link href="./assets/css/principal.css" rel="stylesheet" />
+	<link href="./assets/css/menu.css" rel="stylesheet" />
+	<link href="assets/css/inicio.css" rel="stylesheet" />
+	<script type='text/javascript' src='./assets/js/formAP.js'></script>
+</h:head>
+<h:body>
+	<!-- 
+	<header>
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
+	</header>
+	 -->
+	<div class="corpo">
+		<div class="linha">
+			<!-- MENU -->
+			<div class="coluna-3">
+				<nav>
+					<ul>
+						<li class="list-group-item active"><header><a 
+										 href="#"> <IMG
+											alt="logo-onda" src="./assets/img/logo-onda2.png" />
+									</a></header></li>
+						<li><a class="ativo" href="#">Alunos</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
+						<li><a href="./pesquisarAlunos.html">Pesquisar Alunos</a></li>
+						<li><a class="ativo" href="#">Turmas</a></li>
+						<li><a href="./cadastrarTurmas.html">Cadastrar Turmas</a></li>
+						<li><a href="./pesquisarTurmas.html">Pesquisar Turmas</a></li>
+						<li><a href="./cadastrarAulas.html">Cadastrar Aulas</a></li>
+						<li><a href="#" class="ativo">Sistema</a></li>
+						<li><a href="./dadosAcesso.html">Visualizar Dados de Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.html">Alterar Dados de Acesso</a></li>
+						<li><a href="./login.html">Sair</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- Conte�do -->
+			<div class="coluna-9">
+				<main> <!-- Conte�do de P�ginas -->
+				<h2>
+					Formulário de Acompanhamento Psicosocial<br /> <small>Parte
+						1 de 7</small>
+				</h2>
+				<!-- 
+						<div class="alert alert-success">
+							<strong>Successo!</strong> This alert box could indicate a
+							successful or positive action.
+						</div>
+						<div class="alert alert-info">
+							<strong>Informação!</strong> This alert box could indicate a
+							neutral informative change or action.
+						</div>
+						<div class="alert alert-warning">
+							<strong>Atenção!</strong> This alert box could indicate a
+							dangerous or potentially negative action.
+						</div>
+						<div class="alert alert-danger">
+							<strong>Erro!</strong> This alert box could indicate a dangerous
+							or potentially negative action.
+						</div>
+ -->
+				
+					<h:form id="formAluno" method="post">
+						<!-- DADOS B�SICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
+						<hr />
+						<h4>Dados Básicos do Fomulário</h4>
+						<div class="linha">
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Tipo de Formulário:</label> 
+								
+								<h:selectOneMenu class="formulario" id="tipo"
+													
+													value="#{fapBean.fap.tipo}">
+													<f:selectItem itemLabel="Selecione o Tipo de Formulário" />
+													<f:selectItem itemLabel="Inscrição" itemValue="incricao" />
+													<f:selectItem itemLabel="Matrícula" itemValue="matricula" />
+													<f:selectItem itemLabel="Rematrícula" itemValue="rematricula" />
+													
+												</h:selectOneMenu>
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Ano de Inserção:</label> 
+									<h:inputText id="ano"
+													value="#{fapBean.fap.ano}" required="true"
+													class="formulario" a:placeholder="Ano" >
+													<!--requiredMessage="#{text['fap.ano.validacao']}">-->
+												</h:inputText>
+												<h:message for="ano" styleClass="errorMessage" />
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Forma de Acesso:</label> 
+								
+								<h:selectOneMenu class="formulario" id="forma"
+													value="#{fapBean.fap.formaAcesso}">
+													<f:selectItem itemLabel="Selecione a forma de acesso" />
+													<f:selectItem itemLabel="Encaminhamento pela Rede CRAS" itemValue="cras" />
+													<f:selectItem itemLabel="Encaminhamento pela Rede CREAS" itemValue="creas" />
+													<f:selectItem itemLabel="Demanda Espontânea" itemValue="de" />
+													<f:selectItem itemLabel="Outra Forma" itemValue="outra" />	
+												</h:selectOneMenu>
+							</div>
+						</div>
+						</div>
+						<hr />
+						<h4>Dados Pessoais</h4>
+						<div class="linha">
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Nome da criança/adolescente:</label> 
+							
+								<h:inputText id="ano"
+													value="#{fapBean.fap.dadosPessoais.nome}" required="true"
+													class="formulario" a:placeholder="Ano" >
+													<!--requiredMessage="#{text['fap.nome.validacao']}">-->
+												</h:inputText>
+												<h:message for="ano" styleClass="errorMessage" />
+									
+
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Data de Nascimento:</label> 
+									<h:inputText id="dataNasc"
+													value="#{fapBean.fap.dadosPessoais.datNasc}" required="true"
+													class="formulario" a:placeholder="_ _/_ _/_ _ _ _" >
+													<!--requiredMessage="#{text['fap.dadosPessoais.datNasc.validacao']}">-->
+													</h:inputText>
+												<h:message for="dataNasc" styleClass="errorMessage" />
+				</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho radio-group">
+								<label>Sexo:</label> 	
+									<h:selectOneRadio value="#{fapBean.fap.dadosPessoais.sexo}">
+										<f:selectItem id="sexoF" class="radio-inline" itemValue="F" itemLabel="Feminino"/>
+										<f:selectItem id="sexoM" class="radio-inline" itemValue="M" itemLabel="Masculino"/>
+									</h:selectOneRadio>
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Responsável:</label> 
+									<h:inputText id="responsavel"
+													value="#{fapBean.fap.dadosPessoais.responsavel}" required="true"
+													class="formulario" a:placeholder="Responsável pelo Aluno" >
+													<!--requiredMessage="#{text['fap.dadosPessoais.responsavel.validacao']}">-->
+													</h:inputText>
+												<h:message for="responsavel" styleClass="errorMessage" />
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Parentesco:</label> 
+								
+								<h:selectOneMenu class="formulario" id="parentesco"
+									
+									value="#{fapBean.fap.dadosPessoais.parentesco}">
+									<f:selectItem itemLabel="Selecione o parentesco" />
+									<f:selectItem itemLabel="Mãe" itemValue="Mãe" />
+									<f:selectItem itemLabel="Pai" itemValue="Pai" />
+									<f:selectItem itemLabel="Irmão" itemValue="Irmão" />
+									<f:selectItem itemLabel="Irmã" itemValue="Irmã" />
+									<f:selectItem itemLabel="Primo" itemValue="Primo" />
+									<f:selectItem itemLabel="Avô" itemValue="Avô" />
+									<f:selectItem itemLabel="Avó" itemValue="Avó" />
+									<f:selectItem itemLabel="Tio" itemValue="Tio" />
+									<f:selectItem itemLabel="Tia" itemValue="Tia" />
+													
+								</h:selectOneMenu>
+								
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Contato:</label> 
+								
+								<!--
+								<input type="tel" id="telefone"
+									name="telefone" required class="formulario" 
+									data-mask="(00)00000-0000" data-mask-selectonfocus="true"
+									placeholder="(99)99999-9999" /> --><!-- pattern="(?\d{2})?\d{5}-?\d{4}" /> -->
+									
+									<h:inputText id="telefone"
+													value="#{fapBean.fap.dadosPessoais.contato}" required="true"
+													class="formulario" a:placeholder="(99)99999-9999"
+													data-mask="(00)00000-0000" data-mask-selectonfocus="true" >
+													<!--requiredMessage="#{text['fap.dadosPessoais.contato.validacao']}">-->
+													</h:inputText>
+												<h:message for="telefone" styleClass="errorMessage" />
+			
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>NIS da criança/adolescente:</label> 
+								
+								<h:inputText id="nis"
+													value="#{fapBean.fap.dadosPessoais.nis}" required="true"
+													class="formulario" a:placeholder="Nis" >
+													<!--requiredMessage="#{text['fap.dadosPessoais.nis.validacao']}">-->
+													</h:inputText>
+												<h:message for="nis" styleClass="errorMessage" />
+							</div>
+						</div>
+						</div>
+						<!-- DADOS DE ENDERE�O DO ALUNO QUE EXECUTA PAGAMENTO -->
+						<hr />
+						<h4>Endereço</h4>
+							<div class="linha">
+						<address>
+						
+							
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Rua/Avenida:</label> 
+										<h:inputText id="rua"
+													value="#{fapBean.fap.endereco.rua}" required="true"
+													class="formulario" a:placeholder="Digite o nome da rua ou avenida" >
+													<!--requiredMessage="#{text['fap.endereco.rua.validacao']}">-->
+													</h:inputText>
+												<h:message for="rua" styleClass="errorMessage" />
+										
+								</div>
+							</div>
+
+							<div class="coluna-2">
+								<div class="grupinho">
+									<label>Número:</label> 
+								
+										
+										<h:inputText id="numero"
+													value="#{fapBean.fap.endereco.numero}" required="true"
+													class="formulario" a:placeholder="Digite o número da casa" >
+													<!--requiredMessage="#{text['fap.endereco.numero.validacao']}">-->
+												</h:inputText>
+												<h:message for="numero" styleClass="errorMessage" />
+								</div>
+							</div>
+							<div class="coluna-4">
+								<div class="grupinho">
+									<label>CEP da criança/adolescente:</label> 
+									
+									<!--<input type="text"
+										id="cep" required class="formulario"
+										data-mask="00.000-000" data-mask-selectonfocus="true"
+									    placeholder="99.999-999" /> --> <!-- pattern="\d{2}.?\d{3}-?\d{3}" /> -->
+										
+										<h:inputText id="cep"
+													value="#{fapBean.fap.endereco.cep}" required="true"
+													class="formulario" a:placeholder="99.999-999"
+													data-mask="00.000-000" data-mask-selectonfocus="true" >
+													<!--requiredMessage="#{text['fap.endereco.cep.validacao']}">-->
+												</h:inputText>
+												<h:message for="cep" styleClass="errorMessage" />
+										
+								</div>
+							</div>
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Bairro:</label> 
+									<h:inputText id="bairro"
+													value="#{fapBean.fap.endereco.bairro}" required="true"
+													class="formulario" a:placeholder="Digite o nome do bairro" >
+													<!--requiredMessage="#{text['fap.endereco.bairro.validacao']}">-->
+													</h:inputText>
+												<h:message for="bairro" styleClass="errorMessage" />
+								</div>
+							</div>
+
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Cidade:</label> 
+										
+										<h:inputText id="cidade"
+													value="#{fapBean.fap.endereco.cidade}" required="true"
+													class="formulario" a:placeholder="Digite o nome da sua Cidade" >
+													<!--requiredMessage="#{text['fap.endereco.cidade.validacao']}">-->
+													</h:inputText>
+												<h:message for="cidade" styleClass="errorMessage" />
+								</div>
+							</div>
+
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Estado:</label> 
+								<h:selectOneMenu class="formulario" id="estado"
+									
+									value="#{fapBean.fap.endereco.estado}">
+									<f:selectItem itemLabel="Selecione o estado" />
+									<f:selectItem itemLabel="Acre" itemValue="AC" />
+									<f:selectItem itemLabel="Alagoas" itemValue="AL" />
+									<f:selectItem itemLabel="Amapá" itemValue="AP" />
+									<f:selectItem itemLabel="Amazonas" itemValue="AM" />
+									<f:selectItem itemLabel="Bahia" itemValue="BA" />
+									<f:selectItem itemLabel="Ceará" itemValue="CE" />
+									<f:selectItem itemLabel="Distrito Federal" itemValue="DF" />
+									<f:selectItem itemLabel="Espírito Santo" itemValue="ES" />
+									<f:selectItem itemLabel="Goiás" itemValue="GO" />
+									<f:selectItem itemLabel="Maranhão" itemValue="MA" />
+									<f:selectItem itemLabel="Mato Grosso" itemValue="MT" />
+									<f:selectItem itemLabel="Mato Grosso do Sul" itemValue="MS" />
+									<f:selectItem itemLabel="Minas Gerais" itemValue="MG" />
+									<f:selectItem itemLabel="Pará" itemValue="PA" />
+									<f:selectItem itemLabel="Paraiba" itemValue="PB" />
+									<f:selectItem itemLabel="Paraná" itemValue="PR" />
+									<f:selectItem itemLabel="Pernambuco" itemValue="PE" />
+									<f:selectItem itemLabel="Piauí" itemValue="PI" />
+									<f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />
+									<f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN" />
+									<f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS" />
+									<f:selectItem itemLabel="Rondônia" itemValue="RO" />
+									<f:selectItem itemLabel="Roraima" itemValue="RR" />
+									<f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
+									<f:selectItem itemLabel="São Paulo" itemValue="SP" />
+									<f:selectItem itemLabel="Sergipe" itemValue="SE" />
+									<f:selectItem itemLabel="Tocantins" itemValue="TC" />
+																		
+									
+								</h:selectOneMenu>
+									
+								</div>
+							</div>
+
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Ponto de Referência:</label> 	
+									<h:inputText id="referencia"
+													value="#{fapBean.fap.endereco.referencia}" required="true"
+													class="formulario" a:placeholder="Ponto de referência" >
+													<!--requiredMessage="#{text['fap.endereco.referencia.validacao']}">-->
+													</h:inputText>
+												<h:message for="referencia" styleClass="errorMessage" />
+												
+								</div>
+							</div>
+
+						</address></div>
+						<hr />
+						
+						<h4>Acompanhamento Escolar</h4>
+						<div class="linha">
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Escola:</label> 
+									<h:inputText id="escola"
+													value="#{fapBean.fap.acompanhamentoEscolar.escola}" required="true"
+													class="formulario" a:placeholder="Nome da escola" >
+													<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
+													</h:inputText>
+												<h:message for="escola" styleClass="errorMessage" />
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label>Anos:</label> 
+								
+								<!--<select class="formulario" id="ano1">
+									<option>Ano 1</option>
+									<option value="1">2001</option>
+									<option value="2">2002</option>
+									<option value="3">2003</option>
+									<option value="4">2004</option>
+								</select>-->
+								
+							
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+								
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="ano2">
+									<option>Ano 2</option>
+									<option value="1">2001</option>
+									<option value="2">2002</option>
+									<option value="3">2003</option>
+									<option value="4">2004</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="ano3">
+									<option>Ano 3</option>
+									<option value="1">2001</option>
+									<option value="2">2002</option>
+									<option value="3">2003</option>
+									<option value="4">2004</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="ano4">
+									<option>Ano 4</option>
+									<option value="1">2001</option>
+									<option value="2">2002</option>
+									<option value="3">2003</option>
+									<option value="4">2004</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="ano5">
+									<option>Ano 5</option>
+									<option value="1">2001</option>
+									<option value="2">2002</option>
+									<option value="3">2003</option>
+									<option value="4">2004</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="ano6">
+									<option>Ano 6</option>
+									<option value="1">2001</option>
+									<option value="2">2002</option>
+									<option value="3">2003</option>
+									<option value="4">2004</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label>Série nos Anos:</label> 
+								
+								<!--<select class="formulario"
+									id="serie1">
+									<option>Série 1</option>
+									<option value="1">1º</option>
+									<option value="2">2º</option>
+									<option value="3">3º</option>
+									<option value="4">4º</option>
+                                    <option value="5">5º</option>
+									<option value="6">6º</option>
+									<option value="7">7º</option>
+									<option value="8">8º</option>
+                                    <option value="9">9º</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+								
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="serie2">
+									<option>Série 2</option>
+									<option value="1">1º</option>
+									<option value="2">2º</option>
+									<option value="3">3º</option>
+									<option value="4">4º</option>
+                                    <option value="5">5º</option>
+									<option value="6">6º</option>
+									<option value="7">7º</option>
+									<option value="8">8º</option>
+                                    <option value="9">9º</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+								
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="serie3">
+									<option>Série 3</option>
+									<option value="1">1º</option>
+									<option value="2">2º</option>
+									<option value="3">3º</option>
+									<option value="4">4º</option>
+                                    <option value="5">5º</option>
+									<option value="6">6º</option>
+									<option value="7">7º</option>
+									<option value="8">8º</option>
+                                    <option value="9">9º</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+								</h:selectOneMenu>
+								
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="serie4">
+									<option>Série 4</option>
+									<option value="1">1º</option>
+									<option value="2">2º</option>
+									<option value="3">3º</option>
+									<option value="4">4º</option>
+                                    <option value="5">5º</option>
+									<option value="6">6º</option>
+									<option value="7">7º</option>
+									<option value="8">8º</option>
+                                    <option value="9">9º</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}" class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+								</h:selectOneMenu>
+								
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="serie5">
+									<option>Série 5</option>
+									<option value="1">1º</option>
+									<option value="2">2º</option>
+									<option value="3">3º</option>
+									<option value="4">4º</option>
+                                    <option value="5">5º</option>
+									<option value="6">6º</option>
+									<option value="7">7º</option>
+									<option value="8">8º</option>
+                                    <option value="9">9º</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+								
+							</div>
+						</div>
+						<div class="coluna-2">
+							<div class="grupinho">
+								<label><br /></label> 
+								
+								<!--<select class="formulario" id="serie6">
+									<option>Série 6</option>
+									<option value="1">1º</option>
+									<option value="2">2º</option>
+									<option value="3">3º</option>
+									<option value="4">4º</option>
+                                    <option value="5">5º</option>
+									<option value="6">6º</option>
+									<option value="7">7º</option>
+									<option value="8">8º</option>
+                                    <option value="9">9º</option>
+								</select>-->
+								
+								<h:selectOneMenu value="#{fapBean.lista}"
+													class="formulario">
+													<f:selectItems value="#{fapBean.lista}" var="f"
+														itemlabel="#{f.nome}" itemValue="#{f.nome}" />
+												</h:selectOneMenu>
+								
+							</div>
+						</div>
+						</div>
+						<hr />
+						<h4>Informações Médicas/Emergência</h4>
+						<div class="linha">
+						<div class="coluna-6">
+							<div class="grupinho radio-group">
+								<label>Uso de medicação:</label> 
+								
+								<!--<label class="radio-inline">
+									Não </label> 
+									<input type="radio" name="medicacao" id="medicacaoN"
+									value="medicacaoN" checked /> <label class="radio-inline">
+									Sim </label> <input type="radio" name="medicacao" value="medicacaoS"
+									id="medicacaoS" />-->
+								
+								<h:selectOneRadio value="#{fapBean.fap.InfoMedicas.medicacao}">
+										<f:selectItem id="medicacaoN" class="radio-inline" itemValue="medicacaoN" itemLabel="Não"/>
+										<f:selectItem id="medicacaoS" class="radio-inline" itemValue="medicacaoS" itemLabel="Sim"/>
+									</h:selectOneRadio>
+
+							</div>
+						</div>
+
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Qual?:</label>
+									<h:inputText id="qmedicacao"
+													value="#{fapBean.fap.InfoMedicas.qmedicacao}" required="true"
+													class="formulario" a:placeholder="Nome da Medicação Usada" >
+													<!--requiredMessage="#{text['fap.InfoMedicas.qmedicacao']}">-->
+													</h:inputText>
+												<h:message for="qmedicacao" styleClass="errorMessage" />
+									
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Tipo Sanguíneo:</label> 
+								<h:selectOneMenu class="formulario" id="tipoSangue"
+													value="#{fapBean.fap.InfoMedicas.tipoSangue}">
+													<f:selectItem itemLabel="Selecione o Tipo Sanguíneo" />
+													<f:selectItem itemLabel="A-" itemValue="A-" />
+													<f:selectItem itemLabel="A+" itemValue="A+" />
+													<f:selectItem itemLabel="B-" itemValue="B-" />
+													<f:selectItem itemLabel="B+" itemValue="B+" />
+													<f:selectItem itemLabel="O-" itemValue="O-" />
+													<f:selectItem itemLabel="O+" itemValue="O+" />
+													<f:selectItem itemLabel="AB-" itemValue="AB-" />
+													<f:selectItem itemLabel="AB+" itemValue="AB+" />
+												</h:selectOneMenu>
+							</div>
+						</div>
+						<div class="coluna-6">
+							<div class="grupinho radio-group">
+								<label>Alergia:</label> 
+									<h:selectOneRadio value="#{fapBean.fap.InfoMedicas.alergia}">
+										<f:selectItem id="alergiaN" class="radio-inline" itemValue="alergiaN" itemLabel="Não"/>
+										<f:selectItem id="alergiaS" class="radio-inline" itemValue="alergiaS" itemLabel="Sim"/>
+									</h:selectOneRadio>
+
+							</div>
+						</div>
+
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Qual?:</label> 
+									
+									<h:inputText id="qalergia"
+													value="#{fapBean.fap.InfoMedicas.qalergia}" required="true"
+													class="formulario" a:placeholder="Nome da alergia apresentada" >
+													<!--requiredMessage="#{text['fap.InfoMedicas.qalergia']}">-->
+													</h:inputText>
+												<h:message for="qalergia" styleClass="errorMessage" />
+									
+									
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Contato de Emergência:</label> 
+								
+								<!--<input type="text"
+									id="contatoSOS" class="formulario " required
+									data-mask="(00)00000-0000" data-mask-selectonfocus="true"
+									placeholder="(99)99999-9999" /> --><!--pattern="(?\d{2})?\d{5}-?\d{4}"-->
+									
+									<h:inputText id="contatoSOS"
+													value="#{fapBean.fap.InfoMedicas.contatoSOS}" required="true"
+													class="formulario" a:placeholder="Nome da alergia apresentada" >
+													<!--requiredMessage="#{text['fap.InfoMedicas.contatoSOS']}">-->
+													</h:inputText>
+												<h:message for="contatoSOS" styleClass="errorMessage" />
+									
+							</div>
+						</div>
+						</div>
+						<hr />
+						<h4>Informações de Transporte</h4>
+						<div class="linha">
+						<div class="coluna-6">
+							<div class="grupinho radio-group">
+								<label>Utiliza transporte:</label> 
+									<h:selectOneRadio value="#{fapBean.fap.infoTransporte.transporte}">
+										<f:selectItem id="transporteN" class="radio-inline" itemValue="transporteN" itemLabel="Não"/>
+										<f:selectItem id="transporteS" class="radio-inline" itemValue="transporteS" itemLabel="Sim"/>
+									</h:selectOneRadio>
+
+							</div>
+						</div>
+
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Número do Cartão:</label> 
+									
+									<h:inputText id="cartao"
+													value="#{fapBean.fap.infoTransporte.cartao}" required="true"
+													class="formulario" a:placeholder="Número do cartão" >
+													<!--requiredMessage="#{text['fap.InfoMedicas.?']}">-->
+													</h:inputText>
+												<h:message for="cartao" styleClass="errorMessage" />
+									
+							</div>
+						</div>
+						</div>
+								
+						<h:commandButton 
+								 styleClass="botao"
+								 onclick="form1()"
+								 action="#{fapBean.inserir}" 
+								 value="Próximo">
+						</h:commandButton>
+					</h:form>
+				
+
+				</main>
+			</div>
+			<br />
+			<br />
+		</div>
+	</div>
+	
+</h:body>
+</html>

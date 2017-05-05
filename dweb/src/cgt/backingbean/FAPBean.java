@@ -8,7 +8,7 @@ import javax.faces.bean.SessionScoped;
 import cdp.classesAnemicas.FormularioAcompanhamentoPsicossocial;
 import cgd.crudjdbc.*;
 
-@ManagedBean(name = "fapIBean")
+@ManagedBean(name = "fapBean")
 @SessionScoped
 public class FAPBean {
 	private List<FormularioAcompanhamentoPsicossocial> lista;
@@ -19,7 +19,7 @@ public class FAPBean {
 		return lista;
 	}
 
-	public FormularioAcompanhamentoPsicossocial getAluno() {
+	public FormularioAcompanhamentoPsicossocial getFap() {
 		return fap;
 	}
 

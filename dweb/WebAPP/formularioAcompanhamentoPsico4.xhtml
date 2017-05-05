@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta charset="utf-8"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<title>Cadastrar Novo Aluno</title>
+	<!-- Styles -->
+	<link href="./assets/css/colunas.css" rel="stylesheet" />
+	<link href="./assets/css/formulario.css" rel="stylesheet" />
+	<link href="./assets/css/principal.css" rel="stylesheet" />
+	<link href="./assets/css/menu.css" rel="stylesheet" />
+	<link href="assets/css/inicio.css" rel="stylesheet" />
+	<script type='text/javascript' src='./assets/js/formAP4.js'></script>
+</h:head>
+
+
+<h:body>
+	<!-- 
+	<header>
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
+	</header>
+	 -->
+	<div class="corpo">
+
+		<div class="linha">
+			<!-- MENU -->
+			<div class="coluna-3">
+				<nav>
+					<ul>
+						<li class="list-group-item active"><header>
+								<a href="#"> <IMG alt="logo-onda"
+									src="./assets/img/logo-onda2.png" />
+								</a>
+							</header></li>
+						<li><a class="ativo" href="#">Alunos</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.html">Formulário
+								de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.html">Gerar Termo de
+								Desligamento</a></li>
+						<li><a href="./pesquisarAlunos.html">Pesquisar Alunos</a></li>
+						<li><a class="ativo" href="#">Turmas</a></li>
+						<li><a href="./cadastrarTurmas.html">Cadastrar Turmas</a></li>
+						<li><a href="./pesquisarTurmas.html">Pesquisar Turmas</a></li>
+						<li><a href="./cadastrarAulas.html">Cadastrar Aulas</a></li>
+						<li><a href="#" class="ativo">Sistema</a></li>
+						<li><a href="./dadosAcesso.html">Visualizar Dados de
+								Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.html">Alterar Dados de
+								Acesso</a></li>
+						<li><a href="./login.html">Sair</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- Conte�do -->
+			<div class="coluna-9">
+
+				<main><!-- Conte�do de P�ginas -->
+				<h2>
+					Formulário de Acompanhamento Psicosocial<br /> <small>Parte
+						4 de 7</small>
+				</h2>
+				<!-- 
+						<div class="alert alert-success">
+							<strong>Successo!</strong> This alert box could indicate a
+							successful or positive action.
+						</div>
+						<div class="alert alert-info">
+							<strong>Informação!</strong> This alert box could indicate a
+							neutral informative change or action.
+						</div>
+						<div class="alert alert-warning">
+							<strong>Atenção!</strong> This alert box could indicate a
+							dangerous or potentially negative action.
+						</div>
+						<div class="alert alert-danger">
+							<strong>Erro!</strong> This alert box could indicate a dangerous
+							or potentially negative action.
+						</div>
+ -->
+				<div class="linha">
+					<h:form id="formAluno" method="post">
+						<!-- DADOS B�SICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
+						<hr />
+						<h4>Condições de Moradia</h4>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Condições:</label>
+
+								<h:selectOneMenu class="formulario" id="condicao"
+									value="#{fapIBean.fap.condicoesMoradia.condicao}">
+									<f:selectItem itemLabel="Selecione a Condição de Moradia" />
+									<f:selectItem itemLabel="Própria" itemValue="propria" />
+									<f:selectItem itemLabel="Alugada" itemValue="alugada" />
+									<f:selectItem itemLabel="Cedida" itemValue="cedida" />
+									<f:selectItem itemLabel="Outros" itemValue="outros" />
+								</h:selectOneMenu>
+
+							</div>
+						</div>
+						<div class="coluna-12">
+							<div class="grupinho">
+								<label>Infraestrutura:</label><br />
+								<h:selectManyCheckbox name="infra" value="infra">
+								   	<f:selectItem id="pagua" itemValue="#{fapIBean.fap.condicoesMoradia.possuiAgua}" itemLabel="Possui Água" />
+								   	<f:selectItem id="pesgoto" itemValue="#{fapIBean.fap.condicoesMoradia.possuiEsgoto}" itemLabel="Possui Rede de Esgoto" />
+								   	<f:selectItem id="penergia" itemValue="#{fapIBean.fap.condicoesMoradia.possuiEnergia}" itemLabel="Possui energia Elétrica" />
+								   	<f:selectItem id="plixo" itemValue="#{fapIBean.fap.condicoesMoradia.possuiLixo}" itemLabel="Possui Coleta de Lixo"/>
+								</h:selectManyCheckbox>
+
+								<!--<input type="checkbox" name="infra" id="pagua">Possui Água<br>-->
+								<!--<h:selectBooleanCheckbox label="Possui Água" id="pagua" value="pagua" />-->
+								<!--<input type="checkbox" name="infra" id="pesgoto" >Possui Rede de Esgoto<br>-->
+								<!--<h:selectBooleanCheckbox value="Possui Rede de Esgoto"
+									id="pesgoto" />-->
+								<!--<input type="checkbox" name="infra" id="penergia">Possui Energia Elétrica<br>-->
+								<!--<h:selectBooleanCheckbox value="Possui energia Elétrica"
+									id="penergia" />-->
+								<!--<input type="checkbox" name="infra" id="plixo">Possui Coleta de Lixo<br>-->
+								<!--<h:selectBooleanCheckbox value="Possui Coleta de Lixo"
+									id="plixo" />-->
+
+
+
+							</div>
+						</div>
+						<div class="coluna-5">
+							<div class="grupinho radio-group">
+								<label>Risco Habitacional:</label>
+
+								<!--
+										<label class="radio-inline"> Não </label> 
+										<input onclick="possuiRisco()" checked type="radio" name="risco" id="riscoN" /> 
+										<label class="radio-inline"> Sim </label> 
+										<input onchange="possuiRisco()" type="radio" name="risco" id="riscoS" />-->
+
+								<h:selectOneRadio
+									value="#{fapIBean.fap.condicoesMoradia.possuirisco}">
+									<f:selectItem id="riscoN" class="radio-inline" itemValue="Não"
+										itemLabel="Não" />
+									<f:selectItem id="riscoS" class="radio-inline" itemValue="Sim"
+										itemLabel="Sim" />
+								</h:selectOneRadio>
+
+							</div>
+						</div>
+
+						<div class="coluna-4">
+							<div class="grupinho">
+								<label>Qual?:</label>
+
+								<h:inputText id="qrisco"
+									value="#{fapIBean.fap.condicoesMoradia.qrisco}" required="true"
+									class="formulario" a:placeholder="Qual o Risco Habitacional" >
+									<!--requiredMessage="#{text['fap.condicoesMoradia.qrisco.validacao']}"></h:inputText>-->
+									<h:message for="qrisco" styleClass="errorMessage" />
+								</h:inputText>
+							</div>
+						</div>
+						
+						<!--<button
+							onclick="form4()" >Próximo</button>--> <h:commandButton
+					styleClass="botao" onclick="form4()" value="Próximo">
+				</h:commandButton>
+				
+
+					</h:form>
+				</div>
+				 </main>
+			</div>
+
+
+		</div>
+	</div>
+
+</h:body>
+</html>
