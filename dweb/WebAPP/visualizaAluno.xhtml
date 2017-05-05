@@ -7,20 +7,18 @@
 	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 	<title>Visualizar Aluno</title>	
 	<link href="assets/css/principal.css" rel="stylesheet" />
 	
 	<!-- Styles -->
 	<link href="./assets/css/colunas.css" rel="stylesheet" />
-	<link href="./assets/css/formulario.css" rel="stylesheet" />
-	
-	
-    <link href="./assets/css/formulario2.css" rel="stylesheet" />
+	<link href="./assets/css/formulario2.css" rel="stylesheet" />
 	
     <link href="./assets/css/impressao2.css" rel="stylesheet" />
+    <link href="./assets/css/formulario.css" rel="stylesheet" />
 	
 	<link href="./assets/css/principal.css" rel="stylesheet" />
 	<link href="./assets/css/menu.css" rel="stylesheet" />
@@ -62,6 +60,9 @@
 			<!-- Conte�do -->
 			<div class="coluna-9">
 				<main> <!-- Conte�do de P�ginas -->
+				
+				<h:form id="formAluno" method="post">
+				
 				<h2>
 					Dados do Aluno<br /> <small><h:outputText value="#{fapIBean.fap.dadosPessoais.nome}" /></small>
 				</h2>
@@ -523,10 +524,16 @@
 									
 								</div>
 						</div>
+						
 						<div class="coluna-12"><br/><br/>
-						<h:commandButton styleClass="botao" onclick="confirmar()" 
-							value="CONFIRMAR CADASTRO"> </h:commandButton>
+							<h:commandButton 
+								styleClass="botao" 
+								onclick="confirmar()" 
+								value="CONFIRMAR CADASTRO"> 
+							</h:commandButton>
 						</div>
+						
+						</h:form>
 						
 						</main>
 						
