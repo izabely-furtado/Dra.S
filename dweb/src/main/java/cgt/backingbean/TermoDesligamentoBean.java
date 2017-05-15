@@ -55,7 +55,7 @@ public class TermoDesligamentoBean {
 
 	public String alterarRegistro(TermoDesligamento td) {
 		td.setEdita(true);
-		return null;
+		return "alterar";
 	}
 	
 	public String salvarRegistro() {
@@ -66,7 +66,7 @@ public class TermoDesligamentoBean {
 			termoDesligamento.setEdita(false);
 		}
 		lista = TermoDesligamentoCrudJDBC.listar();
-		return null;
+		return "salvar";
 	}
 
 	public String inserir() {

@@ -51,7 +51,7 @@ public class DadosAcessoBean {
 
 	public String alterarRegistro(DadosAcesso u) {
 		u.setEdita(true);
-		return null;
+		return "alterar";
 	}
 
 	public String salvarRegistro() {
@@ -62,7 +62,7 @@ public class DadosAcessoBean {
 			usu.setEdita(false);
 		}
 		DadosAcessoCrudJDBC.listar();
-		return null;
+		return "salvar";
 	}
 
 	public String inserir() {

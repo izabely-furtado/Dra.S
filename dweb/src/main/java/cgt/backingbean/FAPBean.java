@@ -55,12 +55,12 @@ public class FAPBean {
 	public String excluirRegistro(FormularioAcompanhamentoPsicossocial u) {
 		FAPCrudJDBC.excluir(u);
 		// salva o usuário
-		return u.getDadosPessoais().getNome();
+		return "excluir";
 	}
 
 	public String alterarRegistro(FormularioAcompanhamentoPsicossocial u) {
 		u.setEdita(true);
-		return null;
+		return "alterar";
 	}
 
 	public String salvarRegistro() {
@@ -71,7 +71,7 @@ public class FAPBean {
 			usu.setEdita(false);
 		}
 		lista = FAPCrudJDBC.listar();
-		return null;
+		return "salvar";
 	}
 
 	public String inserir() {

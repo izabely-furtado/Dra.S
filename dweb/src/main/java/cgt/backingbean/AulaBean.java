@@ -52,7 +52,7 @@ public class AulaBean {
 
 	public String alterarRegistro(Aula a) {
 		a.setEdita(true);
-		return null;
+		return "alterar";
 	}
 
 	public String salvarRegistro() {
@@ -63,7 +63,7 @@ public class AulaBean {
 			aula.setEdita(false);
 		}
 		lista = AulaCrudJDBC.listar();
-		return null;
+		return "salvar";
 	}
 
 	public String inserir() {

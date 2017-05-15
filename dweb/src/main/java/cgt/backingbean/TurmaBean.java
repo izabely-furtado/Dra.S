@@ -59,7 +59,7 @@ public class TurmaBean {
 
 	public String alterarRegistro(Turma t) {
 		t.setEdita(true);
-		return null;
+		return "alterar";
 	}
 
 	public String salvarRegistro() {
@@ -70,7 +70,7 @@ public class TurmaBean {
 			turma.setEdita(false);
 		}
 		lista = TurmaCrudJDBC.listar();
-		return null;
+		return "salvar";
 	}
 
 	public String inserir() {
