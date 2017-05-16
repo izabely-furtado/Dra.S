@@ -1,6 +1,10 @@
 package test.java.onda;
 
+import java.util.ArrayList;
+
 import main.java.cdp.classesAnemicas.*;
+import main.java.cgt.backingbean.FAPBean;
+import main.java.cgt.backingbean.InfoMedicasBean;
 
 public class ConstrutorParaTesteBean {
 	public static AcessoServicos criaAcesso(){
@@ -100,36 +104,18 @@ public class ConstrutorParaTesteBean {
         endereco.setRua("Teste");
 		return endereco;
 	}
-	public static FormularioAcompanhamentoPsicossocial criaFAP(){
-		FormularioAcompanhamentoPsicossocial fap = new FormularioAcompanhamentoPsicossocial();
-        fap.setAcessoServicos(ConstrutorParaTesteBean.criaAcesso());
-        fap.setAcompanhamentoEscolar(ConstrutorParaTesteBean.criaAcompanhamento());
-        fap.setAno(0);
-        fap.setComposicaoFamiliar(ConstrutorParaTesteBean.criaComposicao());
-        fap.setCondicoesMoradia(ConstrutorParaTesteBean.criaCondicoes());
-        fap.setDadosPessoais(ConstrutorParaTesteBean.criaDadosPessoais());
-        fap.setDespesas(ConstrutorParaTesteBean.criaDespesas());
-        fap.setEndereco(ConstrutorParaTesteBean.criaEndereco());
-        fap.setFormaAcesso(0);
-        fap.setId(0);
-        fap.setInfoMedicas(ConstrutorParaTesteBean.criaInfoMedicas());
-        fap.setInfoTransporte(ConstrutorParaTesteBean.criaInfoTransporte());
-        fap.setProgramasBeneficios(ConstrutorParaTesteBean.criaProgramasBeneficios());
-        fap.setPublicoPrioritario(ConstrutorParaTesteBean.criaPublicoPrioritario());
-        fap.setRematricula(null);
-        fap.setTipo(0);
+	public static FAPBean criaFAP(){
+		FAPBean fapBean = new FAPBean();
+		fapBean.setFormularioAcompanhamentoPsicossocial(ConstrutorParaTeste.criaFAP());
+		fapBean.setLista(new ArrayList<FormularioAcompanhamentoPsicossocial>());
 		
-		return fap;
+		return fapBean;
 	}
-	public static InfoMedicas criaInfoMedicas(){
-		InfoMedicas infoMedicas = new InfoMedicas();
-        infoMedicas.setId(0);
-        infoMedicas.setAlergia(true);
-        infoMedicas.setContatoSOS("0000000000");
-        infoMedicas.setMedicacao(true);
-        infoMedicas.setQalergia("Teste");
-        infoMedicas.setQmedicacao("Teste");
-        infoMedicas.setTipoSangue("Teste");
+	public static InfoMedicasBean criaInfoMedicas(){
+		InfoMedicasBean infoMedicasBean = new InfoMedicasBean();
+		infoMedicasBean.setInfoMedicas(ConstrutorParaTeste.criaInfoMedicas());
+		infoMedicasBean.setLista(new ArrayList<InfoMedicas>());
+		
 		return infoMedicas;
 	}
 	public static InfoTransporte criaInfoTransporte(){
