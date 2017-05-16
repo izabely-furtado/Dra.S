@@ -5,18 +5,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import main.java.cdp.classesAnemicas.AcessoServicos;
-import main.java.cdp.classesAnemicas.AcompanhamentoEscolar;
-import main.java.cdp.classesAnemicas.ComposicaoFamiliar;
-import main.java.cdp.classesAnemicas.CondicoesMoradia;
-import main.java.cdp.classesAnemicas.DadosPessoais;
-import main.java.cdp.classesAnemicas.Despesas;
-import main.java.cdp.classesAnemicas.Endereco;
+
 import main.java.cdp.classesAnemicas.FormularioAcompanhamentoPsicossocial;
-import main.java.cdp.classesAnemicas.InfoMedicas;
-import main.java.cdp.classesAnemicas.InfoTransporte;
-import main.java.cdp.classesAnemicas.ProgramasBeneficios;
-import main.java.cdp.classesAnemicas.PublicoPrioritario;
 import main.java.cdp.classesAnemicas.SituacaoAcolhimento;
 import main.java.cgd.crudjdbc.AcessoServicosCrudJDBC;
 import main.java.cgd.crudjdbc.AcompanhamentoEscolarCrudJDBC;
@@ -31,404 +21,292 @@ import main.java.cgd.crudjdbc.InfoTransporteCrudJDBC;
 import main.java.cgd.crudjdbc.ProgramasBeneficiosCrudJDBC;
 import main.java.cgd.crudjdbc.PublicoPrioritarioCrudJDBC;
 import main.java.cgd.crudjdbc.SituacaoAcolhimentoCrudJDBC;
+import test.java.onda.ConstrutorParaTeste;
 
 public class CrudTestFAP {
-	private FormularioAcompanhamentoPsicossocial fap;
-	private AcessoServicos acesso;
-	private AcompanhamentoEscolar acompanhamento;
-	private ComposicaoFamiliar composicao;
-	private CondicoesMoradia condicoes;
-	private DadosPessoais dadosPessoais;
-	private Despesas despesas;
-	private Endereco endereco;
-	private InfoMedicas infoMedicas;
-	private InfoTransporte infoTransporte;
-	private ProgramasBeneficios programasBeneficios;
-	private PublicoPrioritario publicoPrioritario;
-	private SituacaoAcolhimento situacaoAcolhimento;
-	
-	public CrudTestFAP(){
-		/* Criando das partes do formulário de Acompanhamento Psicossocial para testar*/
-		acesso = new AcessoServicos();
-		acesso.setId(0);
-		acesso.setPossuiacolhimento(true);
-		acesso.setPossuicei(true);
-		acesso.setPossuicras(true);
-		acesso.setPossuicreas(true);
-		acesso.setPossuiescola(true);
-		acesso.setPossuiesf(true);
-		acesso.setPossuisus(true);
-		
-		acompanhamento = new AcompanhamentoEscolar();
-		acompanhamento.setId(0);
-		acompanhamento.setAnos(null);
-        acompanhamento.setEscola("Teste");
-        acompanhamento.setSeries(null);
-        
-        composicao = new ComposicaoFamiliar();
-        composicao.setId(0);
-        composicao.setParentes(null);
-        
-        condicoes = new CondicoesMoradia();
-        condicoes.setId(0);
-        condicoes.setCondicao("Teste");
-        condicoes.setPossuiagua(true);
-        condicoes.setPossuicoleta(true);
-        condicoes.setPossuienergia(true);
-        condicoes.setPossuiesgoto(true);
-        condicoes.setPossuirisco(true);
-        condicoes.setQrisco("Teste");
-        
-        dadosPessoais = new DadosPessoais();
-        dadosPessoais.setId(0);
-        dadosPessoais.setContato("0000000000");
-        dadosPessoais.setDatNasc(null);
-        dadosPessoais.setNis("Teste");
-        dadosPessoais.setNome("Teste");
-        dadosPessoais.setParentesco("Teste");
-        dadosPessoais.setResponsavel("Teste");
-        dadosPessoais.setSexo(0);
-        
-        despesas = new Despesas();
-        despesas.setId(0);
-        despesas.setAgua(13);
-        despesas.setAlimentacao(13);
-        despesas.setAluguel(13);
-        despesas.setGas(13);
-        despesas.setLuz(13);
-        despesas.setMedicamentos(13);
-        despesas.setOutros(13);
-        despesas.setRendaTotal(13);
-        despesas.setTelefone(13);
-        
-        endereco = new Endereco();
-        endereco.setId(0);
-        endereco.setBairro("Teste");
-        endereco.setCep("Teste");
-        endereco.setCidade("Teste");
-        endereco.setEstado("Teste");
-        endereco.setNumero(13);
-        endereco.setReferencia("Teste");
-        endereco.setRua("Teste");
-        
-        infoMedicas = new InfoMedicas();
-        infoMedicas.setId(0);
-        infoMedicas.setAlergia(true);
-        infoMedicas.setContatoSOS("0000000000");
-        infoMedicas.setMedicacao(true);
-        infoMedicas.setQalergia("Teste");
-        infoMedicas.setQmedicacao("Teste");
-        infoMedicas.setTipoSangue("Teste");
-        
-        infoTransporte = new InfoTransporte();
-        infoTransporte.setId(0);
-        infoTransporte.setCartão("Teste");
-        infoTransporte.setQtransporte("Teste");
-        infoTransporte.setTransporte(true);
-        
-        programasBeneficios = new ProgramasBeneficios();
-        programasBeneficios.setBeneficioHabitacional("Teste");
-        programasBeneficios.setId(0);
-        programasBeneficios.setOutro("Teste");
-        programasBeneficios.setPossuiar(true);
-        programasBeneficios.setPossuibp(true);
-        programasBeneficios.setPossuipbc(true);
-        programasBeneficios.setPossuipbf(true);
-        programasBeneficios.setPossuipibc(true);
-        
-        publicoPrioritario = new PublicoPrioritario();
-        publicoPrioritario.setAbuso(true);
-        publicoPrioritario.setAcolimento(true);
-        publicoPrioritario.setDefasagem(true);
-        publicoPrioritario.setEca(true);
-        publicoPrioritario.setEgressos(true);
-        publicoPrioritario.setId(0);
-        publicoPrioritario.setIsolamento(true);
-        publicoPrioritario.setMse(true);
-        publicoPrioritario.setRua(true);
-        publicoPrioritario.setTrabInfantil(true);
-        publicoPrioritario.setVivencia(true);
-        publicoPrioritario.setVulnerabilidade(true);
-        
-        situacaoAcolhimento = new SituacaoAcolhimento();
-        situacaoAcolhimento.setContato("0000000000");
-        situacaoAcolhimento.setId(0);
-        situacaoAcolhimento.setMotivo("Teste");
-        situacaoAcolhimento.setNomeAcolhido("Teste");
-        situacaoAcolhimento.setNomeInstituicao("Teste");
-        situacaoAcolhimento.setResponsavelInstituicao("Teste");
-        
-        
-        /* criação do fap*/
-        fap = new FormularioAcompanhamentoPsicossocial();
-        fap.setAcessoServicos(acesso);
-        fap.setAcompanhamentoEscolar(acompanhamento);
-        fap.setAno(0);
-        fap.setComposicaoFamiliar(composicao);
-        fap.setCondicoesMoradia(condicoes);
-        fap.setDadosPessoais(dadosPessoais);
-        fap.setDespesas(despesas);
-        fap.setEndereco(endereco);
-        fap.setFormaAcesso(0);
-        fap.setId(0);
-        fap.setInfoMedicas(infoMedicas);
-        fap.setInfoTransporte(infoTransporte);
-        fap.setProgramasBeneficios(programasBeneficios);
-        fap.setPublicoPrioritario(publicoPrioritario);
-        fap.setRematricula(null);
-        fap.setTipo(0);
-        
-	}
-	
+	private FormularioAcompanhamentoPsicossocial fap = ConstrutorParaTeste.criaFAP();
+	private SituacaoAcolhimento situacaoAcolhimento = ConstrutorParaTeste.criaSituacaoAcolhimento();
+	/*
+	private AcessoServicos acesso = ConstrutorParaTeste.criaAcesso();
+	private AcompanhamentoEscolar acompanhamento = ConstrutorParaTeste.criaAcompanhamento();
+	private ComposicaoFamiliar composicao = ConstrutorParaTeste.criaComposicao();
+	private CondicoesMoradia condicoes = ConstrutorParaTeste.criaCondicoes();
+	private DadosPessoais dadosPessoais = ConstrutorParaTeste.criaDadosPessoais();
+	private Despesas despesas = ConstrutorParaTeste.criaDespesas();
+	private Endereco endereco = ConstrutorParaTeste.criaEndereco();
+	private InfoMedicas infoMedicas = ConstrutorParaTeste.criaInfoMedicas();
+	private InfoTransporte infoTransporte = ConstrutorParaTeste.criaInfoTransporte();
+	private ProgramasBeneficios programasBeneficios = ConstrutorParaTeste.criaProgramasBeneficios();
+	private PublicoPrioritario publicoPrioritario = ConstrutorParaTeste.criaPublicoPrioritario();
+	private SituacaoAcolhimento situacaoAcolhimento = ConstrutorParaTeste.criaSituacaoAcolhimento();
+	*/
 	/* Testes para Acesso a Serviços */
     @Test
     public void getAcessos(){
-    	assertEquals((new CrudTestFAP()).acesso,AcessoServicosCrudJDBC.getAcessoServicos(0));
+    	assertEquals(fap.getAcessoServicos(),AcessoServicosCrudJDBC.getAcessoServicos(0));
     }
     
     @Test
     public void alterarAcessos(){
-        assertEquals(true,AcessoServicosCrudJDBC.alterar((new CrudTestFAP()).acesso));
+        assertEquals(true,AcessoServicosCrudJDBC.alterar(fap.getAcessoServicos()));
     }
     
     @Test
     public void excluirAcessos(){
-        assertEquals(true,AcessoServicosCrudJDBC.excluir((new CrudTestFAP()).acesso));
+        assertEquals(true,AcessoServicosCrudJDBC.excluir(fap.getAcessoServicos()));
     }
     
     @Test
     public void salvarAcessos(){
-        assertEquals(true,AcessoServicosCrudJDBC.salvar((new CrudTestFAP()).acesso));
+        assertEquals(true,AcessoServicosCrudJDBC.salvar(fap.getAcessoServicos()));
     }
     
     /*Testes para Acompanhamento Escolar */
     @Test
     public void getAcompanhamento(){
-        assertEquals((new CrudTestFAP()).acompanhamento,AcompanhamentoEscolarCrudJDBC.getAcompanhamentoEscolar(0));
+        assertEquals(fap.getAcompanhamentoEscolar(),AcompanhamentoEscolarCrudJDBC.getAcompanhamentoEscolar(0));
     }
     
     @Test
     public void alterarAcompanhamento(){
-        assertEquals(true,AcompanhamentoEscolarCrudJDBC.alterar((new CrudTestFAP()).acompanhamento));
+        assertEquals(true,AcompanhamentoEscolarCrudJDBC.alterar(fap.getAcompanhamentoEscolar()));
     }
     
 	@Test
     public void excluirAcompanhamento(){
-        assertEquals(true,AcompanhamentoEscolarCrudJDBC.excluir((new CrudTestFAP()).acompanhamento));
+        assertEquals(true,AcompanhamentoEscolarCrudJDBC.excluir(fap.getAcompanhamentoEscolar()));
     }
     
     @Test
     public void salvarAcompanhamento(){
-        assertEquals(true,AcompanhamentoEscolarCrudJDBC.salvar((new CrudTestFAP()).acompanhamento));
+        assertEquals(true,AcompanhamentoEscolarCrudJDBC.salvar(fap.getAcompanhamentoEscolar()));
     }
     
     /* Testes para Composição Familiar */
     @Test
     public void getComposicao(){
-        assertEquals((new CrudTestFAP()).composicao,ComposicaoFamiliarCrudJDBC.getComposicaoFamiliar(0));
+        assertEquals(fap.getComposicaoFamiliar(),ComposicaoFamiliarCrudJDBC.getComposicaoFamiliar(0));
     }
     
     @Test
     public void alterarComposicao(){
-        assertEquals(true,ComposicaoFamiliarCrudJDBC.alterar((new CrudTestFAP()).composicao));
+        assertEquals(true,ComposicaoFamiliarCrudJDBC.alterar(fap.getComposicaoFamiliar()));
     }
     
     @Test
     public void excluirComposicao(){
-        assertEquals(true,ComposicaoFamiliarCrudJDBC.excluir((new CrudTestFAP()).composicao));
+        assertEquals(true,ComposicaoFamiliarCrudJDBC.excluir(fap.getComposicaoFamiliar()));
     }
     
     @Test
     public void salvarComposicao(){
-        assertEquals(true,ComposicaoFamiliarCrudJDBC.salvar((new CrudTestFAP()).composicao));
+        assertEquals(true,ComposicaoFamiliarCrudJDBC.salvar(fap.getComposicaoFamiliar()));
     }
     
     /* Testes para Condicoes de Moradia */
     @Test
     public void getCondicoes(){
-        assertEquals((new CrudTestFAP()).condicoes,CondicoesMoradiaCrudJDBC.getCondicoesMoradia(0));
+        assertEquals(fap.getCondicoesMoradia(),CondicoesMoradiaCrudJDBC.getCondicoesMoradia(0));
     }
     
     @Test
     public void alterarCondicoes(){
-        assertEquals(true,CondicoesMoradiaCrudJDBC.alterar((new CrudTestFAP()).condicoes));
+        assertEquals(true,CondicoesMoradiaCrudJDBC.alterar(fap.getCondicoesMoradia()));
     }
     
     @Test
     public void excluirCondicoes(){
-        assertEquals(true,CondicoesMoradiaCrudJDBC.excluir((new CrudTestFAP()).condicoes));
+        assertEquals(true,CondicoesMoradiaCrudJDBC.excluir(fap.getCondicoesMoradia()));
     }
     
     @Test
     public void salvarCondicoes(){
-        assertEquals(true,CondicoesMoradiaCrudJDBC.salvar((new CrudTestFAP()).condicoes));
+        assertEquals(true,CondicoesMoradiaCrudJDBC.salvar(fap.getCondicoesMoradia()));
     }
     
     /*Testes para Dados Pessoais */
     @Test
     public void getDadosPessoais(){
-        assertEquals((new CrudTestFAP()).dadosPessoais,DadosPessoaisCrudJDBC.getDadosPessoais(0));
+        assertEquals(fap.getDadosPessoais(),DadosPessoaisCrudJDBC.getDadosPessoais(0));
     }
     
     @Test
     public void alterarDadosPessoais(){
-        assertEquals(true,DadosPessoaisCrudJDBC.alterar((new CrudTestFAP()).dadosPessoais));
+        assertEquals(true,DadosPessoaisCrudJDBC.alterar(fap.getDadosPessoais()));
     }
     
     @Test
     public void excluirDadosPessoais(){
-        assertEquals(true,DadosPessoaisCrudJDBC.excluir((new CrudTestFAP()).dadosPessoais));
+        assertEquals(true,DadosPessoaisCrudJDBC.excluir(fap.getDadosPessoais()));
     }
     
     @Test
     public void salvarDadosPessoais(){
-        assertEquals(true,DadosPessoaisCrudJDBC.salvar((new CrudTestFAP()).dadosPessoais));
+        assertEquals(true,DadosPessoaisCrudJDBC.salvar(fap.getDadosPessoais()));
     }
 
     /*Testes para Despesas */
     @Test
     public void getDespesas(){
-        assertEquals((new CrudTestFAP()).despesas,DespesasCrudJDBC.getDespesas(0));
+        assertEquals(fap.getDespesas(),DespesasCrudJDBC.getDespesas(0));
     }
     
     @Test
     public void alterarDespesas(){
-        assertEquals(true,DespesasCrudJDBC.alterar((new CrudTestFAP()).despesas));
+        assertEquals(true,DespesasCrudJDBC.alterar(fap.getDespesas()));
     }
     
     @Test
     public void excluirDespesas(){
-        assertEquals(true,DespesasCrudJDBC.excluir((new CrudTestFAP()).despesas));
+        assertEquals(true,DespesasCrudJDBC.excluir(fap.getDespesas()));
     }
     
     @Test
     public void salvarDespesas(){
-        assertEquals(true,DespesasCrudJDBC.salvar((new CrudTestFAP()).despesas));
+        assertEquals(true,DespesasCrudJDBC.salvar(fap.getDespesas()));
     }
     
     /* Testes para Informações Medicas */
     @Test
     public void getInfoMedicas(){
-        assertEquals((new CrudTestFAP()).infoMedicas,EnderecoCrudJDBC.getEndereco(0));
+        assertEquals(fap.getInfoMedicas(),EnderecoCrudJDBC.getEndereco(0));
     }
     
     @Test
     public void alterarInfoMedicas(){
-        assertEquals(true,InfoMedicasCrudJDBC.alterar((new CrudTestFAP()).infoMedicas));
+        assertEquals(true,InfoMedicasCrudJDBC.alterar(fap.getInfoMedicas()));
     }
     
     @Test
     public void excluirInfoMedicas(){
-    	assertEquals(true,InfoMedicasCrudJDBC.excluir((new CrudTestFAP()).infoMedicas));
+    	assertEquals(true,InfoMedicasCrudJDBC.excluir(fap.getInfoMedicas()));
     }
     
     @Test
     public void salvarInfoMedicas(){
-    	assertEquals(true,InfoMedicasCrudJDBC.salvar((new CrudTestFAP()).infoMedicas));
+    	assertEquals(true,InfoMedicasCrudJDBC.salvar(fap.getInfoMedicas()));
     }
     
     /* Testes para Informações de Transporte */
     @Test
     public void getInfoTransporte(){
-        assertEquals((new CrudTestFAP()).infoTransporte,InfoTransporteCrudJDBC.getInfoTransporte(0));
+        assertEquals(fap.getInfoTransporte(),InfoTransporteCrudJDBC.getInfoTransporte(0));
     }
     
     @Test
     public void alterarInfoTransporte(){
-        assertEquals(true,InfoTransporteCrudJDBC.alterar((new CrudTestFAP()).infoTransporte));
+        assertEquals(true,InfoTransporteCrudJDBC.alterar(fap.getInfoTransporte()));
     }
     
     @Test
     public void excluirInfoTransporte(){
-        assertEquals(true,InfoTransporteCrudJDBC.excluir((new CrudTestFAP()).infoTransporte));
+        assertEquals(true,InfoTransporteCrudJDBC.excluir(fap.getInfoTransporte()));
     }
     
     @Test
     public void salvarInfoTransporte(){
-        assertEquals(true,InfoTransporteCrudJDBC.salvar((new CrudTestFAP()).infoTransporte));
+        assertEquals(true,InfoTransporteCrudJDBC.salvar(fap.getInfoTransporte()));
     }
     
     /* Testes para endereço */
     @Test
     public void getProgramasBeneficios(){
-        assertEquals((new CrudTestFAP()).programasBeneficios,ProgramasBeneficiosCrudJDBC.getProgramasBeneficios(0));
+        assertEquals(fap.getProgramasBeneficios(),ProgramasBeneficiosCrudJDBC.getProgramasBeneficios(0));
     }
     
     @Test
     public void alterarProgramasBeneficios(){
-        assertEquals(true,ProgramasBeneficiosCrudJDBC.alterar((new CrudTestFAP()).programasBeneficios));
+        assertEquals(true,ProgramasBeneficiosCrudJDBC.alterar(fap.getProgramasBeneficios()));
     }
     
     @Test
     public void excluirProgramasBeneficios(){
-        assertEquals(true,ProgramasBeneficiosCrudJDBC.excluir((new CrudTestFAP()).programasBeneficios));
+        assertEquals(true,ProgramasBeneficiosCrudJDBC.excluir(fap.getProgramasBeneficios()));
     }
     
     @Test
     public void salvarProgramasBeneficios(){
-        assertEquals(true,ProgramasBeneficiosCrudJDBC.salvar((new CrudTestFAP()).programasBeneficios));
+        assertEquals(true,ProgramasBeneficiosCrudJDBC.salvar(fap.getProgramasBeneficios()));
     }
     
     /* Testes para público prioritário */
     @Test
     public void getPublicoPrioritario(){
-        assertEquals((new CrudTestFAP()).publicoPrioritario,PublicoPrioritarioCrudJDBC.getPublicoPrioritario(0));
+        assertEquals(fap.getPublicoPrioritario(),PublicoPrioritarioCrudJDBC.getPublicoPrioritario(0));
     }
     
     @Test
     public void alterarPublicoPrioritario(){
-        assertEquals(true,PublicoPrioritarioCrudJDBC.alterar((new CrudTestFAP()).publicoPrioritario));
+        assertEquals(true,PublicoPrioritarioCrudJDBC.alterar(fap.getPublicoPrioritario()));
     }
     
     @Test
     public void excluirPublicoPrioritario(){
-        assertEquals(true,PublicoPrioritarioCrudJDBC.excluir((new CrudTestFAP()).publicoPrioritario));
+        assertEquals(true,PublicoPrioritarioCrudJDBC.excluir(fap.getPublicoPrioritario()));
     }
     
     @Test
     public void salvarPublicoPrioritario(){
-        assertEquals(true,PublicoPrioritarioCrudJDBC.salvar((new CrudTestFAP()).publicoPrioritario));
+        assertEquals(true,PublicoPrioritarioCrudJDBC.salvar(fap.getPublicoPrioritario()));
     }
-    
-    /* Testes para Situação de Acolhimento */
+    /* Testes para endereco */
     @Test
-    public void getSituacaoAcolhimento(){
-        assertEquals((new CrudTestFAP()).situacaoAcolhimento,SituacaoAcolhimentoCrudJDBC.getSituacaoAcolhimento(0));
-    }
-    
-    @Test
-    public void alterarSituacaoAcolhimento(){
-        assertEquals(true,SituacaoAcolhimentoCrudJDBC.alterar((new CrudTestFAP()).situacaoAcolhimento));
+    public void getEndereco(){
+        assertEquals(fap.getEndereco(),EnderecoCrudJDBC.getEndereco(0));
     }
     
     @Test
-    public void excluirSituacaoAcolhimento(){
-        assertEquals(true,SituacaoAcolhimentoCrudJDBC.excluir((new CrudTestFAP()).situacaoAcolhimento));
+    public void alterarEndereco(){
+        assertEquals(true,EnderecoCrudJDBC.alterar(fap.getEndereco()));
     }
     
     @Test
-    public void salvarSituacaoAcolhimento(){
-        assertEquals(true,SituacaoAcolhimentoCrudJDBC.salvar((new CrudTestFAP()).situacaoAcolhimento));
+    public void excluirEndereco(){
+        assertEquals(true,EnderecoCrudJDBC.excluir(fap.getEndereco()));
+    }
+    
+    @Test
+    public void salvarEndereco(){
+        assertEquals(true,EnderecoCrudJDBC.salvar(fap.getEndereco()));
     }
     /*Testes para Formulário de Acompnhamento Psicossocial*/
     @Test
     public void getFAP(){
-        assertEquals((new CrudTestFAP()).fap,FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(0));
+        assertEquals(fap,FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(0));
     }
     
     @Test
     public void alterarFAP(){
-        assertEquals(true,FAPCrudJDBC.alterar((new CrudTestFAP()).fap));
+        assertEquals(true,FAPCrudJDBC.alterar(fap));
     }
     
     @Test
     public void excluirFAP(){
-        assertEquals(true,FAPCrudJDBC.excluir((new CrudTestFAP()).fap));
+        assertEquals(true,FAPCrudJDBC.excluir(fap));
     }
     
     @Test
     public void salvarFAP(){
-        assertEquals(true,FAPCrudJDBC.salvar((new CrudTestFAP()).fap));
+        assertEquals(true,FAPCrudJDBC.salvar(fap));
+    }
+    /*Testes para solicitação de acolhimento*/
+    @Test
+    public void getSituacaoAcolhimento(){
+        assertEquals(situacaoAcolhimento,SituacaoAcolhimentoCrudJDBC.getSituacaoAcolhimento(0));
     }
     
+    @Test
+    public void alterarSituacaoAcolhimento(){
+        assertEquals(true,SituacaoAcolhimentoCrudJDBC.alterar(situacaoAcolhimento));
+    }
+    
+    @Test
+    public void excluirSituacaoAcolhimento(){
+        assertEquals(true,SituacaoAcolhimentoCrudJDBC.excluir(situacaoAcolhimento));
+    }
+    
+    @Test
+    public void salvarSituacaoAcolhimento(){
+        assertEquals(true,SituacaoAcolhimentoCrudJDBC.salvar(situacaoAcolhimento));
+    }
 }

@@ -7,21 +7,12 @@ import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.Aula;
 import main.java.cgd.crudjdbc.AulaCrudJDBC;
+import test.java.onda.ConstrutorParaTeste;
 
 public class CrudTestAula {
-	private Aula aula;
+	private Aula aula = ConstrutorParaTeste.criaAula();
 
-	public CrudTestAula() {
-		aula = new Aula();
-		aula.setId(0);
-		aula.setConteudo("Teste");
-		aula.setData(null);
-		aula.setId(0);
-		aula.setHorario(null);
-		aula.setPresentes(null);
-		aula.setTipo("Teste");
-        
-	}
+	
 	/*
 	@Test
 	public void test() {
@@ -31,22 +22,22 @@ public class CrudTestAula {
 
     @Test
     public void getAula(){
-        assertEquals((new CrudTestAula()).aula,AulaCrudJDBC.getAula(0));
+        assertEquals(aula,AulaCrudJDBC.getAula(0));
     }
     
     @Test
     public void alterarAula(){
-        assertEquals(true,AulaCrudJDBC.alterar((new CrudTestAula()).aula));
+        assertEquals(true,AulaCrudJDBC.alterar(aula));
     }
     
     @Test
     public void excluirAula(){
-        assertEquals(true,AulaCrudJDBC.excluir((new CrudTestAula()).aula));
+        assertEquals(true,AulaCrudJDBC.excluir(aula));
     }
     
     @Test
     public void salvarAula(){
-        assertEquals(true,AulaCrudJDBC.salvar((new CrudTestAula()).aula));
+        assertEquals(true,AulaCrudJDBC.salvar(aula));
     }
     
 

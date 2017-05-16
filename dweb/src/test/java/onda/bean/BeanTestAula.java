@@ -8,19 +8,13 @@ import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.Aula;
 import main.java.cgt.backingbean.AulaBean;
+import test.java.onda.ConstrutorParaTeste;
 public class BeanTestAula {
 	private Aula aula;
 	private AulaBean aulaBean;
 
 	public BeanTestAula(){
-		aula = new Aula();
-		aula.setId(0);
-		aula.setConteudo("Teste");
-		aula.setData(null);
-		aula.setId(0);
-		aula.setHorario(null);
-		aula.setPresentes(null);
-		aula.setTipo("Teste");
+		aula = ConstrutorParaTeste.criaAula();
 		
 		aulaBean = new AulaBean();
 		aulaBean.setAula(aula);

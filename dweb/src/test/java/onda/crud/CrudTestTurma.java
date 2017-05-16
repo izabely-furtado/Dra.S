@@ -7,26 +7,11 @@ import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.Turma;
 import main.java.cgd.crudjdbc.TurmaCrudJDBC;
+import test.java.onda.ConstrutorParaTeste;
 
 public class CrudTestTurma {
-	private Turma turma;
-
-	public CrudTestTurma(){
-		turma = new Turma();
-		turma.setAlunos(null);
-		turma.setAulas(null);
-		turma.setCodigo("Teste");
-		turma.setId(0);
-		turma.setMaximo(13);
-		turma.setNivel(0);
-		turma.setSegunda(true);
-		turma.setTerca(true);
-		turma.setQuarta(true);
-		turma.setQuinta(true);
-		turma.setSexta(true);
-		turma.setTurno("Teste");
-		
-	}
+	private Turma turma = ConstrutorParaTeste.criaTurma();
+	
 	/*
 	@Test
 	public void test() {
@@ -36,22 +21,22 @@ public class CrudTestTurma {
 
     @Test
     public void getTurma(){
-        assertEquals((new CrudTestTurma()).turma,TurmaCrudJDBC.getTurma(0));
+        assertEquals(turma,TurmaCrudJDBC.getTurma(0));
     }
     
     @Test
     public void alterarTurma(){
-        assertEquals(true,TurmaCrudJDBC.alterar((new CrudTestTurma()).turma));
+        assertEquals(true,TurmaCrudJDBC.alterar(turma));
     }
     
     @Test
     public void excluirTurma(){
-        assertEquals(true,TurmaCrudJDBC.excluir((new CrudTestTurma()).turma));
+        assertEquals(true,TurmaCrudJDBC.excluir(turma));
     }
     
     @Test
     public void salvarTurma(){
-        assertEquals(true,TurmaCrudJDBC.salvar((new CrudTestTurma()).turma));
+        assertEquals(true,TurmaCrudJDBC.salvar(turma));
     }
     
 

@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.DadosAcesso;
 import main.java.cgt.backingbean.DadosAcessoBean;
+import test.java.onda.ConstrutorParaTeste;
 
 public class BeanTestDadosAcesso {
 
@@ -15,12 +16,7 @@ public class BeanTestDadosAcesso {
 	private DadosAcessoBean dadosAcessoBean;
 
 	public BeanTestDadosAcesso(){
-		dadosAcesso = new DadosAcesso();
-		dadosAcesso.setId(0);
-		dadosAcesso.setEmail("teste@teste.com");
-		dadosAcesso.setLembrar("Teste");
-		dadosAcesso.setLogin("Teste");
-		dadosAcesso.setSenha("teste");
+		dadosAcesso = ConstrutorParaTeste.criaDadosAcesso();
 		
 		dadosAcessoBean = new DadosAcessoBean();
 		dadosAcessoBean.setDadosAcesso(dadosAcesso);

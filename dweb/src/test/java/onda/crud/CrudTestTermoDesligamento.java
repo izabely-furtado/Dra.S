@@ -7,21 +7,12 @@ import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.TermoDesligamento;
 import main.java.cgd.crudjdbc.TermoDesligamentoCrudJDBC;
+import test.java.onda.ConstrutorParaTeste;
 
 public class CrudTestTermoDesligamento {
 
-	private TermoDesligamento termo;
-
-	public CrudTestTermoDesligamento() {
-		termo = new TermoDesligamento();
-		termo.setCpf("00000000000");
-		termo.setId(0);
-		termo.setMotivo("Teste");
-		termo.setNomeResponsavel("Teste");
-		termo.setNomeTecResponsavel("Teste");
-		termo.setNomeUsuario("Teste");
+	private TermoDesligamento termo = ConstrutorParaTeste.criaTermoDesligamento();
 		
-	}
 	/*
 	@Test
 	public void test() {
@@ -31,22 +22,22 @@ public class CrudTestTermoDesligamento {
 
     @Test
     public void getTermoDesligamento(){
-        assertEquals((new CrudTestTermoDesligamento()).termo,TermoDesligamentoCrudJDBC.getTermoDesligamento(0));
+        assertEquals(termo,TermoDesligamentoCrudJDBC.getTermoDesligamento(0));
     }
     
     @Test
     public void alterarTermoDesligamento(){
-        assertEquals(true,TermoDesligamentoCrudJDBC.alterar((new CrudTestTermoDesligamento()).termo));
+        assertEquals(true,TermoDesligamentoCrudJDBC.alterar(termo));
     }
     
     @Test
     public void excluirTermoDesligamento(){
-        assertEquals(true,TermoDesligamentoCrudJDBC.excluir((new CrudTestTermoDesligamento()).termo));
+        assertEquals(true,TermoDesligamentoCrudJDBC.excluir(termo));
     }
     
     @Test
     public void salvarTermoDesligamento(){
-        assertEquals(true,TermoDesligamentoCrudJDBC.salvar((new CrudTestTermoDesligamento()).termo));
+        assertEquals(true,TermoDesligamentoCrudJDBC.salvar(termo));
     }
     
 

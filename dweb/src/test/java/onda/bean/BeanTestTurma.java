@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.Turma;
 import main.java.cgt.backingbean.TurmaBean;
+import test.java.onda.ConstrutorParaTeste;
 
 public class BeanTestTurma {
 	
@@ -15,19 +16,7 @@ public class BeanTestTurma {
 	private TurmaBean turmaBean;
 
 	public BeanTestTurma(){
-		turma = new Turma();
-		turma.setAlunos(null);
-		turma.setAulas(null);
-		turma.setCodigo("Teste");
-		turma.setId(0);
-		turma.setMaximo(13);
-		turma.setNivel(0);
-		turma.setSegunda(true);
-		turma.setTerca(true);
-		turma.setQuarta(true);
-		turma.setQuinta(true);
-		turma.setSexta(true);
-		turma.setTurno("Teste");
+		turma = ConstrutorParaTeste.criaTurma();
 		
 		turmaBean = new TurmaBean();
 		turmaBean.setTurma(turma);

@@ -8,19 +8,14 @@ import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.TermoDesligamento;
 import main.java.cgt.backingbean.TermoDesligamentoBean;
+import test.java.onda.ConstrutorParaTeste;
 
 public class BeanTestTermoDesligamento {
 	private TermoDesligamento termo;
 	private TermoDesligamentoBean termoBean;
 
 	public BeanTestTermoDesligamento(){
-		termo = new TermoDesligamento();
-		termo.setCpf("00000000000");
-		termo.setId(0);
-		termo.setMotivo("Teste");
-		termo.setNomeResponsavel("Teste");
-		termo.setNomeTecResponsavel("Teste");
-		termo.setNomeUsuario("Teste");
+		termo = ConstrutorParaTeste.criaTermoDesligamento();
 		
 		termoBean = new TermoDesligamentoBean();
 		termoBean.setTermoDesligamento(termo);
