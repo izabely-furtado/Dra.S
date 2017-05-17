@@ -3,107 +3,88 @@ package test.java.onda;
 import java.util.ArrayList;
 
 import main.java.cdp.classesAnemicas.*;
+import main.java.cgt.backingbean.AcessoServicosBean;
+import main.java.cgt.backingbean.AcompanhamentoEscolarBean;
+import main.java.cgt.backingbean.AulaBean;
+import main.java.cgt.backingbean.ComposicaoFamiliarBean;
+import main.java.cgt.backingbean.CondicoesMoradiaBean;
+import main.java.cgt.backingbean.DadosAcessoBean;
+import main.java.cgt.backingbean.DadosPessoaisBean;
+import main.java.cgt.backingbean.DespesasBean;
+import main.java.cgt.backingbean.EnderecoBean;
 import main.java.cgt.backingbean.FAPBean;
 import main.java.cgt.backingbean.InfoMedicasBean;
+import main.java.cgt.backingbean.InfoTransporteBean;
+import main.java.cgt.backingbean.ProgramasBeneficiosBean;
+import main.java.cgt.backingbean.PublicoPrioritarioBean;
+import main.java.cgt.backingbean.TermoDesligamentoBean;
+import main.java.cgt.backingbean.TurmaBean;
 
 public class ConstrutorParaTesteBean {
-	public static AcessoServicos criaAcesso(){
-		AcessoServicos acesso = new AcessoServicos();
-		acesso.setId(0);
-		acesso.setPossuiacolhimento(true);
-		acesso.setPossuicei(true);
-		acesso.setPossuicras(true);
-		acesso.setPossuicreas(true);
-		acesso.setPossuiescola(true);
-		acesso.setPossuiesf(true);
-		acesso.setPossuisus(true);
-		return acesso;
+	public static AcessoServicosBean criaAcesso(){
+		AcessoServicosBean acessoBean = new AcessoServicosBean();
+		acessoBean.setAcessoServicos(ConstrutorParaTeste.criaAcesso());
+		acessoBean.setLista(new ArrayList<AcessoServicos>());
+		
+		return acessoBean;
 	}
-	public static AcompanhamentoEscolar criaAcompanhamento(){
-		AcompanhamentoEscolar acompanhamento = new AcompanhamentoEscolar();
-		acompanhamento.setId(0);
-		acompanhamento.setAnos(null);
-        acompanhamento.setEscola("Teste");
-        acompanhamento.setSeries(null);
-		return acompanhamento;
+	public static AcompanhamentoEscolarBean criaAcompanhamento(){
+		AcompanhamentoEscolarBean acompanhamentoEscolarBean = new AcompanhamentoEscolarBean();
+		acompanhamentoEscolarBean.setAcompanhamentoEscolar(ConstrutorParaTeste.criaAcompanhamento());
+		acompanhamentoEscolarBean.setLista(new ArrayList<AcompanhamentoEscolar>());
+		
+		return acompanhamentoEscolarBean;
 	}
-	public static Aula criaAula(){
-		Aula aula = new Aula();
-		aula.setId(0);
-		aula.setConteudo("Teste");
-		aula.setData(null);
-		aula.setId(0);
-		aula.setHorario(null);
-		aula.setPresentes(null);
-		aula.setTipo("Teste");
-		return aula;
+	public static AulaBean criaAula(){
+		AulaBean aulaBean = new AulaBean();
+		aulaBean.setAula(ConstrutorParaTeste.criaAula());
+		aulaBean.setLista(new ArrayList<Aula>());
+		
+		return aulaBean;
 	}
-	public static ComposicaoFamiliar criaComposicao(){
-		ComposicaoFamiliar composicao = new ComposicaoFamiliar();
-        composicao.setId(0);
-        composicao.setParentes(null);
-		return composicao;
+	public static ComposicaoFamiliarBean criaComposicao(){
+		ComposicaoFamiliarBean composicaoBean = new ComposicaoFamiliarBean();
+		composicaoBean.setComposicaoFamiliar(ConstrutorParaTeste.criaComposicao());
+		composicaoBean.setLista(new ArrayList<ComposicaoFamiliar>());
+		
+		return composicaoBean;
 	}
-	public static CondicoesMoradia criaCondicoes(){
-		CondicoesMoradia condicoes = new CondicoesMoradia();
-        condicoes.setId(0);
-        condicoes.setCondicao("Teste");
-        condicoes.setPossuiagua(true);
-        condicoes.setPossuicoleta(true);
-        condicoes.setPossuienergia(true);
-        condicoes.setPossuiesgoto(true);
-        condicoes.setPossuirisco(true);
-        condicoes.setQrisco("Teste");
-		return condicoes;
+	public static CondicoesMoradiaBean criaCondicoes(){
+		CondicoesMoradiaBean condicoesBean = new CondicoesMoradiaBean();
+		condicoesBean.setCondicoesMoradia(ConstrutorParaTeste.criaCondicoes());
+		condicoesBean.setLista(new ArrayList<CondicoesMoradia>());
+		
+		return condicoesBean;
 	}
-	public static DadosAcesso criaDadosAcesso(){
-		DadosAcesso dadosAcesso = new DadosAcesso();
-		dadosAcesso.setId(0);
-		dadosAcesso.setEmail("teste@teste.com");
-		dadosAcesso.setLembrar("Teste");
-		dadosAcesso.setLogin("Teste");
-		dadosAcesso.setSenha("teste");
-		return dadosAcesso;
+	public static DadosAcessoBean criaDadosAcesso(){
+		DadosAcessoBean dadosAcessoBean = new DadosAcessoBean();
+		dadosAcessoBean.setDadosAcesso(ConstrutorParaTeste.criaDadosAcesso());
+		dadosAcessoBean.setLista(new ArrayList<DadosAcesso>());
+		
+		return dadosAcessoBean;
 	}
-	public static DadosPessoais criaDadosPessoais(){
-		DadosPessoais dadosPessoais = new DadosPessoais();
-        dadosPessoais.setId(0);
-        dadosPessoais.setContato("0000000000");
-        dadosPessoais.setDatNasc(null);
-        dadosPessoais.setNis("Teste");
-        dadosPessoais.setNome("Teste");
-        dadosPessoais.setParentesco("Teste");
-        dadosPessoais.setResponsavel("Teste");
-        dadosPessoais.setSexo(0);
-		return dadosPessoais;
+	public static DadosPessoaisBean criaDadosPessoais(){
+		DadosPessoaisBean dadosPessoaisBean = new DadosPessoaisBean();
+		dadosPessoaisBean.setDadosPessoais(ConstrutorParaTeste.criaDadosPessoais());
+		dadosPessoaisBean.setLista(new ArrayList<DadosPessoais>());
+		
+		return dadosPessoaisBean;
 	}
-	public static Despesas criaDespesas(){
-		Despesas despesas = new Despesas();
-        despesas.setId(0);
-        despesas.setAgua(13);
-        despesas.setAlimentacao(13);
-        despesas.setAluguel(13);
-        despesas.setGas(13);
-        despesas.setLuz(13);
-        despesas.setMedicamentos(13);
-        despesas.setOutros(13);
-        despesas.setRendaTotal(13);
-        despesas.setTelefone(13);
-        
-		return despesas;
+	public static DespesasBean criaDespesas(){
+		DespesasBean despesasBean = new DespesasBean();
+		despesasBean.setDespesas(ConstrutorParaTeste.criaDespesas());
+		despesasBean.setLista(new ArrayList<Despesas>());
+		
+		return despesasBean;
 	}
-	public static Endereco criaEndereco(){
-		Endereco endereco = new Endereco();
-        endereco.setId(0);
-        endereco.setBairro("Teste");
-        endereco.setCep("Teste");
-        endereco.setCidade("Teste");
-        endereco.setEstado("Teste");
-        endereco.setNumero(13);
-        endereco.setReferencia("Teste");
-        endereco.setRua("Teste");
-		return endereco;
+	public static EnderecoBean criaEndereco(){
+		EnderecoBean enderecoBean = new EnderecoBean();
+		enderecoBean.setEndereco(ConstrutorParaTeste.criaEndereco());
+		enderecoBean.setLista(new ArrayList<Endereco>());
+		
+		return enderecoBean;
 	}
+	
 	public static FAPBean criaFAP(){
 		FAPBean fapBean = new FAPBean();
 		fapBean.setFormularioAcompanhamentoPsicossocial(ConstrutorParaTeste.criaFAP());
@@ -116,81 +97,44 @@ public class ConstrutorParaTesteBean {
 		infoMedicasBean.setInfoMedicas(ConstrutorParaTeste.criaInfoMedicas());
 		infoMedicasBean.setLista(new ArrayList<InfoMedicas>());
 		
-		return infoMedicas;
+		return infoMedicasBean;
 	}
-	public static InfoTransporte criaInfoTransporte(){
-		InfoTransporte infoTransporte = new InfoTransporte();
-        infoTransporte.setId(0);
-        infoTransporte.setCartão("Teste");
-        infoTransporte.setQtransporte("Teste");
-        infoTransporte.setTransporte(true);
-		return infoTransporte;
+	public static InfoTransporteBean criaInfoTransporte(){
+		InfoTransporteBean infoTransporteBean = new InfoTransporteBean();
+		infoTransporteBean.setInfoTransporte(ConstrutorParaTeste.criaInfoTransporte());
+		infoTransporteBean.setLista(new ArrayList<InfoTransporte>());
+		
+		return infoTransporteBean;
 	}
-	public static ProgramasBeneficios criaProgramasBeneficios(){
-		ProgramasBeneficios programasBeneficios = new ProgramasBeneficios();
-        programasBeneficios.setBeneficioHabitacional("Teste");
-        programasBeneficios.setId(0);
-        programasBeneficios.setOutro("Teste");
-        programasBeneficios.setPossuiar(true);
-        programasBeneficios.setPossuibp(true);
-        programasBeneficios.setPossuipbc(true);
-        programasBeneficios.setPossuipbf(true);
-        programasBeneficios.setPossuipibc(true);
-		return programasBeneficios;
+	public static ProgramasBeneficiosBean criaProgramasBeneficios(){
+		ProgramasBeneficiosBean programasBeneficiosBean = new ProgramasBeneficiosBean();
+		programasBeneficiosBean.setProgramasBeneficios(ConstrutorParaTeste.criaProgramasBeneficios());
+		programasBeneficiosBean.setLista(new ArrayList<ProgramasBeneficios>());
+		
+		return programasBeneficiosBean;
 	}
-	public static PublicoPrioritario criaPublicoPrioritario(){
-		PublicoPrioritario publicoPrioritario = new PublicoPrioritario();
-        publicoPrioritario.setAbuso(true);
-        publicoPrioritario.setAcolimento(true);
-        publicoPrioritario.setDefasagem(true);
-        publicoPrioritario.setEca(true);
-        publicoPrioritario.setEgressos(true);
-        publicoPrioritario.setId(0);
-        publicoPrioritario.setIsolamento(true);
-        publicoPrioritario.setMse(true);
-        publicoPrioritario.setRua(true);
-        publicoPrioritario.setTrabInfantil(true);
-        publicoPrioritario.setVivencia(true);
-        publicoPrioritario.setVulnerabilidade(true);
-		return publicoPrioritario;
+	public static PublicoPrioritarioBean criaPublicoPrioritario(){
+		PublicoPrioritarioBean publicoPrioritarioBean = new PublicoPrioritarioBean();
+		publicoPrioritarioBean.setPublicoPrioritario(ConstrutorParaTeste.criaPublicoPrioritario());
+		publicoPrioritarioBean.setLista(new ArrayList<PublicoPrioritario>());
+		
+		return publicoPrioritarioBean;
 	}
 	
-	public static Turma criaTurma(){
-		Turma turma = new Turma();
-		turma.setAlunos(null);
-		turma.setAulas(null);
-		turma.setCodigo("Teste");
-		turma.setId(0);
-		turma.setMaximo(13);
-		turma.setNivel(0);
-		turma.setSegunda(true);
-		turma.setTerca(true);
-		turma.setQuarta(true);
-		turma.setQuinta(true);
-		turma.setSexta(true);
-		turma.setTurno("Teste");
-		return turma;
+	public static TurmaBean criaTurma(){
+		TurmaBean turmaBean = new TurmaBean();
+		turmaBean.setTurma(ConstrutorParaTeste.criaTurma());
+		turmaBean.setLista(new ArrayList<Turma>());
+		
+		return turmaBean;
 	}
 	
-	public static TermoDesligamento criaTermoDesligamento(){
-		TermoDesligamento termo = new TermoDesligamento();
-		termo.setCpf("00000000000");
-		termo.setId(0);
-		termo.setMotivo("Teste");
-		termo.setNomeResponsavel("Teste");
-		termo.setNomeTecResponsavel("Teste");
-		termo.setNomeUsuario("Teste");
-		return termo;
+	public static TermoDesligamentoBean criaTermoDesligamento(){
+		TermoDesligamentoBean termoDesligamentoBean = new TermoDesligamentoBean();
+		termoDesligamentoBean.setTermoDesligamento(ConstrutorParaTeste.criaTermoDesligamento());
+		termoDesligamentoBean.setLista(new ArrayList<TermoDesligamento>());
+		
+		return termoDesligamentoBean;
 	}
-	public static SituacaoAcolhimento criaSituacaoAcolhimento() {
-		SituacaoAcolhimento situacao = new SituacaoAcolhimento();
-		situacao.setContato("0000000000");
-		situacao.setId(0);
-		situacao.setMotivo("Teste");
-		situacao.setNomeAcolhido("Teste");
-		situacao.setNomeInstituicao("Teste");
-		situacao.setResponsavelInstituicao("Teste");
-		return situacao;
-	}
-
+	
 }
