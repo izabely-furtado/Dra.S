@@ -1,9 +1,10 @@
 package main.java.cgt.backingbean;
 
-
 import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
+
+import javax.faces.application.FacesMessage;
 //import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -26,17 +27,36 @@ public class TermoDesligamentoBean {
 	}
 
 	public void gerar() throws IOException {
-		if (this.termoDesligamento.getCpf() != null && 
-			this.termoDesligamento.getMotivo() != null && 
-			this.termoDesligamento.getNomeResponsavel() != null &&
-			this.termoDesligamento.getNomeTecResponsavel() != null &&
-			this.termoDesligamento.getNomeUsuario() != null) {
+		FacesContext context = FacesContext.getCurrentInstance();
+		if (this.termoDesligamento.getCpf() == null){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "CPF Inválido", ""));
+		}
+		if (this.termoDesligamento.getMotivo() != null) {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Insira um motivo para o desligamento", ""));
+		}
+		if (this.termoDesligamento.getNomeResponsavel() != null) {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Insira um Responsável", ""));
+		}
+		if (this.termoDesligamento.getNomeTecResponsavel() != null) {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Insira um Técnico Responsável", ""));
+		}
+		if (this.termoDesligamento.getNomeTecResponsavel() != null) {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Insira o usuário que será desligado do projeto", ""));
+		}
+
+		if (this.termoDesligamento.getCpf() != null 
+				&& this.termoDesligamento.getMotivo() != null
+				&& this.termoDesligamento.getNomeResponsavel() != null
+				&& this.termoDesligamento.getNomeTecResponsavel() != null
+				&& this.termoDesligamento.getNomeUsuario() != null) {
+
 			FacesContext.getCurrentInstance().getExternalContext().redirect("./termo.jsf");
 		}
-		
+
 	}
+
 	public String novo() {
-		
+
 		this.termoDesligamento.setId(-1);
 		this.termoDesligamento.setNomeUsuario(null);
 		this.termoDesligamento.setNomeResponsavel(null);
@@ -44,14 +64,14 @@ public class TermoDesligamentoBean {
 		this.termoDesligamento.setMotivo(null);
 		this.termoDesligamento.setCpf(null);
 		this.termoDesligamento.setEdita(false);
-		
+
 		return "termoDesligamento";
 	}
-	public String getDataAtual(){
+
+	public String getDataAtual() {
 		Date d = new Date();
 		String dStr = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(d);
 		return dStr;
 	}
-	
 
 }
