@@ -31,11 +31,12 @@ public class BeanTestTermoDesligamento {
     }
 	
 	
+	
+	/*
 	@Test
     public void novoTermoDesligamento(){
         assertEquals("termoDesligamento",termoBean.novo());
     }
-	/*
 	@Test
     public void excluirTermoDesligamento(){
         assertEquals("excluir",termoBean.excluirRegistro(termo));

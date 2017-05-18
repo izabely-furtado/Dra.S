@@ -196,6 +196,13 @@ public class ConstrutorParaTeste {
 		termo.setNomeUsuario("Teste");
 		return termo;
 	}
+	public static Rematricula criaRematricula(){
+		Rematricula rematricula = new Rematricula();
+		rematricula.setId(0);
+		rematricula.setNomeResponsavel("Teste");
+		rematricula.setNomeTecResponsavel("Teste");
+		return rematricula;
+	}
 	public static SituacaoAcolhimento criaSituacaoAcolhimento() {
 		SituacaoAcolhimento situacao = new SituacaoAcolhimento();
 		situacao.setContato("0000000000");
