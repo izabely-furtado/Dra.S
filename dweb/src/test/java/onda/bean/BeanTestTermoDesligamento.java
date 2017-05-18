@@ -1,9 +1,6 @@
 package test.java.onda.bean;
 
 import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.TermoDesligamento;
@@ -19,7 +16,6 @@ public class BeanTestTermoDesligamento {
 		
 		termoBean = new TermoDesligamentoBean();
 		termoBean.setTermoDesligamento(termo);
-		termoBean.setLista(new ArrayList<TermoDesligamento>());
 	}
 	/*
 	@Test
@@ -27,19 +23,27 @@ public class BeanTestTermoDesligamento {
 		fail("Not yet implemented");
 	}
 */
+	
+	
 	@Test
-    public void alterarTermoDesligamento(){
-        assertEquals("alterar",termoBean.alterarRegistro(termo));
+    public void getTermoDesligamento(){
+        assertEquals(termo,termoBean.getTermoDesligamento());
     }
 	
+	
+	@Test
+    public void novoTermoDesligamento(){
+        assertEquals("termoDesligamento",termoBean.novo());
+    }
+	/*
 	@Test
     public void excluirTermoDesligamento(){
         assertEquals("excluir",termoBean.excluirRegistro(termo));
     }
 	
 	@Test
-    public void getTermoDesligamento(){
-        assertEquals(termo,termoBean.getTermoDesligamento());
+    public void alterarTermoDesligamento(){
+        assertEquals("alterar",termoBean.alterarRegistro(termo));
     }
 	
 	@Test
@@ -53,11 +57,6 @@ public class BeanTestTermoDesligamento {
     }
 	
 	@Test
-    public void novaTermoDesligamento(){
-        assertEquals("termoDesligamento",termoBean.novo());
-    }
-	
-	@Test
     public void salvarTermoDesligamento(){
         assertEquals("salvar",termoBean.salvarRegistro());
     }
@@ -66,5 +65,5 @@ public class BeanTestTermoDesligamento {
     public void verListaTermoDesligamento(){
         assertEquals("listagem",termoBean.verLista());
     }
-    
+    */
 }

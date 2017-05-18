@@ -35,17 +35,17 @@
 											alt="logo-onda" src="./assets/img/logo-onda2.png" />
 									</a></header></li>
 						<li><a class="ativo" href="#">Alunos</a></li>
-						<li><a href="./formularioAcompanhamentoPsico.html">Formulário de Acompanhamento Psicológico</a></li>
-						<li><a href="./gerarDesligamento.html">Gerar Termo de Desligamento</a></li>
-						<li><a href="./pesquisarAlunos.html">Pesquisar Alunos</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.jsf">Formulário de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.jsf">Gerar Termo de Desligamento</a></li>
+						<li><a href="./pesquisarAlunos.jsf">Pesquisar Alunos</a></li>
 						<li><a class="ativo" href="#">Turmas</a></li>
-						<li><a href="./cadastrarTurmas.html">Cadastrar Turmas</a></li>
-						<li><a href="./pesquisarTurmas.html">Pesquisar Turmas</a></li>
-						<li><a href="./cadastrarAulas.html">Cadastrar Aulas</a></li>
+						<li><a href="./cadastrarTurmas.jsf">Cadastrar Turmas</a></li>
+						<li><a href="./pesquisarTurmas.jsf">Pesquisar Turmas</a></li>
+						<li><a href="./cadastrarAulas.jsf">Cadastrar Aulas</a></li>
 						<li><a href="#" class="ativo">Sistema</a></li>
-						<li><a href="./dadosAcesso.html">Visualizar Dados de Acesso</a></li>
-						<li><a href="./alterarDadosAcesso.html">Alterar Dados de Acesso</a></li>
-						<li><a href="./login.html">Sair</a></li>
+						<li><a href="./dadosAcesso.jsf">Visualizar Dados de Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.jsf">Alterar Dados de Acesso</a></li>
+						<li><a href="./login.jsf">Sair</a></li>
 					</ul>
 				</nav>
             </div>
@@ -83,12 +83,12 @@
 								<h:inputText id="cpf" 
 									value="#{termoDesligamentoBean.termoDesligamento.cpf}"
 									required="true" class="formulario"
-									a:placeholder="Digite somente números"
+									a:placeholder="CPF do Responsável"
 									pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}"
 									data-mask="000.000.000-00" data-mask-selectonfocus="true" >
 								<!-- requiredMessage="#{text['termoDesligamentoBean.nomeUsuario.validacao']}" -->	
 								</h:inputText>
-								<!--<h:message for="nome" styleClass="errorMessage" />-->
+								<h:message for="nome" styleClass="errorMessage" />
 								<!-- JEITO ANTIGO
 								<input type="text" id="cpf"
 									required class="formulario" minlength=11
@@ -132,6 +132,7 @@
 									-->
 							</div>
 						</div>
+						<br />
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Técnico Responsável:</label> 
@@ -153,7 +154,7 @@
 						<h:commandButton 
 								 styleClass="botao"
 								 onclick="gerar()"
-								 action="#{termoDesligamentoBean.inserir}" 
+								 action="#{termoDesligamentoBean.gerar}" 
 								 value="Gerar Termo de Desligamento">
 				</h:commandButton>
 					</h:form>

@@ -132,7 +132,7 @@ public class ConstrutorParaTesteBean {
 	public static TermoDesligamentoBean criaTermoDesligamento(){
 		TermoDesligamentoBean termoDesligamentoBean = new TermoDesligamentoBean();
 		termoDesligamentoBean.setTermoDesligamento(ConstrutorParaTeste.criaTermoDesligamento());
-		termoDesligamentoBean.setLista(new ArrayList<TermoDesligamento>());
+		//termoDesligamentoBean.setLista(new ArrayList<TermoDesligamento>());
 		
 		return termoDesligamentoBean;
 	}

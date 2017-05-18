@@ -1,26 +1,21 @@
 package main.java.cgt.backingbean;
 
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.List;
-
+//import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import main.java.cdp.classesAnemicas.TermoDesligamento;
-import main.java.cgd.crudjdbc.*;
+//import main.java.cgd.crudjdbc.*;
 
 @ManagedBean(name = "termoDesligamentoBean")
 @SessionScoped
 public class TermoDesligamentoBean {
-	private List<TermoDesligamento> lista;
 	private TermoDesligamento termoDesligamento = new TermoDesligamento();
-	TermoDesligamentoCrudJDBC objTermoCrudJDBC = new TermoDesligamentoCrudJDBC();
-
-	public List<TermoDesligamento> getLista() {
-		return lista;
-	}
 
 	public TermoDesligamento getTermoDesligamento() {
 		return termoDesligamento;
@@ -30,10 +25,16 @@ public class TermoDesligamentoBean {
 		this.termoDesligamento = termoDesligamento;
 	}
 
-	public void setLista(List<TermoDesligamento> lista) {
-		this.lista = lista;
+	public void gerar() throws IOException {
+		if (this.termoDesligamento.getCpf() != null && 
+			this.termoDesligamento.getMotivo() != null && 
+			this.termoDesligamento.getNomeResponsavel() != null &&
+			this.termoDesligamento.getNomeTecResponsavel() != null &&
+			this.termoDesligamento.getNomeUsuario() != null) {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./termo.jsf");
+		}
+		
 	}
-
 	public String novo() {
 		
 		this.termoDesligamento.setId(-1);
@@ -46,45 +47,11 @@ public class TermoDesligamentoBean {
 		
 		return "termoDesligamento";
 	}
-
-	public String excluirRegistro(TermoDesligamento td) {
-		TermoDesligamentoCrudJDBC.excluir(td);
-		// salva o termo de desligamento
-		return td.getId()+"";
-	}
-
-	public String alterarRegistro(TermoDesligamento td) {
-		td.setEdita(true);
-		return "alterar";
-	}
-	
-	public String salvarRegistro() {
-		for (TermoDesligamento termoDesligamento : lista) {
-			if (termoDesligamento.isEdita()) {
-				TermoDesligamentoCrudJDBC.alterar(termoDesligamento);
-			}
-			termoDesligamento.setEdita(false);
-		}
-		lista = TermoDesligamentoCrudJDBC.listar();
-		return "salvar";
-	}
-
-	public String inserir() {
-		
-		TermoDesligamentoCrudJDBC.salvar(this.termoDesligamento);
-		// salva o termo de desligamento
-		return "sucesso";
-	}
-
-	public String verLista() {
-		TermoDesligamentoCrudJDBC.listar();
-		return "listagem";
-	}
-	
 	public String getDataAtual(){
 		Date d = new Date();
 		String dStr = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(d);
 		return dStr;
 	}
+	
 
 }

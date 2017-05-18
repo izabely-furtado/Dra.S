@@ -69,7 +69,7 @@ function gerar(){
         alert(erro);
     }
     else {
-        window.location.href = "./termo.html";
+        window.location.href = "./termo.jsf";
     }
     
 }
