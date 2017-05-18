@@ -1,5 +1,5 @@
 package test.java.onda.crud;
-
+/*
 import static org.junit.Assert.*;
 
 
@@ -8,17 +8,22 @@ import org.junit.Test;
 import main.java.cdp.classesAnemicas.TermoDesligamento;
 import main.java.cgd.crudjdbc.TermoDesligamentoCrudJDBC;
 import test.java.onda.ConstrutorParaTeste;
-
+*/
 public class CrudTestTermoDesligamento {
 
-	private TermoDesligamento termo = ConstrutorParaTeste.criaTermoDesligamento();
+	//private TermoDesligamento termo = ConstrutorParaTeste.criaTermoDesligamento();
 		
 	/*
+	 * 
+	 * FOI DECIDIDO NÂO REGISTRAR NO BANCO< ESTÀ AQUI CASO MUDE DE IDEIA
+	 * 
+	 * 
+	 
 	@Test
 	public void test() {
 		fail("Not yet implemented");
 	}
-	*/
+	
 
     @Test
     public void getTermoDesligamento(){
@@ -40,5 +45,5 @@ public class CrudTestTermoDesligamento {
         assertEquals(true,TermoDesligamentoCrudJDBC.salvar(termo));
     }
     
-
+*/
 }

@@ -1,5 +1,5 @@
 package main.java.cgd.crudjdbc;
-
+/*
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,13 +10,21 @@ import java.util.List;
 
 import main.java.cdp.classesAnemicas.*;
 import main.java.cgd.conexao.ConectaPostgreSQL;
-
+*/
 public class TermoDesligamentoCrudJDBC {
 	
 	/*
 	 * Objetivo: Método que salva um termo de desligamento no banco de dados
 	 */
 	
+	/*
+	 * 
+	 * FOI DECIDIDO NÂO REGISTRAR NO BANCO< ESTÀ AQUI CASO MUDE DE IDEIA
+	 * 
+	 * 
+	 */
+	
+	/*
 	public static boolean salvar(TermoDesligamento termoDesligamento) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -54,7 +62,7 @@ public class TermoDesligamentoCrudJDBC {
 
 	/*
 	 * Objetivo: Método que lista todos os ass do banco de dados
-	 */
+	 *//*
 	public static TermoDesligamento getTermoDesligamento(int idTermoDesligamento) {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -103,7 +111,7 @@ public class TermoDesligamentoCrudJDBC {
 	/*
 	 * Objetivo: Método que lista todos os termos de desligamento do banco de dados
 	 */
-	
+	/*
 	public static List<TermoDesligamento> listar() {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -154,7 +162,7 @@ public class TermoDesligamentoCrudJDBC {
 	/*
 	 * Objetivo: Método que exclui um termo de desligamento do banco de dados
 	 */
-	
+	/*
 	public static boolean excluir(TermoDesligamento termoDesligamento) {
 		// abre a conexao com o banco de dados PostGresql
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -222,5 +230,5 @@ public class TermoDesligamentoCrudJDBC {
 			}
 		}
 	}
-
+*/
 }
