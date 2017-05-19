@@ -20,31 +20,30 @@ public class AcompanhamentoEscolarCrudJDBC {
 			// Objeto para executar o SQL insert
 			PreparedStatement insereSt = null;
 			// SQL de inserção
-			String sqlAcompanhamento	 = "insert into acompanhamentoescolar(escola) values(?)";
+			String sqlAcompanhamento = "insert into acompanhamentoescolarDados(escola, ano1, ano2, ano3, ano4, ano5, ano6, ano7, serie1, serie2, serie3, serie4, serie5, serie6, serie7) values(?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,);";
 			try {
 				// recebe o SQL insert
 				insereSt = conexao.prepareStatement(sqlAcompanhamento);
 				// recebe o parâmtros do SQL insert
 				insereSt.setString(1, acompanhamento.getEscola());
+				insereSt.setInt(2, acompanhamento.getAno1());
+				insereSt.setInt(3, acompanhamento.getAno2());
+				insereSt.setInt(4, acompanhamento.getAno3());
+				insereSt.setInt(5, acompanhamento.getAno4());
+				insereSt.setInt(6, acompanhamento.getAno5());
+				insereSt.setInt(7, acompanhamento.getAno6());
+				insereSt.setInt(8, acompanhamento.getAno7());
+				
+				insereSt.setString(9, acompanhamento.getSerie1());
+				insereSt.setString(10, acompanhamento.getSerie2());
+				insereSt.setString(11, acompanhamento.getSerie3());
+				insereSt.setString(12, acompanhamento.getSerie4());
+				insereSt.setString(13, acompanhamento.getSerie5());
+				insereSt.setString(14, acompanhamento.getSerie6());
+				insereSt.setString(15, acompanhamento.getSerie7());
 				// executa SQL insert
 				insereSt.executeUpdate();
-				//pega o resto dos dados
-				String sqlAcompanhamentoDados = "";
-				List<Integer> anos = acompanhamento.getAnos();
-				//List<Integer> series = acompanhamento.getSeries();
-				for (int i = 0; i<=anos.size(); i++){
-					sqlAcompanhamentoDados = "insert into acompanhamentoescolarDados(acompanhamentoescolar, ano, serie) values(?, ?, ?);";
-					
-					// recebe o SQL insert
-					insereSt = conexao.prepareStatement(sqlAcompanhamentoDados);
-					
-					insereSt.setInt(1, acompanhamento.getId());
-					insereSt.setInt(2, acompanhamento.getAnos().get(i));
-					insereSt.setInt(3, acompanhamento.getSeries().get(i));
-					
-					// executa SQL insert
-					insereSt.executeUpdate();
-				}
+				
 				return true;
 				
 			} catch (SQLException e) {
@@ -81,11 +80,26 @@ public class AcompanhamentoEscolarCrudJDBC {
 				// AcompanhamentoEscolar
 				resultado = consulta.executeQuery(sql);
 				// Lê cada situacao
-				List<Integer> anos = new ArrayList<Integer>();
-				List<Integer> series = new ArrayList<Integer>();
+				//List<Integer> anos = new ArrayList<Integer>();
+				//List<Integer> series = new ArrayList<Integer>();
 				
 				while (resultado.next()) {
 					situacao.setEscola(resultado.getString("escola"));
+					situacao.setAno1(resultado.getInt("ano1"));
+					situacao.setAno2(resultado.getInt("ano2"));
+					situacao.setAno3(resultado.getInt("ano3"));
+					situacao.setAno4(resultado.getInt("ano4"));
+					situacao.setAno5(resultado.getInt("ano5"));
+					situacao.setAno6(resultado.getInt("ano6"));
+					situacao.setAno7(resultado.getInt("ano7"));
+					situacao.setSerie1(resultado.getString("serie1"));
+					situacao.setSerie2(resultado.getString("serie2"));
+					situacao.setSerie3(resultado.getString("serie3"));
+					situacao.setSerie4(resultado.getString("serie4"));
+					situacao.setSerie5(resultado.getString("serie5"));
+					situacao.setSerie6(resultado.getString("serie6"));
+					situacao.setSerie7(resultado.getString("serie7"));
+					/*
 					for (int i = 1; i<7; i++) {
 						Integer ano = resultado.getInt("anos" + i);
 						Integer serie = resultado.getInt("serie"  + i);
@@ -94,7 +108,7 @@ public class AcompanhamentoEscolarCrudJDBC {
 					}
 					situacao.setAnos(anos);
 					situacao.setSeries(series);
-					
+					*/
 					// insere o acesso a serviço na lista
 					return situacao;
 					
@@ -137,20 +151,37 @@ public class AcompanhamentoEscolarCrudJDBC {
 				// AcompanhamentoEscolar
 				resultado = consulta.executeQuery(sql);
 				// Lê cada as
-				List<Integer> anos = new ArrayList<Integer>();
-				List<Integer> series = new ArrayList<Integer>();
+				//List<Integer> anos = new ArrayList<Integer>();
+				//List<Integer> series = new ArrayList<Integer>();
 				
 				while (resultado.next()) {
 					AcompanhamentoEscolar situacao = new AcompanhamentoEscolar();
 					situacao.setEscola(resultado.getString("escola"));
+					situacao.setAno1(resultado.getInt("ano1"));
+					situacao.setAno2(resultado.getInt("ano2"));
+					situacao.setAno3(resultado.getInt("ano3"));
+					situacao.setAno4(resultado.getInt("ano4"));
+					situacao.setAno5(resultado.getInt("ano5"));
+					situacao.setAno6(resultado.getInt("ano6"));
+					situacao.setAno7(resultado.getInt("ano7"));
+					situacao.setSerie1(resultado.getString("serie1"));
+					situacao.setSerie2(resultado.getString("serie2"));
+					situacao.setSerie3(resultado.getString("serie3"));
+					situacao.setSerie4(resultado.getString("serie4"));
+					situacao.setSerie5(resultado.getString("serie5"));
+					situacao.setSerie6(resultado.getString("serie6"));
+					situacao.setSerie7(resultado.getString("serie7"));
+					/*
 					for (int i = 1; i<7; i++) {
 						Integer ano = resultado.getInt("anos" + i);
 						Integer serie = resultado.getInt("serie"  + i);
 						anos.add(ano);
 						series.add(serie);	
 					}
+					
 					situacao.setAnos(anos);
 					situacao.setSeries(series);
+					*/
 					// insere o as na lista
 					acessos.add(situacao);
 						
@@ -211,31 +242,29 @@ public class AcompanhamentoEscolarCrudJDBC {
 			// Objeto para executar o SQL update
 			PreparedStatement insereSt = null;
 			// SQL de inserção
-			String sql = "update AcompanhamentoEscolar set escola=?";
+			String sql = "update AcompanhamentoEscolar set escola=?, ano1=?, ano2=?, ano3=?, ano4=?, ano5=?, ano6=?, ano7=?, serie1=?, serie2=?, serie3=?, serie4=?, serie5=?, serie6=?, serie7=?";
 			try {
 				// recebe o SQL update
 				insereSt = conexao.prepareStatement(sql);
+				insereSt.setString(1, acompanhamento.getEscola());
+				insereSt.setInt(2, acompanhamento.getAno1());
+				insereSt.setInt(3, acompanhamento.getAno2());
+				insereSt.setInt(4, acompanhamento.getAno3());
+				insereSt.setInt(5, acompanhamento.getAno4());
+				insereSt.setInt(6, acompanhamento.getAno5());
+				insereSt.setInt(7, acompanhamento.getAno6());
+				insereSt.setInt(8, acompanhamento.getAno7());
 				
-				//pega o resto dos dados
-				String sqlAcompanhamentoDados = "";
-				List<Integer> anos = acompanhamento.getAnos();
-				//List<Integer> series = acompanhamento.getSeries();
-				for (int i = 0; i<=anos.size(); i++){
-					sqlAcompanhamentoDados = "update acompanhamentoescolarDados set acompanhamentoescolar=?, ano=?, serie=?";
-					
-					// recebe o parâmtros do SQL update
-					insereSt = conexao.prepareStatement(sqlAcompanhamentoDados);
-					
-					insereSt.setInt(1, acompanhamento.getId());
-					insereSt.setInt(2, acompanhamento.getAnos().get(i));
-					insereSt.setInt(3, acompanhamento.getSeries().get(i));
-					
-					// executa SQL insert
-					insereSt.executeUpdate();
-				}
+				insereSt.setString(9, acompanhamento.getSerie1());
+				insereSt.setString(10, acompanhamento.getSerie2());
+				insereSt.setString(11, acompanhamento.getSerie3());
+				insereSt.setString(12, acompanhamento.getSerie4());
+				insereSt.setString(13, acompanhamento.getSerie5());
+				insereSt.setString(14, acompanhamento.getSerie6());
+				insereSt.setString(15, acompanhamento.getSerie7());
 				
-				// executa SQL update
 				insereSt.executeUpdate();
+				
 				return true;
 				
 			} catch (SQLException e) {

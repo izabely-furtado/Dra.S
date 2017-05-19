@@ -35,9 +35,9 @@ public class AcompanhamentoEscolarBean {
 
 	public String novo() {
 		acompanhamentoEscolar.setId(-1);
-		acompanhamentoEscolar.setAnos(null);
+	//	acompanhamentoEscolar.setAnos(null);
 		acompanhamentoEscolar.setEscola(null);
-		acompanhamentoEscolar.setSeries(null);
+	//	acompanhamentoEscolar.setSeries(null);
 		acompanhamentoEscolar.setEdita(false);
 		return "acompanhamentoEscolar";
 	}

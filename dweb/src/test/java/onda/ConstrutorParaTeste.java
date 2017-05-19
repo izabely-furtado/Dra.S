@@ -18,9 +18,9 @@ public class ConstrutorParaTeste {
 	public static AcompanhamentoEscolar criaAcompanhamento(){
 		AcompanhamentoEscolar acompanhamento = new AcompanhamentoEscolar();
 		acompanhamento.setId(0);
-		acompanhamento.setAnos(null);
+	//	acompanhamento.setAnos(null);
         acompanhamento.setEscola("Teste");
-        acompanhamento.setSeries(null);
+    //    acompanhamento.setSeries(null);
 		return acompanhamento;
 	}
 	public static Aula criaAula(){
