@@ -88,7 +88,7 @@
 							<div class="grupinho">
 								<label>Aluguel:</label>
 								<h:inputText id="aluguel"
-									value="#{fapIBean.fap.despesas.aluguel}" required="true"
+									value="#{alunoBean.aluno.fap.despesas.aluguel}" required="true"
 									class="formulario" a:placeholder="999.999,99" >
 									<!--requiredMessage="#{text['fap.despesas.aluguel.validacao']}">-->
 								</h:inputText>
@@ -99,7 +99,7 @@
 						<div class="coluna-3">
 							<div class="grupinho">
 								<label>Água:</label>
-								<h:inputText id="agua" value="#{fapIBean.fap.despesas.agua}"
+								<h:inputText id="agua" value="#{alunoBean.aluno.fap.despesas.agua}"
 									required="true" class="formulario" a:placeholder="999.999,99" >
 									<!--requiredMessage="#{text['fap.despesas.agua.validacao']}">-->
 								</h:inputText>
@@ -109,7 +109,7 @@
 						<div class="coluna-3">
 							<div class="grupinho">
 								<label>Luz:</label>
-								<h:inputText id="luz" value="#{fapIBean.fap.despesas.luz}"
+								<h:inputText id="luz" value="#{alunoBean.aluno.fap.despesas.luz}"
 									required="true" class="formulario" a:placeholder="999.999,99" >
 									<!--requiredMessage="#{text['fap.despesas.luz.validacao']}">-->
 								</h:inputText>
@@ -120,7 +120,7 @@
 						<div class="coluna-3">
 							<div class="grupinho">
 								<label>Telefone:</label>
-								<h:inputText id="tel" value="#{fapIBean.fap.despesas.telefone}"
+								<h:inputText id="tel" value="#{alunoBean.aluno.fap.despesas.telefone}"
 									required="true" class="formulario" a:placeholder="999.999,99" >
 									<!--requiredMessage="#{text['fap.despesas.telefone.validacao']}">-->
 								</h:inputText>
@@ -130,7 +130,7 @@
 						<div class="coluna-3">
 							<div class="grupinho">
 								<label>Gás:</label>
-								<h:inputText id="gas" value="#{fapIBean.fap.despesas.gas}"
+								<h:inputText id="gas" value="#{alunoBean.aluno.fap.despesas.gas}"
 									required="true" class="formulario" a:placeholder="999.999,99" >
 									<!--requiredMessage="#{text['fap.despesas.gas.validacao']}">-->
 								</h:inputText>
@@ -142,7 +142,7 @@
 							<div class="grupinho">
 								<label>Alimentação:</label>
 								<h:inputText id="alimenta"
-									value="#{fapIBean.fap.despesas.alimentacao}" required="true"
+									value="#{alunoBean.aluno.fap.despesas.alimentacao}" required="true"
 									class="formulario" a:placeholder="999.999,99" >
 									<!--requiredMessage="#{text['fap.despesas.alimentacao']}">-->
 								</h:inputText>
@@ -154,7 +154,7 @@
 							<div class="grupinho">
 								<label>Medicamentos:</label>
 								<h:inputText id="medica"
-									value="#{fapIBean.fap.despesas.medicamentos}" required="true"
+									value="#{alunoBean.aluno.fap.despesas.medicamentos}" required="true"
 									class="formulario" a:placeholder="999.999,99" >
 									<!--requiredMessage="#{text['fap.despesas.medicamentos.validacao']}">-->
 								</h:inputText>
@@ -165,7 +165,7 @@
 						<div class="coluna-3">
 							<div class="grupinho">
 								<label>Outros:</label>
-								<h:inputText id="outros" value="#{fapIBean.fap.despesas.outros}"
+								<h:inputText id="outros" value="#{alunoBean.aluno.fap.despesas.outros}"
 									required="true" class="formulario" a:placeholder="999.999,99" >
 									<!--requiredMessage="#{text['fap.despesas.outros.validacao']}">-->
 								</h:inputText>
@@ -178,7 +178,7 @@
 								<label>Total de Despesas:</label>
 								<p id="totalDESPESA">0,00</p>
 								<h:outputText id="totalDESPESA"
-									value="#{fapIBean.fap.despesas.getDespesaTotal()}" />
+									value="#{alunoBean.aluno.fap.despesas.getDespesaTotal()}" />
 								<br />
 
 							</div>
@@ -188,7 +188,7 @@
 								<label>Renda Familiar Total:</label>
 								<p>
 									<h:inputText id="rendaTotal"
-										value="#{fapIBean.fap.despesas.rendaTotal}" required="true"
+										value="#{alunoBean.aluno.fap.despesas.rendaTotal}" required="true"
 										class="formulario" a:placeholder="999.999,99" >
 										<!--requiredMessage="#{text['fap.despesas.rendaTotal.validacao']}">-->
 									</h:inputText>
@@ -201,7 +201,7 @@
 								<label>Renda Per Capta:</label>
 								<p>
 									<h:inputText id="rendaPerCapta"
-										value="#{fapIBean.fap.despesas.rendaPerCapta}" required="true"
+										value="#{alunoBean.aluno.fap.despesas.rendaPerCapta}" required="true"
 										class="formulario" a:placeholder="999.999,99" >
 										<!--requiredMessage="#{text['fap.despesas.rendaTotal.validacao']}">-->
 									</h:inputText>

@@ -4,7 +4,7 @@ public class Aluno {
 	private int id;
 	private String foto;
 	private int nivel;
-	private FormularioAcompanhamentoPsicossocial form;
+	private FormularioAcompanhamentoPsicossocial fap;
 	private Turma turma;
 	private boolean edita;
 	public String getFoto() {
@@ -19,11 +19,11 @@ public class Aluno {
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
-	public FormularioAcompanhamentoPsicossocial getForm() {
-		return form;
+	public FormularioAcompanhamentoPsicossocial getFap() {
+		return fap;
 	}
-	public void setForm(FormularioAcompanhamentoPsicossocial form) {
-		this.form = form;
+	public void setFap(FormularioAcompanhamentoPsicossocial fap) {
+		this.fap = fap;
 	}
 	public Turma getTurma() {
 		return turma;

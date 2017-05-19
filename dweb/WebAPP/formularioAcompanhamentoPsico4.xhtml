@@ -93,7 +93,7 @@
 								<label>Condições:</label>
 
 								<h:selectOneMenu class="formulario" id="condicao"
-									value="#{fapIBean.fap.condicoesMoradia.condicao}">
+									value="#{alunoBean.aluno.fap.condicoesMoradia.condicao}">
 									<f:selectItem itemLabel="Selecione a Condição de Moradia" />
 									<f:selectItem itemLabel="Própria" itemValue="propria" />
 									<f:selectItem itemLabel="Alugada" itemValue="alugada" />
@@ -107,10 +107,10 @@
 							<div class="grupinho">
 								<label>Infraestrutura:</label><br />
 								<h:selectManyCheckbox name="infra" value="infra">
-								   	<f:selectItem id="pagua" itemValue="#{fapIBean.fap.condicoesMoradia.possuiAgua}" itemLabel="Possui Água" />
-								   	<f:selectItem id="pesgoto" itemValue="#{fapIBean.fap.condicoesMoradia.possuiEsgoto}" itemLabel="Possui Rede de Esgoto" />
-								   	<f:selectItem id="penergia" itemValue="#{fapIBean.fap.condicoesMoradia.possuiEnergia}" itemLabel="Possui energia Elétrica" />
-								   	<f:selectItem id="plixo" itemValue="#{fapIBean.fap.condicoesMoradia.possuiLixo}" itemLabel="Possui Coleta de Lixo"/>
+								   	<f:selectItem id="pagua" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.possuiAgua}" itemLabel="Possui Água" />
+								   	<f:selectItem id="pesgoto" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.possuiEsgoto}" itemLabel="Possui Rede de Esgoto" />
+								   	<f:selectItem id="penergia" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.possuiEnergia}" itemLabel="Possui energia Elétrica" />
+								   	<f:selectItem id="plixo" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.possuiLixo}" itemLabel="Possui Coleta de Lixo"/>
 								</h:selectManyCheckbox>
 
 								<!--<input type="checkbox" name="infra" id="pagua">Possui Água<br>-->
@@ -140,7 +140,7 @@
 										<input onchange="possuiRisco()" type="radio" name="risco" id="riscoS" />-->
 
 								<h:selectOneRadio
-									value="#{fapIBean.fap.condicoesMoradia.possuirisco}">
+									value="#{alunoBean.aluno.fap.condicoesMoradia.possuirisco}">
 									<f:selectItem id="riscoN" class="radio-inline" itemValue="Não"
 										itemLabel="Não" />
 									<f:selectItem id="riscoS" class="radio-inline" itemValue="Sim"
@@ -155,7 +155,7 @@
 								<label>Qual?:</label>
 
 								<h:inputText id="qrisco"
-									value="#{fapIBean.fap.condicoesMoradia.qrisco}" required="true"
+									value="#{alunoBean.aluno.fap.condicoesMoradia.qrisco}" required="true"
 									class="formulario" a:placeholder="Qual o Risco Habitacional" >
 									<!--requiredMessage="#{text['fap.condicoesMoradia.qrisco.validacao']}"></h:inputText>-->
 									<h:message for="qrisco" styleClass="errorMessage" />
