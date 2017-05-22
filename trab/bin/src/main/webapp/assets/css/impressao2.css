@@ -1,0 +1,22 @@
+.panel.panel-theme{
+	text-align:center;
+	font-size:16px;
+}
+
+.ass{
+	padding-top:20px;
+}
+
+.especial{
+	margin:0px;
+}
+
+.active
+{
+	background-color:#cccccc;
+	
+}
+
+.tabela2 th,td{
+	text-align:center!important;
+}

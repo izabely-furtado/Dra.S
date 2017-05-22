@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<!-- 
+	<title>#{text['aplicacao.defaultpage.titulo']}</title>
+	<link href="#{request.contextPath}/css/simple.css" rel="stylesheet"
+		type="text/css" />
+		-->
+	<title>Cadastrar Novo Item</title>
+	<!-- Styles -->
+	<link href="#{request.contextPath}/assets/css/bootstrap.min.css"
+		rel="stylesheet" />
+	<link href="#{request.contextPath}/assets/css/owl.carousel.css"
+		rel="stylesheet" />
+	<link href="#{request.contextPath}/assets/css/owl.theme.css"
+		rel="stylesheet" />
+	<link href="#{request.contextPath}/assets/css/owl.transitions.css"
+		rel="stylesheet" />
+	<!-- Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"
+		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400"
+		rel="stylesheet" />
+	<!-- link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet" /-->
+	<link rel="stylesheet" type="text/css"
+		href="assets/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/flaticon.css" />
+
+	<!-- Light Gallery -->
+	<link href="assets/lightgallery/css/lightgallery.min.css"
+		rel="stylesheet" />
+	<link href="assets/lightgallery/css/lg-transitions.min.css"
+		rel="stylesheet" />
+
+	<!-- Alertas e Modais -->
+	<link href="assets/css/sweetalert2.css" rel="stylesheet" />
+
+	<link href="assets/css/main.css" rel="stylesheet" />
+
+</h:head>
+
+
+<h:body>
+	<div class="container-fluid">
+		<div class="container content">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sidebar">
+						<div class="menu-sidebar-group">
+							<button type="button"
+								class="btn btn-link btn-sidebar-menu btn-block">
+								<i class="material-icons md-28">menu</i>
+							</button>
+							<ul class="list-group menu-sidebar">
+								<li class="list-group-item active" onchange="getCadastros()"><a
+									href="#" onchange='getCadastros()'>Cadastros</a> <!-- label id="cadastros"></label>
+									<ul class="list-group menu-sidebar" id="cadastros">
+										<li class="list-group-item"><a href="#">professor Pago</a></li>
+										<li class="list-group-item"><a href="#">professor Institucional</a></li>
+										<li class="list-group-item"><a href="#">Professor</a></li>
+										<li class="list-group-item"><a href="#">Turma</a></li>
+										<li class="list-group-item"><a href="#">Pacote</a></li>
+									</ul--></li>
+								<li class="list-group-item" onchange="getInfos()"><a>Informações</a>
+									<!-- label id="infos"></label>
+									<ul class="list-group menu-sidebar">
+										<li class="list-group-item"><a href="#">professor Pago</a></li>
+										<li class="list-group-item"><a href="#">professor Institucional</a></li>
+										<li class="list-group-item"><a href="#">Turma</a></li>
+										<li class="list-group-item"><a href="#">Pacote</a></li>
+										<li class="list-group-item"><a href="#">Balanço</a></li>
+									</ul--></li>
+								<li class="list-group-item"><a href="#">Alterar Dados
+										de Acesso</a></li>
+								<li class="list-group-item"><a href="#">Alterar Senha</a></li>
+								<li class="list-group-item"><a href="#">Sair</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- Conteúdo -->
+				<div class="col-md-9">
+
+					<div class="content-page">
+						<!-- Conteúdo de Páginas -->
+						<h2>
+							Cadastrar Aula <small>Surf ou Instituição</small>
+						</h2>
+						<!-- ALERTAS -->
+						<!-- 
+						<div class="alert alert-success">
+							<strong>Successo!</strong> This alert box could indicate a
+							successful or positive action.
+						</div>
+						<div class="alert alert-info">
+							<strong>Informação!</strong> This alert box could indicate a
+							neutral informative change or action.
+						</div>
+						<div class="alert alert-warning">
+							<strong>Atenção!</strong>This alert box could indicate a
+							information change or action.
+							<h:message for="nome" styleClass="errorMessage" />
+						</div>
+						<div class="alert alert-danger">
+							<strong>Erro!</strong> This alert box could indicate a dangerous
+							or potentially negative action.
+						</div>
+-->
+						<div class="row">
+							<div class="col-md-12">
+								<form id="content">
+									<!-- DADOS BÁSICOS DO PROFESSOR -->
+									<div class="row">
+										<hr />
+										<h4>Dados Básicos</h4>
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>Hora da Aula:</label>
+												<h:inputText id="nome" value="#{aulaBean.aula.horaAula}"
+													required="true" class="form-control" a:placeholder="99:99"
+													requiredMessage="#{text['aula.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Data da Aula:</label>
+												<h:inputText id="dataNasc" value="#{aulaBean.aula.dataAula}"
+													required="true" class="form-control"
+													a:placeholder="_ _/_ _/_ _ _ _"
+													requiredMessage="#{text['aula.validacao']}"></h:inputText>
+												<h:message for="nome" styleClass="errorMessage" />
+											</div>
+										</div>
+
+
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>O que foi Ensinado</label>
+												<h:inputTextarea id="ensinado" class="form-control" rows="3"
+													value="#{aulaBean.aula.ensinado}"
+													a:placeholder="Digite o que foi ensinado nesta aula"></h:inputTextarea>
+											</div>
+										</div>
+
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>Alunos Presentes</label>
+												<div class="table table-responsive">
+													<h:dataTable class="table table-striped"
+														value="#{turmaBean.lista()}" var="aluno" rules="rows"
+														cellpadding="5">
+
+														<h:column>
+															<f:facet name="header">Código</f:facet>#{alunoBean.aluno.id}
+														</h:column>
+														<h:column>
+															<f:facet name="header">Nome</f:facet>
+															<h:inputText value="#{alunoBean.aluno.nome}" size="20"
+																rendered="#{aluno.edita}" />
+															<h:outputText value="#{aluno.nome}"
+																rendered="#{not aluno.edita}" />
+														</h:column>
+														<h:column>
+															<f:facet name="header">Presente</f:facet>
+															<input id="presente" type="checkbox" value="" />
+														</h:column>
+														
+													</h:dataTable>
+												</div>
+												<h:message for="alunos" styleClass="errorMessage" />
+											</div>
+										</div>
+
+
+									</div>
+
+									<br /> <br /> <br />
+
+									<h:commandButton class="btn btn-default btn-theme-orange"
+										action="#{alunoNaAulaBean.inserir}" value="Cadastrar">
+									</h:commandButton>
+
+
+								</form>
+							</div>
+						</div>
+
+						<br /> <br />
+
+
+					</div>
+
+				</div>
+				<div class="col-md-1"></div>
+
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>

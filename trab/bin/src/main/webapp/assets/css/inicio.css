@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+header > a > img{
+	background-color: gold !important;
+	padding: 0px !important;
+}
+
+header {
+	border-top-right-radius: 10px;
+}
+
+.center {
+	text-align:center !important;
+}
