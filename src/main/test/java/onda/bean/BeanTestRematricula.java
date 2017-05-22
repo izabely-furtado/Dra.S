@@ -1,11 +1,11 @@
-package test.java.onda.bean;
+package main.test.java.onda.bean;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.Rematricula;
 import main.java.cgt.backingbean.RematriculaBean;
-import test.java.onda.ConstrutorParaTeste;
+import main.test.java.onda.ConstrutorParaTeste;
 
 public class BeanTestRematricula {
 	private Rematricula rematricula;

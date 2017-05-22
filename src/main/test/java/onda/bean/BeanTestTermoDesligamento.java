@@ -1,11 +1,11 @@
-package test.java.onda.bean;
+package main.test.java.onda.bean;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 
 import main.java.cdp.classesAnemicas.TermoDesligamento;
 import main.java.cgt.backingbean.TermoDesligamentoBean;
-import test.java.onda.ConstrutorParaTeste;
+import main.test.java.onda.ConstrutorParaTeste;
 
 public class BeanTestTermoDesligamento {
 	private TermoDesligamento termo;
