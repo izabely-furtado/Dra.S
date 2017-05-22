@@ -21,7 +21,9 @@ before_script:
 
 script:
   - cd trab/
-  
+
+after_script:
+  - ./sonar-runner-2.4/bin/sonar-runner
 
   
 notifications:
