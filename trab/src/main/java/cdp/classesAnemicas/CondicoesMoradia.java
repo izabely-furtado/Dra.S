@@ -10,6 +10,17 @@ public class CondicoesMoradia {
 	private boolean possuirisco;
 	private String qrisco;
 	private boolean edita;
+	public CondicoesMoradia(){
+		this.setId(-1);
+		this.setCondicao("");
+		this.setPossuiagua(false);
+		this.setPossuicoleta(false);
+		this.setPossuienergia(false);
+		this.setPossuiesgoto(false);
+		this.setPossuirisco(false);
+		this.setQrisco("");
+		this.setEdita(false);
+	}
 	public String getCondicao() {
 		return condicao;
 	}
@@ -17,6 +28,9 @@ public class CondicoesMoradia {
 		this.condicao = condicao;
 	}
 	public boolean isPossuiagua() {
+		return possuiagua;
+	}
+	public boolean getPossuiagua() {
 		return possuiagua;
 	}
 	public void setPossuiagua(boolean possuiagua) {

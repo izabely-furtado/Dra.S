@@ -36,14 +36,7 @@ public class ProgramasBeneficiosBean {
 	}
 
 	public String novo() {
-		this.programasBeneficios.setId(-1);
-		this.programasBeneficios.setBeneficioHabitacional(null);
-		this.programasBeneficios.setOutro(null);
-		this.programasBeneficios.setPossuiar(false);
-		this.programasBeneficios.setPossuibp(false);
-		this.programasBeneficios.setPossuipbc(false);
-		this.programasBeneficios.setPossuipbf(false);
-		this.programasBeneficios.setPossuipibc(false);
+		this.programasBeneficios = new ProgramasBeneficios();
 		return "programasBeneficios";
 	}
 

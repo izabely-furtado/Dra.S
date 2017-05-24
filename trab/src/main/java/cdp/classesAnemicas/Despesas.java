@@ -14,6 +14,20 @@ public class Despesas {
 	//private float despesaTotal;
 	private float rendaTotal;
 	private float rendaPerCapta;
+	public Despesas(){
+		this.setId(-1);
+		this.setAgua(0);
+		this.setAlimentacao(0);
+		this.setAluguel(0);
+		this.setGas(0);
+		this.setLuz(0);
+		this.setMedicamentos(0);
+		this.setOutros(0);
+		this.setRendaPerCapta(0);
+		this.setRendaTotal(0);
+		this.setTelefone(0);
+		this.setEdita(false);
+	}
 	public float getAluguel() {
 		return aluguel;
 	}

@@ -14,6 +14,21 @@ public class PublicoPrioritario {
 	private boolean rua;
 	private boolean vulnerabilidade;
 	private boolean edita;
+	public PublicoPrioritario(){
+		this.setId(-1);
+		this.setAbuso(false);
+		this.setAcolimento(false);
+		this.setDefasagem(false);
+		this.setEca(false);
+		this.setEdita(false);
+		this.setEgressos(false);
+		this.setIsolamento(false);
+		this.setMse(false);
+		this.setRua(false);
+		this.setTrabInfantil(false);
+		this.setVivencia(false);
+		this.setVulnerabilidade(false);
+	}
 	public boolean isIsolamento() {
 		return isolamento;
 	}

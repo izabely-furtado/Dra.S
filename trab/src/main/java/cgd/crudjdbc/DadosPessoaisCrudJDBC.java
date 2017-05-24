@@ -1,7 +1,6 @@
 package cgd.crudjdbc;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,7 +29,7 @@ public class DadosPessoaisCrudJDBC {
 
 			// recebe o parâmtros do SQL insert
 			insereSt.setString(1, dados.getContato());
-			insereSt.setDate(2, (Date) dados.getDatNasc());
+			insereSt.setString(2, dados.getDatNasc());
 			insereSt.setString(2, dados.getNis());
 			insereSt.setString(2, dados.getNome());
 			insereSt.setString(2, dados.getParentesco());
@@ -76,7 +75,7 @@ public class DadosPessoaisCrudJDBC {
 			// Lê cada dados
 			while (resultado.next()) {
 				dados.setContato(resultado.getString("contato"));
-				dados.setDatNasc(resultado.getDate("datNasc"));
+				dados.setDatNasc(resultado.getString("datNasc"));
 				dados.setNis(resultado.getString("nis"));
 				dados.setNome(resultado.getString("nome"));
 				dados.setParentesco(resultado.getString("parentesco"));
@@ -129,7 +128,7 @@ public class DadosPessoaisCrudJDBC {
 			while (resultado.next()) {
 				DadosPessoais dados = new DadosPessoais();
 				dados.setContato(resultado.getString("contato"));
-				dados.setDatNasc(resultado.getDate("datNasc"));
+				dados.setDatNasc(resultado.getString("datNasc"));
 				dados.setNis(resultado.getString("nis"));
 				dados.setNome(resultado.getString("nome"));
 				dados.setParentesco(resultado.getString("parentesco"));
@@ -214,7 +213,7 @@ public class DadosPessoaisCrudJDBC {
 
 			// recebe o parâmtros do SQL insert
 			insereSt.setString(1, dados.getContato());
-			insereSt.setDate(2, (Date) dados.getDatNasc());
+			insereSt.setString(2, dados.getDatNasc());
 			insereSt.setString(2, dados.getNis());
 			insereSt.setString(2, dados.getNome());
 			insereSt.setString(2, dados.getParentesco());

@@ -34,18 +34,7 @@ public class DespesasBean {
 	}
 
 	public String novo() {
-		this.despesas.setId(-1);
-		this.despesas.setAgua(0);
-		this.despesas.setAlimentacao(0);
-		this.despesas.setAluguel(0);
-		this.despesas.setGas(0);
-		this.despesas.setLuz(0);
-		this.despesas.setMedicamentos(0);
-		this.despesas.setOutros(0);
-		this.despesas.setRendaPerCapta(0);
-		this.despesas.setRendaTotal(0);
-		this.despesas.setTelefone(0);
-		this.despesas.setEdita(false);
+		this.despesas = new Despesas();
 		return "despesas";
 	}
 

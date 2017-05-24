@@ -35,15 +35,7 @@ public class CondicoesMoradiaBean {
 	}
 
 	public String novo() {
-		condicoesMoradia.setId(-1);
-		condicoesMoradia.setCondicao(null);
-		condicoesMoradia.setPossuiagua(false);
-		condicoesMoradia.setPossuicoleta(false);
-		condicoesMoradia.setPossuienergia(false);
-		condicoesMoradia.setPossuiesgoto(false);
-		condicoesMoradia.setPossuirisco(false);
-		condicoesMoradia.setQrisco(null);
-		condicoesMoradia.setEdita(false);
+		this.condicoesMoradia = new CondicoesMoradia();
 		return "condicoesMoradia";
 	}
 

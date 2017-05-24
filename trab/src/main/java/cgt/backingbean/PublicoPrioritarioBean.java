@@ -35,19 +35,7 @@ public class PublicoPrioritarioBean {
 	}
 
 	public String novo() {
-		this.publicoPrioritario.setId(-1);
-		this.publicoPrioritario.setAbuso(false);
-		this.publicoPrioritario.setAcolimento(false);
-		this.publicoPrioritario.setDefasagem(false);
-		this.publicoPrioritario.setEca(false);
-		this.publicoPrioritario.setEdita(false);
-		this.publicoPrioritario.setEgressos(false);
-		this.publicoPrioritario.setIsolamento(false);
-		this.publicoPrioritario.setMse(false);
-		this.publicoPrioritario.setRua(false);
-		this.publicoPrioritario.setTrabInfantil(false);
-		this.publicoPrioritario.setVivencia(false);
-		this.publicoPrioritario.setVulnerabilidade(false);
+		this.publicoPrioritario = new PublicoPrioritario();
 		return "publicoPrioritario";
 	}
 

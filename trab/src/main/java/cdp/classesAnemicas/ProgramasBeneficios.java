@@ -5,11 +5,22 @@ public class ProgramasBeneficios {
 	private boolean possuipbf;
 	private boolean possuipibc;
 	private boolean possuipbc;
+	private boolean possuibpc;
 	private boolean possuibp;
 	private boolean possuiar;
 	private String beneficioHabitacional;
 	private String outro;
 	private boolean edita;
+	public ProgramasBeneficios(){
+		this.setId(-1);
+		this.setBeneficioHabitacional("");
+		this.setOutro("");
+		this.setPossuiar(false);
+		this.setPossuibp(false);
+		this.setPossuipbc(false);
+		this.setPossuipbf(false);
+		this.setPossuipibc(false);
+	}
 	public boolean isPossuipbf() {
 		return possuipbf;
 	}
@@ -63,5 +74,11 @@ public class ProgramasBeneficios {
 	}
 	public void setEdita(boolean edita) {
 		this.edita = edita;
+	}
+	public boolean isPossuibpc() {
+		return possuibpc;
+	}
+	public void setPossuibpc(boolean possuibpc) {
+		this.possuibpc = possuibpc;
 	}
 }
