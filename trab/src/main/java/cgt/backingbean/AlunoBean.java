@@ -121,6 +121,35 @@ public class AlunoBean {
 		
 	}
 	
+	public void gerarFAP2() throws IOException {
+		//FacesContext context = FacesContext.getCurrentInstance();
+		ComposicaoFamiliarBean composicaoFamiliarBean = new ComposicaoFamiliarBean();
+		composicaoFamiliarBean.setComposicaoFamiliar(this.aluno.getComposicaoFamiliar());
+		/*String passouComposicaoFamiliar = composicaoFamiliarBean.gerar(context);
+		 não sei o que vou fazer desta jossa 
+		if (passouInfoTransporte == "passou" && 
+			passouDadosPessoais == "passou"&& 
+			passouEndereco == "passou" && 
+			passouAcompanhamentoEscolar == "passou" && 
+			passouInfoMedicas == "passou"){
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./formularioAcompanhamentoPsico2.jsf");
+		}*/
+		
+	}
+	
+	public void gerarFAP3() throws IOException {
+		FacesContext context = FacesContext.getCurrentInstance();
+		DespesasBean despesasBean = new DespesasBean();
+		despesasBean.setDespesas(this.aluno.getDespesas());
+		String passouDespesas = despesasBean.gerar(context);
+		
+		if (passouDespesas == "passou"){
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./formularioAcompanhamentoPsico4.jsf");
+		}
+		
+	}
+	
+	
 	public String inserir() {
 		
 	

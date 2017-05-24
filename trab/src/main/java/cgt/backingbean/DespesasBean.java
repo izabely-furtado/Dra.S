@@ -2,6 +2,7 @@ package cgt.backingbean;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -62,6 +63,23 @@ public class DespesasBean {
 
 	public String gerar(FacesContext context) {
 		int erro = 0;
+		if (this.despesas.getAgua() <= 0 || 
+				this.despesas.getAlimentacao() <= 0 || 
+				this.despesas.getAluguel() <= 0 || 
+				this.despesas.getGas() <=  0 ||
+				this.despesas.getLuz() <= 0 ||
+				this.despesas.getMedicamentos() <= 0 ||
+				this.despesas.getOutros() <= 0 || 
+				this.despesas.getTelefone() <= 0) {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Não existe despesa negativa", ""));
+			erro++;
+		}
+		if (this.despesas.getRendaPerCapta() <= 0 && 
+				this.despesas.getRendaTotal() <= 0) {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Não existe renda negativa", ""));
+			erro++;
+		}
+		
 		if (erro == 0) {
 			return "passou";
 		}
@@ -70,7 +88,7 @@ public class DespesasBean {
 		}
 	}
 	
-	public Float getDespesaTotal(FacesContext context) {
+	public Float getDespesaTotal() {
 		return this.despesas.getAgua() + 
 			   this.despesas.getAlimentacao() + 
 			   this.despesas.getAluguel() + 
