@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import cdp.classesAnemicas.*;
 import cgt.backingbean.AcessoServicosBean;
 import cgt.backingbean.AcompanhamentoEscolarBean;
+import cgt.backingbean.AlunoBean;
 import cgt.backingbean.AulaBean;
 import cgt.backingbean.ComposicaoFamiliarBean;
 import cgt.backingbean.CondicoesMoradiaBean;
@@ -12,7 +13,6 @@ import cgt.backingbean.DadosAcessoBean;
 import cgt.backingbean.DadosPessoaisBean;
 import cgt.backingbean.DespesasBean;
 import cgt.backingbean.EnderecoBean;
-import cgt.backingbean.FAPBean;
 import cgt.backingbean.InfoMedicasBean;
 import cgt.backingbean.InfoTransporteBean;
 import cgt.backingbean.ProgramasBeneficiosBean;
@@ -85,12 +85,12 @@ public class ConstrutorParaTesteBean {
 		return enderecoBean;
 	}
 	
-	public static FAPBean criaFAP(){
-		FAPBean fapBean = new FAPBean();
-		fapBean.setFormularioAcompanhamentoPsicossocial(ConstrutorParaTeste.criaFAP());
-		fapBean.setLista(new ArrayList<FormularioAcompanhamentoPsicossocial>());
+	public static AlunoBean criaAluno(){
+		AlunoBean aluno = new AlunoBean();
+		aluno.setAluno(ConstrutorParaTeste.criaAluno());
+		aluno.setLista(new ArrayList<Aluno>());
 		
-		return fapBean;
+		return aluno;
 	}
 	public static InfoMedicasBean criaInfoMedicas(){
 		InfoMedicasBean infoMedicasBean = new InfoMedicasBean();

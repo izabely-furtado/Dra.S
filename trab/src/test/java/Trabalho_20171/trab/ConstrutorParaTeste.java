@@ -100,26 +100,25 @@ public class ConstrutorParaTeste {
         endereco.setRua("Teste");
 		return endereco;
 	}
-	public static FormularioAcompanhamentoPsicossocial criaFAP(){
-		FormularioAcompanhamentoPsicossocial fap = new FormularioAcompanhamentoPsicossocial();
-        fap.setAcessoServicos(ConstrutorParaTeste.criaAcesso());
-        fap.setAcompanhamentoEscolar(ConstrutorParaTeste.criaAcompanhamento());
-        fap.setAno(0);
-        fap.setComposicaoFamiliar(ConstrutorParaTeste.criaComposicao());
-        fap.setCondicoesMoradia(ConstrutorParaTeste.criaCondicoes());
-        fap.setDadosPessoais(ConstrutorParaTeste.criaDadosPessoais());
-        fap.setDespesas(ConstrutorParaTeste.criaDespesas());
-        fap.setEndereco(ConstrutorParaTeste.criaEndereco());
-        fap.setFormaAcesso(0);
-        fap.setId(0);
-        fap.setInfoMedicas(ConstrutorParaTeste.criaInfoMedicas());
-        fap.setInfoTransporte(ConstrutorParaTeste.criaInfoTransporte());
-        fap.setProgramasBeneficios(ConstrutorParaTeste.criaProgramasBeneficios());
-        fap.setPublicoPrioritario(ConstrutorParaTeste.criaPublicoPrioritario());
-        fap.setRematricula(null);
-        fap.setTipo(0);
+	public static Aluno criaAluno(){
+		Aluno aluno = new Aluno();
+		aluno.setAcessoServicos(ConstrutorParaTeste.criaAcesso());
+		aluno.setAcompanhamentoEscolar(ConstrutorParaTeste.criaAcompanhamento());
+		aluno.setFoto("Teste");
+		aluno.setComposicaoFamiliar(ConstrutorParaTeste.criaComposicao());
+		aluno.setCondicoesMoradia(ConstrutorParaTeste.criaCondicoes());
+		aluno.setDadosPessoais(ConstrutorParaTeste.criaDadosPessoais());
+		aluno.setDespesas(ConstrutorParaTeste.criaDespesas());
+		aluno.setEndereco(ConstrutorParaTeste.criaEndereco());
+		aluno.setNivel(0);
+		aluno.setId(0);
+		aluno.setInfoMedicas(ConstrutorParaTeste.criaInfoMedicas());
+		aluno.setInfoTransporte(ConstrutorParaTeste.criaInfoTransporte());
+		aluno.setProgramasBeneficios(ConstrutorParaTeste.criaProgramasBeneficios());
+		aluno.setPublicoPrioritario(ConstrutorParaTeste.criaPublicoPrioritario());
+		aluno.setTurma(ConstrutorParaTeste.criaTurma());
 		
-		return fap;
+		return aluno;
 	}
 	public static InfoMedicas criaInfoMedicas(){
 		InfoMedicas infoMedicas = new InfoMedicas();

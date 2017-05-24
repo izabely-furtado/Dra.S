@@ -81,50 +81,7 @@
  --> <h:form id="formAluno" method="post">
 					<!-- DADOS B�SICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 					<hr />
-					<h4>Dados Básicos do Fomulário</h4>
-					<div class="linha">
-						<div class="coluna-6">
-							<div class="grupinho">
-								<label>Tipo de Formulário:</label>
-
-								<h:selectOneMenu class="formulario" id="tipo"
-									value="#{alunoBean.aluno.fap.tipo}">
-									<f:selectItem itemLabel="Selecione o Tipo de Formulário" />
-									<f:selectItem itemLabel="Inscrição" itemValue="incricao" />
-									<f:selectItem itemLabel="Matrícula" itemValue="matricula" />
-									<f:selectItem itemLabel="Rematrícula" itemValue="rematricula" />
-
-								</h:selectOneMenu>
-							</div>
-						</div>
-						<div class="coluna-6">
-							<div class="grupinho">
-								<label>Ano de Inserção:</label>
-								<h:inputText id="ano" value="#{alunoBean.aluno.fap.ano}"
-									required="true" class="formulario" a:placeholder="Ano">
-									<!--requiredMessage="#{text['fap.ano.validacao']}">-->
-								</h:inputText>
-								<h:message for="ano" styleClass="errorMessage" />
-							</div>
-						</div>
-						<div class="coluna-12">
-							<div class="grupinho">
-								<label>Forma de Acesso:</label>
-
-								<h:selectOneMenu class="formulario" id="forma"
-									value="#{alunoBean.aluno.fap.formaAcesso}">
-									<f:selectItem itemLabel="Selecione a forma de acesso" />
-									<f:selectItem itemLabel="Encaminhamento pela Rede CRAS"
-										itemValue="cras" />
-									<f:selectItem itemLabel="Encaminhamento pela Rede CREAS"
-										itemValue="creas" />
-									<f:selectItem itemLabel="Demanda Espontânea" itemValue="de" />
-									<f:selectItem itemLabel="Outra Forma" itemValue="outra" />
-								</h:selectOneMenu>
-							</div>
-						</div>
-					</div>
-					<hr />
+					
 					<h4>Dados Pessoais</h4>
 					<div class="linha">
 						<div class="coluna-12">
@@ -132,7 +89,7 @@
 								<label>Nome da criança/adolescente:</label>
 
 								<h:inputText id="ano"
-									value="#{alunoBean.aluno.fap.dadosPessoais.nome}"
+									value="#{alunoBean.aluno.dadosPessoais.nome}"
 									required="true" class="formulario" a:placeholder="Ano">
 									<!--requiredMessage="#{text['fap.nome.validacao']}">-->
 								</h:inputText>
@@ -145,7 +102,7 @@
 							<div class="grupinho">
 								<label>Data de Nascimento:</label>
 								<h:inputText id="dataNasc"
-									value="#{alunoBean.aluno.fap.dadosPessoais.datNasc}"
+									value="#{alunoBean.aluno.dadosPessoais.datNasc}"
 									required="true" class="formulario"
 									a:placeholder="_ _/_ _/_ _ _ _">
 									<!--requiredMessage="#{text['fap.dadosPessoais.datNasc.validacao']}">-->
@@ -157,7 +114,7 @@
 							<div class="grupinho radio-group">
 								<label>Sexo:</label>
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.dadosPessoais.sexo}">
+									value="#{alunoBean.aluno.dadosPessoais.sexo}">
 									<f:selectItem id="sexoF" class="radio-inline" itemValue="F"
 										itemLabel="Feminino" />
 									<f:selectItem id="sexoM" class="radio-inline" itemValue="M"
@@ -169,7 +126,7 @@
 							<div class="grupinho">
 								<label>Responsável:</label>
 								<h:inputText id="responsavel"
-									value="#{alunoBean.aluno.fap.dadosPessoais.responsavel}"
+									value="#{alunoBean.aluno.dadosPessoais.responsavel}"
 									required="true" class="formulario"
 									a:placeholder="Responsável pelo Aluno">
 									<!--requiredMessage="#{text['fap.dadosPessoais.responsavel.validacao']}">-->
@@ -182,7 +139,7 @@
 								<label>Parentesco:</label>
 
 								<h:selectOneMenu class="formulario" id="parentesco"
-									value="#{alunoBean.aluno.fap.dadosPessoais.parentesco}">
+									value="#{alunoBean.aluno.dadosPessoais.parentesco}">
 									<f:selectItem itemLabel="Selecione o parentesco" />
 									<f:selectItem itemLabel="Mãe" itemValue="Mãe" />
 									<f:selectItem itemLabel="Pai" itemValue="Pai" />
@@ -210,7 +167,7 @@
 								<!-- pattern="(?\d{2})?\d{5}-?\d{4}" /> -->
 
 								<h:inputText id="telefone"
-									value="#{alunoBean.aluno.fap.dadosPessoais.contato}"
+									value="#{alunoBean.aluno.dadosPessoais.contato}"
 									required="true" class="formulario"
 									a:placeholder="(99)99999-9999" data-mask="(00)00000-0000"
 									data-mask-selectonfocus="true">
@@ -225,7 +182,7 @@
 								<label>NIS da criança/adolescente:</label>
 
 								<h:inputText id="nis"
-									value="#{alunoBean.aluno.fap.dadosPessoais.nis}"
+									value="#{alunoBean.aluno.dadosPessoais.nis}"
 									required="true" class="formulario" a:placeholder="Nis">
 									<!--requiredMessage="#{text['fap.dadosPessoais.nis.validacao']}">-->
 								</h:inputText>
@@ -244,7 +201,7 @@
 								<div class="grupinho">
 									<label>Rua/Avenida:</label>
 									<h:inputText id="rua"
-										value="#{alunoBean.aluno.fap.endereco.rua}" required="true"
+										value="#{alunoBean.aluno.endereco.rua}" required="true"
 										class="formulario"
 										a:placeholder="Digite o nome da rua ou avenida">
 										<!--requiredMessage="#{text['fap.endereco.rua.validacao']}">-->
@@ -260,7 +217,7 @@
 
 
 									<h:inputText id="numero"
-										value="#{alunoBean.aluno.fap.endereco.numero}" required="true"
+										value="#{alunoBean.aluno.endereco.numero}" required="true"
 										class="formulario" a:placeholder="Digite o número da casa">
 										<!--requiredMessage="#{text['fap.endereco.numero.validacao']}">-->
 									</h:inputText>
@@ -278,7 +235,7 @@
 									<!-- pattern="\d{2}.?\d{3}-?\d{3}" /> -->
 
 									<h:inputText id="cep"
-										value="#{alunoBean.aluno.fap.endereco.cep}" required="true"
+										value="#{alunoBean.aluno.endereco.cep}" required="true"
 										class="formulario" a:placeholder="99.999-999"
 										data-mask="00.000-000" data-mask-selectonfocus="true">
 										<!--requiredMessage="#{text['fap.endereco.cep.validacao']}">-->
@@ -291,7 +248,7 @@
 								<div class="grupinho">
 									<label>Bairro:</label>
 									<h:inputText id="bairro"
-										value="#{alunoBean.aluno.fap.endereco.bairro}" required="true"
+										value="#{alunoBean.aluno.endereco.bairro}" required="true"
 										class="formulario" a:placeholder="Digite o nome do bairro">
 										<!--requiredMessage="#{text['fap.endereco.bairro.validacao']}">-->
 									</h:inputText>
@@ -304,7 +261,7 @@
 									<label>Cidade:</label>
 
 									<h:inputText id="cidade"
-										value="#{alunoBean.aluno.fap.endereco.cidade}" required="true"
+										value="#{alunoBean.aluno.endereco.cidade}" required="true"
 										class="formulario" a:placeholder="Digite o nome da sua Cidade">
 										<!--requiredMessage="#{text['fap.endereco.cidade.validacao']}">-->
 									</h:inputText>
@@ -316,7 +273,7 @@
 								<div class="grupinho">
 									<label>Estado:</label>
 									<h:selectOneMenu class="formulario" id="estado"
-										value="#{alunoBean.aluno.fap.endereco.estado}">
+										value="#{alunoBean.aluno.endereco.estado}">
 										<f:selectItem itemLabel="Selecione o estado" />
 										<f:selectItem itemLabel="Acre" itemValue="AC" />
 										<f:selectItem itemLabel="Alagoas" itemValue="AL" />
@@ -356,7 +313,7 @@
 								<div class="grupinho">
 									<label>Ponto de Referência:</label>
 									<h:inputText id="referencia"
-										value="#{alunoBean.aluno.fap.endereco.referencia}"
+										value="#{alunoBean.aluno.endereco.referencia}"
 										required="true" class="formulario"
 										a:placeholder="Ponto de referência">
 										<!--requiredMessage="#{text['fap.endereco.referencia.validacao']}">-->
@@ -376,7 +333,7 @@
 							<div class="grupinho">
 								<label>Escola:</label>
 								<h:inputText id="escola"
-									value="#{alunoBean.aluno.fap.acompanhamentoEscolar.escola}"
+									value="#{alunoBean.aluno.acompanhamentoEscolar.escola}"
 									required="true" class="formulario"
 									a:placeholder="Nome da escola">
 									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
@@ -397,12 +354,11 @@
 								</select>-->
 								<h:inputText id="ano1"
 									value="#{alunoBean.aluno.acompanhamentoEscolar.ano1}"
-									required="true" class="formulario"
-									a:placeholder="1º Ano">
+									required="true" class="formulario" a:placeholder="1º Ano">
 									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
 								</h:inputText>
 								<h:message for="ano1" styleClass="errorMessage" />
-<!--  
+								<!--  
 
 								<h:selectOneMenu
 									value="#{alunoBean.aluno.acompanhamentoEscolar.anos}"
@@ -428,8 +384,7 @@
 
 								<h:inputText id="ano2"
 									value="#{alunoBean.aluno.acompanhamentoEscolar.ano2}"
-									required="true" class="formulario"
-									a:placeholder="2º Ano">
+									required="true" class="formulario" a:placeholder="2º Ano">
 									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
 								</h:inputText>
 								<h:message for="ano2" styleClass="errorMessage" />
@@ -450,8 +405,7 @@
 
 								<h:inputText id="ano3"
 									value="#{alunoBean.aluno.acompanhamentoEscolar.ano3}"
-									required="true" class="formulario"
-									a:placeholder="3º Ano">
+									required="true" class="formulario" a:placeholder="3º Ano">
 									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
 								</h:inputText>
 								<h:message for="ano3" styleClass="errorMessage" />
@@ -471,8 +425,7 @@
 								</select>-->
 								<h:inputText id="ano4"
 									value="#{alunoBean.aluno.acompanhamentoEscolar.ano4}"
-									required="true" class="formulario"
-									a:placeholder="4º Ano">
+									required="true" class="formulario" a:placeholder="4º Ano">
 									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
 								</h:inputText>
 								<h:message for="ano4" styleClass="errorMessage" />
@@ -493,8 +446,7 @@
 
 								<h:inputText id="ano5"
 									value="#{alunoBean.aluno.acompanhamentoEscolar.ano5}"
-									required="true" class="formulario"
-									a:placeholder="5º Ano">
+									required="true" class="formulario" a:placeholder="5º Ano">
 									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
 								</h:inputText>
 								<h:message for="ano5" styleClass="errorMessage" />
@@ -515,8 +467,7 @@
 
 								<h:inputText id="ano6"
 									value="#{alunoBean.aluno.acompanhamentoEscolar.ano6}"
-									required="true" class="formulario"
-									a:placeholder="6º Ano">
+									required="true" class="formulario" a:placeholder="6º Ano">
 									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
 								</h:inputText>
 								<h:message for="ano6" styleClass="errorMessage" />
@@ -539,13 +490,15 @@
 									<option value="7">7º</option>
 									<option value="8">8º</option>
                                     <option value="9">9º</option>
-								</select>-->
-
-								<h:selectOneMenu value="#{alunoBean.aluno.lista}"
-									class="formulario">
-									<f:selectItems value="#{alunoBean.aluno.lista}" var="f"
-										itemlabel="#{f.nome}" itemValue="#{f.nome}" />
-								</h:selectOneMenu>
+								</select>
+								
+								-->
+								<h:inputText id="serie1"
+									value="#{alunoBean.aluno.acompanhamentoEscolar.serie1}"
+									required="true" class="formulario" a:placeholder="Série 1º Ano">
+									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
+								</h:inputText>
+								<h:message for="serie1" styleClass="errorMessage" />
 
 							</div>
 						</div>
@@ -566,11 +519,12 @@
                                     <option value="9">9º</option>
 								</select>-->
 
-								<h:selectOneMenu value="#{alunoBean.aluno.lista}"
-									class="formulario">
-									<f:selectItems value="#{alunoBean.aluno.lista}" var="f"
-										itemlabel="#{f.nome}" itemValue="#{f.nome}" />
-								</h:selectOneMenu>
+								<h:inputText id="serie2"
+									value="#{alunoBean.aluno.acompanhamentoEscolar.serie2}"
+									required="true" class="formulario" a:placeholder="Série 2º Ano">
+									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
+								</h:inputText>
+								<h:message for="serie2" styleClass="errorMessage" />
 
 							</div>
 						</div>
@@ -591,11 +545,12 @@
                                     <option value="9">9º</option>
 								</select>-->
 
-								<h:selectOneMenu value="#{alunoBean.aluno.lista}"
-									class="formulario">
-									<f:selectItems value="#{alunoBean.aluno.lista}" var="f"
-										itemlabel="#{f.nome}" itemValue="#{f.nome}" />
-								</h:selectOneMenu>
+								<h:inputText id="serie3"
+									value="#{alunoBean.aluno.acompanhamentoEscolar.serie3}"
+									required="true" class="formulario" a:placeholder="Série 3º Ano">
+									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
+								</h:inputText>
+								<h:message for="serie3" styleClass="errorMessage" />
 
 							</div>
 						</div>
@@ -616,11 +571,12 @@
                                     <option value="9">9º</option>
 								</select>-->
 
-								<h:selectOneMenu value="#{alunoBean.aluno.lista}"
-									class="formulario">
-									<f:selectItems value="#{alunoBean.aluno.lista}" var="f"
-										itemlabel="#{f.nome}" itemValue="#{f.nome}" />
-								</h:selectOneMenu>
+								<h:inputText id="serie4"
+									value="#{alunoBean.aluno.acompanhamentoEscolar.serie4}"
+									required="true" class="formulario" a:placeholder="Série 4º Ano">
+									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
+								</h:inputText>
+								<h:message for="serie4" styleClass="errorMessage" />
 
 							</div>
 						</div>
@@ -641,11 +597,12 @@
                                     <option value="9">9º</option>
 								</select>-->
 
-								<h:selectOneMenu value="#{alunoBean.aluno.lista}"
-									class="formulario">
-									<f:selectItems value="#{alunoBean.aluno.lista}" var="f"
-										itemlabel="#{f.nome}" itemValue="#{f.nome}" />
-								</h:selectOneMenu>
+								<h:inputText id="serie5"
+									value="#{alunoBean.aluno.acompanhamentoEscolar.serie5}"
+									required="true" class="formulario" a:placeholder="Série 5º Ano">
+									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
+								</h:inputText>
+								<h:message for="serie5" styleClass="errorMessage" />
 
 							</div>
 						</div>
@@ -666,11 +623,12 @@
                                     <option value="9">9º</option>
 								</select>-->
 
-								<h:selectOneMenu value="#{alunoBean.aluno.lista}"
-									class="formulario">
-									<f:selectItems value="#{alunoBean.aluno.lista}" var="f"
-										itemlabel="#{f.nome}" itemValue="#{f.nome}" />
-								</h:selectOneMenu>
+								<h:inputText id="serie6"
+									value="#{alunoBean.aluno.acompanhamentoEscolar.serie6}"
+									required="true" class="formulario" a:placeholder="Série 6º Ano">
+									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
+								</h:inputText>
+								<h:message for="serie6" styleClass="errorMessage" />
 
 							</div>
 						</div>
@@ -690,7 +648,7 @@
 									id="medicacaoS" />-->
 
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.InfoMedicas.medicacao}">
+									value="#{alunoBean.aluno.infoMedicas.medicacao}">
 									<f:selectItem id="medicacaoN" class="radio-inline"
 										itemValue="medicacaoN" itemLabel="Não" />
 									<f:selectItem id="medicacaoS" class="radio-inline"
@@ -704,7 +662,7 @@
 							<div class="grupinho">
 								<label>Qual?:</label>
 								<h:inputText id="qmedicacao"
-									value="#{alunoBean.aluno.fap.InfoMedicas.qmedicacao}"
+									value="#{alunoBean.aluno.infoMedicas.qmedicacao}"
 									required="true" class="formulario"
 									a:placeholder="Nome da Medicação Usada">
 									<!--requiredMessage="#{text['fap.InfoMedicas.qmedicacao']}">-->
@@ -717,7 +675,7 @@
 							<div class="grupinho">
 								<label>Tipo Sanguíneo:</label>
 								<h:selectOneMenu class="formulario" id="tipoSangue"
-									value="#{alunoBean.aluno.fap.InfoMedicas.tipoSangue}">
+									value="#{alunoBean.aluno.infoMedicas.tipoSangue}">
 									<f:selectItem itemLabel="Selecione o Tipo Sanguíneo" />
 									<f:selectItem itemLabel="A-" itemValue="A-" />
 									<f:selectItem itemLabel="A+" itemValue="A+" />
@@ -734,7 +692,7 @@
 							<div class="grupinho radio-group">
 								<label>Alergia:</label>
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.InfoMedicas.alergia}">
+									value="#{alunoBean.aluno.infoMedicas.alergia}">
 									<f:selectItem id="alergiaN" class="radio-inline"
 										itemValue="alergiaN" itemLabel="Não" />
 									<f:selectItem id="alergiaS" class="radio-inline"
@@ -749,7 +707,7 @@
 								<label>Qual?:</label>
 
 								<h:inputText id="qalergia"
-									value="#{alunoBean.aluno.fap.InfoMedicas.qalergia}"
+									value="#{alunoBean.aluno.infoMedicas.qalergia}"
 									required="true" class="formulario"
 									a:placeholder="Nome da alergia apresentada">
 									<!--requiredMessage="#{text['fap.InfoMedicas.qalergia']}">-->
@@ -770,7 +728,7 @@
 								<!--pattern="(?\d{2})?\d{5}-?\d{4}"-->
 
 								<h:inputText id="contatoSOS"
-									value="#{alunoBean.aluno.fap.InfoMedicas.contatoSOS}"
+									value="#{alunoBean.aluno.infoMedicas.contatoSOS}"
 									required="true" class="formulario"
 									a:placeholder="Nome da alergia apresentada">
 									<!--requiredMessage="#{text['fap.InfoMedicas.contatoSOS']}">-->
@@ -787,7 +745,7 @@
 							<div class="grupinho radio-group">
 								<label>Utiliza transporte:</label>
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.infoTransporte.transporte}">
+									value="#{alunoBean.aluno.infoTransporte.transporte}">
 									<f:selectItem id="transporteN" class="radio-inline"
 										itemValue="transporteN" itemLabel="Não" />
 									<f:selectItem id="transporteS" class="radio-inline"
@@ -802,7 +760,7 @@
 								<label>Número do Cartão:</label>
 
 								<h:inputText id="cartao"
-									value="#{alunoBean.aluno.fap.infoTransporte.cartao}"
+									value="#{alunoBean.aluno.infoTransporte.cartao}"
 									required="true" class="formulario"
 									a:placeholder="Número do cartão">
 									<!--requiredMessage="#{text['fap.InfoMedicas.?']}">-->

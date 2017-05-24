@@ -35,10 +35,21 @@ public class AlunoBean {
 	public String novo() {
 		
 		this.aluno.setId(-1);
-		this.aluno.setFap(null);
+		//this.aluno.setFap(null);
 		this.aluno.setFoto(null);
 		this.aluno.setNivel(0);
 		this.aluno.setTurma(null);
+		this.aluno.setAcessoServicos(null);
+		this.aluno.setAcompanhamentoEscolar(null);
+		this.aluno.setEndereco(null);
+		this.aluno.setComposicaoFamiliar(null);
+		this.aluno.setCondicoesMoradia(null);
+		this.aluno.setDadosPessoais(null);
+		this.aluno.setDespesas(null);
+		this.aluno.setInfoMedicas(null);
+		this.aluno.setInfoTransporte(null);
+		this.aluno.setProgramasBeneficios(null);
+		this.aluno.setPublicoPrioritario(null);
 		this.aluno.setEdita(false);
 		
 		return "aluno";

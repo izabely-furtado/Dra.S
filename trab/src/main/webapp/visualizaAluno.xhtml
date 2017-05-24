@@ -64,7 +64,7 @@
 				<h:form id="formAluno" method="post">
 				
 				<h2>
-					Dados do Aluno<br /> <small><h:outputText value="#{fapIBean.fap.dadosPessoais.nome}" /></small>
+					Dados do Aluno<br /> <small><h:outputText value="#{alunoBean.aluno.dadosPessoais.nome}" /></small>
 				</h2>
 				
 					
@@ -74,19 +74,19 @@
 							
 							
 							Data de Nascimento:
-							<h:outputText value="#{fapIBean.fap.dadosPessoais.datNasc}" /><br />
+							<h:outputText value="#{alunoBean.aluno.dadosPessoais.datNasc}" /><br />
 							Telefone:
-							<h:outputText value="#{fapIBean.fap.dadosPessoais.telefone}" /><br />
+							<h:outputText value="#{alunoBean.aluno.dadosPessoais.telefone}" /><br />
 							Sexo:
-							<h:outputText value="#{fapIBean.fap.dadosPessoais.sexo}" /><br />
+							<h:outputText value="#{alunoBean.aluno.dadosPessoais.sexo}" /><br />
 							Responsável:
-							<h:outputText value="#{fapIBean.fap.dadosPessoais.responsavel}" /><br />
+							<h:outputText value="#{alunoBean.aluno.dadosPessoais.responsavel}" /><br />
 							Parentesco:
-							<h:outputText value="#{fapIBean.fap.dadosPessoais.parentesco}" /><br />
+							<h:outputText value="#{alunoBean.aluno.dadosPessoais.parentesco}" /><br />
 							Contato:
-							<h:outputText value="#{fapIBean.fap.dadosPessoais.contato}" /><br />
+							<h:outputText value="#{alunoBean.aluno.dadosPessoais.contato}" /><br />
 							NIS:
-							<h:outputText value="#{fapIBean.fap.dadosPessoais.nis}" /><br />
+							<h:outputText value="#{alunoBean.aluno.dadosPessoais.nis}" /><br />
 							
 						</div>
 						
@@ -95,19 +95,19 @@
 							
 							<p>
 							Endereco: 
-							<h:outputText value="#{fapIBean.fap.endereco.rua}" /><br />
+							<h:outputText value="#{alunoBean.aluno.endereco.rua}" /><br />
 							Número: 
-							<h:outputText value="#{fapIBean.fap.endereco.numero}" /><br />
+							<h:outputText value="#{alunoBean.aluno.endereco.numero}" /><br />
 							CEP:
-							<h:outputText value="#{fapIBean.fap.endereco.cep}" /><br />
+							<h:outputText value="#{alunoBean.aluno.endereco.cep}" /><br />
 							Bairro: 
-							<h:outputText value="#{fapIBean.fap.endereco.bairro}" /><br />
+							<h:outputText value="#{alunoBean.aluno.endereco.bairro}" /><br />
 							Cidade: 
-							<h:outputText value="#{fapIBean.fap.endereco.cidade}" /><br />
+							<h:outputText value="#{alunoBean.aluno.endereco.cidade}" /><br />
 							Estado: 
-							<h:outputText value="#{fapIBean.fap.endereco.estado}" /><br />
+							<h:outputText value="#{alunoBean.aluno.endereco.estado}" /><br />
 							Ponto de Referência: 
-							<h:outputText value="#{fapIBean.fap.endereco.referencia}" /><br />
+							<h:outputText value="#{alunoBean.aluno.endereco.referencia}" /><br />
 							</p>
 						</div>
 						
@@ -116,7 +116,7 @@
 					
 						<br/>
 						
-						<p>Escola: <h:outputText value="#{fapIBean.fap.acompanhamentoEscolar.escola}" /> </p>
+						<p>Escola: <h:outputText value="#{alunoBean.aluno.acompanhamentoEscolar.escola}" /> </p>
 						
 						<!--<table class="tabela2">
 							
@@ -181,17 +181,17 @@
 						
 						<p>
 							Uso de medicamento: 
-							<h:outputText value="#{fapIBean.fap.InfoMedicas.medicacao}" /><br />
+							<h:outputText value="#{alunoBean.aluno.InfoMedicas.medicacao}" /><br />
 							Qual: 
-							<h:outputText value="#{fapIBean.fap.InfoMedicas.qmedicacao}" /><br />
+							<h:outputText value="#{alunoBean.aluno.InfoMedicas.qmedicacao}" /><br />
 							Tipo Sanguíneo: 
-							<h:outputText value="#{fapIBean.fap.InfoMedicas.tipoSangue}" /><br />
+							<h:outputText value="#{alunoBean.aluno.InfoMedicas.tipoSangue}" /><br />
 							Alergia: 
-							<h:outputText value="#{fapIBean.fap.InfoMedicas.alergia}" /><br />
+							<h:outputText value="#{alunoBean.aluno.InfoMedicas.alergia}" /><br />
 							Qual: 
-							<h:outputText value="#{fapIBean.fap.InfoMedicas.qalergia}" /><br />
+							<h:outputText value="#{alunoBean.aluno.InfoMedicas.qalergia}" /><br />
 							Contato de emergência: 
-							<h:outputText value="#{fapIBean.fap.InfoMedicas.contatoSOS}" /><br />
+							<h:outputText value="#{alunoBean.aluno.InfoMedicas.contatoSOS}" /><br />
 						</p>
 						</div>
 						
@@ -201,9 +201,9 @@
 						<p>
 							
 							Utiliza Transporte:
-							<h:outputText value="#{fapIBean.fap.infoTransporte.transporte}" /><br />
+							<h:outputText value="#{alunoBean.aluno.infoTransporte.transporte}" /><br />
 							Número do Cartão: 
-							<h:outputText value="#{fapIBean.fap.infoTransporte.qtransporte}" /><br />
+							<h:outputText value="#{alunoBean.aluno.infoTransporte.qtransporte}" /><br />
 						</p>
 						
 						</div>
@@ -333,23 +333,23 @@
 							
 							
 								Condições: 
-								<h:outputText value="#{fapIBean.fap.condicoesMoradia.condicao}" /><br />
+								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.condicao}" /><br />
 								<br/>
 								<h2><small>Insfraestrutura:</small></h2>
 							
 								Possui água: 
-								<h:outputText value="#{fapIBean.fap.condicoesMoradia.possuiagua}" /><br />
+								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuiagua}" /><br />
 								Possui rede de esgoto: 
-								<h:outputText value="#{fapIBean.fap.condicoesMoradia.possuiesgoto}" /><br />
+								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuiesgoto}" /><br />
 								Possui energia elétrica: 
-								<h:outputText value="#{fapIBean.fap.condicoesMoradia.possuienergia}" /><br />
+								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuienergia}" /><br />
 								Possui coleta de lixo: 
-								<h:outputText value="#{fapIBean.fap.condicoesMoradia.possuicoleta}" /><br />
+								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuicoleta}" /><br />
 								<br/>
 								Risco Habitacional: 
-								<h:outputText value="#{fapIBean.fap.condicoesMoradia.possuirisco}" /><br />
+								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuirisco}" /><br />
 								Qual: <br/>
-								<h:outputText value="#{fapIBean.fap.condicoesMoradia.qrisco}" /><br />
+								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.qrisco}" /><br />
 						
 							
 						</div>
@@ -360,19 +360,19 @@
 							
 							<p>
 							<strong>Centro de Referencia a Assistência Social - CRAS:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.qcras}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qcras}" /><br />
 							<strong>Centro de Referencia Especializado da Assistência Social - CREAS:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.qcreas}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qcreas}" /><br />
 							<strong>Unidade Básica de Saúde:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.qsus}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qsus}" /><br />
 							<strong>Estratégia de Saúde da Família - ESF:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.qesf}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qesf}" /><br />
 							<strong>Centro de Educação Infantil:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.qcei}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qcei}" /><br />
 							<strong>Escola:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.qescola}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qescola}" /><br />
 							<strong>Serviço de Acolhimento Institucional:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.qacolhimento}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qacolhimento}" /><br />
 							</p>
 							
 						</div>
@@ -385,15 +385,15 @@
 							<p>
 							
 							<strong>Nome:</strong>	
-							<h:outputText value="#{fapIBean.fap.acessoServicos.situacaoacolhimento.nomeAcolhido}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.nomeAcolhido}" /><br />
 							<strong>Instituição:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.situacaoacolhimento.nomeInstituicao}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.nomeInstituicao}" /><br />
 							<strong>Responsável:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.situacaoacolhimento.responsavelInstituicao}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.responsavelInstituicao}" /><br />
 							<strong>Contato:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.situacaoacolhimento.contato}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.contato}" /><br />
 							<strong>Motivo:</strong> 
-							<h:outputText value="#{fapIBean.fap.acessoServicos.situacaoacolhimento.motivo}" /><br />
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.motivo}" /><br />
 	
 							
 							</p>
@@ -406,21 +406,21 @@
 							<p>
 							
 							<strong>Programa Bolsa Família - PBF:</strong> 
-							<h:outputText value="#{fapIBean.fap.programasBeneficios.possuipbf}" /><br />
+							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuipbf}" /><br />
 							<strong>Programa Incluir/Bolsa Capixaba:</strong> 
-							<h:outputText value="#{fapIBean.fap.programasBeneficios.possuipibc}" /><br />
+							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuipibc}" /><br />
 							<strong>Programa Brasil Carinhoso:</strong> 
-							<h:outputText value="#{fapIBean.fap.programasBeneficios.possuipbc}" /><br />
+							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuipbc}" /><br />
 							<strong>Benefício de Prestação Continuada - BPC:</strong> 
-							<h:outputText value="#{fapIBean.fap.programasBeneficios.possuibp}" /><br />
+							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuibp}" /><br />
 							<strong>Benefícios Previdenciários:</strong> 
-							<h:outputText value="#{fapIBean.fap.programasBeneficios.possuibp}" /><br />
+							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuibp}" /><br />
 							<strong>Auxílio Reclusão:</strong> 
-							<h:outputText value="#{fapIBean.fap.programasBeneficios.possuiar}" /><br />
+							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuiar}" /><br />
 							<strong>Programa/Benefício Habitacional:</strong> 
-							<h:outputText value="#{fapIBean.fap.programasBeneficios.beneficioHabitacional}" /><br />
+							<h:outputText value="#{alunoBean.aluno.programasBeneficios.beneficioHabitacional}" /><br />
 							<strong>Outro:</strong>
-							<h:outputText value="#{fapIBean.fap.programasBeneficios.possuipbf}" /><br />
+							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuipbf}" /><br />
 							</p>
 						</div>
 						
@@ -430,27 +430,27 @@
 							<p>
 							
 							<strong>Em situação de isolamento:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.isolamento}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.isolamento}" /><br />
 							<strong>Trabalho Infantil:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.trabInfantil}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.trabInfantil}" /><br />
 							<strong>Vivência de Violência ou Negligência:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.vivencia}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.vivencia}" /><br />
 							<strong>Fora da escola ou com defasagem escolar superior a dois anos:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.defasagem}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.defasagem}" /><br />
 							<strong>Em situação de acolhimento:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.acolimento}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.acolimento}" /><br />
 							<strong>Em cumprimento da MSE em meio aberto:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.mse}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.mse}" /><br />
 							<strong>Egressos de Medida Socioeducativa:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.egressos}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.egressos}" /><br />
 							<strong>Situação de abuso e/ou exploração sexual:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.abuso}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.abuso}" /><br />
 							<strong>Com medida de proteção do ECA:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.eca}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.eca}" /><br />
 							<strong>Crianças e Adolescentes em situação de rua:</strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.rua}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.rua}" /><br />
 							<strong>Vulnerabilidade que diz respeito a pessoas com deficiência: </strong> 
-							<h:outputText value="#{fapIBean.fap.publicoPrioritario.vulnerabilidade}" /><br />
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.vulnerabilidade}" /><br />
 							</p>
 						</div>
 						

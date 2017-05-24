@@ -88,7 +88,7 @@
 							<div class="grupinho">
 								<label>Nome do Parente:</label>
 								<h:inputText id="nome"
-									value="#{fapIBean.fap.composicaoFamiliar.parentes}"
+									value="#{alunoBean.aluno.composicaoFamiliar.parentes}"
 									required="true" class="formulario"
 									a:placeholder="Nome do Familiar" >
 									<!--requiredMessage="#{text['aluno.telefone.validacao']}">-->
@@ -100,7 +100,7 @@
 							<div class="grupinho">
 								<label>Parentesco:</label>
 								<h:selectOneMenu class="formulario" id="parentesco"
-									value="#{fapIBean.fap.dadosPessoais.parentesco}">
+									value="#{alunoBean.aluno.dadosPessoais.parentesco}">
 									<f:selectItem itemLabel="Selecione o Tipo Sanguíneo" />
 									<f:selectItem itemLabel="Mãe" itemValue="Mãe" />
 									<f:selectItem itemLabel="Pai" itemValue="Pai" />
@@ -124,7 +124,7 @@
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Idade:</label>
-								<h:inputText id="idade" value="#{fapIBean.fap.telefone}"
+								<h:inputText id="idade" value="#{alunoBean.aluno.dadosPessoais.telefone}"
 									required="true" class="formulario"
 									a:placeholder="Idade do Familiar"
 									requiredMessage="#{text['aluno.telefone.validacao']}"></h:inputText>
@@ -135,7 +135,7 @@
 							<div class="grupinho">
 								<label>Data de Nascimento:</label>
 								<h:inputText id="dn"
-									value="#{fapIBean.fap.dadosPessoais.datNasc}" required="true"
+									value="#{alunoBean.aluno.dadosPessoais.datNasc}" required="true"
 									class="formulario" a:placeholder="_ _/_ _/_ _ _ _"
 									requiredMessage="#{text['aluno.dataNasc.validacao']}"></h:inputText>
 								<h:message for="dn" styleClass="errorMessage" />

@@ -21,15 +21,38 @@ public class AlunoCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "insert into aluno(fap_id, foto, nivel, turma_id) values(?,?,?,?)";
+		String sql = "insert into aluno(foto, nivel, turma_id, acessoservicos_id, acompanhamentoescolar_id, composicaofamiliar_id, "
+				+ "condicoesmoradia_id, dadospessoais_id, despesas_id, endereco_id, infomedicas_id, "
+				+ "infotransporte_id, programasbeneficios_id, publicoprioritario_id) values(?,?,?,?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
-			insereSt.setInt(1, aluno.getFap().getId());
-			insereSt.setString(2, aluno.getFoto());
-			insereSt.setInt(3, aluno.getNivel());
-			insereSt.setInt(4, aluno.getTurma().getId());
+			insereSt.setString(1, aluno.getFoto());
+			insereSt.setInt(2, aluno.getNivel());
+			insereSt.setInt(3, aluno.getTurma().getId());
+			insereSt.setInt(4, aluno.getAcessoServicos().getId());
+			AcessoServicosCrudJDBC.salvar(aluno.getAcessoServicos());
+			insereSt.setInt(5, aluno.getAcompanhamentoEscolar().getId());
+			AcompanhamentoEscolarCrudJDBC.salvar(aluno.getAcompanhamentoEscolar());
+			insereSt.setInt(6, aluno.getComposicaoFamiliar().getId());
+			ComposicaoFamiliarCrudJDBC.salvar(aluno.getComposicaoFamiliar());
+			insereSt.setInt(7, aluno.getCondicoesMoradia().getId());
+			CondicoesMoradiaCrudJDBC.salvar(aluno.getCondicoesMoradia());
+			insereSt.setInt(8, aluno.getDadosPessoais().getId());
+			DadosPessoaisCrudJDBC.salvar(aluno.getDadosPessoais());
+			insereSt.setInt(8, aluno.getDespesas().getId());
+			DespesasCrudJDBC.salvar(aluno.getDespesas());
+			insereSt.setInt(9, aluno.getEndereco().getId());
+			EnderecoCrudJDBC.salvar(aluno.getEndereco());
+			insereSt.setInt(10, aluno.getInfoMedicas().getId());
+			InfoMedicasCrudJDBC.salvar(aluno.getInfoMedicas());
+			insereSt.setInt(11, aluno.getInfoTransporte().getId());
+			InfoTransporteCrudJDBC.salvar(aluno.getInfoTransporte());
+			insereSt.setInt(12, aluno.getProgramasBeneficios().getId());
+			ProgramasBeneficiosCrudJDBC.salvar(aluno.getProgramasBeneficios());
+			insereSt.setInt(13, aluno.getPublicoPrioritario().getId());
+			PublicoPrioritarioCrudJDBC.salvar(aluno.getPublicoPrioritario());
 			
 			
 			// executa SQL insert
@@ -70,11 +93,21 @@ public class AlunoCrudJDBC {
 			// Lê o aluno associado ao id
 			// se o aluno vinculado existir
 			if (resultado.next()) {
-				aluno.setFap(FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(resultado.getInt("fap_id")));
+				//aluno.setFap(FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(resultado.getInt("fap_id")));
 				aluno.setFoto(resultado.getString("foto"));
 				aluno.setNivel(resultado.getInt("nivel"));
 				aluno.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
-				
+				aluno.setAcessoServicos(AcessoServicosCrudJDBC.getAcessoServicos(resultado.getInt("acessoServicos_id")));
+				aluno.setAcompanhamentoEscolar(AcompanhamentoEscolarCrudJDBC.getAcompanhamentoEscolar(resultado.getInt("acompanhamentoEscolar_id")));
+				aluno.setComposicaoFamiliar(ComposicaoFamiliarCrudJDBC.getComposicaoFamiliar(resultado.getInt("composicaoFamiliar_id")));
+				aluno.setCondicoesMoradia(CondicoesMoradiaCrudJDBC.getCondicoesMoradia(resultado.getInt("condicoesMoradia_id")));
+				aluno.setDadosPessoais(DadosPessoaisCrudJDBC.getDadosPessoais(resultado.getInt("dadosPessoais_id")));
+				aluno.setDespesas(DespesasCrudJDBC.getDespesas(resultado.getInt("despesas_id")));
+				aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("endereco_id")));
+				aluno.setInfoMedicas(InfoMedicasCrudJDBC.getInfoMedicas(resultado.getInt("infoMedicas_id")));
+				aluno.setInfoTransporte(InfoTransporteCrudJDBC.getInfoTransporte(resultado.getInt("infoTransporte_id")));
+				aluno.setProgramasBeneficios(ProgramasBeneficiosCrudJDBC.getProgramasBeneficios(resultado.getInt("programasBeneficios_id")));
+				aluno.setPublicoPrioritario(PublicoPrioritarioCrudJDBC.getPublicoPrioritario(resultado.getInt("publicoPrioritario_id")));
 			}
 
 		} catch (SQLException e) {
@@ -136,10 +169,31 @@ public class AlunoCrudJDBC {
 			insereSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL update
 			
-			insereSt.setInt(1, aluno.getFap().getId());
-			insereSt.setString(2, aluno.getFoto());
-			insereSt.setInt(3, aluno.getNivel());
-			insereSt.setInt(4, aluno.getTurma().getId());
+			insereSt.setString(1, aluno.getFoto());
+			insereSt.setInt(2, aluno.getNivel());
+			insereSt.setInt(3, aluno.getTurma().getId());
+			insereSt.setInt(4, aluno.getAcessoServicos().getId());
+			AcessoServicosCrudJDBC.salvar(aluno.getAcessoServicos());
+			insereSt.setInt(5, aluno.getAcompanhamentoEscolar().getId());
+			AcompanhamentoEscolarCrudJDBC.salvar(aluno.getAcompanhamentoEscolar());
+			insereSt.setInt(6, aluno.getComposicaoFamiliar().getId());
+			ComposicaoFamiliarCrudJDBC.salvar(aluno.getComposicaoFamiliar());
+			insereSt.setInt(7, aluno.getCondicoesMoradia().getId());
+			CondicoesMoradiaCrudJDBC.salvar(aluno.getCondicoesMoradia());
+			insereSt.setInt(8, aluno.getDadosPessoais().getId());
+			DadosPessoaisCrudJDBC.salvar(aluno.getDadosPessoais());
+			insereSt.setInt(8, aluno.getDespesas().getId());
+			DespesasCrudJDBC.salvar(aluno.getDespesas());
+			insereSt.setInt(9, aluno.getEndereco().getId());
+			EnderecoCrudJDBC.salvar(aluno.getEndereco());
+			insereSt.setInt(10, aluno.getInfoMedicas().getId());
+			InfoMedicasCrudJDBC.salvar(aluno.getInfoMedicas());
+			insereSt.setInt(11, aluno.getInfoTransporte().getId());
+			InfoTransporteCrudJDBC.salvar(aluno.getInfoTransporte());
+			insereSt.setInt(12, aluno.getProgramasBeneficios().getId());
+			ProgramasBeneficiosCrudJDBC.salvar(aluno.getProgramasBeneficios());
+			insereSt.setInt(13, aluno.getPublicoPrioritario().getId());
+			PublicoPrioritarioCrudJDBC.salvar(aluno.getPublicoPrioritario());
 			
 			// executa SQL update
 			insereSt.executeUpdate();
@@ -180,10 +234,21 @@ public class AlunoCrudJDBC {
 			while (resultado.next()) {
 				aluno = new Aluno();
 				
-				aluno.setFap(FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(resultado.getInt("fap_id")));
+				//aluno.setFap(FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(resultado.getInt("fap_id")));
 				aluno.setFoto(resultado.getString("foto"));
 				aluno.setNivel(resultado.getInt("nivel"));
 				aluno.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
+				aluno.setAcessoServicos(AcessoServicosCrudJDBC.getAcessoServicos(resultado.getInt("acessoServicos_id")));
+				aluno.setAcompanhamentoEscolar(AcompanhamentoEscolarCrudJDBC.getAcompanhamentoEscolar(resultado.getInt("acompanhamentoEscolar_id")));
+				aluno.setComposicaoFamiliar(ComposicaoFamiliarCrudJDBC.getComposicaoFamiliar(resultado.getInt("composicaoFamiliar_id")));
+				aluno.setCondicoesMoradia(CondicoesMoradiaCrudJDBC.getCondicoesMoradia(resultado.getInt("condicoesMoradia_id")));
+				aluno.setDadosPessoais(DadosPessoaisCrudJDBC.getDadosPessoais(resultado.getInt("dadosPessoais_id")));
+				aluno.setDespesas(DespesasCrudJDBC.getDespesas(resultado.getInt("despesas_id")));
+				aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("endereco_id")));
+				aluno.setInfoMedicas(InfoMedicasCrudJDBC.getInfoMedicas(resultado.getInt("infoMedicas_id")));
+				aluno.setInfoTransporte(InfoTransporteCrudJDBC.getInfoTransporte(resultado.getInt("infoTransporte_id")));
+				aluno.setProgramasBeneficios(ProgramasBeneficiosCrudJDBC.getProgramasBeneficios(resultado.getInt("programasBeneficios_id")));
+				aluno.setPublicoPrioritario(PublicoPrioritarioCrudJDBC.getPublicoPrioritario(resultado.getInt("publicoPrioritario_id")));
 				
 				
 				// insere o aluno na lista

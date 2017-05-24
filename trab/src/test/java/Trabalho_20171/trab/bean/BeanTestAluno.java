@@ -11,9 +11,9 @@ import Trabalho_20171.trab.ConstrutorParaTesteBean;
 import cdp.classesAnemicas.*;
 import cgt.backingbean.*;
 
-public class BeanTestFAP {
+public class BeanTestAluno {
 
-	private FAPBean fapBean = ConstrutorParaTesteBean.criaFAP();
+	private AlunoBean alunoBean = ConstrutorParaTesteBean.criaAluno();
 	private AcessoServicosBean acessoBean = ConstrutorParaTesteBean.criaAcesso();
 	private AcompanhamentoEscolarBean acompanhamentoBean = ConstrutorParaTesteBean.criaAcompanhamento();
 	private ComposicaoFamiliarBean composicaoBean = ConstrutorParaTesteBean.criaComposicao();
@@ -30,42 +30,42 @@ public class BeanTestFAP {
 	/* Testes do Bean do Fomul�rio de Acompanhamento Psicossocial */
 	@Test
     public void alterarFAP(){
-        assertEquals("alterar",fapBean.alterarRegistro(ConstrutorParaTeste.criaFAP()));
+        assertEquals("alterar",alunoBean.alterarRegistro(ConstrutorParaTeste.criaAluno()));
     }
 	
 	@Test
     public void excluirFAP(){
-        assertEquals("excluir",fapBean.excluirRegistro(ConstrutorParaTeste.criaFAP()));
+        assertEquals("excluir",alunoBean.excluirRegistro(ConstrutorParaTeste.criaAluno()));
     }
 	
 	@Test
     public void getFAP(){
-        assertEquals(ConstrutorParaTeste.criaFAP(),fapBean.getFap());
+        assertEquals(ConstrutorParaTeste.criaAluno(),alunoBean.getAluno());
     }
 	
 	@Test
     public void getListaFAP(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),fapBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),alunoBean.getLista());
     }
 	
 	@Test
     public void inserirFAP(){
-        assertEquals("sucesso",fapBean.inserir());
+        assertEquals("sucesso",alunoBean.inserir());
     }
 	
 	@Test
     public void novaFAP(){
-        assertEquals("fap",fapBean.novo());
+        assertEquals("fap",alunoBean.novo());
     }
 	
 	@Test
     public void salvarFAP(){
-        assertEquals("salvar",fapBean.salvarRegistro());
+        assertEquals("salvar",alunoBean.salvarRegistro());
     }
 	
 	@Test
     public void verListaFAP(){
-        assertEquals("listagem",fapBean.verLista());
+        assertEquals("listagem",alunoBean.verLista());
     }
 	
 	/* Testes do Acesso a servi�os*/
@@ -86,7 +86,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaAcesso(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),acessoBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),acessoBean.getLista());
     }
 	
 	@Test
@@ -126,7 +126,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaAcompanhamento(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),acompanhamentoBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),acompanhamentoBean.getLista());
     }
 	
 	@Test
@@ -166,7 +166,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaComposicao(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),composicaoBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),composicaoBean.getLista());
     }
 	
 	@Test
@@ -206,7 +206,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaCondicoes(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),condicoesBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),condicoesBean.getLista());
     }
 	
 	@Test
@@ -246,7 +246,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaDadosPessoais(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),dadosPessoaisBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),dadosPessoaisBean.getLista());
     }
 	
 	@Test
@@ -286,7 +286,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaDespesas(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),despesasBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),despesasBean.getLista());
     }
 	
 	@Test
@@ -326,7 +326,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaEndereco(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),enderecoBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),enderecoBean.getLista());
     }
 	
 	@Test
@@ -366,7 +366,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaInfoMedicas(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),infoMedicasBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),infoMedicasBean.getLista());
     }
 	
 	@Test
@@ -406,7 +406,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaInfoTransporte(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),infoTransporteBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),infoTransporteBean.getLista());
     }
 	
 	@Test
@@ -446,7 +446,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaProgramasBeneficios(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),programasBeneficiosBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),programasBeneficiosBean.getLista());
     }
 	
 	@Test
@@ -486,7 +486,7 @@ public class BeanTestFAP {
 	
 	@Test
     public void getListaPublicoPrioritario(){
-        assertEquals(new ArrayList<FormularioAcompanhamentoPsicossocial>(),publicoPrioritarioBean.getLista());
+        assertEquals(new ArrayList<Aluno>(),publicoPrioritarioBean.getLista());
     }
 	
 	@Test

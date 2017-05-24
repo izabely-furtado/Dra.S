@@ -4,8 +4,18 @@ public class Aluno {
 	private int id;
 	private String foto;
 	private int nivel;
-	private FormularioAcompanhamentoPsicossocial fap;
 	private Turma turma;
+	private DadosPessoais dadosPessoais;
+	private Endereco endereco;
+	private AcompanhamentoEscolar acompanhamentoEscolar;
+	private InfoMedicas InfoMedicas;
+	private InfoTransporte infoTransporte;
+	private ComposicaoFamiliar composicaoFamiliar;
+	private Despesas despesas;
+	private CondicoesMoradia condicoesMoradia;
+	private AcessoServicos acessoServicos;
+	private ProgramasBeneficios programasBeneficios;
+	private PublicoPrioritario publicoPrioritario;
 	private boolean edita;
 	public String getFoto() {
 		return foto;
@@ -19,17 +29,77 @@ public class Aluno {
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
-	public FormularioAcompanhamentoPsicossocial getFap() {
-		return fap;
-	}
-	public void setFap(FormularioAcompanhamentoPsicossocial fap) {
-		this.fap = fap;
-	}
 	public Turma getTurma() {
 		return turma;
 	}
 	public void setTurma(Turma turma) {
 		this.turma = turma;
+	}
+	public DadosPessoais getDadosPessoais() {
+		return dadosPessoais;
+	}
+	public void setDadosPessoais(DadosPessoais dadosPessoais) {
+		this.dadosPessoais = dadosPessoais;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	public AcompanhamentoEscolar getAcompanhamentoEscolar() {
+		return acompanhamentoEscolar;
+	}
+	public void setAcompanhamentoEscolar(AcompanhamentoEscolar acompanhamentoEscolar) {
+		this.acompanhamentoEscolar = acompanhamentoEscolar;
+	}
+	public InfoMedicas getInfoMedicas() {
+		return InfoMedicas;
+	}
+	public void setInfoMedicas(InfoMedicas infoMedicas) {
+		InfoMedicas = infoMedicas;
+	}
+	public InfoTransporte getInfoTransporte() {
+		return infoTransporte;
+	}
+	public void setInfoTransporte(InfoTransporte infoTransporte) {
+		this.infoTransporte = infoTransporte;
+	}
+	public ComposicaoFamiliar getComposicaoFamiliar() {
+		return composicaoFamiliar;
+	}
+	public void setComposicaoFamiliar(ComposicaoFamiliar composicaoFamiliar) {
+		this.composicaoFamiliar = composicaoFamiliar;
+	}
+	public Despesas getDespesas() {
+		return despesas;
+	}
+	public void setDespesas(Despesas despesas) {
+		this.despesas = despesas;
+	}
+	public CondicoesMoradia getCondicoesMoradia() {
+		return condicoesMoradia;
+	}
+	public void setCondicoesMoradia(CondicoesMoradia condicoesMoradia) {
+		this.condicoesMoradia = condicoesMoradia;
+	}
+	public AcessoServicos getAcessoServicos() {
+		return acessoServicos;
+	}
+	public void setAcessoServicos(AcessoServicos acessoServicos) {
+		this.acessoServicos = acessoServicos;
+	}
+	public ProgramasBeneficios getProgramasBeneficios() {
+		return programasBeneficios;
+	}
+	public void setProgramasBeneficios(ProgramasBeneficios programasBeneficios) {
+		this.programasBeneficios = programasBeneficios;
+	}
+	public PublicoPrioritario getPublicoPrioritario() {
+		return publicoPrioritario;
+	}
+	public void setPublicoPrioritario(PublicoPrioritario publicoPrioritario) {
+		this.publicoPrioritario = publicoPrioritario;
 	}
 	public int getId() {
 		return id;

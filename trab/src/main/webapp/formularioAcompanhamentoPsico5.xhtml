@@ -95,7 +95,7 @@
 									Assistência Social - CRAS?</label>
 
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.acessoServicos.possuicras}">
+									value="#{alunoBean.aluno.acessoServicos.possuicras}">
 									<f:selectItem id="crasN" class="radio-inline" itemValue="crasN"
 										itemLabel="Não" />
 									<f:selectItem id="crasS" class="radio-inline" itemValue="crasS"
@@ -109,7 +109,7 @@
 							<div class="grupinho">
 								<label>Qual?:</label>
 								<h:inputText id="qcras"
-									value="#{alunoBean.aluno.fap.acessoServicos.qcras}" required="true"
+									value="#{alunoBean.aluno.acessoServicos.qcras}" required="true"
 									class="formulario" a:placeholder="Qual o CRAS?" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
 								</h:inputText>
@@ -123,7 +123,7 @@
 									Especializado da Assistência Social - CREAS?</label>
 
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.acessoServicos.possuicreas}">
+									value="#{alunoBean.aluno.acessoServicos.possuicreas}">
 									<f:selectItem id="creasN" class="radio-inline"
 										itemValue="creasN" itemLabel="Não" />
 									<f:selectItem id="creasS" class="radio-inline"
@@ -138,7 +138,7 @@
 								<label>Qual?:</label>
 
 								<h:inputText id="qcreas"
-									value="#{alunoBean.aluno.fap.acessoServicos.qcreas}" required="true"
+									value="#{alunoBean.aluno.acessoServicos.qcreas}" required="true"
 									class="formulario" a:placeholder="Qual o CREAS?" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
 								</h:inputText>
@@ -151,7 +151,7 @@
 								<label>Possui acesso a Unidade Básica de Saúde?</label>
 
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.acessoServicos.possuisus}">
+									value="#{alunoBean.aluno.acessoServicos.possuisus}">
 									<f:selectItem onclick="possuiSUS()" id="susN"
 										class="radio-inline" itemValue="susN" itemLabel="Não" />
 									<f:selectItem onclick="possuiSUS()" id="susS"
@@ -165,7 +165,7 @@
 							<div class="grupinho">
 								<label>Qual?:</label>
 								<h:inputText id="qsus"
-									value="#{alunoBean.aluno.fap.acessoServicos.qsus}" required="true"
+									value="#{alunoBean.aluno.acessoServicos.qsus}" required="true"
 									class="formulario" a:placeholder="Qual o SUS?" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
 								</h:inputText>
@@ -179,7 +179,7 @@
 									ESF?</label>
 
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.acessoServicos.possuiesf}">
+									value="#{alunoBean.aluno.acessoServicos.possuiesf}">
 									<f:selectItem onclick="possuiESF()" id="esfN"
 										class="radio-inline" itemValue="esfN" itemLabel="Não" />
 									<f:selectItem onchange="possuiESF()" id="esfS"
@@ -193,7 +193,7 @@
 							<div class="grupinho">
 
 								<h:inputText id="qesf"
-									value="#{alunoBean.aluno.fap.acessoServicos.qesf}" required="true"
+									value="#{alunoBean.aluno.acessoServicos.qesf}" required="true"
 									class="formulario" a:placeholder="Qual o ESF" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
 								</h:inputText>
@@ -207,7 +207,7 @@
 								<label>Possui acesso ao Centro de Educação Infantil?</label>
 
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.acessoServicos.possuicei}">
+									value="#{alunoBean.aluno.acessoServicos.possuicei}">
 									<f:selectItem onclick="possuiCEI()" id="ceiN"
 										class="radio-inline" itemValue="ceiN" itemLabel="Não" />
 									<f:selectItem onchange="possuiCEI()" id="ceiS"
@@ -221,7 +221,7 @@
 							<div class="grupinho">
 								<label>Qual?:</label>
 								<h:inputText id="qcei"
-									value="#{alunoBean.aluno.fap.acessoServicos.qcei}" required="true"
+									value="#{alunoBean.aluno.acessoServicos.qcei}" required="true"
 									class="formulario" a:placeholder="Qual o CEI?" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
 								</h:inputText>
@@ -235,7 +235,7 @@
 								<label>Possui acesso a Escola?</label>
 
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.acessoServicos.possuicei}">
+									value="#{alunoBean.aluno.acessoServicos.possuicei}">
 									<f:selectItem onclick="possuiescola()" id="escolaN"
 										class="radio-inline" itemValue="escolaN" itemLabel="Não" />
 									<f:selectItem onchange="possuiescola()" id="escolaS"
@@ -249,7 +249,7 @@
 							<div class="grupinho">
 								<label>Qual?:</label>
 								<h:inputText id="qescola"
-									value="#{alunoBean.aluno.fap.acessoServicos.qescola}" required="true"
+									value="#{alunoBean.aluno.acessoServicos.qescola}" required="true"
 									class="formulario" a:placeholder="Qual a Escola?" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
 								</h:inputText>
@@ -264,7 +264,7 @@
 
 
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.fap.acessoServicos.possuiacolhimento}">
+									value="#{alunoBean.aluno.acessoServicos.possuiacolhimento}">
 									<f:selectItem onclick="possuiSAI()" id="saiN"
 										class="radio-inline" itemValue="saiN" itemLabel="Não" />
 									<f:selectItem onchange="possuiSAI()" id="saiS"
@@ -279,7 +279,7 @@
 							<div class="grupinho">
 								<label>Qual?:</label>
 								<h:inputText id="qsai"
-									value="#{alunoBean.aluno.fap.acessoServicos.qacolhimento}"
+									value="#{alunoBean.aluno.acessoServicos.qacolhimento}"
 									required="true" class="formulario"
 									a:placeholder="Qual o Acolhimento Institucional?" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
@@ -296,7 +296,7 @@
 							<div class="grupinho">
 								<label>Nome:</label>
 								<h:inputText id="anome"
-									value="#{alunoBean.aluno.fap.acessoServicos.situacaoacolhimento.nomeAcolhido}"
+									value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.nomeAcolhido}"
 									required="true" class="formulario"
 									a:placeholder="Nome do Acolhido" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
@@ -308,7 +308,7 @@
 							<div class="grupinho">
 								<label>Instituição:</label>
 								<h:inputText id="ainstituicao"
-									value="#{alunoBean.aluno.fap.acessoServicos.situacaoacolhimento.nomeInstituicao}"
+									value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.nomeInstituicao}"
 									required="true" class="formulario"
 									a:placeholder="Nome da Instituição" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
@@ -320,7 +320,7 @@
 							<div class="grupinho">
 								<label>Responsável:</label>
 								<h:inputText id="aresponsavel"
-									value="#{alunoBean.aluno.fap.acessoServicos.situacaoacolhimento.responsavelInstituicao}"
+									value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.responsavelInstituicao}"
 									required="true" class="formulario"
 									a:placeholder="Nome do Responsavel pela Instituição" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
@@ -332,7 +332,7 @@
 							<div class="grupinho">
 								<label>Contato:</label>
 								<h:inputText id="acontato"
-									value="#{alunoBean.aluno.fap.acessoServicos.situacaoacolhimento.contato}"
+									value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.contato}"
 									required="true" class="formulario"
 									a:placeholder="Telefone/E-mail para Contato com a Instituição" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}"></h:inputText>-->
@@ -344,7 +344,7 @@
 							<div class="grupinho">
 								<label>Motivo:</label>
 								<h:inputText id="amotivo"
-									value="#{alunoBean.aluno.fap.acessoServicos.situacaoacolhimento.motivo}"
+									value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.motivo}"
 									required="true" class="formulario"
 									a:placeholder="Motivo para ser Beneficiado pela Instituição" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}"></h:inputText>-->
@@ -358,12 +358,12 @@
 							<div class="grupinho">
 							
 								<h:selectManyCheckbox name="programa" value="programa">
-								   	<f:selectItem id="pbf" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.possuiPbf}" itemLabel="Programa Bolsa Família - PBF" />
-								   	<f:selectItem id="pi" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.possuiPi}" itemLabel="Programa Incluir/Bolsa Capixaba" />
-								   	<f:selectItem id="pbc" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.possuiPbc}" itemLabel="Programa Brasil Carinhoso" />
-								   	<f:selectItem id="bpc" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.Bpc}" itemLabel="Benefício de Prestação Continuada - BPC"/>
-								   	<f:selectItem id="bp" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.Bp}" itemLabel="Benefícios Previdenciários" />
-								   	<f:selectItem id="ar" itemValue="#{alunoBean.aluno.fap.condicoesMoradia.Ar}" itemLabel="Auxílio Reclusão"/>
+								   	<f:selectItem id="pbf" itemValue="#{alunoBean.aluno.condicoesMoradia.possuiPbf}" itemLabel="Programa Bolsa Família - PBF" />
+								   	<f:selectItem id="pi" itemValue="#{alunoBean.aluno.condicoesMoradia.possuiPi}" itemLabel="Programa Incluir/Bolsa Capixaba" />
+								   	<f:selectItem id="pbc" itemValue="#{alunoBean.aluno.condicoesMoradia.possuiPbc}" itemLabel="Programa Brasil Carinhoso" />
+								   	<f:selectItem id="bpc" itemValue="#{alunoBean.aluno.condicoesMoradia.Bpc}" itemLabel="Benefício de Prestação Continuada - BPC"/>
+								   	<f:selectItem id="bp" itemValue="#{alunoBean.aluno.condicoesMoradia.Bp}" itemLabel="Benefícios Previdenciários" />
+								   	<f:selectItem id="ar" itemValue="#{alunoBean.aluno.condicoesMoradia.Ar}" itemLabel="Auxílio Reclusão"/>
 								</h:selectManyCheckbox>
 								
 								
@@ -396,7 +396,7 @@
 							<div class="grupinho">
 								<label>Programa/Benefício Habitacional:</label>
 								<h:inputText id="beneficio"
-									value="#{alunoBean.aluno.fap.programasBeneficios.beneficioHabitacional}"
+									value="#{alunoBean.aluno.programasBeneficios.beneficioHabitacional}"
 									required="true" class="formulario"
 									a:placeholder="Nome do Programa/Benefício Habitacional" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
@@ -408,7 +408,7 @@
 							<div class="grupinho">
 								<label>Outro:</label>
 								<h:inputText id="outrobeneficio"
-									value="#{alunoBean.aluno.fap.programasBeneficios.outro}"
+									value="#{alunoBean.aluno.programasBeneficios.outro}"
 									required="true" class="formulario"
 									a:placeholder="Nome de Outro Programa/Benefício" >
 									<!--requiredMessage="#{text['aulaBean.aula.data']}">-->
