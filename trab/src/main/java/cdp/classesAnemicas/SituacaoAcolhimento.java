@@ -8,6 +8,14 @@ public class SituacaoAcolhimento {
 	private String contato;
 	private String motivo;
 	private boolean edita;
+	
+	public SituacaoAcolhimento(){
+		this.setContato("");
+		this.setMotivo("");
+		this.setNomeAcolhido("");
+		this.setNomeInstituicao("");
+		this.setResponsavelInstituicao("");
+	}
 	public String getNomeAcolhido() {
 		return nomeAcolhido;
 	}

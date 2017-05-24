@@ -29,6 +29,7 @@ public class AcessoServicos {
 		this.setPossuiesf(false);
 		this.setPossuisus(false);
 		this.setEdita(false);
+		this.setSituacaoacolhimento(new SituacaoAcolhimento());
 	}
 	public boolean isPossuicras() {
 		return possuicras;

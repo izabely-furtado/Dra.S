@@ -149,6 +149,45 @@ public class AlunoBean {
 		
 	}
 	
+	public void gerarFAP4() throws IOException {
+		FacesContext context = FacesContext.getCurrentInstance();
+		CondicoesMoradiaBean condicoesBean = new CondicoesMoradiaBean();
+		condicoesBean.setCondicoesMoradia(this.aluno.getCondicoesMoradia());
+		String passoucondicoesBean = condicoesBean.gerar(context);
+		
+		if (passoucondicoesBean == "passou"){
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./formularioAcompanhamentoPsico5.jsf");
+		}
+		
+	}
+	
+	public void gerarFAP5() throws IOException {
+		FacesContext context = FacesContext.getCurrentInstance();
+		AcessoServicosBean acessoServicosBean = new AcessoServicosBean();
+		acessoServicosBean.setAcessoServicos(this.aluno.getAcessoServicos());
+		String passouacessoServicos = acessoServicosBean.gerar(context);
+		ProgramasBeneficiosBean programasBeneficiosBeanBean = new ProgramasBeneficiosBean();
+		programasBeneficiosBeanBean.setProgramasBeneficios(this.aluno.getProgramasBeneficios());
+		String passouprogramasBeneficios = programasBeneficiosBeanBean.gerar(context);
+		
+		if (passouacessoServicos == "passou" && passouprogramasBeneficios == "passou"){
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./formularioAcompanhamentoPsico6.jsf");
+		}
+		
+	}
+	
+	public void gerarFAP6() throws IOException {
+		FacesContext context = FacesContext.getCurrentInstance();
+		PublicoPrioritarioBean publicoPrioritarioBean = new PublicoPrioritarioBean();
+		publicoPrioritarioBean.setPublicoPrioritario(this.aluno.getPublicoPrioritario());
+		String passouPublicoPrioritario = publicoPrioritarioBean.gerar(context);
+		
+		if (passouPublicoPrioritario == "passou"){
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./visualizaAluno.jsf");
+		}
+		
+	}
+	
 	
 	public String inserir() {
 		

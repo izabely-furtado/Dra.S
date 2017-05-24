@@ -62,7 +62,7 @@ public class CondicoesMoradiaBean {
 	}
 	public String gerar(FacesContext context) {
 		int erro = 0;
-		if (this.condicoesMoradia.isPossuirisco() == false && this.condicoesMoradia.getQrisco() != ""){
+		if (this.condicoesMoradia.isPossuirisco() == true && this.condicoesMoradia.getQrisco() != ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não risco?", ""));
 			erro++;
 		}

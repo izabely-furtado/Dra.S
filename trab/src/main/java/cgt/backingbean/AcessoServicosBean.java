@@ -31,31 +31,31 @@ public class AcessoServicosBean {
 
 	public String gerar(FacesContext context) {
 		int erro = 0;
-		if (this.acessoServicos.isPossuiacolhimento() == false && this.acessoServicos.getQacolhimento() != ""){
+		if (this.acessoServicos.isPossuiacolhimento() == true && this.acessoServicos.getQacolhimento() != ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não Acolhimento?", ""));
 			erro++;
 		}
-		if (this.acessoServicos.isPossuicei() == false && this.acessoServicos.getQcei() != "") {
+		if (this.acessoServicos.isPossuicei() == true && this.acessoServicos.getQcei() != "") {
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não CEI?", ""));
 			erro++;
 		}
-		if (this.acessoServicos.isPossuicras() == false && this.acessoServicos.getQcras() != "") {
+		if (this.acessoServicos.isPossuicras() == true && this.acessoServicos.getQcras() != "") {
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não CRAS?", ""));
 			erro++;
 		}
-		if (this.acessoServicos.isPossuicreas() == false && this.acessoServicos.getQcreas() != "") {
+		if (this.acessoServicos.isPossuicreas() == true && this.acessoServicos.getQcreas() != "") {
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não CREAS?", ""));
 			erro++;
 		}
-		if (this.acessoServicos.isPossuiescola() == false && this.acessoServicos.getQescola() != "") {
+		if (this.acessoServicos.isPossuiescola() == true && this.acessoServicos.getQescola() != "") {
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não auxilio escolar?", ""));
 			erro++;
 		}
-		if (this.acessoServicos.isPossuiesf() == false && this.acessoServicos.getQesf() != "") {
+		if (this.acessoServicos.isPossuiesf() == true && this.acessoServicos.getQesf() != "") {
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não ESF?", ""));
 			erro++;
 		}
-		if (this.acessoServicos.isPossuisus() == false && this.acessoServicos.getQsus() != "") {
+		if (this.acessoServicos.isPossuisus() == true && this.acessoServicos.getQsus() != "") {
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não SUS?", ""));
 			erro++;
 		}
