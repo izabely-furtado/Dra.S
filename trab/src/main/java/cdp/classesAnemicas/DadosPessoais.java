@@ -9,6 +9,7 @@ public class DadosPessoais {
 	private String responsavel;
 	private String parentesco;
 	private String contato;
+	private String telefone;
 	private String nis;
 	private boolean edita;
 	public DadosPessoais(){
@@ -75,6 +76,12 @@ public class DadosPessoais {
 	}
 	public void setEdita(boolean edita) {
 		this.edita = edita;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	
 
