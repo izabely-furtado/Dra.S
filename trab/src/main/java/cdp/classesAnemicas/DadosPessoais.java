@@ -1,27 +1,37 @@
 package cdp.classesAnemicas;
 
-import java.util.Date;
 
 public class DadosPessoais {
 	private int id;
 	private String nome;
-	private Date datNasc;
+	private String datNasc;
 	private int sexo;
 	private String responsavel;
 	private String parentesco;
 	private String contato;
 	private String nis;
 	private boolean edita;
+	public DadosPessoais(){
+		this.setId(-1);
+		this.setContato("");
+		this.setDatNasc("");
+		this.setNis("");
+		this.setNome("");
+		this.setParentesco("");
+		this.setResponsavel("");
+		this.setSexo(-1);
+		this.setEdita(false);
+	}
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Date getDatNasc() {
+	public String getDatNasc() {
 		return datNasc;
 	}
-	public void setDatNasc(Date datNasc) {
+	public void setDatNasc(String datNasc) {
 		this.datNasc = datNasc;
 	}
 	public int getSexo() {

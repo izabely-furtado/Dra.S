@@ -10,6 +10,17 @@ public class Endereco {
 	private String estado;
 	private String referencia;
 	private boolean edita;
+	public Endereco(){
+		this.setId(-1);
+		this.setBairro(null);
+		this.setCep(null);
+		this.setCidade(null);
+		this.setEstado(null);
+		this.setNumero(-1);
+		this.setReferencia(null);
+		this.setRua(null);
+		this.setEdita(false);
+	}
 	public String getRua() {
 		return rua;
 	}

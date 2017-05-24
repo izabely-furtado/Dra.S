@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.PublicoPrioritario;
 import cgd.crudjdbc.*;
@@ -70,6 +71,15 @@ public class PublicoPrioritarioBean {
 		}
 		PublicoPrioritarioCrudJDBC.listar();
 		return null;
+	}
+	public String gerar(FacesContext context) {
+		int erro = 0;
+		if (erro == 0) {
+			return "passou";
+		}
+		else {
+			return "deubosta";
+		}
 	}
 
 	public String inserir() {

@@ -18,6 +18,30 @@ public class AcompanhamentoEscolar {
 	private String serie6;
 	private String serie7;
 	
+	public AcompanhamentoEscolar(){
+		this.setId(-1);
+		this.setEdita(false);
+		this.setEscola(null);
+		
+		//	acompanhamentoEscolar.setAnos(null);
+		this.setAno1(0);
+		this.setAno2(0);
+		this.setAno3(0);
+		this.setAno4(0);
+		this.setAno5(0);
+		this.setAno6(0);
+		this.setAno7(0);
+		
+		//	acompanhamentoEscolar.setSeries(null);
+		this.setSerie1("");
+		this.setSerie2("");
+		this.setSerie3("");
+		this.setSerie4("");
+		this.setSerie5("");
+		this.setSerie6("");
+		this.setSerie7("");
+	}
+	
 	public int getAno1() {
 		return ano1;
 	}

@@ -9,6 +9,16 @@ public class InfoMedicas {
 	private String qalergia;
 	private String contatoSOS;
 	private boolean edita;
+	public InfoMedicas(){
+		this.setId(-1);
+		this.setAlergia(false);
+		this.setContatoSOS(null);
+		this.setMedicacao(false);
+		this.setQalergia(null);
+		this.setQmedicacao(null);
+		this.setTipoSangue(null);
+		this.setEdita(false);
+	}
 	public boolean isMedicacao() {
 		return medicacao;
 	}

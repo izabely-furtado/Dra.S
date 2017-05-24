@@ -2,8 +2,10 @@ package cgt.backingbean;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.InfoMedicas;
 import cgd.crudjdbc.*;;
@@ -33,14 +35,7 @@ public class InfoMedicasBean {
 	}
 
 	public String novo() {
-		infoMedicas.setId(-1);
-		infoMedicas.setAlergia(false);
-		infoMedicas.setContatoSOS(null);
-		infoMedicas.setMedicacao(false);
-		infoMedicas.setQalergia(null);
-		infoMedicas.setQmedicacao(null);
-		infoMedicas.setTipoSangue(null);
-		infoMedicas.setEdita(false);
+		this.infoMedicas = new InfoMedicas();
 		return "infoMedicas";
 	}
 
@@ -66,6 +61,29 @@ public class InfoMedicasBean {
 		return null;
 	}
 
+	public String gerar(FacesContext context) {
+		int erro = 0;
+		if (this.infoMedicas.isAlergia() == true && this.infoMedicas.getQalergia() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decide, possui ou não alergia? Se sim, informe", ""));
+			erro++;
+		}
+		if (this.infoMedicas.isMedicacao() == true && this.infoMedicas.getQmedicacao() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decide, precisa ou não de medicação? Se sim, informe", ""));
+			erro++;
+		}
+		if (this.infoMedicas.getContatoSOS() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe um telefone para contato emergencial", ""));
+			erro++;
+		}
+		
+		if (erro == 0) {
+			return "passou";
+		}
+		else {
+			return "deubosta";
+		}
+	}
+	
 	public String inserir() {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if

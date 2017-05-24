@@ -2,8 +2,10 @@ package cgt.backingbean;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.DadosPessoais;
 import cgd.crudjdbc.*;;
@@ -67,6 +69,37 @@ public class DadosPessoaisBean {
 		return null;
 	}
 
+	public String gerar(FacesContext context) {
+		int erro = 0;
+		if (this.dadosPessoais.getContato() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe um telefone para contato", ""));
+			erro++;
+		}
+		if (this.dadosPessoais.getDatNasc() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe a data de nascimento", ""));
+			erro++;
+		}
+		if (this.dadosPessoais.getNome() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o nome da criança", ""));
+			erro++;
+		}
+		if (this.dadosPessoais.getParentesco() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o parentesco do responsável pela criança", ""));
+			erro++;
+		}
+		if (this.dadosPessoais.getResponsavel() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o responsável", ""));
+			erro++;
+		}
+
+		if (erro == 0) {
+			return "passou";
+		}
+		else {
+			return "deubosta";
+		}
+	}
+	
 	public String inserir() {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if

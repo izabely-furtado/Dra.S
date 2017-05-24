@@ -1,11 +1,19 @@
 package cgt.backingbean;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
+import cdp.classesAnemicas.AcessoServicos;
+import cdp.classesAnemicas.AcompanhamentoEscolar; 
 import cdp.classesAnemicas.Aluno;
+import cdp.classesAnemicas.DadosPessoais;
+import cdp.classesAnemicas.Endereco;
+import cdp.classesAnemicas.InfoMedicas;
+import cdp.classesAnemicas.InfoTransporte;
 import cgd.crudjdbc.*;
 
 @SuppressWarnings("deprecation")
@@ -39,15 +47,15 @@ public class AlunoBean {
 		this.aluno.setFoto(null);
 		this.aluno.setNivel(0);
 		this.aluno.setTurma(null);
-		this.aluno.setAcessoServicos(null);
-		this.aluno.setAcompanhamentoEscolar(null);
-		this.aluno.setEndereco(null);
+		this.aluno.setAcessoServicos(new AcessoServicos());
+		this.aluno.setAcompanhamentoEscolar(new AcompanhamentoEscolar());
+		this.aluno.setEndereco(new Endereco());
 		this.aluno.setComposicaoFamiliar(null);
 		this.aluno.setCondicoesMoradia(null);
-		this.aluno.setDadosPessoais(null);
+		this.aluno.setDadosPessoais(new DadosPessoais());
 		this.aluno.setDespesas(null);
-		this.aluno.setInfoMedicas(null);
-		this.aluno.setInfoTransporte(null);
+		this.aluno.setInfoMedicas(new InfoMedicas());
+		this.aluno.setInfoTransporte(new InfoTransporte());
 		this.aluno.setProgramasBeneficios(null);
 		this.aluno.setPublicoPrioritario(null);
 		this.aluno.setEdita(false);
@@ -77,6 +85,38 @@ public class AlunoBean {
 		return "salvar";
 	}
 
+	public void gerarFAP1() throws IOException {
+		FacesContext context = FacesContext.getCurrentInstance();
+		DadosPessoaisBean dadosPessoaisBean = new DadosPessoaisBean();
+		dadosPessoaisBean.setDadosPessoais(this.aluno.getDadosPessoais());
+		String passouDadosPessoais = dadosPessoaisBean.gerar(context);
+		
+		EnderecoBean enderecoBean = new EnderecoBean();
+		enderecoBean.setEndereco(this.aluno.getEndereco());
+		String passouEndereco = enderecoBean.gerar(context);
+		
+		AcompanhamentoEscolarBean acompanhamentoEscolarBean = new AcompanhamentoEscolarBean();
+		acompanhamentoEscolarBean.setAcompanhamentoEscolar(this.aluno.getAcompanhamentoEscolar());
+		String passouAcompanhamentoEscolar = acompanhamentoEscolarBean.gerar(context);
+		
+		InfoMedicasBean infoMedicasBean = new InfoMedicasBean();
+		infoMedicasBean.setInfoMedicas(this.aluno.getInfoMedicas());
+		String passouInfoMedicas = infoMedicasBean.gerar(context);
+		
+		InfoTransporteBean infoTransporteBean = new InfoTransporteBean();
+		infoTransporteBean.setInfoTransporte(this.aluno.getInfoTransporte());
+		String passouInfoTransporte = infoTransporteBean.gerar(context);
+		
+		if (passouInfoTransporte == "passou" && 
+			passouDadosPessoais == "passou"&& 
+			passouEndereco == "passou" && 
+			passouAcompanhamentoEscolar == "passou" && 
+			passouInfoMedicas == "passou"){
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./formularioAcompanhamentoPsico2.jsf");
+		}
+		
+	}
+	
 	public String inserir() {
 		
 	

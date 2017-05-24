@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.AcessoServicos;
 import cgd.crudjdbc.*;
@@ -27,6 +29,45 @@ public class AcessoServicosBean {
 		return acessoServicos;
 	}
 
+	public String gerar(FacesContext context) {
+		int erro = 0;
+		if (this.acessoServicos.isPossuiacolhimento() == false && this.acessoServicos.getQacolhimento() != ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não Acolhimento?", ""));
+			erro++;
+		}
+		if (this.acessoServicos.isPossuicei() == false && this.acessoServicos.getQcei() != "") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não CEI?", ""));
+			erro++;
+		}
+		if (this.acessoServicos.isPossuicras() == false && this.acessoServicos.getQcras() != "") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não CRAS?", ""));
+			erro++;
+		}
+		if (this.acessoServicos.isPossuicreas() == false && this.acessoServicos.getQcreas() != "") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não CREAS?", ""));
+			erro++;
+		}
+		if (this.acessoServicos.isPossuiescola() == false && this.acessoServicos.getQescola() != "") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não auxilio escolar?", ""));
+			erro++;
+		}
+		if (this.acessoServicos.isPossuiesf() == false && this.acessoServicos.getQesf() != "") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não ESF?", ""));
+			erro++;
+		}
+		if (this.acessoServicos.isPossuisus() == false && this.acessoServicos.getQsus() != "") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não SUS?", ""));
+			erro++;
+		}
+
+		if (erro == 0) {
+			return "passou";
+		}
+		else {
+			return "deubosta";
+		}
+	}
+	
 	public List<Integer> getDias() {
 		List<Integer> lstDia = new ArrayList<Integer>();
 		for (int i = 1; i <= 31; i++) {
@@ -61,15 +102,7 @@ public class AcessoServicosBean {
 	}
 
 	public String novo() {
-		this.acessoServicos.setId(-1);
-		this.acessoServicos.setPossuiacolhimento(false);
-		this.acessoServicos.setPossuicei(false);
-		this.acessoServicos.setPossuicras(false);
-		this.acessoServicos.setPossuicreas(false);
-		this.acessoServicos.setPossuiescola(false);
-		this.acessoServicos.setPossuiesf(false);
-		this.acessoServicos.setPossuisus(false);
-		this.acessoServicos.setEdita(false);
+		this.acessoServicos = new AcessoServicos();
 		return "acessoServicos";
 	}
 

@@ -2,8 +2,10 @@ package cgt.backingbean;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.InfoTransporte;
 import cgd.crudjdbc.*;;
@@ -33,11 +35,7 @@ public class InfoTransporteBean {
 	}
 
 	public String novo() {
-		this.infoTransporte.setId(-1);
-		this.infoTransporte.setCartao(null);
-		this.infoTransporte.setQtransporte(null);
-		this.infoTransporte.setTransporte(false);
-		this.infoTransporte.setEdita(false);
+		this.infoTransporte = new InfoTransporte();
 		return "infoTransporte";
 	}
 
@@ -63,6 +61,21 @@ public class InfoTransporteBean {
 		return null;
 	}
 
+	public String gerar(FacesContext context) {
+		int erro = 0;
+		if (this.infoTransporte.isTransporte() == true && this.infoTransporte.getQtransporte() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decide, possui ou não transporte? Se sim, informe", ""));
+			erro++;
+		}
+		
+		if (erro == 0) {
+			return "passou";
+		}
+		else {
+			return "deubosta";
+		}
+	}
+	
 	public String inserir() {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if

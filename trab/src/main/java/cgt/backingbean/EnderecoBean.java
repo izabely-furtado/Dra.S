@@ -2,8 +2,10 @@ package cgt.backingbean;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.Endereco;
 import cgd.crudjdbc.*;;
@@ -33,15 +35,7 @@ public class EnderecoBean {
 	}
 
 	public String novo() {
-		this.endereco.setId(-1);
-		this.endereco.setBairro(null);
-		this.endereco.setCep(null);
-		this.endereco.setCidade(null);
-		this.endereco.setEstado(null);
-		this.endereco.setNumero(-1);
-		this.endereco.setReferencia(null);
-		this.endereco.setRua(null);
-		this.endereco.setEdita(false);
+		this.endereco = new Endereco();
 		return "endereco";
 	}
 
@@ -67,6 +61,29 @@ public class EnderecoBean {
 		return null;
 	}
 
+	public String gerar(FacesContext context) {
+		int erro = 0;
+		if (this.endereco.getCep() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o CEP", ""));
+			erro++;
+		}
+		if (this.endereco.getNumero() <= 0){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o número da casa", ""));
+			erro++;
+		}
+		if (this.endereco.getReferencia() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe uma referência", ""));
+			erro++;
+		}
+		
+		if (erro == 0) {
+			return "passou";
+		}
+		else {
+			return "deubosta";
+		}
+	}
+	
 	public String inserir() {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if

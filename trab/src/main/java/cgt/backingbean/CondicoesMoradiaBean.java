@@ -2,8 +2,10 @@ package cgt.backingbean;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.CondicoesMoradia;
 import cgd.crudjdbc.*;;
@@ -66,7 +68,20 @@ public class CondicoesMoradiaBean {
 		CondicoesMoradiaCrudJDBC.listar();
 		return null;
 	}
+	public String gerar(FacesContext context) {
+		int erro = 0;
+		if (this.condicoesMoradia.isPossuirisco() == false && this.condicoesMoradia.getQrisco() != ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Decida, possui ou não risco?", ""));
+			erro++;
+		}
 
+		if (erro == 0) {
+			return "passou";
+		}
+		else {
+			return "deubosta";
+		}
+	}
 	public String inserir() {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if

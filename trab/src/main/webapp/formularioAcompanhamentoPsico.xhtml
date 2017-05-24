@@ -81,19 +81,19 @@
  --> <h:form id="formAluno" method="post">
 					<!-- DADOS B�SICOS DO ALUNO QUE EXECUTA PAGAMENTO -->
 					<hr />
-					
+
 					<h4>Dados Pessoais</h4>
 					<div class="linha">
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Nome da criança/adolescente:</label>
 
-								<h:inputText id="ano"
-									value="#{alunoBean.aluno.dadosPessoais.nome}"
-									required="true" class="formulario" a:placeholder="Ano">
+								<h:inputText id="nome"
+									value="#{alunoBean.aluno.dadosPessoais.nome}" required="true"
+									class="formulario" a:placeholder="Nome da Criança">
 									<!--requiredMessage="#{text['fap.nome.validacao']}">-->
 								</h:inputText>
-								<h:message for="ano" styleClass="errorMessage" />
+								<h:message for="nome" styleClass="errorMessage" />
 
 
 							</div>
@@ -114,12 +114,14 @@
 							<div class="grupinho radio-group">
 								<label>Sexo:</label>
 								<h:selectOneRadio
-									value="#{alunoBean.aluno.dadosPessoais.sexo}">
-									<f:selectItem id="sexoF" class="radio-inline" itemValue="F"
-										itemLabel="Feminino" />
-									<f:selectItem id="sexoM" class="radio-inline" itemValue="M"
-										itemLabel="Masculino" />
+									value="#{alunoBean.aluno.infoMedicas.medicacao}">
+									<f:selectItem id="sexoF" class="radio-inline"
+										itemValue="Feminino" itemLabel="F" />
+									<f:selectItem id="sexoM" class="radio-inline"
+										itemValue="Masculino" itemLabel="M" />
 								</h:selectOneRadio>
+
+
 							</div>
 						</div>
 						<div class="coluna-12">
@@ -166,14 +168,14 @@
 									placeholder="(99)99999-9999" /> -->
 								<!-- pattern="(?\d{2})?\d{5}-?\d{4}" /> -->
 
-								<h:inputText id="telefone"
+								<h:inputText id="contato"
 									value="#{alunoBean.aluno.dadosPessoais.contato}"
 									required="true" class="formulario"
 									a:placeholder="(99)99999-9999" data-mask="(00)00000-0000"
 									data-mask-selectonfocus="true">
 									<!--requiredMessage="#{text['fap.dadosPessoais.contato.validacao']}">-->
 								</h:inputText>
-								<h:message for="telefone" styleClass="errorMessage" />
+								<h:message for="contato" styleClass="errorMessage" />
 
 							</div>
 						</div>
@@ -182,8 +184,8 @@
 								<label>NIS da criança/adolescente:</label>
 
 								<h:inputText id="nis"
-									value="#{alunoBean.aluno.dadosPessoais.nis}"
-									required="true" class="formulario" a:placeholder="Nis">
+									value="#{alunoBean.aluno.dadosPessoais.nis}" required="true"
+									class="formulario" a:placeholder="Nis">
 									<!--requiredMessage="#{text['fap.dadosPessoais.nis.validacao']}">-->
 								</h:inputText>
 								<h:message for="nis" styleClass="errorMessage" />
@@ -200,9 +202,8 @@
 							<div class="coluna-6">
 								<div class="grupinho">
 									<label>Rua/Avenida:</label>
-									<h:inputText id="rua"
-										value="#{alunoBean.aluno.endereco.rua}" required="true"
-										class="formulario"
+									<h:inputText id="rua" value="#{alunoBean.aluno.endereco.rua}"
+										required="true" class="formulario"
 										a:placeholder="Digite o nome da rua ou avenida">
 										<!--requiredMessage="#{text['fap.endereco.rua.validacao']}">-->
 									</h:inputText>
@@ -234,9 +235,8 @@
 									    placeholder="99.999-999" /> -->
 									<!-- pattern="\d{2}.?\d{3}-?\d{3}" /> -->
 
-									<h:inputText id="cep"
-										value="#{alunoBean.aluno.endereco.cep}" required="true"
-										class="formulario" a:placeholder="99.999-999"
+									<h:inputText id="cep" value="#{alunoBean.aluno.endereco.cep}"
+										required="true" class="formulario" a:placeholder="99.999-999"
 										data-mask="00.000-000" data-mask-selectonfocus="true">
 										<!--requiredMessage="#{text['fap.endereco.cep.validacao']}">-->
 									</h:inputText>
@@ -313,9 +313,8 @@
 								<div class="grupinho">
 									<label>Ponto de Referência:</label>
 									<h:inputText id="referencia"
-										value="#{alunoBean.aluno.endereco.referencia}"
-										required="true" class="formulario"
-										a:placeholder="Ponto de referência">
+										value="#{alunoBean.aluno.endereco.referencia}" required="true"
+										class="formulario" a:placeholder="Ponto de referência">
 										<!--requiredMessage="#{text['fap.endereco.referencia.validacao']}">-->
 									</h:inputText>
 									<h:message for="referencia" styleClass="errorMessage" />
@@ -358,16 +357,7 @@
 									<!--requiredMessage="#{text['fap.acompanhamentoEscolar.referencia.validacao']}">-->
 								</h:inputText>
 								<h:message for="ano1" styleClass="errorMessage" />
-								<!--  
 
-								<h:selectOneMenu
-									value="#{alunoBean.aluno.acompanhamentoEscolar.anos}"
-									class="formulario">
-									<f:selectItems
-										value="#{alunoBean.aluno.acompanhamentoEscolar.anos}" var="f"
-										itemlabel="#{f.nome}" itemValue="#{f.nome}" />
-								</h:selectOneMenu>
--->
 							</div>
 						</div>
 						<div class="coluna-2">
@@ -691,8 +681,7 @@
 						<div class="coluna-6">
 							<div class="grupinho radio-group">
 								<label>Alergia:</label>
-								<h:selectOneRadio
-									value="#{alunoBean.aluno.infoMedicas.alergia}">
+								<h:selectOneRadio value="#{alunoBean.aluno.infoMedicas.alergia}">
 									<f:selectItem id="alergiaN" class="radio-inline"
 										itemValue="alergiaN" itemLabel="Não" />
 									<f:selectItem id="alergiaS" class="radio-inline"
@@ -707,9 +696,8 @@
 								<label>Qual?:</label>
 
 								<h:inputText id="qalergia"
-									value="#{alunoBean.aluno.infoMedicas.qalergia}"
-									required="true" class="formulario"
-									a:placeholder="Nome da alergia apresentada">
+									value="#{alunoBean.aluno.infoMedicas.qalergia}" required="true"
+									class="formulario" a:placeholder="Nome da alergia apresentada">
 									<!--requiredMessage="#{text['fap.InfoMedicas.qalergia']}">-->
 								</h:inputText>
 								<h:message for="qalergia" styleClass="errorMessage" />
@@ -772,7 +760,7 @@
 					</div>
 
 					<h:commandButton styleClass="botao" onclick="form1()"
-						action="#{alunoBean.inserir}" value="Próximo">
+						action="#{alunoBean.gerarFAP1}" value="Próximo">
 					</h:commandButton>
 				</h:form> </main>
 			</div>

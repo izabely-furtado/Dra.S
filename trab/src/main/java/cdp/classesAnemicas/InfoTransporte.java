@@ -5,6 +5,13 @@ public class InfoTransporte {
 	private boolean transporte;
 	private String qtransporte;
 	private boolean edita;
+	public InfoTransporte(){
+		this.setId(-1);
+		this.setCartao("");
+		this.setQtransporte("");
+		this.setTransporte(false);
+		this.setEdita(false);
+	}
 	public boolean isTransporte() {
 		return transporte;
 	}

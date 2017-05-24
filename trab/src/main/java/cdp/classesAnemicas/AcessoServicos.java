@@ -19,6 +19,17 @@ public class AcessoServicos {
 	private SituacaoAcolhimento situacaoacolhimento;
 	private boolean edita;
 	
+	public AcessoServicos(){
+		this.setId(-1);
+		this.setPossuiacolhimento(false);
+		this.setPossuicei(false);
+		this.setPossuicras(false);
+		this.setPossuicreas(false);
+		this.setPossuiescola(false);
+		this.setPossuiesf(false);
+		this.setPossuisus(false);
+		this.setEdita(false);
+	}
 	public boolean isPossuicras() {
 		return possuicras;
 	}
