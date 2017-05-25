@@ -1,9 +1,11 @@
 package cgt.backingbean;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.DadosAcesso;
 import cgd.crudjdbc.*;
@@ -50,8 +52,9 @@ public class DadosAcessoBean {
 		return u.getId()+"";
 	}
 
-	public String alterarRegistro(DadosAcesso u) {
+	public String alterarRegistro(DadosAcesso u) throws IOException {
 		u.setEdita(true);
+		FacesContext.getCurrentInstance().getExternalContext().redirect("./alterarDadosAcesso.jsf");
 		return "alterar";
 	}
 
@@ -66,7 +69,7 @@ public class DadosAcessoBean {
 		return "salvar";
 	}
 
-	public String inserir() {
+	public String inserir() throws IOException {
 		/*
 		 * FacesContext context = FacesContext.getCurrentInstance(); if
 		 * (!this.dadosAcesso.getSenha().equalsIgnoreCase(this.dadosAcesso.
@@ -76,8 +79,15 @@ public class DadosAcessoBean {
 		 */
 	
 		DadosAcessoCrudJDBC.salvar(this.dadosAcesso);
+		FacesContext.getCurrentInstance().getExternalContext().redirect("./alterarDadosAcesso.jsf");
 		// salva o usu�rio
 		return "sucesso";
+	}
+	
+	
+	
+	public void visualizarDadosAcesso(){
+		
 	}
 
 	public String verLista() {

@@ -8,39 +8,42 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import cdp.classesAnemicas.ComposicaoFamiliar;
 import cdp.classesAnemicas.Parente;
 import cgd.conexao.ConectaPostgreSQL;
 
-public class ComposicaoFamiliarCrudJDBC {
+public class ParenteCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de dados
 	 */
-	public static boolean salvar(ComposicaoFamiliar composicao) {
+	public static boolean salvar(Parente parente) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlComposicaoFamiliar = "";
+		String sqlParente = "";
 		try {
 			// pega o resto dos dados
-			List<Parente> parentes = composicao.getParentes();
-			for (Parente p : parentes) {
-				sqlComposicaoFamiliar += "insert into parente(parente_id)"
-						+ "values (?);";
-				// recebe o SQL insert
-				insereSt = conexao.prepareStatement(sqlComposicaoFamiliar);
-				insereSt.setInt(1, p.getId());
-				
+			sqlParente += "insert into parente(dataNasc, escolaridade, idade, nome, parentesco, renda, scfv, situacaoOcupacional)"
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?);";
+			// recebe o SQL insert
+			insereSt = conexao.prepareStatement(sqlParente);
+			insereSt.setString(1, parente.getDataNasc());
+			insereSt.setString(2, parente.getEscolaridade());
+			insereSt.setInt(3, parente.getIdade());
+			insereSt.setString(4, parente.getNome());
+			insereSt.setString(5, parente.getParentesco());
+			insereSt.setFloat(6, parente.getRenda());
+			insereSt.setString(7, parente.getScfv());
+			insereSt.setString(8, parente.getSituacaoOcupacional());
 
-				// executa SQL insert
-				insereSt.executeUpdate();
-			}
+			// executa SQL insert
+			insereSt.executeUpdate();
+
 			return true;
 
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao incluir composição familiar mensagem:" + e);
+			throw new RuntimeException("Erro ao incluir parente mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco
@@ -55,7 +58,7 @@ public class ComposicaoFamiliarCrudJDBC {
 	/*
 	 * Objetivo: Método que lista todos os ass do banco de dados
 	 */
-	public static ComposicaoFamiliar getComposicaoFamiliar(int idComposicaoFamiliar) {
+	public static Parente getParente(int idParente) {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// executa o SQL no banco de dados
@@ -63,31 +66,33 @@ public class ComposicaoFamiliarCrudJDBC {
 		// contém os dados consultado da tabela
 		ResultSet resultado = null;
 		// objeto as
-		ComposicaoFamiliar composicao = null;
+		Parente parente = null;
 		// consulta SQL
-		String sql = "select distinct * from ComposicaoFamiliar where ComposicaoFamiliar.id=" + idComposicaoFamiliar;
+		String sql = "select distinct * from Parente, Parente where Parente.id=" + idParente;
 		try {
 			// consulta => objeto que executa o SQL no banco de dados
 			consulta = conexao.createStatement();
 			// resultado => objeto que contém os dados consultado da tabela
-			// ComposicaoFamiliar
+			// Parente
 			resultado = consulta.executeQuery(sql);
-			// Lê cada composicao
-			List<Parente> parentes = new ArrayList<Parente>();
+			// Lê cada parente
 
 			while (resultado.next()) {
-				//for (int i = 1; i < 7; i++) {
-				Parente parente = ParenteCrudJDBC.getParente(resultado.getInt("parente_id"));
-				parentes.add(parente);	
-				//}
-				composicao.setParentes(parentes);
-				
+				parente.setDataNasc(resultado.getString("dataNasc"));
+				parente.setEscolaridade(resultado.getString("escolaridade"));
+				parente.setIdade(resultado.getInt("idade"));
+				parente.setNome(resultado.getString("nome"));
+				parente.setParentesco(resultado.getString("parentesco"));
+				parente.setRenda(resultado.getFloat("renda"));
+				parente.setScfv(resultado.getString("scfv"));
+				parente.setSituacaoOcupacional(resultado.getString("situacaoOcupacional"));
+
 				// insere o acesso a serviço na lista
-				return composicao;
+				return parente;
 
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao buscar uma composicao de acolhimento: " + e);
+			throw new RuntimeException("Erro ao buscar uma parente de acolhimento: " + e);
 		} finally {
 			try {
 				consulta.close();
@@ -98,48 +103,49 @@ public class ComposicaoFamiliarCrudJDBC {
 			}
 		}
 		// retorna lista de ass
-		return composicao;
+		return parente;
 	}
 
 	/*
 	 * Objetivo: Método que lista todos os ass do banco de dados
 	 */
 	@SuppressWarnings("null")
-	public static List<ComposicaoFamiliar> listar() {
+	public static List<Parente> listar() {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// variavel lista de ass
-		//List<ComposicaoFamiliar> acessos = new ArrayList<ComposicaoFamiliar>();
+		// List<Parente> acessos = new ArrayList<Parente>();
 		// executa o SQL no banco de dados
 		Statement consulta = null;
 		// contém os dados consultado da tabela
 		ResultSet resultado = null;
-		ComposicaoFamiliar composicao = null;
+		Parente parente = null;
 		// objeto as
-		// ComposicaoFamiliar as = null;
+		// Parente as = null;
 		// consulta SQL
-		List<ComposicaoFamiliar> composicoes = new ArrayList<ComposicaoFamiliar>();
-		String sql = "select distinct * from ComposicaoFamiliar";
+		String sql = "select distinct * from Parente";
 		try {
 			// consulta => objeto que executa o SQL no banco de dados
 			consulta = conexao.createStatement();
 			// resultado => objeto que contém os dados consultado da tabela
-			// ComposicaoFamiliar
+			// Parente
 			resultado = consulta.executeQuery(sql);
 			// Lê cada as
 			List<Parente> parentes = new ArrayList<Parente>();
 
 			while (resultado.next()) {
-				Parente parente = ParenteCrudJDBC.getParente(resultado.getInt("parente_id"));
-				parentes.add(parente);	
-				
-				composicao.setParentes(parentes);
-				
-				// insere o acesso a serviço na lista
-				composicoes.add(composicao);
+				parente.setDataNasc(resultado.getString("dataNasc"));
+				parente.setEscolaridade(resultado.getString("escolaridade"));
+				parente.setIdade(resultado.getInt("idade"));
+				parente.setNome(resultado.getString("nome"));
+				parente.setParentesco(resultado.getString("parentesco"));
+				parente.setRenda(resultado.getFloat("renda"));
+				parente.setScfv(resultado.getString("scfv"));
+				parente.setSituacaoOcupacional(resultado.getString("situacaoOcupacional"));
+				parentes.add(parente);
 
 			}
-			return composicoes;
+			return parentes;
 
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao buscar um acesso a serviços: " + e);
@@ -158,20 +164,17 @@ public class ComposicaoFamiliarCrudJDBC {
 	/*
 	 * Objetivo: Método que exclui um acesso a serviços no banco de dados
 	 */
-	public static boolean excluir(ComposicaoFamiliar as) {
+	public static boolean excluir(Parente as) {
 		// abre a conexao com o banco de dados PostGresql
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL delete
 		PreparedStatement excluiSt = null;
 		// SQL de exclusão do as
-		String sql = "delete from ComposicaoFamiliar where id=?";
+		String sql = "delete from Parente where id=?";
 		try {
 			// recebe o SQL delete para as
 			excluiSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
-			for (Parente p : as.getParentes()){
-				ParenteCrudJDBC.excluir(p);
-			}
 			excluiSt.setInt(1, as.getId());
 			// executa SQL delete
 			excluiSt.executeUpdate();
@@ -192,36 +195,33 @@ public class ComposicaoFamiliarCrudJDBC {
 	/*
 	 * Objetivo: Método que altera um acesso a serviços no banco de dados
 	 */
-	public static boolean alterar(ComposicaoFamiliar composicao) {
+	public static boolean alterar(Parente parente) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL update
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "update ComposicaoFamiliar set escola=?";
+		String sql = "update parente set parente=?, dataNasc=?, escolaridade=?,"
+				+ "idade=?, nome=?, parentesco=?, renda=?, scfv=?, situacaoOcupacional=?)";
 		try {
 			// recebe o SQL update
 			insereSt = conexao.prepareStatement(sql);
+			insereSt.setString(1, parente.getDataNasc());
+			insereSt.setString(2, parente.getEscolaridade());
+			insereSt.setInt(3, parente.getIdade());
+			insereSt.setString(4, parente.getNome());
+			insereSt.setString(5, parente.getParentesco());
+			insereSt.setFloat(6, parente.getRenda());
+			insereSt.setString(7, parente.getScfv());
+			insereSt.setString(8, parente.getSituacaoOcupacional());
 
-			// pega o resto dos dados
-			List<Parente> parentes = composicao.getParentes();
-			for (Parente p : parentes) {
-				String sqlComposicaoFamiliar = "update parente set parente_id=?)";
-				// recebe o SQL insert
-				insereSt = conexao.prepareStatement(sqlComposicaoFamiliar);
-				insereSt.setInt(1, p.getId());
-
-				// executa SQL insert
-				insereSt.executeUpdate();
-			}
-			
-
-			// executa SQL update
+			// executa SQL insert
 			insereSt.executeUpdate();
+
 			return true;
 
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao alterar a situação de acolhimento - mensagem:" + e);
+			throw new RuntimeException("Erro ao alterar o parente mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco

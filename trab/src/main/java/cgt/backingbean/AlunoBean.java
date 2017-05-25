@@ -16,6 +16,7 @@ import cdp.classesAnemicas.Despesas;
 import cdp.classesAnemicas.Endereco;
 import cdp.classesAnemicas.InfoMedicas;
 import cdp.classesAnemicas.InfoTransporte;
+import cdp.classesAnemicas.Parente;
 import cdp.classesAnemicas.ProgramasBeneficios;
 import cdp.classesAnemicas.PublicoPrioritario;
 import cgd.crudjdbc.*;
@@ -121,19 +122,11 @@ public class AlunoBean {
 		
 	}
 	
-	public void gerarFAP2() throws IOException {
-		//FacesContext context = FacesContext.getCurrentInstance();
-		ComposicaoFamiliarBean composicaoFamiliarBean = new ComposicaoFamiliarBean();
-		composicaoFamiliarBean.setComposicaoFamiliar(this.aluno.getComposicaoFamiliar());
-		/*String passouComposicaoFamiliar = composicaoFamiliarBean.gerar(context);
-		 não sei o que vou fazer desta jossa 
-		if (passouInfoTransporte == "passou" && 
-			passouDadosPessoais == "passou"&& 
-			passouEndereco == "passou" && 
-			passouAcompanhamentoEscolar == "passou" && 
-			passouInfoMedicas == "passou"){
-			FacesContext.getCurrentInstance().getExternalContext().redirect("./formularioAcompanhamentoPsico2.jsf");
-		}*/
+	public void gerarFAP2(List<Parente> parentes) throws IOException {
+		this.aluno.getComposicaoFamiliar().setParentes(parentes);
+		
+		FacesContext.getCurrentInstance().getExternalContext().redirect("./formularioAcompanhamentoPsico3.jsf");
+		
 		
 	}
 	

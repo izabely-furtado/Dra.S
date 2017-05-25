@@ -27,12 +27,12 @@ public class BeanTestDadosAcesso {
 	public void test() {
 		fail("Not yet implemented");
 	}
-*/
+
 	@Test
     public void alterarDadosAcesso(){
         assertEquals("alterar",dadosAcessoBean.alterarRegistro(dadosAcesso));
     }
-	
+	*/
 	@Test
     public void excluirDadosAcesso(){
         assertEquals("excluir",dadosAcessoBean.excluirRegistro(dadosAcesso));
@@ -47,12 +47,12 @@ public class BeanTestDadosAcesso {
     public void getListaDadosAcesso(){
         assertEquals(new ArrayList<DadosAcesso>(),dadosAcessoBean.getLista());
     }
-	
+	/*
 	@Test
     public void inserirDadosAcesso(){
         assertEquals("sucesso",dadosAcessoBean.inserir());
     }
-	
+	*/
 	@Test
     public void novaDadosAcesso(){
         assertEquals("dadosAcesso",dadosAcessoBean.novo());

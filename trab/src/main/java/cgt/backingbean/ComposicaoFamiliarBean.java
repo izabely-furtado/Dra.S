@@ -2,8 +2,10 @@ package cgt.backingbean;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.ComposicaoFamiliar;
 import cgd.crudjdbc.*;;
@@ -24,8 +26,6 @@ public class ComposicaoFamiliarBean {
 		return composicaoFamiliar;
 	}
 
-	
-
 	public void setComposicaoFamiliar(ComposicaoFamiliar composicaoFamiliar) {
 		this.composicaoFamiliar = composicaoFamiliar;
 	}
@@ -33,14 +33,13 @@ public class ComposicaoFamiliarBean {
 	public void setLista(List<ComposicaoFamiliar> lista) {
 		this.lista = lista;
 	}
-
+	
 	public String novo() {
 		this.composicaoFamiliar.setId(-1);
 		this.composicaoFamiliar.setParentes(null);
 		this.composicaoFamiliar.setEdita(false);
 		return "composicaoFamiliar";
 	}
-
 	public String excluirRegistro(ComposicaoFamiliar u) {
 		ComposicaoFamiliarCrudJDBC.excluir(u);
 		// salva o usu�rio

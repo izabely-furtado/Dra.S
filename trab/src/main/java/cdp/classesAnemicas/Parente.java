@@ -5,9 +5,9 @@ import java.util.Date;
 public class Parente {
 	private int id;
 	private String nome;
-	private int parentesco;
+	private String parentesco;
 	private int idade;
-	private Date dataNasc;
+	private String dataNasc;
 	private String situacaoOcupacional;
 	private String escolaridade;
 	private Float renda;
@@ -19,10 +19,10 @@ public class Parente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getParentesco() {
+	public String getParentesco() {
 		return parentesco;
 	}
-	public void setParentesco(int parentesco) {
+	public void setParentesco(String parentesco) {
 		this.parentesco = parentesco;
 	}
 	public int getIdade() {
@@ -31,10 +31,10 @@ public class Parente {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	public Date getDataNasc() {
+	public String getDataNasc() {
 		return dataNasc;
 	}
-	public void setDataNasc(Date dataNasc) {
+	public void setDataNasc(String dataNasc) {
 		this.dataNasc = dataNasc;
 	}
 	public String getSituacaoOcupacional() {

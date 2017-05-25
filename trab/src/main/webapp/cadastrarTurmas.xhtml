@@ -66,16 +66,15 @@
 				</h2>
 				
 				
-					<form name="dadosTurma" id="formAluno" method="post" >
+					<h:form name="dadosTurma" id="formAluno" var="turma" method="post" >
 						<!-- DADOS BÁSICOS DA TURMA  -->
 						
 						<h3>Dados Básicos da Turma</h3>
                         <div class="linha">
 						<div class="coluna-12">
 							<div class="grupinho">
-								<label>Código:</label> <input type="text"
-									id="codigo" required="required" class="formulario"
-									placeholder="Código da Turma"  value="#{turmaBean.turma.codigo}" />
+								<label>Código:</label> <h:inputText id="codigo" required="true" class="formulario"
+									a:placeholder="Código da Turma"  value="#{turmaBean.turma.codigo}" ></h:inputText>
 						</div>
 												
 						<div class="coluna-12">
@@ -131,7 +130,7 @@
 						</div>
 						</div>
 						
-					</form><!--fim formulario-->
+					</h:form><!--fim formulario-->
 					
 					<hr />
 					<h3>Alunos da Turma</h3>
@@ -245,7 +244,16 @@
 					<br/>
 					<br/>
 					<div class="coluna-12">
-						<button onclick="validaDadosTurma()">Salvar</button>
+					
+					<h:form>
+					<h:commandButton 
+								 styleClass="botao"
+								 onclick="validaDadosTurma()"
+								 action="#{turmaBean.inserir}" 
+								 value="Salvar">			 
+						</h:commandButton>
+						<!--  <button onclick="validaDadosTurma()">Salvar</button>-->
+						</h:form>
 					</div>
 					
 					

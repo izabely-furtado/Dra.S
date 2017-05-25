@@ -8,18 +8,18 @@
 <h:head>
 
 	<meta charset="utf-8"></meta>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-	<title>Visualizar Aluno</title>	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<title>Visualizar Aluno</title>
 	<link href="assets/css/principal.css" rel="stylesheet" />
-	
+
 	<!-- Styles -->
 	<link href="./assets/css/colunas.css" rel="stylesheet" />
 	<link href="./assets/css/formulario2.css" rel="stylesheet" />
-	
-    <link href="./assets/css/impressao2.css" rel="stylesheet" />
-    <link href="./assets/css/formulario.css" rel="stylesheet" />
-	
+
+	<link href="./assets/css/impressao2.css" rel="stylesheet" />
+	<link href="./assets/css/formulario.css" rel="stylesheet" />
+
 	<link href="./assets/css/principal.css" rel="stylesheet" />
 	<link href="./assets/css/menu.css" rel="stylesheet" />
 	<link href="assets/css/inicio.css" rel="stylesheet" />
@@ -38,119 +38,139 @@
 			<div class="coluna-3">
 				<nav>
 					<ul>
-						<li class="list-group-item active"><header><a 
-										 href="#"> <IMG
-											alt="logo-onda" src="./assets/img/logo-onda2.png" />
-									</a></header></li>
+						<li class="list-group-item active"><header>
+								<a href="#"> <IMG alt="logo-onda"
+									src="./assets/img/logo-onda2.png" />
+								</a>
+							</header></li>
 						<li><a class="ativo" href="#">Alunos</a></li>
-						<li><a href="./formularioAcompanhamentoPsico.jsf">Formulário de Acompanhamento Psicológico</a></li>
-						<li><a href="./gerarDesligamento.jsf">Gerar Termo de Desligamento</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.jsf">Formulário
+								de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.jsf">Gerar Termo de
+								Desligamento</a></li>
 						<li><a href="./pesquisarAlunos.jsf">Pesquisar Alunos</a></li>
 						<li><a class="ativo" href="#">Turmas</a></li>
 						<li><a href="./cadastrarTurmas.jsf">Cadastrar Turmas</a></li>
 						<li><a href="./pesquisarTurmas.jsf">Pesquisar Turmas</a></li>
 						<li><a href="./cadastrarAulas.jsf">Cadastrar Aulas</a></li>
 						<li><a href="#" class="ativo">Sistema</a></li>
-						<li><a href="./dadosAcesso.jsf">Visualizar Dados de Acesso</a></li>
-						<li><a href="./alterarDadosAcesso.jsf">Alterar Dados de Acesso</a></li>
+						<li><a href="./dadosAcesso.jsf">Visualizar Dados de
+								Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.jsf">Alterar Dados de
+								Acesso</a></li>
 						<li><a href="./login.jsf">Sair</a></li>
 					</ul>
 				</nav>
 			</div>
 			<!-- Conte�do -->
 			<div class="coluna-9">
-				<main> <!-- Conte�do de P�ginas -->
-				
-				<h:form id="formAluno" method="post">
-				
-				<h2>
-					Dados do Aluno<br /> <small><h:outputText value="#{alunoBean.aluno.dadosPessoais.nome}" /></small>
-				</h2>
-				
-					
+				<main> <!-- Conte�do de P�ginas --> <h:form id="formAluno"
+					method="post">
 
-						<div class="coluna-12">
-							<h2><small>Dados Básicos</small></h2>
-							
-							
-							Data de Nascimento:
-							<h:outputText value="#{alunoBean.aluno.dadosPessoais.datNasc}" /><br />
-							Telefone:
-							<h:outputText value="#{alunoBean.aluno.dadosPessoais.telefone}" /><br />
-							Sexo:
-							<h:outputText value="#{alunoBean.aluno.dadosPessoais.sexo}" /><br />
-							Responsável:
-							<h:outputText value="#{alunoBean.aluno.dadosPessoais.responsavel}" /><br />
-							Parentesco:
-							<h:outputText value="#{alunoBean.aluno.dadosPessoais.parentesco}" /><br />
-							Contato:
-							<h:outputText value="#{alunoBean.aluno.dadosPessoais.contato}" /><br />
-							NIS:
-							<h:outputText value="#{alunoBean.aluno.dadosPessoais.nis}" /><br />
-							
-						</div>
-						
-						<div class="coluna-12">
-							<h2><small>Endereço:</small></h2>
-							
-							<p>
-							Endereco: 
-							<h:outputText value="#{alunoBean.aluno.endereco.rua}" /><br />
-							Número: 
-							<h:outputText value="#{alunoBean.aluno.endereco.numero}" /><br />
-							CEP:
-							<h:outputText value="#{alunoBean.aluno.endereco.cep}" /><br />
-							Bairro: 
-							<h:outputText value="#{alunoBean.aluno.endereco.bairro}" /><br />
-							Cidade: 
-							<h:outputText value="#{alunoBean.aluno.endereco.cidade}" /><br />
-							Estado: 
-							<h:outputText value="#{alunoBean.aluno.endereco.estado}" /><br />
-							Ponto de Referência: 
-							<h:outputText value="#{alunoBean.aluno.endereco.referencia}" /><br />
-							</p>
-						</div>
-						
-						<div class="coluna-12" >
-						<h2><small>Acompanhamento Escolar</small></h2>
-					
-						<br/>
-						
-						<p>Escola: <h:outputText value="#{alunoBean.aluno.acompanhamentoEscolar.escola}" /> </p>
-						
-						<!--<table class="tabela2">
-							
+					<h2>
+						Dados do Aluno<br /> <small><h:outputText
+								value="#{alunoBean.aluno.dadosPessoais.nome}" /></small>
+					</h2>
+
+
+
+					<div class="coluna-12">
+						<h2>
+							<small>Dados Básicos</small>
+						</h2>
+
+
+						Data de Nascimento:
+						<h:outputText value="#{alunoBean.aluno.dadosPessoais.datNasc}" />
+						<br /> Telefone:
+						<h:outputText value="#{alunoBean.aluno.dadosPessoais.telefone}" />
+						<br /> Sexo:
+						<h:outputText value="#{alunoBean.aluno.dadosPessoais.sexo}" />
+						<br /> Responsável:
+						<h:outputText value="#{alunoBean.aluno.dadosPessoais.responsavel}" />
+						<br /> Parentesco:
+						<h:outputText value="#{alunoBean.aluno.dadosPessoais.parentesco}" />
+						<br /> Contato:
+						<h:outputText value="#{alunoBean.aluno.dadosPessoais.contato}" />
+						<br /> NIS:
+						<h:outputText value="#{alunoBean.aluno.dadosPessoais.nis}" />
+						<br />
+
+					</div>
+
+					<div class="coluna-12">
+						<h2>
+							<small>Endereço:</small>
+						</h2>
+
+						<p>
+							Endereco:
+							<h:outputText value="#{alunoBean.aluno.endereco.rua}" />
+							<br /> Número:
+							<h:outputText value="#{alunoBean.aluno.endereco.numero}" />
+							<br /> CEP:
+							<h:outputText value="#{alunoBean.aluno.endereco.cep}" />
+							<br /> Bairro:
+							<h:outputText value="#{alunoBean.aluno.endereco.bairro}" />
+							<br /> Cidade:
+							<h:outputText value="#{alunoBean.aluno.endereco.cidade}" />
+							<br /> Estado:
+							<h:outputText value="#{alunoBean.aluno.endereco.estado}" />
+							<br /> Ponto de Referência:
+							<h:outputText value="#{alunoBean.aluno.endereco.referencia}" />
+							<br />
+						</p>
+					</div>
+
+					<div class="coluna-12">
+						<h2>
+							<small>Acompanhamento Escolar</small>
+						</h2>
+
+						<br />
+
+						<p>
+							Escola:
+							<h:outputText
+								value="#{alunoBean.aluno.acompanhamentoEscolar.escola}" />
+						</p>
+
+						<table class="tabela2">
+
 							<thead>
-								
-								
+
+
 								<tr class="active">
 									<th>Ano:</th>
-									<th>2013</th>
-									<th>2014</th>
-									<th>2015</th>
-									<th>2015</th>
-									<th>2016</th>
-									<th>2017</th>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.ano1}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.ano2}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.ano3}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.ano4}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.ano5}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.ano6}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.ano7}</td>
+
 								</tr>
 							</thead>
-							
+
 							<tbody>
-								
+
 								<tr>
-									<td>Série:</td>
-									<td>1</td>
-									<td>2</td>
-									<td>3</td>
-									<td>4</td>
-									<td>5</td>
-									<td>6</td>
+									<th>Série:</th>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.serie1}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.serie2}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.serie3}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.serie4}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.serie5}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.serie6}</td>
+									<td>#{alunoBean.aluno.acompanhamentoEscolar.serie7}</td>
 								</tr>
-								
+
 							</tbody>
-							
-						</table>-->
-						
-						
+
+						</table>
+
+						<!-- 
 						<h:dataTable value="#{acompanhamentoEscolarBean.lista}" var="acompanhamento"
 							 styleClass="tabela2"
 							 headerClass="active">
@@ -172,376 +192,347 @@
 							 #{employee.salary}
 							 </h:column>
 						</h:dataTable>
-						
-						
-						</div>
-						
-						<div class="coluna-12">
-						<h2><small>Informações Médicas</small></h2>
-						
+						 -->
+
+					</div>
+
+					<div class="coluna-12">
+						<h2>
+							<small>Informações Médicas</small>
+						</h2>
+
 						<p>
-							Uso de medicamento: 
-							<h:outputText value="#{alunoBean.aluno.infoMedicas.medicacao}" /><br />
-							Qual: 
-							<h:outputText value="#{alunoBean.aluno.infoMedicas.qmedicacao}" /><br />
-							Tipo Sanguíneo: 
-							<h:outputText value="#{alunoBean.aluno.infoMedicas.tipoSangue}" /><br />
-							Alergia: 
-							<h:outputText value="#{alunoBean.aluno.infoMedicas.alergia}" /><br />
-							Qual: 
-							<h:outputText value="#{alunoBean.aluno.infoMedicas.qalergia}" /><br />
-							Contato de emergência: 
-							<h:outputText value="#{alunoBean.aluno.infoMedicas.contatoSOS}" /><br />
+							Uso de medicamento:
+							<h:outputText value="#{alunoBean.aluno.infoMedicas.qmedicacao}" />
+							<br /> Tipo Sanguíneo:
+							<h:outputText value="#{alunoBean.aluno.infoMedicas.tipoSangue}" />
+							<br /> Alergia:
+							<h:outputText value="#{alunoBean.aluno.infoMedicas.qalergia}" />
+							<br /> Contato de emergência:
+							<h:outputText value="#{alunoBean.aluno.infoMedicas.contatoSOS}" />
+							<br />
 						</p>
-						</div>
-						
-						<div class="coluna-12">
-						<h2><small>Informações de Transporte</small></h2>
-						
+					</div>
+
+					<div class="coluna-12">
+						<h2>
+							<small>Informações de Transporte</small>
+						</h2>
+
 						<p>
-							
-							Utiliza Transporte:
-							<h:outputText value="#{alunoBean.aluno.infoTransporte.transporte}" /><br />
-							Número do Cartão: 
-							<h:outputText value="#{alunoBean.aluno.infoTransporte.qtransporte}" /><br />
+							Transporte:
+							<h:outputText
+								value="#{alunoBean.aluno.infoTransporte.qtransporte}" />
+							<br /> Número do Cartão:
+							<h:outputText value="#{alunoBean.aluno.infoTransporte.cartao}" />
+							<br />
 						</p>
-						
-						</div>
-					
-						
-						
-						<div class="coluna-12" style="overflow-x:auto;">
-						
-							<h2><small>Composição Familiar</small></h2>
-							
-							<!--<table class="tabela2">
-								<thead>
-									<tr class="active">
-										<th>Nome</th>
-										<th>Parentesco</th>
-										<th>Idade</th>
-										<th>Data de Nascimento</th>
-										<th>Situaçãoo Ocupacional</th>
-										<th> Renda Familiar</th>
-										<th>SCFV</th>
-									</tr>
-								</thead>
-								
-								<tbody>
-									<tr>
-										<td>Juvelino Costa Alves</td>
-										<td>Tio Avô</td>
-										<td>100</td>
-										<td>1907</td>
-										<td>Desempregado</td>
-										<td> 1000,00</td>
-										<td>Nao sei que é</td>
-									</tr>
-									
-								<tbody>
-							</table>-->
-							
-							<h:dataTable value="#{acompanhamentoEscolarBean.lista}" var="acompanhamento"
-							 styleClass="tabela2"
-							 headerClass="active">
-							
-							 <h:column>
-							 <f:facet name="header">Ano</f:facet>
-							 #{acompanhamento.Ano}
+
+					</div>
+
+
+
+					<div class="coluna-12" style="overflow-x: auto;">
+
+						<h2>
+							<small>Composição Familiar</small>
+						</h2>
+
+						<h:dataTable value="#{alunoBean.aluno.composicaoFamiliar.parentes}" var="parente"
+								styleClass="tabela2" headerClass="active">
+
+								<h:column>
+									<f:facet name="header">Nome</f:facet>
+							 #{parente.nome}
 							 </h:column>
-							 <h:column>
-							 <f:facet name="header">Department</f:facet>
-							 #{employee.department}
+								<h:column>
+									<f:facet name="header">Idade</f:facet>
+							 #{parente.idade}
 							 </h:column>
-							 <h:column>
-							 <f:facet name="header">Age</f:facet>
-							 #{employee.age}
+								<h:column>
+									<f:facet name="header">Parentesco</f:facet>
+							 #{parente.parentesco}
 							 </h:column>
-							 <h:column>
-							 <f:facet name="header">Salary</f:facet>
-							 #{employee.salary}
+								<h:column>
+									<f:facet name="header">Data de Nascimento</f:facet>
+							 #{parente.dataNasc}
 							 </h:column>
-						</h:dataTable>
-						
-						</div>
-						
-							
-						<div class="coluna-12" style="overflow-x:auto;">
-						
-						<h2><small>Despesas</small></h2>
-						
-						<!--
-							<table class="tabela2">
-								<thead>
-									<tr class="active">
-										<th>Aluguel</th>
-										<th>Água</th>
-										<th>Luz</th>
-										<th>Telefone</th>
-										<th>Gás</th>
-										<th>Alimentação</th>
-										<th>Medicamentos</th>		
-										<th>Outras</th>
-										<th>Total</th>
-										<th>Renda Familiar Total</th>
-									</tr>
-								</thead>
-								
-								<tbody>
-									<tr>
-										<td>500,00</td>
-										<td>100,00</td>
-										<td>60,00</td>
-										<td>80,00</td>
-										<td>55,00</td>
-										<td>600,00</td>
-										<td>40,00</td>		
-										<td>200,00</td>
-										<td>1635,00</td>
-										<td>1800,00</td>
-									</tr>
-									
-								<tbody>
-							</table>-->
-							
-							<h:dataTable value="#{acompanhamentoEscolarBean.lista}" var="acompanhamento"
-							 styleClass="tabela2"
-							 headerClass="active">
-							
-							 <h:column>
-							 <f:facet name="header">Ano</f:facet>
-							 #{acompanhamento.Ano}
+								<h:column>
+									<f:facet name="header">Situação Ocupacional</f:facet>
+							 #{parente.situacaoOcupacional}
 							 </h:column>
-							 <h:column>
-							 <f:facet name="header">Department</f:facet>
-							 #{employee.department}
+								<h:column>
+									<f:facet name="header">Escolaridade</f:facet>
+							 #{parente.escolaridade}
 							 </h:column>
-							 <h:column>
-							 <f:facet name="header">Age</f:facet>
-							 #{employee.age}
+								<h:column>
+									<f:facet name="header">Renda</f:facet>
+							 #{parente.renda}
 							 </h:column>
-							 <h:column>
-							 <f:facet name="header">Salary</f:facet>
-							 #{employee.salary}
+								<h:column>
+									<f:facet name="header">SCFV</f:facet>
+							 #{parente.scfv}
 							 </h:column>
-						</h:dataTable>
+							</h:dataTable>
+
 						
-						</div>
-						
-						<div class="coluna-12">
-							<h2><small>Condições de Moradia:</small></h2>
-							
-							
-								Condições: 
-								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.condicao}" /><br />
-								<br/>
-								<h2><small>Insfraestrutura:</small></h2>
-							
-								Possui água: 
-								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuiagua}" /><br />
-								Possui rede de esgoto: 
-								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuiesgoto}" /><br />
-								Possui energia elétrica: 
-								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuienergia}" /><br />
-								Possui coleta de lixo: 
-								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuicoleta}" /><br />
-								<br/>
-								Risco Habitacional: 
-								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.possuirisco}" /><br />
-								Qual: <br/>
-								<h:outputText value="#{alunoBean.aluno.condicoesMoradia.qrisco}" /><br />
-						
-							
-						</div>
-						<hr />
-						<div class="coluna-12">
-							<h2><small>Acesso a Serviços</small></h2>
-							<h2><small>Serviços</small></h2>
-							
-							<p>
-							<strong>Centro de Referencia a Assistência Social - CRAS:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.qcras}" /><br />
-							<strong>Centro de Referencia Especializado da Assistência Social - CREAS:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.qcreas}" /><br />
-							<strong>Unidade Básica de Saúde:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.qsus}" /><br />
-							<strong>Estratégia de Saúde da Família - ESF:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.qesf}" /><br />
-							<strong>Centro de Educação Infantil:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.qcei}" /><br />
-							<strong>Escola:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.qescola}" /><br />
-							<strong>Serviço de Acolhimento Institucional:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.qacolhimento}" /><br />
-							</p>
-							
-						</div>
-						
-						
-						<div class="coluna-12">
-							
-							<h2><small>Serviço de acolhimento Institucional</small></h2>
-							<h3><small>Municipe em Situação de Acolhimento Institucional:</small></h3>
-							<p>
-							
-							<strong>Nome:</strong>	
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.nomeAcolhido}" /><br />
-							<strong>Instituição:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.nomeInstituicao}" /><br />
-							<strong>Responsável:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.responsavelInstituicao}" /><br />
-							<strong>Contato:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.contato}" /><br />
-							<strong>Motivo:</strong> 
-							<h:outputText value="#{alunoBean.aluno.acessoServicos.situacaoacolhimento.motivo}" /><br />
-	
-							
-							</p>
-						</div>
-						
-						
-						<div class="coluna-12">
-							<h2><small>Programas/Benefícios:</small></h2>
-							
-							<p>
-							
-							<strong>Programa Bolsa Família - PBF:</strong> 
-							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuipbf}" /><br />
-							<strong>Programa Incluir/Bolsa Capixaba:</strong> 
-							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuipibc}" /><br />
-							<strong>Programa Brasil Carinhoso:</strong> 
-							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuipbc}" /><br />
-							<strong>Benefício de Prestação Continuada - BPC:</strong> 
-							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuibp}" /><br />
-							<strong>Benefícios Previdenciários:</strong> 
-							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuibp}" /><br />
-							<strong>Auxílio Reclusão:</strong> 
-							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuiar}" /><br />
-							<strong>Programa/Benefício Habitacional:</strong> 
-							<h:outputText value="#{alunoBean.aluno.programasBeneficios.beneficioHabitacional}" /><br />
-							<strong>Outro:</strong>
-							<h:outputText value="#{alunoBean.aluno.programasBeneficios.possuipbf}" /><br />
-							</p>
-						</div>
-						
-						<div class="coluna-12">
-							<h2><small>Público Prioritário do Serviço:</small></h2>
-							
-							<p>
-							
-							<strong>Em situação de isolamento:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.isolamento}" /><br />
-							<strong>Trabalho Infantil:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.trabInfantil}" /><br />
-							<strong>Vivência de Violência ou Negligência:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.vivencia}" /><br />
-							<strong>Fora da escola ou com defasagem escolar superior a dois anos:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.defasagem}" /><br />
-							<strong>Em situação de acolhimento:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.acolimento}" /><br />
-							<strong>Em cumprimento da MSE em meio aberto:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.mse}" /><br />
-							<strong>Egressos de Medida Socioeducativa:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.egressos}" /><br />
-							<strong>Situação de abuso e/ou exploração sexual:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.abuso}" /><br />
-							<strong>Com medida de proteção do ECA:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.eca}" /><br />
-							<strong>Crianças e Adolescentes em situação de rua:</strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.rua}" /><br />
-							<strong>Vulnerabilidade que diz respeito a pessoas com deficiência: </strong> 
-							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.vulnerabilidade}" /><br />
-							</p>
-						</div>
-						
-						
-						<h2><small>Rematrícula</small></h2>
-							
-							<div style="overflow-x:auto;">
-							  <!--<table class="tabela2">
+
+					</div>
+
+
+					<div class="coluna-12" style="overflow-x: auto;">
+
+						<h2>
+							<small>Despesas</small>
+						</h2>
+
+						<table class="tabela2">
+							<thead>
 								<tr class="active">
-								  <th>Ano</th>
-								  <th>Assinatura</th>
-								  <th>Data</th>
-								  
+									<th>Aluguel</th>
+									<th>Água</th>
+									<th>Luz</th>
+									<th>Telefone</th>
+									<th>Gás</th>
+									<th>Alimentação</th>
+									<th>Medicamentos</th>
+									<th>Outras</th>
+									
 								</tr>
+							</thead>
+
+							<tbody>
 								<tr>
-								  <td>2013</td>
-								  <td> Suzana Leal</td>
-								  <td>10/10/2013</td> 
+									<td>#{alunoBean.aluno.despesas.aluguel}</td>
+									<td>#{alunoBean.aluno.despesas.agua}</td>
+									<td>#{alunoBean.aluno.despesas.luz}</td>
+									<td>#{alunoBean.aluno.despesas.telefone}</td>
+									<td>#{alunoBean.aluno.despesas.gas}</td>
+									<td>#{alunoBean.aluno.despesas.alimentacao}</td>
+									<td>#{alunoBean.aluno.despesas.medicamentos}</td>
+									<td>#{alunoBean.aluno.despesas.outros}</td>
+									
 								</tr>
 
-								<tr>
-								 
-								 <td>2014</td>
-								  <td>Suzana lEAL</td>
-								  <td>10/10/2014</td>
-								 
-								</tr>
-								<tr>
-								  <td>2015</td>
-								  <td>Suzana Leal jdhbsf kafjhf</td>
-								  <td>10/10/2015</td>
-								</tr>
-							  </table>-->
-							  
-							  <h:dataTable value="#{acompanhamentoEscolarBean.lista}" var="acompanhamento"
-							 styleClass="tabela2"
-							 headerClass="active"
-							>
-							 <h:column>
-							 <f:facet name="header">Ano</f:facet>
-							 #{acompanhamento.Ano}
-							 </h:column>
-							 <h:column>
-							 <f:facet name="header">Department</f:facet>
-							 #{employee.department}
-							 </h:column>
-							 <h:column>
-							 <f:facet name="header">Age</f:facet>
-							 #{employee.age}
-							 </h:column>
-							 <h:column>
-							 <f:facet name="header">Salary</f:facet>
-							 #{employee.salary}
-							 </h:column>
-						</h:dataTable>
-							
-							</div>
-						
-						<div class="coluna-6">
-							
-							<p class="ass">Assinatura do Técnico Responsável:<br />____________________________________________</p>
-								<div class="box">
+							</tbody>
+						</table>
+						<table class="tabela2">
+							<thead>
+								<tr class="active">
+									<th>Despesa Total</th>
+									<th>Renda Familiar Total</th>
+									<th>Renda Per Capta</th>
 									
-								</div>
-						</div>
-						
-						<div class="coluna-6">
-							
-							<p class="ass">Assinatura do Responsável Familiar:<br />____________________________________________</p>
-								<div class="box">
 									
-								</div>
-						</div>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>#{alunoBean.aluno.despesas.despesaTotal}</td>
+									<td>#{alunoBean.aluno.despesas.rendaTotal}</td>
+									<td>#{alunoBean.aluno.despesas.rendaPerCapta}</td>
+									
+								</tr>
+
+							</tbody>
+						</table>
 						
-						<div class="coluna-12"><br/><br/>
-							<h:commandButton 
-								styleClass="botao" 
-								onclick="confirmar()" 
-								value="CONFIRMAR CADASTRO"> 
-							</h:commandButton>
-						</div>
+
+					</div>
+
+					<div class="coluna-12">
+						<h2>
+							<small>Condições de Moradia:</small>
+						</h2>
+
+						<p>
+						<h:outputText value="#{alunoBean.aluno.condicoesMoradia.condicao}" /></p>
+						<h3>
+							Insfraestrutura:
+						</h3>
+
+						Possui água:
+						<h:outputText
+							value="#{alunoBean.aluno.condicoesMoradia.possuiagua}" />
+						<br /> Possui rede de esgoto:
+						<h:outputText
+							value="#{alunoBean.aluno.condicoesMoradia.possuiesgoto}" />
+						<br /> Possui energia elétrica:
+						<h:outputText
+							value="#{alunoBean.aluno.condicoesMoradia.possuienergia}" />
+						<br /> Possui coleta de lixo:
+						<h:outputText
+							value="#{alunoBean.aluno.condicoesMoradia.possuicoleta}" />
+						<br /> <br /> Risco Habitacional:
+						<h:outputText value="#{alunoBean.aluno.condicoesMoradia.qrisco}" />
+						<br />
+
+
+					</div>
+					<hr />
+					<div class="coluna-12">
+						<h2>
+							<small>Acesso a Serviços</small>
+						</h2>
+						<h3>Serviços</h3>
+
+						<p>
+							Centro de Referencia a Assistência Social -
+								CRAS:
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qcras}" />
+							<br /> Centro de Referencia Especializado da
+								Assistência Social - CREAS:
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qcreas}" />
+							<br /> Unidade Básica de Saúde:
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qsus}" />
+							<br /> Estratégia de Saúde da Família - ESF:
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qesf}" />
+							<br /> Centro de Educação Infantil:
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qcei}" />
+							<br /> Escola:
+							<h:outputText value="#{alunoBean.aluno.acessoServicos.qescola}" />
+							<br /> Serviço de Acolhimento Institucional:
+							<h:outputText
+								value="#{alunoBean.aluno.acessoServicos.qacolhimento}" />
+							<br />
+						</p>
+
+					</div>
+
+
+					<div class="coluna-12">
+
+						<h3>
+							Serviço de acolhimento Institucional
 						
-						</h:form>
+						</h3>
+						<h4>Municipe em Situação de Acolhimento Institucional:</h4>
+						<table class="tabela2">
 						
-						</main>
+							<thead>
+								<tr class="active">
+									<th>Nome:</th>
+									<th>Instituição</th>
+									<th>Responsável</th>
+									<th>Contato</th>
+									<th>Motivo</th>
+									
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>#{alunoBean.aluno.acessoServicos.situacaoacolhimento.nomeAcolhido}</td>
+									<td>#{alunoBean.aluno.acessoServicos.situacaoacolhimento.nomeInstituicao}</td>
+									<td>#{alunoBean.aluno.acessoServicos.situacaoacolhimento.responsavelInstituicao}</td>
+									<td>#{alunoBean.aluno.acessoServicos.situacaoacolhimento.contato}</td>
+									<td>#{alunoBean.aluno.acessoServicos.situacaoacolhimento.motivo}</td>
+								</tr>
+
+							</tbody>
+						</table>
 						
-						
-					</div><!--fim da div content page-->
-				</div>
-								
+					</div>
+
+
+					<div class="coluna-12">
+						<h2>
+							<small>Programas/Benefícios:</small>
+						</h2>
+
+						<p>
+
+							<strong>Programa Bolsa Família - PBF:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.programasBeneficios.possuipbf}" />
+							<br /> <strong>Programa Incluir/Bolsa Capixaba:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.programasBeneficios.possuipibc}" />
+							<br /> <strong>Programa Brasil Carinhoso:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.programasBeneficios.possuipbc}" />
+							<br /> <strong>Benefício de Prestação Continuada - BPC:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.programasBeneficios.possuibp}" />
+							<br /> <strong>Benefícios Previdenciários:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.programasBeneficios.possuibp}" />
+							<br /> <strong>Auxílio Reclusão:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.programasBeneficios.possuiar}" />
+							<br /> <strong>Programa/Benefício Habitacional:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.programasBeneficios.beneficioHabitacional}" />
+							<br /> <strong>Outro:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.programasBeneficios.outro}" />
+							<br />
+						</p>
+					</div>
+
+					<div class="coluna-12">
+						<h2>
+							<small>Público Prioritário do Serviço:</small>
+						</h2>
+
+						<p>
+
+							<strong>Em situação de isolamento:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.publicoPrioritario.isolamento}" />
+							<br /> <strong>Trabalho Infantil:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.publicoPrioritario.trabInfantil}" />
+							<br /> <strong>Vivência de Violência ou Negligência:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.publicoPrioritario.vivencia}" />
+							<br /> <strong>Fora da escola ou com defasagem escolar
+								superior a dois anos:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.publicoPrioritario.defasagem}" />
+							<br /> <strong>Em situação de acolhimento:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.publicoPrioritario.acolimento}" />
+							<br /> <strong>Em cumprimento da MSE em meio aberto:</strong>
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.mse}" />
+							<br /> <strong>Egressos de Medida Socioeducativa:</strong>
+							<h:outputText
+								value="#{alunoBean.aluno.publicoPrioritario.egressos}" />
+							<br /> <strong>Situação de abuso e/ou exploração
+								sexual:</strong>
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.abuso}" />
+							<br /> <strong>Com medida de proteção do ECA:</strong>
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.eca}" />
+							<br /> <strong>Crianças e Adolescentes em situação de
+								rua:</strong>
+							<h:outputText value="#{alunoBean.aluno.publicoPrioritario.rua}" />
+							<br /> <strong>Vulnerabilidade que diz respeito a
+								pessoas com deficiência: </strong>
+							<h:outputText
+								value="#{alunoBean.aluno.publicoPrioritario.vulnerabilidade}" />
+							<br />
+						</p>
+					</div>
+
+
+					
+					<div class="coluna-12">
+						<br />
+						<br />
+						<h:commandButton styleClass="botao" onclick="confirmar()"
+							value="CONFIRMAR CADASTRO">
+						</h:commandButton>
+					</div>
+
+				</h:form> </main>
+
+
 			</div>
-	
+			<!--fim da div content page-->
+		</div>
+
+	</div>
+
 </h:body>
 </html>

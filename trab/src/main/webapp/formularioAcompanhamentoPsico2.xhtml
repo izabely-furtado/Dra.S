@@ -87,10 +87,9 @@
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Nome do Parente:</label>
-								<h:inputText id="nome"
-									value="#{alunoBean.aluno.composicaoFamiliar.parentes}"
+								<h:inputText id="nome" value="#{parenteBean.parente.nome}"
 									required="true" class="formulario"
-									a:placeholder="Nome do Familiar" >
+									a:placeholder="Nome do Familiar">
 									<!--requiredMessage="#{text['aluno.telefone.validacao']}">-->
 								</h:inputText>
 								<h:message for="nome" styleClass="errorMessage" />
@@ -100,7 +99,7 @@
 							<div class="grupinho">
 								<label>Parentesco:</label>
 								<h:selectOneMenu class="formulario" id="parentesco"
-									value="#{alunoBean.aluno.dadosPessoais.parentesco}">
+									value="#{parenteBean.parente.parentesco}">
 									<f:selectItem itemLabel="Selecione o Tipo Sanguíneo" />
 									<f:selectItem itemLabel="Mãe" itemValue="Mãe" />
 									<f:selectItem itemLabel="Pai" itemValue="Pai" />
@@ -124,20 +123,18 @@
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Idade:</label>
-								<h:inputText id="idade" value="#{alunoBean.aluno.dadosPessoais.telefone}"
+								<h:inputText id="idade" value="#{parenteBean.parente.idade}"
 									required="true" class="formulario"
-									a:placeholder="Idade do Familiar"
-									requiredMessage="#{text['aluno.telefone.validacao']}"></h:inputText>
+									a:placeholder="Idade do Familiar"></h:inputText>
 								<h:message for="idade" styleClass="errorMessage" />
 							</div>
 						</div>
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Data de Nascimento:</label>
-								<h:inputText id="dn"
-									value="#{alunoBean.aluno.dadosPessoais.datNasc}" required="true"
-									class="formulario" a:placeholder="_ _/_ _/_ _ _ _"
-									requiredMessage="#{text['aluno.dataNasc.validacao']}"></h:inputText>
+								<h:inputText id="dn" value="#{parenteBean.parente.dataNasc}"
+									required="true" class="formulario"
+									a:placeholder="_ _/_ _/_ _ _ _"></h:inputText>
 								<h:message for="dn" styleClass="errorMessage" />
 
 							</div>
@@ -145,10 +142,10 @@
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Situação Ocupacional:</label>
-								<h:inputText id="situacao" value="#{alunoPBean.aluno.nome}"
+								<h:inputText id="situacao"
+									value="#{parenteBean.parente.situacaoOcupacional}"
 									required="true" class="formulario"
-									a:placeholder="Situação Ocupacional do Familiar"
-									requiredMessage="#{text['aluno.nome.validacao']}"></h:inputText>
+									a:placeholder="Situação Ocupacional do Familiar"></h:inputText>
 								<h:message for="situacao" styleClass="errorMessage" />
 							</div>
 						</div>
@@ -156,9 +153,8 @@
 							<div class="grupinho">
 								<label>Escolaridade:</label>
 								<h:inputText id="Escolaridade"
-									value="#{alunoPBean.aluno.telefone}" required="true"
-									class="formulario" a:placeholder="Escolaridade do Familiar"
-									requiredMessage="#{text['aluno.telefone.validacao']}"></h:inputText>
+									value="#{parenteBean.parente.escolaridade}" required="true"
+									class="formulario" a:placeholder="Escolaridade do Familiar"></h:inputText>
 								<h:message for="Escolaridade" styleClass="errorMessage" />
 
 							</div>
@@ -166,73 +162,84 @@
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Renda:</label>
-								<h:inputText id="renda" value="#{alunoPBean.aluno.telefone}"
+								<h:inputText id="renda" value="#{parenteBean.parente.renda}"
 									required="true" class="formulario"
-									a:placeholder="Renda do Familiar"
-									requiredMessage="#{text['aluno.telefone.validacao']}"></h:inputText>
+									a:placeholder="Renda do Familiar"></h:inputText>
 								<h:message for="renda" styleClass="errorMessage" />
 							</div>
 						</div>
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>SCFV:</label>
-								<h:inputText id="scfv" value="#{alunoPBean.aluno.telefone}"
-									required="true" class="formulario"
-									a:placeholder="Serviço de Convivência e Fortalecimento de Vínculos"
-									requiredMessage="#{text['aluno.telefone.validacao']}"></h:inputText>
+								<h:inputText id="scfv" value="#{parenteBean.parente.scfv}"
+									class="formulario"
+									a:placeholder="Serviço de Convivência e Fortalecimento de Vínculos"></h:inputText>
 								<h:message for="scfv" styleClass="errorMessage" />
 							</div>
 						</div>
 						<div class="coluna-12">
-						<h:commandButton 
-								 styleClass="botao"
-								 onclick="addParente()"
-								 action="#{composicaoFamiliarBean.inserir}" 
-								 value="Adicionar Parente">
-						</h:commandButton>
-						<!-- 
+							<h:commandButton styleClass="botao" onclick="addParente()"
+								action="#{parenteBean.addParente}" value="Adicionar Parente">
+							</h:commandButton>
+							<!-- 
 							<button onclick="addParente()">Adiciona Parente</button>
 							 -->
 						</div>
 
 						<div class="coluna-12">
-							<table>
-								<thead>
-									<tr>
-										<th>Nome</th>
-										<th>Parentesco</th>
-										<th>Idade</th>
-										<th>Nascimento</th>
-										<th>Situação</th>
-										<th>Escolaridade</th>
-										<th>Renda</th>
-										<th>SCFV</th>
-									</tr>
-								</thead>
-								<tbody id="parente" class="parentes">
 
+							<h:dataTable value="#{parenteBean.lista}" var="parente"
+								styleClass="tabela2" headerClass="active">
 
-								</tbody>
-							</table>
+								<h:column>
+									<f:facet name="header">Nome</f:facet>
+							 #{parente.nome}
+							 </h:column>
+								<h:column>
+									<f:facet name="header">Idade</f:facet>
+							 #{parente.idade}
+							 </h:column>
+								<h:column>
+									<f:facet name="header">Parentesco</f:facet>
+							 #{parente.parentesco}
+							 </h:column>
+								<h:column>
+									<f:facet name="header">Data de Nascimento</f:facet>
+							 #{parente.dataNasc}
+							 </h:column>
+								<h:column>
+									<f:facet name="header">Situação Ocupacional</f:facet>
+							 #{parente.situacaoOcupacional}
+							 </h:column>
+								<h:column>
+									<f:facet name="header">Escolaridade</f:facet>
+							 #{parente.escolaridade}
+							 </h:column>
+								<h:column>
+									<f:facet name="header">Renda</f:facet>
+							 #{parente.renda}
+							 </h:column>
+								<h:column>
+									<f:facet name="header">SCFV</f:facet>
+							 #{parente.scfv}
+							 </h:column>
+							</h:dataTable>
+
 						</div>
-						<br />
-						<br />
+
 						<br />
 
 
-						<h:commandButton 
-								 styleClass="botao"
-								 onclick="proximo2()"
-								 action="#{alunoBean.inserir}" 
-								 value="Próximo">
+						<h:commandButton styleClass="botao" onclick="proximo2()"
+							action="#{alunoBean.gerarFAP2(parenteBean.lista)}" value="Próximo">
 						</h:commandButton>
 
 
 
-						</h:form>
-				</div><!-- 
-				<button onclick="proximo2()">Próximo</button> -->
-				</main>
+					</h:form>
+				</div>
+				<!-- 
+				<button onclick="proximo2()">Próximo</button> --> </main>
 			</div>
 			<br /> <br />
 		</div>
