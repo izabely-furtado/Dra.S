@@ -3,6 +3,7 @@ package cgt.backingbean;
 import java.io.IOException;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -17,6 +18,9 @@ public class DadosAcessoBean {
 
 	private List<DadosAcesso> lista;
 	private DadosAcesso dadosAcesso = new DadosAcesso();
+	private String repita;
+	private String antiga;
+	private String nova;
 	DadosAcessoCrudJDBC objDadosAcessoCrudJDBC = new DadosAcessoCrudJDBC();
 
 	public List<DadosAcesso> getLista() {
@@ -52,10 +56,43 @@ public class DadosAcessoBean {
 		return u.getId()+"";
 	}
 
-	public String alterarRegistro(DadosAcesso u) throws IOException {
-		u.setEdita(true);
+	public String alterarRegistro() throws IOException {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("./alterarDadosAcesso.jsf");
 		return "alterar";
+	}
+	public void gerar() throws IOException {
+		FacesContext context = FacesContext.getCurrentInstance();
+		int erro = 0;
+		if (this.dadosAcesso.getEmail() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email inválido", ""));
+			erro++;
+		}
+		if (this.antiga == this.dadosAcesso.getSenha() || this.antiga == "admin") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe sua antiga senha", ""));
+			erro++;
+		}
+		if (this.dadosAcesso.getSenha() == "") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe uma senha", ""));
+			erro++;
+		}
+		if (!this.nova.equals(repita)) {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Senhas diferentes, repita o procedimento", ""));
+			erro++;
+		}
+		if (this.dadosAcesso.getLogin() == "") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe um login", ""));
+			erro++;
+		}
+		if (this.dadosAcesso.getLembrar() == "") {
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_WARN, "Tens memória de elefante é?", ""));
+		}
+		
+		if (erro == 0) {
+			this.dadosAcesso.setSenha(nova);
+			DadosAcessoCrudJDBC.alterar(dadosAcesso);
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./dadosAcesso.jsf");
+		}
+		
 	}
 
 	public String salvarRegistro() {
@@ -93,6 +130,30 @@ public class DadosAcessoBean {
 	public String verLista() {
 		DadosAcessoCrudJDBC.listar();
 		return "listagem";
+	}
+
+	public String getRepita() {
+		return repita;
+	}
+
+	public void setRepita(String repita) {
+		this.repita = repita;
+	}
+
+	public String getAntiga() {
+		return antiga;
+	}
+
+	public void setAntiga(String antiga) {
+		this.antiga = antiga;
+	}
+
+	public String getNova() {
+		return nova;
+	}
+
+	public void setNova(String nova) {
+		this.nova = nova;
 	}
 
 }

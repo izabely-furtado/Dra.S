@@ -80,7 +80,7 @@
 								<label>Senha Antiga:</label>
 
 								<h:inputText id="senhaP"
-									value="#{dadosAcessoBean.dadosAcesso.senha}" required="true"
+									value="#{dadosAcessoBean.antiga}" required="true"
 									class="formulario" a:placeholder="Confirme a senha anterior">
 									<!--requiredMessage="#{text['dadosAcesso.senha.validacao']}">-->
 								</h:inputText>
@@ -94,7 +94,7 @@
 								<label>Senha:</label>
 
 								<h:inputText id="senha"
-									value="#{dadosAcessoBean.dadosAcesso.senha}" required="true"
+									value="#{dadosAcessoBean.nova}" required="true"
 									class="formulario" a:placeholder="No mínimo 5 caracteres">
 									<!--requiredMessage="#{text['dadosAcesso.senha.validacao']}"-->
 								</h:inputText>
@@ -107,7 +107,7 @@
 								<label>Repita:</label>
 
 								<h:inputText id="repita"
-									value="#{dadosAcessoBean.dadosAcesso.senha}" required="true"
+									value="#{dadosAcessoBean.repita}" required="true"
 									class="formulario" a:placeholder="Repita a senha aqui">
 									<!-- requiredMessage="#{text['dadosAcesso.senha.validacao']}"-->
 								</h:inputText>
@@ -146,7 +146,7 @@
 
 					</div>
 					<h:commandButton styleClass="botao" onclick="alterar()"
-						action="#{dadosAcessoBean.salvarRegistro}" value="Alterar">
+						action="#{dadosAcessoBean.gerar}" value="Alterar">
 					</h:commandButton>
 				</h:form> 
 				<!-- 

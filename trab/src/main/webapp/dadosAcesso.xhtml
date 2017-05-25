@@ -56,31 +56,31 @@
 					Dados de Acesso<br /> <small>Ao Sistema</small>
 				</h2>
 				
-					<h:form id="formAluno" action="#{dadosAcessoBean.dadosAcesso}"  var="dados" method="post">
+					<h:form id="formAcesso" method="post">
 						<div class="linha">
 						<div class="coluna-4">
 							<div class="grupinho">
 								<label>Login:</label> 
-                                <h:outputText value="#{dados.login}" />
+                                <h:outputText value="#{dadosAcessoBean.dadosAcesso.login}" />
                                 
 							</div>
 						</div>
 						<div class="coluna-4">
 							<div class="grupinho">
 								<label>Senha:</label> 
-                                <h:outputText value="#{dados.senha}" />
+                                <h:outputText value="#{dadosAcessoBean.dadosAcesso.senha}" />
 							</div>
 						</div>
 						<div class="coluna-4">
 							<div class="grupinho">
 								<label>E-mail:</label> 
-                                <h:outputText value="#{dados.email}" />
+                                <h:outputText value="#{dadosAcessoBean.dadosAcesso.email}" />
 							</div>
 						</div>
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Lembrar senha:</label> 
-                                <h:outputText value="#{dados.lembrar}" />
+                                <h:outputText value="#{dadosAcessoBean.dadosAcesso.lembrar}" />
 							</div>
 						</div>
 						
@@ -90,7 +90,7 @@
 						<h:commandButton 
 								 styleClass="botao"
 								 onclick="editar()"
-								 action="#{dadosAcessoBean.alterarRegistro(dados)}" 
+								 action="#{dadosAcessoBean.alterarRegistro()}" 
 								 value="Editar">			 
 						</h:commandButton>
 						

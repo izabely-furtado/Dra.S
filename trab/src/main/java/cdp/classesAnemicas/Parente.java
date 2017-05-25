@@ -1,7 +1,5 @@
 package cdp.classesAnemicas;
 
-import java.util.Date;
-
 public class Parente {
 	private int id;
 	private String nome;
