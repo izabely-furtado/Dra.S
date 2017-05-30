@@ -21,7 +21,7 @@ public class ProgramasBeneficiosCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlProgramasBeneficios = "insert into ProgramasBeneficios(beneficiohabitacional, outro, possuiar, possuibp, possuipbc, possuipbf, possuipibc)"
+		String sqlProgramasBeneficios = "insert into ProgramasBeneficios(beneficiohabitacional, outro, possuiar, possuibp, possuibpc, possuipbc, possuipbf, possuipibc)"
 				+ "values (?, ?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert
@@ -32,6 +32,7 @@ public class ProgramasBeneficiosCrudJDBC {
 			insereSt.setString(2, programasBeneficios.getOutro());
 			insereSt.setBoolean(3, programasBeneficios.isPossuiar());
 			insereSt.setBoolean(4, programasBeneficios.isPossuibp());
+			insereSt.setBoolean(5, programasBeneficios.isPossuibpc());
 			insereSt.setBoolean(5, programasBeneficios.isPossuipbc());
 			insereSt.setBoolean(6, programasBeneficios.isPossuipbf());
 			insereSt.setBoolean(7, programasBeneficios.isPossuipibc());
@@ -131,6 +132,7 @@ public class ProgramasBeneficiosCrudJDBC {
 				programasBeneficios.setOutro(resultado.getString("outro"));
 				programasBeneficios.setPossuiar(resultado.getBoolean("possuiar"));
 				programasBeneficios.setPossuibp(resultado.getBoolean("possuibp"));
+				programasBeneficios.setPossuibpc(resultado.getBoolean("possuibpc"));
 				programasBeneficios.setPossuipbc(resultado.getBoolean("possuipbc"));
 				programasBeneficios.setPossuipbf(resultado.getBoolean("possuipbf"));
 				programasBeneficios.setPossuipibc(resultado.getBoolean("possuipibc"));
@@ -206,7 +208,7 @@ public class ProgramasBeneficiosCrudJDBC {
 		// Objeto para executar o SQL update
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "update ProgramasBeneficios set beneficiohabitacional=?, outro=?, possuiar=?, possuibp=?, possuipbc=?, possuibpf=?, possuipibic=?";
+		String sql = "update ProgramasBeneficios set beneficiohabitacional=?, outro=?, possuiar=?, possuibp=?, possuibpc=?, possuipbc=?, possuibpf=?, possuipibic=?";
 		try {
 			// recebe o SQL update
 			insereSt = conexao.prepareStatement(sql);
@@ -216,6 +218,7 @@ public class ProgramasBeneficiosCrudJDBC {
 			insereSt.setString(2, programasBeneficios.getOutro());
 			insereSt.setBoolean(3, programasBeneficios.isPossuiar());
 			insereSt.setBoolean(4, programasBeneficios.isPossuibp());
+			insereSt.setBoolean(5, programasBeneficios.isPossuibpc());
 			insereSt.setBoolean(5, programasBeneficios.isPossuipbc());
 			insereSt.setBoolean(6, programasBeneficios.isPossuipbf());
 			insereSt.setBoolean(7, programasBeneficios.isPossuipibc());

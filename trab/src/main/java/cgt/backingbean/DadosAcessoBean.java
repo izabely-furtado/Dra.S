@@ -31,7 +31,6 @@ public class DadosAcessoBean {
 		return dadosAcesso;
 	}
 
-	
 	public void setDadosAcesso(DadosAcesso dadosAcesso) {
 		this.dadosAcesso = dadosAcesso;
 	}
@@ -53,46 +52,60 @@ public class DadosAcessoBean {
 	public String excluirRegistro(DadosAcesso u) {
 		DadosAcessoCrudJDBC.excluir(u);
 		// salva o usuï¿½rio
-		return u.getId()+"";
+		return u.getId() + "";
 	}
 
 	public String alterarRegistro() throws IOException {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("./alterarDadosAcesso.jsf");
 		return "alterar";
 	}
+
 	public void gerar() throws IOException {
 		FacesContext context = FacesContext.getCurrentInstance();
 		int erro = 0;
-		if (this.dadosAcesso.getEmail() == ""){
-			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email inválido", ""));
+		if (this.dadosAcesso.getEmail() == "") {
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email inválido", ""));
 			erro++;
 		}
 		if (this.antiga == this.dadosAcesso.getSenha() || this.antiga == "admin") {
-			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe sua antiga senha", ""));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe sua antiga senha", ""));
 			erro++;
 		}
 		if (this.dadosAcesso.getSenha() == "") {
-			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe uma senha", ""));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe uma senha", ""));
 			erro++;
 		}
 		if (!this.nova.equals(repita)) {
-			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Senhas diferentes, repita o procedimento", ""));
+			context.addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Senhas diferentes, repita o procedimento", ""));
 			erro++;
 		}
 		if (this.dadosAcesso.getLogin() == "") {
-			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe um login", ""));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe um login", ""));
 			erro++;
 		}
 		if (this.dadosAcesso.getLembrar() == "") {
-			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_WARN, "Tens memória de elefante é?", ""));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Tens memória de elefante é?", ""));
 		}
-		
+
 		if (erro == 0) {
 			this.dadosAcesso.setSenha(nova);
 			DadosAcessoCrudJDBC.alterar(dadosAcesso);
 			FacesContext.getCurrentInstance().getExternalContext().redirect("./dadosAcesso.jsf");
 		}
-		
+
+	}
+
+	public void login() throws IOException, RuntimeException {
+		FacesContext context = FacesContext.getCurrentInstance();
+		try {
+			this.dadosAcesso = DadosAcessoCrudJDBC.getDadosAcesso(this.dadosAcesso.getLogin(),
+					this.dadosAcesso.getSenha());
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.html");
+
+		} catch (RuntimeException e) {
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "" + e, ""));
+		}
 	}
 
 	public String salvarRegistro() {
@@ -114,17 +127,15 @@ public class DadosAcessoBean {
 		 * FacesMessage(FacesMessage.SEVERITY_ERROR,
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
-	
+
 		DadosAcessoCrudJDBC.salvar(this.dadosAcesso);
 		FacesContext.getCurrentInstance().getExternalContext().redirect("./alterarDadosAcesso.jsf");
 		// salva o usuï¿½rio
 		return "sucesso";
 	}
-	
-	
-	
-	public void visualizarDadosAcesso(){
-		
+
+	public void visualizarDadosAcesso() {
+
 	}
 
 	public String verLista() {

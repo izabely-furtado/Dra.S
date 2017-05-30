@@ -20,7 +20,7 @@ public class EnderecoCrudJDBC {
 			// Objeto para executar o SQL insert
 			PreparedStatement insereSt = null;
 			// SQL de inserção
-			String sql = "insert into usuario(bairro, cep, cidade, estado, numero, rua) values(?,?,?,?,?)";
+			String sql = "insert into endereco(bairro, cep, cidade, estado, numero, rua) values(?,?,?,?,?)";
 			try {
 				// recebe o SQL insert
 				insereSt = conexao.prepareStatement(sql);

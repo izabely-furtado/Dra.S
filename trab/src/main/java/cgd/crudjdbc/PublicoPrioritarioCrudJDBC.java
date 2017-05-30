@@ -21,8 +21,8 @@ public class PublicoPrioritarioCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlPublicoPrioritario = "insert into PublicoPrioritario(beneficiohabitacional, outro, possuiar, possuibp, possuipbc, possuipbf, possuipibc)"
-				+ "values (?, ?, ?, ?, ?, ?, ?)";
+		String sqlPublicoPrioritario = "insert into PublicoPrioritario(abuso, acolhimento, defasagem, eca, egressos, isolamento, mse, rua, trabInfantil, vivencia, vulnerabilidade)"
+				+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sqlPublicoPrioritario);

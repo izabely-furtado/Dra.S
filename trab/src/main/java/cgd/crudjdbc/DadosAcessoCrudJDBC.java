@@ -62,7 +62,7 @@ public class DadosAcessoCrudJDBC {
 			// objeto as
 			DadosAcesso as = null;
 			// consulta SQL
-			String sql = "select distinct * from acessoservicos where id=" + idDadosAcesso;
+			String sql = "select distinct * from dadosAcesso where id=" + idDadosAcesso;
 			try {
 				// consulta => objeto que executa o SQL no banco de dados
 				consulta = conexao.createStatement();
@@ -81,8 +81,53 @@ public class DadosAcessoCrudJDBC {
 					
 				}
 			} catch (SQLException e) {
-				throw new RuntimeException("Erro ao buscar um acesso a serviço: " + e);
+				throw new RuntimeException("Erro ao buscar um dado de acesso: " + e);
 			} finally {
+				try {
+					consulta.close();
+					resultado.close();
+					conexao.close();
+				} catch (Throwable e) {
+					throw new RuntimeException("Erro ao fechar a conexao " + e);
+				}
+			}
+			// retorna lista de ass
+			return as;
+		}
+		
+		public static DadosAcesso getDadosAcesso(String login, String senha) {
+			// abre conexao com o banco de dados
+			Connection conexao = ConectaPostgreSQL.geraConexao();
+			// executa o SQL no banco de dados
+			Statement consulta = null;
+			// contém os dados consultado da tabela
+			ResultSet resultado = null;
+			// objeto as
+			DadosAcesso as = new DadosAcesso();
+			// consulta SQL
+			String sql = "select * from dadosAcesso where login='" + login + "' and senha='" + senha + "'";
+			
+			try {
+				// consulta => objeto que executa o SQL no banco de dados
+				consulta = conexao.createStatement();
+				// resultado => objeto que contém os dados consultado da tabela
+				// DadosAcesso
+				resultado = consulta.executeQuery(sql);
+				// Lê cada as
+				while (resultado.next()) {
+					as.setEmail(resultado.getString("email"));
+					as.setLembrar(resultado.getString("lembrar"));
+					as.setLogin(resultado.getString("login"));
+					as.setSenha(resultado.getString("senha"));
+					
+					// insere o acesso a serviço na lista
+					return as;
+						
+					
+				}
+			} catch (SQLException e) {
+				throw new RuntimeException("Erro ao buscar um dado de acesso: " + e);
+			} finally { 
 				try {
 					consulta.close();
 					resultado.close();
@@ -110,7 +155,7 @@ public class DadosAcessoCrudJDBC {
 			// objeto as
 			//DadosAcesso as = null;
 			// consulta SQL
-			String sql = "select distinct * from acessoservicos";
+			String sql = "select distinct * from dadosAcesso";
 			try {
 				// consulta => objeto que executa o SQL no banco de dados
 				consulta = conexao.createStatement();
@@ -131,7 +176,7 @@ public class DadosAcessoCrudJDBC {
 				}
 				
 			} catch (SQLException e) {
-				throw new RuntimeException("Erro ao buscar um acesso a serviços: " + e);
+				throw new RuntimeException("Erro ao buscar um dado de acesso: " + e);
 			} finally {
 				try {
 					consulta.close();
@@ -152,20 +197,14 @@ public class DadosAcessoCrudJDBC {
 			// abre a conexao com o banco de dados PostGresql
 			Connection conexao = ConectaPostgreSQL.geraConexao();
 			// Objeto para executar o SQL delete
-			PreparedStatement excluiPSt = null;
 			PreparedStatement excluiSt = null;
 			// SQL de exclusão do as
-			String sql = "delete from acessoservicos where id=?";
+			String sql = "delete from dadosAcesso where id=?";
 			// SQL de exclusão do as
-			String presql = "delete from situacaoacolhimento where id=?";
 			try {
 				// recebe o SQL delete para endereço
-				excluiPSt = conexao.prepareStatement(presql);
-				// executa SQL delete
-				excluiPSt.executeUpdate();
-				
-				// recebe o SQL delete para as
 				excluiSt = conexao.prepareStatement(sql);
+				// executa SQL delete
 				// recebe o parâmtros do SQL insert
 				excluiSt.setInt(1, as.getId());
 				// executa SQL delete
@@ -176,7 +215,6 @@ public class DadosAcessoCrudJDBC {
 			} finally {
 				try {
 					// fecha conexao com o banco
-					excluiPSt.close();
 					excluiSt.close();
 					conexao.close();
 				} catch (Throwable e) {
@@ -191,7 +229,7 @@ public class DadosAcessoCrudJDBC {
 			// Objeto para executar o SQL update
 			PreparedStatement insereSt = null;
 			// SQL de inserção
-			String sql = "update acessoservicos set email=?, lembrar=?, login=?, senha=?";
+			String sql = "update dadosAcesso set email=?, lembrar=?, login=?, senha=?";
 			try {
 				// recebe o SQL update
 				insereSt = conexao.prepareStatement(sql);
@@ -207,7 +245,7 @@ public class DadosAcessoCrudJDBC {
 				return true;
 				
 			} catch (SQLException e) {
-				throw new RuntimeException("Erro ao alterar o acesso a servicos - mensagem:" + e);
+				throw new RuntimeException("Erro ao alterar os dados de acesso - mensagem:" + e);
 			} finally {
 				try {
 					// fecha conexao com o banco

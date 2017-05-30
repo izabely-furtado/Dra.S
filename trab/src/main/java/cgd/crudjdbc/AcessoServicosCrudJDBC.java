@@ -20,7 +20,7 @@ public class AcessoServicosCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlAcessoServicos 	  = "insert into acessoServicos(possuiacolhimento, possuicei, possuicras, possuicreas, possuiescola, possuiesf, possuisus, qacolhimento, qcei, qcras, qcreas, qescola, qesf, qsus, situacaoAcolhimento)" +
+		String sqlAcessoServicos 	  = "insert into acessoServicos(possuiacolhimento, possuicei, possuicras, possuicreas, possuiescola, possuiesf, possuisus, qacolhimento, qcei, qcras, qcreas, qescola, qesf, qsus, situacaoAcolhimento_id)" +
 									    "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert
@@ -101,7 +101,7 @@ public class AcessoServicosCrudJDBC {
 					as.setQescola(resultado.getString("qescola"));
 					as.setQesf(resultado.getString("qescola"));
 					as.setQsus(resultado.getString("qsus"));
-					as.setSituacaoacolhimento(SituacaoAcolhimentoCrudJDBC.getSituacaoAcolhimento(resultado.getInt("id")));
+					as.setSituacaoacolhimento(SituacaoAcolhimentoCrudJDBC.getSituacaoAcolhimento(resultado.getInt("situacaoacolhimento_id")));
 					// insere o acesso a serviço na lista
 					return as;
 						
@@ -164,6 +164,7 @@ public class AcessoServicosCrudJDBC {
 					as.setQescola(resultado.getString("qescola"));
 					as.setQesf(resultado.getString("qescola"));
 					as.setQsus(resultado.getString("qsus"));
+					as.setSituacaoacolhimento(SituacaoAcolhimentoCrudJDBC.getSituacaoAcolhimento(resultado.getInt("situacaoacolhimento_id")));
 					// insere o as na lista
 					acessos.add(as);
 						
@@ -234,7 +235,7 @@ public class AcessoServicosCrudJDBC {
 			// SQL de inserção
 			String sql = "update acessoservicos set possuiacolhimento=?, possuicei=?, possuicras=?, possuicreas=?, "
 					+ "							    possuiescola=?, possuiesf=?, possuisus=?, qacolhimento=?, qcei=?, "
-					+ "							    qcras=?, qcreas=?, qescola=?, qesf=?, qsus=?, situacaoacolhimento";
+					+ "							    qcras=?, qcreas=?, qescola=?, qesf=?, qsus=?, situacaoAcolhimento_id";
 			try {
 				// recebe o SQL update
 				insereSt = conexao.prepareStatement(sql);

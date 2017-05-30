@@ -21,7 +21,7 @@ public class CondicoesMoradiaCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlCondicoesMoradia = "insert into condicoesMoradia(condicao, possuiagua, possuicoleta, possuienergia, possuiesgoto, possuitisco, qrisco)"
+		String sqlCondicoesMoradia = "insert into condicoesMoradia(condicao, possuiagua, possuicoleta, possuienergia, possuiesgoto, possuirisco, qrisco)"
 				+ "values (?, ?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert

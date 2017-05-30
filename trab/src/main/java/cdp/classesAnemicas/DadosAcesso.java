@@ -7,6 +7,14 @@ public class DadosAcesso {
 	private String email;
 	private String lembrar;
 	private boolean edita;
+	public DadosAcesso(){
+		this.id = -1;
+		this.login = "";
+		this.senha = "";
+		this.email = "";
+		this.edita = false;
+		this.lembrar = "";
+	}
 	public String getLogin() {
 		return login;
 	}

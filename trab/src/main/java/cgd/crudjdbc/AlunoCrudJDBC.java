@@ -21,9 +21,9 @@ public class AlunoCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "insert into aluno(foto, nivel, turma_id, acessoservicos_id, acompanhamentoescolar_id, composicaofamiliar_id, "
-				+ "condicoesmoradia_id, dadospessoais_id, despesas_id, endereco_id, infomedicas_id, "
-				+ "infotransporte_id, programasbeneficios_id, publicoprioritario_id) values(?,?,?,?)";
+			String sql = "insert into aluno(foto, nivel, turma_id, acessoservicos_id, acompanhamentoescolar_id, composicaofamiliar_id, "
+					+ "condicoesmoradia_id, dadospessoais_id, despesas_id, endereco_id, infomedicas_id, "
+					+ "infotransporte_id, programasbeneficios_id, publicoprioritario_id) values(?,?,?,?, ?,?,?,?, ?,?,?,?, ?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sql);

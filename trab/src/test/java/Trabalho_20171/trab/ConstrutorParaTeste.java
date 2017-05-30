@@ -5,7 +5,7 @@ import cdp.classesAnemicas.*;
 public class ConstrutorParaTeste {
 	public static AcessoServicos criaAcesso(){
 		AcessoServicos acesso = new AcessoServicos();
-		acesso.setId(0);
+		acesso.setId(1);
 		acesso.setPossuiacolhimento(true);
 		acesso.setPossuicei(true);
 		acesso.setPossuicras(true);
@@ -17,7 +17,7 @@ public class ConstrutorParaTeste {
 	}
 	public static AcompanhamentoEscolar criaAcompanhamento(){
 		AcompanhamentoEscolar acompanhamento = new AcompanhamentoEscolar();
-		acompanhamento.setId(0);
+		acompanhamento.setId(1);
 	//	acompanhamento.setAnos(null);
         acompanhamento.setEscola("Teste");
     //    acompanhamento.setSeries(null);
@@ -25,10 +25,10 @@ public class ConstrutorParaTeste {
 	}
 	public static Aula criaAula(){
 		Aula aula = new Aula();
-		aula.setId(0);
+		aula.setId(1);
 		aula.setConteudo("Teste");
 		aula.setData(null);
-		aula.setId(0);
+		aula.setId(1);
 		aula.setHorario(null);
 		aula.setPresentes(null);
 		aula.setTipo("Teste");
@@ -36,13 +36,13 @@ public class ConstrutorParaTeste {
 	}
 	public static ComposicaoFamiliar criaComposicao(){
 		ComposicaoFamiliar composicao = new ComposicaoFamiliar();
-        composicao.setId(0);
+        composicao.setId(1);
         composicao.setParentes(null);
 		return composicao;
 	}
 	public static CondicoesMoradia criaCondicoes(){
 		CondicoesMoradia condicoes = new CondicoesMoradia();
-        condicoes.setId(0);
+        condicoes.setId(1);
         condicoes.setCondicao("Teste");
         condicoes.setPossuiagua(true);
         condicoes.setPossuicoleta(true);
@@ -54,7 +54,7 @@ public class ConstrutorParaTeste {
 	}
 	public static DadosAcesso criaDadosAcesso(){
 		DadosAcesso dadosAcesso = new DadosAcesso();
-		dadosAcesso.setId(0);
+		dadosAcesso.setId(1);
 		dadosAcesso.setEmail("teste@teste.com");
 		dadosAcesso.setLembrar("Teste");
 		dadosAcesso.setLogin("Teste");
@@ -63,7 +63,7 @@ public class ConstrutorParaTeste {
 	}
 	public static DadosPessoais criaDadosPessoais(){
 		DadosPessoais dadosPessoais = new DadosPessoais();
-        dadosPessoais.setId(0);
+        dadosPessoais.setId(1);
         dadosPessoais.setContato("0000000000");
         dadosPessoais.setDatNasc(null);
         dadosPessoais.setNis("Teste");
@@ -75,7 +75,7 @@ public class ConstrutorParaTeste {
 	}
 	public static Despesas criaDespesas(){
 		Despesas despesas = new Despesas();
-        despesas.setId(0);
+        despesas.setId(1);
         despesas.setAgua(13);
         despesas.setAlimentacao(13);
         despesas.setAluguel(13);
@@ -90,7 +90,7 @@ public class ConstrutorParaTeste {
 	}
 	public static Endereco criaEndereco(){
 		Endereco endereco = new Endereco();
-        endereco.setId(0);
+        endereco.setId(1);
         endereco.setBairro("Teste");
         endereco.setCep("Teste");
         endereco.setCidade("Teste");
@@ -111,7 +111,7 @@ public class ConstrutorParaTeste {
 		aluno.setDespesas(ConstrutorParaTeste.criaDespesas());
 		aluno.setEndereco(ConstrutorParaTeste.criaEndereco());
 		aluno.setNivel(0);
-		aluno.setId(0);
+		aluno.setId(1);
 		aluno.setInfoMedicas(ConstrutorParaTeste.criaInfoMedicas());
 		aluno.setInfoTransporte(ConstrutorParaTeste.criaInfoTransporte());
 		aluno.setProgramasBeneficios(ConstrutorParaTeste.criaProgramasBeneficios());
@@ -122,7 +122,7 @@ public class ConstrutorParaTeste {
 	}
 	public static InfoMedicas criaInfoMedicas(){
 		InfoMedicas infoMedicas = new InfoMedicas();
-        infoMedicas.setId(0);
+        infoMedicas.setId(1);
         infoMedicas.setAlergia(true);
         infoMedicas.setContatoSOS("0000000000");
         infoMedicas.setMedicacao(true);
@@ -133,7 +133,7 @@ public class ConstrutorParaTeste {
 	}
 	public static InfoTransporte criaInfoTransporte(){
 		InfoTransporte infoTransporte = new InfoTransporte();
-        infoTransporte.setId(0);
+        infoTransporte.setId(1);
         infoTransporte.setCartao("Teste");
         infoTransporte.setQtransporte("Teste");
         infoTransporte.setTransporte(true);
@@ -142,7 +142,7 @@ public class ConstrutorParaTeste {
 	public static ProgramasBeneficios criaProgramasBeneficios(){
 		ProgramasBeneficios programasBeneficios = new ProgramasBeneficios();
         programasBeneficios.setBeneficioHabitacional("Teste");
-        programasBeneficios.setId(0);
+        programasBeneficios.setId(1);
         programasBeneficios.setOutro("Teste");
         programasBeneficios.setPossuiar(true);
         programasBeneficios.setPossuibp(true);
@@ -158,7 +158,7 @@ public class ConstrutorParaTeste {
         publicoPrioritario.setDefasagem(true);
         publicoPrioritario.setEca(true);
         publicoPrioritario.setEgressos(true);
-        publicoPrioritario.setId(0);
+        publicoPrioritario.setId(1);
         publicoPrioritario.setIsolamento(true);
         publicoPrioritario.setMse(true);
         publicoPrioritario.setRua(true);
@@ -173,7 +173,7 @@ public class ConstrutorParaTeste {
 		turma.setAlunos(null);
 		turma.setAulas(null);
 		turma.setCodigo("Teste");
-		turma.setId(0);
+		turma.setId(1);
 		turma.setMaximo(13);
 		turma.setNivel(0);
 		turma.setSegunda(true);
@@ -188,7 +188,7 @@ public class ConstrutorParaTeste {
 	public static TermoDesligamento criaTermoDesligamento(){
 		TermoDesligamento termo = new TermoDesligamento();
 		termo.setCpf("00000000000");
-		termo.setId(0);
+		termo.setId(1);
 		termo.setMotivo("Teste");
 		termo.setNomeResponsavel("Teste");
 		termo.setNomeTecResponsavel("Teste");
@@ -197,7 +197,7 @@ public class ConstrutorParaTeste {
 	}
 	public static Rematricula criaRematricula(){
 		Rematricula rematricula = new Rematricula();
-		rematricula.setId(0);
+		rematricula.setId(1);
 		rematricula.setNomeResponsavel("Teste");
 		rematricula.setNomeTecResponsavel("Teste");
 		return rematricula;
@@ -205,7 +205,7 @@ public class ConstrutorParaTeste {
 	public static SituacaoAcolhimento criaSituacaoAcolhimento() {
 		SituacaoAcolhimento situacao = new SituacaoAcolhimento();
 		situacao.setContato("0000000000");
-		situacao.setId(0);
+		situacao.setId(1);
 		situacao.setMotivo("Teste");
 		situacao.setNomeAcolhido("Teste");
 		situacao.setNomeInstituicao("Teste");
