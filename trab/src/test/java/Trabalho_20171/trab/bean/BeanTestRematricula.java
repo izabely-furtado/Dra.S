@@ -37,35 +37,5 @@ public class BeanTestRematricula {
     public void novoRematricula(){
         assertEquals("rematricula",rematriculaBean.novo());
     }
-	/*
-	@Test
-    public void excluirRematricula(){
-        assertEquals("excluir",rematriculaBean.excluirRegistro(rematricula));
-    }
 	
-	@Test
-    public void alterarRematricula(){
-        assertEquals("alterar",rematriculaBean.alterarRegistro(rematricula));
-    }
-	
-	@Test
-    public void getListaRematricula(){
-        assertEquals(new ArrayList<Rematricula>(),rematriculaBean.getLista());
-    }
-	
-	@Test
-    public void inserirRematricula(){
-        assertEquals("sucesso",rematriculaBean.inserir());
-    }
-	
-	@Test
-    public void salvarRematricula(){
-        assertEquals("salvar",rematriculaBean.salvarRegistro());
-    }
-	
-	@Test
-    public void verListaRematricula(){
-        assertEquals("listagem",rematriculaBean.verLista());
-    }
-    */
 }

@@ -105,7 +105,7 @@ public class DadosAcessoCrudJDBC {
 			// objeto as
 			DadosAcesso as = new DadosAcesso();
 			// consulta SQL
-			String sql = "select * from dadosAcesso where login='" + login + "' and senha='" + senha + "'";
+			String sql = "select distinct * from dadosAcesso where login='" + login + "' and senha='" + senha + "'";
 			
 			try {
 				// consulta => objeto que executa o SQL no banco de dados

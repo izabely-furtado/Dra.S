@@ -52,7 +52,7 @@ public class DadosAcessoBean {
 	public String excluirRegistro(DadosAcesso u) {
 		DadosAcessoCrudJDBC.excluir(u);
 		// salva o usu�rio
-		return u.getId() + "";
+		return "excluir";
 	}
 
 	public String alterarRegistro() throws IOException {

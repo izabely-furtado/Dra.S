@@ -29,8 +29,8 @@ public class BeanTestDadosAcesso {
 	}
 
 	@Test
-    public void alterarDadosAcesso(){
-        assertEquals("alterar",dadosAcessoBean.alterarRegistro(dadosAcesso));
+    public void alterarDadosAcesso() throws IOException{
+        assertEquals("alterar",dadosAcessoBean.alterarRegistro());
     }
 	*/
 	@Test
