@@ -21,6 +21,7 @@ public class CrudTestDadosAcesso {
 
     @Test
     public void getDados(){
+        assertEquals(dadosAcesso.getEmail(),DadosAcessoCrudJDBC.getDadosAcesso("Teste2", "Teste2"));
     }
     
     @Test
