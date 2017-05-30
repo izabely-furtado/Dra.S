@@ -22,21 +22,40 @@ public class ComposicaoFamiliarCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlComposicaoFamiliar = "";
+		String sqlComposicaoFamiliar = "insert into composicaoFamiliar(parente1, parente2, parente3, parente4, parente5, parente6, parente7, parente8, parente9, parente10, parente11, parente12, parente13)"
+				+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 		try {
-			// pega o resto dos dados
-			List<Parente> parentes = composicao.getParentes();
-			for (Parente p : parentes) {
-				sqlComposicaoFamiliar += "insert into parente(parente_id)"
-						+ "values (?);";
-				// recebe o SQL insert
-				insereSt = conexao.prepareStatement(sqlComposicaoFamiliar);
-				insereSt.setInt(1, p.getId());
-				
+			// recebe o SQL insert
+			insereSt = conexao.prepareStatement(sqlComposicaoFamiliar);
+			ParenteCrudJDBC.salvar(composicao.getParente1());
+			insereSt.setInt(1, composicao.getParente1().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente2());
+			insereSt.setInt(2, composicao.getParente2().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente3());
+			insereSt.setInt(3, composicao.getParente3().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente4());
+			insereSt.setInt(4, composicao.getParente4().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente5());
+			insereSt.setInt(5, composicao.getParente5().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente6());
+			insereSt.setInt(6, composicao.getParente6().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente7());
+			insereSt.setInt(7, composicao.getParente7().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente8());
+			insereSt.setInt(8, composicao.getParente8().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente9());
+			insereSt.setInt(9, composicao.getParente9().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente10());
+			insereSt.setInt(10, composicao.getParente10().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente11());
+			insereSt.setInt(11, composicao.getParente11().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente12());
+			insereSt.setInt(12, composicao.getParente12().getId());
+			ParenteCrudJDBC.salvar(composicao.getParente13());
+			insereSt.setInt(13, composicao.getParente13().getId());
+			// executa SQL insert
+			insereSt.executeUpdate();
 
-				// executa SQL insert
-				insereSt.executeUpdate();
-			}
 			return true;
 
 		} catch (SQLException e) {
@@ -76,12 +95,12 @@ public class ComposicaoFamiliarCrudJDBC {
 			List<Parente> parentes = new ArrayList<Parente>();
 
 			while (resultado.next()) {
-				//for (int i = 1; i < 7; i++) {
+				// for (int i = 1; i < 7; i++) {
 				Parente parente = ParenteCrudJDBC.getParente(resultado.getInt("parente_id"));
-				parentes.add(parente);	
-				//}
+				parentes.add(parente);
+				// }
 				composicao.setParentes(parentes);
-				
+
 				// insere o acesso a serviço na lista
 				return composicao;
 
@@ -109,7 +128,8 @@ public class ComposicaoFamiliarCrudJDBC {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// variavel lista de ass
-		//List<ComposicaoFamiliar> acessos = new ArrayList<ComposicaoFamiliar>();
+		// List<ComposicaoFamiliar> acessos = new
+		// ArrayList<ComposicaoFamiliar>();
 		// executa o SQL no banco de dados
 		Statement consulta = null;
 		// contém os dados consultado da tabela
@@ -131,10 +151,10 @@ public class ComposicaoFamiliarCrudJDBC {
 
 			while (resultado.next()) {
 				Parente parente = ParenteCrudJDBC.getParente(resultado.getInt("parente_id"));
-				parentes.add(parente);	
-				
+				parentes.add(parente);
+
 				composicao.setParentes(parentes);
-				
+
 				// insere o acesso a serviço na lista
 				composicoes.add(composicao);
 
@@ -169,7 +189,7 @@ public class ComposicaoFamiliarCrudJDBC {
 			// recebe o SQL delete para as
 			excluiSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
-			for (Parente p : as.getParentes()){
+			for (Parente p : as.getParentes()) {
 				ParenteCrudJDBC.excluir(p);
 			}
 			excluiSt.setInt(1, as.getId());
@@ -214,7 +234,6 @@ public class ComposicaoFamiliarCrudJDBC {
 				// executa SQL insert
 				insereSt.executeUpdate();
 			}
-			
 
 			// executa SQL update
 			insereSt.executeUpdate();
