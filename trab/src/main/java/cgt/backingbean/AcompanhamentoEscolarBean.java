@@ -64,27 +64,27 @@ public class AcompanhamentoEscolarBean {
 	}
 	public String gerar(FacesContext context) {
 		int erro = 0;
-		if (this.acompanhamentoEscolar.getAno1() < 2000 && this.acompanhamentoEscolar.getSerie1() != ""){
+		if (this.acompanhamentoEscolar.getAno1() < 2000 && this.acompanhamentoEscolar.getSerie1() == ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe a série em que estava durante o 1º ano do projeto", ""));
 			erro++;
 		}
-		if (this.acompanhamentoEscolar.getAno2() < 2000 && this.acompanhamentoEscolar.getSerie2() != ""){
+		if (this.acompanhamentoEscolar.getAno2() < 2000 && this.acompanhamentoEscolar.getSerie2() == ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe a série em que estava durante o 2º ano do projeto", ""));
 			erro++;
 		}
-		if (this.acompanhamentoEscolar.getAno3() < 2000 && this.acompanhamentoEscolar.getSerie3() != ""){
+		if (this.acompanhamentoEscolar.getAno3() < 2000 && this.acompanhamentoEscolar.getSerie3() == ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe a série em que estava durante o 3º ano do projeto", ""));
 			erro++;
 		}
-		if (this.acompanhamentoEscolar.getAno4() < 2000 && this.acompanhamentoEscolar.getSerie4() != ""){
+		if (this.acompanhamentoEscolar.getAno4() > 2000 && this.acompanhamentoEscolar.getSerie4() == ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe a série em que estava durante o 4º ano do projeto", ""));
 			erro++;
 		}
-		if (this.acompanhamentoEscolar.getAno5() < 2000 && this.acompanhamentoEscolar.getSerie5() != ""){
+		if (this.acompanhamentoEscolar.getAno5() > 2000 && this.acompanhamentoEscolar.getSerie5() == ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe a série em que estava durante o 5º ano do projeto", ""));
 			erro++;
 		}
-		if (this.acompanhamentoEscolar.getAno6() < 2000 && this.acompanhamentoEscolar.getSerie6() != ""){
+		if (this.acompanhamentoEscolar.getAno6() > 2000 && this.acompanhamentoEscolar.getSerie6() == ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe a série em que estava durante o 6º ano do projeto", ""));
 			erro++;
 		}
