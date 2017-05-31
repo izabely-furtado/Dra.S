@@ -94,6 +94,21 @@
 								<hr />
 								<div class="coluna-4">
 									<div class="grupinho">
+										<label>Turma:</label> 
+											<h:selectOneMenu class="formulario" value="#{aulaBean.aula.turma}">
+												 <f:selectItem itemValue="" itemLabel="Selecione uma turma" />
+												 <f:selectItems 
+												 value="#{turmaBean.lista}" 
+												 var="turma"
+								                 itemValue="#{turma}"
+								                 itemLabel="#{turma.id}"
+								                 itemDescription="#{turma.nome}"
+												 />
+											</h:selectOneMenu>
+									</div>
+								</div>
+								<div class="coluna-4">
+									<div class="grupinho">
 										<label>Tipo de Aula:</label> 
 									
 										<h:selectOneMenu class="formulario" id="tipoAula"
