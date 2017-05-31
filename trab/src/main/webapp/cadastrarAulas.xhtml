@@ -113,7 +113,6 @@
 											<h:inputText id="horarios"
 													value="#{aulaBean.aula.horario}" required="true"
 													class="formulario" a:placeholder="Horario" />
-													<!--requiredMessage="#{text['aulaBean.aula.horario']}"></h:inputText>-->
 												<h:message for="horarios" styleClass="errorMessage" />
 									</div>
 								</div>
@@ -122,7 +121,6 @@
 											<h:inputText id="dataAula"
 													value="#{aulaBean.aula.data}" required="true"
 													class="formulario" a:placeholder="_ _/_ _/_ _ _" />
-													<!--requiredMessage="#{text['aulaBean.aula.data']}"></h:inputText>-->
 												<h:message for="dataAula" styleClass="errorMessage" />
 									</div>
 								</div>
@@ -131,7 +129,8 @@
 										<label>Conteúdo da aula: </label>
 										<h:inputTextarea id="conteudoAula" class="formulario" rows="3"
 													value="#{aulaBean.aula.conteudo}"
-													a:placeholder="Digite o que foi ensinado nesta aula"></h:inputTextarea>
+													a:placeholder="Digite o que foi ensinado nesta aula">
+													</h:inputTextarea>
 										
 									</div>
 								</div>
@@ -158,46 +157,23 @@
 							<div class="linha">
 							<div class="coluna-12">
 							<h3> Alunos da Turma </h3>
-								<!--
-								<table class="tabela" id="tabela">
-									<thead>
-										<tr>
-											<th>Matrícula</th>
-											<th>Nome</th>
-											<th>Presença</th>
-										</tr>
-										
-									</thead>
-									
-									<tbody>
-										<tr class="linhaTabela">
-											
-											<td><span class="linhazinha">00001</span></td>
-											<td><span class="linhazinha">Suzana Priscila Soares Leal</span></td>
-											<td><span class="linhazinha"><input class="checkboxPresenca" type="checkbox" checked="checked"></span></td>
-											
-										</tr>
-											   
-									</tbody>
-									
-								</table>-->
 								
-								<h:dataTable value="#{turmaBean.lista}" var="aluno"
+								<h:dataTable value="#{aulaBean.aula.turma.alunos}" var="aluno"
 									styleClass="tabela" id="tabela"
 								    rowClasses="linhaTabela"
 									columnClasses="linhazinha">
 									
 								    <h:column>
 									 <f:facet name="header">Matrícula</f:facet>
-									 #{fapIBean.fap.dadosPessoais.id}
+									 #{aluno.dadosPessoais.id}
 									 </h:column>
 									 <h:column>
 									 <f:facet name="header">Nome</f:facet>
-									 #{fapIBean.fap.dadosPessoais.id}
+									 #{aluno.dadosPessoais.nome}
 									 </h:column>
 									 <h:column>
 						 
-									 <f:facet name="header">Presente</f:facet>>
+									 <f:facet name="header">Presente</f:facet>
 									  <input class="checkboxPresenca" type="checkbox"/>
 									 
 									 </h:column>

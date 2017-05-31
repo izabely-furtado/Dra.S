@@ -12,6 +12,7 @@ public class Aula {
 	private String conteudo;
 	private List<Aluno> presentes;
 	private boolean edita;
+	private Turma turma;
 	public String getTipo() {
 		return tipo;
 	}
@@ -53,6 +54,12 @@ public class Aula {
 	}
 	public void setEdita(boolean edita) {
 		this.edita = edita;
+	}
+	public Turma getTurma() {
+		return turma;
+	}
+	public void setTurma(Turma turma) {
+		this.turma = turma;
 	}
 
 }

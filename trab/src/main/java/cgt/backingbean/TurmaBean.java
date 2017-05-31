@@ -1,5 +1,6 @@
 package cgt.backingbean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -17,6 +18,10 @@ public class TurmaBean {
 	TurmaCrudJDBC objTurmaCrudJDBC = new TurmaCrudJDBC();
 
 	public List<Turma> getLista() {
+		this.lista = new ArrayList<>();
+		
+		//this.lista.addAll(TurmaCrudJDBC.listar());   //só tentando
+		
 		return lista;
 	}
 

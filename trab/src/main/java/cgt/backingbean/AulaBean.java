@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import cdp.classesAnemicas.Aula;
+import cdp.classesAnemicas.Turma;
 import cgd.crudjdbc.*;
 
 @SuppressWarnings("deprecation")
@@ -41,6 +42,7 @@ public class AulaBean {
 		this.aula.setConteudo(null);
 		this.aula.setPresentes(null);
 		this.aula.setEdita(false);
+		this.aula.setTurma(new Turma());
 		
 		return "aula";
 	}

@@ -22,7 +22,7 @@ public class AulaCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "insert into aula(tipo, horario, data, conteudo) values(?,?,?,?)";
+		String sql = "insert into aula(tipo, horario, data, conteudo, turma_id) values(?,?,?,?, ?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sql);
@@ -31,6 +31,7 @@ public class AulaCrudJDBC {
 			insereSt.setTime(2, aula.getHorario());
 			insereSt.setDate(3, (Date) aula.getData());
 			insereSt.setString(4, aula.getConteudo());
+			insereSt.setInt(5, aula.getTurma().getId());
 			
 			
 			// executa SQL insert
@@ -75,6 +76,7 @@ public class AulaCrudJDBC {
 				aula.setHorario(resultado.getTime("horario"));
 				aula.setData(resultado.getDate("data"));
 				aula.setConteudo(resultado.getString("conteudo"));
+				aula.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
 				
 			}
 
@@ -130,7 +132,7 @@ public class AulaCrudJDBC {
 		// Objeto para executar o SQL update
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sql = "update aula set tipo=?, horario=?, data=?, conteudo=?"
+		String sql = "update aula set tipo=?, horario=?, data=?, conteudo=?, turma_id=?"
 				+ " where id=?";
 		try {
 			// recebe o SQL update
@@ -141,6 +143,7 @@ public class AulaCrudJDBC {
 			insereSt.setTime(2, aula.getHorario());
 			insereSt.setDate(3, (Date) aula.getData());
 			insereSt.setString(4, aula.getConteudo());
+			insereSt.setInt(5, aula.getTurma().getId());
 			
 			// executa SQL update
 			insereSt.executeUpdate();
@@ -185,6 +188,7 @@ public class AulaCrudJDBC {
 				aula.setHorario(resultado.getTime("horario"));
 				aula.setData(resultado.getDate("data"));
 				aula.setConteudo(resultado.getString("conteudo"));
+				aula.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
 				
 				
 				// insere o aula na lista
