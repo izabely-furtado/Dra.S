@@ -21,7 +21,7 @@ public class AcompanhamentoEscolar {
 	public AcompanhamentoEscolar(){
 		this.setId(-1);
 		this.setEdita(false);
-		this.setEscola(null);
+		this.setEscola("");
 		
 		//	acompanhamentoEscolar.setAnos(null);
 		this.setAno1(0);

@@ -12,11 +12,11 @@ public class InfoMedicas {
 	public InfoMedicas(){
 		this.setId(-1);
 		this.setAlergia(false);
-		this.setContatoSOS(null);
+		this.setContatoSOS("");
 		this.setMedicacao(false);
-		this.setQalergia(null);
-		this.setQmedicacao(null);
-		this.setTipoSangue(null);
+		this.setQalergia("");
+		this.setQmedicacao("");
+		this.setTipoSangue("");
 		this.setEdita(false);
 	}
 	public boolean isMedicacao() {

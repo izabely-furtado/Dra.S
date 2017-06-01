@@ -6,6 +6,37 @@ import java.util.List;
 public class ComposicaoFamiliar {
 	private int id;
 	private Parente parente1;
+	private Parente parente2;
+	private Parente parente3;
+	private Parente parente4;
+	private Parente parente5;
+	private Parente parente6;
+	private Parente parente7;
+	private Parente parente8;
+	private Parente parente9;
+	private Parente parente10;
+	private Parente parente11;
+	private Parente parente12;
+	private Parente parente13;
+		
+	private boolean edita;
+	public ComposicaoFamiliar(){
+		this.id = -1;
+		this.parente1 = new Parente();
+		this.parente2 = new Parente();
+		this.parente3 = new Parente();
+		this.parente4 = new Parente();
+		this.parente5 = new Parente();
+		this.parente6 = new Parente();
+		this.parente7 = new Parente();
+		this.parente8 = new Parente();
+		this.parente9 = new Parente();
+		this.parente10 = new Parente();
+		this.parente11 = new Parente();
+		this.parente12 = new Parente();
+		this.parente13 = new Parente();
+
+	}
 	public Parente getParente1() {
 		return parente1;
 	}
@@ -84,20 +115,7 @@ public class ComposicaoFamiliar {
 	public void setParente13(Parente parente13) {
 		this.parente13 = parente13;
 	}
-	private Parente parente2;
-	private Parente parente3;
-	private Parente parente4;
-	private Parente parente5;
-	private Parente parente6;
-	private Parente parente7;
-	private Parente parente8;
-	private Parente parente9;
-	private Parente parente10;
-	private Parente parente11;
-	private Parente parente12;
-	private Parente parente13;
-		
-	private boolean edita;
+	
 	public int getId() {
 		return id;
 	}

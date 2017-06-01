@@ -182,11 +182,13 @@ public class AlunoBean {
 	}
 	
 	
-	public String inserir() {
+	public String inserir() throws IOException {
 		
 	
 		AlunoCrudJDBC.salvar(this.aluno);
+		this.lista = AlunoCrudJDBC.listar();
 		// salva a aluno
+		FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.html");
 		return "sucesso";
 	}
 

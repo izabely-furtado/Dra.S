@@ -11,6 +11,18 @@ public class Parente {
 	private Float renda;
 	private String scfv;
 	private boolean edita;
+	public Parente(){
+		this.id = -1;
+		this.nome = "";
+		this.dataNasc = "";
+		this.edita = false;
+		this.escolaridade = "";
+		this.idade = 0;
+		this.parentesco = "";
+		this.renda = 0F;
+		this.scfv = "";
+		this.situacaoOcupacional = "";
+	}
 	public String getNome() {
 		return nome;
 	}

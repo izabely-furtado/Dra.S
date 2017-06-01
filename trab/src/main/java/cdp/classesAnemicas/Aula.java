@@ -1,34 +1,41 @@
 package cdp.classesAnemicas;
 
-import java.sql.Time;
-import java.util.Date;
 import java.util.List;
 
 public class Aula {
 	private int id;
 	private String tipo;
-	private Time horario;
-	private Date data;
+	private String horario;
+	private String data;
 	private String conteudo;
 	private List<Aluno> presentes;
 	private boolean edita;
 	private Turma turma;
+	public Aula(){
+		this.id = -1;
+		this.conteudo = "";
+		this.data = "";
+		this.edita = false;
+		this.horario = "";
+		this.tipo = "";
+		this.turma = new Turma();
+	}
 	public String getTipo() {
 		return tipo;
 	}
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public Time getHorario() {
+	public String getHorario() {
 		return horario;
 	}
-	public void setHorario(Time horario) {
+	public void setHorario(String horario) {
 		this.horario = horario;
 	}
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public String getConteudo() {

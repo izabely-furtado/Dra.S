@@ -1,4 +1,4 @@
-package cgt.backingbean;
+package main.java.cgt.backingbean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,22 +6,25 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import cdp.classesAnemicas.Turma;
-import cgd.crudjdbc.*;
+import main.java.cdp.classesAnemicas.Turma;
+import main.java.cgd.crudjdbc.*;
 
-@SuppressWarnings("deprecation")
-@ManagedBean(name = "turmaBean")
+@ManagedBean(name = "TurmaBean")
 @SessionScoped
-public class TurmaBean {
-	private List<Turma> lista;
+public class TurmaBean implements java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<Turma> lista = new ArrayList<Turma>();
 	private Turma turma = new Turma();
 	TurmaCrudJDBC objTurmaCrudJDBC = new TurmaCrudJDBC();
+	
+	public TurmaBean(){
+		lista = TurmaCrudJDBC.listar();
+	}
 
 	public List<Turma> getLista() {
-		this.lista = new ArrayList<>();
-		
-		//this.lista.addAll(TurmaCrudJDBC.listar());   //só tentando
-		
 		return lista;
 	}
 
@@ -49,9 +52,9 @@ public class TurmaBean {
 		this.turma.setQuarta(false);
 		this.turma.setQuinta(false);
 		this.turma.setSexta(false);
-		this.turma.setAlunos(null);
+		/*this.turma.setAlunos(null);
 		this.turma.setAulas(null);
-		this.turma.setEdita(false);
+		this.turma.setEdita(false);*/
 		
 		
 		return "turma";
@@ -64,16 +67,17 @@ public class TurmaBean {
 	}
 
 	public String alterarRegistro(Turma t) {
-		t.setEdita(true);
+		//t.setEdita(true);
 		return "alterar";
 	}
 
 	public String salvarRegistro() {
 		for (Turma turma : lista) {
-			if (turma.isEdita()) {
+			TurmaCrudJDBC.alterar(turma);
+			/*if (turma.isEdita()) {
 				TurmaCrudJDBC.alterar(turma);
 			}
-			turma.setEdita(false);
+			turma.setEdita(false);*/
 		}
 		lista = TurmaCrudJDBC.listar();
 		return "salvar";
@@ -89,6 +93,7 @@ public class TurmaBean {
 		 */
 	
 		TurmaCrudJDBC.salvar(this.turma);
+		lista = TurmaCrudJDBC.listar();
 		// salva a turma
 		return "sucesso";
 	}

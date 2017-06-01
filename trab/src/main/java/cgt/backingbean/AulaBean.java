@@ -1,10 +1,12 @@
 package cgt.backingbean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import cdp.classesAnemicas.Aluno;
 import cdp.classesAnemicas.Aula;
 import cdp.classesAnemicas.Turma;
 import cgd.crudjdbc.*;
@@ -36,11 +38,11 @@ public class AulaBean {
 	public String novo() {
 		
 		this.aula.setId(-1);
-		this.aula.setTipo(null);
-		this.aula.setHorario(null);
-		this.aula.setData(null);
-		this.aula.setConteudo(null);
-		this.aula.setPresentes(null);
+		this.aula.setTipo("");
+		this.aula.setHorario("");
+		this.aula.setData("");
+		this.aula.setConteudo("");
+		this.aula.setPresentes(new ArrayList<Aluno>());
 		this.aula.setEdita(false);
 		this.aula.setTurma(new Turma());
 		

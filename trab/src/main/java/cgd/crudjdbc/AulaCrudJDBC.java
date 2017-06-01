@@ -28,8 +28,8 @@ public class AulaCrudJDBC {
 			insereSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
 			insereSt.setString(1, aula.getTipo());
-			insereSt.setTime(2, aula.getHorario());
-			insereSt.setDate(3, (Date) aula.getData());
+			insereSt.setString(2, aula.getHorario());
+			insereSt.setString(3, aula.getData());
 			insereSt.setString(4, aula.getConteudo());
 			insereSt.setInt(5, aula.getTurma().getId());
 			
@@ -73,8 +73,8 @@ public class AulaCrudJDBC {
 			// se o aula vinculado existir
 			if (resultado.next()) {
 				aula.setTipo(resultado.getString("tipo"));
-				aula.setHorario(resultado.getTime("horario"));
-				aula.setData(resultado.getDate("data"));
+				aula.setHorario(resultado.getString("horario"));
+				aula.setData(resultado.getString("data"));
 				aula.setConteudo(resultado.getString("conteudo"));
 				aula.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
 				
@@ -140,8 +140,8 @@ public class AulaCrudJDBC {
 			// recebe o parâmtros do SQL update
 			
 			insereSt.setString(1, aula.getTipo());
-			insereSt.setTime(2, aula.getHorario());
-			insereSt.setDate(3, (Date) aula.getData());
+			insereSt.setString(2, aula.getHorario());
+			insereSt.setString(3, aula.getData());
 			insereSt.setString(4, aula.getConteudo());
 			insereSt.setInt(5, aula.getTurma().getId());
 			
@@ -185,8 +185,8 @@ public class AulaCrudJDBC {
 				aula = new Aula();
 				
 				aula.setTipo(resultado.getString("tipo"));
-				aula.setHorario(resultado.getTime("horario"));
-				aula.setData(resultado.getDate("data"));
+				aula.setHorario(resultado.getString("horario"));
+				aula.setData(resultado.getString("data"));
 				aula.setConteudo(resultado.getString("conteudo"));
 				aula.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
 				

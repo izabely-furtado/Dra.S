@@ -12,13 +12,13 @@ public class Endereco {
 	private boolean edita;
 	public Endereco(){
 		this.setId(-1);
-		this.setBairro(null);
-		this.setCep(null);
-		this.setCidade(null);
-		this.setEstado(null);
+		this.setBairro("");
+		this.setCep("");
+		this.setCidade("");
+		this.setEstado("");
 		this.setNumero(-1);
-		this.setReferencia(null);
-		this.setRua(null);
+		this.setReferencia("");
+		this.setRua("");
 		this.setEdita(false);
 	}
 	public String getRua() {

@@ -1,8 +1,12 @@
-package cdp.classesAnemicas;
+package main.java.cdp.classesAnemicas;
 
 import java.util.List;
 
-public class Turma {
+public class Turma implements java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String codigo;
 	private int maximo;
@@ -13,9 +17,9 @@ public class Turma {
 	private boolean quarta;
 	private boolean quinta;
 	private boolean sexta;
-	private List<Aluno> alunos;
+	/*private List<Aluno> alunos;
 	private List<Aula> aulas;
-	private boolean edita;
+	private boolean edita;*/
 	public String getCodigo() {
 		return codigo;
 	}
@@ -70,7 +74,7 @@ public class Turma {
 	public void setSexta(boolean sexta) {
 		this.sexta = sexta;
 	}
-	public List<Aluno> getAlunos() {
+	/*public List<Aluno> getAlunos() {
 		return alunos;
 	}
 	public void setAlunos(List<Aluno> alunos) {
@@ -81,17 +85,18 @@ public class Turma {
 	}
 	public void setAulas(List<Aula> aulas) {
 		this.aulas = aulas;
-	}
+	}*/
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
+	/*
 	public boolean isEdita() {
 		return edita;
 	}
 	public void setEdita(boolean edita) {
 		this.edita = edita;
-	}
+	}*/
 }

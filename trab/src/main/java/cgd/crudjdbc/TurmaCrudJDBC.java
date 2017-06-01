@@ -1,4 +1,4 @@
-package cgd.crudjdbc;
+package main.java.cgd.crudjdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import cdp.classesAnemicas.*;
-import cgd.conexao.ConectaPostgreSQL;
+import main.java.cdp.classesAnemicas.*;
+import main.java.cgd.conexao.ConectaPostgreSQL;
 
 public class TurmaCrudJDBC {
 
@@ -68,7 +68,7 @@ public class TurmaCrudJDBC {
 		// contém os dados consultado da tabela
 		ResultSet resultado = null;
 		// objeto as
-		Turma turma = null;
+		Turma turma = new Turma();
 		// consulta SQL
 		String sql = "select distinct * from Turma where id=" + idTurma;
 		try {
@@ -108,7 +108,55 @@ public class TurmaCrudJDBC {
 		// retorna lista de ass
 		return turma;
 	}
-
+	public static Turma getByCodigo(String codigo) {
+		// abre conexao com o banco de dados
+		Connection conexao = ConectaPostgreSQL.geraConexao();
+		// executa o SQL no banco de dados
+		Statement consulta = null;
+		// contém os dados consultado da tabela
+		ResultSet resultado = null;
+		// objeto as
+		Turma turma = new Turma();
+		// consulta SQL
+		String sql = "select distinct * from Turma where codigo='" + codigo + "'";
+		try {
+			// consulta => objeto que executa o SQL no banco de dados
+			consulta = conexao.createStatement();
+			// resultado => objeto que contém os dados consultado da tabela
+			// SituacaoAcolhimento
+			resultado = consulta.executeQuery(sql);
+			// Lê cada situacao
+			
+			while (resultado.next()) {
+				turma.setId(resultado.getInt("id"));
+				turma.setCodigo(resultado.getString("codigo"));
+				turma.setMaximo(resultado.getInt("maximo"));
+				turma.setTurno(resultado.getString("turno"));
+				turma.setNivel(resultado.getInt("nivel"));
+				turma.setSegunda(resultado.getBoolean("segunda"));
+				turma.setTerca(resultado.getBoolean("terca"));
+				turma.setQuarta(resultado.getBoolean("quarta"));
+				turma.setQuinta(resultado.getBoolean("quinta"));
+				turma.setSexta(resultado.getBoolean("sexta"));
+				
+				// insere o acesso a serviço na lista
+				return turma;
+				
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException("Erro ao buscar uma turma: " + e);
+		} finally {
+			try {
+				consulta.close();
+				resultado.close();
+				conexao.close();
+			} catch (Throwable e) {
+				throw new RuntimeException("Erro ao fechar a conexao " + e);
+			}
+		}
+		// retorna lista de ass
+		return turma;
+	}
 	/*
 	 * Objetivo: Método que lista todos os turmas do banco de dados
 	 */
@@ -123,7 +171,7 @@ public class TurmaCrudJDBC {
 		// contém os dados consultado da tabela
 		ResultSet resultado = null;
 		// objeto turma
-		Turma turma = null;
+		Turma turma = new Turma();
 		// consulta SQL
 		String sql = "select distinct * from turma";
 		try {
@@ -135,7 +183,7 @@ public class TurmaCrudJDBC {
 			// Lê cada turma
 			while (resultado.next()) {
 				turma = new Turma();
-				turma.setId(resultado.getInt("id_turma"));
+				turma.setId(resultado.getInt("id"));
 				turma.setCodigo(resultado.getString("codigo"));
 				turma.setMaximo(resultado.getInt("maximo"));
 				turma.setTurno(resultado.getString("turno"));
@@ -179,19 +227,19 @@ public class TurmaCrudJDBC {
 		// SQL de exclusão do turma
 		String sql = "delete from turma where id=?";
 		// SQL de exclusão das aulas da turma
-		String sql2 = "delete from aulsdTurma where id=?";
+		//String sql2 = "delete from aulsdTurma where id=?";
 
 		// SQL de exclusão dos alunos da turma
-		String sql3 = "delete from alunosTurma where id=?";
+		//String sql3 = "delete from alunosTurma where id=?";
 
 		try {
 			//Queria deletar em cascata mas esqueci como faz
 			
 			// recebe o SQL delete para alunos da turma
-			excluiSt3 = conexao.prepareStatement(sql3);
+			//excluiSt3 = conexao.prepareStatement(sql3);
 			// recebe o parâmtros do SQL insert
 			
-			for(int i=0; i<turma.getAlunos().size(); i++)
+			/*for(int i=0; i<turma.getAlunos().size(); i++)
 			{
 				excluiSt3.setInt(1, turma.getAlunos().get(i).getId());
 				// executa SQL delete
@@ -209,7 +257,7 @@ public class TurmaCrudJDBC {
 				// executa SQL delete
 				excluiSt2.executeUpdate();
 			}
-			
+			*/
 			
 
 			// recebe o SQL delete para turma
@@ -225,8 +273,8 @@ public class TurmaCrudJDBC {
 			try {
 				// fecha conexao com o banco
 				excluiSt1.close();
-				excluiSt2.close();
-				excluiSt3.close();
+				//excluiSt2.close();
+				//excluiSt3.close();
 				conexao.close();
 			} catch (Throwable e) {
 				throw new RuntimeException("Erro ao fechar a operação de exclusao" + e);
