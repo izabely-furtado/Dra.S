@@ -21,26 +21,26 @@ public class InfoMedicasCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlInfoMedicas = "insert into InfoMedicas(contatoSOS, qalergia, qmedicacao, tiposangue, alergia, medicacao)"
-				+ "values (?, ?, ?, ?, ?, ?, ?)";
+		String sqlInfoMedicas = "insert into InfoMedicas(medicacao, qmedicacao, tiposangue, alergia, qalergia, contatoSOS)"
+				+ "values (?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sqlInfoMedicas);
 
 			// recebe o parâmtros do SQL insert
-			insereSt.setString(1, infoMedicas.getContatoSOS());
-			insereSt.setString(2, infoMedicas.getQalergia());
+			insereSt.setBoolean(1, infoMedicas.isMedicacao());
 			insereSt.setString(2, infoMedicas.getQmedicacao());
-			insereSt.setString(2, infoMedicas.getTipoSangue());
-			insereSt.setBoolean(6, infoMedicas.isAlergia());
-			insereSt.setBoolean(7, infoMedicas.isMedicacao());
+			insereSt.setString(3, infoMedicas.getTipoSangue());
+			insereSt.setBoolean(4, infoMedicas.isAlergia());
+			insereSt.setString(5, infoMedicas.getQalergia());
+			insereSt.setString(6, infoMedicas.getContatoSOS());
 			
 
 			// executa SQL insert
 			insereSt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao incluir as condições de moradia mensagem:" + e);
+			throw new RuntimeException("Erro ao incluir as informações médicas,  mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco

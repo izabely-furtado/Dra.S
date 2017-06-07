@@ -20,22 +20,23 @@ public class EnderecoCrudJDBC {
 			// Objeto para executar o SQL insert
 			PreparedStatement insereSt = null;
 			// SQL de inserção
-			String sql = "insert into endereco(bairro, cep, cidade, estado, numero, rua) values(?,?,?,?,?)";
+			String sql = "insert into endereco(rua, numero, bairro, cep, cidade, estado, referencia ) values(?,?,?,?,?,?,?)";
 			try {
 				// recebe o SQL insert
 				insereSt = conexao.prepareStatement(sql);
 				// recebe o parâmtros do SQL insert
-				insereSt.setString(1, endereco.getBairro());
-				insereSt.setString(2, endereco.getCep());
-				insereSt.setString(3, endereco.getCidade());
-				insereSt.setString(4, endereco.getEstado());
-				insereSt.setInt(5, endereco.getNumero());
-				insereSt.setString(6, endereco.getRua());
+				insereSt.setString(1, endereco.getRua());
+				insereSt.setInt(2, endereco.getNumero());
+				insereSt.setString(3, endereco.getBairro());
+				insereSt.setString(4, endereco.getCep());
+				insereSt.setString(5, endereco.getCidade());
+				insereSt.setString(6, endereco.getEstado());
+				insereSt.setString(7, endereco.getReferencia());
 				// executa SQL insert
 				insereSt.executeUpdate();
 				return true;
 			} catch (SQLException e) {
-				throw new RuntimeException("Erro ao incluir usuario. mensagem:" + e);
+				throw new RuntimeException("Erro ao incluir um endereço. mensagem:" + e);
 			} finally {
 				try {
 					// fecha conexao com o banco

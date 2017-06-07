@@ -44,7 +44,7 @@ public class PublicoPrioritarioCrudJDBC {
 			insereSt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao incluir as condições de moradia mensagem:" + e);
+			throw new RuntimeException("Erro ao incluir o público prioritário mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco

@@ -21,26 +21,26 @@ public class DadosPessoaisCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlDadosPessoais = "insert into DadosPessoais(contato, datanasc, nis, nome, parentesco, responsavel, sexo)"
+		String sqlDadosPessoais = "insert into DadosPessoais(nome, sexo, responsavel, parentesco, contato,  nis, datanasc)"
 				+ "values (?, ?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sqlDadosPessoais);
 
 			// recebe o parâmtros do SQL insert
-			insereSt.setString(1, dados.getContato());
-			insereSt.setString(2, dados.getDatNasc());
-			insereSt.setString(2, dados.getNis());
-			insereSt.setString(2, dados.getNome());
-			insereSt.setString(2, dados.getParentesco());
-			insereSt.setString(2, dados.getResponsavel());
+			insereSt.setString(1, dados.getNome());
 			insereSt.setInt(2, dados.getSexo());
+			insereSt.setString(3, dados.getResponsavel());
+			insereSt.setString(4, dados.getParentesco());
+			insereSt.setString(5, dados.getContato());
+			insereSt.setString(6, dados.getNis());
+			insereSt.setString(7, dados.getDatNasc());
 
 			// executa SQL insert
 			insereSt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao incluir as condições de moradia mensagem:" + e);
+			throw new RuntimeException("Erro ao incluir os dados pessoais" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco

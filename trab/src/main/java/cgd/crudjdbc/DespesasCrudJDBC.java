@@ -23,7 +23,7 @@ public class DespesasCrudJDBC {
 		// SQL de inserção
 		String sqlDespesas = "insert into Despesas(agua, alimentacao, aluguel, despesatotal, "
 				+ "gas, luz, medicamentos, outros, rendapercapta, rendatotal, telefone)"
-				+ "values (?, ?, ?, ?, ?, ?, ?)";
+				+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sqlDespesas);
@@ -31,21 +31,21 @@ public class DespesasCrudJDBC {
 			// recebe o parâmtros do SQL insert
 			insereSt.setFloat(1, despesas.getAgua());
 			insereSt.setFloat(2, despesas.getAlimentacao());
-			insereSt.setFloat(2, despesas.getAluguel());
-			insereSt.setFloat(2, despesas.getDespesaTotal());
-			insereSt.setFloat(2, despesas.getGas());
-			insereSt.setFloat(2, despesas.getLuz());
-			insereSt.setFloat(2, despesas.getMedicamentos());
-			insereSt.setFloat(2, despesas.getOutros());
-			insereSt.setFloat(2, despesas.getRendaPerCapta());
-			insereSt.setFloat(2, despesas.getRendaTotal());
-			insereSt.setFloat(2, despesas.getTelefone());
+			insereSt.setFloat(3, despesas.getAluguel());
+			insereSt.setFloat(4, despesas.getDespesaTotal());
+			insereSt.setFloat(5, despesas.getGas());
+			insereSt.setFloat(6, despesas.getLuz());
+			insereSt.setFloat(7, despesas.getMedicamentos());
+			insereSt.setFloat(8, despesas.getOutros());
+			insereSt.setFloat(9, despesas.getRendaPerCapta());
+			insereSt.setFloat(10, despesas.getRendaTotal());
+			insereSt.setFloat(11, despesas.getTelefone());
 
 			// executa SQL insert
 			insereSt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao incluir as condições de moradia mensagem:" + e);
+			throw new RuntimeException("Erro ao incluir as despesas mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco

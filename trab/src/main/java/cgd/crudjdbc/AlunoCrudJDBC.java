@@ -21,39 +21,66 @@ public class AlunoCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-			String sql = "insert into aluno(foto, nivel, turma_id, acessoservicos_id, acompanhamentoescolar_id, composicaofamiliar_id, "
-					+ "condicoesmoradia_id, dadospessoais_id, despesas_id, endereco_id, infomedicas_id, "
-					+ "infotransporte_id, programasbeneficios_id, publicoprioritario_id) values(?,?,?,?, ?,?,?,?, ?,?,?,?, ?)";
+		String sql = "insert into aluno(dadospessoais_id, endereco_id, acompanhamentoescolar_id, infomedicas_id, infotransporte_id, id_composicaofamiliar, "
+				+ "despesas_id, condicoesmoradia_id, acessosservicos_id, programasbeneficios_id, publicoprioritario_id, "
+				+ "edita, foto, nivel, turma_id) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
-			insereSt.setString(1, aluno.getFoto());
-			insereSt.setInt(2, aluno.getNivel());
-			insereSt.setInt(3, aluno.getTurma().getId());
-			insereSt.setInt(4, aluno.getAcessoServicos().getId());
-			AcessoServicosCrudJDBC.salvar(aluno.getAcessoServicos());
-			insereSt.setInt(5, aluno.getAcompanhamentoEscolar().getId());
-			AcompanhamentoEscolarCrudJDBC.salvar(aluno.getAcompanhamentoEscolar());
-			insereSt.setInt(6, aluno.getComposicaoFamiliar().getId());
-			ComposicaoFamiliarCrudJDBC.salvar(aluno.getComposicaoFamiliar());
-			insereSt.setInt(7, aluno.getCondicoesMoradia().getId());
-			CondicoesMoradiaCrudJDBC.salvar(aluno.getCondicoesMoradia());
-			insereSt.setInt(8, aluno.getDadosPessoais().getId());
+			insereSt.setInt(1, aluno.getDadosPessoais().getId());
+			
 			DadosPessoaisCrudJDBC.salvar(aluno.getDadosPessoais());
-			insereSt.setInt(8, aluno.getDespesas().getId());
-			DespesasCrudJDBC.salvar(aluno.getDespesas());
-			insereSt.setInt(9, aluno.getEndereco().getId());
+			
+			insereSt.setInt(2, aluno.getEndereco().getId());
+			
 			EnderecoCrudJDBC.salvar(aluno.getEndereco());
-			insereSt.setInt(10, aluno.getInfoMedicas().getId());
+			
+			insereSt.setInt(3, aluno.getAcompanhamentoEscolar().getId());
+			
+			AcompanhamentoEscolarCrudJDBC.salvar(aluno.getAcompanhamentoEscolar());
+			
+			insereSt.setInt(4, aluno.getInfoMedicas().getId());
+			
 			InfoMedicasCrudJDBC.salvar(aluno.getInfoMedicas());
-			insereSt.setInt(11, aluno.getInfoTransporte().getId());
+			
+			insereSt.setInt(5, aluno.getInfoTransporte().getId());
+			
 			InfoTransporteCrudJDBC.salvar(aluno.getInfoTransporte());
-			insereSt.setInt(12, aluno.getProgramasBeneficios().getId());
+		
+			insereSt.setInt(6, aluno.getComposicaoFamiliar().getId());
+			
+			//ComposicaoFamiliarCrudJDBC.salvar(aluno.getComposicaoFamiliar());
+			
+			insereSt.setInt(7, aluno.getDespesas().getId());
+			
+			DespesasCrudJDBC.salvar(aluno.getDespesas());
+			
+			insereSt.setInt(8, aluno.getCondicoesMoradia().getId());
+			
+			CondicoesMoradiaCrudJDBC.salvar(aluno.getCondicoesMoradia());
+			
+			insereSt.setInt(9, aluno.getAcessoServicos().getId());
+			
+			AcessoServicosCrudJDBC.salvar(aluno.getAcessoServicos());
+			
+			insereSt.setInt(10, aluno.getProgramasBeneficios().getId());
+			
 			ProgramasBeneficiosCrudJDBC.salvar(aluno.getProgramasBeneficios());
-			insereSt.setInt(13, aluno.getPublicoPrioritario().getId());
+			
+			insereSt.setInt(11, aluno.getPublicoPrioritario().getId());
+			
 			PublicoPrioritarioCrudJDBC.salvar(aluno.getPublicoPrioritario());
 			
+			insereSt.setBoolean(12, aluno.isEdita());
+			
+			insereSt.setString(13, aluno.getFoto());
+			
+			insereSt.setInt(14, aluno.getNivel());
+			
+			insereSt.setInt(15, aluno.getTurma().getId());
+			
+			TurmaCrudJDBC.salvar(aluno.getTurma());
 			
 			// executa SQL insert
 			insereSt.executeUpdate();

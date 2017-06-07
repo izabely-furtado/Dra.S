@@ -22,7 +22,7 @@ public class ProgramasBeneficiosCrudJDBC {
 		PreparedStatement insereSt = null;
 		// SQL de inserção
 		String sqlProgramasBeneficios = "insert into ProgramasBeneficios(beneficiohabitacional, outro, possuiar, possuibp, possuibpc, possuipbc, possuipbf, possuipibc)"
-				+ "values (?, ?, ?, ?, ?, ?, ?)";
+				+ "values (?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sqlProgramasBeneficios);
@@ -33,9 +33,9 @@ public class ProgramasBeneficiosCrudJDBC {
 			insereSt.setBoolean(3, programasBeneficios.isPossuiar());
 			insereSt.setBoolean(4, programasBeneficios.isPossuibp());
 			insereSt.setBoolean(5, programasBeneficios.isPossuibpc());
-			insereSt.setBoolean(5, programasBeneficios.isPossuipbc());
-			insereSt.setBoolean(6, programasBeneficios.isPossuipbf());
-			insereSt.setBoolean(7, programasBeneficios.isPossuipibc());
+			insereSt.setBoolean(6, programasBeneficios.isPossuipbc());
+			insereSt.setBoolean(7, programasBeneficios.isPossuipbf());
+			insereSt.setBoolean(8, programasBeneficios.isPossuipibc());
 
 			// executa SQL insert
 			insereSt.executeUpdate();

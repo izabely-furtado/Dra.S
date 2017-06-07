@@ -21,16 +21,15 @@ public class InfoTransporteCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserçao
-		String sqlInfoTransporte = "insert into InfoTransporte(cartao, qtransporte, transporte)"
-				+ "values (?, ?, ?)";
+		String sqlInfoTransporte = "insert into InfoTransporte(qtransporte, transporte)"
+				+ "values (?, ?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sqlInfoTransporte);
 
 			// recebe o parâmtros do SQL insert
-			insereSt.setString(1, infoTransporte.getCartao());
-			insereSt.setString(2, infoTransporte.getQtransporte());
-			insereSt.setBoolean(3, infoTransporte.isTransporte());
+			insereSt.setString(1, infoTransporte.getQtransporte());
+			insereSt.setBoolean(2, infoTransporte.isTransporte());
 			
 
 			// executa SQL insert

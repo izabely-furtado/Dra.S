@@ -30,11 +30,11 @@ public class CondicoesMoradiaCrudJDBC {
 			// recebe o parâmtros do SQL insert
 			insereSt.setString(1, condicoes.getCondicao());
 			insereSt.setBoolean(2, condicoes.isPossuiagua());
-			insereSt.setBoolean(2, condicoes.isPossuicoleta());
-			insereSt.setBoolean(2, condicoes.isPossuienergia());
-			insereSt.setBoolean(2, condicoes.isPossuiesgoto());
-			insereSt.setBoolean(2, condicoes.isPossuirisco());
-			insereSt.setString(2, condicoes.getQrisco());
+			insereSt.setBoolean(3, condicoes.isPossuicoleta());
+			insereSt.setBoolean(4, condicoes.isPossuienergia());
+			insereSt.setBoolean(5, condicoes.isPossuiesgoto());
+			insereSt.setBoolean(6, condicoes.isPossuirisco());
+			insereSt.setString(7, condicoes.getQrisco());
 
 			// executa SQL insert
 			insereSt.executeUpdate();
