@@ -20,7 +20,7 @@ public class AcessoServicosCrudJDBC {
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlAcessoServicos 	  = "insert into acessoServicos(possuiacolhimento, possuicei, possuicras, possuicreas, possuiescola, possuiesf, possuisus, qacolhimento, qcei, qcras, qcreas, qescola, qesf, qsus, situacaoAcolhimento_id)" +
+		String sqlAcessoServicos 	  = "insert into acessoServicos(possuiacolhimento, possuicei, possuicras, possuicreas, possuiescola, possuiesf, possuisus, qacolhimento, qcei, qcras, qcreas, qescola, qesf, qsus)" +
 									    "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert
@@ -42,23 +42,20 @@ public class AcessoServicosCrudJDBC {
 			insereSt.setString(13, as.getQesf());
 			insereSt.setString(14, as.getQsus());
 			
-			insereSt.setInt(15, as.getSituacaoacolhimento().getId());
 			// executa SQL insert
 			insereSt.executeUpdate();
 			
-			//executa o salvamento da situação de acolhimento
-			SituacaoAcolhimentoCrudJDBC.salvar(as.getSituacaoacolhimento());
 			return true;
 			
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao incluir as. mensagem:" + e);
+			throw new RuntimeException("Erro ao incluir o acesso serviços mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco
 				insereSt.close();
 				conexao.close();
 			} catch (Throwable e) {
-				throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
+				throw new RuntimeException("Erro ao fechar a operação de inserção - acesso serviços" + e);
 			}
 		}
 	}

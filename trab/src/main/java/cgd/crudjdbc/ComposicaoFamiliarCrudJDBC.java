@@ -23,36 +23,50 @@ public class ComposicaoFamiliarCrudJDBC {
 		PreparedStatement insereSt = null;
 		// SQL de inserção
 		String sqlComposicaoFamiliar = "insert into composicaoFamiliar(parente1, parente2, parente3, parente4, parente5, parente6, parente7, parente8, parente9, parente10, parente11, parente12, parente13)"
-				+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+				+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			// recebe o SQL insert
 			insereSt = conexao.prepareStatement(sqlComposicaoFamiliar);
-			ParenteCrudJDBC.salvar(composicao.getParente1());
-			insereSt.setInt(1, composicao.getParente1().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente2());
-			insereSt.setInt(2, composicao.getParente2().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente3());
-			insereSt.setInt(3, composicao.getParente3().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente4());
-			insereSt.setInt(4, composicao.getParente4().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente5());
-			insereSt.setInt(5, composicao.getParente5().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente6());
-			insereSt.setInt(6, composicao.getParente6().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente7());
-			insereSt.setInt(7, composicao.getParente7().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente8());
-			insereSt.setInt(8, composicao.getParente8().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente9());
-			insereSt.setInt(9, composicao.getParente9().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente10());
-			insereSt.setInt(10, composicao.getParente10().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente11());
-			insereSt.setInt(11, composicao.getParente11().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente12());
-			insereSt.setInt(12, composicao.getParente12().getId());
-			ParenteCrudJDBC.salvar(composicao.getParente13());
-			insereSt.setInt(13, composicao.getParente13().getId());
+			ParenteCrudJDBC parente = new ParenteCrudJDBC();
+			
+			int parente1 =  parente.salvar(composicao.getParente1());
+			insereSt.setInt(1,parente1);
+			
+			int parente2 =   parente.salvar(composicao.getParente2());
+			insereSt.setInt(2, parente2);
+			
+			int parente3 =   parente.salvar(composicao.getParente3());
+			insereSt.setInt(3, parente3);
+			
+			int parente4 =   parente.salvar(composicao.getParente1());
+			insereSt.setInt(4, parente4);
+			
+			int parente5 =   parente.salvar(composicao.getParente5());
+			insereSt.setInt(5, parente5);
+			
+			int parente6 =  parente.salvar(composicao.getParente6());
+			insereSt.setInt(6, parente6);
+			
+			int parente7 =   parente.salvar(composicao.getParente7());
+			insereSt.setInt(7, parente7);
+			
+			int parente8 =    parente.salvar(composicao.getParente8());
+			insereSt.setInt(8, parente8);
+			
+			int parente9 =   parente.salvar(composicao.getParente9());
+			insereSt.setInt(9,parente9);
+			
+			int parente10 =   parente.salvar(composicao.getParente10());
+			insereSt.setInt(10, parente10);
+			
+			int parente11 =  parente.salvar(composicao.getParente11());
+			insereSt.setInt(11, parente11);
+			
+			int parente12 =   parente.salvar(composicao.getParente12());
+			insereSt.setInt(12, parente12);
+			
+			int parente13 =   parente.salvar(composicao.getParente13());
+			insereSt.setInt(13, parente13);
 			// executa SQL insert
 			insereSt.executeUpdate();
 
@@ -70,6 +84,8 @@ public class ComposicaoFamiliarCrudJDBC {
 			}
 		}
 	}
+	
+	
 
 	/*
 	 * Objetivo: Método que lista todos os ass do banco de dados

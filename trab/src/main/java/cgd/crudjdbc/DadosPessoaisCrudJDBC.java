@@ -15,17 +15,28 @@ public class DadosPessoaisCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de dados
 	 */
-	public static boolean salvar(DadosPessoais dados) {
+	public int salvar(DadosPessoais dados) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
+<<<<<<< HEAD
+		
+		String sqlDadosPessoais = "";
+		
+=======
 		String sqlDadosPessoais = "insert into DadosPessoais(nome, sexo, responsavel, parentesco, contato,  nis, datanasc)"
 				+ "values (?, ?, ?, ?, ?, ?, ?)";
+>>>>>>> origin/master
 		try {
+			
+			int lastId=0;
+			
+			sqlDadosPessoais = "insert into DadosPessoais(nome, sexo, responsavel, parentesco, contato,  nis, datanasc)"
+					+ "values (?, ?, ?, ?, ?, ?, ?)";
 			// recebe o SQL insert
-			insereSt = conexao.prepareStatement(sqlDadosPessoais);
+			insereSt = conexao.prepareStatement(sqlDadosPessoais, Statement.RETURN_GENERATED_KEYS);
 
 			// recebe o parâmtros do SQL insert
 			insereSt.setString(1, dados.getNome());
@@ -38,7 +49,14 @@ public class DadosPessoaisCrudJDBC {
 
 			// executa SQL insert
 			insereSt.executeUpdate();
-			return true;
+			
+			ResultSet rs = insereSt.getGeneratedKeys();
+			if (rs.next()) {
+			   lastId = rs.getInt("id_dadospessoais");
+			   return lastId;
+			}
+
+			
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao incluir os dados pessoais" + e);
 		} finally {
@@ -50,6 +68,7 @@ public class DadosPessoaisCrudJDBC {
 				throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 			}
 		}
+		return 0;
 	}
 
 	/*

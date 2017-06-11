@@ -11,7 +11,7 @@ public class ConectaPostgreSQL {
 			// carrega o drive de comunicação com o banco de dados
 			Class.forName("org.postgresql.Driver");
 			// Não esqueca de mudar o usuario e senha do banco de dados.
-			String url = "jdbc:postgresql://localhost/moulin";
+			String url = "jdbc:postgresql://localhost:5432/moulin";
 			String usuario = "postgres";
 			String senha = "ifes";
 			conexao = DriverManager.getConnection(url, usuario, senha);

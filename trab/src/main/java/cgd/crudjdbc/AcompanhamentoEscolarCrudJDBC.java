@@ -14,16 +14,18 @@ public class AcompanhamentoEscolarCrudJDBC {
 		/*
 		 * Objetivo: Método que salva um as no banco de dados
 		 */
-		public static boolean salvar(AcompanhamentoEscolar acompanhamento) {
+		public int salvar(AcompanhamentoEscolar acompanhamento) {
 			// abre a conexao com o banco de dados MYSQL
 			Connection conexao = ConectaPostgreSQL.geraConexao();
 			// Objeto para executar o SQL insert
 			PreparedStatement insereSt = null;
 			// SQL de inserção
-			String sqlAcompanhamento = "insert into acompanhamentoescolarDados(escola, ano1, ano2, ano3, ano4, ano5, ano6, ano7, serie1, serie2, serie3, serie4, serie5, serie6, serie7) values(?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,);";
+			String sqlAcompanhamento = "insert into acompanhamentoescolar(escola, ano1, ano2, ano3, ano4, ano5, ano6, ano7, serie1, serie2, serie3, serie4, serie5, serie6, serie7) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			try {
+				
+				int lastId=0;
 				// recebe o SQL insert
-				insereSt = conexao.prepareStatement(sqlAcompanhamento);
+				insereSt = conexao.prepareStatement(sqlAcompanhamento, Statement.RETURN_GENERATED_KEYS);
 				// recebe o parâmtros do SQL insert
 				insereSt.setString(1, acompanhamento.getEscola());
 				insereSt.setInt(2, acompanhamento.getAno1());
@@ -44,7 +46,13 @@ public class AcompanhamentoEscolarCrudJDBC {
 				// executa SQL insert
 				insereSt.executeUpdate();
 				
-				return true;
+				ResultSet rs = insereSt.getGeneratedKeys();
+				if (rs.next()) {
+				   lastId = rs.getInt("id_acompanhamentoescolar");
+				   return lastId;
+				}
+				
+				
 				
 			} catch (SQLException e) {
 				throw new RuntimeException("Erro ao incluir o acompnhamento escolar mensagem:" + e);
@@ -57,6 +65,7 @@ public class AcompanhamentoEscolarCrudJDBC {
 					throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 				}
 			}
+			return 0;
 		}
 		
 		/*

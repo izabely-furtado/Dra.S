@@ -118,7 +118,7 @@ public class ParenteBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		ParenteCrudJDBC.salvar(this.parente);
+		//ParenteCrudJDBC.salvar(this.parente);
 		// salva o usu�rio
 		return "sucesso";
 	}

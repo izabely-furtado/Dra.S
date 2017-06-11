@@ -15,19 +15,23 @@ public class ParenteCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de dados
 	 */
-	public static boolean salvar(Parente parente) {
+	public int salvar(Parente parente) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
+	
+		
+
 		// SQL de inserção
 		String sqlParente = "";
 		try {
+			int lastId=0;
 			// pega o resto dos dados
-			sqlParente += "insert into parente(dataNasc, escolaridade, idade, nome, parentesco, renda, scfv, situacaoOcupacional)"
-					+ "values (?, ?, ?, ?, ?, ?, ?, ?);";
+			sqlParente = "insert into parente(dataNasc, escolaridade, idade, nome, parentesco, renda, scfv, situacaoOcupacional)"
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?)";
 			// recebe o SQL insert
-			insereSt = conexao.prepareStatement(sqlParente);
+			insereSt = conexao.prepareStatement(sqlParente, Statement.RETURN_GENERATED_KEYS);
 			insereSt.setString(1, parente.getDataNasc());
 			insereSt.setString(2, parente.getEscolaridade());
 			insereSt.setInt(3, parente.getIdade());
@@ -39,8 +43,14 @@ public class ParenteCrudJDBC {
 
 			// executa SQL insert
 			insereSt.executeUpdate();
+			
+			ResultSet rs = insereSt.getGeneratedKeys();
+			if (rs.next()) {
+			   lastId = rs.getInt("id_parente");
+			   return lastId;
+			}
 
-			return true;
+			
 
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao incluir parente mensagem:" + e);
@@ -53,6 +63,10 @@ public class ParenteCrudJDBC {
 				throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 			}
 		}
+		return 1;
+		
+		
+		
 	}
 
 	/*

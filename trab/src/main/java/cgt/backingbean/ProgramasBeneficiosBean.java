@@ -81,7 +81,7 @@ public class ProgramasBeneficiosBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		ProgramasBeneficiosCrudJDBC.salvar(this.programasBeneficios);
+		//ProgramasBeneficiosCrudJDBC.salvar(this.programasBeneficios);
 		// salva o usu�rio
 		return "sucesso";
 	}

@@ -15,17 +15,30 @@ public class ProgramasBeneficiosCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de programasBeneficios
 	 */
-	public static boolean salvar(ProgramasBeneficios programasBeneficios) {
+	public int salvar(ProgramasBeneficios programasBeneficios) {
 		// abre a conexao com o banco de programasBeneficios MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
+<<<<<<< HEAD
+		
+		String sqlProgramasBeneficios = "";
+		
+=======
 		// SQL de inserção
 		String sqlProgramasBeneficios = "insert into ProgramasBeneficios(beneficiohabitacional, outro, possuiar, possuibp, possuibpc, possuipbc, possuipbf, possuipibc)"
 				+ "values (?, ?, ?, ?, ?, ?, ?, ?)";
+>>>>>>> origin/master
 		try {
+			
+			int lastId=0;
+			
+			// SQL de inserção
+			sqlProgramasBeneficios = "insert into ProgramasBeneficios(beneficiohabitacional, outro, possuiar, possuibp, possuibpc, possuipbc, possuipbf, possuipibc)"
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?)";
+			
 			// recebe o SQL insert
-			insereSt = conexao.prepareStatement(sqlProgramasBeneficios);
+			insereSt = conexao.prepareStatement(sqlProgramasBeneficios, Statement.RETURN_GENERATED_KEYS);
 
 			// recebe o parâmtros do SQL insert
 			insereSt.setString(1, programasBeneficios.getBeneficioHabitacional());
@@ -39,7 +52,14 @@ public class ProgramasBeneficiosCrudJDBC {
 
 			// executa SQL insert
 			insereSt.executeUpdate();
-			return true;
+			
+			ResultSet rs = insereSt.getGeneratedKeys();
+			if (rs.next()) {
+			   lastId = rs.getInt("id_programabeneficios");
+			   return lastId;
+			}
+
+			
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao incluir as condições de moradia mensagem:" + e);
 		} finally {
@@ -51,6 +71,8 @@ public class ProgramasBeneficiosCrudJDBC {
 				throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 			}
 		}
+		return 0;
+		
 	}
 
 	/*

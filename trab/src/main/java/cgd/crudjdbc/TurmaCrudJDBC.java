@@ -1,4 +1,4 @@
-package main.java.cgd.crudjdbc;
+package cgd.crudjdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.cdp.classesAnemicas.*;
-import main.java.cgd.conexao.ConectaPostgreSQL;
+import cdp.classesAnemicas.Turma;
+import cgd.conexao.ConectaPostgreSQL;
+
 
 public class TurmaCrudJDBC {
 

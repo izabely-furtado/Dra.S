@@ -93,7 +93,7 @@ public class InfoMedicasBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		InfoMedicasCrudJDBC.salvar(this.infoMedicas);
+		//InfoMedicasCrudJDBC.salvar(this.infoMedicas);
 		// salva o usu�rio
 		return "sucesso";
 	}

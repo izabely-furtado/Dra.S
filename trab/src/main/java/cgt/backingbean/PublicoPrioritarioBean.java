@@ -79,7 +79,7 @@ public class PublicoPrioritarioBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		PublicoPrioritarioCrudJDBC.salvar(this.publicoPrioritario);
+		//PublicoPrioritarioCrudJDBC.salvar(this.publicoPrioritario);
 		// salva o usu�rio
 		return "sucesso";
 	}

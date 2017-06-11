@@ -1,5 +1,9 @@
 package cdp.classesAnemicas;
 
+import java.util.ArrayList;
+
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
 public class Aluno {
 	private int id;
 	private String foto;
@@ -16,7 +20,35 @@ public class Aluno {
 	private AcessoServicos acessoServicos;
 	private ProgramasBeneficios programasBeneficios;
 	private PublicoPrioritario publicoPrioritario;
+	private Parente parente = new Parente();
+	public ArrayList<Parente> parentes = new ArrayList<Parente>();
+	
+	
+	public Parente getParente() {
+		return parente;
+	}
+
+	public void setParente(Parente parente) {
+		this.parente = parente;
+	}
+
+	public void setParentes(ArrayList<Parente> parentes) {
+		this.parentes = parentes;
+	}
+
+	
 	private boolean edita;
+	
+	public void setParentes(Parente parente)
+	{
+		parentes.add(parente);
+	}
+	
+	public ArrayList<Parente> getParentes()
+	{
+		return this.parentes;
+		
+	}
 
 	public Aluno() {
 

@@ -15,18 +15,29 @@ public class DespesasCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de despesas
 	 */
-	public static boolean salvar(Despesas despesas) {
+	public int salvar(Despesas despesas) {
 		// abre a conexao com o banco de despesas MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
+<<<<<<< HEAD
+		
+		String sqlDespesas = "";
+		
+=======
 		String sqlDespesas = "insert into Despesas(agua, alimentacao, aluguel, despesatotal, "
 				+ "gas, luz, medicamentos, outros, rendapercapta, rendatotal, telefone)"
 				+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+>>>>>>> origin/master
 		try {
+			int lastId=0;
+			
+			sqlDespesas = "insert into Despesas(agua, alimentacao, aluguel, despesatotal, "
+					+ "gas, luz, medicamentos, outros, rendapercapta, rendatotal, telefone)"
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			// recebe o SQL insert
-			insereSt = conexao.prepareStatement(sqlDespesas);
+			insereSt = conexao.prepareStatement(sqlDespesas, Statement.RETURN_GENERATED_KEYS);
 
 			// recebe o parâmtros do SQL insert
 			insereSt.setFloat(1, despesas.getAgua());
@@ -43,7 +54,13 @@ public class DespesasCrudJDBC {
 
 			// executa SQL insert
 			insereSt.executeUpdate();
-			return true;
+			
+			ResultSet rs = insereSt.getGeneratedKeys();
+			if (rs.next()) {
+			   lastId = rs.getInt("id_despesas");
+			   return lastId;
+			}
+			
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao incluir as despesas mensagem:" + e);
 		} finally {
@@ -55,6 +72,7 @@ public class DespesasCrudJDBC {
 				throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 			}
 		}
+		return 0;
 	}
 
 	/*

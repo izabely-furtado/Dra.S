@@ -85,7 +85,7 @@ public class InfoTransporteBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		InfoTransporteCrudJDBC.salvar(this.infoTransporte);
+		//InfoTransporteCrudJDBC.salvar(this.infoTransporte);
 		// salva o usu�rio
 		return "sucesso";
 	}

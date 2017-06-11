@@ -109,7 +109,7 @@ public class DadosPessoaisBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		DadosPessoaisCrudJDBC.salvar(this.dadosPessoais);
+		//DadosPessoaisCrudJDBC.salvar(this.dadosPessoais);
 		// salva o usu�rio
 		return "sucesso";
 	}

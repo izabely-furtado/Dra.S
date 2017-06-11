@@ -14,16 +14,25 @@ public class EnderecoCrudJDBC {
 		/*
 		 * Objetivo: Método que salva um usuario no banco de dados
 		 */
-		public static boolean salvar(Endereco endereco) {
+		public int salvar(Endereco endereco) {
 			// abre a conexao com o banco de dados MYSQL
 			Connection conexao = ConectaPostgreSQL.geraConexao();
 			// Objeto para executar o SQL insert
 			PreparedStatement insereSt = null;
 			// SQL de inserção
+<<<<<<< HEAD
+			
+			String sql = "";
+			
+=======
 			String sql = "insert into endereco(rua, numero, bairro, cep, cidade, estado, referencia ) values(?,?,?,?,?,?,?)";
+>>>>>>> origin/master
 			try {
+				int lastId=0;
+				
+				sql = "insert into endereco(rua, numero, bairro, cep, cidade, estado, referencia ) values(?,?,?,?,?,?,?)";
 				// recebe o SQL insert
-				insereSt = conexao.prepareStatement(sql);
+				insereSt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 				// recebe o parâmtros do SQL insert
 				insereSt.setString(1, endereco.getRua());
 				insereSt.setInt(2, endereco.getNumero());
@@ -34,7 +43,13 @@ public class EnderecoCrudJDBC {
 				insereSt.setString(7, endereco.getReferencia());
 				// executa SQL insert
 				insereSt.executeUpdate();
-				return true;
+				
+				ResultSet rs = insereSt.getGeneratedKeys();
+				if (rs.next()) {
+				   lastId = rs.getInt("id_endereco");
+				   return lastId;
+				}
+			
 			} catch (SQLException e) {
 				throw new RuntimeException("Erro ao incluir um endereço. mensagem:" + e);
 			} finally {
@@ -46,6 +61,7 @@ public class EnderecoCrudJDBC {
 					throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 				}
 			}
+			return 0;
 		}
 
 		public static Endereco getEndereco(Integer idEndereco) {

@@ -108,7 +108,7 @@ public class DespesasBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		DespesasCrudJDBC.salvar(this.despesas);
+		//DespesasCrudJDBC.salvar(this.despesas);
 		// salva o usu�rio
 		return "sucesso";
 	}

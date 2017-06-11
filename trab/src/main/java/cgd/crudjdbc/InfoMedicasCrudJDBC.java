@@ -15,17 +15,29 @@ public class InfoMedicasCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de infoMedicas
 	 */
-	public static boolean salvar(InfoMedicas infoMedicas) {
+	public int salvar(InfoMedicas infoMedicas) {
 		// abre a conexao com o banco de infoMedicas MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
+<<<<<<< HEAD
+		
+		String sqlInfoMedicas = "";
+		
+=======
 		// SQL de inserção
 		String sqlInfoMedicas = "insert into InfoMedicas(medicacao, qmedicacao, tiposangue, alergia, qalergia, contatoSOS)"
 				+ "values (?, ?, ?, ?, ?, ?)";
+>>>>>>> origin/master
 		try {
+			int lastId=0;
+			
+			// SQL de inserção
+			sqlInfoMedicas = "insert into InfoMedicas(medicacao, qmedicacao, tiposangue, alergia, qalergia, contatoSOS)"
+					+ "values (?, ?, ?, ?, ?, ?)";
+			
 			// recebe o SQL insert
-			insereSt = conexao.prepareStatement(sqlInfoMedicas);
+			insereSt = conexao.prepareStatement(sqlInfoMedicas, Statement.RETURN_GENERATED_KEYS);
 
 			// recebe o parâmtros do SQL insert
 			insereSt.setBoolean(1, infoMedicas.isMedicacao());
@@ -38,7 +50,13 @@ public class InfoMedicasCrudJDBC {
 
 			// executa SQL insert
 			insereSt.executeUpdate();
-			return true;
+			
+			ResultSet rs = insereSt.getGeneratedKeys();
+			if (rs.next()) {
+			   lastId = rs.getInt("id_infomedicas");
+			   return lastId;
+			}
+			
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao incluir as informações médicas,  mensagem:" + e);
 		} finally {
@@ -50,6 +68,7 @@ public class InfoMedicasCrudJDBC {
 				throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 			}
 		}
+		return 0;
 	}
 
 	/*

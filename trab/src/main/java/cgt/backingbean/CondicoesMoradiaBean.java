@@ -83,7 +83,7 @@ public class CondicoesMoradiaBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		CondicoesMoradiaCrudJDBC.salvar(this.condicoesMoradia);
+		//CondicoesMoradiaCrudJDBC.salvar(this.condicoesMoradia);
 		// salva o usu�rio
 		return "sucesso";
 	}

@@ -1,4 +1,4 @@
-package main.java.cdp.classesAnemicas;
+package cdp.classesAnemicas;
 
 import java.util.List;
 

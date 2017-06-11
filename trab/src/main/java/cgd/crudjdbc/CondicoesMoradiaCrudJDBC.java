@@ -15,17 +15,21 @@ public class CondicoesMoradiaCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de dados
 	 */
-	public static boolean salvar(CondicoesMoradia condicoes) {
+	public int salvar(CondicoesMoradia condicoes) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
-		String sqlCondicoesMoradia = "insert into condicoesMoradia(condicao, possuiagua, possuicoleta, possuienergia, possuiesgoto, possuirisco, qrisco)"
-				+ "values (?, ?, ?, ?, ?, ?, ?)";
+		
+		String sqlCondicoesMoradia = "";
 		try {
+			int lastId=0;
+			
+			sqlCondicoesMoradia = "insert into condicoesMoradia(condicao, possuiagua, possuicoleta, possuienergia, possuiesgoto, possuirisco, qrisco)"
+					+ "values (?, ?, ?, ?, ?, ?, ?)";
 			// recebe o SQL insert
-			insereSt = conexao.prepareStatement(sqlCondicoesMoradia);
+			insereSt = conexao.prepareStatement(sqlCondicoesMoradia, Statement.RETURN_GENERATED_KEYS);
 
 			// recebe o parâmtros do SQL insert
 			insereSt.setString(1, condicoes.getCondicao());
@@ -38,7 +42,13 @@ public class CondicoesMoradiaCrudJDBC {
 
 			// executa SQL insert
 			insereSt.executeUpdate();
-			return true;
+			
+			ResultSet rs = insereSt.getGeneratedKeys();
+			if (rs.next()) {
+			   lastId = rs.getInt("id_condicaomoradia");
+			   return lastId;
+			}
+			
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao incluir as condições de moradia mensagem:" + e);
 		} finally {
@@ -50,6 +60,7 @@ public class CondicoesMoradiaCrudJDBC {
 				throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 			}
 		}
+		return 0;
 	}
 
 	/*

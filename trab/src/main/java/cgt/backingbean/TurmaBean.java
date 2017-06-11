@@ -1,4 +1,4 @@
-package main.java.cgt.backingbean;
+package cgt.backingbean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,10 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import main.java.cdp.classesAnemicas.Turma;
-import main.java.cgd.crudjdbc.*;
+import cdp.classesAnemicas.Turma;
+import cgd.crudjdbc.TurmaCrudJDBC;
+
+
 
 @ManagedBean(name = "TurmaBean")
 @SessionScoped

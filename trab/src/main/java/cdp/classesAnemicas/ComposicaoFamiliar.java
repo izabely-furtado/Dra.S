@@ -142,7 +142,7 @@ public class ComposicaoFamiliar {
 	}
 	
 	public void setParentes(List<Parente> parentes) {
-		for (int i = 1; i <=parentes.size() ; i++){
+		for (int i = 0; i < parentes.size() ; i++){
 			switch (i) {
 				case 1: this.parente1 = parentes.get(i);
 				case 2: this.parente2 = parentes.get(i);

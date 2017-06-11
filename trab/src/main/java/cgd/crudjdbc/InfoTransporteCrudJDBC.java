@@ -15,17 +15,26 @@ public class InfoTransporteCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de infoTransporte
 	 */
-	public static boolean salvar(InfoTransporte infoTransporte) {
+	public int salvar(InfoTransporte infoTransporte) {
 		// abre a conexao com o banco de infoTransporte MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserçao
+<<<<<<< HEAD
+		String sqlInfoTransporte = "";
+=======
 		String sqlInfoTransporte = "insert into InfoTransporte(qtransporte, transporte)"
 				+ "values (?, ?)";
+>>>>>>> origin/master
 		try {
+			
+			int lastId=0;
+			
+			sqlInfoTransporte = "insert into InfoTransporte(qtransporte, transporte)"
+					+ "values (?, ?)";
 			// recebe o SQL insert
-			insereSt = conexao.prepareStatement(sqlInfoTransporte);
+			insereSt = conexao.prepareStatement(sqlInfoTransporte, Statement.RETURN_GENERATED_KEYS);
 
 			// recebe o parâmtros do SQL insert
 			insereSt.setString(1, infoTransporte.getQtransporte());
@@ -34,18 +43,24 @@ public class InfoTransporteCrudJDBC {
 
 			// executa SQL insert
 			insereSt.executeUpdate();
-			return true;
+			ResultSet rs = insereSt.getGeneratedKeys();
+			if (rs.next()) {
+			   lastId = rs.getInt("id_infotransporte");
+			   return lastId;
+			}
+			
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro ao incluir as condições de moradia mensagem:" + e);
+			throw new RuntimeException("Erro ao incluir as informações de transporte mensagem:" + e);
 		} finally {
 			try {
 				// fecha conexao com o banco
 				insereSt.close();
 				conexao.close();
 			} catch (Throwable e) {
-				throw new RuntimeException("Erro ao fechar a operaçao de inserçao" + e);
+				throw new RuntimeException("Erro ao fechar a operaçao de inserçao - informações de transporte" + e);
 			}
 		}
+		return 0;
 	}
 
 	/*

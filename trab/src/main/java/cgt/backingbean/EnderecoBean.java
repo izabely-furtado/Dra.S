@@ -93,7 +93,7 @@ public class EnderecoBean {
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
 	
-		EnderecoCrudJDBC.salvar(this.endereco);
+		//EnderecoCrudJDBC.salvar(this.endereco);
 		// salva o usu�rio
 		return "sucesso";
 	}

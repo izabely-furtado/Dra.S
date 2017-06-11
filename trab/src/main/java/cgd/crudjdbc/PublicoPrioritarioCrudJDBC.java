@@ -15,17 +15,25 @@ public class PublicoPrioritarioCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de publicoPrioritario
 	 */
-	public static boolean salvar(PublicoPrioritario publicoPrioritario) {
+	public int salvar(PublicoPrioritario publicoPrioritario) {
 		// abre a conexao com o banco de publicoPrioritario MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
-		// SQL de inserção
-		String sqlPublicoPrioritario = "insert into PublicoPrioritario(abuso, acolhimento, defasagem, eca, egressos, isolamento, mse, rua, trabInfantil, vivencia, vulnerabilidade)"
-				+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+		String sqlPublicoPrioritario = "";
+		
 		try {
+			
+			
+			int lastId=0;
+			
+			// SQL de inserção
+			sqlPublicoPrioritario = "insert into PublicoPrioritario(abuso, acolhimento, defasagem, eca, egressos, isolamento, mse, rua, trabInfantil, vivencia, vulnerabilidade)"
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			
 			// recebe o SQL insert
-			insereSt = conexao.prepareStatement(sqlPublicoPrioritario);
+			insereSt = conexao.prepareStatement(sqlPublicoPrioritario, Statement.RETURN_GENERATED_KEYS);
 
 			// recebe o parâmtros do SQL insert
 			insereSt.setBoolean(1, publicoPrioritario.isAbuso());
@@ -42,7 +50,13 @@ public class PublicoPrioritarioCrudJDBC {
 
 			// executa SQL insert
 			insereSt.executeUpdate();
-			return true;
+
+			ResultSet rs = insereSt.getGeneratedKeys();
+			if (rs.next()) {
+			   lastId = rs.getInt("id_publicoprioritario");
+			   return lastId;
+			}
+			
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao incluir o público prioritário mensagem:" + e);
 		} finally {
@@ -54,6 +68,7 @@ public class PublicoPrioritarioCrudJDBC {
 				throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 			}
 		}
+		return 0;
 	}
 
 	/*

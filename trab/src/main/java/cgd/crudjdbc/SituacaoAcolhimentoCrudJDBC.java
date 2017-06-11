@@ -14,15 +14,20 @@ public class SituacaoAcolhimentoCrudJDBC {
 		/*
 		 * Objetivo: Método que salva um as no banco de dados
 		 */
-		public static boolean salvar(SituacaoAcolhimento situacao) {
+		public static int salvar(SituacaoAcolhimento situacao) {
 			// abre a conexao com o banco de dados MYSQL
 			Connection conexao = ConectaPostgreSQL.geraConexao();
 			// Objeto para executar o SQL insert
 			PreparedStatement insereSt = null;
+	
+			
+			
+
 			// SQL de inserção
 			String sqlSituacaoAcolhimento = "insert into situacaoAcolhimento (contato, motivo, nomeAcolhido, nomeInstituicao, responsavelInstituicao)" +
 										    "values (?, ?, ?, ?, ?)";
 			try {
+				int lastId=0;
 				// recebe o SQL insert
 				insereSt = conexao.prepareStatement(sqlSituacaoAcolhimento);
 				// recebe o parâmtros do SQL insert
@@ -35,7 +40,15 @@ public class SituacaoAcolhimentoCrudJDBC {
 				
 				// executa SQL insert
 				insereSt.executeUpdate();
-				return true;
+				
+				// executa SQL insert
+				insereSt.executeUpdate();
+				ResultSet rs = insereSt.getGeneratedKeys();
+				if (rs.next()) {
+				   lastId = rs.getInt("id_situcaoacolhimento");
+				}
+				
+				return lastId;
 			} catch (SQLException e) {
 				throw new RuntimeException("Erro ao incluir situação de acolhimento mensagem:" + e);
 			} finally {
@@ -47,6 +60,7 @@ public class SituacaoAcolhimentoCrudJDBC {
 					throw new RuntimeException("Erro ao fechar a operação de inserção" + e);
 				}
 			}
+			
 		}
 		
 		/*

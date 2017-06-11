@@ -79,7 +79,7 @@ public class AlunoBean {
 		return "alterar";
 	}
 
-	public String salvarRegistro() {
+	/*public String salvarRegistro() {
 		for (Aluno aluno : lista) {
 			if (aluno.isEdita()) {
 				AlunoCrudJDBC.alterar(aluno);
@@ -88,7 +88,7 @@ public class AlunoBean {
 		}
 		lista = AlunoCrudJDBC.listar();
 		return "salvar";
-	}
+	}*/
 
 	public void gerarFAP1() throws IOException {
 		FacesContext context = FacesContext.getCurrentInstance();
@@ -117,7 +117,7 @@ public class AlunoBean {
 			passouEndereco == "passou" && 
 			passouAcompanhamentoEscolar == "passou" && 
 			passouInfoMedicas == "passou"){
-			FacesContext.getCurrentInstance().getExternalContext().redirect("./formularioAcompanhamentoPsico2.jsf");
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./formularioAcompanhamentoPsico3.jsf");
 		}
 		
 	}
@@ -181,12 +181,25 @@ public class AlunoBean {
 		
 	}
 	
+	public void pesquisar() {
+		if (this.aluno.getDadosPessoais().getNome() == "" && this.aluno.getTurma().getCodigo() == ""){
+			this.lista = AlunoCrudJDBC.listar();
+		}
+		else if (this.aluno.getDadosPessoais().getNome() != "" && this.aluno.getTurma().getCodigo() != ""){
+			this.lista = AlunoCrudJDBC.listar(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo());
+		}
+		else if (this.aluno.getDadosPessoais().getNome() != "" && this.aluno.getTurma().getCodigo() == ""){
+			this.lista = AlunoCrudJDBC.listar(this.aluno.getDadosPessoais().getNome());
+		}
+		else if (this.aluno.getDadosPessoais().getNome() == "" && this.aluno.getTurma().getCodigo() != ""){
+			this.lista = AlunoCrudJDBC.listar(this.aluno.getTurma().getCodigo());
+		}
+	}
 	
 	public String inserir() throws IOException {
 		
-	
 		AlunoCrudJDBC.salvar(this.aluno);
-		this.lista = AlunoCrudJDBC.listar();
+		//this.lista = AlunoCrudJDBC.listar();
 		// salva a aluno
 		FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.html");
 		return "sucesso";
