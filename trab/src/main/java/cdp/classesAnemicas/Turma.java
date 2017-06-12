@@ -17,9 +17,20 @@ public class Turma implements java.io.Serializable{
 	private boolean quarta;
 	private boolean quinta;
 	private boolean sexta;
-	/*private List<Aluno> alunos;
+	private List<Aluno> alunos;
 	private List<Aula> aulas;
-	private boolean edita;*/
+	private boolean edita;
+	public Turma(){
+		this.id = 0;
+		this.codigo = "";
+		this.maximo = -1;
+		this.turno = "";
+		this.segunda = false;
+		this.terca = false;
+		this.quarta = false;
+		this.quinta = false;
+		this.sexta = false;
+	}
 	public String getCodigo() {
 		return codigo;
 	}

@@ -10,6 +10,7 @@ import javax.faces.context.FacesContext;
 import cdp.classesAnemicas.AcessoServicos;
 import cdp.classesAnemicas.AcompanhamentoEscolar; 
 import cdp.classesAnemicas.Aluno;
+import cdp.classesAnemicas.ComposicaoFamiliar;
 import cdp.classesAnemicas.CondicoesMoradia;
 import cdp.classesAnemicas.DadosPessoais;
 import cdp.classesAnemicas.Despesas;
@@ -19,6 +20,7 @@ import cdp.classesAnemicas.InfoTransporte;
 import cdp.classesAnemicas.Parente;
 import cdp.classesAnemicas.ProgramasBeneficios;
 import cdp.classesAnemicas.PublicoPrioritario;
+import cdp.classesAnemicas.Turma;
 import cgd.crudjdbc.*;
 
 @SuppressWarnings("deprecation")
@@ -49,13 +51,13 @@ public class AlunoBean {
 		
 		this.aluno.setId(-1);
 		//this.aluno.setFap(null);
-		this.aluno.setFoto(null);
+		this.aluno.setFoto("");
 		this.aluno.setNivel(0);
-		this.aluno.setTurma(null);
+		this.aluno.setTurma(new Turma());
 		this.aluno.setAcessoServicos(new AcessoServicos());
 		this.aluno.setAcompanhamentoEscolar(new AcompanhamentoEscolar());
 		this.aluno.setEndereco(new Endereco());
-		this.aluno.setComposicaoFamiliar(null);
+		this.aluno.setComposicaoFamiliar(new ComposicaoFamiliar());
 		this.aluno.setCondicoesMoradia(new CondicoesMoradia());
 		this.aluno.setDadosPessoais(new DadosPessoais());
 		this.aluno.setDespesas(new Despesas());
