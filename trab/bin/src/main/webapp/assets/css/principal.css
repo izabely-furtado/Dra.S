@@ -1,0 +1,179 @@
+* 
+{
+    box-sizing: border-box;
+}
+
+menu {
+	padding:0px;
+}
+
+.corpo {
+	padding-right: 15px;
+	padding-left: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 2%;
+}
+
+.letrinhas >li>a {
+	padding: 8px 11px !important;
+}
+
+.pagination li a {
+	color: #2897ca !important;
+}
+
+.pagination li.ativo a {
+	color: #fff !important;
+	background-color: #2897ca !important;
+	border-color: #2897ca !important;
+}
+
+.pagination>li {
+	display: inline
+}
+
+.pagination>li>a, .pagination>li>span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #337ab7;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd
+}
+
+table 
+{
+	text-align:center;
+    padding-bottom: 45px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+td 
+{
+	margin-left: 125px;
+	border-bottom: 1px solid #ddd;
+}
+.bold {
+	font-weight: bold;
+}
+
+.parent{
+	font-size: 12px;
+}
+address 
+{
+    font-style: normal;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #fff
+}
+/*vamos ser sinceros, isso parece mais o primeiro elemento de um menu que um header... mas tá valendo*/
+header {
+	background-color:gold;
+	
+}
+header img{
+	padding-top:2%;
+	padding-bottom:2%;
+}
+
+hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #eee
+}
+
+@media ( min-width :768px) {
+	.corpo {
+		width: 750px
+	}
+}
+
+@media ( min-width :992px) {
+	.corpo {
+		width: 970px
+	}
+}
+
+@media ( min-width :1200px) {
+	.corpo {
+		width: 1170px
+	}
+}
+
+
+main p
+{
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+main
+{
+    display: block;
+    position: relative;
+    height: 100%;
+    padding: 0 30px 15px 15px;
+}
+
+@media screen and (max-width: 768px)
+{
+    main
+    {
+        padding: 0 15px 15px 15px;
+    }
+}
+
+
+main h2, main h3, main h4, main h5, main h6
+{
+    color: #165f90;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+main h2
+{
+    font-size: 28px;
+}
+
+main h2 small
+{
+    font-size: 20px;
+    color: #999;
+    font-weight: 900;
+}
+
+main ul, main ol
+{
+    margin-bottom: 20px;
+}
+
+main ul li, main ol li
+{
+    line-height: 24px;
+}
+
+main blockquote
+{
+    background-color: #f2f2f2;
+    border-color: #efb02c;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 0 10px 0 0;
+    color: #165f90;
+    margin-bottom: 20px;
+}

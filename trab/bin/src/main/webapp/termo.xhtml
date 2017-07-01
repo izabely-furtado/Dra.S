@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <title>Dados de Acesso</title>
+    <!-- Styles -->
+    <link href="./assets/css/colunas.css" rel="stylesheet" />
+    <link href="./assets/css/formulario.css" rel="stylesheet" />
+    <link href="./assets/css/principal.css" rel="stylesheet" />
+    <link href="./assets/css/menu.css" rel="stylesheet" />
+    <link href="assets/css/inicio.css" rel="stylesheet" />
+    <script type='text/javascript' src='./assets/js/termo.js'></script>
+</h:head>
+<h:body>
+    <!-- 
+	<header>
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
+	</header>
+	 -->
+    <div class="corpo">
+        <div class="linha">
+            <!-- Conte�do -->
+            <main>
+            <article>
+            <div class="coluna-12">
+                 <!-- Conte�do de P�ginas -->
+                 
+				<h2>
+					NA ONDA DO FUTURO<br /> 
+					<small>Termo de Desligamento</small>
+				</h2>
+				<p>Eu <h:outputText value="#{termoDesligamentoBean.termoDesligamento.nomeResponsavel}" />
+				CPF de nº <h:outputText value="#{termoDesligamentoBean.termoDesligamento.cpf}" />
+				Responsável pelo usuário <h:outputText value="#{termoDesligamentoBean.termoDesligamento.nomeUsuario}" />
+				Do(a) serviço de Convivência e Fortalecimento de Vínculos, 
+				solicito o desligamento do Projeto Na Onda Do Futuro / Rede ALSA, 
+				pelo seguinte motivo: </p>
+				 <p><h:outputText value="#{termoDesligamentoBean.termoDesligamento.motivo}" /></p>
+							<br />
+				Sem mais, <br />
+				Serra, <h:outputText  value="#{termoDesligamentoBean.dataAtual}" /><br /><br /><br /><br />
+			</div>
+	
+			<div class="coluna-6">
+				Assinatura do Responsável: <br /><br /><br />
+				________________________________________________________________<br />
+				<h:outputText value="#{termoDesligamentoBean.termoDesligamento.nomeResponsavel}" />
+			</div>
+				
+				
+			<div class="coluna-6">
+				Assinatura do Técnico Responsável:<br /><br /><br />
+				________________________________________________________________<br />
+				<h:outputText value="#{termoDesligamentoBean.termoDesligamento.nomeTecResponsavel}" /><br />
+			</div>
+				
+</article>
+			</main>
+            </div>
+            <br />
+            <br />
+        </div>
+    
+</h:body>
+</html>

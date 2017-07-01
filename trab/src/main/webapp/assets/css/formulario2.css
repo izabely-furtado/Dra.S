@@ -1,0 +1,186 @@
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabela input{
+    width: 60%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(./assets/img/busca.png);
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+	margin-bottom:10px;
+	
+}
+
+
+
+#diasemana input[type=checkbox]{
+    background-position:0 -60px; 
+	display:inline;
+
+    height:20px;
+    padding:0 0 0 25px;
+    margin:0 10px 0 0;
+    
+}
+
+#diasemana
+{
+	width:20%;
+
+}
+
+span{
+	display:inline;
+}
+
+.excluir{
+	border-style:none;
+	background-color:#2495c9;
+	border-radius:2px;
+	float:right;
+	padding:4px;
+	margin-right:6px;
+}
+
+
+#incluir
+{
+	border-style:none;
+	background-color:#2495c9;
+	float:right;
+	padding:4px;
+	width:60px;
+	border-radius:2px;
+	
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+	
+	
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+
+.tabela td{
+	padding-top:8px!important;
+	padding-bottom:8px!important;
+	
+	}
+	
+.botao {
+    background-color: #ffffff; /* White */
+	border:none;
+	display:inline-block;
+    color: black;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+	float:right!important;	
+	
+}
+
+.tabela .botaoSimples, .botaoSimples{
+	background-color: #cccccc; /* cinza*/
+	border:none;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-top:10px;
+	font-size: 10px;
+	font-weight: 200;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	display:inline-block;
+	float:right;
+}
+
+.botoes{
+	margin-top:20px;;
+}
+
+
+#conteudoAula
+{
+	width: 100%;
+    height: 120px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    
+}
+
+/*---08/04/2017*/
+.checkboxPresenca{
+	
+	width:18px;
+	height:18px;
+	position:relative;
+	top:6px;
+	display:inline-block;
+	float:center;
+	
+}
+
+#pageNav{
+	padding-bottom:30px;
+}
+
+#checkbox{
+	width: 420px;
+    height: 160px;
+    padding: 12px 20px;
+
+	background-color: #f8f8f8;
+	margin-bottom:20px;	
+ 
+}
+
+#checkbox input{
+	width:15px;
+	height:15px;
+	position:relative;
+	top:6px;
+	display:inline-block;
+	float:center;
+	padding-bottom:5px;
+	
+}
+
+.pageNav {
+	
+    display: inline-block;
+}
+
+
+

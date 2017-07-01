@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta charset="utf-8"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<title>Cadastrar Nova Turma</title>
+	<!-- Styles -->
+	<link href="./assets/css/colunas.css" rel="stylesheet" />
+	<link href="./assets/css/formulario.css" rel="stylesheet" />
+	<link href="./assets/css/principal.css" rel="stylesheet" />
+	<link href="./assets/css/menu.css" rel="stylesheet" />
+	<link href="assets/css/inicio.css" rel="stylesheet" />
+	<link href="./assets/css/formulario2.css" rel="stylesheet" />
+	<link href="./assets/css/paginacao.css" rel="stylesheet" />
+
+	<!--Jquery -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!--JavaScript -->
+	<script type='text/javascript' src='./assets/js/formAP.js'></script>
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery-1.10.10.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+	<script type='text/javascript' src='./assets/js/paginacao.js'></script>
+	<script type='text/javascript' src='./assets/js/cadastroTurma.js'></script>
+
+	<!-- bootstrap -->
+	<link href="./assets/css/bootstrap.min.css" rel="stylesheet"></link>
+	<link href="./assets/css/style.css" rel="stylesheet"></link>
+</h:head>
+<h:body>
+
+	<div class="corpo">
+		<div class="linha">
+			<!-- MENU -->
+			<div class="coluna-3">
+				<nav>
+					<ul>
+						<li class="list-group-item active"><header>
+								<a href="#"> <IMG alt="logo-onda"
+									src="./assets/img/logo-onda2.png" />
+								</a>
+							</header></li>
+						<li><a class="ativo" href="#">Alunos</a></li>
+						<li><a href="./formularioAcompanhamentoPsico.jsf">Formulário
+								de Acompanhamento Psicológico</a></li>
+						<li><a href="./gerarDesligamento.jsf">Gerar Termo de
+								Desligamento</a></li>
+						<li><a href="./pesquisarAlunos.jsf">Pesquisar Alunos</a></li>
+						<li><a class="ativo" href="#">Turmas</a></li>
+						<li><a href="./cadastrarTurmas.jsf">Cadastrar Turmas</a></li>
+						<li><a href="./pesquisarTurmas.jsf">Pesquisar Turmas</a></li>
+						<li><a href="./cadastrarAulas.jsf">Cadastrar Aulas</a></li>
+						
+						<li><a href="#" class="ativo">Sistema</a></li>
+						<li><a href="./dadosAcesso.jsf">Visualizar Dados de
+								Acesso</a></li>
+						<li><a href="./alterarDadosAcesso.jsf">Alterar Dados de
+								Acesso</a></li>
+						<li><a href="./login.jsf">Sair</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- Conteúdo -->
+
+			<div class="coluna-9">
+				<main> <!-- Conteúdo de Páginas -->
+				<h2>
+					Matricular um aluno na Turma<br /> <small></small>
+				</h2>
+
+
+				<h:form name="dadosTurma" id="formAluno" var="turma" method="post">
+					<!-- DADOS BÁSICOS DA TURMA  -->
+
+					<h3>Dados Básicos</h3>
+					<div class="linha">
+						<div class="coluna-6">
+							<div class="grupinho">
+								<label>Código da Turma:</label>
+								<h:inputText id="codigo" required="true" class="formulario"
+									a:placeholder="Código da Turma"
+									value="#{TurmaBean.turma.codigo}"></h:inputText>
+
+							</div>
+							</div>
+						
+							<div class="coluna-6">
+								<div class="grupinho">
+									<label>Matrícula do Aluno:</label> <input type="number"
+										id="maxiAlunos" class="formulario"
+										placeholder="Número máximo de alunos" />
+								</div>
+							</div>
+
+						
+					</div>
+					
+					<div class="coluna-12">
+					<div class="grupinho">
+						<div class="coluna-4">
+						
+						<h:commandButton styleClass="btn btn-primary"
+							onclick="validaDadosTurma()" action="#{TurmaBean.inserir}"
+							value="Salvar">
+						</h:commandButton>
+						
+						</div>
+						
+						<div class="coluna-4">
+						
+						<h:commandButton styleClass="btn btn-danger"
+							onclick="validaDadosTurma()" action="#{TurmaBean.inserir}"
+							value="Matricular aluno na Turma">
+						</h:commandButton>
+						
+						</div>
+						
+						
+						<div class="coluna-4">
+						
+						<h:commandButton styleClass="btn btn-warning"
+							onclick="validaDadosTurma()" action="#{TurmaBean.inserir}"
+							value="Ver Alunos da Turma">
+						</h:commandButton>
+						
+						</div>
+						
+						
+						
+						</div>
+					</div>
+					
+				</h:form><!--fim formulario--> </main>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+</h:body>
+</html>

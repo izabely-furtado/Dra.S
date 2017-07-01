@@ -1,0 +1,45 @@
+/* coisas na nav espacial aqui */
+
+
+nav > ul {
+	padding: 0px;
+	margin-bottom: 30px;
+	margin-top: 0;
+}
+/* tirando as bolinhas laterais de lista */
+nav ul > li{
+	position: relative;
+	display: block;
+	padding: 0px;
+	margin: -1px;
+	border: 1px solid #ddd;
+}
+/*bordas arredandadas*/
+nav ul > li:first-child, nav ul > li:first-child a, nav ul > li:first-child a:focus {
+	border-top-right-radius: 10px;
+}
+
+nav > li:last-child, nav > li:last-child a, nav > li:last-child a:focus {
+	border-bottom-left-radius: 10px;
+}
+
+
+nav ul > li > a, nav ul > li > a {
+	display: block;
+	padding: 20px;
+	text-decoration: none !important;
+	color: #2495c9;
+	background-color: #fff;
+}
+
+li > a:hover {
+	background-color: #2495c9 !important;
+    color: White !important;
+}
+
+.ativo 
+{
+    background-color: #2495c9;
+    color: White;
+}
+
