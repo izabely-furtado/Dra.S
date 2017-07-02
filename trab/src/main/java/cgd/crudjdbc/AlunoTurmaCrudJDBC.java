@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import cdp.classesAnemicas.AlunosTurma;
-import cdp.classesAnemicas.Turma;
 import cgd.conexao.ConectaPostgreSQL;
 
 public class AlunoTurmaCrudJDBC {

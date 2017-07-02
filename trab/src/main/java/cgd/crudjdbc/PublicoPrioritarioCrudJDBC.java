@@ -15,7 +15,7 @@ public class PublicoPrioritarioCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de publicoPrioritario
 	 */
-	public int salvar(PublicoPrioritario publicoPrioritario) {
+	public static int salvar(PublicoPrioritario publicoPrioritario) {
 		// abre a conexao com o banco de publicoPrioritario MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert

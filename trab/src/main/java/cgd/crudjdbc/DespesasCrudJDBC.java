@@ -15,7 +15,7 @@ public class DespesasCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de despesas
 	 */
-	public int salvar(Despesas despesas) {
+	public static int salvar(Despesas despesas) {
 		// abre a conexao com o banco de despesas MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert

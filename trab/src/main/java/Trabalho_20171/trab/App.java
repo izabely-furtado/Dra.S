@@ -1,12 +1,5 @@
 package Trabalho_20171.trab;
 
-import java.util.ArrayList;
-
-
-import cdp.classesAnemicas.Aluno;
-
-
-import cgd.crudjdbc.AlunoCrudJDBC;
 import cgd.crudjdbc.DadosPessoaisCrudJDBC;
 
 /**

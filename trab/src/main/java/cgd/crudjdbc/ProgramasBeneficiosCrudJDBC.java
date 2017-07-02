@@ -15,7 +15,7 @@ public class ProgramasBeneficiosCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de programasBeneficios
 	 */
-	public int salvar(ProgramasBeneficios programasBeneficios) {
+	public static int salvar(ProgramasBeneficios programasBeneficios) {
 		// abre a conexao com o banco de programasBeneficios MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert

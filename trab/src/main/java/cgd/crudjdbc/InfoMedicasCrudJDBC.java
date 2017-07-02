@@ -15,7 +15,7 @@ public class InfoMedicasCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de infoMedicas
 	 */
-	public int salvar(InfoMedicas infoMedicas) {
+	public static int salvar(InfoMedicas infoMedicas) {
 		// abre a conexao com o banco de infoMedicas MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert

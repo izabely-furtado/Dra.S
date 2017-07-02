@@ -15,7 +15,7 @@ public class InfoTransporteCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de infoTransporte
 	 */
-	public int salvar(InfoTransporte infoTransporte) {
+	public static int salvar(InfoTransporte infoTransporte) {
 		// abre a conexao com o banco de infoTransporte MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert

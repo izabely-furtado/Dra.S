@@ -145,12 +145,12 @@ public class CrudTestAluno {
     public void excluirDespesas(){
         assertEquals(true,DespesasCrudJDBC.excluir(aluno.getDespesas()));
     }
-    
+    /*
     @Test
-    public void salvarDespesas(){
+    public static void salvarDespesas(){
         assertEquals(true,DespesasCrudJDBC.salvar(aluno.getDespesas()));
     }
-    
+    */
     /* Testes para Informa��es Medicas */
     @Test
     public void getInfoMedicas(){
@@ -259,12 +259,12 @@ public class CrudTestAluno {
     public void getAluno(){
         assertEquals(aluno,AlunoCrudJDBC.getAluno(0));
     }
-    
+    /*
     @Test
     public void alterarAluno(){
         assertEquals(true,AlunoCrudJDBC.alterar(aluno));
     }
-    
+    */
     @Test
     public void excluirAluno(){
         assertEquals(true,AlunoCrudJDBC.excluir(aluno));

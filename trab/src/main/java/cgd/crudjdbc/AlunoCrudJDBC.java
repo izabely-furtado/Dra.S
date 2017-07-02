@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import cdp.classesAnemicas.AcompanhamentoEscolar;
 import cdp.classesAnemicas.Aluno;
 import cgd.conexao.ConectaPostgreSQL;
 
@@ -32,26 +31,21 @@ public class AlunoCrudJDBC {
 			insereSt = conexao.prepareStatement(sql);
 			// recebe o parâmtros do SQL insert
 			
-			DadosPessoaisCrudJDBC dp = new DadosPessoaisCrudJDBC();
-			int dpe = dp.salvar(aluno.getDadosPessoais());
+			int dpe = DadosPessoaisCrudJDBC.salvar(aluno.getDadosPessoais());
 			insereSt.setInt(1, dpe);
 			
-			EnderecoCrudJDBC e = new EnderecoCrudJDBC();
-			int ec = e.salvar(aluno.getEndereco());
+			int ec = EnderecoCrudJDBC.salvar(aluno.getEndereco());
 			
 			insereSt.setInt(2, ec);
 			
 			
-			AcompanhamentoEscolarCrudJDBC ac = new AcompanhamentoEscolarCrudJDBC();
-			int aco = ac.salvar(aluno.getAcompanhamentoEscolar());
+			int aco = AcompanhamentoEscolarCrudJDBC.salvar(aluno.getAcompanhamentoEscolar());
 			insereSt.setInt(3, aco);
 		
-			InfoMedicasCrudJDBC im= new InfoMedicasCrudJDBC();
-			int imo = im.salvar(aluno.getInfoMedicas());
+			int imo = InfoMedicasCrudJDBC.salvar(aluno.getInfoMedicas());
 			insereSt.setInt(4, imo);
 			
-			InfoTransporteCrudJDBC it = new InfoTransporteCrudJDBC();
-			int itp = it.salvar(aluno.getInfoTransporte());
+			int itp = InfoTransporteCrudJDBC.salvar(aluno.getInfoTransporte());
 			insereSt.setInt(5, itp);
 		
 		
@@ -59,13 +53,11 @@ public class AlunoCrudJDBC {
 			
 			//ComposicaoFamiliarCrudJDBC.salvar(aluno.getComposicaoFamiliar());
 			
-			DespesasCrudJDBC desp = new DespesasCrudJDBC();
-			int despe = desp.salvar(aluno.getDespesas());	
+			int despe = DespesasCrudJDBC.salvar(aluno.getDespesas());	
 			insereSt.setInt(6, despe);
 			
 		
-			CondicoesMoradiaCrudJDBC cm = new CondicoesMoradiaCrudJDBC();
-			int cmo = cm.salvar(aluno.getCondicoesMoradia());
+			int cmo = CondicoesMoradiaCrudJDBC.salvar(aluno.getCondicoesMoradia());
 			
 			insereSt.setInt(7, cmo);
 			
@@ -73,12 +65,10 @@ public class AlunoCrudJDBC {
 			
 			//AcessoServicosCrudJDBC.salvar(aluno.getAcessoServicos());
 			
-			ProgramasBeneficiosCrudJDBC pb = new ProgramasBeneficiosCrudJDBC();
-			int pbe = pb.salvar(aluno.getProgramasBeneficios());
+			int pbe = ProgramasBeneficiosCrudJDBC.salvar(aluno.getProgramasBeneficios());
 			insereSt.setInt(8, pbe);
 			
-			PublicoPrioritarioCrudJDBC pp = new PublicoPrioritarioCrudJDBC();
-			int ppo = pp.salvar(aluno.getPublicoPrioritario());
+			int ppo = PublicoPrioritarioCrudJDBC.salvar(aluno.getPublicoPrioritario());
 			insereSt.setInt(9, ppo);	
 			
 			insereSt.setBoolean(10, aluno.isEdita());

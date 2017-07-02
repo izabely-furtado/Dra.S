@@ -26,9 +26,5 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Suzana/Documents/Libraries/jsf-impl-2.2.10.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Suzana/Documents/Libraries/postgresql-9.4-1201.jdbc4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Suzana/Documents/Libraries/jsf-api-2.2.10.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Suzana/Documents/Libraries/javax.faces-api-2.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

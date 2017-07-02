@@ -13,7 +13,7 @@ import cgt.backingbean.*;
 
 public class BeanTestFAP {
 
-	private FAPBean fapBean = ConstrutorParaTesteBean.criaFAP();
+	//private FAPBean fapBean = ConstrutorParaTesteBean.criaFAP();
 	private AcessoServicosBean acessoBean = ConstrutorParaTesteBean.criaAcesso();
 	private AcompanhamentoEscolarBean acompanhamentoBean = ConstrutorParaTesteBean.criaAcompanhamento();
 	private ComposicaoFamiliarBean composicaoBean = ConstrutorParaTesteBean.criaComposicao();
@@ -28,6 +28,7 @@ public class BeanTestFAP {
 	
 	
 	/* Testes do Bean do Fomul�rio de Acompanhamento Psicossocial */
+	/*
 	@Test
     public void alterarFAP(){
         assertEquals("alterar",fapBean.alterarRegistro(ConstrutorParaTeste.criaFAP()));
@@ -67,7 +68,7 @@ public class BeanTestFAP {
     public void verListaFAP(){
         assertEquals("listagem",fapBean.verLista());
     }
-	
+	*/
 	/* Testes do Acesso a servi�os*/
 	@Test
     public void alterarAcesso(){

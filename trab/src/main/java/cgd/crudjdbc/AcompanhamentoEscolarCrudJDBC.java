@@ -14,7 +14,7 @@ public class AcompanhamentoEscolarCrudJDBC {
 		/*
 		 * Objetivo: Método que salva um as no banco de dados
 		 */
-		public int salvar(AcompanhamentoEscolar acompanhamento) {
+		public static int salvar(AcompanhamentoEscolar acompanhamento) {
 			// abre a conexao com o banco de dados MYSQL
 			Connection conexao = ConectaPostgreSQL.geraConexao();
 			// Objeto para executar o SQL insert

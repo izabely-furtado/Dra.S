@@ -7,12 +7,12 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import cdp.classesAnemicas.AlunosTurma;
-import cdp.classesAnemicas.Turma;
 import cgd.crudjdbc.AlunoTurmaCrudJDBC;
 import cgd.crudjdbc.TurmaCrudJDBC;
 
 
 
+@SuppressWarnings("deprecation")
 @ManagedBean(name = "AlunosTurmaBean")
 @SessionScoped
 public class AlunosTurmaBean implements java.io.Serializable{
@@ -73,6 +73,18 @@ public class AlunosTurmaBean implements java.io.Serializable{
 	public String verLista() {
 		TurmaCrudJDBC.listar();
 		return "listagem";
+	}
+
+
+
+	public List<AlunosTurma> getLista() {
+		return lista;
+	}
+
+
+
+	public void setLista(List<AlunosTurma> lista) {
+		this.lista = lista;
 	}
 
 }

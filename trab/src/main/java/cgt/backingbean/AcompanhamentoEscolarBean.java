@@ -104,8 +104,7 @@ public class AcompanhamentoEscolarBean {
 		 * FacesMessage(FacesMessage.SEVERITY_ERROR,
 		 * "Senha confirmada incorretamente", "")); return "usuario"; }
 		 */
-		AcompanhamentoEscolarCrudJDBC ac = new AcompanhamentoEscolarCrudJDBC();
-		int ace = ac.salvar(this.acompanhamentoEscolar);
+		AcompanhamentoEscolarCrudJDBC.salvar(this.acompanhamentoEscolar);
 		
 		
 		// salva o usu�rio

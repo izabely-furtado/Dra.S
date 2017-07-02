@@ -15,7 +15,7 @@ public class DadosPessoaisCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de dados
 	 */
-	public int salvar(DadosPessoais dados) {
+	public static int salvar(DadosPessoais dados) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert

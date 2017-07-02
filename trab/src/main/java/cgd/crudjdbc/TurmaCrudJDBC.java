@@ -223,8 +223,6 @@ public class TurmaCrudJDBC {
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL delete
 		PreparedStatement excluiSt1 = null;
-		PreparedStatement excluiSt2 = null;
-		PreparedStatement excluiSt3 = null;
 		// SQL de exclusão do turma
 		String sql = "delete from turma where id=?";
 		// SQL de exclusão das aulas da turma

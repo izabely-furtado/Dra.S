@@ -8,20 +8,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import cdp.classesAnemicas.AcessoServicos;
-import cdp.classesAnemicas.AcompanhamentoEscolar; 
 import cdp.classesAnemicas.Aluno;
-import cdp.classesAnemicas.ComposicaoFamiliar;
-import cdp.classesAnemicas.CondicoesMoradia;
-import cdp.classesAnemicas.DadosPessoais;
-import cdp.classesAnemicas.Despesas;
-import cdp.classesAnemicas.Endereco;
-import cdp.classesAnemicas.InfoMedicas;
-import cdp.classesAnemicas.InfoTransporte;
 import cdp.classesAnemicas.Parente;
-import cdp.classesAnemicas.ProgramasBeneficios;
-import cdp.classesAnemicas.PublicoPrioritario;
-import cdp.classesAnemicas.Turma;
 import cgd.crudjdbc.*;
 
 @SuppressWarnings("deprecation")

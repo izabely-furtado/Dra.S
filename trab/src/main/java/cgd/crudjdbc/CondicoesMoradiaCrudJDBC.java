@@ -15,7 +15,7 @@ public class CondicoesMoradiaCrudJDBC {
 	/*
 	 * Objetivo: Método que salva um as no banco de dados
 	 */
-	public int salvar(CondicoesMoradia condicoes) {
+	public static int salvar(CondicoesMoradia condicoes) {
 		// abre a conexao com o banco de dados MYSQL
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// Objeto para executar o SQL insert

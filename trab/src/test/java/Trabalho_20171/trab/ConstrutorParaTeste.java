@@ -170,8 +170,8 @@ public class ConstrutorParaTeste {
 	
 	public static Turma criaTurma(){
 		Turma turma = new Turma();
-		turma.setAlunos(null);
-		turma.setAulas(null);
+		//turma.setAlunos(null);
+		//turma.setAulas(null);
 		turma.setCodigo("Teste");
 		turma.setId(1);
 		turma.setMaximo(13);
@@ -212,5 +212,6 @@ public class ConstrutorParaTeste {
 		situacao.setResponsavelInstituicao("Teste");
 		return situacao;
 	}
+	
 
 }
