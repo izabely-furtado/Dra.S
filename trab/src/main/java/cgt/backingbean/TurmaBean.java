@@ -6,20 +6,15 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.SelectItem;
-
 import cdp.classesAnemicas.Aluno;
 import cdp.classesAnemicas.Turma;
 import cgd.crudjdbc.AlunoCrudJDBC;
 import cgd.crudjdbc.TurmaCrudJDBC;
 
-
-@ManagedBean(name = "TurmaBean")
+@SuppressWarnings("deprecation")
+@ManagedBean(name = "turmaBean")
 @SessionScoped
-public class TurmaBean implements java.io.Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class TurmaBean {
 	private List<Turma> lista = new ArrayList<Turma>();
 	private Turma turma = new Turma();
 	TurmaCrudJDBC objTurmaCrudJDBC = new TurmaCrudJDBC();
@@ -89,7 +84,7 @@ public class TurmaBean implements java.io.Serializable{
 		//this.turma.setId(-1);
 		this.turma.setCodigo("0");
 		this.turma.setMaximo(-1);
-		this.turma.setTurno(null);
+		this.turma.setTurno("");
 		this.turma.setNivel(-1);
 		this.turma.setSegunda(false);
 		this.turma.setTerca(false);

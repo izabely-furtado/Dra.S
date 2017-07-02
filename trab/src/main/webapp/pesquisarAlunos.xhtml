@@ -65,7 +65,7 @@
 				</h2>
 				<h:form id="formAluno" method="post">
 					<div class="linha">
-						<div class="coluna-12">
+						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Aluno:</label>
 								<h:inputText id="nome"
@@ -76,12 +76,12 @@
 
 							</div>
 						</div>
-						<div class="coluna-4">
+						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Turma:</label>
 
 								<h:inputText id="turma"
-									value="#{alunoBean.aluno.turma}" 
+									value="#{alunoBean.aluno.turma.codigo}" 
 									class="formulario" a:placeholder="Insira a turma">
 								</h:inputText>
 								<h:message for="turma" styleClass="errorMessage" />
@@ -92,10 +92,11 @@
 						
 					</div>
 					<h:commandButton styleClass="botao" onclick="pesquisar()"
-						action="#{alunoBean.pesquisar()}" value="Pesquisar">
+						action="#{alunoBean.novo}" value="Pesquisar">
 					</h:commandButton>
 				</h:form> 
-				<h:dataTable value="#{alunoBean.getLista()}" var="aluno">
+				
+				<h:dataTable value="#{alunoBean.lista}" var="aluno">
 				<h:column>
     				<!-- column header -->
     				<f:facet name="header">ID</f:facet>
@@ -113,6 +114,10 @@
     			<h:column>
     				<f:facet name="header">Contato</f:facet>
     				#{aluno.dadosPessoais.contato}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Turma</f:facet>
+    				#{aluno.turma.codigo}
     			</h:column>
     		</h:dataTable>
 				

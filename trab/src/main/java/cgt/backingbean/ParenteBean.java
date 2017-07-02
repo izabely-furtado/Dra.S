@@ -99,6 +99,7 @@ public class ParenteBean {
 			return "deubosta";
 		}
 	}
+
 	public String addParente() {
 		FacesContext context = FacesContext.getCurrentInstance();
 		if (this.gerar(context) == "passou") {

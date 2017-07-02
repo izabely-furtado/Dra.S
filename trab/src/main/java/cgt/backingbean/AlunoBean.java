@@ -3,6 +3,7 @@ package cgt.backingbean;
 import java.io.IOException;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -10,6 +11,7 @@ import javax.faces.context.FacesContext;
 import cdp.classesAnemicas.AcessoServicos;
 import cdp.classesAnemicas.AcompanhamentoEscolar; 
 import cdp.classesAnemicas.Aluno;
+import cdp.classesAnemicas.ComposicaoFamiliar;
 import cdp.classesAnemicas.CondicoesMoradia;
 import cdp.classesAnemicas.DadosPessoais;
 import cdp.classesAnemicas.Despesas;
@@ -19,6 +21,7 @@ import cdp.classesAnemicas.InfoTransporte;
 import cdp.classesAnemicas.Parente;
 import cdp.classesAnemicas.ProgramasBeneficios;
 import cdp.classesAnemicas.PublicoPrioritario;
+import cdp.classesAnemicas.Turma;
 import cgd.crudjdbc.*;
 
 @SuppressWarnings("deprecation")
@@ -28,7 +31,7 @@ public class AlunoBean {
 	private List<Aluno> lista;
 	private Aluno aluno = new Aluno();
 	AlunoCrudJDBC objAlunoCrudJDBC = new AlunoCrudJDBC();
-
+	
 	public List<Aluno> getLista() {
 		return lista;
 	}
@@ -45,17 +48,17 @@ public class AlunoBean {
 		this.lista = lista;
 	}
 
-	public String novo() {
-		
+	public String novo() throws IOException {
+		/*
 		this.aluno.setId(-1);
 		//this.aluno.setFap(null);
-		this.aluno.setFoto(null);
+		this.aluno.setFoto("");
 		this.aluno.setNivel(0);
-		this.aluno.setTurma(null);
+		this.aluno.setTurma(new Turma());
 		this.aluno.setAcessoServicos(new AcessoServicos());
 		this.aluno.setAcompanhamentoEscolar(new AcompanhamentoEscolar());
 		this.aluno.setEndereco(new Endereco());
-		this.aluno.setComposicaoFamiliar(null);
+		this.aluno.setComposicaoFamiliar(new ComposicaoFamiliar());
 		this.aluno.setCondicoesMoradia(new CondicoesMoradia());
 		this.aluno.setDadosPessoais(new DadosPessoais());
 		this.aluno.setDespesas(new Despesas());
@@ -66,6 +69,29 @@ public class AlunoBean {
 		this.aluno.setEdita(false);
 		
 		return "aluno";
+		*/
+		System.out.println("passou aqui");
+		FacesContext context = FacesContext.getCurrentInstance();
+		if (this.aluno.getDadosPessoais().getNome() == "") {// && this.aluno.getTurma().getCodigo() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o nome do aluno ou a turma para efetuar a pesquisa", ""));
+			System.out.println("passou aqui");
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			return "erro";
+		}
+		else {
+			System.out.println(AlunoCrudJDBC.getAlunoPorNome(this.aluno.getDadosPessoais().getNome()).get(0));
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			
+			this.lista.addAll(AlunoCrudJDBC.getAlunoPorNome(this.aluno.getDadosPessoais().getNome()));
+			FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.jsf");
+			return "pesquisou";
+			//this.lista = AlunoCrudJDBC.getAlunoPorNomeTurma(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo());
+		}
 	}
 
 	public String excluirRegistro(Aluno a) {
@@ -181,10 +207,19 @@ public class AlunoBean {
 		
 	}
 	
-	
+	public String gerarPesquisa() throws IOException {
+		FacesContext context = FacesContext.getCurrentInstance();
+		if (this.aluno.getDadosPessoais().getNome() == "") {// && this.aluno.getTurma().getCodigo() == ""){
+			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o nome do aluno ou a turma para efetuar a pesquisa", ""));
+			return "erro";
+		}
+		else {
+			this.lista = AlunoCrudJDBC.getAlunoPorNome(this.aluno.getDadosPessoais().getNome());
+			return "pesquisou";
+			//this.lista = AlunoCrudJDBC.getAlunoPorNomeTurma(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo());
+		}
+	}
 	public String inserir() throws IOException {
-		
-	
 		AlunoCrudJDBC.salvar(this.aluno);
 		//this.lista = AlunoCrudJDBC.listar();
 		// salva a aluno

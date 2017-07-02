@@ -11,9 +11,10 @@ public class ConectaPostgreSQL {
 			// carrega o drive de comunicação com o banco de dados
 			Class.forName("org.postgresql.Driver");
 			// Não esqueca de mudar o usuario e senha do banco de dados.
-			String url = "jdbc:postgresql://localhost:5432/naOnda";
+			String url = "jdbc:postgresql://localhost:5432/moulin";
+			System.out.println("passei aqui");
 			String usuario = "postgres";
-			String senha = "jesus123";
+			String senha = "";
 			conexao = DriverManager.getConnection(url, usuario, senha);
 		} catch (SQLException e) {
 			throw new RuntimeException("Ocorreu um erro de SQL. Erro: " + e);

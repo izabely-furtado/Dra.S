@@ -18,7 +18,9 @@ public class AlunoCrudJDBC {
 	 */
 	public static boolean salvar(Aluno aluno) {
 		// abre a conexao com o banco de dados MYSQL
+		System.out.println("Passei aqui");
 		Connection conexao = ConectaPostgreSQL.geraConexao();
+		System.out.println("Passei aqui");
 		// Objeto para executar o SQL insert
 		PreparedStatement insereSt = null;
 		// SQL de inserção
@@ -305,4 +307,185 @@ public class AlunoCrudJDBC {
 		return alunos;
 	}
 
+	public static List<Aluno> getAlunoPorNome(String nome) {
+			// abre conexao com o banco de dados
+			Connection conexao = ConectaPostgreSQL.geraConexao();
+			// variavel lista de alunos
+			List<Aluno> alunos = new ArrayList<Aluno>();
+			// executa o SQL no banco de dados
+			Statement consulta = null;
+			// contém os dados consultado da tabela
+			ResultSet resultado = null;
+			// objeto aluno
+			Aluno aluno = null;
+			// consulta SQL
+			String sql = "select distinct * from aluno, dadospessoais where dadospessoais.id_dadospessoais = aluno.dadospessoais_id and dadospessoais.nome like '%" + nome + "%'";
+			try {
+				// consulta => objeto que executa o SQL no banco de dados
+				consulta = conexao.createStatement();
+				// resultado => objeto que contém os dados consultado da tabela
+				// Aluno
+				resultado = consulta.executeQuery(sql);
+				// Lê cada aluno
+				while (resultado.next()) {
+					aluno = new Aluno();
+					
+					//aluno.setFap(FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(resultado.getInt("fap_id")));
+					aluno.setFoto(resultado.getString("foto"));
+					aluno.setNivel(resultado.getInt("nivel"));
+					aluno.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
+					aluno.setAcessoServicos(AcessoServicosCrudJDBC.getAcessoServicos(resultado.getInt("acessoServicos_id")));
+					aluno.setAcompanhamentoEscolar(AcompanhamentoEscolarCrudJDBC.getAcompanhamentoEscolar(resultado.getInt("acompanhamentoEscolar_id")));
+					aluno.setComposicaoFamiliar(ComposicaoFamiliarCrudJDBC.getComposicaoFamiliar(resultado.getInt("composicaoFamiliar_id")));
+					aluno.setCondicoesMoradia(CondicoesMoradiaCrudJDBC.getCondicoesMoradia(resultado.getInt("condicoesMoradia_id")));
+					aluno.setDadosPessoais(DadosPessoaisCrudJDBC.getDadosPessoais(resultado.getInt("dadosPessoais_id")));
+					aluno.setDespesas(DespesasCrudJDBC.getDespesas(resultado.getInt("despesas_id")));
+					aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("endereco_id")));
+					aluno.setInfoMedicas(InfoMedicasCrudJDBC.getInfoMedicas(resultado.getInt("infoMedicas_id")));
+					aluno.setInfoTransporte(InfoTransporteCrudJDBC.getInfoTransporte(resultado.getInt("infoTransporte_id")));
+					aluno.setProgramasBeneficios(ProgramasBeneficiosCrudJDBC.getProgramasBeneficios(resultado.getInt("programasBeneficios_id")));
+					aluno.setPublicoPrioritario(PublicoPrioritarioCrudJDBC.getPublicoPrioritario(resultado.getInt("publicoPrioritario_id")));
+						
+					// insere o aluno na lista
+					alunos.add(aluno);
+
+				}
+			} catch (SQLException e) {
+				throw new RuntimeException("Erro ao buscar um aluno: " + e);
+			} finally {
+				try {
+					consulta.close();
+					resultado.close();
+					conexao.close();
+				} catch (Throwable e) {
+					throw new RuntimeException("Erro ao fechar a conexao - Listar" + e);
+				}
+			}
+			// retorna lista de alunos
+			return alunos;
+		}
+
+	public static List<Aluno> getAlunoPorTurma(String turma) {
+				// abre conexao com o banco de dados
+				Connection conexao = ConectaPostgreSQL.geraConexao();
+				// variavel lista de alunos
+				List<Aluno> alunos = new ArrayList<Aluno>();
+				// executa o SQL no banco de dados
+				Statement consulta = null;
+				// contém os dados consultado da tabela
+				ResultSet resultado = null;
+				// objeto aluno
+				Aluno aluno = null;
+				// consulta SQL
+				String sql = "select distinct * from aluno, turma where turma.id_turma = aluno.turma_id and turma.codigo like '%" + turma + "%'";
+				try {
+					// consulta => objeto que executa o SQL no banco de dados
+					consulta = conexao.createStatement();
+					// resultado => objeto que contém os dados consultado da tabela
+					// Aluno
+					resultado = consulta.executeQuery(sql);
+					// Lê cada aluno
+					while (resultado.next()) {
+						aluno = new Aluno();
+						
+						//aluno.setFap(FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(resultado.getInt("fap_id")));
+						aluno.setFoto(resultado.getString("foto"));
+						aluno.setNivel(resultado.getInt("nivel"));
+						aluno.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
+						aluno.setAcessoServicos(AcessoServicosCrudJDBC.getAcessoServicos(resultado.getInt("acessoServicos_id")));
+						aluno.setAcompanhamentoEscolar(AcompanhamentoEscolarCrudJDBC.getAcompanhamentoEscolar(resultado.getInt("acompanhamentoEscolar_id")));
+						aluno.setComposicaoFamiliar(ComposicaoFamiliarCrudJDBC.getComposicaoFamiliar(resultado.getInt("composicaoFamiliar_id")));
+						aluno.setCondicoesMoradia(CondicoesMoradiaCrudJDBC.getCondicoesMoradia(resultado.getInt("condicoesMoradia_id")));
+						aluno.setDadosPessoais(DadosPessoaisCrudJDBC.getDadosPessoais(resultado.getInt("dadosPessoais_id")));
+						aluno.setDespesas(DespesasCrudJDBC.getDespesas(resultado.getInt("despesas_id")));
+						aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("endereco_id")));
+						aluno.setInfoMedicas(InfoMedicasCrudJDBC.getInfoMedicas(resultado.getInt("infoMedicas_id")));
+						aluno.setInfoTransporte(InfoTransporteCrudJDBC.getInfoTransporte(resultado.getInt("infoTransporte_id")));
+						aluno.setProgramasBeneficios(ProgramasBeneficiosCrudJDBC.getProgramasBeneficios(resultado.getInt("programasBeneficios_id")));
+						aluno.setPublicoPrioritario(PublicoPrioritarioCrudJDBC.getPublicoPrioritario(resultado.getInt("publicoPrioritario_id")));
+							
+						// insere o aluno na lista
+						alunos.add(aluno);
+
+					}
+				} catch (SQLException e) {
+					throw new RuntimeException("Erro ao buscar um aluno: " + e);
+				} finally {
+					try {
+						consulta.close();
+						resultado.close();
+						conexao.close();
+					} catch (Throwable e) {
+						throw new RuntimeException("Erro ao fechar a conexao - Listar" + e);
+					}
+				}
+				// retorna lista de alunos
+				return alunos;
+			}
+
+	public static List<Aluno> getAlunoPorNomeTurma(String nome, String turma) {
+		// abre conexao com o banco de dados
+		Connection conexao = ConectaPostgreSQL.geraConexao();
+		// variavel lista de alunos
+		List<Aluno> alunos = new ArrayList<Aluno>();
+		// executa o SQL no banco de dados
+		Statement consulta = null;
+		// contém os dados consultado da tabela
+		ResultSet resultado = null;
+		// objeto aluno
+		Aluno aluno = null;
+		// consulta SQL
+		String sql = "select distinct * from aluno, turma, dadospessoais "
+				   + "where turma.id_turma = aluno.turma_id and "
+				   + "		dadospessoais.id_dadospessoais = aluno.dadospessoais_id and "
+				   + "		turma.codigo like '%" + turma + "%' and "
+				   + "		dadospessoais.nome like '%" + nome + "%';";
+		try {
+			// consulta => objeto que executa o SQL no banco de dados
+			consulta = conexao.createStatement();
+			// resultado => objeto que contém os dados consultado da tabela
+			// Aluno
+			resultado = consulta.executeQuery(sql);
+			// Lê cada aluno
+			while (resultado.next()) {
+				aluno = new Aluno();
+				
+				//aluno.setFap(FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(resultado.getInt("fap_id")));
+				aluno.setFoto(resultado.getString("foto"));
+				aluno.setNivel(resultado.getInt("nivel"));
+				aluno.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
+				aluno.setAcessoServicos(AcessoServicosCrudJDBC.getAcessoServicos(resultado.getInt("acessoServicos_id")));
+				aluno.setAcompanhamentoEscolar(AcompanhamentoEscolarCrudJDBC.getAcompanhamentoEscolar(resultado.getInt("acompanhamentoEscolar_id")));
+				aluno.setComposicaoFamiliar(ComposicaoFamiliarCrudJDBC.getComposicaoFamiliar(resultado.getInt("composicaoFamiliar_id")));
+				aluno.setCondicoesMoradia(CondicoesMoradiaCrudJDBC.getCondicoesMoradia(resultado.getInt("condicoesMoradia_id")));
+				aluno.setDadosPessoais(DadosPessoaisCrudJDBC.getDadosPessoais(resultado.getInt("dadosPessoais_id")));
+				aluno.setDespesas(DespesasCrudJDBC.getDespesas(resultado.getInt("despesas_id")));
+				aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("endereco_id")));
+				aluno.setInfoMedicas(InfoMedicasCrudJDBC.getInfoMedicas(resultado.getInt("infoMedicas_id")));
+				aluno.setInfoTransporte(InfoTransporteCrudJDBC.getInfoTransporte(resultado.getInt("infoTransporte_id")));
+				aluno.setProgramasBeneficios(ProgramasBeneficiosCrudJDBC.getProgramasBeneficios(resultado.getInt("programasBeneficios_id")));
+				aluno.setPublicoPrioritario(PublicoPrioritarioCrudJDBC.getPublicoPrioritario(resultado.getInt("publicoPrioritario_id")));
+					
+				// insere o aluno na lista
+				alunos.add(aluno);
+
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException("Erro ao buscar um aluno: " + e);
+		} finally {
+			try {
+				consulta.close();
+				resultado.close();
+				conexao.close();
+			} catch (Throwable e) {
+				throw new RuntimeException("Erro ao fechar a conexao - Listar" + e);
+			}
+		}
+		// retorna lista de alunos
+		return alunos;
+	}
+
+
+
+	
 }

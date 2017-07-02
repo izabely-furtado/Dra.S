@@ -54,9 +54,9 @@ public class Aluno {
 
 		this.setId(-1);
 		// this.aluno.setFap(null);
-		this.setFoto(null);
+		this.setFoto("");
 		this.setNivel(0);
-		this.setTurma(null);
+		this.setTurma(new Turma());
 		this.setAcessoServicos(new AcessoServicos());
 		this.setAcompanhamentoEscolar(new AcompanhamentoEscolar());
 		this.setEndereco(new Endereco());
@@ -89,6 +89,9 @@ public class Aluno {
 	}
 
 	public Turma getTurma() {
+		if (this.turma == null){
+			return new Turma();
+		}
 		return turma;
 	}
 

@@ -1,14 +1,10 @@
 package cdp.classesAnemicas;
 
-import java.util.List;
+//import java.util.List;
 
-public class Turma implements java.io.Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private int id;
-	private String codigo;
+public class Turma {
+	private int id = -1;
+	private String codigo = "2";
 	private int maximo;
 	private String turno;
 	private int nivel;
@@ -17,9 +13,24 @@ public class Turma implements java.io.Serializable{
 	private boolean quarta;
 	private boolean quinta;
 	private boolean sexta;
+	private boolean edita;
 	/*private List<Aluno> alunos;
 	private List<Aula> aulas;
 	private boolean edita;*/
+	
+	public Turma() {
+		this.codigo = "";
+		this.id = -1;
+		this.maximo = 0;
+		this.nivel = 0;
+		this.segunda = false;
+		this.terca = false;
+		this.quarta = false;
+		this.quinta = false;
+		this.sexta = false;
+		this.turno = "";
+		// TODO Auto-generated constructor stub
+	}
 	public String getCodigo() {
 		return codigo;
 	}
@@ -99,4 +110,10 @@ public class Turma implements java.io.Serializable{
 	public void setEdita(boolean edita) {
 		this.edita = edita;
 	}*/
+	public boolean isEdita() {
+		return edita;
+	}
+	public void setEdita(boolean edita) {
+		this.edita = edita;
+	}
 }
