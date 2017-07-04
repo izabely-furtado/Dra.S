@@ -144,7 +144,7 @@ public class AlunoCrudJDBC {
 				resultado.close();
 				conexao.close();
 			} catch (Throwable e) {
-				throw new RuntimeException("Erro ao fechar a conexao " + e);
+				throw new RuntimeException("Erro ao fechar a conexao de aluno" + e);
 			}
 		}
 		// retorna aluno com o determinado id
@@ -443,19 +443,43 @@ public class AlunoCrudJDBC {
 				//aluno.setFap(FAPCrudJDBC.getFormularioAcompanhamentoPsicossocial(resultado.getInt("fap_id")));
 				aluno.setFoto(resultado.getString("foto"));
 				aluno.setNivel(resultado.getInt("nivel"));
-				aluno.setTurma(TurmaCrudJDBC.getTurma(resultado.getInt("turma_id")));
-				aluno.setAcessoServicos(AcessoServicosCrudJDBC.getAcessoServicos(resultado.getInt("acessoServicos_id")));
-				aluno.setAcompanhamentoEscolar(AcompanhamentoEscolarCrudJDBC.getAcompanhamentoEscolar(resultado.getInt("acompanhamentoEscolar_id")));
-				aluno.setComposicaoFamiliar(ComposicaoFamiliarCrudJDBC.getComposicaoFamiliar(resultado.getInt("composicaoFamiliar_id")));
-				aluno.setCondicoesMoradia(CondicoesMoradiaCrudJDBC.getCondicoesMoradia(resultado.getInt("condicoesMoradia_id")));
-				aluno.setDadosPessoais(DadosPessoaisCrudJDBC.getDadosPessoais(resultado.getInt("dadosPessoais_id")));
-				aluno.setDespesas(DespesasCrudJDBC.getDespesas(resultado.getInt("despesas_id")));
-				aluno.setEndereco(EnderecoCrudJDBC.getEndereco(resultado.getInt("endereco_id")));
-				aluno.setInfoMedicas(InfoMedicasCrudJDBC.getInfoMedicas(resultado.getInt("infoMedicas_id")));
-				aluno.setInfoTransporte(InfoTransporteCrudJDBC.getInfoTransporte(resultado.getInt("infoTransporte_id")));
-				aluno.setProgramasBeneficios(ProgramasBeneficiosCrudJDBC.getProgramasBeneficios(resultado.getInt("programasBeneficios_id")));
-				aluno.setPublicoPrioritario(PublicoPrioritarioCrudJDBC.getPublicoPrioritario(resultado.getInt("publicoPrioritario_id")));
-					
+				int turma_id = resultado.getInt("turma_id");
+				int acessoServicos_id = resultado.getInt("acessoServicos_id");
+				int acompanhamentoescolar_id = resultado.getInt("acompanhamentoescolar_id");
+				int composicaofamiliar_id = resultado.getInt("composicaofamiliar_id");
+				int condicoesmoradia_id = resultado.getInt("condicoesmoradia_id");
+				int dadosPessoais_id = resultado.getInt("dadosPessoais_id");
+				int despesas_id = resultado.getInt("despesas_id");
+				int endereco_id = resultado.getInt("endereco_id");
+				int infomedicas_id = resultado.getInt("infomedicas_id");
+				int infotransporte_id = resultado.getInt("infotransporte_id");
+				int programasbeneficios_id = resultado.getInt("programasbeneficios_id");
+				int publicoprioritario_id = resultado.getInt("publicoprioritario_id");
+
+				if (turma_id > 0) aluno.setTurma(TurmaCrudJDBC.getTurma(turma_id));
+				else aluno.setTurma(null);
+				if (acessoServicos_id > 0) aluno.setAcessoServicos(AcessoServicosCrudJDBC.getAcessoServicos(acessoServicos_id));
+				else aluno.setAcessoServicos(null);
+				//if (acompanhamentoescolar_id > 0) aluno.setAcompanhamentoEscolar(AcompanhamentoEscolarCrudJDBC.getAcompanhamentoEscolar(acompanhamentoescolar_id));
+				//else aluno.setAcompanhamentoEscolar(null);
+				if (composicaofamiliar_id > 0) aluno.setComposicaoFamiliar(ComposicaoFamiliarCrudJDBC.getComposicaoFamiliar(composicaofamiliar_id));
+				else aluno.setComposicaoFamiliar(null);
+				if (condicoesmoradia_id > 0) aluno.setCondicoesMoradia(CondicoesMoradiaCrudJDBC.getCondicoesMoradia(condicoesmoradia_id));
+				else aluno.setCondicoesMoradia(null);
+				if (dadosPessoais_id > 0) aluno.setDadosPessoais(DadosPessoaisCrudJDBC.getDadosPessoais(dadosPessoais_id));
+				else aluno.setDadosPessoais(null);
+				if (despesas_id > 0) aluno.setDespesas(DespesasCrudJDBC.getDespesas(despesas_id));
+				else aluno.setDespesas(null);
+				if (endereco_id > 0) aluno.setEndereco(EnderecoCrudJDBC.getEndereco(endereco_id));
+				else aluno.setEndereco(null);
+				if (infomedicas_id > 0) aluno.setInfoMedicas(InfoMedicasCrudJDBC.getInfoMedicas(infomedicas_id));
+				else aluno.setInfoMedicas(null);
+				if (infotransporte_id > 0) aluno.setInfoTransporte(InfoTransporteCrudJDBC.getInfoTransporte(infotransporte_id));
+				else aluno.setInfoTransporte(null);
+				if (programasbeneficios_id > 0) aluno.setProgramasBeneficios(ProgramasBeneficiosCrudJDBC.getProgramasBeneficios(programasbeneficios_id));
+				else aluno.setProgramasBeneficios(null);
+				if (publicoprioritario_id > 0) aluno.setPublicoPrioritario(PublicoPrioritarioCrudJDBC.getPublicoPrioritario(publicoprioritario_id));
+				else aluno.setPublicoPrioritario(null);
 				// insere o aluno na lista
 				alunos.add(aluno);
 

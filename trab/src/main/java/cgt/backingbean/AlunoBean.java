@@ -58,28 +58,20 @@ public class AlunoBean {
 		
 		return "aluno";
 		*/
-		System.out.println("passou aqui");
 		FacesContext context = FacesContext.getCurrentInstance();
+		/*
 		if (this.aluno.getDadosPessoais().getNome() == "") {// && this.aluno.getTurma().getCodigo() == ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o nome do aluno ou a turma para efetuar a pesquisa", ""));
-			System.out.println("passou aqui");
-			System.out.println();
-			System.out.println();
-			System.out.println();
 			return "erro";
 		}
 		else {
-			System.out.println(AlunoCrudJDBC.getAlunoPorNome(this.aluno.getDadosPessoais().getNome()).get(0));
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			
-			this.lista.addAll(AlunoCrudJDBC.getAlunoPorNome(this.aluno.getDadosPessoais().getNome()));
-			FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.jsf");
-			return "pesquisou";
+		*/
+		
+		this.lista.addAll(AlunoCrudJDBC.getAlunoPorNomeTurma(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo()));
+		FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.jsf");
+		return "pesquisou";
 			//this.lista = AlunoCrudJDBC.getAlunoPorNomeTurma(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo());
-		}
+		
 	}
 
 	public String excluirRegistro(Aluno a) {

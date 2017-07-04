@@ -71,7 +71,7 @@ public class TurmaCrudJDBC {
 		// objeto as
 		Turma turma = new Turma();
 		// consulta SQL
-		String sql = "select distinct * from Turma where id=" + idTurma;
+		String sql = "select distinct * from Turma where id_turma=" + idTurma;
 		try {
 			// consulta => objeto que executa o SQL no banco de dados
 			consulta = conexao.createStatement();
@@ -109,7 +109,7 @@ public class TurmaCrudJDBC {
 		// retorna lista de ass
 		return turma;
 	}
-	public static Turma getByCodigo(String codigo) {
+	public Turma getByCodigo(String codigo) {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
 		// executa o SQL no banco de dados
@@ -129,7 +129,7 @@ public class TurmaCrudJDBC {
 			// Lê cada situacao
 			
 			while (resultado.next()) {
-				turma.setId(resultado.getInt("id"));
+				turma.setId(resultado.getInt("id_turma"));
 				turma.setCodigo(resultado.getString("codigo"));
 				turma.setMaximo(resultado.getInt("maximo"));
 				turma.setTurno(resultado.getString("turno"));

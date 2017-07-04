@@ -76,7 +76,7 @@ public class CondicoesMoradiaCrudJDBC {
 		// objeto as
 		CondicoesMoradia condicoes = null;
 		// consulta SQL
-		String sql = "select distinct * from CondicoesMoradia where id=" + idCondicoesMoradia;
+		String sql = "select distinct * from CondicoesMoradia where id_condicoesmoradia=" + idCondicoesMoradia;
 		try {
 			// consulta => objeto que executa o SQL no banco de dados
 			consulta = conexao.createStatement();

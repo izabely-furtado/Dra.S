@@ -73,7 +73,7 @@ public class AcessoServicosCrudJDBC {
 			// objeto as
 			AcessoServicos as = null;
 			// consulta SQL
-			String sql = "select distinct * from acessoservicos where id=" + idAcessoServicos;
+			String sql = "select distinct * from acessoservicos where id_acessoservicos=" + idAcessoServicos;
 			try {
 				// consulta => objeto que executa o SQL no banco de dados
 				consulta = conexao.createStatement();

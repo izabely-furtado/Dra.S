@@ -100,7 +100,7 @@ public class ComposicaoFamiliarCrudJDBC {
 		// objeto as
 		ComposicaoFamiliar composicao = null;
 		// consulta SQL
-		String sql = "select distinct * from ComposicaoFamiliar where ComposicaoFamiliar.id=" + idComposicaoFamiliar;
+		String sql = "select distinct * from ComposicaoFamiliar where id_composicaofamiliar=" + idComposicaoFamiliar;
 		try {
 			// consulta => objeto que executa o SQL no banco de dados
 			consulta = conexao.createStatement();

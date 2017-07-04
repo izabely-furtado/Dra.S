@@ -82,7 +82,7 @@ public class DespesasCrudJDBC {
 		// objeto as
 		Despesas despesas = null;
 		// consulta SQL
-		String sql = "select distinct * from Despesas where id=" + idDespesas;
+		String sql = "select distinct * from Despesas where id_despesas=" + idDespesas;
 		try {
 			// consulta => objeto que executa o SQL no banco de despesas
 			consulta = conexao.createStatement();

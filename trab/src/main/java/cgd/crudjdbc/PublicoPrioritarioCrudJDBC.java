@@ -84,7 +84,7 @@ public class PublicoPrioritarioCrudJDBC {
 		// objeto as
 		PublicoPrioritario publicoPrioritario = null;
 		// consulta SQL
-		String sql = "select distinct * from PublicoPrioritario where id=" + idPublicoPrioritario;
+		String sql = "select distinct * from PublicoPrioritario where id_publicoprioritario=" + idPublicoPrioritario;
 		try {
 			// consulta => objeto que executa o SQL no banco de publicoPrioritario
 			consulta = conexao.createStatement();

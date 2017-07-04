@@ -81,7 +81,7 @@ public class AcompanhamentoEscolarCrudJDBC {
 			// objeto as
 			AcompanhamentoEscolar situacao = null;
 			// consulta SQL
-			String sql = "select distinct * from AcompanhamentoEscolar where id=" + idAcompanhamentoEscolar;
+			String sql = "select distinct * from acompanhamentoescolar where id_acompanhamentoescolar=" + idAcompanhamentoEscolar;
 			try {
 				// consulta => objeto que executa o SQL no banco de dados
 				consulta = conexao.createStatement();

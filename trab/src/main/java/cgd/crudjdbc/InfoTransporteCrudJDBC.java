@@ -71,7 +71,7 @@ public class InfoTransporteCrudJDBC {
 		// objeto as
 		InfoTransporte infoTransporte = null;
 		// consulta SQL
-		String sql = "select distinct * from InfoTransporte where id=" + idInfoTransporte;
+		String sql = "select distinct * from InfoTransporte where id_infotransporte='" + idInfoTransporte + "'";
 		try {
 			// consulta => objeto que executa o SQL no banco de infoTransporte
 			consulta = conexao.createStatement();

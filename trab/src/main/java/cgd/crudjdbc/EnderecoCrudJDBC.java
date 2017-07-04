@@ -69,7 +69,7 @@ public class EnderecoCrudJDBC {
 			// contém os dados consultado da tabela
 			ResultSet resultado = null;
 			// consultas SQL
-			String sqlEndereco = "select distinct * from endereco where id = '" + idEndereco + "'";
+			String sqlEndereco = "select distinct * from endereco where id_endereco = '" + idEndereco + "'";
 
 			try {
 				// consulta => objeto que executa o SQL no banco de dados

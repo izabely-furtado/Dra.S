@@ -78,7 +78,7 @@ public class InfoMedicasCrudJDBC {
 		// objeto as
 		InfoMedicas infoMedicas = null;
 		// consulta SQL
-		String sql = "select distinct * from InfoMedicas where id=" + idInfoMedicas;
+		String sql = "select distinct * from InfoMedicas where id_infomedicas=" + idInfoMedicas;
 		try {
 			// consulta => objeto que executa o SQL no banco de infoMedicas
 			consulta = conexao.createStatement();
