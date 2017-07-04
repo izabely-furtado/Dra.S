@@ -101,7 +101,12 @@ public class DadosAcessoBean {
 		try {
 			this.dadosAcesso = DadosAcessoCrudJDBC.getDadosAcesso(this.dadosAcesso.getLogin(),
 					this.dadosAcesso.getSenha());
-			FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.html");
+			if (this.dadosAcesso.getEmail() == "" || this.dadosAcesso.getSenha() == ""){
+				context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "E-mail e/ou senha incorretos", ""));
+			}
+			else {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.jsf");
+			}
 
 		} catch (RuntimeException e) {
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "" + e, ""));
