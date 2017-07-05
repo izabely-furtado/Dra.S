@@ -48,7 +48,7 @@ altere login.xhtml para login.jsf
 
 Login: admin
 
-Senha: 123
+Senha: teste1
 
 
 
