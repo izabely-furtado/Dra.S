@@ -79,7 +79,7 @@ public class AcompanhamentoEscolarCrudJDBC {
 			// contém os dados consultado da tabela
 			ResultSet resultado = null;
 			// objeto as
-			AcompanhamentoEscolar situacao = null;
+			AcompanhamentoEscolar acompanhamento = new AcompanhamentoEscolar();
 			// consulta SQL
 			String sql = "select distinct * from acompanhamentoescolar where id_acompanhamentoescolar=" + idAcompanhamentoEscolar;
 			try {
@@ -88,26 +88,23 @@ public class AcompanhamentoEscolarCrudJDBC {
 				// resultado => objeto que contém os dados consultado da tabela
 				// AcompanhamentoEscolar
 				resultado = consulta.executeQuery(sql);
-				// Lê cada situacao
-				//List<Integer> anos = new ArrayList<Integer>();
-				//List<Integer> series = new ArrayList<Integer>();
 				
 				while (resultado.next()) {
-					situacao.setEscola(resultado.getString("escola"));
-					situacao.setAno1(resultado.getInt("ano1"));
-					situacao.setAno2(resultado.getInt("ano2"));
-					situacao.setAno3(resultado.getInt("ano3"));
-					situacao.setAno4(resultado.getInt("ano4"));
-					situacao.setAno5(resultado.getInt("ano5"));
-					situacao.setAno6(resultado.getInt("ano6"));
-					situacao.setAno7(resultado.getInt("ano7"));
-					situacao.setSerie1(resultado.getString("serie1"));
-					situacao.setSerie2(resultado.getString("serie2"));
-					situacao.setSerie3(resultado.getString("serie3"));
-					situacao.setSerie4(resultado.getString("serie4"));
-					situacao.setSerie5(resultado.getString("serie5"));
-					situacao.setSerie6(resultado.getString("serie6"));
-					situacao.setSerie7(resultado.getString("serie7"));
+					acompanhamento.setEscola(resultado.getString("escola"));
+					acompanhamento.setAno1(resultado.getInt("ano1"));
+					acompanhamento.setAno2(resultado.getInt("ano2"));
+					acompanhamento.setAno3(resultado.getInt("ano3"));
+					acompanhamento.setAno4(resultado.getInt("ano4"));
+					acompanhamento.setAno5(resultado.getInt("ano5"));
+					acompanhamento.setAno6(resultado.getInt("ano6"));
+					acompanhamento.setAno7(resultado.getInt("ano7"));
+					acompanhamento.setSerie1(resultado.getString("serie1"));
+					acompanhamento.setSerie2(resultado.getString("serie2"));
+					acompanhamento.setSerie3(resultado.getString("serie3"));
+					acompanhamento.setSerie4(resultado.getString("serie4"));
+					acompanhamento.setSerie5(resultado.getString("serie5"));
+					acompanhamento.setSerie6(resultado.getString("serie6"));
+					acompanhamento.setSerie7(resultado.getString("serie7"));
 					/*
 					for (int i = 1; i<7; i++) {
 						Integer ano = resultado.getInt("anos" + i);
@@ -119,7 +116,7 @@ public class AcompanhamentoEscolarCrudJDBC {
 					situacao.setSeries(series);
 					*/
 					// insere o acesso a serviço na lista
-					return situacao;
+					return acompanhamento;
 					
 				}
 			} catch (SQLException e) {
@@ -134,7 +131,7 @@ public class AcompanhamentoEscolarCrudJDBC {
 				}
 			}
 			// retorna lista de ass
-			return situacao;
+			return acompanhamento;
 		}
 
 		/*

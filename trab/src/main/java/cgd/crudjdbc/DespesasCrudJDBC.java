@@ -80,7 +80,7 @@ public class DespesasCrudJDBC {
 		// contém os despesas consultado da tabela
 		ResultSet resultado = null;
 		// objeto as
-		Despesas despesas = null;
+		Despesas despesas = new Despesas();
 		// consulta SQL
 		String sql = "select distinct * from Despesas where id_despesas=" + idDespesas;
 		try {
@@ -237,15 +237,15 @@ public class DespesasCrudJDBC {
 			// recebe o parâmtros do SQL insert
 			insereSt.setFloat(1, despesas.getAgua());
 			insereSt.setFloat(2, despesas.getAlimentacao());
-			insereSt.setFloat(2, despesas.getAluguel());
-			insereSt.setFloat(2, despesas.getDespesaTotal());
-			insereSt.setFloat(2, despesas.getGas());
-			insereSt.setFloat(2, despesas.getLuz());
-			insereSt.setFloat(2, despesas.getMedicamentos());
-			insereSt.setFloat(2, despesas.getOutros());
-			insereSt.setFloat(2, despesas.getRendaPerCapta());
-			insereSt.setFloat(2, despesas.getRendaTotal());
-			insereSt.setFloat(2, despesas.getTelefone());
+			insereSt.setFloat(3, despesas.getAluguel());
+			insereSt.setFloat(4, despesas.getDespesaTotal());
+			insereSt.setFloat(5, despesas.getGas());
+			insereSt.setFloat(6, despesas.getLuz());
+			insereSt.setFloat(7, despesas.getMedicamentos());
+			insereSt.setFloat(8, despesas.getOutros());
+			insereSt.setFloat(9, despesas.getRendaPerCapta());
+			insereSt.setFloat(10, despesas.getRendaTotal());
+			insereSt.setFloat(11, despesas.getTelefone());
 			// executa SQL update
 			insereSt.executeUpdate();
 			return true;

@@ -98,7 +98,7 @@ public class ComposicaoFamiliarCrudJDBC {
 		// contém os dados consultado da tabela
 		ResultSet resultado = null;
 		// objeto as
-		ComposicaoFamiliar composicao = null;
+		ComposicaoFamiliar composicao = new ComposicaoFamiliar();
 		// consulta SQL
 		String sql = "select distinct * from ComposicaoFamiliar where id_composicaofamiliar=" + idComposicaoFamiliar;
 		try {
@@ -139,7 +139,7 @@ public class ComposicaoFamiliarCrudJDBC {
 	/*
 	 * Objetivo: Método que lista todos os ass do banco de dados
 	 */
-	@SuppressWarnings("null")
+	//@SuppressWarnings("null")
 	public static List<ComposicaoFamiliar> listar() {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -150,7 +150,7 @@ public class ComposicaoFamiliarCrudJDBC {
 		Statement consulta = null;
 		// contém os dados consultado da tabela
 		ResultSet resultado = null;
-		ComposicaoFamiliar composicao = null;
+		ComposicaoFamiliar composicao = new ComposicaoFamiliar();
 		// objeto as
 		// ComposicaoFamiliar as = null;
 		// consulta SQL

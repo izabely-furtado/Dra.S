@@ -80,9 +80,9 @@ public class ProgramasBeneficiosCrudJDBC {
 		// contém os programasBeneficios consultado da tabela
 		ResultSet resultado = null;
 		// objeto as
-		ProgramasBeneficios programasBeneficios = null;
+		ProgramasBeneficios programasBeneficios = new ProgramasBeneficios();
 		// consulta SQL
-		String sql = "select distinct * from ProgramasBeneficios where id_programasbeneficios=" + idProgramasBeneficios;
+		String sql = "select distinct * from ProgramasBeneficios where id_programabeneficios=" + idProgramasBeneficios;
 		try {
 			// consulta => objeto que executa o SQL no banco de programasBeneficios
 			consulta = conexao.createStatement();

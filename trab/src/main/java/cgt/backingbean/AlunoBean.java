@@ -3,13 +3,11 @@ package cgt.backingbean;
 import java.io.IOException;
 import java.util.List;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import cdp.classesAnemicas.Aluno;
-import cdp.classesAnemicas.Parente;
+import cdp.classesAnemicas.*;
 import cgd.crudjdbc.*;
 
 @SuppressWarnings("deprecation")
@@ -37,7 +35,6 @@ public class AlunoBean {
 	}
 
 	public String novo() throws IOException {
-		/*
 		this.aluno.setId(-1);
 		//this.aluno.setFap(null);
 		this.aluno.setFoto("");
@@ -57,21 +54,6 @@ public class AlunoBean {
 		this.aluno.setEdita(false);
 		
 		return "aluno";
-		*/
-		FacesContext context = FacesContext.getCurrentInstance();
-		/*
-		if (this.aluno.getDadosPessoais().getNome() == "") {// && this.aluno.getTurma().getCodigo() == ""){
-			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o nome do aluno ou a turma para efetuar a pesquisa", ""));
-			return "erro";
-		}
-		else {
-		*/
-		
-		this.lista.addAll(AlunoCrudJDBC.getAlunoPorNomeTurma(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo()));
-		FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.jsf");
-		return "pesquisou";
-			//this.lista = AlunoCrudJDBC.getAlunoPorNomeTurma(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo());
-		
 	}
 
 	public String excluirRegistro(Aluno a) {
@@ -187,7 +169,24 @@ public class AlunoBean {
 		
 	}
 	
-	public String gerarPesquisa() throws IOException {
+	public void acessar(String nome) throws IOException {
+		this.setAluno(AlunoCrudJDBC.getAluno(nome));
+		//System.out.println(AlunoCrudJDBC.getAluno(id));
+		FacesContext.getCurrentInstance().getExternalContext().redirect("./visualizaAluno.jsf");
+	}
+	public void gerarPesquisa() throws IOException {
+		
+		if (this.aluno.getTurma().getCodigo() == ""){
+			this.setLista(AlunoCrudJDBC.getAlunoPorNome(this.aluno.getDadosPessoais().getNome()));
+		}
+		else {
+			this.setLista(AlunoCrudJDBC.getAlunoPorNomeTurma(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo()));
+		}
+		//List<Aluno> testando = AlunoCrudJDBC.getAlunoPorNomeTurma(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo());
+		//this.setLista(testando);
+		//FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.jsf");
+		//return "pesquisou";
+		/*
 		FacesContext context = FacesContext.getCurrentInstance();
 		if (this.aluno.getDadosPessoais().getNome() == "") {// && this.aluno.getTurma().getCodigo() == ""){
 			context.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informe o nome do aluno ou a turma para efetuar a pesquisa", ""));
@@ -198,6 +197,7 @@ public class AlunoBean {
 			return "pesquisou";
 			//this.lista = AlunoCrudJDBC.getAlunoPorNomeTurma(this.aluno.getDadosPessoais().getNome(), this.aluno.getTurma().getCodigo());
 		}
+		*/
 	}
 	public String inserir() throws IOException {
 		AlunoCrudJDBC.salvar(this.aluno);

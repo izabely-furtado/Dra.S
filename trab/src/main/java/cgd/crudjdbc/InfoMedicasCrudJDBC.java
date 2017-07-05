@@ -76,7 +76,7 @@ public class InfoMedicasCrudJDBC {
 		// contém os infoMedicas consultado da tabela
 		ResultSet resultado = null;
 		// objeto as
-		InfoMedicas infoMedicas = null;
+		InfoMedicas infoMedicas = new InfoMedicas();
 		// consulta SQL
 		String sql = "select distinct * from InfoMedicas where id_infomedicas=" + idInfoMedicas;
 		try {

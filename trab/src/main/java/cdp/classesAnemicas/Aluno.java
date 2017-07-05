@@ -51,7 +51,7 @@ public class Aluno {
 
 	public Aluno() {
 
-		this.setId(-1);
+		//this.setId(-1);
 		// this.aluno.setFap(null);
 		this.setFoto("");
 		this.setNivel(0);

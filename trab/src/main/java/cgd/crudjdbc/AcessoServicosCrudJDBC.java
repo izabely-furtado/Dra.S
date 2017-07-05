@@ -71,7 +71,7 @@ public class AcessoServicosCrudJDBC {
 			// contém os dados consultado da tabela
 			ResultSet resultado = null;
 			// objeto as
-			AcessoServicos as = null;
+			AcessoServicos as = new AcessoServicos();
 			// consulta SQL
 			String sql = "select distinct * from acessoservicos where id_acessoservicos=" + idAcessoServicos;
 			try {

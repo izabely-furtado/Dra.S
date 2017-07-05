@@ -69,7 +69,7 @@ public class InfoTransporteCrudJDBC {
 		// contém os infoTransporte consultado da tabela
 		ResultSet resultado = null;
 		// objeto as
-		InfoTransporte infoTransporte = null;
+		InfoTransporte infoTransporte = new InfoTransporte();
 		// consulta SQL
 		String sql = "select distinct * from InfoTransporte where id_infotransporte='" + idInfoTransporte + "'";
 		try {

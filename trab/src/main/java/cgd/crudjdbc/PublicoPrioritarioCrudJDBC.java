@@ -82,7 +82,7 @@ public class PublicoPrioritarioCrudJDBC {
 		// contém os publicoPrioritario consultado da tabela
 		ResultSet resultado = null;
 		// objeto as
-		PublicoPrioritario publicoPrioritario = null;
+		PublicoPrioritario publicoPrioritario = new PublicoPrioritario();
 		// consulta SQL
 		String sql = "select distinct * from PublicoPrioritario where id_publicoprioritario=" + idPublicoPrioritario;
 		try {
@@ -94,7 +94,7 @@ public class PublicoPrioritarioCrudJDBC {
 			// Lê cada publicoPrioritario
 			while (resultado.next()) {
 				publicoPrioritario.setAbuso(resultado.getBoolean("abuso"));
-				publicoPrioritario.setAcolimento(resultado.getBoolean("acolimento"));
+				publicoPrioritario.setAcolimento(resultado.getBoolean("acolhimento"));
 				publicoPrioritario.setDefasagem(resultado.getBoolean("defasagem"));
 				publicoPrioritario.setEca(resultado.getBoolean("eca"));
 				publicoPrioritario.setEgressos(resultado.getBoolean("egressos"));
