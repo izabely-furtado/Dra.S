@@ -93,24 +93,30 @@
 						
 					</div>
 					<h:commandButton styleClass="botao" onclick="pesquisar()"
-						action="#{alunoBean.novo}" value="Pesquisar">
+						action="#{alunoBean.gerarPesquisa}" value="Pesquisar">
 					</h:commandButton>
-				</h:form> 
+				
 				
 				<h:dataTable value="#{alunoBean.lista}" var="aluno">
+				<!-- 
 				<h:column>
-    				<!-- column header -->
     				<f:facet name="header">ID</f:facet>
-    				<!-- row record -->
     				#{aluno.id}
     			</h:column>
+    			 -->
     			<h:column>
     				<f:facet name="header">Nome</f:facet>
-    				#{aluno.dadosPessoais.nome}
+    				<h:commandLink 
+						action="#{alunoBean.acessar(aluno.dadosPessoais.nome)}" value="#{aluno.dadosPessoais.nome}">
+					</h:commandLink>
     			</h:column>
     			<h:column>
     				<f:facet name="header">Data de Nascimento</f:facet>
-    				#{aluno.dadosPessoais.dataNasc}
+    				#{aluno.dadosPessoais.datNasc}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Responsável</f:facet>
+    				#{aluno.dadosPessoais.responsavel}
     			</h:column>
     			<h:column>
     				<f:facet name="header">Contato</f:facet>
@@ -121,7 +127,7 @@
     				#{aluno.turma.codigo}
     			</h:column>
     		</h:dataTable>
-				
+				</h:form> 
 				</main>
             </div>
 
