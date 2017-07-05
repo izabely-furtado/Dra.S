@@ -1,10 +1,12 @@
 package cgt.backingbean;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cdp.classesAnemicas.Aluno;
 import cdp.classesAnemicas.Aula;
@@ -71,11 +73,11 @@ public class AulaBean {
 		return "salvar";
 	}
 
-	public String inserir() {
-		
-	
+	public String inserir() throws IOException {
+		System.out.println("treco da aulaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		AulaCrudJDBC.salvar(this.aula);
 		// salva a aula
+		FacesContext.getCurrentInstance().getExternalContext().redirect("./inicio.jsf");
 		return "sucesso";
 	}
 

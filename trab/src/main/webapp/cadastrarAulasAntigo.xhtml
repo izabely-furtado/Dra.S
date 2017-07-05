@@ -9,32 +9,29 @@
 	<meta charset="utf-8"></meta>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
 	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-	<title>Cadastrar Aulas</title>
+	<title>Cadastrar Nova Aula</title>
+
+	<script type='text/javascript' src='./assets/js/cadastroAula.js'></script>
+
+
 	<!-- Styles -->
 	<link href="./assets/css/colunas.css" rel="stylesheet" />
 	<link href="./assets/css/formulario.css" rel="stylesheet" />
 	<link href="./assets/css/principal.css" rel="stylesheet" />
 	<link href="./assets/css/menu.css" rel="stylesheet" />
 	<link href="assets/css/inicio.css" rel="stylesheet" />
-	<link href="./assets/css/paginacao.css" rel="stylesheet" />
 
-	<!--Jquery -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-	<!--JavaScript -->
-	<script type='text/javascript' src='./assets/js/formAP.js'></script>
-	<script type="text/javascript"
-		src="http://code.jquery.com/jquery-1.10.10.min.js"></script>
-	<script type="text/javascript"
-		src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 	<script type='text/javascript' src='./assets/js/paginacao.js'></script>
-	<script type='text/javascript' src='./assets/js/cadastroTurma.js'></script>
+
 
 
 </h:head>
 <h:body>
-
+	<!-- 
+	<header>
+		<IMG alt="logo-onda" src="./assets/img/logo-onda2.png" />
+	</header>
+	 -->
 	<div class="corpo">
 		<div class="linha">
 			<!-- MENU -->
@@ -65,13 +62,14 @@
 					</ul>
 				</nav>
 			</div>
-			<!-- Conteúdo -->
-
+			<!-- Conte�do -->
 			<div class="coluna-9">
-				<main> <!-- Conteúdo de Páginas -->
+				<main><!-- Conte�do de P�ginas -->
 				<h2>
-					Cadastrar Aulas<br /> <small></small>
+					Cadastro de Aula<br /> <small></small>
 				</h2>
+
+
 				<h:form id="formAula" method="post">
 					<div class="linha">
 						<div class="coluna-6">
@@ -84,14 +82,12 @@
 										itemValue="#{turma}" itemLabel="#{turma.codigo}"
 										itemDescription="#{turma.codigo}" />
 								</h:selectOneMenu>
-								<h:message for="turma" styleClass="errorMessage" />
-
 							</div>
 						</div>
 
 						<div class="coluna-6">
 							<div class="grupinho">
-								<label>Tipo de aula:</label>
+								<label>Tipo de Aula:</label>
 
 								<h:selectOneMenu class="formulario" id="tipoAula"
 									value="#{aulaBean.aula.tipo}">
@@ -101,8 +97,6 @@
 									<f:selectItem itemLabel="Dança" itemValue="danca" />
 									<f:selectItem itemLabel="Ecologia" itemValue="ecologia" />
 								</h:selectOneMenu>
-								<h:message for="turma" styleClass="errorMessage" />
-
 
 							</div>
 						</div>
@@ -110,57 +104,46 @@
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Horário:</label>
-								<h:inputText id="horario" class="formulario"
-									value="#{aulaBean.aula.horario}" a:placeholder="00:00:00"
+								<h:inputText id="horario" class="formulario" value="#{aulaBean.aula.horario}" a:placeholder="00:00:00"
 									required="true" label="horario" />
-								<h:message for="turma" styleClass="errorMessage" />
-
-
+								<h:message for="horario" styleClass="errorMessage" />
 							</div>
 						</div>
 
 						<div class="coluna-6">
 							<div class="grupinho">
 								<label>Data:</label>
-								<h:inputText id="data" class="formulario"
-									value="#{aulaBean.aula.data}" a:placeholder="_ _/_ _/_ _ _ _"
+								<h:inputText id="data" class="formulario" value="#{aulaBean.aula.data}" a:placeholder="_ _/_ _/_ _ _ _"
 									required="true" label="data" />
-								<h:message for="turma" styleClass="errorMessage" />
-
-
+								<h:message for="data" styleClass="errorMessage" />
 							</div>
 						</div>
 
 						<div class="coluna-12">
 							<div class="grupinho">
 								<label>Conteúdo:</label>
-
-								<h:inputText id="conteudo" class="formulario"
-									value="#{aulaBean.aula.conteudo}"
-									a:placeholder="Conteúdo da aula" required="true"
-									label="conteudo" />
+								<h:inputText id="conteudo" class="formulario" value="#{aulaBean.aula.conteudo}" a:placeholder="Conteúdo da aula"
+									required="true" label="conteudo" />
 								<h:message for="conteudo" styleClass="errorMessage" />
-
-				
-
 							</div>
 						</div>
-
 					</div>
-					<h:commandButton styleClass="botao"
-						action="#{aulaBean.inserir}" value="Inserir">
-					</h:commandButton>
+					<h:commandButton styleClass="botao" value="Salvar"
+						action="#{aulaBean.inserir}" />
 
+				</h:form> 
+				
+				
+				</main>
 
 				
-				</h:form> </main>
 			</div>
 
 
-
-
 		</div>
+		<br /> <br />
 	</div>
-
+	<!--fim da div linha-->
+	<!--Fim da div corpo"-->
 </h:body>
 </html>

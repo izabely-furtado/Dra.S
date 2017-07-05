@@ -13,6 +13,7 @@ public class Turma {
 	private boolean quarta;
 	private boolean quinta;
 	private boolean sexta;
+	private boolean sabado;
 	private boolean edita;
 	/*private List<Aluno> alunos;
 	private List<Aula> aulas;
@@ -84,6 +85,12 @@ public class Turma {
 	}
 	public void setSexta(boolean sexta) {
 		this.sexta = sexta;
+	}
+	public boolean isSabado() {
+		return sabado;
+	}
+	public void setSabado(boolean sabado) {
+		this.sabado = sabado;
 	}
 	/*public List<Aluno> getAlunos() {
 		return alunos;

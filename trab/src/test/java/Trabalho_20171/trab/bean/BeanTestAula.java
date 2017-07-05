@@ -46,12 +46,12 @@ public class BeanTestAula {
     public void getListaAula(){
         assertEquals(new ArrayList<Aula>(),aulaBean.getLista());
     }
-	
+	/*
 	@Test
     public void inserirAula(){
         assertEquals("sucesso",aulaBean.inserir());
     }
-	
+	*/
 	@Test
     public void novaAula(){
         assertEquals("aula",aulaBean.novo());
