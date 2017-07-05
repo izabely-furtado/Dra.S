@@ -109,6 +109,7 @@ public class TurmaCrudJDBC {
 		// retorna lista de ass
 		return turma;
 	}
+	
 	public Turma getByCodigo(String codigo) {
 		// abre conexao com o banco de dados
 		Connection conexao = ConectaPostgreSQL.geraConexao();
@@ -214,7 +215,163 @@ public class TurmaCrudJDBC {
 		return turmas;
 	}
 
-	/*
+	public static List<Turma> getTurmaCod(String codigo) {
+		// abre conexao com o banco de dados
+		Connection conexao = ConectaPostgreSQL.geraConexao();
+		// variavel lista de turmas
+		List<Turma> turmas = new ArrayList<Turma>();
+		// executa o SQL no banco de dados
+		Statement consulta = null;
+		// contém os dados consultado da tabela
+		ResultSet resultado = null;
+		// objeto turma
+		Turma turma = new Turma();
+		// consulta SQL
+		String sql = "select distinct * from turma where codigo='" + codigo + "'";
+		try {
+			// consulta => objeto que executa o SQL no banco de dados
+			consulta = conexao.createStatement();
+			// resultado => objeto que contém os dados consultado da tabela
+			// Turma
+			resultado = consulta.executeQuery(sql);
+			// Lê cada turma
+			while (resultado.next()) {
+				turma = new Turma();
+				//turma.setId(resultado.getInt("id_aluno"));
+				turma.setCodigo(resultado.getString("codigo"));
+				turma.setMaximo(resultado.getInt("maximo"));
+				turma.setTurno(resultado.getString("turno"));
+				turma.setNivel(resultado.getInt("nivel"));
+				turma.setSegunda(resultado.getBoolean("segunda"));
+				turma.setTerca(resultado.getBoolean("terca"));
+				turma.setQuarta(resultado.getBoolean("quarta"));
+				turma.setQuinta(resultado.getBoolean("quinta"));
+				turma.setSexta(resultado.getBoolean("sexta"));
+
+				// insere o turma na lista
+				turmas.add(turma);
+
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException("Erro ao buscar um turma: " + e);
+		} finally {
+			try {
+				consulta.close();
+				resultado.close();
+				conexao.close();
+			} catch (Throwable e) {
+				throw new RuntimeException("Erro ao fechar a conexao " + e);
+			}
+		}
+		// retorna lista de turmas
+		return turmas;
+	}
+
+	public static List<Turma> getTurmaNivel(int nivel) {
+		// abre conexao com o banco de dados
+		Connection conexao = ConectaPostgreSQL.geraConexao();
+		// variavel lista de turmas
+		List<Turma> turmas = new ArrayList<Turma>();
+		// executa o SQL no banco de dados
+		Statement consulta = null;
+		// contém os dados consultado da tabela
+		ResultSet resultado = null;
+		// objeto turma
+		Turma turma = new Turma();
+		// consulta SQL
+		String sql = "select distinct * from turma where nivel='" + nivel + "'";
+		try {
+			// consulta => objeto que executa o SQL no banco de dados
+			consulta = conexao.createStatement();
+			// resultado => objeto que contém os dados consultado da tabela
+			// Turma
+			resultado = consulta.executeQuery(sql);
+			// Lê cada turma
+			while (resultado.next()) {
+				turma = new Turma();
+				//turma.setId(resultado.getInt("id_aluno"));
+				turma.setCodigo(resultado.getString("codigo"));
+				turma.setMaximo(resultado.getInt("maximo"));
+				turma.setTurno(resultado.getString("turno"));
+				turma.setNivel(resultado.getInt("nivel"));
+				turma.setSegunda(resultado.getBoolean("segunda"));
+				turma.setTerca(resultado.getBoolean("terca"));
+				turma.setQuarta(resultado.getBoolean("quarta"));
+				turma.setQuinta(resultado.getBoolean("quinta"));
+				turma.setSexta(resultado.getBoolean("sexta"));
+
+				// insere o turma na lista
+				turmas.add(turma);
+
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException("Erro ao buscar um turma: " + e);
+		} finally {
+			try {
+				consulta.close();
+				resultado.close();
+				conexao.close();
+			} catch (Throwable e) {
+				throw new RuntimeException("Erro ao fechar a conexao " + e);
+			}
+		}
+		// retorna lista de turmas
+		return turmas;
+	}
+
+	public static List<Turma> getTurmaCodNivel(String codigo, int nivel) {
+		// abre conexao com o banco de dados
+		Connection conexao = ConectaPostgreSQL.geraConexao();
+		// variavel lista de turmas
+		List<Turma> turmas = new ArrayList<Turma>();
+		// executa o SQL no banco de dados
+		Statement consulta = null;
+		// contém os dados consultado da tabela
+		ResultSet resultado = null;
+		// objeto turma
+		Turma turma = new Turma();
+		// consulta SQL
+		String sql = "select distinct * from turma where codigo='" + codigo + "' and nivel='" + nivel + "'";
+		try {
+			// consulta => objeto que executa o SQL no banco de dados
+			consulta = conexao.createStatement();
+			// resultado => objeto que contém os dados consultado da tabela
+			// Turma
+			resultado = consulta.executeQuery(sql);
+			// Lê cada turma
+			while (resultado.next()) {
+				turma = new Turma();
+				//turma.setId(resultado.getInt("id_aluno"));
+				turma.setCodigo(resultado.getString("codigo"));
+				turma.setMaximo(resultado.getInt("maximo"));
+				turma.setTurno(resultado.getString("turno"));
+				turma.setNivel(resultado.getInt("nivel"));
+				turma.setSegunda(resultado.getBoolean("segunda"));
+				turma.setTerca(resultado.getBoolean("terca"));
+				turma.setQuarta(resultado.getBoolean("quarta"));
+				turma.setQuinta(resultado.getBoolean("quinta"));
+				turma.setSexta(resultado.getBoolean("sexta"));
+
+				// insere o turma na lista
+				turmas.add(turma);
+
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException("Erro ao buscar um turma: " + e);
+		} finally {
+			try {
+				consulta.close();
+				resultado.close();
+				conexao.close();
+			} catch (Throwable e) {
+				throw new RuntimeException("Erro ao fechar a conexao " + e);
+			}
+		}
+		// retorna lista de turmas
+		return turmas;
+	}
+
+/*
 	 * Objetivo: Método que salva um turma no banco de dados
 	 */
 

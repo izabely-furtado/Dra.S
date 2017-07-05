@@ -1,5 +1,6 @@
 package cgt.backingbean;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -140,6 +141,17 @@ public class TurmaBean {
 	public String verLista() {
 		TurmaCrudJDBC.listar();
 		return "listagem";
+	}
+	
+public void gerarPesquisa() throws IOException {
+		
+		if (this.turma.getCodigo() == ""){
+			this.setLista(TurmaCrudJDBC.listar());
+		}
+		else {
+			this.setLista(TurmaCrudJDBC.getTurmaCod(this.turma.getCodigo()));
+		}
+		
 	}
 
 }
